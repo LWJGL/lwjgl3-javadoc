@@ -1,0 +1,9 @@
+# Private files
+/config.json
+
+# Generated files
+/node_modules
+
+# IDE files
+/.idea
+/.vscode

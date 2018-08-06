@@ -1,0 +1,26 @@
+{
+    "name": "javadoc.lwjgl.org",
+    "version": "1.0.0",
+    "private": true,
+    "license": "BSD-3-Clause",
+    "description": "JavaDoc for LWJGL 3",
+    "author": "Apostolos Tsakpinis",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/LWJGL/lwjgl3-javadoc.git"
+    },
+    "bugs": {
+      "url": "https://github.com/LWJGL/lwjgl3-javadoc/issues"
+    },
+    "homepage": "https://github.com/LWJGL/lwjgl3-javadoc#readme",
+    "dependencies": {
+      "compression": "1.7.3",
+      "express": "5.0.0-alpha.6",
+      "serve-favicon": "2.5.0"
+    },
+    "scripts": {
+      "start": "node server",
+      "watch": "nodemon --watch server server/index.js"
+    }
+  }
+  
