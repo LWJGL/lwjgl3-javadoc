@@ -162,6 +162,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <ul>
  <li><code>dstBinding</code> <b>must</b> be a valid binding in the descriptor set layout implicitly specified when using a descriptor update template to update descriptors.</li>
  <li><code>dstArrayElement</code> and <code>descriptorCount</code> <b>must</b> be less than or equal to the number of array elements in the descriptor set binding implicitly specified when using a descriptor update template to update descriptors, and all applicable consecutive bindings, as described by <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#descriptorsets-updates-consecutive">the “consecutive binding updates” section</a></li>
+ <li>If <code>descriptor</code> type is <a href="../../../org/lwjgl/vulkan/EXTInlineUniformBlock.html#VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT"><code>DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT</code></a>, <code>dstArrayElement</code> <b>must</b> be an integer multiple of 4</li>
+ <li>If <code>descriptor</code> type is <a href="../../../org/lwjgl/vulkan/EXTInlineUniformBlock.html#VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT"><code>DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT</code></a>, <code>descriptorCount</code> <b>must</b> be an integer multiple of 4</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -178,8 +180,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>dstBinding</code> &ndash; the descriptor binding to update when using this descriptor update template.</li>
- <li><code>dstArrayElement</code> &ndash; the starting element in the array belonging to <code>dstBinding</code>.</li>
- <li><code>descriptorCount</code> &ndash; the number of descriptors to update. If <code>descriptorCount</code> is greater than the number of remaining array elements in the destination binding, those affect consecutive bindings in a manner similar to <a href="../../../org/lwjgl/vulkan/VkWriteDescriptorSet.html" title="class in org.lwjgl.vulkan"><code>VkWriteDescriptorSet</code></a> above.</li>
+ <li><code>dstArrayElement</code> &ndash; the starting element in the array belonging to <code>dstBinding</code>. If the descriptor binding identified by <code>srcBinding</code> has a descriptor type of <a href="../../../org/lwjgl/vulkan/EXTInlineUniformBlock.html#VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT"><code>DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT</code></a> then <code>dstArrayElement</code> specifies the starting byte offset to update.</li>
+ <li><code>descriptorCount</code> &ndash; the number of descriptors to update. If <code>descriptorCount</code> is greater than the number of remaining array elements in the destination binding, those affect consecutive bindings in a manner similar to <a href="../../../org/lwjgl/vulkan/VkWriteDescriptorSet.html" title="class in org.lwjgl.vulkan"><code>VkWriteDescriptorSet</code></a> above. If the descriptor binding identified by <code>dstBinding</code> has a descriptor type of <a href="../../../org/lwjgl/vulkan/EXTInlineUniformBlock.html#VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT"><code>DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT</code></a> then <code>descriptorCount</code> specifies the number of bytes to update and the remaining array elements in the destination binding refer to the remaining number of bytes in it.</li>
  <li><code>descriptorType</code> &ndash; a <code>VkDescriptorType</code> specifying the type of the descriptor.</li>
  <li><code>offset</code> &ndash; the offset in bytes of the first binding in the raw data structure.</li>
  <li><code>stride</code> &ndash; the stride in bytes between two consecutive array elements of the descriptor update informations in the raw data structure. The actual pointer ptr for each array element j of update entry i is computed using the following formula:
@@ -187,7 +189,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <pre><code>
      const char *ptr = (const char *)pData + pDescriptorUpdateEntries[i].offset + j * pDescriptorUpdateEntries[i].stride</code></pre>
  
- <p>The stride is useful in case the bindings are stored in structs along with other data.</p></li>
+ <p>The stride is useful in case the bindings are stored in structs along with other data. If <code>descriptorType</code> is <a href="../../../org/lwjgl/vulkan/EXTInlineUniformBlock.html#VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT"><code>DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT</code></a> then the value of <code>stride</code> is ignored and the stride is assumed to be 1, i.e. the descriptor update information for them is always specified as a contiguous range.</p></li>
  </ul>
  
  <h3>Layout</h3>

@@ -167,7 +167,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
  <ul>
  <li><code>sType</code> &ndash; the type of this structure.</li>
  <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
- <li><code>maxVariableDescriptorCount</code> &ndash; indicates the maximum number of descriptors supported in the highest numbered binding of the layout, if that binding is variable-sized.</li>
+ <li><code>maxVariableDescriptorCount</code> &ndash; indicates the maximum number of descriptors supported in the highest numbered binding of the layout, if that binding is variable-sized. If the highest numbered binding of the layout has a descriptor type of <a href="../../../org/lwjgl/vulkan/EXTInlineUniformBlock.html#VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT"><code>DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT</code></a> then <code>maxVariableDescriptorCount</code> indicates the maximum byte size supported for the binding, if that binding is variable-sized.</li>
  </ul>
  
  <h3>Layout</h3>

@@ -155,7 +155,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <h5>Description</h5>
  
- <p>If <code>descriptorSetCount</code> is zero or this structure is not included in the <code>pNext</code> chain, then the variable lengths are considered to be zero. Otherwise, <code>pDescriptorCounts</code>[i] is the number of descriptors in the variable count descriptor binding in the corresponding descriptor set layout. If <a href="../../../org/lwjgl/vulkan/VkDescriptorSetAllocateInfo.html" title="class in org.lwjgl.vulkan"><code>VkDescriptorSetAllocateInfo</code></a><code>::pSetLayouts</code>[i] does not include a variable count descriptor binding, then <code>pDescriptorCounts</code>[i] is ignored.</p>
+ <p>If <code>descriptorSetCount</code> is zero or this structure is not included in the <code>pNext</code> chain, then the variable lengths are considered to be zero. Otherwise, <code>pDescriptorCounts</code>[i] is the number of descriptors in the variable count descriptor binding in the corresponding descriptor set layout. If the variable count descriptor binding in the corresponding descriptor set layout has a descriptor type of <a href="../../../org/lwjgl/vulkan/EXTInlineUniformBlock.html#VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT"><code>DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT</code></a> then <code>pDescriptorCounts</code>[i] specifies the binding's capacity in bytes. If <a href="../../../org/lwjgl/vulkan/VkDescriptorSetAllocateInfo.html" title="class in org.lwjgl.vulkan"><code>VkDescriptorSetAllocateInfo</code></a><code>::pSetLayouts</code>[i] does not include a variable count descriptor binding, then <code>pDescriptorCounts</code>[i] is ignored.</p>
  
  <h5>Valid Usage</h5>
  

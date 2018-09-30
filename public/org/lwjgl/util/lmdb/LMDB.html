@@ -1823,12 +1823,12 @@ extends java.lang.Object</pre>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_GET_BOTH"><code>GET_BOTH</code></a> - Position at key/data pair. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPSORT"><code>DUPSORT</code></a>.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_GET_BOTH_RANGE"><code>GET_BOTH_RANGE</code></a> - position at key, nearest data. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPSORT"><code>DUPSORT</code></a>.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_GET_CURRENT"><code>GET_CURRENT</code></a> - Return key/data at current cursor position.</li>
- <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_GET_MULTIPLE"><code>GET_MULTIPLE</code></a> - Return key and up to a page of duplicate data items from current cursor position. Move cursor to prepare for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT_MULTIPLE"><code>NEXT_MULTIPLE</code></a>. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPFIXED"><code>DUPFIXED</code></a>.</li>
+ <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_GET_MULTIPLE"><code>GET_MULTIPLE</code></a> - Return up to a page of duplicate data items from current cursor position. Move cursor to prepare for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT_MULTIPLE"><code>NEXT_MULTIPLE</code></a>. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPFIXED"><code>DUPFIXED</code></a>.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_LAST"><code>LAST</code></a> - Position at last key/data item.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_LAST_DUP"><code>LAST_DUP</code></a> - Position at last data item of current key. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPSORT"><code>DUPSORT</code></a>.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT"><code>NEXT</code></a> - Position at next data item.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT_DUP"><code>NEXT_DUP</code></a> - Position at next data item of current key. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPSORT"><code>DUPSORT</code></a>.</li>
- <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT_MULTIPLE"><code>NEXT_MULTIPLE</code></a> - Return key and up to a page of duplicate data items from next cursor position. Move cursor to prepare for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT_MULTIPLE"><code>NEXT_MULTIPLE</code></a>. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPFIXED"><code>DUPFIXED</code></a>.</li>
+ <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT_MULTIPLE"><code>NEXT_MULTIPLE</code></a> - Return up to a page of duplicate data items from next cursor position. Move cursor to prepare for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT_MULTIPLE"><code>NEXT_MULTIPLE</code></a>. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPFIXED"><code>DUPFIXED</code></a>.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT_NODUP"><code>NEXT_NODUP</code></a> - Position at first data item of next key.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_PREV"><code>PREV</code></a> - Position at previous data item.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_PREV_DUP"><code>PREV_DUP</code></a> - Position at previous data item of current key. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPSORT"><code>DUPSORT</code></a>.</li>
@@ -1836,7 +1836,7 @@ extends java.lang.Object</pre>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_SET"><code>SET</code></a> - Position at specified key.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_SET_KEY"><code>SET_KEY</code></a> - Position at specified key, return key + data.</li>
  <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_SET_RANGE"><code>SET_RANGE</code></a> - Position at first key greater than or equal to specified key.</li>
- <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_PREV_MULTIPLE"><code>PREV_MULTIPLE</code></a> - Position at previous page and return key and up to a page of duplicate data items. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPFIXED"><code>DUPFIXED</code></a>.</li>
+ <li><a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_PREV_MULTIPLE"><code>PREV_MULTIPLE</code></a> - Position at previous page and return up to a page of duplicate data items. Only for <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_DUPFIXED"><code>DUPFIXED</code></a>.</li>
  </ul></div>
 </li></ul>
 <a id="MDB_SUCCESS">
@@ -3739,7 +3739,10 @@ public static&nbsp;int&nbsp;mdb_dbi_open&#8203;(long&nbsp;txn,
                                  int&nbsp;flags)</pre>
 <div class="block">Deletes current key/data pair.
  
- <p>This function deletes the key/data pair to which the cursor refers.</p></div>
+ <p>This function deletes the key/data pair to which the cursor refers.</p>
+ 
+ <p>This does not invalidate the cursor, so operations such as <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT"><code>NEXT</code></a> can still be used on it. Both <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_NEXT"><code>NEXT</code></a> and <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#MDB_GET_CURRENT"><code>GET_CURRENT</code></a> will return the same record after
+ this operation.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>cursor</code> - a cursor handle returned by <a href="../../../../org/lwjgl/util/lmdb/LMDB.html#mdb_cursor_open(long,int,org.lwjgl.PointerBuffer)"><code>cursor_open</code></a></dd>

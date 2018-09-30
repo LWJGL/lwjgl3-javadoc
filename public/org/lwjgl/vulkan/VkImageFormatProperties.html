@@ -151,7 +151,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">VkImageFormatProperties</span>
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a>
 implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
-<div class="block">Structure specifying a image format properties.
+<div class="block">Structure specifying an image format properties.
  
  <h5>Description</h5>
  
@@ -175,13 +175,19 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>maxExtent</code> &ndash; are the maximum image dimensions. See the <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#features-extentperimagetype">Allowed Extent Values</a> section below for how these values are constrained by <code>type</code>.</li>
- <li><code>maxMipLevels</code> &ndash; the maximum number of mipmap levels. <code>maxMipLevels</code> <b>must</b> be equal to <code>⌈log<sub>2</sub>(max(width, height, depth))⌉ + 1</code>, where <code>width</code>, <code>height</code>, and <code>depth</code> are taken from the corresponding members of <code>maxExtent</code>, except when one of the following conditions is true, in which case it <b>may</b> instead be 1:
+ <li><code>maxMipLevels</code> &ndash; the maximum number of mipmap levels. <code>maxMipLevels</code> <b>must</b> be equal to the number of levels in the complete mipmap chain based on the <code>maxExtent.width</code>, <code>maxExtent.height</code>, and <code>maxExtent.depth</code>, except when one of the following conditions is true, in which case it <b>may</b> instead be 1:
  
  <ul>
  <li><a href="../../../org/lwjgl/vulkan/VK10.html#vkGetPhysicalDeviceImageFormatProperties(org.lwjgl.vulkan.VkPhysicalDevice,int,int,int,int,int,org.lwjgl.vulkan.VkImageFormatProperties)"><code>GetPhysicalDeviceImageFormatProperties</code></a><code>::tiling</code> was <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_TILING_LINEAR"><code>IMAGE_TILING_LINEAR</code></a></li>
  <li>the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceImageFormatInfo2</code></a><code>::pNext</code> chain included an instance of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceExternalImageFormatInfo.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceExternalImageFormatInfo</code></a> with a handle type included in the <code>handleTypes</code> member for which mipmap image support is not required</li>
  </ul></li>
- <li><code>maxArrayLayers</code> &ndash; the maximum number of array layers. <code>maxArrayLayers</code> <b>must</b> either be equal to 1 or be greater than or equal to the <code>maxImageArrayLayers</code> member of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceLimits.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceLimits</code></a>. A value of 1 is valid only if <code>tiling</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_TILING_LINEAR"><code>IMAGE_TILING_LINEAR</code></a> or if <code>type</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_TYPE_3D"><code>IMAGE_TYPE_3D</code></a>.</li>
+ <li><code>maxArrayLayers</code> &ndash; the maximum number of array layers.
+ 
+ <ul>
+ <li>If <code>tiling</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_TILING_LINEAR"><code>IMAGE_TILING_LINEAR</code></a>, then <code>maxArrayLayers</code> <b>must</b> either be equal to 1 or be no less than <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceLimits.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceLimits</code></a><code>::maxImageArrayLayers</code>.</li>
+ <li>If <code>tiling</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_TILING_OPTIMAL"><code>IMAGE_TILING_OPTIMAL</code></a> and <code>type</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_TYPE_3D"><code>IMAGE_TYPE_3D</code></a>, then <code>maxArrayLayers</code> <b>must</b> either be equal to 1 or be no less than <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceLimits.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceLimits</code></a><code>::maxImageArrayLayers</code>.</li>
+ <li>If <code>tiling</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_TILING_OPTIMAL"><code>IMAGE_TILING_OPTIMAL</code></a> and <code>type</code> is not <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_TYPE_3D"><code>IMAGE_TYPE_3D</code></a>, then <code>maxArrayLayers</code> <b>must</b> be no less than <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceLimits.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceLimits</code></a><code>::maxImageArrayLayers</code>.</li>
+ </ul></li>
  <li><code>sampleCounts</code> &ndash; a bitmask of <code>VkSampleCountFlagBits</code> specifying all the supported sample counts for this image as described <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#features-supported-sample-counts">below</a>.</li>
  <li><code>maxResourceSize</code> &ndash; an upper bound on the total image size in bytes, inclusive of all image subresources. Implementations <b>may</b> have an address space limit on total size of a resource, which is advertised by this property. <code>maxResourceSize</code> <b>must</b> be at least 2<sup>31</sup>.</li>
  </ul>

@@ -686,6 +686,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>VRCompositor_WaitGetPoses</h4>
 <pre>public static&nbsp;int&nbsp;VRCompositor_WaitGetPoses&#8203;(<a href="../../../org/lwjgl/openvr/TrackedDevicePose.Buffer.html" title="class in org.lwjgl.openvr">TrackedDevicePose.Buffer</a>&nbsp;pRenderPoseArray,
+                                            @Nullable
                                             <a href="../../../org/lwjgl/openvr/TrackedDevicePose.Buffer.html" title="class in org.lwjgl.openvr">TrackedDevicePose.Buffer</a>&nbsp;pGamePoseArray)</pre>
 <div class="block">Scene applications should call this function to get poses to render with (and optionally poses predicted an additional frame out to use for gameplay).
  This function will block until "running start" milliseconds before the start of the frame, and should be called at the last moment before needing to

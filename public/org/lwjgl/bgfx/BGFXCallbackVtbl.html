@@ -174,7 +174,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <pre><code>
  struct bgfx_callback_vtbl_t {
-     void (*<a href="../../../org/lwjgl/bgfx/BGFXFatalCallbackI.html" title="interface in org.lwjgl.bgfx"><code>fatal</code></a>) (bgfx_callback_interface_t *_this, bgfx_fatal_t _code, char *_str);
+     void (*<a href="../../../org/lwjgl/bgfx/BGFXFatalCallbackI.html" title="interface in org.lwjgl.bgfx"><code>fatal</code></a>) (bgfx_callback_interface_t *_this, char const *_filePath, uint16_t _line, bgfx_fatal_t _code, char const *_str);
      void (*<a href="../../../org/lwjgl/bgfx/BGFXTraceVarArgsCallbackI.html" title="interface in org.lwjgl.bgfx"><code>trace_vargs</code></a>) (bgfx_callback_interface_t *_this, char const *_filePath, uint16_t _line, char const *_format, va_list _argList);
      void (*<a href="../../../org/lwjgl/bgfx/BGFXProfilerBeginI.html" title="interface in org.lwjgl.bgfx"><code>profiler_begin</code></a>) (bgfx_callback_interface_t *_this, char const *_name, uint32_t _abgr, char const *_filePath, uint16_t _line);
      void (*<a href="../../../org/lwjgl/bgfx/BGFXProfilerBeginLiteralI.html" title="interface in org.lwjgl.bgfx"><code>profiler_begin_literal</code></a>) (bgfx_callback_interface_t *_this, char const *_name, uint32_t _abgr, char const *_filePath, uint16_t _line);

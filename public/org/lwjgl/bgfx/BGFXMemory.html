@@ -151,7 +151,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">BGFXMemory</span>
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a>
 implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
-<div class="block">Memory obtained by calling <a href="../../../org/lwjgl/bgfx/BGFX.html#bgfx_alloc(int)"><code>alloc</code></a>, <a href="../../../org/lwjgl/bgfx/BGFX.html#bgfx_copy(java.nio.ByteBuffer)"><code>copy</code></a>, or <a href="../../../org/lwjgl/bgfx/BGFX.html#bgfx_make_ref(java.nio.ByteBuffer)"><code>make_ref</code></a>.
+<div class="block">Memory must be obtained by calling <a href="../../../org/lwjgl/bgfx/BGFX.html#bgfx_alloc(int)"><code>alloc</code></a>, <a href="../../../org/lwjgl/bgfx/BGFX.html#bgfx_copy(java.nio.ByteBuffer)"><code>copy</code></a>, or <a href="../../../org/lwjgl/bgfx/BGFX.html#bgfx_make_ref(java.nio.ByteBuffer)"><code>make_ref</code></a>.
+ 
+ <p>It is illegal to create this structure on stack and pass it to any bgfx API.</p>
  
  <h3>Member documentation</h3>
  

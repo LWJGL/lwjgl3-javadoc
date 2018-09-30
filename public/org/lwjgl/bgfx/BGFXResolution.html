@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":10,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":9,"i12":9,"i13":10,"i14":10,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -156,18 +156,22 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h3>Member documentation</h3>
  
  <ul>
+ <li><code>format</code> &ndash; backbuffer format</li>
  <li><code>width</code> &ndash; backbuffer width</li>
  <li><code>height</code> &ndash; backbuffer height</li>
  <li><code>reset</code> &ndash; reset parameters</li>
+ <li><code>maxFrameLatency</code> &ndash; maximum frame latency</li>
  </ul>
  
  <h3>Layout</h3>
  
  <pre><code>
  struct bgfx_resolution_t {
+     bgfx_texture_format_t format;
      uint32_t width;
      uint32_t height;
      uint32_t reset;
+     uint8_t maxFrameLatency;
  }</code></pre></div>
 </li>
 </ul>
@@ -215,7 +219,9 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#HEIGHT">HEIGHT</a>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#FORMAT">FORMAT</a>
+<br><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#HEIGHT">HEIGHT</a>
+<br><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#MAXFRAMELATENCY">MAXFRAMELATENCY</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#RESET">RESET</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct member offsets.</div>
@@ -327,47 +333,90 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#format()">format</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>format</code> field.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#format(int)">format</a></span>&#8203;(int&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Sets the specified value to the <code>format</code> field.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#height()">height</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>height</code> field.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#height(int)">height</a></span>&#8203;(int&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>height</code> field.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#malloc()">malloc</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx"><code>BGFXResolution</code></a> instance allocated with <a href="../../../org/lwjgl/system/MemoryUtil.html#memAlloc(int)"><code>memAlloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#mallocStack()">mallocStack</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx"><code>BGFXResolution</code></a> instance allocated on the thread-local <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#mallocStack(org.lwjgl.system.MemoryStack)">mallocStack</a></span>&#8203;(<a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx"><code>BGFXResolution</code></a> instance allocated on the specified <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>byte</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#maxFrameLatency()">maxFrameLatency</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>maxFrameLatency</code> field.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#maxFrameLatency(byte)">maxFrameLatency</a></span>&#8203;(byte&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Sets the specified value to the <code>maxFrameLatency</code> field.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nformat(long)">nformat</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#format()"><code>format()</code></a>.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nformat(long,int)">nformat</a></span>&#8203;(long&nbsp;struct,
+       int&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#format(int)"><code>format</code></a>.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nheight(long)">nheight</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#height()"><code>height()</code></a>.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nheight(long,int)">nheight</a></span>&#8203;(long&nbsp;struct,
        int&nbsp;value)</code></th>
@@ -375,14 +424,29 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#height(int)"><code>height</code></a>.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>static byte</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nmaxFrameLatency(long)">nmaxFrameLatency</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#maxFrameLatency()"><code>maxFrameLatency()</code></a>.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nmaxFrameLatency(long,byte)">nmaxFrameLatency</a></span>&#8203;(long&nbsp;struct,
+                byte&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#maxFrameLatency(byte)"><code>maxFrameLatency</code></a>.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nreset(long)">nreset</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#reset()"><code>reset()</code></a>.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nreset(long,int)">nreset</a></span>&#8203;(long&nbsp;struct,
       int&nbsp;value)</code></th>
@@ -390,14 +454,14 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#reset(int)"><code>reset</code></a>.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nwidth(long)">nwidth</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#width()"><code>width()</code></a>.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#nwidth(long,int)">nwidth</a></span>&#8203;(long&nbsp;struct,
       int&nbsp;value)</code></th>
@@ -405,51 +469,53 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#width(int)"><code>width</code></a>.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#reset()">reset</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>reset</code> field.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#reset(int)">reset</a></span>&#8203;(int&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>reset</code> field.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#set(int,int,int)">set</a></span>&#8203;(int&nbsp;width,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#set(int,int,int,int,byte)">set</a></span>&#8203;(int&nbsp;format,
+   int&nbsp;width,
    int&nbsp;height,
-   int&nbsp;reset)</code></th>
+   int&nbsp;reset,
+   byte&nbsp;maxFrameLatency)</code></th>
 <td class="colLast">
 <div class="block">Initializes this struct with the specified values.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#set(org.lwjgl.bgfx.BGFXResolution)">set</a></span>&#8203;(<a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a>&nbsp;src)</code></th>
 <td class="colLast">
 <div class="block">Copies the specified struct data to this struct.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>sizeof(struct)</code>.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#width()">width</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>width</code> field.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXResolution.html#width(int)">width</a></span>&#8203;(int&nbsp;value)</code></th>
 <td class="colLast">
@@ -517,6 +583,9 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <h4>ALIGNOF</h4>
 <div class="block">The struct alignment in bytes.</div>
 </li></ul>
+<a id="FORMAT">
+<!--   -->
+</a>
 <a id="WIDTH">
 <!--   -->
 </a>
@@ -526,9 +595,12 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <a id="RESET">
 <!--   -->
 </a>
+<a id="MAXFRAMELATENCY">
+<!--   -->
+</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>WIDTH, HEIGHT, RESET</h4>
+<h4>FORMAT, WIDTH, HEIGHT, RESET, MAXFRAMELATENCY</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -579,6 +651,16 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </dl>
 </li>
 </ul>
+<a id="format()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>format</h4>
+<pre>public&nbsp;int&nbsp;format()</pre>
+<div class="block">Returns the value of the <code>format</code> field.</div>
+</li>
+</ul>
 <a id="width()">
 <!--   -->
 </a>
@@ -607,6 +689,26 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <h4>reset</h4>
 <pre>public&nbsp;int&nbsp;reset()</pre>
 <div class="block">Returns the value of the <code>reset</code> field.</div>
+</li>
+</ul>
+<a id="maxFrameLatency()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>maxFrameLatency</h4>
+<pre>public&nbsp;byte&nbsp;maxFrameLatency()</pre>
+<div class="block">Returns the value of the <code>maxFrameLatency</code> field.</div>
+</li>
+</ul>
+<a id="format(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>format</h4>
+<pre>public&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a>&nbsp;format&#8203;(int&nbsp;value)</pre>
+<div class="block">Sets the specified value to the <code>format</code> field.</div>
 </li>
 </ul>
 <a id="width(int)">
@@ -639,15 +741,27 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Sets the specified value to the <code>reset</code> field.</div>
 </li>
 </ul>
-<a id="set(int,int,int)">
+<a id="maxFrameLatency(byte)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>maxFrameLatency</h4>
+<pre>public&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a>&nbsp;maxFrameLatency&#8203;(byte&nbsp;value)</pre>
+<div class="block">Sets the specified value to the <code>maxFrameLatency</code> field.</div>
+</li>
+</ul>
+<a id="set(int,int,int,int,byte)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a>&nbsp;set&#8203;(int&nbsp;width,
+<pre>public&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx">BGFXResolution</a>&nbsp;set&#8203;(int&nbsp;format,
+                          int&nbsp;width,
                           int&nbsp;height,
-                          int&nbsp;reset)</pre>
+                          int&nbsp;reset,
+                          byte&nbsp;maxFrameLatency)</pre>
 <div class="block">Initializes this struct with the specified values.</div>
 </li>
 </ul>
@@ -766,6 +880,16 @@ public static&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="
 </dl>
 </li>
 </ul>
+<a id="nformat(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nformat</h4>
+<pre>public static&nbsp;int&nbsp;nformat&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#format()"><code>format()</code></a>.</div>
+</li>
+</ul>
 <a id="nwidth(long)">
 <!--   -->
 </a>
@@ -796,6 +920,27 @@ public static&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#reset()"><code>reset()</code></a>.</div>
 </li>
 </ul>
+<a id="nmaxFrameLatency(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nmaxFrameLatency</h4>
+<pre>public static&nbsp;byte&nbsp;nmaxFrameLatency&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#maxFrameLatency()"><code>maxFrameLatency()</code></a>.</div>
+</li>
+</ul>
+<a id="nformat(long,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nformat</h4>
+<pre>public static&nbsp;void&nbsp;nformat&#8203;(long&nbsp;struct,
+                           int&nbsp;value)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#format(int)"><code>format</code></a>.</div>
+</li>
+</ul>
 <a id="nwidth(long,int)">
 <!--   -->
 </a>
@@ -821,12 +966,23 @@ public static&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXResolution.html" title="
 <a id="nreset(long,int)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>nreset</h4>
 <pre>public static&nbsp;void&nbsp;nreset&#8203;(long&nbsp;struct,
                           int&nbsp;value)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#reset(int)"><code>reset</code></a>.</div>
+</li>
+</ul>
+<a id="nmaxFrameLatency(long,byte)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>nmaxFrameLatency</h4>
+<pre>public static&nbsp;void&nbsp;nmaxFrameLatency&#8203;(long&nbsp;struct,
+                                    byte&nbsp;value)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXResolution.html#maxFrameLatency(byte)"><code>maxFrameLatency</code></a>.</div>
 </li>
 </ul>
 </li>

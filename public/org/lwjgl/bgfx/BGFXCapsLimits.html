@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":10,"i47":10,"i48":10};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":9,"i47":9,"i48":10,"i49":10,"i50":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -166,6 +166,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
  <li><code>maxShaders</code> &ndash; maximum number of shader handles</li>
  <li><code>maxTextures</code> &ndash; maximum number of texture handles</li>
  <li><code>maxTextureSamplers</code> &ndash; maximum number of texture samplers</li>
+ <li><code>maxComputeBindings</code> &ndash; maximum number of compute bindings</li>
  <li><code>maxVertexDecls</code> &ndash; maximum number of vertex format declarations</li>
  <li><code>maxVertexStreams</code> &ndash; maximum number of vertex streams</li>
  <li><code>maxIndexBuffers</code> &ndash; maximum number of index buffer handles</li>
@@ -194,6 +195,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
      uint32_t maxShaders;
      uint32_t maxTextures;
      uint32_t maxTextureSamplers;
+     uint32_t maxComputeBindings;
      uint32_t maxVertexDecls;
      uint32_t maxVertexStreams;
      uint32_t maxIndexBuffers;
@@ -268,6 +270,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#MAXBLITS">MAXBLITS</a>
+<br><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#MAXCOMPUTEBINDINGS">MAXCOMPUTEBINDINGS</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#MAXDRAWCALLS">MAXDRAWCALLS</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#MAXDYNAMICINDEXBUFFERS">MAXDYNAMICINDEXBUFFERS</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#MAXDYNAMICVERTEXBUFFERS">MAXDYNAMICVERTEXBUFFERS</a>
@@ -293,7 +296,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#SIZEOF">SIZEOF</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#SIZEOF">SIZEOF</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct size in bytes.</div>
 </td>
@@ -393,306 +396,320 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxComputeBindings()">maxComputeBindings</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>maxComputeBindings</code> field.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxDrawCalls()">maxDrawCalls</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxDrawCalls</code> field.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxDynamicIndexBuffers()">maxDynamicIndexBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxDynamicIndexBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxDynamicVertexBuffers()">maxDynamicVertexBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxDynamicVertexBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxEncoders()">maxEncoders</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxEncoders</code> field.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxFBAttachments()">maxFBAttachments</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxFBAttachments</code> field.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxFrameBuffers()">maxFrameBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxFrameBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxIndexBuffers()">maxIndexBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxIndexBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxOcclusionQueries()">maxOcclusionQueries</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxOcclusionQueries</code> field.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxPrograms()">maxPrograms</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxPrograms</code> field.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxShaders()">maxShaders</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxShaders</code> field.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxTextureLayers()">maxTextureLayers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxTextureLayers</code> field.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxTextures()">maxTextures</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxTextures</code> field.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxTextureSamplers()">maxTextureSamplers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxTextureSamplers</code> field.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxTextureSize()">maxTextureSize</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxTextureSize</code> field.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxUniforms()">maxUniforms</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxUniforms</code> field.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxVertexBuffers()">maxVertexBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxVertexBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxVertexDecls()">maxVertexDecls</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxVertexDecls</code> field.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxVertexStreams()">maxVertexStreams</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxVertexStreams</code> field.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxViews()">maxViews</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>maxViews</code> field.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxBlits(long)">nmaxBlits</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxBlits()"><code>maxBlits()</code></a>.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxComputeBindings(long)">nmaxComputeBindings</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxComputeBindings()"><code>maxComputeBindings()</code></a>.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxDrawCalls(long)">nmaxDrawCalls</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxDrawCalls()"><code>maxDrawCalls()</code></a>.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxDynamicIndexBuffers(long)">nmaxDynamicIndexBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxDynamicIndexBuffers()"><code>maxDynamicIndexBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxDynamicVertexBuffers(long)">nmaxDynamicVertexBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxDynamicVertexBuffers()"><code>maxDynamicVertexBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxEncoders(long)">nmaxEncoders</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxEncoders()"><code>maxEncoders()</code></a>.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxFBAttachments(long)">nmaxFBAttachments</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxFBAttachments()"><code>maxFBAttachments()</code></a>.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxFrameBuffers(long)">nmaxFrameBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxFrameBuffers()"><code>maxFrameBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxIndexBuffers(long)">nmaxIndexBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxIndexBuffers()"><code>maxIndexBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxOcclusionQueries(long)">nmaxOcclusionQueries</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxOcclusionQueries()"><code>maxOcclusionQueries()</code></a>.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxPrograms(long)">nmaxPrograms</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxPrograms()"><code>maxPrograms()</code></a>.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxShaders(long)">nmaxShaders</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxShaders()"><code>maxShaders()</code></a>.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxTextureLayers(long)">nmaxTextureLayers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxTextureLayers()"><code>maxTextureLayers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxTextures(long)">nmaxTextures</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxTextures()"><code>maxTextures()</code></a>.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxTextureSamplers(long)">nmaxTextureSamplers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxTextureSamplers()"><code>maxTextureSamplers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxTextureSize(long)">nmaxTextureSize</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxTextureSize()"><code>maxTextureSize()</code></a>.</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxUniforms(long)">nmaxUniforms</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxUniforms()"><code>maxUniforms()</code></a>.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxVertexBuffers(long)">nmaxVertexBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxVertexBuffers()"><code>maxVertexBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxVertexDecls(long)">nmaxVertexDecls</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxVertexDecls()"><code>maxVertexDecls()</code></a>.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxVertexStreams(long)">nmaxVertexStreams</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxVertexStreams()"><code>maxVertexStreams()</code></a>.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#nmaxViews(long)">nmaxViews</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxViews()"><code>maxViews()</code></a>.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#ntransientIbSize(long)">ntransientIbSize</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#transientIbSize()"><code>transientIbSize()</code></a>.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#ntransientVbSize(long)">ntransientVbSize</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#transientVbSize()"><code>transientVbSize()</code></a>.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>sizeof(struct)</code>.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#transientIbSize()">transientIbSize</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>transientIbSize</code> field.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#transientVbSize()">transientVbSize</a></span>()</code></th>
 <td class="colLast">
@@ -786,6 +803,9 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <a id="MAXTEXTURESAMPLERS">
 <!--   -->
 </a>
+<a id="MAXCOMPUTEBINDINGS">
+<!--   -->
+</a>
 <a id="MAXVERTEXDECLS">
 <!--   -->
 </a>
@@ -821,7 +841,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>MAXDRAWCALLS, MAXBLITS, MAXTEXTURESIZE, MAXTEXTURELAYERS, MAXVIEWS, MAXFRAMEBUFFERS, MAXFBATTACHMENTS, MAXPROGRAMS, MAXSHADERS, MAXTEXTURES, MAXTEXTURESAMPLERS, MAXVERTEXDECLS, MAXVERTEXSTREAMS, MAXINDEXBUFFERS, MAXVERTEXBUFFERS, MAXDYNAMICINDEXBUFFERS, MAXDYNAMICVERTEXBUFFERS, MAXUNIFORMS, MAXOCCLUSIONQUERIES, MAXENCODERS, TRANSIENTVBSIZE, TRANSIENTIBSIZE</h4>
+<h4>MAXDRAWCALLS, MAXBLITS, MAXTEXTURESIZE, MAXTEXTURELAYERS, MAXVIEWS, MAXFRAMEBUFFERS, MAXFBATTACHMENTS, MAXPROGRAMS, MAXSHADERS, MAXTEXTURES, MAXTEXTURESAMPLERS, MAXCOMPUTEBINDINGS, MAXVERTEXDECLS, MAXVERTEXSTREAMS, MAXINDEXBUFFERS, MAXVERTEXBUFFERS, MAXDYNAMICINDEXBUFFERS, MAXDYNAMICVERTEXBUFFERS, MAXUNIFORMS, MAXOCCLUSIONQUERIES, MAXENCODERS, TRANSIENTVBSIZE, TRANSIENTIBSIZE</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -980,6 +1000,16 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <h4>maxTextureSamplers</h4>
 <pre>public&nbsp;int&nbsp;maxTextureSamplers()</pre>
 <div class="block">Returns the value of the <code>maxTextureSamplers</code> field.</div>
+</li>
+</ul>
+<a id="maxComputeBindings()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>maxComputeBindings</h4>
+<pre>public&nbsp;int&nbsp;maxComputeBindings()</pre>
+<div class="block">Returns the value of the <code>maxComputeBindings</code> field.</div>
 </li>
 </ul>
 <a id="maxVertexDecls()">
@@ -1249,6 +1279,16 @@ public static&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.Buffer.html" 
 <h4>nmaxTextureSamplers</h4>
 <pre>public static&nbsp;int&nbsp;nmaxTextureSamplers&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxTextureSamplers()"><code>maxTextureSamplers()</code></a>.</div>
+</li>
+</ul>
+<a id="nmaxComputeBindings(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nmaxComputeBindings</h4>
+<pre>public static&nbsp;int&nbsp;nmaxComputeBindings&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXCapsLimits.html#maxComputeBindings()"><code>maxComputeBindings()</code></a>.</div>
 </li>
 </ul>
 <a id="nmaxVertexDecls(long)">

@@ -150,7 +150,23 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">VkQueueFamilyCheckpointPropertiesNV</span>
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a></pre>
-<div class="block"><h3>Layout</h3>
+<div class="block">return structure for queue family checkpoint info query.
+ 
+ <h5>Valid Usage (Implicit)</h5>
+ 
+ <ul>
+ <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/NVDeviceDiagnosticCheckpoints.html#VK_STRUCTURE_TYPE_QUEUE_FAMILY_CHECKPOINT_PROPERTIES_NV"><code>STRUCTURE_TYPE_QUEUE_FAMILY_CHECKPOINT_PROPERTIES_NV</code></a></li>
+ </ul>
+ 
+ <h3>Member documentation</h3>
+ 
+ <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
+ <li><code>checkpointExecutionStageMask</code> &ndash; a mask indicating which pipeline stages the implementation can execute checkpoint markers in.</li>
+ </ul>
+ 
+ <h3>Layout</h3>
  
  <pre><code>
  struct VkQueueFamilyCheckpointPropertiesNV {

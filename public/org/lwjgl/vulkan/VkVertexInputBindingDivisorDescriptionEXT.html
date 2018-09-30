@@ -161,7 +161,9 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>binding</code> <b>must</b> be less than <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceLimits.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceLimits</code></a><code>::maxVertexInputBindings</code></li>
- <li><code>divisor</code> <b>must</b> be a value between 1 and <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT</code></a><code>::maxVertexAttribDivisor</code>, inclusive.</li>
+ <li>If the <code>vertexAttributeInstanceRateZeroDivisor</code> feature is not enabled, <code>divisor</code> <b>must</b> not be 0</li>
+ <li>If the <code>vertexAttributeInstanceRateDivisor</code> feature is not enabled, <code>divisor</code> <b>must</b> be 1</li>
+ <li><code>divisor</code> <b>must</b> be a value between 0 and <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT</code></a><code>::maxVertexAttribDivisor</code>, inclusive.</li>
  <li><a href="../../../org/lwjgl/vulkan/VkVertexInputBindingDescription.html" title="class in org.lwjgl.vulkan"><code>VkVertexInputBindingDescription</code></a><code>::inputRate</code> <b>must</b> be of type <a href="../../../org/lwjgl/vulkan/VK10.html#VK_VERTEX_INPUT_RATE_INSTANCE"><code>VERTEX_INPUT_RATE_INSTANCE</code></a> for this <code>binding</code>.</li>
  </ul>
  
@@ -173,7 +175,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>binding</code> &ndash; the binding number for which the divisor is specified.</li>
- <li><code>divisor</code> &ndash; the the number of successive instances that will use the same value of the vertex attribute when instanced rendering is enabled. For example, if the divisor is N, the same vertex attribute will applied to N successive instances before moving on to the next vertex attribute. The maximum value of divisor is implementation dependent and can be queried using <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT</code></a><code>::maxVertexAttribDivisor</code>.</li>
+ <li><code>divisor</code> &ndash; the number of successive instances that will use the same value of the vertex attribute when instanced rendering is enabled. For example, if the divisor is N, the same vertex attribute will applied to N successive instances before moving on to the next vertex attribute. The maximum value of divisor is implementation dependent and can be queried using <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT</code></a><code>::maxVertexAttribDivisor</code>. A value of 0 <b>can</b> be used for the divisor if the <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#features-features-vertexAttributeInstanceRateZeroDivisor"><code>vertexAttributeInstanceRateZeroDivisor</code></a> feature is enabled. In this case, the same vertex attribute will be applied to all instances.</li>
  </ul>
  
  <h3>Layout</h3>

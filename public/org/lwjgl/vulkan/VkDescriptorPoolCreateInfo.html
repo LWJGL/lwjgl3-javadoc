@@ -175,7 +175,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO"><code>STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO</code></a></li>
- <li><code>pNext</code> <b>must</b> be <code>NULL</code></li>
+ <li><code>pNext</code> <b>must</b> be <code>NULL</code> or a pointer to a valid instance of <a href="../../../org/lwjgl/vulkan/VkDescriptorPoolInlineUniformBlockCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkDescriptorPoolInlineUniformBlockCreateInfoEXT</code></a></li>
  <li><code>flags</code> <b>must</b> be a valid combination of <code>VkDescriptorPoolCreateFlagBits</code> values</li>
  <li><code>pPoolSizes</code> <b>must</b> be a valid pointer to an array of <code>poolSizeCount</code> valid <a href="../../../org/lwjgl/vulkan/VkDescriptorPoolSize.html" title="class in org.lwjgl.vulkan"><code>VkDescriptorPoolSize</code></a> structures</li>
  <li><code>poolSizeCount</code> <b>must</b> be greater than 0</li>

@@ -57,7 +57,7 @@ var pathtoroot = "../../../";loadScripts(document, 'script');</script>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/lwjgl/vulkan/VkFreeFunctionI.html" title="interface in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/lwjgl/vulkan/VkGeometryTrianglesNVX.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -171,7 +171,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <li>If <code>flags</code> contains the <a href="../../../org/lwjgl/vulkan/VK10.html#VK_PIPELINE_CREATE_DERIVATIVE_BIT"><code>PIPELINE_CREATE_DERIVATIVE_BIT</code></a> flag, and <code>basePipelineIndex</code> is not -1, <code>basePipelineHandle</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a></li>
  <li>If <code>flags</code> contains the <a href="../../../org/lwjgl/vulkan/VK10.html#VK_PIPELINE_CREATE_DERIVATIVE_BIT"><code>PIPELINE_CREATE_DERIVATIVE_BIT</code></a> flag, and <code>basePipelineHandle</code> is not <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a>, <code>basePipelineIndex</code> <b>must</b> be -1</li>
  <li>The <code>stage</code> member of each element of <code>pStages</code> <b>must</b> be unique</li>
- <li>The <code>stage</code> member of one element of <code>pStages</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SHADER_STAGE_VERTEX_BIT"><code>SHADER_STAGE_VERTEX_BIT</code></a></li>
+ <li>The geometric shader stages provided in <code>pStages</code> <b>must</b> be either from the mesh shading pipeline (<code>stage</code> is <a href="../../../org/lwjgl/vulkan/NVMeshShader.html#VK_SHADER_STAGE_TASK_BIT_NV"><code>SHADER_STAGE_TASK_BIT_NV</code></a> or <a href="../../../org/lwjgl/vulkan/NVMeshShader.html#VK_SHADER_STAGE_MESH_BIT_NV"><code>SHADER_STAGE_MESH_BIT_NV</code></a>) or from the primitive shading pipeline (<code>stage</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SHADER_STAGE_VERTEX_BIT"><code>SHADER_STAGE_VERTEX_BIT</code></a>, <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT"><code>SHADER_STAGE_TESSELLATION_CONTROL_BIT</code></a>, <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT"><code>SHADER_STAGE_TESSELLATION_EVALUATION_BIT</code></a>, or <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SHADER_STAGE_GEOMETRY_BIT"><code>SHADER_STAGE_GEOMETRY_BIT</code></a>).</li>
+ <li>The <code>stage</code> member of one element of <code>pStages</code> <b>must</b> be either <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SHADER_STAGE_VERTEX_BIT"><code>SHADER_STAGE_VERTEX_BIT</code></a> or <a href="../../../org/lwjgl/vulkan/NVMeshShader.html#VK_SHADER_STAGE_MESH_BIT_NV"><code>SHADER_STAGE_MESH_BIT_NV</code></a>.</li>
  <li>The <code>stage</code> member of each element of <code>pStages</code> <b>must</b> not be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SHADER_STAGE_COMPUTE_BIT"><code>SHADER_STAGE_COMPUTE_BIT</code></a></li>
  <li>If <code>pStages</code> includes a tessellation control shader stage, it <b>must</b> include a tessellation evaluation shader stage</li>
  <li>If <code>pStages</code> includes a tessellation evaluation shader stage, it <b>must</b> include a tessellation control shader stage</li>
@@ -218,17 +219,18 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <li>If <code>pStages</code> includes a fragment shader stage and an input attachment was referenced by the <a href="../../../org/lwjgl/vulkan/VkRenderPassInputAttachmentAspectCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassInputAttachmentAspectCreateInfo</code></a> at <code>renderPass</code> create time, its shader code <b>must</b> not read from any aspect that was not specified in the <code>aspectMask</code> of the corresponding <a href="../../../org/lwjgl/vulkan/VkInputAttachmentAspectReference.html" title="class in org.lwjgl.vulkan"><code>VkInputAttachmentAspectReference</code></a> structure.</li>
  <li>The number of resources in <code>layout</code> accessible to each shader stage that is used by the pipeline <b>must</b> be less than or equal to <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceLimits.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceLimits</code></a><code>::maxPerStageResources</code></li>
  <li>If no element of the <code>pDynamicStates</code> member of <code>pDynamicState</code> is <a href="../../../org/lwjgl/vulkan/NVClipSpaceWScaling.html#VK_DYNAMIC_STATE_VIEWPORT_W_SCALING_NV"><code>DYNAMIC_STATE_VIEWPORT_W_SCALING_NV</code></a>, and the <code>viewportWScalingEnable</code> member of a <a href="../../../org/lwjgl/vulkan/VkPipelineViewportWScalingStateCreateInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkPipelineViewportWScalingStateCreateInfoNV</code></a> structure, chained to the <code>pNext</code> chain of <code>pViewportState</code>, is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>, the <code>pViewportWScalings</code> member of the <a href="../../../org/lwjgl/vulkan/VkPipelineViewportWScalingStateCreateInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkPipelineViewportWScalingStateCreateInfoNV</code></a> <b>must</b> be a pointer to an array of <a href="../../../org/lwjgl/vulkan/VkPipelineViewportWScalingStateCreateInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkPipelineViewportWScalingStateCreateInfoNV</code></a><code>::viewportCount</code> valid <a href="../../../org/lwjgl/vulkan/VkViewportWScalingNV.html" title="class in org.lwjgl.vulkan"><code>VkViewportWScalingNV</code></a> structures</li>
+ <li>If <code>pStages</code> includes a vertex shader stage, <code>pVertexInputState</code> <b>must</b> be a valid pointer to a valid <a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineVertexInputStateCreateInfo</code></a> structure</li>
+ <li>If <code>pStages</code> includes a vertex shader stage, <code>pInputAssemblyState</code> <b>must</b> be a valid pointer to a valid <a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineInputAssemblyStateCreateInfo</code></a> structure</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
  
  <ul>
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO"><code>STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO</code></a></li>
- <li><code>pNext</code> <b>must</b> be <code>NULL</code> or a pointer to a valid instance of <a href="../../../org/lwjgl/vulkan/VkPipelineDiscardRectangleStateCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkPipelineDiscardRectangleStateCreateInfoEXT</code></a></li>
+ <li>Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <b>must</b> be either <code>NULL</code> or a pointer to a valid instance of <a href="../../../org/lwjgl/vulkan/VkPipelineDiscardRectangleStateCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkPipelineDiscardRectangleStateCreateInfoEXT</code></a> or <a href="../../../org/lwjgl/vulkan/VkPipelineRepresentativeFragmentTestStateCreateInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkPipelineRepresentativeFragmentTestStateCreateInfoNV</code></a></li>
+ <li>Each <code>sType</code> member in the <code>pNext</code> chain <b>must</b> be unique</li>
  <li><code>flags</code> <b>must</b> be a valid combination of <code>VkPipelineCreateFlagBits</code> values</li>
  <li><code>pStages</code> <b>must</b> be a valid pointer to an array of <code>stageCount</code> valid <a href="../../../org/lwjgl/vulkan/VkPipelineShaderStageCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineShaderStageCreateInfo</code></a> structures</li>
- <li><code>pVertexInputState</code> <b>must</b> be a valid pointer to a valid <a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineVertexInputStateCreateInfo</code></a> structure</li>
- <li><code>pInputAssemblyState</code> <b>must</b> be a valid pointer to a valid <a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineInputAssemblyStateCreateInfo</code></a> structure</li>
  <li><code>pRasterizationState</code> <b>must</b> be a valid pointer to a valid <a href="../../../org/lwjgl/vulkan/VkPipelineRasterizationStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineRasterizationStateCreateInfo</code></a> structure</li>
  <li>If <code>pDynamicState</code> is not <code>NULL</code>, <code>pDynamicState</code> <b>must</b> be a valid pointer to a valid <a href="../../../org/lwjgl/vulkan/VkPipelineDynamicStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineDynamicStateCreateInfo</code></a> structure</li>
  <li><code>layout</code> <b>must</b> be a valid <code>VkPipelineLayout</code> handle</li>
@@ -249,8 +251,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <li><code>flags</code> &ndash; a bitmask of <code>VkPipelineCreateFlagBits</code> specifying how the pipeline will be generated.</li>
  <li><code>stageCount</code> &ndash; the number of entries in the <code>pStages</code> array.</li>
  <li><code>pStages</code> &ndash; an array of size <code>stageCount</code> structures of type <a href="../../../org/lwjgl/vulkan/VkPipelineShaderStageCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineShaderStageCreateInfo</code></a> describing the set of the shader stages to be included in the graphics pipeline.</li>
- <li><code>pVertexInputState</code> &ndash; a pointer to an instance of the <a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineVertexInputStateCreateInfo</code></a> structure.</li>
- <li><code>pInputAssemblyState</code> &ndash; a pointer to an instance of the <a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineInputAssemblyStateCreateInfo</code></a> structure which determines input assembly behavior, as described in <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#drawing">Drawing Commands</a>.</li>
+ <li><code>pVertexInputState</code> &ndash; a pointer to an instance of the <a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineVertexInputStateCreateInfo</code></a> structure. It is ignored if the pipeline includes a mesh shader stage.</li>
+ <li><code>pInputAssemblyState</code> &ndash; a pointer to an instance of the <a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineInputAssemblyStateCreateInfo</code></a> structure which determines input assembly behavior, as described in <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#drawing">Drawing Commands</a>. It is ignored if the pipeline includes a mesh shader stage.</li>
  <li><code>pTessellationState</code> &ndash; a pointer to an instance of the <a href="../../../org/lwjgl/vulkan/VkPipelineTessellationStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineTessellationStateCreateInfo</code></a> structure, and is ignored if the pipeline does not include a tessellation control shader stage and tessellation evaluation shader stage.</li>
  <li><code>pViewportState</code> &ndash; a pointer to an instance of the <a href="../../../org/lwjgl/vulkan/VkPipelineViewportStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineViewportStateCreateInfo</code></a> structure, and is ignored if the pipeline has rasterization disabled.</li>
  <li><code>pRasterizationState</code> &ndash; a pointer to an instance of the <a href="../../../org/lwjgl/vulkan/VkPipelineRasterizationStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineRasterizationStateCreateInfo</code></a> structure.</li>
@@ -1388,7 +1390,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>pVertexInputState</h4>
-<pre>public&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineVertexInputStateCreateInfo</a>&nbsp;pVertexInputState()</pre>
+<pre>@Nullable
+public&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineVertexInputStateCreateInfo</a>&nbsp;pVertexInputState()</pre>
 <div class="block">Returns a <a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineVertexInputStateCreateInfo</code></a> view of the struct pointed to by the <code>pVertexInputState</code> field.</div>
 </li>
 </ul>
@@ -1398,7 +1401,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>pInputAssemblyState</h4>
-<pre>public&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineInputAssemblyStateCreateInfo</a>&nbsp;pInputAssemblyState()</pre>
+<pre>@Nullable
+public&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineInputAssemblyStateCreateInfo</a>&nbsp;pInputAssemblyState()</pre>
 <div class="block">Returns a <a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineInputAssemblyStateCreateInfo</code></a> view of the struct pointed to by the <code>pInputAssemblyState</code> field.</div>
 </li>
 </ul>
@@ -1574,7 +1578,8 @@ public&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineDynamicStateCreateInfo.
 <ul class="blockList">
 <li class="blockList">
 <h4>pVertexInputState</h4>
-<pre>public&nbsp;<a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.html" title="class in org.lwjgl.vulkan">VkGraphicsPipelineCreateInfo</a>&nbsp;pVertexInputState&#8203;(<a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineVertexInputStateCreateInfo</a>&nbsp;value)</pre>
+<pre>public&nbsp;<a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.html" title="class in org.lwjgl.vulkan">VkGraphicsPipelineCreateInfo</a>&nbsp;pVertexInputState&#8203;(@Nullable
+                                                      <a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineVertexInputStateCreateInfo</a>&nbsp;value)</pre>
 <div class="block">Sets the address of the specified <a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineVertexInputStateCreateInfo</code></a> to the <code>pVertexInputState</code> field.</div>
 </li>
 </ul>
@@ -1584,7 +1589,8 @@ public&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineDynamicStateCreateInfo.
 <ul class="blockList">
 <li class="blockList">
 <h4>pInputAssemblyState</h4>
-<pre>public&nbsp;<a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.html" title="class in org.lwjgl.vulkan">VkGraphicsPipelineCreateInfo</a>&nbsp;pInputAssemblyState&#8203;(<a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineInputAssemblyStateCreateInfo</a>&nbsp;value)</pre>
+<pre>public&nbsp;<a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.html" title="class in org.lwjgl.vulkan">VkGraphicsPipelineCreateInfo</a>&nbsp;pInputAssemblyState&#8203;(@Nullable
+                                                        <a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineInputAssemblyStateCreateInfo</a>&nbsp;value)</pre>
 <div class="block">Sets the address of the specified <a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkPipelineInputAssemblyStateCreateInfo</code></a> to the <code>pInputAssemblyState</code> field.</div>
 </li>
 </ul>
@@ -1724,7 +1730,9 @@ public&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineDynamicStateCreateInfo.
                                         long&nbsp;pNext,
                                         int&nbsp;flags,
                                         <a href="../../../org/lwjgl/vulkan/VkPipelineShaderStageCreateInfo.Buffer.html" title="class in org.lwjgl.vulkan">VkPipelineShaderStageCreateInfo.Buffer</a>&nbsp;pStages,
+                                        @Nullable
                                         <a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineVertexInputStateCreateInfo</a>&nbsp;pVertexInputState,
+                                        @Nullable
                                         <a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineInputAssemblyStateCreateInfo</a>&nbsp;pInputAssemblyState,
                                         @Nullable
                                         <a href="../../../org/lwjgl/vulkan/VkPipelineTessellationStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineTessellationStateCreateInfo</a>&nbsp;pTessellationState,
@@ -2048,7 +2056,8 @@ public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateIn
 <ul class="blockList">
 <li class="blockList">
 <h4>npVertexInputState</h4>
-<pre>public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineVertexInputStateCreateInfo</a>&nbsp;npVertexInputState&#8203;(long&nbsp;struct)</pre>
+<pre>@Nullable
+public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineVertexInputStateCreateInfo</a>&nbsp;npVertexInputState&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.html#pVertexInputState()"><code>pVertexInputState()</code></a>.</div>
 </li>
 </ul>
@@ -2058,7 +2067,8 @@ public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateIn
 <ul class="blockList">
 <li class="blockList">
 <h4>npInputAssemblyState</h4>
-<pre>public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineInputAssemblyStateCreateInfo</a>&nbsp;npInputAssemblyState&#8203;(long&nbsp;struct)</pre>
+<pre>@Nullable
+public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineInputAssemblyStateCreateInfo</a>&nbsp;npInputAssemblyState&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.html#pInputAssemblyState()"><code>pInputAssemblyState()</code></a>.</div>
 </li>
 </ul>
@@ -2250,6 +2260,7 @@ public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineDynamicStateCrea
 <li class="blockList">
 <h4>npVertexInputState</h4>
 <pre>public static&nbsp;void&nbsp;npVertexInputState&#8203;(long&nbsp;struct,
+                                      @Nullable
                                       <a href="../../../org/lwjgl/vulkan/VkPipelineVertexInputStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineVertexInputStateCreateInfo</a>&nbsp;value)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.html#pVertexInputState(org.lwjgl.vulkan.VkPipelineVertexInputStateCreateInfo)"><code>pVertexInputState</code></a>.</div>
 </li>
@@ -2261,6 +2272,7 @@ public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineDynamicStateCrea
 <li class="blockList">
 <h4>npInputAssemblyState</h4>
 <pre>public static&nbsp;void&nbsp;npInputAssemblyState&#8203;(long&nbsp;struct,
+                                        @Nullable
                                         <a href="../../../org/lwjgl/vulkan/VkPipelineInputAssemblyStateCreateInfo.html" title="class in org.lwjgl.vulkan">VkPipelineInputAssemblyStateCreateInfo</a>&nbsp;value)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.html#pInputAssemblyState(org.lwjgl.vulkan.VkPipelineInputAssemblyStateCreateInfo)"><code>pInputAssemblyState</code></a>.</div>
 </li>
@@ -2462,7 +2474,7 @@ public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkPipelineDynamicStateCrea
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/lwjgl/vulkan/VkFreeFunctionI.html" title="interface in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/lwjgl/vulkan/VkGeometryTrianglesNVX.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../org/lwjgl/vulkan/VkGraphicsPipelineCreateInfo.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
