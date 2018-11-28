@@ -155,7 +155,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <h5>Description</h5>
  
- <p>The queue returned by <a href="../../../org/lwjgl/vulkan/VK11.html#vkGetDeviceQueue2(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkDeviceQueueInfo2,org.lwjgl.PointerBuffer)"><code>GetDeviceQueue2</code></a> <b>must</b> have the same <code>flags</code> value from this structure as that used at device creation time in a <a href="../../../org/lwjgl/vulkan/VkDeviceQueueCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkDeviceQueueCreateInfo</code></a> instance. If no matching <code>flags</code> were specified at device creation time then <code>pQueue</code> will return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a>.</p>
+ <p>The queue returned by <code>vkGetDeviceQueue2</code> <b>must</b> have the same <code>flags</code> value from this structure as that used at device creation time in a <a href="../../../org/lwjgl/vulkan/VkDeviceQueueCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkDeviceQueueCreateInfo</code></a> instance. If no matching <code>flags</code> were specified at device creation time then <code>pQueue</code> will return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a>.</p>
  
  <h5>Valid Usage</h5>
  
@@ -181,7 +181,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>sType</code> &ndash; the type of this structure.</li>
- <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure. The <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkDeviceQueueInfo2.html" title="class in org.lwjgl.vulkan"><code>VkDeviceQueueInfo2</code></a> is used to provide additional image parameters to <a href="../../../org/lwjgl/vulkan/VK11.html#vkGetDeviceQueue2(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkDeviceQueueInfo2,org.lwjgl.PointerBuffer)"><code>GetDeviceQueue2</code></a>.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure. The <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkDeviceQueueInfo2.html" title="class in org.lwjgl.vulkan"><code>VkDeviceQueueInfo2</code></a> is used to provide additional image parameters to <code>vkGetDeviceQueue2</code>.</li>
  <li><code>flags</code> &ndash; a <code>VkDeviceQueueCreateFlags</code> value indicating the flags used to create the device queue.</li>
  <li><code>queueFamilyIndex</code> &ndash; the index of the queue family to which the queue belongs.</li>
  <li><code>queueIndex</code> &ndash; the index within this queue family of the queue to retrieve.</li>

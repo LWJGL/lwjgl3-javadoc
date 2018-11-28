@@ -216,33 +216,40 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#ALC_SOFT_device_clock">ALC_SOFT_device_clock</a></span></code></th>
+<td class="colLast">
+<div class="block">When true, <a href="../../../org/lwjgl/openal/SOFTDeviceClock.html" title="class in org.lwjgl.openal"><code>SOFTDeviceClock</code></a> is supported.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#ALC_SOFT_HRTF">ALC_SOFT_HRTF</a></span></code></th>
 <td class="colLast">
 <div class="block">When true, <a href="../../../org/lwjgl/openal/SOFTHRTF.html" title="class in org.lwjgl.openal"><code>SOFTHRTF</code></a> is supported.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#ALC_SOFT_loopback">ALC_SOFT_loopback</a></span></code></th>
 <td class="colLast">
 <div class="block">When true, <a href="../../../org/lwjgl/openal/SOFTLoopback.html" title="class in org.lwjgl.openal"><code>SOFTLoopback</code></a> is supported.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#ALC_SOFT_output_limiter">ALC_SOFT_output_limiter</a></span></code></th>
 <td class="colLast">
 <div class="block">When true, <a href="../../../org/lwjgl/openal/SOFTOutputLimiter.html" title="class in org.lwjgl.openal"><code>SOFTOutputLimiter</code></a> is supported.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#ALC_SOFT_pause_device">ALC_SOFT_pause_device</a></span></code></th>
 <td class="colLast">
 <div class="block">When true, <a href="../../../org/lwjgl/openal/SOFTPauseDevice.html" title="class in org.lwjgl.openal"><code>SOFTPauseDevice</code></a> is supported.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcCaptureCloseDevice">alcCaptureCloseDevice</a>
 <br><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcCaptureOpenDevice">alcCaptureOpenDevice</a>
@@ -258,6 +265,7 @@ extends java.lang.Object</pre>
 <br><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcGetCurrentContext">alcGetCurrentContext</a>
 <br><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcGetEnumValue">alcGetEnumValue</a>
 <br><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcGetError">alcGetError</a>
+<br><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcGetInteger64vSOFT">alcGetInteger64vSOFT</a>
 <br><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcGetIntegerv">alcGetIntegerv</a>
 <br><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcGetProcAddress">alcGetProcAddress</a>
 <br><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcGetString">alcGetString</a>
@@ -275,16 +283,16 @@ extends java.lang.Object</pre>
 <br><a href="../../../org/lwjgl/openal/ALCCapabilities.html#alcSuspendContext">alcSuspendContext</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#OpenALC10">OpenALC10</a></span></code></th>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#OpenALC10">OpenALC10</a></span></code></th>
 <td class="colLast">
 <div class="block">When true, <a href="../../../org/lwjgl/openal/ALC10.html" title="class in org.lwjgl.openal"><code>ALC10</code></a> is supported.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#OpenALC11">OpenALC11</a></span></code></th>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openal/ALCCapabilities.html#OpenALC11">OpenALC11</a></span></code></th>
 <td class="colLast">
 <div class="block">When true, <a href="../../../org/lwjgl/openal/ALC11.html" title="class in org.lwjgl.openal"><code>ALC11</code></a> is supported.</div>
 </td>
@@ -521,6 +529,15 @@ extends java.lang.Object</pre>
 <pre>public final&nbsp;long alcGetThreadContext</pre>
 </li>
 </ul>
+<a id="alcGetInteger64vSOFT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>alcGetInteger64vSOFT</h4>
+<pre>public final&nbsp;long alcGetInteger64vSOFT</pre>
+</li>
+</ul>
 <a id="alcGetStringiSOFT">
 <!--   -->
 </a>
@@ -694,6 +711,16 @@ extends java.lang.Object</pre>
 <h4>ALC_LOKI_audio_channel</h4>
 <pre>public final&nbsp;boolean ALC_LOKI_audio_channel</pre>
 <div class="block">When true, <a href="../../../org/lwjgl/openal/LOKIAudioChannel.html" title="class in org.lwjgl.openal"><code>LOKIAudioChannel</code></a> is supported.</div>
+</li>
+</ul>
+<a id="ALC_SOFT_device_clock">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ALC_SOFT_device_clock</h4>
+<pre>public final&nbsp;boolean ALC_SOFT_device_clock</pre>
+<div class="block">When true, <a href="../../../org/lwjgl/openal/SOFTDeviceClock.html" title="class in org.lwjgl.openal"><code>SOFTDeviceClock</code></a> is supported.</div>
 </li>
 </ul>
 <a id="ALC_SOFT_HRTF">

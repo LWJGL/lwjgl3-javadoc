@@ -1,8 +1,11 @@
 org.lwjgl
 org.lwjgl.assimp
 org.lwjgl.bgfx
+org.lwjgl.bullet
+org.lwjgl.cuda
 org.lwjgl.egl
 org.lwjgl.glfw
+org.lwjgl.llvm
 org.lwjgl.nanovg
 org.lwjgl.nuklear
 org.lwjgl.odbc
@@ -23,9 +26,12 @@ org.lwjgl.system.linux
 org.lwjgl.system.macosx
 org.lwjgl.system.rpmalloc
 org.lwjgl.system.windows
+org.lwjgl.util.libdivide
 org.lwjgl.util.lmdb
 org.lwjgl.util.lz4
+org.lwjgl.util.meow
 org.lwjgl.util.nfd
+org.lwjgl.util.opus
 org.lwjgl.util.par
 org.lwjgl.util.remotery
 org.lwjgl.util.simd

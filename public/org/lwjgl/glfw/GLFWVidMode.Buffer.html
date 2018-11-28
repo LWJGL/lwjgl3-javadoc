@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -126,6 +126,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
+<li><a href="../../../org/lwjgl/system/Pointer.Default.html" title="class in org.lwjgl.system">org.lwjgl.system.Pointer.Default</a></li>
+<li>
+<ul class="inheritance">
 <li><a href="../../../org/lwjgl/system/CustomBuffer.html" title="class in org.lwjgl.system">org.lwjgl.system.CustomBuffer</a>&lt;SELF&gt;</li>
 <li>
 <ul class="inheritance">
@@ -133,6 +136,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>
 <ul class="inheritance">
 <li>org.lwjgl.glfw.GLFWVidMode.Buffer</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -274,13 +279,6 @@ extends <a href="../../../org/lwjgl/system/StructBuffer.html" title="class in or
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/glfw/GLFWVidMode.Buffer.html#sizeof()">sizeof</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Returns the <code>sizeof</code> a single element in the buffer.</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/glfw/GLFWVidMode.Buffer.html#width()">width</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>width</code> field.</div>
@@ -299,14 +297,21 @@ extends <a href="../../../org/lwjgl/system/StructBuffer.html" title="class in or
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>equals, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
+<code>getClass, notify, notifyAll, wait, wait, wait</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.org.lwjgl.system.Pointer.Default">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.lwjgl.system.<a href="../../../org/lwjgl/system/Pointer.Default.html" title="class in org.lwjgl.system">Pointer.Default</a></h3>
+<code><a href="../../../org/lwjgl/system/Pointer.Default.html#equals(java.lang.Object)">equals</a>, <a href="../../../org/lwjgl/system/Pointer.Default.html#hashCode()">hashCode</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.lwjgl.system.StructBuffer">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.lwjgl.system.<a href="../../../org/lwjgl/system/StructBuffer.html" title="class in org.lwjgl.system">StructBuffer</a></h3>
-<code><a href="../../../org/lwjgl/system/StructBuffer.html#forEach(java.util.function.Consumer)">forEach</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get()">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(int)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(int,T)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(T)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#iterator()">iterator</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#parallelStream()">parallelStream</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#put(int,T)">put</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#put(T)">put</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#spliterator()">spliterator</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#stream()">stream</a></code></li>
+<code><a href="../../../org/lwjgl/system/StructBuffer.html#forEach(java.util.function.Consumer)">forEach</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get()">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(int)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(int,T)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(T)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#iterator()">iterator</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#parallelStream()">parallelStream</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#put(int,T)">put</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#put(T)">put</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#sizeof()">sizeof</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#spliterator()">spliterator</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#stream()">stream</a></code></li>
 </ul>
 </li>
 </ul>
@@ -360,21 +365,6 @@ extends <a href="../../../org/lwjgl/system/StructBuffer.html" title="class in or
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="sizeof()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>sizeof</h4>
-<pre>public&nbsp;int&nbsp;sizeof()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/lwjgl/system/CustomBuffer.html#sizeof()">CustomBuffer</a></code></span></div>
-<div class="block">Returns the <code>sizeof</code> a single element in the buffer.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../org/lwjgl/system/CustomBuffer.html#sizeof()">sizeof</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/lwjgl/system/CustomBuffer.html" title="class in org.lwjgl.system">CustomBuffer</a>&lt;<a href="../../../org/lwjgl/glfw/GLFWVidMode.Buffer.html" title="class in org.lwjgl.glfw">GLFWVidMode.Buffer</a>&gt;</code></dd>
-</dl>
-</li>
-</ul>
 <a id="width()">
 <!--   -->
 </a>

@@ -136,20 +136,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">LZ4</span>
 extends java.lang.Object</pre>
-<div class="block">Native bindings to <a target="_blank" href="http://lz4.github.io/lz4/">LZ4</a>, a lossless compression algorithm, providing compression speed at 400 MB/s per core,
+<div class="block">Native bindings to <a target="_blank" href="http://lz4.github.io/lz4/">LZ4</a>, a lossless compression algorithm, providing compression speed &gt; 500 MB/s per core,
  scalable with multi-cores CPU. It features an extremely fast decoder, with speed in multiple GB/s per core, typically reaching RAM speed limits on
  multi-core systems.
  
- <p>Speed can be tuned dynamically, selecting an "acceleration" factor which trades compression ratio for more speed up. On the other end, a high
+ <p>Speed can be tuned dynamically, selecting an "acceleration" factor which trades compression ratio for faster speed. On the other end, a high
  compression derivative, <code>LZ4_HC</code>, is also provided, trading CPU time for improved compression ratio. All versions feature the same decompression
  speed.</p>
  
+ <p>LZ4 is also compatible with <a target="_blank" href="https://github.com/facebook/zstd#the-case-for-small-data-compression">dictionary compression</a>, and can ingest
+ any input file as dictionary, including those created by <a target="_blank" href="https://github.com/facebook/zstd/blob/v1.3.5/programs/zstd.1.md#dictionary-builder">Zstandard Dictionary Builder</a>. (note: only the final 64KB are used).</p>
+ 
  <p>The raw LZ4 block compression format is detailed within <a href="https://github.com/lz4/lz4/blob/dev/doc/lz4_Block_format.md">lz4_Block_format</a>.</p>
  
- <p>To compress an arbitrarily long file or data stream, multiple blocks are required. Organizing these blocks and providing a common header format to
- handle their content is the purpose of the Frame format, defined into
- <a href="https://github.com/lz4/lz4/blob/dev/doc/lz4_Frame_format.md">lz4_Frame_format</a>. Interoperable versions of LZ4 must respect this frame
- format.</p></div>
+ <p>Arbitrarily long files or data streams are compressed using multiple blocks, for streaming requirements. These blocks are organized into a frame,
+ defined into <a target="_blank" href="https://github.com/lz4/lz4/blob/dev/doc/lz4_Frame_format.md">lz4_Frame_format</a>. Interoperable versions of LZ4 must also respect
+ the frame format.</p></div>
 </li>
 </ul>
 </div>
@@ -359,8 +361,8 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/lz4/LZ4.html#LZ4_decompress_fast(java.nio.ByteBuffer,java.nio.ByteBuffer)">LZ4_decompress_fast</a></span>&#8203;(java.nio.ByteBuffer&nbsp;src,
                    java.nio.ByteBuffer&nbsp;dst)</code></th>
 <td class="colLast">
-<div class="block">This function is a bit faster than <a href="../../../../org/lwjgl/util/lz4/LZ4.html#LZ4_decompress_safe(java.nio.ByteBuffer,java.nio.ByteBuffer)"><code>decompress_safe</code></a>, but it may misbehave on malformed input because it doesn't perform full validation of compressed
- data.</div>
+<div class="block">This function used to be a bit faster than <a href="../../../../org/lwjgl/util/lz4/LZ4.html#LZ4_decompress_safe(java.nio.ByteBuffer,java.nio.ByteBuffer)"><code>decompress_safe</code></a>, though situation has changed in recent versions, and now <code>LZ4_decompress_safe()</code>
+ can be as fast and sometimes faster than <code>LZ4_decompress_fast()</code>.</div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
@@ -404,8 +406,7 @@ extends java.lang.Object</pre>
                            java.nio.ByteBuffer&nbsp;dst,
                            int&nbsp;targetOutputSize)</code></th>
 <td class="colLast">
-<div class="block">This function decompress a compressed block of size <code>compressedSize</code> at position <code>src</code> into destination buffer <code>dst</code> of size
- <code>dstCapacity</code>.</div>
+<div class="block">Decompresses an LZ4 compressed block, of size <code>srcSize</code> at position <code>src</code>, into destination buffer <code>dst</code> of size <code>dstCapacity</code>.</div>
 </td>
 </tr>
 <tr id="i19" class="rowColor">
@@ -1080,7 +1081,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/lz4/LZ4.html#LZ4_compress_destSize(java.nio.ByteBuffer,java.nio.ByteBuffer,java.nio.IntBuffer)"><code>compress_destSize</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>srcSizePtr</code> - will be modified to indicate how many bytes where read from <code>source</code> to fill <code>dest</code>. New value is necessarily &le; old value.</dd>
+<dd><code>srcSizePtr</code> - will be modified to indicate how many bytes where read from <code>source</code> to fill <code>dest</code>. New value is necessarily &le; input value.</dd>
 </dl>
 </li>
 </ul>
@@ -1097,10 +1098,10 @@ extends java.lang.Object</pre>
  <code>targetDstSize</code>.
  
  <p>This function either compresses the entire <code>src</code> content into <code>dst</code> if it's large enough, or fill <code>dst</code> buffer completely with as
- much data as possible from <code>src</code>.</p></div>
+ much data as possible from <code>src</code>. Note: acceleration parameter is fixed to <code>"default"</code>.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>srcSizePtr</code> - will be modified to indicate how many bytes where read from <code>source</code> to fill <code>dest</code>. New value is necessarily &le; old value.</dd>
+<dd><code>srcSizePtr</code> - will be modified to indicate how many bytes where read from <code>source</code> to fill <code>dest</code>. New value is necessarily &le; input value.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>nb bytes written into <code>dest</code> (necessarily &le; <code>targetDestSize</code>) or 0 if compression fails</dd>
 </dl>
@@ -1118,7 +1119,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/lz4/LZ4.html#LZ4_decompress_fast(java.nio.ByteBuffer,java.nio.ByteBuffer)"><code>decompress_fast</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>originalSize</code> - is the uncompressed size to regenerate. Destination buffer must be already allocated, and its size must be &ge; <code>originalSize</code> bytes.</dd>
+<dd><code>originalSize</code> - is the uncompressed size to regenerate. <code>dst</code> must be already allocated, its size must be &ge; <code>originalSize</code> bytes.</dd>
 </dl>
 </li>
 </ul>
@@ -1130,13 +1131,14 @@ extends java.lang.Object</pre>
 <h4>LZ4_decompress_fast</h4>
 <pre>public static&nbsp;int&nbsp;LZ4_decompress_fast&#8203;(java.nio.ByteBuffer&nbsp;src,
                                       java.nio.ByteBuffer&nbsp;dst)</pre>
-<div class="block">This function is a bit faster than <a href="../../../../org/lwjgl/util/lz4/LZ4.html#LZ4_decompress_safe(java.nio.ByteBuffer,java.nio.ByteBuffer)"><code>decompress_safe</code></a>, but it may misbehave on malformed input because it doesn't perform full validation of compressed
- data.
+<div class="block">This function used to be a bit faster than <a href="../../../../org/lwjgl/util/lz4/LZ4.html#LZ4_decompress_safe(java.nio.ByteBuffer,java.nio.ByteBuffer)"><code>decompress_safe</code></a>, though situation has changed in recent versions, and now <code>LZ4_decompress_safe()</code>
+ can be as fast and sometimes faster than <code>LZ4_decompress_fast()</code>. Moreover, <code>LZ4_decompress_fast()</code> is not protected vs malformed input, as
+ it doesn't perform full validation of compressed data. As a consequence, this function is no longer recommended, and may be deprecated in future
+ versions. It's only remaining specificity is that it can decompress data without knowing its compressed size.
  
- <p>This function is only usable if the <code>originalSize</code> of uncompressed data is known in advance. The caller should also check that all the compressed
- input has been consumed properly, i.e. that the return value matches the size of the buffer with compressed input. The function never writes past the
- output buffer. However, since it doesn't know its <code>src</code> size, it may read past the intended input. Also, because match offsets are not validated
- during decoding, reads from <code>src</code> may underflow. Use this function in trusted environment <b>only</b>.</p></div>
+ <p>This function requires uncompressed <code>originalSize</code> to be known in advance. The function never writes past the output buffer. However, since it
+ doesn't know its <code>src</code> size, it may read past the intended input. Also, because match offsets are not validated during decoding, reads from
+ <code>src</code> may underflow. Use this function in trusted environment <b>only</b>.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the number of bytes read from the source buffer (== the compressed size). If the source stream is detected malformed, the function stops decoding and
@@ -1167,19 +1169,21 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;int&nbsp;LZ4_decompress_safe_partial&#8203;(java.nio.ByteBuffer&nbsp;src,
                                               java.nio.ByteBuffer&nbsp;dst,
                                               int&nbsp;targetOutputSize)</pre>
-<div class="block">This function decompress a compressed block of size <code>compressedSize</code> at position <code>src</code> into destination buffer <code>dst</code> of size
- <code>dstCapacity</code>.
+<div class="block">Decompresses an LZ4 compressed block, of size <code>srcSize</code> at position <code>src</code>, into destination buffer <code>dst</code> of size <code>dstCapacity</code>.
+ Up to <code>targetOutputSize</code> bytes will be decoded. The function stops decoding on reaching this objective, which can boost performance when only the
+ beginning of a block is required.
  
- <p>The function will decompress a minimum of <code>targetOutputSize</code> bytes, and stop after that. However, it's not accurate, and may write more than
- <code>targetOutputSize</code> (but always &le; <code>dstCapacity</code>).</p>
- 
- <p>This function never writes outside of output buffer, and never reads outside of input buffer. It is therefore protected against malicious data packets.</p></div>
+ <p>Note: this function features 2 parameters, <code>targetOutputSize</code> and <code>dstCapacity</code>, and expects <code>targetOutputSize &amp;le; dstCapacity</code>. It
+ effectively stops decoding on reaching <code>targetOutputSize</code>, so <code>dstCapacity</code> is kind of redundant. This is because in a previous version of
+ this function, decoding operation would not "break" a sequence in the middle. As a consequence, there was no guarantee that decoding would stop at
+ exactly <code>targetOutputSize</code>, it could write more bytes, though only up to <code>dstCapacity</code>. Some "margin" used to be required for this
+ operation to work properly. This is no longer necessary. The function nonetheless keeps its signature, in an effort to not break API.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the number of bytes decoded in the destination buffer (necessarily &le; <code>dstCapacity</code>)
+<dd>the number of bytes decoded in <code>dst</code> (necessarily &le; <code>dstCapacity</code>). If source stream is detected malformed, function returns a negative
+         result.
          
-         <p>Note: this number can also be &lt; <code>targetOutputSize</code>, if compressed block contains less data. Therefore, always control how many bytes were
-         decoded. If source stream is detected malformed, function returns a negative result. This function is protected against malicious data packets.</p></dd>
+         <p>Note: can be &lt; <code>targetOutputSize</code>, if compressed block contains less data.</p></dd>
 </dl>
 </li>
 </ul>
@@ -1289,16 +1293,16 @@ extends java.lang.Object</pre>
  <p><code>dst</code> buffer must be already allocated. If <code>dstCapacity</code> &ge; <a href="../../../../org/lwjgl/util/lz4/LZ4.html#LZ4_compressBound(int)"><code>compressBound</code></a><code>(srcSize)</code>, compression is guaranteed to succeed, and
  runs faster.</p>
  
- <p>Important: The previous 64KB of compressed data is assumed to remain present and unmodified in memory! If less than 64KB has been compressed all the
- data must be present.</p>
+ <p>Note 1: Each invocation to <code>LZ4_compress_fast_continue()</code> generates a new block. Each block has precise boundaries. It's not possible to append
+ blocks together and expect a single invocation of <code>LZ4_decompress_*()</code> to decompress them together. Each block must be decompressed separately,
+ calling <code>LZ4_decompress_*()</code> with associated metadata.</p>
  
- <p>Special:</p>
+ <p>Note 2: The previous 64KB of source data is <em>assumed</em> to remain present, unmodified, at same address in memory!</p>
  
- <ol>
- <li>When input is a double-buffer, they can have any size, including &lt; 64 KB. Make sure that buffers are separated by at least one byte. This way,
- each block only depends on previous block.</li>
- <li>If input buffer is a ring-buffer, it can have any size, including &lt; 64 KB.</li>
- </ol></div>
+ <p>Note 3: When input is structured as a double-buffer, each buffer can have any size, including &lt; 64 KB. Make sure that buffers are separated, by at
+ least one byte. This construction ensures that each block only depends on previous block.</p>
+ 
+ <p>Note 4: If input buffer is a ring-buffer, it can have any size, including &lt; 64 KB.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>size of compressed block or 0 if there is an error (typically, cannot fit into <code>dst</code>). After an error, the stream status is invalid, it can only
@@ -1391,7 +1395,7 @@ extends java.lang.Object</pre>
 <div class="block">An <code>LZ4_streamDecode_t</code> context can be allocated once and re-used multiple times. Use this function to start decompression of a new stream of
  blocks.
  
- <p>A dictionary can optionnally be set. Use <code>NULL</code> or size 0 for a reset order. Dictionary is presumed stable: it must remain accessible and unmodified
+ <p>A dictionary can optionally be set. Use <code>NULL</code> or size 0 for a reset order. Dictionary is presumed stable: it must remain accessible and unmodified
  during next decompression.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

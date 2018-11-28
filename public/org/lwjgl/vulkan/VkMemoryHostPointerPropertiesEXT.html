@@ -151,7 +151,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">VkMemoryHostPointerPropertiesEXT</span>
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a>
 implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
-<div class="block"><h3>Layout</h3>
+<div class="block">Properties of external memory host pointer.
+ 
+ <h5>Valid Usage (Implicit)</h5>
+ 
+ <ul>
+ <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/EXTExternalMemoryHost.html#VK_STRUCTURE_TYPE_MEMORY_HOST_POINTER_PROPERTIES_EXT"><code>STRUCTURE_TYPE_MEMORY_HOST_POINTER_PROPERTIES_EXT</code></a></li>
+ <li><code>pNext</code> <b>must</b> be <code>NULL</code></li>
+ </ul>
+ 
+ <h5>See Also</h5>
+ 
+ <p><a href="../../../org/lwjgl/vulkan/EXTExternalMemoryHost.html#vkGetMemoryHostPointerPropertiesEXT(org.lwjgl.vulkan.VkDevice,int,long,org.lwjgl.vulkan.VkMemoryHostPointerPropertiesEXT)"><code>GetMemoryHostPointerPropertiesEXT</code></a></p>
+ 
+ <h3>Member documentation</h3>
+ 
+ <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
+ <li><code>memoryTypeBits</code> &ndash; a bitmask containing one bit set for every memory type which the specified host pointer <b>can</b> be imported as.</li>
+ </ul>
+ 
+ <h3>Layout</h3>
  
  <pre><code>
  struct VkMemoryHostPointerPropertiesEXT {

@@ -165,7 +165,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <p>For devices which have no natural value to return here, implementations <b>should</b> return the maximum resolution supported.</p>
  </div></li>
- <li><code>supportedTransforms</code> &ndash; tells which transforms are supported by this display. This will contain one or more of the bits from <code>VkSurfaceTransformFlagsKHR</code>.</li>
+ <li><code>supportedTransforms</code> &ndash; a bitmask of <code>VkSurfaceTransformFlagBitsKHR</code> describing which transforms are supported by this display.</li>
  <li><code>planeReorderPossible</code> &ndash; tells whether the planes on this display <b>can</b> have their z order changed. If this is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>, the application <b>can</b> re-arrange the planes on this display in any order relative to each other.</li>
  <li><code>persistentContent</code> &ndash; tells whether the display supports self-refresh/internal buffering. If this is true, the application <b>can</b> submit persistent present operations on swapchains created against this display.
  

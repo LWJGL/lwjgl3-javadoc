@@ -156,8 +156,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h5>Valid Usage</h5>
  
  <ul>
- <li>If <code>initialDataSize</code> is not 0, it <b>must</b> be equal to the size of <code>pInitialData</code>, as returned by <a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#vkGetValidationCacheDataEXT(org.lwjgl.vulkan.VkDevice,long,org.lwjgl.PointerBuffer,java.nio.ByteBuffer)"><code>GetValidationCacheDataEXT</code></a> when <code>pInitialData</code> was originally retrieved</li>
- <li>If <code>initialDataSize</code> is not 0, <code>pInitialData</code> <b>must</b> have been retrieved from a previous call to <a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#vkGetValidationCacheDataEXT(org.lwjgl.vulkan.VkDevice,long,org.lwjgl.PointerBuffer,java.nio.ByteBuffer)"><code>GetValidationCacheDataEXT</code></a></li>
+ <li>If <code>initialDataSize</code> is not 0, it <b>must</b> be equal to the size of <code>pInitialData</code>, as returned by <code>vkGetValidationCacheDataEXT</code> when <code>pInitialData</code> was originally retrieved</li>
+ <li>If <code>initialDataSize</code> is not 0, <code>pInitialData</code> <b>must</b> have been retrieved from a previous call to <code>vkGetValidationCacheDataEXT</code></li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>

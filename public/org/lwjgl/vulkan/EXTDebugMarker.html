@@ -683,12 +683,12 @@ extends java.lang.Object</pre>
  
  <h5>Description</h5>
  
- <p>An application <b>may</b> open a marker region in one command buffer and close it in another, or otherwise split marker regions across multiple command buffers or multiple queue submissions. When viewed from the linear series of submissions to a single queue, the calls to <a href="../../../org/lwjgl/vulkan/EXTDebugMarker.html#vkCmdDebugMarkerBeginEXT(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkDebugMarkerMarkerInfoEXT)"><code>CmdDebugMarkerBeginEXT</code></a> and <a href="../../../org/lwjgl/vulkan/EXTDebugMarker.html#vkCmdDebugMarkerEndEXT(org.lwjgl.vulkan.VkCommandBuffer)"><code>CmdDebugMarkerEndEXT</code></a> <b>must</b> be matched and balanced.</p>
+ <p>An application <b>may</b> open a marker region in one command buffer and close it in another, or otherwise split marker regions across multiple command buffers or multiple queue submissions. When viewed from the linear series of submissions to a single queue, the calls to <code>vkCmdDebugMarkerBeginEXT</code> and <code>vkCmdDebugMarkerEndEXT</code> <b>must</b> be matched and balanced.</p>
  
  <h5>Valid Usage</h5>
  
  <ul>
- <li>There <b>must</b> be an outstanding <a href="../../../org/lwjgl/vulkan/EXTDebugMarker.html#vkCmdDebugMarkerBeginEXT(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkDebugMarkerMarkerInfoEXT)"><code>CmdDebugMarkerBeginEXT</code></a> command prior to the <a href="../../../org/lwjgl/vulkan/EXTDebugMarker.html#vkCmdDebugMarkerEndEXT(org.lwjgl.vulkan.VkCommandBuffer)"><code>CmdDebugMarkerEndEXT</code></a> on the queue that <code>commandBuffer</code> is submitted to</li>
+ <li>There <b>must</b> be an outstanding <a href="../../../org/lwjgl/vulkan/EXTDebugMarker.html#vkCmdDebugMarkerBeginEXT(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkDebugMarkerMarkerInfoEXT)"><code>CmdDebugMarkerBeginEXT</code></a> command prior to the <code>vkCmdDebugMarkerEndEXT</code> on the queue that <code>commandBuffer</code> is submitted to</li>
  <li>If <code>commandBuffer</code> is a secondary command buffer, there <b>must</b> be an outstanding <a href="../../../org/lwjgl/vulkan/EXTDebugMarker.html#vkCmdDebugMarkerBeginEXT(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkDebugMarkerMarkerInfoEXT)"><code>CmdDebugMarkerBeginEXT</code></a> command recorded to <code>commandBuffer</code> that has not previously been ended by a call to <a href="../../../org/lwjgl/vulkan/EXTDebugMarker.html#vkCmdDebugMarkerEndEXT(org.lwjgl.vulkan.VkCommandBuffer)"><code>CmdDebugMarkerEndEXT</code></a>.</li>
  </ul>
  

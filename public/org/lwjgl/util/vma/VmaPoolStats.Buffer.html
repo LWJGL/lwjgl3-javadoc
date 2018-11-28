@@ -58,7 +58,7 @@ var pathtoroot = "../../../../";loadScripts(document, 'script');</script>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../org/lwjgl/util/vma/VmaStatInfo.html" title="class in org.lwjgl.util.vma"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/lwjgl/util/vma/VmaPoolStats.Buffer.html" target="_top">Frames</a></li>
@@ -126,6 +126,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
+<li><a href="../../../../org/lwjgl/system/Pointer.Default.html" title="class in org.lwjgl.system">org.lwjgl.system.Pointer.Default</a></li>
+<li>
+<ul class="inheritance">
 <li><a href="../../../../org/lwjgl/system/CustomBuffer.html" title="class in org.lwjgl.system">org.lwjgl.system.CustomBuffer</a>&lt;SELF&gt;</li>
 <li>
 <ul class="inheritance">
@@ -133,6 +136,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>
 <ul class="inheritance">
 <li>org.lwjgl.util.vma.VmaPoolStats.Buffer</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -247,16 +252,16 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html#size()">size</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html#blockCount()">blockCount</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the value of the <code>size</code> field.</div>
+<div class="block">Returns the value of the <code>blockCount</code> field.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html#sizeof()">sizeof</a></span>()</code></th>
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html#size()">size</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the <code>sizeof</code> a single element in the buffer.</div>
+<div class="block">Returns the value of the <code>size</code> field.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -300,14 +305,21 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>equals, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
+<code>getClass, notify, notifyAll, wait, wait, wait</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.org.lwjgl.system.Pointer.Default">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.lwjgl.system.<a href="../../../../org/lwjgl/system/Pointer.Default.html" title="class in org.lwjgl.system">Pointer.Default</a></h3>
+<code><a href="../../../../org/lwjgl/system/Pointer.Default.html#equals(java.lang.Object)">equals</a>, <a href="../../../../org/lwjgl/system/Pointer.Default.html#hashCode()">hashCode</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.lwjgl.system.StructBuffer">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.lwjgl.system.<a href="../../../../org/lwjgl/system/StructBuffer.html" title="class in org.lwjgl.system">StructBuffer</a></h3>
-<code><a href="../../../../org/lwjgl/system/StructBuffer.html#forEach(java.util.function.Consumer)">forEach</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#get()">get</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#get(int)">get</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#get(int,T)">get</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#get(T)">get</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#iterator()">iterator</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#parallelStream()">parallelStream</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#put(int,T)">put</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#put(T)">put</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#spliterator()">spliterator</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#stream()">stream</a></code></li>
+<code><a href="../../../../org/lwjgl/system/StructBuffer.html#forEach(java.util.function.Consumer)">forEach</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#get()">get</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#get(int)">get</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#get(int,T)">get</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#get(T)">get</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#iterator()">iterator</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#parallelStream()">parallelStream</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#put(int,T)">put</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#put(T)">put</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#sizeof()">sizeof</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#spliterator()">spliterator</a>, <a href="../../../../org/lwjgl/system/StructBuffer.html#stream()">stream</a></code></li>
 </ul>
 </li>
 </ul>
@@ -361,21 +373,6 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="sizeof()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>sizeof</h4>
-<pre>public&nbsp;int&nbsp;sizeof()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/lwjgl/system/CustomBuffer.html#sizeof()">CustomBuffer</a></code></span></div>
-<div class="block">Returns the <code>sizeof</code> a single element in the buffer.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../org/lwjgl/system/CustomBuffer.html#sizeof()">sizeof</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/lwjgl/system/CustomBuffer.html" title="class in org.lwjgl.system">CustomBuffer</a>&lt;<a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a>&gt;</code></dd>
-</dl>
-</li>
-</ul>
 <a id="size()">
 <!--   -->
 </a>
@@ -419,11 +416,21 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <a id="unusedRangeSizeMax()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>unusedRangeSizeMax</h4>
 <pre>public&nbsp;long&nbsp;unusedRangeSizeMax()</pre>
 <div class="block">Returns the value of the <code>unusedRangeSizeMax</code> field.</div>
+</li>
+</ul>
+<a id="blockCount()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>blockCount</h4>
+<pre>public&nbsp;long&nbsp;blockCount()</pre>
+<div class="block">Returns the value of the <code>blockCount</code> field.</div>
 </li>
 </ul>
 </li>
@@ -456,7 +463,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../org/lwjgl/util/vma/VmaStatInfo.html" title="class in org.lwjgl.util.vma"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?org/lwjgl/util/vma/VmaPoolStats.Buffer.html" target="_top">Frames</a></li>

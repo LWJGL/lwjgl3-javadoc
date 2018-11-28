@@ -152,17 +152,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a></pre>
 <div class="block">Structure describing advanced blending limits that can be supported by an implementation.
  
+ <h5>Description</h5>
+ 
+ <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
+ 
  <h5>Valid Usage (Implicit)</h5>
  
  <ul>
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/EXTBlendOperationAdvanced.html#VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BLEND_OPERATION_ADVANCED_PROPERTIES_EXT"><code>STRUCTURE_TYPE_PHYSICAL_DEVICE_BLEND_OPERATION_ADVANCED_PROPERTIES_EXT</code></a></li>
  </ul>
  
- <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
- 
  <h3>Member documentation</h3>
  
  <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
  <li><code>advancedBlendMaxColorAttachments</code> &ndash; one greater than the highest color attachment index that <b>can</b> be used in a subpass, for a pipeline that uses an <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#framebuffer-blend-advanced">advanced blend operation</a>.</li>
  <li><code>advancedBlendIndependentBlend</code> &ndash; specifies whether advanced blend operations <b>can</b> vary per-attachment.</li>
  <li><code>advancedBlendNonPremultipliedSrcColor</code> &ndash; specifies whether the source color <b>can</b> be treated as non-premultiplied. If this is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>, then <a href="../../../org/lwjgl/vulkan/VkPipelineColorBlendAdvancedStateCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkPipelineColorBlendAdvancedStateCreateInfoEXT</code></a><code>::srcPremultiplied</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>.</li>

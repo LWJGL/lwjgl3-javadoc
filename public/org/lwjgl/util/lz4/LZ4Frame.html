@@ -136,7 +136,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">LZ4Frame</span>
 extends java.lang.Object</pre>
-<div class="block">Native bindings to the frame API of <a target="_blank" href="http://lz4.github.io/lz4/">LZ4</a>.</div>
+<div class="block">Native bindings to the frame API of <a target="_blank" href="http://lz4.github.io/lz4/">LZ4</a>.
+ 
+ <p>LZ4F is a stand-alone API to create LZ4-compressed frames conformant with specification v1.6.1. It also offers streaming capabilities. <code>lz4.h</code> is
+ not required when using <code>lz4frame.h</code>, except to get constant such as <a href="../../../../org/lwjgl/util/lz4/LZ4.html#LZ4_VERSION_NUMBER"><code>VERSION_NUMBER</code></a>.</p></div>
 </li>
 </ul>
 </div>
@@ -704,7 +707,9 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4><a href="../../../../constant-values.html#org.lwjgl.util.lz4.LZ4Frame.LZ4F_VERSION">LZ4F_VERSION</a></h4>
-<div class="block">Version number.</div>
+<div class="block">Version number.
+ 
+ <p>This number can be used to check for an incompatible API breaking change.</p></div>
 </li></ul>
 <a id="LZ4F_HEADER_SIZE_MAX">
 <!--   -->

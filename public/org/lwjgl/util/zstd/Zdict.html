@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -227,6 +227,18 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#nZDICT_optimizeTrainFromBuffer_fastCover(long,long,long,long,int,long)">nZDICT_optimizeTrainFromBuffer_fastCover</a></span>&#8203;(long&nbsp;dictBuffer,
+                                        long&nbsp;dictBufferCapacity,
+                                        long&nbsp;samplesBuffer,
+                                        long&nbsp;samplesSizes,
+                                        int&nbsp;nbSamples,
+                                        long&nbsp;parameters)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_optimizeTrainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)"><code>optimizeTrainFromBuffer_fastCover</code></a></div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#nZDICT_trainFromBuffer(long,long,long,long,int)">nZDICT_trainFromBuffer</a></span>&#8203;(long&nbsp;dictBuffer,
                       long&nbsp;dictBufferCapacity,
                       long&nbsp;samplesBuffer,
@@ -236,7 +248,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer)"><code>trainFromBuffer</code></a></div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#nZDICT_trainFromBuffer_cover(long,long,long,long,int,long)">nZDICT_trainFromBuffer_cover</a></span>&#8203;(long&nbsp;dictBuffer,
                             long&nbsp;dictBufferCapacity,
@@ -248,7 +260,19 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer_cover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTCoverParams)"><code>trainFromBuffer_cover</code></a></div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#nZDICT_trainFromBuffer_fastCover(long,long,long,long,int,long)">nZDICT_trainFromBuffer_fastCover</a></span>&#8203;(long&nbsp;dictBuffer,
+                                long&nbsp;dictBufferCapacity,
+                                long&nbsp;samplesBuffer,
+                                long&nbsp;samplesSizes,
+                                int&nbsp;nbSamples,
+                                long&nbsp;parameters)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)"><code>trainFromBuffer_fastCover</code></a></div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_finalizeDictionary(java.nio.ByteBuffer,java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTParams)">ZDICT_finalizeDictionary</a></span>&#8203;(java.nio.ByteBuffer&nbsp;dictBuffer,
                         java.nio.ByteBuffer&nbsp;dictContent,
@@ -259,24 +283,24 @@ extends java.lang.Object</pre>
 <div class="block">Given a custom content as a basis for dictionary, and a set of samples, finalize dictionary by adding headers and statistics.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_getDictID(java.nio.ByteBuffer)">ZDICT_getDictID</a></span>&#8203;(java.nio.ByteBuffer&nbsp;dictBuffer)</code></th>
 <td class="colLast">
 <div class="block">Extracts <code>dictID</code>.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_getErrorName(long)">ZDICT_getErrorName</a></span>&#8203;(long&nbsp;errorCode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_isError(long)">ZDICT_isError</a></span>&#8203;(long&nbsp;errorCode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_optimizeTrainFromBuffer_cover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTCoverParams)">ZDICT_optimizeTrainFromBuffer_cover</a></span>&#8203;(java.nio.ByteBuffer&nbsp;dictBuffer,
                                    java.nio.ByteBuffer&nbsp;samplesBuffer,
@@ -286,7 +310,17 @@ extends java.lang.Object</pre>
 <div class="block">The same requirements as <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer_cover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTCoverParams)"><code>trainFromBuffer_cover</code></a> hold for all the parameters except <code>parameters</code>.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_optimizeTrainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)">ZDICT_optimizeTrainFromBuffer_fastCover</a></span>&#8203;(java.nio.ByteBuffer&nbsp;dictBuffer,
+                                       java.nio.ByteBuffer&nbsp;samplesBuffer,
+                                       <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;samplesSizes,
+                                       <a href="../../../../org/lwjgl/util/zstd/ZDICTFastCoverParams.html" title="class in org.lwjgl.util.zstd">ZDICTFastCoverParams</a>&nbsp;parameters)</code></th>
+<td class="colLast">
+<div class="block">The same requirements as <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)"><code>trainFromBuffer_fastCover</code></a> hold for all the parameters except <code>parameters</code>.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer)">ZDICT_trainFromBuffer</a></span>&#8203;(java.nio.ByteBuffer&nbsp;dictBuffer,
                      java.nio.ByteBuffer&nbsp;samplesBuffer,
@@ -295,7 +329,7 @@ extends java.lang.Object</pre>
 <div class="block">Train a dictionary from an array of samples.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer_cover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTCoverParams)">ZDICT_trainFromBuffer_cover</a></span>&#8203;(java.nio.ByteBuffer&nbsp;dictBuffer,
                            java.nio.ByteBuffer&nbsp;samplesBuffer,
@@ -303,6 +337,16 @@ extends java.lang.Object</pre>
                            <a href="../../../../org/lwjgl/util/zstd/ZDICTCoverParams.html" title="class in org.lwjgl.util.zstd">ZDICTCoverParams</a>&nbsp;parameters)</code></th>
 <td class="colLast">
 <div class="block">Train a dictionary from an array of samples using the COVER algorithm.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)">ZDICT_trainFromBuffer_fastCover</a></span>&#8203;(java.nio.ByteBuffer&nbsp;dictBuffer,
+                               java.nio.ByteBuffer&nbsp;samplesBuffer,
+                               <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;samplesSizes,
+                               <a href="../../../../org/lwjgl/util/zstd/ZDICTFastCoverParams.html" title="class in org.lwjgl.util.zstd">ZDICTFastCoverParams</a>&nbsp;parameters)</code></th>
+<td class="colLast">
+<div class="block">Train a dictionary from an array of samples using a modified version of COVER algorithm.</div>
 </td>
 </tr>
 </table>
@@ -390,7 +434,7 @@ extends java.lang.Object</pre>
                                          <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;samplesSizes)</pre>
 <div class="block">Train a dictionary from an array of samples.
  
- <p>Redirect towards <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_optimizeTrainFromBuffer_cover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTCoverParams)"><code>optimizeTrainFromBuffer_cover</code></a> single-threaded, with <code>d=8</code> and <code>steps=4</code>.</p>
+ <p>Redirect towards <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_optimizeTrainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)"><code>optimizeTrainFromBuffer_fastCover</code></a> single-threaded, with <code>d=8</code>, <code>steps=4</code>, <code>f=20</code>, and <code>accel=1</code>.</p>
  
  <p>Samples must be stored concatenated in a single flat buffer <code>samplesBuffer</code>, supplied with an array of sizes <code>samplesSizes</code>, providing the
  size of each sample, in order.</p>
@@ -555,13 +599,104 @@ public static&nbsp;java.lang.String&nbsp;ZDICT_getErrorName&#8203;(long&nbsp;err
  
  <ul>
  <li>All of the parameters <code>d</code>, <code>k</code>, <code>steps</code> are optional.</li>
- <li>If <code>d</code> is non-zero then we don't check multiple values of d, otherwise we check <code>d = {6, 8, 10, 12, 14, 16}</code>.</li>
+ <li>If <code>d</code> is non-zero then we don't check multiple values of d, otherwise we check <code>d = {6, 8}</code>.</li>
  <li>If <code>steps</code> is zero it defaults to its default value.</li>
- <li>If <code>k</code> is non-zero then we don't check multiple values of <code>k</code>, otherwise we check steps values in <code>[16, 2048]</code>.</li>
+ <li>If <code>k</code> is non-zero then we don't check multiple values of <code>k</code>, otherwise we check steps values in <code>[50, 2000]</code>.</li>
  </ul>
  
  <p>Note: <code>ZDICT_optimizeTrainFromBuffer_cover()</code> requires about 8 bytes of memory for each input byte and additionally another 5 bytes of memory for
  each byte of memory for each thread.</p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>size of dictionary stored into <code>dictBuffer</code> (&le; <code>dictBufferCapacity</code>) or an error code, which can be tested with <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_isError(long)"><code>isError</code></a>. On success
+         <code>*parameters</code> contains the parameters selected.</dd>
+</dl>
+</li>
+</ul>
+<a id="nZDICT_trainFromBuffer_fastCover(long,long,long,long,int,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nZDICT_trainFromBuffer_fastCover</h4>
+<pre>public static&nbsp;long&nbsp;nZDICT_trainFromBuffer_fastCover&#8203;(long&nbsp;dictBuffer,
+                                                    long&nbsp;dictBufferCapacity,
+                                                    long&nbsp;samplesBuffer,
+                                                    long&nbsp;samplesSizes,
+                                                    int&nbsp;nbSamples,
+                                                    long&nbsp;parameters)</pre>
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)"><code>trainFromBuffer_fastCover</code></a></div>
+</li>
+</ul>
+<a id="ZDICT_trainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ZDICT_trainFromBuffer_fastCover</h4>
+<pre>public static&nbsp;long&nbsp;ZDICT_trainFromBuffer_fastCover&#8203;(java.nio.ByteBuffer&nbsp;dictBuffer,
+                                                   java.nio.ByteBuffer&nbsp;samplesBuffer,
+                                                   <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;samplesSizes,
+                                                   <a href="../../../../org/lwjgl/util/zstd/ZDICTFastCoverParams.html" title="class in org.lwjgl.util.zstd">ZDICTFastCoverParams</a>&nbsp;parameters)</pre>
+<div class="block">Train a dictionary from an array of samples using a modified version of COVER algorithm.
+ 
+ <p>Samples must be stored concatenated in a single flat buffer <code>samplesBuffer</code>, supplied with an array of sizes <code>samplesSizes</code>, providing the
+ size of each sample, in order. <code>d</code> and <code>k</code> are required. All other parameters are optional, will use default values if not provided. The
+ resulting dictionary will be saved into <code>dictBuffer</code>.</p>
+ 
+ <p>Note: <code>ZDICT_trainFromBuffer_fastCover()</code> requires about 1 bytes of memory for each input byte and additionally another <code>6 * 2^f</code> bytes of
+ memory.</p>
+ 
+ <p>Tips: In general, a reasonable dictionary has a size of <code>~100 KB</code>. It's possible to select smaller or larger size, just by specifying
+ <code>dictBufferCapacity</code>. In general, it's recommended to provide a few thousands samples, though this can vary a lot. It's recommended that total
+ size of all samples be about <code>~x100</code> times the target size of dictionary.</p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>size of dictionary stored into <code>dictBuffer</code> (&le; <code>dictBufferCapacity</code>) or an error code, which can be tested with <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_isError(long)"><code>isError</code></a>.</dd>
+</dl>
+</li>
+</ul>
+<a id="nZDICT_optimizeTrainFromBuffer_fastCover(long,long,long,long,int,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nZDICT_optimizeTrainFromBuffer_fastCover</h4>
+<pre>public static&nbsp;long&nbsp;nZDICT_optimizeTrainFromBuffer_fastCover&#8203;(long&nbsp;dictBuffer,
+                                                            long&nbsp;dictBufferCapacity,
+                                                            long&nbsp;samplesBuffer,
+                                                            long&nbsp;samplesSizes,
+                                                            int&nbsp;nbSamples,
+                                                            long&nbsp;parameters)</pre>
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_optimizeTrainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)"><code>optimizeTrainFromBuffer_fastCover</code></a></div>
+</li>
+</ul>
+<a id="ZDICT_optimizeTrainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ZDICT_optimizeTrainFromBuffer_fastCover</h4>
+<pre>public static&nbsp;long&nbsp;ZDICT_optimizeTrainFromBuffer_fastCover&#8203;(java.nio.ByteBuffer&nbsp;dictBuffer,
+                                                           java.nio.ByteBuffer&nbsp;samplesBuffer,
+                                                           <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;samplesSizes,
+                                                           <a href="../../../../org/lwjgl/util/zstd/ZDICTFastCoverParams.html" title="class in org.lwjgl.util.zstd">ZDICTFastCoverParams</a>&nbsp;parameters)</pre>
+<div class="block">The same requirements as <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_trainFromBuffer_fastCover(java.nio.ByteBuffer,java.nio.ByteBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.zstd.ZDICTFastCoverParams)"><code>trainFromBuffer_fastCover</code></a> hold for all the parameters except <code>parameters</code>.
+ 
+ <p>This function tries many parameter combinations (specifically, <code>k</code> and <code>d</code> combinations) and picks the best parameters. <code>*parameters</code>
+ is filled with the best parameters found, dictionary constructed with those parameters is stored in <code>dictBuffer</code>.</p>
+ 
+ <ul>
+ <li>All of the parameters <code>d</code>, <code>k</code>, <code>steps</code>, <code>f</code>, and <code>accel</code> are optional.</li>
+ <li>If <code>d</code> is non-zero then we don't check multiple values of <code>d</code>, otherwise we check <code>d = {6, 8}</code>.</li>
+ <li>If <code>steps</code> is zero it defaults to its default value.</li>
+ <li>If <code>k</code> is non-zero then we don't check multiple values of <code>k</code>, otherwise we check steps values in <code>[50, 2000]</code>.</li>
+ <li>If <code>f</code> is zero, default value of 20 is used.</li>
+ <li>If <code>accel</code> is zero, default value of 1 is used.</li>
+ </ul>
+ 
+ <p>Note: <code>ZDICT_optimizeTrainFromBuffer_fastCover()</code> requires about 1 byte of memory for each input byte and additionally another <code>6 * 2^f</code>
+ bytes of memory for each thread.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>size of dictionary stored into <code>dictBuffer</code> (&le; <code>dictBufferCapacity</code>) or an error code, which can be tested with <a href="../../../../org/lwjgl/util/zstd/Zdict.html#ZDICT_isError(long)"><code>isError</code></a>. On success

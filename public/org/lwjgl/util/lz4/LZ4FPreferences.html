@@ -151,11 +151,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">LZ4FPreferences</span>
 extends <a href="../../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a>
 implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
-<div class="block"><h3>Member documentation</h3>
+<div class="block">Makes it possible to supply advanced compression instructions to streaming interface. Structure must be first init to 0, using <code>memset()</code>,
+ setting all parameters to default. All reserved fields must be set to zero.
+ 
+ <h3>Member documentation</h3>
  
  <ul>
  <li><code>compressionLevel</code> &ndash; 0: default (fast mode); values &gt; <a href="../../../../org/lwjgl/util/lz4/LZ4HC.html#LZ4HC_CLEVEL_MAX"><code>CLEVEL_MAX</code></a> count as <a href="../../../../org/lwjgl/util/lz4/LZ4HC.html#LZ4HC_CLEVEL_MAX"><code>CLEVEL_MAX</code></a>; values &gt; 0 trigger "fast acceleration"</li>
- <li><code>autoFlush</code> &ndash; 1: always flush, to reduce usage of internal buffers</li>
+ <li><code>autoFlush</code> &ndash; 1: always flush, reduces usage of internal buffers</li>
  <li><code>favorDecSpeed</code> &ndash; 1: parser favors decompression speed vs compression ratio. Only works for high compression modes (&ge; <a href="../../../../org/lwjgl/util/lz4/LZ4HC.html#LZ4HC_CLEVEL_OPT_MIN"><code>CLEVEL_OPT_MIN</code></a>). Since version 1.8.2.</li>
  <li><code>reserved</code> &ndash; must be zero for forward compatibility</li>
  </ul>

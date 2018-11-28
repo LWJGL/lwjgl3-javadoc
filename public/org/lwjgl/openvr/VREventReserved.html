@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -160,6 +160,8 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
      uint64_t reserved1;
      uint64_t reserved2;
      uint64_t reserved3;
+     uint64_t reserved4;
+     uint64_t reserved5;
  }</code></pre></div>
 </li>
 </ul>
@@ -225,7 +227,9 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#RESERVED0">RESERVED0</a>
 <br><a href="../../../org/lwjgl/openvr/VREventReserved.html#RESERVED1">RESERVED1</a>
 <br><a href="../../../org/lwjgl/openvr/VREventReserved.html#RESERVED2">RESERVED2</a>
-<br><a href="../../../org/lwjgl/openvr/VREventReserved.html#RESERVED3">RESERVED3</a></span></code></th>
+<br><a href="../../../org/lwjgl/openvr/VREventReserved.html#RESERVED3">RESERVED3</a>
+<br><a href="../../../org/lwjgl/openvr/VREventReserved.html#RESERVED4">RESERVED4</a>
+<br><a href="../../../org/lwjgl/openvr/VREventReserved.html#RESERVED5">RESERVED5</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct member offsets.</div>
 </td>
@@ -344,34 +348,62 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 </td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#nreserved4(long)">nreserved4</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved4()"><code>reserved4()</code></a>.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#nreserved5(long)">nreserved5</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved5()"><code>reserved5()</code></a>.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved0()">reserved0</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>reserved0</code> field.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved1()">reserved1</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>reserved1</code> field.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved2()">reserved2</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>reserved2</code> field.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved3()">reserved3</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>reserved3</code> field.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved4()">reserved4</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>reserved4</code> field.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved5()">reserved5</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>reserved5</code> field.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VREventReserved.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
@@ -444,9 +476,15 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <a id="RESERVED3">
 <!--   -->
 </a>
+<a id="RESERVED4">
+<!--   -->
+</a>
+<a id="RESERVED5">
+<!--   -->
+</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>RESERVED0, RESERVED1, RESERVED2, RESERVED3</h4>
+<h4>RESERVED0, RESERVED1, RESERVED2, RESERVED3, RESERVED4, RESERVED5</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -537,6 +575,26 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <div class="block">Returns the value of the <code>reserved3</code> field.</div>
 </li>
 </ul>
+<a id="reserved4()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reserved4</h4>
+<pre>public&nbsp;long&nbsp;reserved4()</pre>
+<div class="block">Returns the value of the <code>reserved4</code> field.</div>
+</li>
+</ul>
+<a id="reserved5()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reserved5</h4>
+<pre>public&nbsp;long&nbsp;reserved5()</pre>
+<div class="block">Returns the value of the <code>reserved5</code> field.</div>
+</li>
+</ul>
 <a id="create(long)">
 <!--   -->
 </a>
@@ -619,11 +677,31 @@ public static&nbsp;<a href="../../../org/lwjgl/openvr/VREventReserved.Buffer.htm
 <a id="nreserved3(long)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>nreserved3</h4>
 <pre>public static&nbsp;long&nbsp;nreserved3&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved3()"><code>reserved3()</code></a>.</div>
+</li>
+</ul>
+<a id="nreserved4(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nreserved4</h4>
+<pre>public static&nbsp;long&nbsp;nreserved4&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved4()"><code>reserved4()</code></a>.</div>
+</li>
+</ul>
+<a id="nreserved5(long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>nreserved5</h4>
+<pre>public static&nbsp;long&nbsp;nreserved5&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/VREventReserved.html#reserved5()"><code>reserved5()</code></a>.</div>
 </li>
 </ul>
 </li>

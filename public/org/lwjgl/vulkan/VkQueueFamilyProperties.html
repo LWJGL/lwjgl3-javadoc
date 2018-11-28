@@ -193,8 +193,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>queueFlags</code> &ndash; a bitmask of <code>VkQueueFlagBits</code> indicating capabilities of the queues in this queue family.</li>
- <li><code>queueCount</code> &ndash; the unsigned integer count of queues in this queue family.</li>
- <li><code>timestampValidBits</code> &ndash; the unsigned integer count of meaningful bits in the timestamps written via <a href="../../../org/lwjgl/vulkan/VK10.html#vkCmdWriteTimestamp(org.lwjgl.vulkan.VkCommandBuffer,int,long,int)"><code>CmdWriteTimestamp</code></a>. The valid range for the count is 36..64 bits, or a value of 0, indicating no support for timestamps. Bits outside the valid range are guaranteed to be zeros.</li>
+ <li><code>queueCount</code> &ndash; the unsigned integer count of queues in this queue family. Each queue family <b>must</b> support at least one queue.</li>
+ <li><code>timestampValidBits</code> &ndash; the unsigned integer count of meaningful bits in the timestamps written via <code>vkCmdWriteTimestamp</code>. The valid range for the count is 36..64 bits, or a value of 0, indicating no support for timestamps. Bits outside the valid range are guaranteed to be zeros.</li>
  <li><code>minImageTransferGranularity</code> &ndash; the minimum granularity supported for image transfer operations on the queues in this queue family.</li>
  </ul>
  

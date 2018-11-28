@@ -166,6 +166,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h3>Member documentation</h3>
  
  <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
  <li><code>maxDrawMeshTasksCount</code> &ndash; the maximum number of local workgroups that <b>can</b> be launched by a single draw mesh tasks command. See <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#drawing-mesh-shading">the “Programmable Mesh Shading” section</a>.</li>
  <li><code>maxTaskWorkGroupInvocations</code> &ndash; the maximum total number of task shader invocations in a single local workgroup. The product of the X, Y, and Z sizes as specified by the <code>LocalSize</code> execution mode in shader modules and by the object decorated by the <code>WorkgroupSize</code> decoration <b>must</b> be less than or equal to this limit.</li>
  <li><code>maxTaskWorkGroupSize</code> &ndash; the maximum size of a local task workgroup. These three values represent the maximum local workgroup size in the X, Y, and Z dimensions, respectively. The <code>x</code>, <code>y</code>, and <code>z</code> sizes specified by the <code>LocalSize</code> execution mode and by the object decorated by the <code>WorkgroupSize</code> decoration in shader modules <b>must</b> be less than or equal to the corresponding limit.</li>

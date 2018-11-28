@@ -57,7 +57,7 @@ var pathtoroot = "../../../";loadScripts(document, 'script');</script>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/lwjgl/vulkan/EXTSwapchainColorspace.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/lwjgl/vulkan/EXTTransformFeedback.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../org/lwjgl/vulkan/EXTValidationFlags.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -419,7 +419,7 @@ extends java.lang.Object</pre>
  
  <h5>See Also</h5>
  
- <p>UNKNOWN:vkCreateValdiationCacheEXT, <a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#vkGetValidationCacheDataEXT(org.lwjgl.vulkan.VkDevice,long,org.lwjgl.PointerBuffer,java.nio.ByteBuffer)"><code>GetValidationCacheDataEXT</code></a></p></div>
+ <p><a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#vkCreateValidationCacheEXT(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkValidationCacheCreateInfoEXT,org.lwjgl.vulkan.VkAllocationCallbacks,java.nio.LongBuffer)"><code>CreateValidationCacheEXT</code></a>, <a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#vkGetValidationCacheDataEXT(org.lwjgl.vulkan.VkDevice,long,org.lwjgl.PointerBuffer,java.nio.ByteBuffer)"><code>GetValidationCacheDataEXT</code></a></p></div>
 </li></ul>
 </li>
 </ul>
@@ -472,14 +472,14 @@ extends java.lang.Object</pre>
  
  <div style="margin-left: 26px; border-left: 1px solid gray; padding-left: 14px;"><h5>Note</h5>
  
- <p>Applications <b>can</b> track and manage the total host memory size of a validation cache object using the <code>pAllocator</code>. Applications <b>can</b> limit the amount of data retrieved from a validation cache object in <a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#vkGetValidationCacheDataEXT(org.lwjgl.vulkan.VkDevice,long,org.lwjgl.PointerBuffer,java.nio.ByteBuffer)"><code>GetValidationCacheDataEXT</code></a>. Implementations <b>should</b> not internally limit the total number of entries added to a validation cache object or the total host memory consumed.</p>
+ <p>Applications <b>can</b> track and manage the total host memory size of a validation cache object using the <code>pAllocator</code>. Applications <b>can</b> limit the amount of data retrieved from a validation cache object in <code>vkGetValidationCacheDataEXT</code>. Implementations <b>should</b> not internally limit the total number of entries added to a validation cache object or the total host memory consumed.</p>
  </div>
  
- <p>Once created, a validation cache <b>can</b> be passed to the <a href="../../../org/lwjgl/vulkan/VK10.html#vkCreateShaderModule(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkShaderModuleCreateInfo,org.lwjgl.vulkan.VkAllocationCallbacks,java.nio.LongBuffer)"><code>CreateShaderModule</code></a> command as part of the <a href="../../../org/lwjgl/vulkan/VkShaderModuleCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkShaderModuleCreateInfo</code></a> <code>pNext</code> chain. If a <a href="../../../org/lwjgl/vulkan/VkShaderModuleValidationCacheCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkShaderModuleValidationCacheCreateInfoEXT</code></a> object is part of the <a href="../../../org/lwjgl/vulkan/VkShaderModuleCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkShaderModuleCreateInfo</code></a><code>::pNext</code> chain, and its <code>validationCache</code> field is not <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a>, the implementation will query it for possible reuse opportunities and update it with new content. The use of the validation cache object in these commands is internally synchronized, and the same validation cache object <b>can</b> be used in multiple threads simultaneously.</p>
+ <p>Once created, a validation cache <b>can</b> be passed to the <code>vkCreateShaderModule</code> command as part of the <a href="../../../org/lwjgl/vulkan/VkShaderModuleCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkShaderModuleCreateInfo</code></a> <code>pNext</code> chain. If a <a href="../../../org/lwjgl/vulkan/VkShaderModuleValidationCacheCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkShaderModuleValidationCacheCreateInfoEXT</code></a> object is part of the <a href="../../../org/lwjgl/vulkan/VkShaderModuleCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkShaderModuleCreateInfo</code></a><code>::pNext</code> chain, and its <code>validationCache</code> field is not <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a>, the implementation will query it for possible reuse opportunities and update it with new content. The use of the validation cache object in these commands is internally synchronized, and the same validation cache object <b>can</b> be used in multiple threads simultaneously.</p>
  
  <div style="margin-left: 26px; border-left: 1px solid gray; padding-left: 14px;"><h5>Note</h5>
  
- <p>Implementations <b>should</b> make every effort to limit any critical sections to the actual accesses to the cache, which is expected to be significantly shorter than the duration of the <a href="../../../org/lwjgl/vulkan/VK10.html#vkCreateShaderModule(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkShaderModuleCreateInfo,org.lwjgl.vulkan.VkAllocationCallbacks,java.nio.LongBuffer)"><code>CreateShaderModule</code></a> command.</p>
+ <p>Implementations <b>should</b> make every effort to limit any critical sections to the actual accesses to the cache, which is expected to be significantly shorter than the duration of the <code>vkCreateShaderModule</code> command.</p>
  </div>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -718,13 +718,13 @@ extends java.lang.Object</pre>
  
  <p>If <code>pData</code> is <code>NULL</code>, then the maximum size of the data that <b>can</b> be retrieved from the validation cache, in bytes, is returned in <code>pDataSize</code>. Otherwise, <code>pDataSize</code> <b>must</b> point to a variable set by the user to the size of the buffer, in bytes, pointed to by <code>pData</code>, and on return the variable is overwritten with the amount of data actually written to <code>pData</code>.</p>
  
- <p>If <code>pDataSize</code> is less than the maximum size that <b>can</b> be retrieved by the validation cache, at most <code>pDataSize</code> bytes will be written to <code>pData</code>, and <a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#vkGetValidationCacheDataEXT(org.lwjgl.vulkan.VkDevice,long,org.lwjgl.PointerBuffer,java.nio.ByteBuffer)"><code>GetValidationCacheDataEXT</code></a> will return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_INCOMPLETE"><code>INCOMPLETE</code></a>. Any data written to <code>pData</code> is valid and <b>can</b> be provided as the <code>pInitialData</code> member of the <a href="../../../org/lwjgl/vulkan/VkValidationCacheCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkValidationCacheCreateInfoEXT</code></a> structure passed to <a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#vkCreateValidationCacheEXT(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkValidationCacheCreateInfoEXT,org.lwjgl.vulkan.VkAllocationCallbacks,java.nio.LongBuffer)"><code>CreateValidationCacheEXT</code></a>.</p>
+ <p>If <code>pDataSize</code> is less than the maximum size that <b>can</b> be retrieved by the validation cache, at most <code>pDataSize</code> bytes will be written to <code>pData</code>, and <code>vkGetValidationCacheDataEXT</code> will return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_INCOMPLETE"><code>INCOMPLETE</code></a>. Any data written to <code>pData</code> is valid and <b>can</b> be provided as the <code>pInitialData</code> member of the <a href="../../../org/lwjgl/vulkan/VkValidationCacheCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkValidationCacheCreateInfoEXT</code></a> structure passed to <code>vkCreateValidationCacheEXT</code>.</p>
  
- <p>Two calls to <a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#vkGetValidationCacheDataEXT(org.lwjgl.vulkan.VkDevice,long,org.lwjgl.PointerBuffer,java.nio.ByteBuffer)"><code>GetValidationCacheDataEXT</code></a> with the same parameters <b>must</b> retrieve the same data unless a command that modifies the contents of the cache is called between them.</p>
+ <p>Two calls to <code>vkGetValidationCacheDataEXT</code> with the same parameters <b>must</b> retrieve the same data unless a command that modifies the contents of the cache is called between them.</p>
  
  <p>Applications <b>can</b> store the data retrieved from the validation cache, and use these data, possibly in a future run of the application, to populate new validation cache objects. The results of validation, however, <b>may</b> depend on the vendor ID, device ID, driver version, and other details of the device. To enable applications to detect when previously retrieved data is incompatible with the device, the initial bytes written to <code>pData</code> <b>must</b> be a header consisting of the following members:</p>
  
- <h6>Layout for validation cache header version ename:VK_VALIDATION_CACHE_HEADER_VERSION_ONE_EXT</h6>
+ <h6>Layout for validation cache header version <a href="../../../org/lwjgl/vulkan/EXTValidationCache.html#VK_VALIDATION_CACHE_HEADER_VERSION_ONE_EXT"><code>VALIDATION_CACHE_HEADER_VERSION_ONE_EXT</code></a></h6>
  
  <table class="lwjgl">
  <thead><tr><th>Offset</th><th>Size</th><th>Meaning</th></tr></thead>
@@ -829,7 +829,7 @@ extends java.lang.Object</pre>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/lwjgl/vulkan/EXTSwapchainColorspace.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/lwjgl/vulkan/EXTTransformFeedback.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../org/lwjgl/vulkan/EXTValidationFlags.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

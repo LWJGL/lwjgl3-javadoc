@@ -3930,6 +3930,9 @@ extends java.lang.Object</pre>
  <li><a href="../../../org/lwjgl/glfw/GLFW.html#GLFW_SCALE_TO_MONITOR"><code>SCALE_TO_MONITOR</code></a> - 
  <code>WindowHint</code>: Specifies whether the window content area should be resized based on the monitor content scale of any monitor it is placed on.
  This includes the initial placement when the window is created. Possible values are <a href="../../../org/lwjgl/glfw/GLFW.html#GLFW_TRUE"><code>TRUE</code></a> and <a href="../../../org/lwjgl/glfw/GLFW.html#GLFW_FALSE"><code>FALSE</code></a>.
+ 
+ <p>This hint only has an effect on platforms where screen coordinates and pixels always map 1:1 such as Windows and X11. On platforms like macOS the
+ resolution of the framebuffer is changed independently of the window size.</p>
  </li>
  </ul></div>
 </li></ul>
@@ -7720,7 +7723,6 @@ public static&nbsp;void&nbsp;glfwSetClipboardString&#8203;(long&nbsp;window,
  
  <ul>
  <li>This function must only be called from the main thread.</li>
- <li><b>Wayland</b>: Clipboard is currently unimplemented.</li>
  </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -7760,7 +7762,6 @@ public static&nbsp;java.lang.String&nbsp;glfwGetClipboardString&#8203;(long&nbsp
  <li>This function must only be called from the main thread.</li>
  <li>The returned string is allocated and freed by GLFW.  You should not free it yourself.</li>
  <li>The returned string is valid only until the next call to <a href="../../../org/lwjgl/glfw/GLFW.html#glfwGetClipboardString(long)"><code>GetClipboardString</code></a> or <a href="../../../org/lwjgl/glfw/GLFW.html#glfwSetClipboardString(long,java.nio.ByteBuffer)"><code>SetClipboardString</code></a>.</li>
- <li><b>Wayland</b>: Clipboard is currently unimplemented.</li>
  </ul></div></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

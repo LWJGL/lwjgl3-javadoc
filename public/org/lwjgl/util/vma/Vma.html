@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":9,"i47":9,"i48":9,"i49":9,"i50":9,"i51":9,"i52":9,"i53":9,"i54":9,"i55":9,"i56":9,"i57":9,"i58":9,"i59":9,"i60":9,"i61":9,"i62":9,"i63":9,"i64":9,"i65":9,"i66":9,"i67":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":9,"i47":9,"i48":9,"i49":9,"i50":9,"i51":9,"i52":9,"i53":9,"i54":9,"i55":9,"i56":9,"i57":9,"i58":9,"i59":9,"i60":9,"i61":9,"i62":9,"i63":9,"i64":9,"i65":9,"i66":9,"i67":9,"i68":9,"i69":9,"i70":9,"i71":9,"i72":9,"i73":9,"i74":9,"i75":9,"i76":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -288,8 +288,8 @@ extends java.lang.Object</pre>
  
  <p>The library provides following functions for mapping of a specific <code>VmaAllocation</code>: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaMapMemory(long,long,org.lwjgl.PointerBuffer)"><code>MapMemory</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaUnmapMemory(long,long)"><code>UnmapMemory</code></a>. They are safer and more
  convenient to use than standard Vulkan functions. You can map an allocation multiple times simultaneously - mapping is reference-counted internally.
- You can also map different allocations simultaneously regardless of whether they use the same <code>VkDeviceMemory</code> block. They way it's implemented
- is that the library always maps entire memory block, not just region of the allocation. For further details, see description of <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaMapMemory(long,long,org.lwjgl.PointerBuffer)"><code>MapMemory</code></a> function.
+ You can also map different allocations simultaneously regardless of whether they use the same <code>VkDeviceMemory</code> block. The way it's implemented is
+ that the library always maps entire memory block, not just region of the allocation. For further details, see description of <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaMapMemory(long,long,org.lwjgl.PointerBuffer)"><code>MapMemory</code></a> function.
  Example:</p>
  
  <pre><code>
@@ -302,7 +302,7 @@ extends java.lang.Object</pre>
  ConstantBuffer constantBufferData;
  
  VmaAllocator allocator;
- VmaBuffer constantBuffer;
+ VkBuffer constantBuffer;
  VmaAllocation constantBufferAllocation;
  
  // You can map and fill your buffer using following code:
@@ -311,6 +311,14 @@ extends java.lang.Object</pre>
  vmaMapMemory(allocator, constantBufferAllocation, &amp;mappedData);
  memcpy(mappedData, &amp;constantBufferData, sizeof(constantBufferData));
  vmaUnmapMemory(allocator, constantBufferAllocation);</code></pre>
+ 
+ <p>When mapping, you may see a warning from Vulkan validation layer similar to this one:</p>
+ 
+ <p><i>Mapping an image with layout <code>VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL</code> can result in undefined behavior if this memory is used by the
+ device. Only <code>GENERAL</code> or <code>PREINITIALIZED</code> should be used.</i></p>
+ 
+ <p>It happens because the library maps entire <code>VkDeviceMemory</code> block, where different types of images and buffers may end up together, especially on
+ GPUs with unified memory like Intel. You can safely ignore it if you are sure you access only memory of the intended object that you wanted to map.</p>
  
  <h4>Persistently mapped memory</h4>
  
@@ -343,6 +351,8 @@ extends java.lang.Object</pre>
  allocated from this memory type stays mapped for the time of any call to <code>vkQueueSubmit()</code> or <code>vkQueuePresentKHR()</code>, this block is
  migrated by WDDM to system RAM, which degrades performance. It doesn't matter if that particular memory block is actually used by the command
  buffer being submitted.</li>
+ <li>On Mac/MoltenVK there is a known bug - <a href="https://github.com/KhronosGroup/MoltenVK/issues/175">Issue #175</a> which requires unmapping
+ before GPU can see updated texture.</li>
  <li>Keeping many large memory blocks mapped may impact performance or stability of some debugging tools.</li>
  </ul>
  
@@ -350,26 +360,18 @@ extends java.lang.Object</pre>
  
  <p>Memory in Vulkan doesn't need to be unmapped before using it on GPU, but unless a memory types has <code>VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</code> flag
  set, you need to manually invalidate cache before reading of mapped pointer using function <code>vkInvalidateMappedMemoryRanges()</code> and flush cache
- after writing to mapped pointer using function <code>vkFlushMappedMemoryRanges()</code>. Example:</p>
+ after writing to mapped pointer. Vulkan provides following functions for this purpose <code>vkFlushMappedMemoryRangs()</code>,
+ <code>vkInvalidateMappedMemoryRanges()</code>, but this library provides more convenient functions that refer to given allocation object:
+ <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFlushAllocation(long,long,long,long)"><code>FlushAllocation</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaInvalidateAllocation(long,long,long,long)"><code>InvalidateAllocation</code></a>.</p>
  
- <pre><code>
- memcpy(allocInfo.pMappedData, &amp;constantBufferData, sizeof(constantBufferData));
+ <p>Regions of memory specified for flush/invalidate must be aligned to <code>VkPhysicalDeviceLimits::nonCoherentAtomSize</code>. This is automatically ensured
+ by the library. In any memory type that is <code>HOST_VISIBLE</code> but not <code>HOST_COHERENT</code>, all allocations within blocks are aligned to this value,
+ so their offsets are always multiply of <code>nonCoherentAtomSize</code> and two different allocations never share same "line" of this size.</p>
  
- VkMemoryPropertyFlags memFlags;
- vmaGetMemoryTypeProperties(allocator, allocInfo.memoryType, &amp;memFlags);
- if((memFlags &amp; VK_MEMORY_PROPERTY_HOST_COHERENT_BIT) == 0)
- {
-     VkMappedMemoryRange memRange = { VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE };
-     memRange.memory = allocInfo.deviceMemory;
-     memRange.offset = allocInfo.offset;
-     memRange.size   = allocInfo.size;
-     vkFlushMappedMemoryRanges(device, 1, &amp;memRange);
- }</code></pre>
+ <p>Please note that memory allocated with <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_ONLY"><code>MEMORY_USAGE_CPU_ONLY</code></a> is guaranteed to be <code>HOST_COHERENT</code>.</p>
  
- <p>Please note that memory allocated with <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_ONLY"><code>MEMORY_USAGE_CPU_ONLY</code></a> is guaranteed to be host coherent.</p>
- 
- <p>Also, Windows drivers from all 3 PC GPU vendors (AMD, Intel, NVIDIA) currently provide <code>VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</code> flag on all memory
- types that are <code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code>, so on this platform you may not need to bother.</p>
+ <p>Also, Windows drivers from all 3 PC GPU vendors (AMD, Intel, NVIDIA) currently provide <code>HOST_COHERENT</code> flag on all memory types that are
+ <code>HOST_VISIBLE</code>, so on this platform you may not need to bother.</p>
  
  <h4>Finding out if memory is mappable</h4>
  
@@ -388,6 +390,7 @@ extends java.lang.Object</pre>
  
  VmaAllocationCreateInfo allocCreateInfo = {};
  allocCreateInfo.usage = VMA_MEMORY_USAGE_GPU_ONLY;
+ allocCreateInfo.preferredFlags = VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT;
  
  VkBuffer buf;
  VmaAllocation alloc;
@@ -460,7 +463,7 @@ extends java.lang.Object</pre>
  <li>Fill <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a> structure.</li>
  <li>Call <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreatePool(long,org.lwjgl.util.vma.VmaPoolCreateInfo,org.lwjgl.PointerBuffer)"><code>CreatePool</code></a> to obtain <code>VmaPool</code> handle.</li>
  <li>When making an allocation, set <a href="../../../../org/lwjgl/util/vma/VmaAllocationCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationCreateInfo</code></a><code>::pool</code> to this handle. You don't need to specify any other parameters of this
- structure, like usage.</li>
+ structure, like <code>usage</code>.</li>
  </ol>
  
  <p>Example:</p>
@@ -524,6 +527,90 @@ extends java.lang.Object</pre>
  <li><a href="../../../../org/lwjgl/util/vma/VmaAllocationCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationCreateInfo</code></a>: You don't need to pass same parameters. Fill only <code>pool</code> member. Other members are ignored anyway.</li>
  </ul>
  
+ <h4>Linear allocation algorithm</h4>
+ 
+ <p>Each Vulkan memory block managed by this library has accompanying metadata that keeps track of used and unused regions. By default, the metadata
+ structure and algorithm tries to find best place for new allocations among free regions to optimize memory usage. This way you can allocate and free
+ objects in any order.</p>
+ 
+ <p>Sometimes there is a need to use simpler, linear allocation algorithm. You can create custom pool that uses such algorithm by adding flag
+ <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_LINEAR_ALGORITHM_BIT"><code>POOL_CREATE_LINEAR_ALGORITHM_BIT</code></a> to <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::flags</code> while creating <code>VmaPool</code> object. Then an alternative metadata management
+ is used. It always creates new allocations after last one and doesn't reuse free regions after allocations freed in the middle. It results in better
+ allocation performance and less memory consumed by metadata.</p>
+ 
+ <p>With this one flag, you can create a custom pool that can be used in many ways: free-at-once, stack, double stack, and ring buffer. See below for
+ details.</p>
+ 
+ <h5>Free-at-once</h5>
+ 
+ <p>In a pool that uses linear algorithm, you still need to free all the allocations individually, e.g. by using <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFreeMemory(long,long)"><code>FreeMemory</code></a> or <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyBuffer(long,long,long)"><code>DestroyBuffer</code></a>. You can
+ free them in any order. New allocations are always made after last one - free space in the middle is not reused. However, when you release all the
+ allocation and the pool becomes empty, allocation starts from the beginning again. This way you can use linear algorithm to speed up creation of
+ allocations that you are going to release all at once.</p>
+ 
+ <p>This mode is also available for pools created with <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::maxBlockCount</code> value that allows multiple memory blocks.</p>
+ 
+ <h5>Stack</h5>
+ 
+ <p>When you free an allocation that was created last, its space can be reused. Thanks to this, if you always release allocations in the order opposite to
+ their creation (LIFO - Last In First Out), you can achieve behavior of a stack.</p>
+ 
+ <p>This mode is also available for pools created with <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::maxBlockCount</code> value that allows multiple memory blocks.</p>
+ 
+ <h5>Double stack</h5>
+ 
+ <p>The space reserved by a custom pool with linear algorithm may be used by two stacks:</p>
+ 
+ <ul>
+ <li>First, default one, growing up from offset 0.</li>
+ <li>Second, "upper" one, growing down from the end towards lower offsets.</li>
+ </ul>
+ 
+ <p>To make allocation from upper stack, add flag <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_UPPER_ADDRESS_BIT"><code>ALLOCATION_CREATE_UPPER_ADDRESS_BIT</code></a> to <a href="../../../../org/lwjgl/util/vma/VmaAllocationCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationCreateInfo</code></a><code>::flags</code>.</p>
+ 
+ <p>Double stack is available only in pools with one memory block - <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::maxBlockCount</code> must be 1. Otherwise behavior is undefined.</p>
+ 
+ <p>When the two stacks' ends meet so there is not enough space between them for a new allocation, such allocation fails with usual
+ <code>VK_ERROR_OUT_OF_DEVICE_MEMORY</code> error.</p>
+ 
+ <h5>Ring buffer</h5>
+ 
+ <p>When you free some allocations from the beginning and there is not enough free space for a new one at the end of a pool, allocator's "cursor" wraps
+ around to the beginning and starts allocation there. Thanks to this, if you always release allocations in the same order as you created them (FIFO -
+ First In First Out), you can achieve behavior of a ring buffer / queue.</p>
+ 
+ <p>Pools with linear algorithm support lost allocations when used as ring buffer. If there is not enough free space for a new allocation, but existing
+ allocations from the front of the queue can become lost, they become lost and the allocation succeeds.</p>
+ 
+ <p>Ring buffer is available only in pools with one memory block - <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::maxBlockCount</code> must be 1. Otherwise behavior is undefined.</p>
+ 
+ <h4>Buddy allocation algorithm</h4>
+ 
+ <p>There is another allocation algorithm that can be used with custom pools, called "buddy". Its internal data structure is based on a tree of blocks,
+ each having size that is a power of two and a half of its parent's size. When you want to allocate memory of certain size, a free node in the tree is
+ located. If it's too large, it is recursively split into two halves (called "buddies"). However, if requested allocation size is not a power of two,
+ the size of a tree node is aligned up to the nearest power of two and the remaining space is wasted. When two buddy nodes become free, they are merged
+ back into one larger node.</p>
+ 
+ <p>The advantage of buddy allocation algorithm over default algorithm is faster allocation and deallocation, as well as smaller external fragmentation.
+ The disadvantage is more wasted space (internal fragmentation).</p>
+ 
+ <p>For more information, please read <a href="https://en.wikipedia.org/wiki/Buddy_memory_allocation">"Buddy memory allocation" on Wikipedia</a> or other
+ sources that describe this concept in general.</p>
+ 
+ <p>To use buddy allocation algorithm with a custom pool, add flag <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_BUDDY_ALGORITHM_BIT"><code>POOL_CREATE_BUDDY_ALGORITHM_BIT</code></a> to <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::flags</code> while creating
+ <code>VmaPool</code> object.</p>
+ 
+ <p>Several limitations apply to pools that use buddy algorithm:</p>
+ 
+ <ul>
+ <li>It is recommended to use <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::blockSize</code> that is a power of two. Otherwise, only largest power of two smaller than the size
+ is used for allocations. The remaining space always stays unused.</li>
+ <li>Margins and corruption detection don't work in such pools.</li>
+ <li>Lost allocations don't work in such pools. You can use them, but they never become lost. Support may be added in the future.</li>
+ <li>Defragmentation doesn't work with allocations made from such pool.</li>
+ </ul>
+ 
  <h3>Defragmentation</h3>
  
  <p>Interleaved allocations and deallocations of many objects of varying size can cause fragmentation, which can lead to a situation where the library is
@@ -531,12 +618,61 @@ extends java.lang.Object</pre>
  between existing allocations.</p>
  
  <p>To mitigate this problem, you can use <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDefragment(long,org.lwjgl.PointerBuffer,java.nio.IntBuffer,org.lwjgl.util.vma.VmaDefragmentationInfo,org.lwjgl.util.vma.VmaDefragmentationStats)"><code>Defragment</code></a>. Given set of allocations, this function can move them to compact used memory, ensure more
- continuous free space and possibly also free some <code>VkDeviceMemory</code>. It can work only on allocations made from memory type that is
- <code>HOST_VISIBLE</code>. Allocations are modified to point to the new <code>VkDeviceMemory</code> and offset. Data in this memory is also <code>memmove</code>-ed to
- the new place. However, if you have images or buffers bound to these allocations (and you certainly do), you need to destroy, recreate, and bind them
- to the new place in memory.</p>
+ continuous free space and possibly also free some <code>VkDeviceMemory</code>. Currently it can work only on allocations made from memory type that is
+ <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. Allocations are modified to point to the new <code>VkDeviceMemory</code> and offset. Data in this memory is
+ also <code>memmove</code>-ed to the new place. However, if you have images or buffers bound to these allocations (and you certainly do), you need to
+ destroy, recreate, and bind them to the new place in memory.</p>
  
- <p>For further details and example code, see documentation of function <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDefragment(long,org.lwjgl.PointerBuffer,java.nio.IntBuffer,org.lwjgl.util.vma.VmaDefragmentationInfo,org.lwjgl.util.vma.VmaDefragmentationStats)"><code>Defragment</code></a>.</p>
+ <p>After allocation has been moved, its <a href="../../../../org/lwjgl/util/vma/VmaAllocationInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationInfo</code></a><code>::deviceMemory</code> and/or <code>VmaAllocationInfo::offset</code> changes. You must query them
+ again using <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetAllocationInfo(long,long,org.lwjgl.util.vma.VmaAllocationInfo)"><code>GetAllocationInfo</code></a> if you need them.</p>
+ 
+ <p>If an allocation has been moved, data in memory is copied to new place automatically, but if it was bound to a buffer or an image, you must destroy
+ that object yourself, create new one and bind it to the new memory pointed by the allocation. You must use <code>vkDestroyBuffer()</code>,
+ <code>vkDestroyImage()</code>, <code>vkCreateBuffer()</code>, <code>vkCreateImage()</code> for that purpose and NOT <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyBuffer(long,long,long)"><code>DestroyBuffer</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyImage(long,long,long)"><code>DestroyImage</code></a>,
+ <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateBuffer(long,org.lwjgl.vulkan.VkBufferCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateBuffer</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateImage(long,org.lwjgl.vulkan.VkImageCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateImage</code></a>! Example:</p>
+ 
+ <pre><code>
+ VkDevice device = ...;
+ VmaAllocator allocator = ...;
+ std::vector&lt;VkBuffer&gt; buffers = ...;
+ std::vector&lt;VmaAllocation&gt; allocations = ...;
+ const size_t allocCount = allocations.size();
+ 
+ std::vector&lt;VkBool32&gt; allocationsChanged(allocCount);
+ vmaDefragment(allocator, allocations.data(), allocCount, allocationsChanged.data(), nullptr, nullptr);
+ 
+ for(size_t i = 0; i &lt; allocCount; ++i)
+ {
+     if(allocationsChanged[i])
+     {
+         // Destroy buffers that is immutably bound to memory region which is no longer valid.
+         vkDestroyBuffer(device, buffers[i], nullptr);
+ 
+         // Create new buffer with same parameters.
+         VkBufferCreateInfo bufferInfo = ...;
+         vkCreateBuffer(device, &amp;bufferInfo, nullptr, &amp;buffers[i]);
+ 
+         // You can make dummy call to vkGetBufferMemoryRequirements here to silence validation layer warning.
+ 
+         // Bind new buffer with new memory region. Data contained in it is already there.
+         VmaAllocationInfo allocInfo;
+         vmaGetAllocationInfo(allocator, allocations[i], &amp;allocInfo);
+         vkBindBufferMemory(device, buffers[i], allocInfo.deviceMemory, allocInfo.offset);
+     }
+ }</code></pre>
+ 
+ <p>Please don't expect memory to be fully compacted after defragmentation. Algorithms inside are based on some heuristics that try to maximize number of
+ Vulkan memory blocks to make totally empty to release them, as well as to maximimze continuous empty space inside remaining blocks, while minimizing
+ the number and size of allocations that needs to be moved. Some fragmentation still remains after this call. This is normal.</p>
+ 
+ <p>If you defragment allocations bound to images, these images should be created with <code>VK_IMAGE_CREATE_ALIAS_BIT</code> flag, to make sure that new image
+ created with same parameters and pointing to data copied to another memory region will interpret its contents consistently. Otherwise you may
+ experience corrupted data on some implementations, e.g. due to different pixel swizzling used internally by the graphics driver.</p>
+ 
+ <p>If you defragment allocations bound to images, new images to be bound to new memory region after defragmentation should be created with
+ <code>VK_IMAGE_LAYOUT_PREINITIALIZED</code> and then transitioned to their original layout from before defragmentation using an image memory barrier.</p>
+ 
+ <p>For further details, see documentation of function <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDefragment(long,org.lwjgl.PointerBuffer,java.nio.IntBuffer,org.lwjgl.util.vma.VmaDefragmentationInfo,org.lwjgl.util.vma.VmaDefragmentationStats)"><code>Defragment</code></a>.</p>
  
  <h3>Lost allocations</h3>
  
@@ -625,6 +761,13 @@ extends java.lang.Object</pre>
  
  <p>You can call function <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaMakePoolAllocationsLost(long,long,org.lwjgl.PointerBuffer)"><code>MakePoolAllocationsLost</code></a> to set all eligible allocations in a specified custom pool to lost state. Allocations that have been
  "touched" in current frame or <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::frameInUseCount</code> frames back cannot become lost.</p>
+ 
+ <p><b>Q: Can I touch allocation that cannot become lost?</b></p>
+ 
+ <p>Yes, although it has no visible effect. Calls to <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetAllocationInfo(long,long,org.lwjgl.util.vma.VmaAllocationInfo)"><code>GetAllocationInfo</code></a> and <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaTouchAllocation(long,long)"><code>TouchAllocation</code></a> update last use frame index also for allocations that
+ cannot become lost, but the only way to observe it is to dump internal allocator state using <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaBuildStatsString(long,org.lwjgl.PointerBuffer,boolean)"><code>BuildStatsString</code></a>. You can use this feature for
+ debugging purposes to explicitly mark allocations that you use in current frame and then analyze JSON dump to see for how long each allocation stays
+ unused.</p>
  
  <h3>Statistics</h3>
  
@@ -723,7 +866,108 @@ extends java.lang.Object</pre>
  
  <p>That string is also printed in JSON report created by <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaBuildStatsString(long,org.lwjgl.PointerBuffer,boolean)"><code>BuildStatsString</code></a>.</p>
  
+ <h3>Debugging incorrect memory usage</h3>
+ 
+ <p>If you suspect a bug with memory usage, like usage of uninitialized memory or memory being overwritten out of bounds of an allocation, you can use
+ debug features of this library to verify this.</p>
+ 
+ <h4>Memory initialization</h4>
+ 
+ <p>If you experience a bug with incorrect and nondeterministic data in your program and you suspect uninitialized memory to be used, you can enable
+ automatic memory initialization to verify this. To do it, define macro <code>VMA_DEBUG_INITIALIZE_ALLOCATIONS</code> to 1.</p>
+ 
+ <p>It makes memory of all new allocations initialized to bit pattern <code>0xDCDCDCDC</code>. Before an allocation is destroyed, its memory is filled with bit
+ pattern <code>0xEFEFEFEF</code>. Memory is automatically mapped and unmapped if necessary.</p>
+ 
+ <p>If you find these values while debugging your program, good chances are that you incorrectly read Vulkan memory that is allocated but not initialized,
+ or already freed, respectively.</p>
+ 
+ <p>Memory initialization works only with memory types that are <code>HOST_VISIBLE</code>. It works also with dedicated allocations. It doesn't work with
+ allocations created with <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_CAN_BECOME_LOST_BIT"><code>ALLOCATION_CREATE_CAN_BECOME_LOST_BIT</code></a> flag, as they cannot be mapped.</p>
+ 
+ <h4>Margins</h4>
+ 
+ <p>By default, allocations are laid out in memory blocks next to each other if possible (considering required alignment, <code>bufferImageGranularity</code>,
+ and <code>nonCoherentAtomSize</code>).</p>
+ 
+ <p>Define macro <code>VMA_DEBUG_MARGIN</code> to some non-zero value (e.g. 16) to enforce specified number of bytes as a margin before and after every
+ allocation.</p>
+ 
+ <p>If your bug goes away after enabling margins, it means it may be caused by memory being overwritten outside of allocation boundaries. It is not 100%
+ certain though. Change in application behavior may also be caused by different order and distribution of allocations across memory blocks after margins
+ are applied.</p>
+ 
+ <p>The margin is applied also before first and after last allocation in a block. It may occur only once between two adjacent allocations.</p>
+ 
+ <p>Margins work with all types of memory.</p>
+ 
+ <p>Margin is applied only to allocations made out of memory blocks and not to dedicated allocations, which have their own memory block of specific size.
+ It is thus not applied to allocations made using <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT"><code>ALLOCATION_CREATE_DEDICATED_MEMORY_BIT</code></a> flag or those automatically decided to put into dedicated
+ allocations, e.g. due to its large size or recommended by <code>VK_KHR_dedicated_allocation</code> extension. Margins are also not active in custom pools
+ created with <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_BUDDY_ALGORITHM_BIT"><code>POOL_CREATE_BUDDY_ALGORITHM_BIT</code></a> flag.</p>
+ 
+ <p>Margins appear in JSON dump as part of free space.</p>
+ 
+ <p>Note that enabling margins increases memory usage and fragmentation.</p>
+ 
+ <h4>Corruption detection</h4>
+ 
+ <p>You can additionally define macro <code>VMA_DEBUG_DETECT_CORRUPTION</code> to 1 to enable validation of contents of the margins.</p>
+ 
+ <p>When this feature is enabled, number of bytes specified as <code>VMA_DEBUG_MARGIN</code> (it must be multiple of 4) before and after every allocation is
+ filled with a magic number. This idea is also know as "canary". Memory is automatically mapped and unmapped if necessary.</p>
+ 
+ <p>This number is validated automatically when the allocation is destroyed. If it's not equal to the expected value, <code>VMA_ASSERT()</code> is executed. It
+ clearly means that either CPU or GPU overwritten the memory outside of boundaries of the allocation, which indicates a serious bug.</p>
+ 
+ <p>You can also explicitly request checking margins of all allocations in all memory blocks that belong to specified memory types by using function
+ <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCheckCorruption(long,int)"><code>CheckCorruption</code></a>, or in memory blocks that belong to specified custom pool, by using function <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCheckPoolCorruption(long,long)"><code>CheckPoolCorruption</code></a>.</p>
+ 
+ <p>Margin validation (corruption detection) works only for memory types that are <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>.</p>
+ 
+ <h3>Record and replay</h3>
+ 
+ <h4>Introduction</h4>
+ 
+ <p>While using the library, sequence of calls to its functions together with their parameters can be recorded to a file and later replayed using
+ standalone player application. It can be useful to:</p>
+ 
+ <ul>
+ <li>Test correctness - check if same sequence of calls will not cause crash or failures on a target platform.</li>
+ <li>Gather statistics - see number of allocations, peak memory usage, number of calls etc.</li>
+ <li>Benchmark performance - see how much time it takes to replay the whole sequence.</li>
+ </ul>
+ 
+ <h4>Usage</h4>
+ 
+ <p><b>To record sequence of calls to a file:</b> Fill in <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocatorCreateInfo</code></a><code>::pRecordSettings</code> member while creating <code>VmaAllocator</code>
+ object. File is opened and written during whole lifetime of the allocator.</p>
+ 
+ <p><b>To replay file:</b> Use <code>VmaReplay</code> - standalone command-line program. Precompiled binary can be found in "bin" directory. Its source can be
+ found in "src/VmaReplay" directory. Its project is generated by Premake. Command line syntax is printed when the program is launched without parameters.
+ Basic usage:</p>
+ 
+ <pre><code>
+ VmaReplay.exe MyRecording.csv</code></pre>
+ 
+ <p><b>Documentation of file format</b> can be found in file: "docs/Recording file format.md". It's a human-readable, text file in CSV format (Comma
+ Separated Values).</p>
+ 
+ <h4>Additional considerations</h4>
+ 
+ <ul>
+ <li>Replaying file that was recorded on a different GPU (with different parameters like <code>bufferImageGranularity</code>, <code>nonCoherentAtomSize</code>,
+ and especially different set of memory heaps and types) may give different performance and memory usage results, as well as issue some warnings and
+ errors.</li>
+ <li>Current implementation of recording in VMA, as well as <code>VmaReplay</code> application, is coded and tested only on Windows. Inclusion of recording
+ code is driven by <code>VMA_RECORDING_ENABLED</code> macro. Support for other platforms should be easy to add. Contributions are welcomed.</li>
+ <li>Currently calls to <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDefragment(long,org.lwjgl.PointerBuffer,java.nio.IntBuffer,org.lwjgl.util.vma.VmaDefragmentationInfo,org.lwjgl.util.vma.VmaDefragmentationStats)"><code>Defragment</code></a> function are not recorded.</li>
+ </ul>
+ 
  <h3>Recommended usage patterns</h3>
+ 
+ <p>See also slides from talk: <a href="https://www.gdcvault.com/play/1025458/Advanced-Graphics-Techniques-Tutorial-New">Sawicki, Adam. Advanced Graphics
+ Techniques Tutorial: Memory management in Vulkan and DX12. Game Developers Conference, 2018</a></p>
  
  <h4>Simple patterns</h4>
  
@@ -759,8 +1003,8 @@ extends java.lang.Object</pre>
  <p><b>What to do:</b> Create them using <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_TO_GPU"><code>MEMORY_USAGE_CPU_TO_GPU</code></a>. You can map it and write to it directly on CPU, as well as read from it on GPU.</p>
  
  <p>This is a more complex situation. Different solutions are possible, and the best one depends on specific GPU type, but you can use this simple approach
- for the start. Prefer to write to such resource sequentially (e.g. using <code>memcpy</code>). Don't perform random access or any reads from it, as it may
- be very slow.</p>
+ for the start. Prefer to write to such resource sequentially (e.g. using <code>memcpy</code>). Don't perform random access or any reads from it on CPU, as
+ it may be very slow.</p>
  
  <h5>Readback</h5>
  
@@ -774,8 +1018,8 @@ extends java.lang.Object</pre>
  
  <p>You can support integrated graphics (like Intel HD Graphics, AMD APU) better by detecting it in Vulkan. To do it, call
  <code>vkGetPhysicalDeviceProperties()</code>, inspect <code>VkPhysicalDeviceProperties::deviceType</code> and look for
- <code>VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU</code>. When you find it, you can assume that memory is unified and all memory types are equally fast to access
- from GPU, regardless of <code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code>.</p>
+ <code>VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU</code>. When you find it, you can assume that memory is unified and all memory types are comparably fast to
+ access from GPU, regardless of <code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code>.</p>
  
  <p>You can then sum up sizes of all available memory heaps and treat them as useful for your GPU resources, instead of only <code>DEVICE_LOCAL</code> ones. You
  can also prefer to create your resources in memory types that are <code>HOST_VISIBLE</code> to map them directly instead of submitting explicit transfer
@@ -796,7 +1040,7 @@ extends java.lang.Object</pre>
  general recommendations:</p>
  
  <ul>
- <li>On integrated graphics use (2) or (3) to avoid unnecesary time and memory overhead related to using a second copy.</li>
+ <li>On integrated graphics use (2) or (3) to avoid unnecesary time and memory overhead related to using a second copy and making transfer.</li>
  <li>For small resources (e.g. constant buffers) use (2). Discrete AMD cards have special 256 MiB pool of video memory that is directly mappable. Even
  if the resource ends up in system memory, its data may be cached on GPU after first fetch over PCIe bus.</li>
  <li>For larger resources (e.g. textures), decide between (1) and (2). You may want to differentiate NVIDIA and AMD, e.g. by looking for memory type
@@ -893,6 +1137,27 @@ extends java.lang.Object</pre>
  different threads at the same time if you pass the same <code>VmaAllocation</code> object to these functions.</li>
  </ul>
  
+ <h4>Validation layer warnings</h4>
+ 
+ <p>When using this library, you can meet following types of warnings issued by Vulkan validation layer. They don't necessarily indicate a bug, so you may
+ need to just ignore them.</p>
+ 
+ <ul>
+ <li><i><code>vkBindBufferMemory()</code>: Binding memory to buffer <code>0xeb8e4</code> but <code>vkGetBufferMemoryRequirements()</code> has not been called on that
+ buffer.</i>
+ 
+ <p>It happens when <code>VK_KHR_dedicated_allocation</code> extension is enabled. <code>vkGetBufferMemoryRequirements2KHR</code> function is used instead, while
+ validation layer seems to be unaware of it.</p></li>
+ <li><i>Mapping an image with layout <code>VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL</code> can result in undefined behavior if this memory is used by
+ the device. Only <code>GENERAL</code> or <code>PREINITIALIZED</code> should be used.</i>
+ 
+ <p>It happens when you map a buffer or image, because the library maps entire <code>VkDeviceMemory</code> block, where different types of images and
+ buffers may end up together, especially on GPUs with unified memory like Intel.</p></li>
+ <li><i>Non-linear image <code>0xebc91</code> is aliased with linear buffer <code>0xeb8e4</code> which may indicate a bug.</i>
+ 
+ <p>It happens when you use lost allocations, and a new image or buffer is created in place of an existing object that became lost.</p></li>
+ </ul>
+ 
  <h4>Allocation algorithm</h4>
  
  <p>The library uses following algorithm for allocation, in order:</p>
@@ -913,8 +1178,21 @@ extends java.lang.Object</pre>
  <p>Features deliberately excluded from the scope of this library:</p>
  
  <ul>
- <li>Data transfer - issuing commands that transfer data between buffers or images, any usage of <code>VkCommandList</code> or <code>VkCommandQueue</code> and
- related synchronization is responsibility of the user.</li>
+ <li>Support for sparse binding and sparse residency. You can still use these features (when supported by the device) with VMA. You just need to do it
+ yourself. Allocate memory pages with <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemory(long,org.lwjgl.vulkan.VkMemoryRequirements,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemory</code></a>. Any explicit support for sparse binding/residency would rather require another,
+ higher-level library on top of VMA.</li>
+ <li>Data transfer - issuing commands that transfer data between buffers or images, any usage of <code>VkCommandList</code> or <code>VkQueue</code> and related
+ synchronization is responsibility of the user.</li>
+ <li>Allocations for imported/exported external memory. They tend to require explicit memory type index and dedicated allocation anyway, so they don't
+ interact with main features of this library. Such special purpose allocations should be made manually, using <code>vkCreateBuffer()</code> and
+ <code>vkAllocateMemory()</code>.</li>
+ <li>Recreation of buffers and images. Although the library has functions for buffer and image creation (<a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateBuffer(long,org.lwjgl.vulkan.VkBufferCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateBuffer</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateImage(long,org.lwjgl.vulkan.VkImageCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateImage</code></a>), you need to
+ recreate these objects yourself after defragmentation. That's because the big structures <code>VkBufferCreateInfo</code>, <code>VkImageCreateInfo</code> are
+ not stored in <code>VmaAllocation</code> object.</li>
+ <li>Handling CPU memory allocation failures. When dynamically creating small C++ objects in CPU memory (not Vulkan memory), allocation failures are not
+ checked and handled gracefully, because that would complicate code significantly and is usually not needed in desktop PC applications anyway.</li>
+ <li>Code free of any compiler warnings. Maintaining the library to compile and work correctly on so many different platforms is hard enough. Being free
+ of any warnings, on any version of any compiler, is simply not feasible.</li>
  <li>Support for any programming languages other than C/C++. Bindings to other languages are welcomed as external projects.</li>
  </ul></div>
 </li>
@@ -944,6 +1222,14 @@ extends java.lang.Object</pre>
 <br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT">VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT</a>
 <br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_MAPPED_BIT">VMA_ALLOCATION_CREATE_MAPPED_BIT</a>
 <br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_NEVER_ALLOCATE_BIT">VMA_ALLOCATION_CREATE_NEVER_ALLOCATE_BIT</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_BEST_FIT_BIT">VMA_ALLOCATION_CREATE_STRATEGY_BEST_FIT_BIT</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_FIRST_FIT_BIT">VMA_ALLOCATION_CREATE_STRATEGY_FIRST_FIT_BIT</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_MASK">VMA_ALLOCATION_CREATE_STRATEGY_MASK</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_MIN_FRAGMENTATION_BIT">VMA_ALLOCATION_CREATE_STRATEGY_MIN_FRAGMENTATION_BIT</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_MIN_MEMORY_BIT">VMA_ALLOCATION_CREATE_STRATEGY_MIN_MEMORY_BIT</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_MIN_TIME_BIT">VMA_ALLOCATION_CREATE_STRATEGY_MIN_TIME_BIT</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_WORST_FIT_BIT">VMA_ALLOCATION_CREATE_STRATEGY_WORST_FIT_BIT</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_UPPER_ADDRESS_BIT">VMA_ALLOCATION_CREATE_UPPER_ADDRESS_BIT</a>
 <br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_USER_DATA_COPY_STRING_BIT">VMA_ALLOCATION_CREATE_USER_DATA_COPY_STRING_BIT</a></span></code></th>
 <td class="colLast">
 <div class="block">Flags to be passed as <a href="../../../../org/lwjgl/util/vma/VmaAllocationCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationCreateInfo</code></a><code>::flags</code>.</div>
@@ -970,9 +1256,19 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_IGNORE_BUFFER_IMAGE_GRANULARITY_BIT">VMA_POOL_CREATE_IGNORE_BUFFER_IMAGE_GRANULARITY_BIT</a></span></code></th>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_ALGORITHM_MASK">VMA_POOL_CREATE_ALGORITHM_MASK</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_BUDDY_ALGORITHM_BIT">VMA_POOL_CREATE_BUDDY_ALGORITHM_BIT</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_IGNORE_BUFFER_IMAGE_GRANULARITY_BIT">VMA_POOL_CREATE_IGNORE_BUFFER_IMAGE_GRANULARITY_BIT</a>
+<br><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_LINEAR_ALGORITHM_BIT">VMA_POOL_CREATE_LINEAR_ALGORITHM_BIT</a></span></code></th>
 <td class="colLast">
 <div class="block">Flags to be passed as <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::flags</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_RECORD_FLUSH_AFTER_CALL_BIT">VMA_RECORD_FLUSH_AFTER_CALL_BIT</a></span></code></th>
+<td class="colLast">
+<div class="block">Flags to be used in <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma"><code>VmaRecordSettings</code></a><code>::flags</code>.</div>
 </td>
 </tr>
 </table>
@@ -1063,13 +1359,29 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaCheckCorruption(long,int)">nvmaCheckCorruption</a></span>&#8203;(long&nbsp;allocator,
+                   int&nbsp;memoryTypeBits)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCheckCorruption(long,int)"><code>CheckCorruption</code></a></div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaCheckPoolCorruption(long,long)">nvmaCheckPoolCorruption</a></span>&#8203;(long&nbsp;allocator,
+                       long&nbsp;pool)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCheckPoolCorruption(long,long)"><code>CheckPoolCorruption</code></a></div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaCreateAllocator(long,long)">nvmaCreateAllocator</a></span>&#8203;(long&nbsp;pCreateInfo,
                    long&nbsp;pAllocator)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateAllocator(org.lwjgl.util.vma.VmaAllocatorCreateInfo,org.lwjgl.PointerBuffer)"><code>CreateAllocator</code></a></div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaCreateBuffer(long,long,long,long,long,long)">nvmaCreateBuffer</a></span>&#8203;(long&nbsp;allocator,
                 long&nbsp;pBufferCreateInfo,
@@ -1081,7 +1393,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateBuffer(long,org.lwjgl.vulkan.VkBufferCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateBuffer</code></a></div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaCreateImage(long,long,long,long,long,long)">nvmaCreateImage</a></span>&#8203;(long&nbsp;allocator,
                long&nbsp;pImageCreateInfo,
@@ -1093,7 +1405,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateImage(long,org.lwjgl.vulkan.VkImageCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateImage</code></a></div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaCreateLostAllocation(long,long)">nvmaCreateLostAllocation</a></span>&#8203;(long&nbsp;allocator,
                         long&nbsp;pAllocation)</code></th>
@@ -1101,7 +1413,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateLostAllocation(long,org.lwjgl.PointerBuffer)"><code>CreateLostAllocation</code></a></div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaCreatePool(long,long,long)">nvmaCreatePool</a></span>&#8203;(long&nbsp;allocator,
               long&nbsp;pCreateInfo,
@@ -1110,7 +1422,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreatePool(long,org.lwjgl.util.vma.VmaPoolCreateInfo,org.lwjgl.PointerBuffer)"><code>CreatePool</code></a></div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaDefragment(long,long,long,long,long,long)">nvmaDefragment</a></span>&#8203;(long&nbsp;allocator,
               long&nbsp;pAllocations,
@@ -1122,14 +1434,14 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDefragment(long,org.lwjgl.PointerBuffer,java.nio.IntBuffer,org.lwjgl.util.vma.VmaDefragmentationInfo,org.lwjgl.util.vma.VmaDefragmentationStats)"><code>Defragment</code></a></div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaDestroyAllocator(long)">nvmaDestroyAllocator</a></span>&#8203;(long&nbsp;allocator)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyAllocator(long)"><code>DestroyAllocator</code></a></div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaDestroyBuffer(long,long,long)">nvmaDestroyBuffer</a></span>&#8203;(long&nbsp;allocator,
                  long&nbsp;buffer,
@@ -1138,7 +1450,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyBuffer(long,long,long)"><code>DestroyBuffer</code></a></div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaDestroyImage(long,long,long)">nvmaDestroyImage</a></span>&#8203;(long&nbsp;allocator,
                 long&nbsp;image,
@@ -1147,7 +1459,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyImage(long,long,long)"><code>DestroyImage</code></a></div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaDestroyPool(long,long)">nvmaDestroyPool</a></span>&#8203;(long&nbsp;allocator,
                long&nbsp;pool)</code></th>
@@ -1155,7 +1467,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyPool(long,long)"><code>DestroyPool</code></a></div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaFindMemoryTypeIndex(long,int,long,long)">nvmaFindMemoryTypeIndex</a></span>&#8203;(long&nbsp;allocator,
                        int&nbsp;memoryTypeBits,
@@ -1165,7 +1477,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFindMemoryTypeIndex(long,int,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.IntBuffer)"><code>FindMemoryTypeIndex</code></a></div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaFindMemoryTypeIndexForBufferInfo(long,long,long,long)">nvmaFindMemoryTypeIndexForBufferInfo</a></span>&#8203;(long&nbsp;allocator,
                                     long&nbsp;pBufferCreateInfo,
@@ -1175,7 +1487,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFindMemoryTypeIndexForBufferInfo(long,org.lwjgl.vulkan.VkBufferCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.IntBuffer)"><code>FindMemoryTypeIndexForBufferInfo</code></a></div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaFindMemoryTypeIndexForImageInfo(long,long,long,long)">nvmaFindMemoryTypeIndexForImageInfo</a></span>&#8203;(long&nbsp;allocator,
                                    long&nbsp;pImageCreateInfo,
@@ -1185,7 +1497,17 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFindMemoryTypeIndexForImageInfo(long,org.lwjgl.vulkan.VkImageCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.IntBuffer)"><code>FindMemoryTypeIndexForImageInfo</code></a></div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaFlushAllocation(long,long,long,long)">nvmaFlushAllocation</a></span>&#8203;(long&nbsp;allocator,
+                   long&nbsp;allocation,
+                   long&nbsp;offset,
+                   long&nbsp;size)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFlushAllocation(long,long,long,long)"><code>FlushAllocation</code></a></div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaFreeMemory(long,long)">nvmaFreeMemory</a></span>&#8203;(long&nbsp;allocator,
               long&nbsp;allocation)</code></th>
@@ -1193,13 +1515,13 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFreeMemory(long,long)"><code>FreeMemory</code></a></div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaFreeStatsString(long,long)">nvmaFreeStatsString</a></span>&#8203;(long&nbsp;allocator,
                    long&nbsp;pStatsString)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaGetAllocationInfo(long,long,long)">nvmaGetAllocationInfo</a></span>&#8203;(long&nbsp;allocator,
                      long&nbsp;allocation,
@@ -1208,7 +1530,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetAllocationInfo(long,long,org.lwjgl.util.vma.VmaAllocationInfo)"><code>GetAllocationInfo</code></a></div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaGetMemoryProperties(long,long)">nvmaGetMemoryProperties</a></span>&#8203;(long&nbsp;allocator,
                        long&nbsp;ppPhysicalDeviceMemoryProperties)</code></th>
@@ -1216,7 +1538,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetMemoryProperties(long,org.lwjgl.PointerBuffer)"><code>GetMemoryProperties</code></a></div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaGetMemoryTypeProperties(long,int,long)">nvmaGetMemoryTypeProperties</a></span>&#8203;(long&nbsp;allocator,
                            int&nbsp;memoryTypeIndex,
@@ -1225,7 +1547,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetMemoryTypeProperties(long,int,java.nio.IntBuffer)"><code>GetMemoryTypeProperties</code></a></div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaGetPhysicalDeviceProperties(long,long)">nvmaGetPhysicalDeviceProperties</a></span>&#8203;(long&nbsp;allocator,
                                long&nbsp;ppPhysicalDeviceProperties)</code></th>
@@ -1233,7 +1555,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetPhysicalDeviceProperties(long,org.lwjgl.PointerBuffer)"><code>GetPhysicalDeviceProperties</code></a></div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaGetPoolStats(long,long,long)">nvmaGetPoolStats</a></span>&#8203;(long&nbsp;allocator,
                 long&nbsp;pool,
@@ -1242,7 +1564,17 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetPoolStats(long,long,org.lwjgl.util.vma.VmaPoolStats)"><code>GetPoolStats</code></a></div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaInvalidateAllocation(long,long,long,long)">nvmaInvalidateAllocation</a></span>&#8203;(long&nbsp;allocator,
+                        long&nbsp;allocation,
+                        long&nbsp;offset,
+                        long&nbsp;size)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaInvalidateAllocation(long,long,long,long)"><code>InvalidateAllocation</code></a></div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaMakePoolAllocationsLost(long,long,long)">nvmaMakePoolAllocationsLost</a></span>&#8203;(long&nbsp;allocator,
                            long&nbsp;pool,
@@ -1251,7 +1583,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaMakePoolAllocationsLost(long,long,org.lwjgl.PointerBuffer)"><code>MakePoolAllocationsLost</code></a></div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaMapMemory(long,long,long)">nvmaMapMemory</a></span>&#8203;(long&nbsp;allocator,
              long&nbsp;allocation,
@@ -1260,7 +1592,16 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaMapMemory(long,long,org.lwjgl.PointerBuffer)"><code>MapMemory</code></a></div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaResizeAllocation(long,long,long)">nvmaResizeAllocation</a></span>&#8203;(long&nbsp;allocator,
+                    long&nbsp;allocation,
+                    long&nbsp;newSize)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaResizeAllocation(long,long,long)"><code>ResizeAllocation</code></a></div>
+</td>
+</tr>
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaSetAllocationUserData(long,long,long)">nvmaSetAllocationUserData</a></span>&#8203;(long&nbsp;allocator,
                          long&nbsp;allocation,
@@ -1269,7 +1610,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaSetAllocationUserData(long,long,long)"><code>SetAllocationUserData</code></a></div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaSetCurrentFrameIndex(long,int)">nvmaSetCurrentFrameIndex</a></span>&#8203;(long&nbsp;allocator,
                         int&nbsp;frameIndex)</code></th>
@@ -1277,7 +1618,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaSetCurrentFrameIndex(long,int)"><code>SetCurrentFrameIndex</code></a></div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaTouchAllocation(long,long)">nvmaTouchAllocation</a></span>&#8203;(long&nbsp;allocator,
                    long&nbsp;allocation)</code></th>
@@ -1285,7 +1626,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaTouchAllocation(long,long)"><code>TouchAllocation</code></a></div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#nvmaUnmapMemory(long,long)">nvmaUnmapMemory</a></span>&#8203;(long&nbsp;allocator,
                long&nbsp;allocation)</code></th>
@@ -1293,7 +1634,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaUnmapMemory(long,long)"><code>UnmapMemory</code></a></div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemory(long,org.lwjgl.vulkan.VkMemoryRequirements,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)">vmaAllocateMemory</a></span>&#8203;(long&nbsp;allocator,
                  <a href="../../../../org/lwjgl/vulkan/VkMemoryRequirements.html" title="class in org.lwjgl.vulkan">VkMemoryRequirements</a>&nbsp;pVkMemoryRequirements,
@@ -1304,7 +1645,7 @@ extends java.lang.Object</pre>
 <div class="block">General purpose memory allocation.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemoryForBuffer(long,long,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)">vmaAllocateMemoryForBuffer</a></span>&#8203;(long&nbsp;allocator,
                           long&nbsp;buffer,
@@ -1315,7 +1656,7 @@ extends java.lang.Object</pre>
 <div class="block">Buffer memory allocation.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemoryForImage(long,long,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)">vmaAllocateMemoryForImage</a></span>&#8203;(long&nbsp;allocator,
                          long&nbsp;image,
@@ -1326,7 +1667,7 @@ extends java.lang.Object</pre>
 <div class="block">Function similar to <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemoryForBuffer(long,long,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemoryForBuffer</code></a>.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaBindBufferMemory(long,long,long)">vmaBindBufferMemory</a></span>&#8203;(long&nbsp;allocator,
                    long&nbsp;allocation,
@@ -1335,7 +1676,7 @@ extends java.lang.Object</pre>
 <div class="block">Binds buffer to allocation.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaBindImageMemory(long,long,long)">vmaBindImageMemory</a></span>&#8203;(long&nbsp;allocator,
                   long&nbsp;allocation,
@@ -1344,7 +1685,7 @@ extends java.lang.Object</pre>
 <div class="block">Binds image to allocation.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaBuildStatsString(long,org.lwjgl.PointerBuffer,boolean)">vmaBuildStatsString</a></span>&#8203;(long&nbsp;allocator,
                    <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;ppStatsString,
@@ -1353,7 +1694,7 @@ extends java.lang.Object</pre>
 <div class="block">Builds and returns statistics as string in JSON format.</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCalculateStats(long,org.lwjgl.util.vma.VmaStats)">vmaCalculateStats</a></span>&#8203;(long&nbsp;allocator,
                  <a href="../../../../org/lwjgl/util/vma/VmaStats.html" title="class in org.lwjgl.util.vma">VmaStats</a>&nbsp;pStats)</code></th>
@@ -1361,7 +1702,23 @@ extends java.lang.Object</pre>
 <div class="block">Retrieves statistics from current state of the Allocator.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i45" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCheckCorruption(long,int)">vmaCheckCorruption</a></span>&#8203;(long&nbsp;allocator,
+                  int&nbsp;memoryTypeBits)</code></th>
+<td class="colLast">
+<div class="block">Checks magic number in margins around all allocations in given memory types (in both default and custom pools) in search for corruptions.</div>
+</td>
+</tr>
+<tr id="i46" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCheckPoolCorruption(long,long)">vmaCheckPoolCorruption</a></span>&#8203;(long&nbsp;allocator,
+                      long&nbsp;pool)</code></th>
+<td class="colLast">
+<div class="block">Checks magic number in margins around all allocations in given memory pool in search for corruptions.</div>
+</td>
+</tr>
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateAllocator(org.lwjgl.util.vma.VmaAllocatorCreateInfo,org.lwjgl.PointerBuffer)">vmaCreateAllocator</a></span>&#8203;(<a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a>&nbsp;pCreateInfo,
                   <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;pAllocator)</code></th>
@@ -1369,7 +1726,7 @@ extends java.lang.Object</pre>
 <div class="block">Creates Allocator object.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateBuffer(long,org.lwjgl.vulkan.VkBufferCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)">vmaCreateBuffer</a></span>&#8203;(long&nbsp;allocator,
                <a href="../../../../org/lwjgl/vulkan/VkBufferCreateInfo.html" title="class in org.lwjgl.vulkan">VkBufferCreateInfo</a>&nbsp;pBufferCreateInfo,
@@ -1387,7 +1744,7 @@ extends java.lang.Object</pre>
  </div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateImage(long,org.lwjgl.vulkan.VkImageCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)">vmaCreateImage</a></span>&#8203;(long&nbsp;allocator,
               <a href="../../../../org/lwjgl/vulkan/VkImageCreateInfo.html" title="class in org.lwjgl.vulkan">VkImageCreateInfo</a>&nbsp;pImageCreateInfo,
@@ -1399,7 +1756,7 @@ extends java.lang.Object</pre>
 <div class="block">Function similar to <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateBuffer(long,org.lwjgl.vulkan.VkBufferCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateBuffer</code></a>.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateLostAllocation(long,org.lwjgl.PointerBuffer)">vmaCreateLostAllocation</a></span>&#8203;(long&nbsp;allocator,
                        <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;pAllocation)</code></th>
@@ -1407,7 +1764,7 @@ extends java.lang.Object</pre>
 <div class="block">Creates new allocation that is in lost state from the beginning.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreatePool(long,org.lwjgl.util.vma.VmaPoolCreateInfo,org.lwjgl.PointerBuffer)">vmaCreatePool</a></span>&#8203;(long&nbsp;allocator,
              <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma">VmaPoolCreateInfo</a>&nbsp;pCreateInfo,
@@ -1416,7 +1773,7 @@ extends java.lang.Object</pre>
 <div class="block">Allocates Vulkan device memory and creates <code>VmaPool</code> object.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDefragment(long,org.lwjgl.PointerBuffer,java.nio.IntBuffer,org.lwjgl.util.vma.VmaDefragmentationInfo,org.lwjgl.util.vma.VmaDefragmentationStats)">vmaDefragment</a></span>&#8203;(long&nbsp;allocator,
              <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;pAllocations,
@@ -1427,14 +1784,14 @@ extends java.lang.Object</pre>
 <div class="block">Compacts memory by moving allocations.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyAllocator(long)">vmaDestroyAllocator</a></span>&#8203;(long&nbsp;allocator)</code></th>
 <td class="colLast">
 <div class="block">Destroys allocator object.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyBuffer(long,long,long)">vmaDestroyBuffer</a></span>&#8203;(long&nbsp;allocator,
                 long&nbsp;buffer,
@@ -1443,7 +1800,7 @@ extends java.lang.Object</pre>
 <div class="block">Destroys Vulkan buffer and frees allocated memory.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyImage(long,long,long)">vmaDestroyImage</a></span>&#8203;(long&nbsp;allocator,
                long&nbsp;image,
@@ -1452,7 +1809,7 @@ extends java.lang.Object</pre>
 <div class="block">Destroys Vulkan image and frees allocated memory.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyPool(long,long)">vmaDestroyPool</a></span>&#8203;(long&nbsp;allocator,
               long&nbsp;pool)</code></th>
@@ -1460,7 +1817,7 @@ extends java.lang.Object</pre>
 <div class="block">Destroys <code>VmaPool</code> object and frees Vulkan device memory.</div>
 </td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFindMemoryTypeIndex(long,int,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.IntBuffer)">vmaFindMemoryTypeIndex</a></span>&#8203;(long&nbsp;allocator,
                       int&nbsp;memoryTypeBits,
@@ -1470,7 +1827,7 @@ extends java.lang.Object</pre>
 <div class="block">Helps to find <code>memoryTypeIndex</code>, given <code>memoryTypeBits</code> and <a href="../../../../org/lwjgl/util/vma/VmaAllocationCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationCreateInfo</code></a>.</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFindMemoryTypeIndexForBufferInfo(long,org.lwjgl.vulkan.VkBufferCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.IntBuffer)">vmaFindMemoryTypeIndexForBufferInfo</a></span>&#8203;(long&nbsp;allocator,
                                    <a href="../../../../org/lwjgl/vulkan/VkBufferCreateInfo.html" title="class in org.lwjgl.vulkan">VkBufferCreateInfo</a>&nbsp;pBufferCreateInfo,
@@ -1480,7 +1837,7 @@ extends java.lang.Object</pre>
 <div class="block">Helps to find <code>memoryTypeIndex</code>, given <code>VkBufferCreateInfo</code> and <a href="../../../../org/lwjgl/util/vma/VmaAllocationCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationCreateInfo</code></a>.</div>
 </td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFindMemoryTypeIndexForImageInfo(long,org.lwjgl.vulkan.VkImageCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.IntBuffer)">vmaFindMemoryTypeIndexForImageInfo</a></span>&#8203;(long&nbsp;allocator,
                                   <a href="../../../../org/lwjgl/vulkan/VkImageCreateInfo.html" title="class in org.lwjgl.vulkan">VkImageCreateInfo</a>&nbsp;pImageCreateInfo,
@@ -1490,7 +1847,17 @@ extends java.lang.Object</pre>
 <div class="block">Helps to find <code>memoryTypeIndex</code>, given <code>VkImageCreateInfo</code> and <a href="../../../../org/lwjgl/util/vma/VmaAllocationCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationCreateInfo</code></a>.</div>
 </td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i60" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFlushAllocation(long,long,long,long)">vmaFlushAllocation</a></span>&#8203;(long&nbsp;allocator,
+                  long&nbsp;allocation,
+                  long&nbsp;offset,
+                  long&nbsp;size)</code></th>
+<td class="colLast">
+<div class="block">Flushes memory of given allocation.</div>
+</td>
+</tr>
+<tr id="i61" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFreeMemory(long,long)">vmaFreeMemory</a></span>&#8203;(long&nbsp;allocator,
              long&nbsp;allocation)</code></th>
@@ -1498,19 +1865,13 @@ extends java.lang.Object</pre>
 <div class="block">Frees memory previously allocated using <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemory(long,org.lwjgl.vulkan.VkMemoryRequirements,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemory</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemoryForBuffer(long,long,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemoryForBuffer</code></a>, or <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemoryForImage(long,long,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemoryForImage</code></a>.</div>
 </td>
 </tr>
-<tr id="i54" class="altColor">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFreeStatsString(long,java.lang.CharSequence)">vmaFreeStatsString</a></span>&#8203;(long&nbsp;allocator,
-                  java.lang.CharSequence&nbsp;pStatsString)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i55" class="rowColor">
+<tr id="i62" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFreeStatsString(long,java.nio.ByteBuffer)">vmaFreeStatsString</a></span>&#8203;(long&nbsp;allocator,
                   java.nio.ByteBuffer&nbsp;pStatsString)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i56" class="altColor">
+<tr id="i63" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetAllocationInfo(long,long,org.lwjgl.util.vma.VmaAllocationInfo)">vmaGetAllocationInfo</a></span>&#8203;(long&nbsp;allocator,
                     long&nbsp;allocation,
@@ -1519,7 +1880,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns current information about specified allocation and atomically marks it as used in current frame.</div>
 </td>
 </tr>
-<tr id="i57" class="rowColor">
+<tr id="i64" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetMemoryProperties(long,org.lwjgl.PointerBuffer)">vmaGetMemoryProperties</a></span>&#8203;(long&nbsp;allocator,
                       <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;ppPhysicalDeviceMemoryProperties)</code></th>
@@ -1527,7 +1888,7 @@ extends java.lang.Object</pre>
 <div class="block"><code>PhysicalDeviceMemoryProperties</code> are fetched from <code>physicalDevice</code> by the allocator.</div>
 </td>
 </tr>
-<tr id="i58" class="altColor">
+<tr id="i65" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetMemoryTypeProperties(long,int,java.nio.IntBuffer)">vmaGetMemoryTypeProperties</a></span>&#8203;(long&nbsp;allocator,
                           int&nbsp;memoryTypeIndex,
@@ -1536,7 +1897,7 @@ extends java.lang.Object</pre>
 <div class="block">Given Memory Type Index, returns Property Flags of this memory type.</div>
 </td>
 </tr>
-<tr id="i59" class="rowColor">
+<tr id="i66" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetPhysicalDeviceProperties(long,org.lwjgl.PointerBuffer)">vmaGetPhysicalDeviceProperties</a></span>&#8203;(long&nbsp;allocator,
                               <a href="../../../../org/lwjgl/PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;ppPhysicalDeviceProperties)</code></th>
@@ -1544,7 +1905,7 @@ extends java.lang.Object</pre>
 <div class="block"><code>PhysicalDeviceProperties</code> are fetched from <code>physicalDevice</code> by the allocator.</div>
 </td>
 </tr>
-<tr id="i60" class="altColor">
+<tr id="i67" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetPoolStats(long,long,org.lwjgl.util.vma.VmaPoolStats)">vmaGetPoolStats</a></span>&#8203;(long&nbsp;allocator,
                long&nbsp;pool,
@@ -1553,7 +1914,17 @@ extends java.lang.Object</pre>
 <div class="block">Retrieves statistics of existing VmaPool object.</div>
 </td>
 </tr>
-<tr id="i61" class="rowColor">
+<tr id="i68" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaInvalidateAllocation(long,long,long,long)">vmaInvalidateAllocation</a></span>&#8203;(long&nbsp;allocator,
+                       long&nbsp;allocation,
+                       long&nbsp;offset,
+                       long&nbsp;size)</code></th>
+<td class="colLast">
+<div class="block">Invalidates memory of given allocation.</div>
+</td>
+</tr>
+<tr id="i69" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaMakePoolAllocationsLost(long,long)">vmaMakePoolAllocationsLost</a></span>&#8203;(long&nbsp;allocator,
                           long&nbsp;pool)</code></th>
@@ -1561,7 +1932,7 @@ extends java.lang.Object</pre>
 <div class="block">Marks all allocations in given pool as lost if they are not used in current frame or <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::frameInUseCount</code> back from now.</div>
 </td>
 </tr>
-<tr id="i62" class="altColor">
+<tr id="i70" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaMakePoolAllocationsLost(long,long,org.lwjgl.PointerBuffer)">vmaMakePoolAllocationsLost</a></span>&#8203;(long&nbsp;allocator,
                           long&nbsp;pool,
@@ -1570,7 +1941,7 @@ extends java.lang.Object</pre>
 <div class="block">Marks all allocations in given pool as lost if they are not used in current frame or <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::frameInUseCount</code> back from now.</div>
 </td>
 </tr>
-<tr id="i63" class="rowColor">
+<tr id="i71" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaMapMemory(long,long,org.lwjgl.PointerBuffer)">vmaMapMemory</a></span>&#8203;(long&nbsp;allocator,
             long&nbsp;allocation,
@@ -1579,7 +1950,16 @@ extends java.lang.Object</pre>
 <div class="block">Maps memory represented by given allocation and returns pointer to it.</div>
 </td>
 </tr>
-<tr id="i64" class="altColor">
+<tr id="i72" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaResizeAllocation(long,long,long)">vmaResizeAllocation</a></span>&#8203;(long&nbsp;allocator,
+                   long&nbsp;allocation,
+                   long&nbsp;newSize)</code></th>
+<td class="colLast">
+<div class="block">Tries to resize an allocation in place, if there is enough free memory after it.</div>
+</td>
+</tr>
+<tr id="i73" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaSetAllocationUserData(long,long,long)">vmaSetAllocationUserData</a></span>&#8203;(long&nbsp;allocator,
                         long&nbsp;allocation,
@@ -1588,7 +1968,7 @@ extends java.lang.Object</pre>
 <div class="block">Sets <code>pUserData</code> in given allocation to new value.</div>
 </td>
 </tr>
-<tr id="i65" class="rowColor">
+<tr id="i74" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaSetCurrentFrameIndex(long,int)">vmaSetCurrentFrameIndex</a></span>&#8203;(long&nbsp;allocator,
                        int&nbsp;frameIndex)</code></th>
@@ -1596,7 +1976,7 @@ extends java.lang.Object</pre>
 <div class="block">Sets index of the current frame.</div>
 </td>
 </tr>
-<tr id="i66" class="altColor">
+<tr id="i75" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaTouchAllocation(long,long)">vmaTouchAllocation</a></span>&#8203;(long&nbsp;allocator,
                   long&nbsp;allocation)</code></th>
@@ -1604,7 +1984,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns <code>VK_TRUE</code> if allocation is not lost and atomically marks it as used in current frame.</div>
 </td>
 </tr>
-<tr id="i67" class="rowColor">
+<tr id="i76" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/Vma.html#vmaUnmapMemory(long,long)">vmaUnmapMemory</a></span>&#8203;(long&nbsp;allocator,
               long&nbsp;allocation)</code></th>
@@ -1636,6 +2016,24 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a id="VMA_RECORD_FLUSH_AFTER_CALL_BIT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4><a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_RECORD_FLUSH_AFTER_CALL_BIT">VMA_RECORD_FLUSH_AFTER_CALL_BIT</a></h4>
+<div class="block">Flags to be used in <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma"><code>VmaRecordSettings</code></a><code>::flags</code>.
+ 
+ <h5>Enum values:</h5>
+ 
+ <ul>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_RECORD_FLUSH_AFTER_CALL_BIT"><code>RECORD_FLUSH_AFTER_CALL_BIT</code></a> - 
+ Enables flush after recording every function call.
+ 
+ <p>Enable it if you expect your application to crash, which may leave recording file truncated. It may degrade performance though.</p>
+ </li>
+ </ul></div>
+</li></ul>
 <a id="VMA_ALLOCATOR_CREATE_EXTERNALLY_SYNCHRONIZED_BIT">
 <!--   -->
 </a>
@@ -1704,7 +2102,7 @@ extends java.lang.Object</pre>
  <ul>
  <li>Resources written and read by device, e.g. images used as attachments.</li>
  <li>Resources transferred from host once (immutable) or infrequently and read by device multiple times, e.g. textures to be sampled, vertex
- buffers, uniform (constant) buffers, and majority of other types of resources used by device.</li>
+ buffers, uniform (constant) buffers, and majority of other types of resources used on GPU.</li>
  </ul>
  
  <p>Allocation may still end up in <code>HOST_VISIBLE</code> memory on some implementations. In such case, you are free to map it. You can use
@@ -1713,16 +2111,16 @@ extends java.lang.Object</pre>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_ONLY"><code>MEMORY_USAGE_CPU_ONLY</code></a> - 
  Memory will be mappable on host.
  
- <p>It usually means CPU (system) memory. Resources created in this pool may still be accessible to the device, but access to them can be slower.
- Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU read may be uncached. It is roughly equivalent of
- <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
+ <p>It usually means CPU (system) memory. Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU access is typically uncached. Writes may
+ be write-combined. Resources created in this pool may still be accessible to the device, but access to them can be slow. It is roughly equivalent
+ of <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
  
  <p>Usage: Staging copy of resources used as transfer source.</p>
  </li>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_TO_GPU"><code>MEMORY_USAGE_CPU_TO_GPU</code></a> - 
  Memory that is both mappable on host (guarantees to be <code>HOST_VISIBLE</code>) and preferably fast to access by GPU.
  
- <p>CPU reads may be uncached and very slow.</p>
+ <p>CPU access is typically uncached. Writes may be write-combined.</p>
  
  <p>Usage: Resources written frequently by host (dynamic), read by device. E.g. textures, vertex buffers, uniform buffers updated every frame or every
  draw call.</p>
@@ -1772,7 +2170,7 @@ extends java.lang.Object</pre>
  <ul>
  <li>Resources written and read by device, e.g. images used as attachments.</li>
  <li>Resources transferred from host once (immutable) or infrequently and read by device multiple times, e.g. textures to be sampled, vertex
- buffers, uniform (constant) buffers, and majority of other types of resources used by device.</li>
+ buffers, uniform (constant) buffers, and majority of other types of resources used on GPU.</li>
  </ul>
  
  <p>Allocation may still end up in <code>HOST_VISIBLE</code> memory on some implementations. In such case, you are free to map it. You can use
@@ -1781,16 +2179,16 @@ extends java.lang.Object</pre>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_ONLY"><code>MEMORY_USAGE_CPU_ONLY</code></a> - 
  Memory will be mappable on host.
  
- <p>It usually means CPU (system) memory. Resources created in this pool may still be accessible to the device, but access to them can be slower.
- Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU read may be uncached. It is roughly equivalent of
- <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
+ <p>It usually means CPU (system) memory. Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU access is typically uncached. Writes may
+ be write-combined. Resources created in this pool may still be accessible to the device, but access to them can be slow. It is roughly equivalent
+ of <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
  
  <p>Usage: Staging copy of resources used as transfer source.</p>
  </li>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_TO_GPU"><code>MEMORY_USAGE_CPU_TO_GPU</code></a> - 
  Memory that is both mappable on host (guarantees to be <code>HOST_VISIBLE</code>) and preferably fast to access by GPU.
  
- <p>CPU reads may be uncached and very slow.</p>
+ <p>CPU access is typically uncached. Writes may be write-combined.</p>
  
  <p>Usage: Resources written frequently by host (dynamic), read by device. E.g. textures, vertex buffers, uniform buffers updated every frame or every
  draw call.</p>
@@ -1840,7 +2238,7 @@ extends java.lang.Object</pre>
  <ul>
  <li>Resources written and read by device, e.g. images used as attachments.</li>
  <li>Resources transferred from host once (immutable) or infrequently and read by device multiple times, e.g. textures to be sampled, vertex
- buffers, uniform (constant) buffers, and majority of other types of resources used by device.</li>
+ buffers, uniform (constant) buffers, and majority of other types of resources used on GPU.</li>
  </ul>
  
  <p>Allocation may still end up in <code>HOST_VISIBLE</code> memory on some implementations. In such case, you are free to map it. You can use
@@ -1849,16 +2247,16 @@ extends java.lang.Object</pre>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_ONLY"><code>MEMORY_USAGE_CPU_ONLY</code></a> - 
  Memory will be mappable on host.
  
- <p>It usually means CPU (system) memory. Resources created in this pool may still be accessible to the device, but access to them can be slower.
- Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU read may be uncached. It is roughly equivalent of
- <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
+ <p>It usually means CPU (system) memory. Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU access is typically uncached. Writes may
+ be write-combined. Resources created in this pool may still be accessible to the device, but access to them can be slow. It is roughly equivalent
+ of <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
  
  <p>Usage: Staging copy of resources used as transfer source.</p>
  </li>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_TO_GPU"><code>MEMORY_USAGE_CPU_TO_GPU</code></a> - 
  Memory that is both mappable on host (guarantees to be <code>HOST_VISIBLE</code>) and preferably fast to access by GPU.
  
- <p>CPU reads may be uncached and very slow.</p>
+ <p>CPU access is typically uncached. Writes may be write-combined.</p>
  
  <p>Usage: Resources written frequently by host (dynamic), read by device. E.g. textures, vertex buffers, uniform buffers updated every frame or every
  draw call.</p>
@@ -1908,7 +2306,7 @@ extends java.lang.Object</pre>
  <ul>
  <li>Resources written and read by device, e.g. images used as attachments.</li>
  <li>Resources transferred from host once (immutable) or infrequently and read by device multiple times, e.g. textures to be sampled, vertex
- buffers, uniform (constant) buffers, and majority of other types of resources used by device.</li>
+ buffers, uniform (constant) buffers, and majority of other types of resources used on GPU.</li>
  </ul>
  
  <p>Allocation may still end up in <code>HOST_VISIBLE</code> memory on some implementations. In such case, you are free to map it. You can use
@@ -1917,16 +2315,16 @@ extends java.lang.Object</pre>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_ONLY"><code>MEMORY_USAGE_CPU_ONLY</code></a> - 
  Memory will be mappable on host.
  
- <p>It usually means CPU (system) memory. Resources created in this pool may still be accessible to the device, but access to them can be slower.
- Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU read may be uncached. It is roughly equivalent of
- <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
+ <p>It usually means CPU (system) memory. Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU access is typically uncached. Writes may
+ be write-combined. Resources created in this pool may still be accessible to the device, but access to them can be slow. It is roughly equivalent
+ of <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
  
  <p>Usage: Staging copy of resources used as transfer source.</p>
  </li>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_TO_GPU"><code>MEMORY_USAGE_CPU_TO_GPU</code></a> - 
  Memory that is both mappable on host (guarantees to be <code>HOST_VISIBLE</code>) and preferably fast to access by GPU.
  
- <p>CPU reads may be uncached and very slow.</p>
+ <p>CPU access is typically uncached. Writes may be write-combined.</p>
  
  <p>Usage: Resources written frequently by host (dynamic), read by device. E.g. textures, vertex buffers, uniform buffers updated every frame or every
  draw call.</p>
@@ -1976,7 +2374,7 @@ extends java.lang.Object</pre>
  <ul>
  <li>Resources written and read by device, e.g. images used as attachments.</li>
  <li>Resources transferred from host once (immutable) or infrequently and read by device multiple times, e.g. textures to be sampled, vertex
- buffers, uniform (constant) buffers, and majority of other types of resources used by device.</li>
+ buffers, uniform (constant) buffers, and majority of other types of resources used on GPU.</li>
  </ul>
  
  <p>Allocation may still end up in <code>HOST_VISIBLE</code> memory on some implementations. In such case, you are free to map it. You can use
@@ -1985,16 +2383,16 @@ extends java.lang.Object</pre>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_ONLY"><code>MEMORY_USAGE_CPU_ONLY</code></a> - 
  Memory will be mappable on host.
  
- <p>It usually means CPU (system) memory. Resources created in this pool may still be accessible to the device, but access to them can be slower.
- Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU read may be uncached. It is roughly equivalent of
- <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
+ <p>It usually means CPU (system) memory. Guarantees to be <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>. CPU access is typically uncached. Writes may
+ be write-combined. Resources created in this pool may still be accessible to the device, but access to them can be slow. It is roughly equivalent
+ of <code>D3D12_HEAP_TYPE_UPLOAD</code>.</p>
  
  <p>Usage: Staging copy of resources used as transfer source.</p>
  </li>
  <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_MEMORY_USAGE_CPU_TO_GPU"><code>MEMORY_USAGE_CPU_TO_GPU</code></a> - 
  Memory that is both mappable on host (guarantees to be <code>HOST_VISIBLE</code>) and preferably fast to access by GPU.
  
- <p>CPU reads may be uncached and very slow.</p>
+ <p>CPU access is typically uncached. Writes may be write-combined.</p>
  
  <p>Usage: Resources written frequently by host (dynamic), read by device. E.g. textures, vertex buffers, uniform buffers updated every frame or every
  draw call.</p>
@@ -2036,9 +2434,33 @@ extends java.lang.Object</pre>
 <a id="VMA_ALLOCATION_CREATE_USER_DATA_COPY_STRING_BIT">
 <!--   -->
 </a>
+<a id="VMA_ALLOCATION_CREATE_UPPER_ADDRESS_BIT">
+<!--   -->
+</a>
+<a id="VMA_ALLOCATION_CREATE_STRATEGY_BEST_FIT_BIT">
+<!--   -->
+</a>
+<a id="VMA_ALLOCATION_CREATE_STRATEGY_WORST_FIT_BIT">
+<!--   -->
+</a>
+<a id="VMA_ALLOCATION_CREATE_STRATEGY_FIRST_FIT_BIT">
+<!--   -->
+</a>
+<a id="VMA_ALLOCATION_CREATE_STRATEGY_MIN_MEMORY_BIT">
+<!--   -->
+</a>
+<a id="VMA_ALLOCATION_CREATE_STRATEGY_MIN_TIME_BIT">
+<!--   -->
+</a>
+<a id="VMA_ALLOCATION_CREATE_STRATEGY_MIN_FRAGMENTATION_BIT">
+<!--   -->
+</a>
+<a id="VMA_ALLOCATION_CREATE_STRATEGY_MASK">
+<!--   -->
+</a>
 <ul class="blockList">
 <li class="blockList">
-<h4><a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT">VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_NEVER_ALLOCATE_BIT">VMA_ALLOCATION_CREATE_NEVER_ALLOCATE_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_MAPPED_BIT">VMA_ALLOCATION_CREATE_MAPPED_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_CAN_BECOME_LOST_BIT">VMA_ALLOCATION_CREATE_CAN_BECOME_LOST_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_CAN_MAKE_OTHER_LOST_BIT">VMA_ALLOCATION_CREATE_CAN_MAKE_OTHER_LOST_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_USER_DATA_COPY_STRING_BIT">VMA_ALLOCATION_CREATE_USER_DATA_COPY_STRING_BIT</a></h4>
+<h4><a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT">VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_NEVER_ALLOCATE_BIT">VMA_ALLOCATION_CREATE_NEVER_ALLOCATE_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_MAPPED_BIT">VMA_ALLOCATION_CREATE_MAPPED_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_CAN_BECOME_LOST_BIT">VMA_ALLOCATION_CREATE_CAN_BECOME_LOST_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_CAN_MAKE_OTHER_LOST_BIT">VMA_ALLOCATION_CREATE_CAN_MAKE_OTHER_LOST_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_USER_DATA_COPY_STRING_BIT">VMA_ALLOCATION_CREATE_USER_DATA_COPY_STRING_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_UPPER_ADDRESS_BIT">VMA_ALLOCATION_CREATE_UPPER_ADDRESS_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_STRATEGY_BEST_FIT_BIT">VMA_ALLOCATION_CREATE_STRATEGY_BEST_FIT_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_STRATEGY_WORST_FIT_BIT">VMA_ALLOCATION_CREATE_STRATEGY_WORST_FIT_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_STRATEGY_FIRST_FIT_BIT">VMA_ALLOCATION_CREATE_STRATEGY_FIRST_FIT_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_STRATEGY_MIN_MEMORY_BIT">VMA_ALLOCATION_CREATE_STRATEGY_MIN_MEMORY_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_STRATEGY_MIN_TIME_BIT">VMA_ALLOCATION_CREATE_STRATEGY_MIN_TIME_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_STRATEGY_MIN_FRAGMENTATION_BIT">VMA_ALLOCATION_CREATE_STRATEGY_MIN_FRAGMENTATION_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_ALLOCATION_CREATE_STRATEGY_MASK">VMA_ALLOCATION_CREATE_STRATEGY_MASK</a></h4>
 <div class="block">Flags to be passed as <a href="../../../../org/lwjgl/util/vma/VmaAllocationCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationCreateInfo</code></a><code>::flags</code>. (<code>VmaAllocationCreateFlagBits</code>)
  
  <h5>Enum values:</h5>
@@ -2094,14 +2516,39 @@ extends java.lang.Object</pre>
  local copy of the string is made and stored in allocation's <code>pUserData</code>. The string is automatically freed together with the allocation. It
  is also used in <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaBuildStatsString(long,org.lwjgl.PointerBuffer,boolean)"><code>BuildStatsString</code></a>.
  </li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_UPPER_ADDRESS_BIT"><code>ALLOCATION_CREATE_UPPER_ADDRESS_BIT</code></a> - 
+ Allocation will be created from upper stack in a double stack pool.
+ 
+ <p>This flag is only allowed for custom pools created with <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_LINEAR_ALGORITHM_BIT"><code>POOL_CREATE_LINEAR_ALGORITHM_BIT</code></a> flag.</p>
+ </li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_BEST_FIT_BIT"><code>ALLOCATION_CREATE_STRATEGY_BEST_FIT_BIT</code></a> - Allocation strategy that chooses smallest possible free range for the allocation.</li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_WORST_FIT_BIT"><code>ALLOCATION_CREATE_STRATEGY_WORST_FIT_BIT</code></a> - Allocation strategy that chooses biggest possible free range for the allocation.</li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_FIRST_FIT_BIT"><code>ALLOCATION_CREATE_STRATEGY_FIRST_FIT_BIT</code></a> - 
+ Allocation strategy that chooses first suitable free range for the allocation.
+ 
+ <p>"First" doesn't necessarily means the one with smallest offset in memory, but rather the one that is easiest and fastest to find.</p>
+ </li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_MIN_MEMORY_BIT"><code>ALLOCATION_CREATE_STRATEGY_MIN_MEMORY_BIT</code></a> - Allocation strategy that tries to minimize memory usage.</li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_MIN_TIME_BIT"><code>ALLOCATION_CREATE_STRATEGY_MIN_TIME_BIT</code></a> - Allocation strategy that tries to minimize allocation time.</li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_MIN_FRAGMENTATION_BIT"><code>ALLOCATION_CREATE_STRATEGY_MIN_FRAGMENTATION_BIT</code></a> - Allocation strategy that tries to minimize memory fragmentation.</li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_STRATEGY_MASK"><code>ALLOCATION_CREATE_STRATEGY_MASK</code></a> - A bit mask to extract only <code>STRATEGY</code> bits from entire set of flags.</li>
  </ul></div>
 </li></ul>
 <a id="VMA_POOL_CREATE_IGNORE_BUFFER_IMAGE_GRANULARITY_BIT">
 <!--   -->
 </a>
+<a id="VMA_POOL_CREATE_LINEAR_ALGORITHM_BIT">
+<!--   -->
+</a>
+<a id="VMA_POOL_CREATE_BUDDY_ALGORITHM_BIT">
+<!--   -->
+</a>
+<a id="VMA_POOL_CREATE_ALGORITHM_MASK">
+<!--   -->
+</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4><a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_POOL_CREATE_IGNORE_BUFFER_IMAGE_GRANULARITY_BIT">VMA_POOL_CREATE_IGNORE_BUFFER_IMAGE_GRANULARITY_BIT</a></h4>
+<h4><a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_POOL_CREATE_IGNORE_BUFFER_IMAGE_GRANULARITY_BIT">VMA_POOL_CREATE_IGNORE_BUFFER_IMAGE_GRANULARITY_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_POOL_CREATE_LINEAR_ALGORITHM_BIT">VMA_POOL_CREATE_LINEAR_ALGORITHM_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_POOL_CREATE_BUDDY_ALGORITHM_BIT">VMA_POOL_CREATE_BUDDY_ALGORITHM_BIT</a>, <a href="../../../../constant-values.html#org.lwjgl.util.vma.Vma.VMA_POOL_CREATE_ALGORITHM_MASK">VMA_POOL_CREATE_ALGORITHM_MASK</a></h4>
 <div class="block">Flags to be passed as <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::flags</code>. (<code>VmaPoolCreateFlagBits</code>)
  
  <h5>Enum values:</h5>
@@ -2111,7 +2558,7 @@ extends java.lang.Object</pre>
  Use this flag if you always allocate only buffers and linear images or only optimal images out of this pool and so Buffer-Image Granularity can be
  ignored.
  
- <p>This is no optional optimization flag.</p>
+ <p>This is an optional optimization flag.</p>
  
  <p>If you always allocate using <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateBuffer(long,org.lwjgl.vulkan.VkBufferCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateBuffer</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateImage(long,org.lwjgl.vulkan.VkImageCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateImage</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemoryForBuffer(long,long,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemoryForBuffer</code></a>, then you don't need to use it because allocator knows
  exact type of your allocations so it can handle Buffer-Image Granularity in the optimal way.</p>
@@ -2119,8 +2566,26 @@ extends java.lang.Object</pre>
  <p>If you also allocate using <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemoryForImage(long,long,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemoryForImage</code></a> or <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemory(long,org.lwjgl.vulkan.VkMemoryRequirements,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemory</code></a>, exact type of such allocations is not known, so allocator must be
  conservative in handling Buffer-Image Granularity, which can lead to suboptimal allocation (wasted memory). In that case, if you can make sure you
  always allocate only buffers and linear images or only optimal images out of this pool, use this flag to make allocator disregard Buffer-Image
- Granularity and so make allocations more optimal.</p>
+ Granularity and so make allocations faster and more optimal.</p>
  </li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_LINEAR_ALGORITHM_BIT"><code>POOL_CREATE_LINEAR_ALGORITHM_BIT</code></a> - 
+ Enables alternative, linear allocation algorithm in this pool.
+ 
+ <p>Specify this flag to enable linear allocation algorithm, which always creates new allocations after last one and doesn't reuse space from
+ allocations freed in between. It trades memory consumption for simplified algorithm and data structure, which has better performance and uses less
+ memory for metadata.</p>
+ 
+ <p>By using this flag, you can achieve behavior of free-at-once, stack, ring buffer, and double stack.</p>
+ 
+ <p>When using this flag, you must specify <a href="../../../../org/lwjgl/util/vma/VmaPoolCreateInfo.html" title="class in org.lwjgl.util.vma"><code>VmaPoolCreateInfo</code></a><code>::maxBlockCount == 1</code> (or 0 for default).</p>
+ </li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_BUDDY_ALGORITHM_BIT"><code>POOL_CREATE_BUDDY_ALGORITHM_BIT</code></a> - 
+ Enables alternative, buddy allocation algorithm in this pool.
+ 
+ <p>It operates on a tree of blocks, each having size that is a power of two and a half of its parent's size. Comparing to default algorithm, this one
+ provides faster allocation and deallocation and decreased external fragmentation, at the expense of more memory wasted (internal fragmentation).</p>
+ </li>
+ <li><a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_ALGORITHM_MASK"><code>POOL_CREATE_ALGORITHM_MASK</code></a> - Bit mask to extract only <code>ALGORITHM</code> bits from entire set of flags.</li>
  </ul></div>
 </li></ul>
 </li>
@@ -2342,16 +2807,6 @@ extends java.lang.Object</pre>
 <h4>vmaFreeStatsString</h4>
 <pre>public static&nbsp;void&nbsp;vmaFreeStatsString&#8203;(long&nbsp;allocator,
                                       java.nio.ByteBuffer&nbsp;pStatsString)</pre>
-</li>
-</ul>
-<a id="vmaFreeStatsString(long,java.lang.CharSequence)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>vmaFreeStatsString</h4>
-<pre>public static&nbsp;void&nbsp;vmaFreeStatsString&#8203;(long&nbsp;allocator,
-                                      java.lang.CharSequence&nbsp;pStatsString)</pre>
 </li>
 </ul>
 <a id="nvmaFindMemoryTypeIndex(long,int,long,long)">
@@ -2598,6 +3053,43 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a id="nvmaCheckPoolCorruption(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nvmaCheckPoolCorruption</h4>
+<pre>public static&nbsp;int&nbsp;nvmaCheckPoolCorruption&#8203;(long&nbsp;allocator,
+                                          long&nbsp;pool)</pre>
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCheckPoolCorruption(long,long)"><code>CheckPoolCorruption</code></a></div>
+</li>
+</ul>
+<a id="vmaCheckPoolCorruption(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vmaCheckPoolCorruption</h4>
+<pre>public static&nbsp;int&nbsp;vmaCheckPoolCorruption&#8203;(long&nbsp;allocator,
+                                         long&nbsp;pool)</pre>
+<div class="block">Checks magic number in margins around all allocations in given memory pool in search for corruptions.
+ 
+ <p>Corruption detection is enabled only when <code>VMA_DEBUG_DETECT_CORRUPTION</code> macro is defined to nonzero, <code>VMA_DEBUG_MARGIN</code> is defined to
+ nonzero and the pool is created in memory type that is <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>.</p></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>possible return values:
+         
+         <ul>
+         <li><code>VK_ERROR_FEATURE_NOT_PRESENT</code> - corruption detection is not enabled for specified pool.</li>
+         <li><code>VK_SUCCESS</code> - corruption detection has been performed and succeeded.</li>
+         <li><code>VK_ERROR_VALIDATION_FAILED_EXT</code> - corruption detection has been performed and found memory corruptions around one of the allocations.
+         <code>VMA_ASSERT</code> is also fired in that case.</li>
+         <li>Other value: Error returned by Vulkan, e.g. memory mapping failure.</li>
+         </ul></dd>
+</dl>
+</li>
+</ul>
 <a id="nvmaAllocateMemory(long,long,long,long,long)">
 <!--   -->
 </a>
@@ -2726,6 +3218,48 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;void&nbsp;vmaFreeMemory&#8203;(long&nbsp;allocator,
                                  long&nbsp;allocation)</pre>
 <div class="block">Frees memory previously allocated using <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemory(long,org.lwjgl.vulkan.VkMemoryRequirements,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemory</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemoryForBuffer(long,long,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemoryForBuffer</code></a>, or <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaAllocateMemoryForImage(long,long,org.lwjgl.util.vma.VmaAllocationCreateInfo,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>AllocateMemoryForImage</code></a>.</div>
+</li>
+</ul>
+<a id="nvmaResizeAllocation(long,long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nvmaResizeAllocation</h4>
+<pre>public static&nbsp;int&nbsp;nvmaResizeAllocation&#8203;(long&nbsp;allocator,
+                                       long&nbsp;allocation,
+                                       long&nbsp;newSize)</pre>
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaResizeAllocation(long,long,long)"><code>ResizeAllocation</code></a></div>
+</li>
+</ul>
+<a id="vmaResizeAllocation(long,long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vmaResizeAllocation</h4>
+<pre>public static&nbsp;int&nbsp;vmaResizeAllocation&#8203;(long&nbsp;allocator,
+                                      long&nbsp;allocation,
+                                      long&nbsp;newSize)</pre>
+<div class="block">Tries to resize an allocation in place, if there is enough free memory after it.
+ 
+ <p>Tries to change allocation's size without moving or reallocating it. You can both shrink and grow allocation size. When growing, it succeeds only when
+ the allocation belongs to a memory block with enough free space after it.</p>
+ 
+ <p>After successful call to this function, <a href="../../../../org/lwjgl/util/vma/VmaAllocationInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationInfo</code></a><code>::size</code> of this allocation changes. All other parameters stay the same: memory pool
+ and type, alignment, offset, mapped pointer.</p>
+ 
+ <ul>
+ <li>Calling this function on allocation that is in lost state fails with result <code>VK_ERROR_VALIDATION_FAILED_EXT</code>.</li>
+ <li>Calling this function with <code>newSize</code> same as current allocation size does nothing and returns <code>VK_SUCCESS</code>.</li>
+ <li>Resizing dedicated allocations, as well as allocations created in pools that use linear or buddy algorithm, is not supported. The function returns
+ <code>VK_ERROR_FEATURE_NOT_PRESENT</code> in such cases. Support may be added in the future.</li>
+ </ul></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>VK_SUCCESS</code> if allocation's size has been successfully changed. Returns <code>VK_ERROR_OUT_OF_POOL_MEMORY</code> if allocation's size could not be
+         changed.</dd>
+</dl>
 </li>
 </ul>
 <a id="nvmaGetAllocationInfo(long,long,long)">
@@ -2928,6 +3462,117 @@ extends java.lang.Object</pre>
  <p>For details, see description of <code>vmaMapMemory()</code>.</p></div>
 </li>
 </ul>
+<a id="nvmaFlushAllocation(long,long,long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nvmaFlushAllocation</h4>
+<pre>public static&nbsp;void&nbsp;nvmaFlushAllocation&#8203;(long&nbsp;allocator,
+                                       long&nbsp;allocation,
+                                       long&nbsp;offset,
+                                       long&nbsp;size)</pre>
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaFlushAllocation(long,long,long,long)"><code>FlushAllocation</code></a></div>
+</li>
+</ul>
+<a id="vmaFlushAllocation(long,long,long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vmaFlushAllocation</h4>
+<pre>public static&nbsp;void&nbsp;vmaFlushAllocation&#8203;(long&nbsp;allocator,
+                                      long&nbsp;allocation,
+                                      long&nbsp;offset,
+                                      long&nbsp;size)</pre>
+<div class="block">Flushes memory of given allocation.
+ 
+ <p>Calls <code>vkFlushMappedMemoryRanges()</code> for memory associated with given range of given allocation.</p>
+ 
+ <ul>
+ <li><code>offset</code> must be relative to the beginning of allocation.</li>
+ <li><code>size</code> can be <code>VK_WHOLE_SIZE</code>. It means all memory from <code>offset</code> the the end of given allocation.</li>
+ <li><code>offset</code> and <code>size</code> don't have to be aligned. They are internally rounded down/up to multiply of <code>nonCoherentAtomSize</code>.</li>
+ <li>If <code>size</code> is 0, this call is ignored.</li>
+ <li>If memory type that the <code>allocation</code> belongs to is not <code>HOST_VISIBLE</code> or it is <code>HOST_COHERENT</code>, this call is ignored.</li>
+ </ul></div>
+</li>
+</ul>
+<a id="nvmaInvalidateAllocation(long,long,long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nvmaInvalidateAllocation</h4>
+<pre>public static&nbsp;void&nbsp;nvmaInvalidateAllocation&#8203;(long&nbsp;allocator,
+                                            long&nbsp;allocation,
+                                            long&nbsp;offset,
+                                            long&nbsp;size)</pre>
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaInvalidateAllocation(long,long,long,long)"><code>InvalidateAllocation</code></a></div>
+</li>
+</ul>
+<a id="vmaInvalidateAllocation(long,long,long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vmaInvalidateAllocation</h4>
+<pre>public static&nbsp;void&nbsp;vmaInvalidateAllocation&#8203;(long&nbsp;allocator,
+                                           long&nbsp;allocation,
+                                           long&nbsp;offset,
+                                           long&nbsp;size)</pre>
+<div class="block">Invalidates memory of given allocation.
+ 
+ <p>Calls <code>vkInvalidateMappedMemoryRanges()</code> for memory associated with given range of given allocation.</p>
+ 
+ <ul>
+ <li><code>offset</code> must be relative to the beginning of allocation.</li>
+ <li><code>size</code> can be <code>VK_WHOLE_SIZE</code>. It means all memory from <code>offset</code> the the end of given allocation.</li>
+ <li><code>offset</code> and <code>size</code> don't have to be aligned. They are internally rounded down/up to multiply of <code>nonCoherentAtomSize</code>.</li>
+ <li>If <code>size</code> is 0, this call is ignored.</li>
+ <li>If memory type that the <code>allocation</code> belongs to is not <code>HOST_VISIBLE</code> or it is <code>HOST_COHERENT</code>, this call is ignored.</li>
+ </ul></div>
+</li>
+</ul>
+<a id="nvmaCheckCorruption(long,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nvmaCheckCorruption</h4>
+<pre>public static&nbsp;int&nbsp;nvmaCheckCorruption&#8203;(long&nbsp;allocator,
+                                      int&nbsp;memoryTypeBits)</pre>
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCheckCorruption(long,int)"><code>CheckCorruption</code></a></div>
+</li>
+</ul>
+<a id="vmaCheckCorruption(long,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vmaCheckCorruption</h4>
+<pre>public static&nbsp;int&nbsp;vmaCheckCorruption&#8203;(long&nbsp;allocator,
+                                     int&nbsp;memoryTypeBits)</pre>
+<div class="block">Checks magic number in margins around all allocations in given memory types (in both default and custom pools) in search for corruptions.
+ 
+ <p>Corruption detection is enabled only when <code>VMA_DEBUG_DETECT_CORRUPTION</code> macro is defined to nonzero, <code>VMA_DEBUG_MARGIN</code> is defined to
+ nonzero and only for memory types that are <code>HOST_VISIBLE</code> and <code>HOST_COHERENT</code>.</p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>memoryTypeBits</code> - bit mask, where each bit set means that a memory type with that index should be checked</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>possible return values:
+         
+         <ul>
+         <li><code>VK_ERROR_FEATURE_NOT_PRESENT</code> - corruption detection is not enabled for any of specified memory types.</li>
+         <li><code>VK_SUCCESS</code> - corruption detection has been performed and succeeded.</li>
+         <li><code>VK_ERROR_VALIDATION_FAILED_EXT</code> - corruption detection has been performed and found memory corruptions around one of the allocations.
+         <code>VMA_ASSERT</code> is also fired in that case.</li>
+         <li>Other value: Error returned by Vulkan, e.g. memory mapping failure.</li>
+         </ul></dd>
+</dl>
+</li>
+</ul>
 <a id="nvmaDefragment(long,long,long,long,long,long)">
 <!--   -->
 </a>
@@ -2968,61 +3613,21 @@ extends java.lang.Object</pre>
  rules:</p>
  
  <ul>
- <li>Only allocations made in memory types that have <code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> flag can be compacted. You may pass other allocations
- but it makes no sense - these will never be moved.</li>
- <li>You may pass allocations made with <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT"><code>ALLOCATION_CREATE_DEDICATED_MEMORY_BIT</code></a> but it makes no sense - they will never be moved.</li>
- <li>Both allocations made with or without <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_MAPPED_BIT"><code>ALLOCATION_CREATE_MAPPED_BIT</code></a>  flag can be compacted. If not persistently mapped, memory will be mapped
+ <li>Only allocations made in memory types that have <code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> and <code>VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</code> flags
+ can be compacted. You may pass other allocations but it makes no sense - these will never be moved.</li>
+ <li>Custom pools created with <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_LINEAR_ALGORITHM_BIT"><code>POOL_CREATE_LINEAR_ALGORITHM_BIT</code></a> or <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_POOL_CREATE_BUDDY_ALGORITHM_BIT"><code>POOL_CREATE_BUDDY_ALGORITHM_BIT</code></a> flag are not defragmented. Allocations passed to
+ this function that come from such pools are ignored.</li>
+ <li>Allocations created with <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT"><code>ALLOCATION_CREATE_DEDICATED_MEMORY_BIT</code></a> or created as dedicated allocations for any other reason are also ignored.</li>
+ <li>Both allocations made with or without <a href="../../../../org/lwjgl/util/vma/Vma.html#VMA_ALLOCATION_CREATE_MAPPED_BIT"><code>ALLOCATION_CREATE_MAPPED_BIT</code></a> flag can be compacted. If not persistently mapped, memory will be mapped
  temporarily inside this function if needed.</li>
  <li>You must not pass same <code>VmaAllocation</code> object multiple times in <code>pAllocations</code> array.</li>
  </ul>
  
  <p>The function also frees empty <code>VkDeviceMemory</code> blocks.</p>
  
- <p>After allocation has been moved, its <a href="../../../../org/lwjgl/util/vma/VmaAllocationInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationInfo</code></a><code>::deviceMemory</code> and/or <a href="../../../../org/lwjgl/util/vma/VmaAllocationInfo.html" title="class in org.lwjgl.util.vma"><code>VmaAllocationInfo</code></a><code>::offset</code> changes. You must query them
- again using <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaGetAllocationInfo(long,long,org.lwjgl.util.vma.VmaAllocationInfo)"><code>GetAllocationInfo</code></a> if you need them.</p>
- 
- <p>If an allocation has been moved, data in memory is copied to new place automatically, but if it was bound to a buffer or an image, you must destroy
- that object yourself, create new one and bind it to the new memory pointed by the allocation. You must use <code>vkDestroyBuffer()</code>,
- <code>vkDestroyImage()</code>, <code>vkCreateBuffer()</code>, <code>vkCreateImage()</code> for that purpose and NOT <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyBuffer(long,long,long)"><code>DestroyBuffer</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaDestroyImage(long,long,long)"><code>DestroyImage</code></a>,
- <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateBuffer(long,org.lwjgl.vulkan.VkBufferCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateBuffer</code></a>, <a href="../../../../org/lwjgl/util/vma/Vma.html#vmaCreateImage(long,org.lwjgl.vulkan.VkImageCreateInfo,org.lwjgl.util.vma.VmaAllocationCreateInfo,java.nio.LongBuffer,org.lwjgl.PointerBuffer,org.lwjgl.util.vma.VmaAllocationInfo)"><code>CreateImage</code></a>! Example:</p>
- 
- <pre><code>
- VkDevice device = ...;
- VmaAllocator allocator = ...;
- std::vector&lt;VkBuffer&gt; buffers = ...;
- std::vector&lt;VmaAllocation&gt; allocations = ...;
- 
- std::vector&lt;VkBool32&gt; allocationsChanged(allocations.size());
- vmaDefragment(allocator, allocations.data(), allocations.size(), allocationsChanged.data(), nullptr, nullptr);
- 
- for(size_t i = 0; i &lt; allocations.size(); ++i)
- {
-     if(allocationsChanged[i])
-     {
-         VmaAllocationInfo allocInfo;
-         vmaGetAllocationInfo(allocator, allocations[i], &amp;allocInfo);
- 
-         vkDestroyBuffer(device, buffers[i], nullptr);
- 
-         VkBufferCreateInfo bufferInfo = ...;
-         vkCreateBuffer(device, &amp;bufferInfo, nullptr, &amp;buffers[i]);
- 
-         // You can make dummy call to vkGetBufferMemoryRequirements here to silence validation layer warning.
- 
-         vkBindBufferMemory(device, buffers[i], allocInfo.deviceMemory, allocInfo.offset);
-     }
- }</code></pre>
- 
- <p>Note: Please don't expect memory to be fully compacted after this call. Algorithms inside are based on some heuristics that try to maximize number of
- Vulkan memory blocks to make totally empty to release them, as well as to maximimze continuous empty space inside remaining blocks, while minimizing
- the number and size of data that needs to be moved. Some fragmentation still remains after this call. This is normal.</p>
- 
- <p>Warning: This function is not 100% correct according to Vulkan specification. Use it at your own risk. That's because Vulkan doesn't guarantee that
- memory requirements (size and alignment) for a new buffer or image are consistent. They may be different even for subsequent calls with the same
- parameters. It really does happen on some platforms, especially with images.</p>
- 
- <p>Warning: This function may be time-consuming, so you shouldn't call it too often (like every frame or after every resource creation/destruction). You
- can call it on special occasions (like when reloading a game level or when you just destroyed a lot of objects).</p></div>
+ <p>Warning: This function may be time-consuming, so you shouldn't call it too often (like after every resource creation/destruction). You
+ can call it on special occasions (like when reloading a game level or when you just destroyed a lot of objects). Calling it every frame may be OK, but
+ you should measure that on your platform.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>pAllocations</code> - array of allocations that can be moved during this compaction</dd>

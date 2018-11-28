@@ -407,10 +407,10 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code>byte</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/nanovg/NSVGShape.html#id(int)">id</a></span>&#8203;(int&nbsp;index)</code></th>
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/nanovg/NSVGShape.html#idString()">idString</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the value at the specified index of the <code>id</code> field.</div>
+<div class="block">Decodes the null-terminated string stored in the <code>id</code> field.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -471,11 +471,10 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 </td>
 </tr>
 <tr id="i19" class="rowColor">
-<td class="colFirst"><code>static byte</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/nanovg/NSVGShape.html#nid(long,int)">nid</a></span>&#8203;(long&nbsp;struct,
-   int&nbsp;index)</code></th>
+<td class="colFirst"><code>static java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/nanovg/NSVGShape.html#nidString(long)">nidString</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
-<div class="block">Unsafe version of <a href="../../../org/lwjgl/nanovg/NSVGShape.html#id(int)"><code>id</code></a>.</div>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/nanovg/NSVGShape.html#idString()"><code>idString()</code></a>.</div>
 </td>
 </tr>
 <tr id="i20" class="altColor">
@@ -805,14 +804,14 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <div class="block">Returns a <code>ByteBuffer</code> view of the <code>id</code> field.</div>
 </li>
 </ul>
-<a id="id(int)">
+<a id="idString()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>id</h4>
-<pre>public&nbsp;byte&nbsp;id&#8203;(int&nbsp;index)</pre>
-<div class="block">Returns the value at the specified index of the <code>id</code> field.</div>
+<h4>idString</h4>
+<pre>public&nbsp;java.lang.String&nbsp;idString()</pre>
+<div class="block">Decodes the null-terminated string stored in the <code>id</code> field.</div>
 </li>
 </ul>
 <a id="fill()">
@@ -1044,15 +1043,14 @@ public static&nbsp;<a href="../../../org/lwjgl/nanovg/NSVGShape.Buffer.html" tit
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/nanovg/NSVGShape.html#id()"><code>id()</code></a>.</div>
 </li>
 </ul>
-<a id="nid(long,int)">
+<a id="nidString(long)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>nid</h4>
-<pre>public static&nbsp;byte&nbsp;nid&#8203;(long&nbsp;struct,
-                       int&nbsp;index)</pre>
-<div class="block">Unsafe version of <a href="../../../org/lwjgl/nanovg/NSVGShape.html#id(int)"><code>id</code></a>.</div>
+<h4>nidString</h4>
+<pre>public static&nbsp;java.lang.String&nbsp;nidString&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/nanovg/NSVGShape.html#idString()"><code>idString()</code></a>.</div>
 </li>
 </ul>
 <a id="nfill(long)">

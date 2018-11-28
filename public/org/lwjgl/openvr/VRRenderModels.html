@@ -217,7 +217,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>static int</code></td>
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRRenderModels.html#nVRRenderModels_GetComponentStateForDevicePath(long,long,long,long,long)">nVRRenderModels_GetComponentStateForDevicePath</a></span>&#8203;(long&nbsp;pchRenderModelName,
                                               long&nbsp;pchComponentName,
                                               long&nbsp;devicePath,
@@ -424,7 +424,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i31" class="rowColor">
-<td class="colFirst"><code>static int</code></td>
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRRenderModels.html#VRRenderModels_GetComponentStateForDevicePath(java.lang.CharSequence,java.lang.CharSequence,long,org.lwjgl.openvr.RenderModelControllerModeState,org.lwjgl.openvr.RenderModelComponentState)">VRRenderModels_GetComponentStateForDevicePath</a></span>&#8203;(java.lang.CharSequence&nbsp;pchRenderModelName,
                                              java.lang.CharSequence&nbsp;pchComponentName,
                                              long&nbsp;devicePath,
@@ -433,7 +433,7 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i32" class="altColor">
-<td class="colFirst"><code>static int</code></td>
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRRenderModels.html#VRRenderModels_GetComponentStateForDevicePath(java.nio.ByteBuffer,java.nio.ByteBuffer,long,org.lwjgl.openvr.RenderModelControllerModeState,org.lwjgl.openvr.RenderModelComponentState)">VRRenderModels_GetComponentStateForDevicePath</a></span>&#8203;(java.nio.ByteBuffer&nbsp;pchRenderModelName,
                                              java.nio.ByteBuffer&nbsp;pchComponentName,
                                              long&nbsp;devicePath,
@@ -945,11 +945,11 @@ public static&nbsp;java.lang.String&nbsp;VRRenderModels_GetComponentRenderModelN
 <ul class="blockList">
 <li class="blockList">
 <h4>nVRRenderModels_GetComponentStateForDevicePath</h4>
-<pre>public static&nbsp;int&nbsp;nVRRenderModels_GetComponentStateForDevicePath&#8203;(long&nbsp;pchRenderModelName,
-                                                                 long&nbsp;pchComponentName,
-                                                                 long&nbsp;devicePath,
-                                                                 long&nbsp;pState,
-                                                                 long&nbsp;pComponentState)</pre>
+<pre>public static&nbsp;boolean&nbsp;nVRRenderModels_GetComponentStateForDevicePath&#8203;(long&nbsp;pchRenderModelName,
+                                                                     long&nbsp;pchComponentName,
+                                                                     long&nbsp;devicePath,
+                                                                     long&nbsp;pState,
+                                                                     long&nbsp;pComponentState)</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRRenderModels.html#VRRenderModels_GetComponentStateForDevicePath(java.nio.ByteBuffer,java.nio.ByteBuffer,long,org.lwjgl.openvr.RenderModelControllerModeState,org.lwjgl.openvr.RenderModelComponentState)"><code>GetComponentStateForDevicePath</code></a></div>
 </li>
 </ul>
@@ -962,17 +962,17 @@ public static&nbsp;java.lang.String&nbsp;VRRenderModels_GetComponentRenderModelN
 <ul class="blockList">
 <li class="blockList">
 <h4>VRRenderModels_GetComponentStateForDevicePath</h4>
-<pre>public static&nbsp;int&nbsp;VRRenderModels_GetComponentStateForDevicePath&#8203;(java.nio.ByteBuffer&nbsp;pchRenderModelName,
-                                                                java.nio.ByteBuffer&nbsp;pchComponentName,
-                                                                long&nbsp;devicePath,
-                                                                <a href="../../../org/lwjgl/openvr/RenderModelControllerModeState.html" title="class in org.lwjgl.openvr">RenderModelControllerModeState</a>&nbsp;pState,
-                                                                <a href="../../../org/lwjgl/openvr/RenderModelComponentState.html" title="class in org.lwjgl.openvr">RenderModelComponentState</a>&nbsp;pComponentState)
+<pre>public static&nbsp;boolean&nbsp;VRRenderModels_GetComponentStateForDevicePath&#8203;(java.nio.ByteBuffer&nbsp;pchRenderModelName,
+                                                                    java.nio.ByteBuffer&nbsp;pchComponentName,
+                                                                    long&nbsp;devicePath,
+                                                                    <a href="../../../org/lwjgl/openvr/RenderModelControllerModeState.html" title="class in org.lwjgl.openvr">RenderModelControllerModeState</a>&nbsp;pState,
+                                                                    <a href="../../../org/lwjgl/openvr/RenderModelComponentState.html" title="class in org.lwjgl.openvr">RenderModelComponentState</a>&nbsp;pComponentState)
 
-public static&nbsp;int&nbsp;VRRenderModels_GetComponentStateForDevicePath&#8203;(java.lang.CharSequence&nbsp;pchRenderModelName,
-                                                                java.lang.CharSequence&nbsp;pchComponentName,
-                                                                long&nbsp;devicePath,
-                                                                <a href="../../../org/lwjgl/openvr/RenderModelControllerModeState.html" title="class in org.lwjgl.openvr">RenderModelControllerModeState</a>&nbsp;pState,
-                                                                <a href="../../../org/lwjgl/openvr/RenderModelComponentState.html" title="class in org.lwjgl.openvr">RenderModelComponentState</a>&nbsp;pComponentState)
+public static&nbsp;boolean&nbsp;VRRenderModels_GetComponentStateForDevicePath&#8203;(java.lang.CharSequence&nbsp;pchRenderModelName,
+                                                                    java.lang.CharSequence&nbsp;pchComponentName,
+                                                                    long&nbsp;devicePath,
+                                                                    <a href="../../../org/lwjgl/openvr/RenderModelControllerModeState.html" title="class in org.lwjgl.openvr">RenderModelControllerModeState</a>&nbsp;pState,
+                                                                    <a href="../../../org/lwjgl/openvr/RenderModelComponentState.html" title="class in org.lwjgl.openvr">RenderModelComponentState</a>&nbsp;pComponentState)
 </pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

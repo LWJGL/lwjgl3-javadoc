@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":9,"i49":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":9,"i53":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -193,8 +193,13 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
  
  <p>Warning! Using this feature may not be equivalent to installing a GPU with smaller amount of memory, because graphics driver doesn't necessary fail new
  allocations with <code>VK_ERROR_OUT_OF_DEVICE_MEMORY</code> result when memory capacity is exceeded. It may return success and just silently migrate some
- device memory blocks to system RAM.</p></li>
+ device memory blocks to system RAM. This driver behavior can also be controlled using <code>VK_AMD_memory_overallocation_behavior</code> extension.</p></li>
  <li><code>pVulkanFunctions</code> &ndash; pointers to Vulkan functions</li>
+ <li><code>pRecordSettings</code> &ndash; 
+ parameters for recording of VMA calls. Can be null.
+ 
+ <p>If not null, it enables recording of calls to VMA functions to a file. If support for recording is not enabled using <code>VMA_RECORDING_ENABLED</code>
+ macro, creation of the allocator object fails with <code>VK_ERROR_FEATURE_NOT_PRESENT</code>.</p></li>
  </ul>
  
  <h3>Layout</h3>
@@ -210,6 +215,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
      uint32_t frameInUseCount;
      VkDeviceSize const * pHeapSizeLimit;
      <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma"><code>VmaVulkanFunctions const</code></a> * pVulkanFunctions;
+     <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma"><code>VmaRecordSettings const</code></a> * pRecordSettings;
  }</code></pre></div>
 </li>
 </ul>
@@ -264,6 +270,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <br><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#PDEVICEMEMORYCALLBACKS">PDEVICEMEMORYCALLBACKS</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#PHEAPSIZELIMIT">PHEAPSIZELIMIT</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#PHYSICALDEVICE">PHYSICALDEVICE</a>
+<br><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#PRECORDSETTINGS">PRECORDSETTINGS</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#PREFERREDLARGEHEAPBLOCKSIZE">PREFERREDLARGEHEAPBLOCKSIZE</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#PVULKANFUNCTIONS">PVULKANFUNCTIONS</a></span></code></th>
 <td class="colLast">
@@ -272,7 +279,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#SIZEOF">SIZEOF</a></span></code></th>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#SIZEOF">SIZEOF</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct size in bytes.</div>
 </td>
@@ -537,13 +544,28 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 </td>
 </tr>
 <tr id="i29" class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#npRecordSettings(long)">npRecordSettings</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pRecordSettings()"><code>pRecordSettings()</code></a>.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#npRecordSettings(long,org.lwjgl.util.vma.VmaRecordSettings)">npRecordSettings</a></span>&#8203;(long&nbsp;struct,
+                <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a>&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pRecordSettings(org.lwjgl.util.vma.VmaRecordSettings)"><code>pRecordSettings</code></a>.</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#npreferredLargeHeapBlockSize(long)">npreferredLargeHeapBlockSize</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#preferredLargeHeapBlockSize()"><code>preferredLargeHeapBlockSize()</code></a>.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#npreferredLargeHeapBlockSize(long,long)">npreferredLargeHeapBlockSize</a></span>&#8203;(long&nbsp;struct,
                             long&nbsp;value)</code></th>
@@ -551,14 +573,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#preferredLargeHeapBlockSize(long)"><code>preferredLargeHeapBlockSize</code></a>.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#npVulkanFunctions(long)">npVulkanFunctions</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pVulkanFunctions()"><code>pVulkanFunctions()</code></a>.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#npVulkanFunctions(long,org.lwjgl.util.vma.VmaVulkanFunctions)">npVulkanFunctions</a></span>&#8203;(long&nbsp;struct,
                  <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;value)</code></th>
@@ -566,93 +588,107 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pVulkanFunctions(org.lwjgl.util.vma.VmaVulkanFunctions)"><code>pVulkanFunctions</code></a>.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/vulkan/VkAllocationCallbacks.html" title="class in org.lwjgl.vulkan">VkAllocationCallbacks</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pAllocationCallbacks()">pAllocationCallbacks</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a <a href="../../../../org/lwjgl/vulkan/VkAllocationCallbacks.html" title="class in org.lwjgl.vulkan"><code>VkAllocationCallbacks</code></a> view of the struct pointed to by the <code>pAllocationCallbacks</code> field.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pAllocationCallbacks(org.lwjgl.vulkan.VkAllocationCallbacks)">pAllocationCallbacks</a></span>&#8203;(<a href="../../../../org/lwjgl/vulkan/VkAllocationCallbacks.html" title="class in org.lwjgl.vulkan">VkAllocationCallbacks</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the address of the specified <a href="../../../../org/lwjgl/vulkan/VkAllocationCallbacks.html" title="class in org.lwjgl.vulkan"><code>VkAllocationCallbacks</code></a> to the <code>pAllocationCallbacks</code> field.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaDeviceMemoryCallbacks.html" title="class in org.lwjgl.util.vma">VmaDeviceMemoryCallbacks</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pDeviceMemoryCallbacks()">pDeviceMemoryCallbacks</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a <a href="../../../../org/lwjgl/util/vma/VmaDeviceMemoryCallbacks.html" title="class in org.lwjgl.util.vma"><code>VmaDeviceMemoryCallbacks</code></a> view of the struct pointed to by the <code>pDeviceMemoryCallbacks</code> field.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pDeviceMemoryCallbacks(org.lwjgl.util.vma.VmaDeviceMemoryCallbacks)">pDeviceMemoryCallbacks</a></span>&#8203;(<a href="../../../../org/lwjgl/util/vma/VmaDeviceMemoryCallbacks.html" title="class in org.lwjgl.util.vma">VmaDeviceMemoryCallbacks</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the address of the specified <a href="../../../../org/lwjgl/util/vma/VmaDeviceMemoryCallbacks.html" title="class in org.lwjgl.util.vma"><code>VmaDeviceMemoryCallbacks</code></a> to the <code>pDeviceMemoryCallbacks</code> field.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>java.nio.LongBuffer</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pHeapSizeLimit(int)">pHeapSizeLimit</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a <code>LongBuffer</code> view of the data pointed to by the <code>pHeapSizeLimit</code> field.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pHeapSizeLimit(java.nio.LongBuffer)">pHeapSizeLimit</a></span>&#8203;(java.nio.LongBuffer&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the address of the specified <code>LongBuffer</code> to the <code>pHeapSizeLimit</code> field.</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#physicalDevice()">physicalDevice</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>physicalDevice</code> field.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#physicalDevice(org.lwjgl.vulkan.VkPhysicalDevice)">physicalDevice</a></span>&#8203;(<a href="../../../../org/lwjgl/vulkan/VkPhysicalDevice.html" title="class in org.lwjgl.vulkan">VkPhysicalDevice</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>physicalDevice</code> field.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i43" class="rowColor">
+<td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pRecordSettings()">pRecordSettings</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns a <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma"><code>VmaRecordSettings</code></a> view of the struct pointed to by the <code>pRecordSettings</code> field.</div>
+</td>
+</tr>
+<tr id="i44" class="altColor">
+<td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pRecordSettings(org.lwjgl.util.vma.VmaRecordSettings)">pRecordSettings</a></span>&#8203;(<a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a>&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Sets the address of the specified <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma"><code>VmaRecordSettings</code></a> to the <code>pRecordSettings</code> field.</div>
+</td>
+</tr>
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#preferredLargeHeapBlockSize()">preferredLargeHeapBlockSize</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>preferredLargeHeapBlockSize</code> field.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#preferredLargeHeapBlockSize(long)">preferredLargeHeapBlockSize</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>preferredLargeHeapBlockSize</code> field.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pVulkanFunctions()">pVulkanFunctions</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma"><code>VmaVulkanFunctions</code></a> view of the struct pointed to by the <code>pVulkanFunctions</code> field.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pVulkanFunctions(org.lwjgl.util.vma.VmaVulkanFunctions)">pVulkanFunctions</a></span>&#8203;(<a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the address of the specified <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma"><code>VmaVulkanFunctions</code></a> to the <code>pVulkanFunctions</code> field.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#set(int,org.lwjgl.vulkan.VkPhysicalDevice,org.lwjgl.vulkan.VkDevice,long,org.lwjgl.vulkan.VkAllocationCallbacks,org.lwjgl.util.vma.VmaDeviceMemoryCallbacks,int,java.nio.LongBuffer,org.lwjgl.util.vma.VmaVulkanFunctions)">set</a></span>&#8203;(int&nbsp;flags,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#set(int,org.lwjgl.vulkan.VkPhysicalDevice,org.lwjgl.vulkan.VkDevice,long,org.lwjgl.vulkan.VkAllocationCallbacks,org.lwjgl.util.vma.VmaDeviceMemoryCallbacks,int,java.nio.LongBuffer,org.lwjgl.util.vma.VmaVulkanFunctions,org.lwjgl.util.vma.VmaRecordSettings)">set</a></span>&#8203;(int&nbsp;flags,
    <a href="../../../../org/lwjgl/vulkan/VkPhysicalDevice.html" title="class in org.lwjgl.vulkan">VkPhysicalDevice</a>&nbsp;physicalDevice,
    <a href="../../../../org/lwjgl/vulkan/VkDevice.html" title="class in org.lwjgl.vulkan">VkDevice</a>&nbsp;device,
    long&nbsp;preferredLargeHeapBlockSize,
@@ -660,33 +696,34 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
    <a href="../../../../org/lwjgl/util/vma/VmaDeviceMemoryCallbacks.html" title="class in org.lwjgl.util.vma">VmaDeviceMemoryCallbacks</a>&nbsp;pDeviceMemoryCallbacks,
    int&nbsp;frameInUseCount,
    java.nio.LongBuffer&nbsp;pHeapSizeLimit,
-   <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;pVulkanFunctions)</code></th>
+   <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;pVulkanFunctions,
+   <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a>&nbsp;pRecordSettings)</code></th>
 <td class="colLast">
 <div class="block">Initializes this struct with the specified values.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#set(org.lwjgl.util.vma.VmaAllocatorCreateInfo)">set</a></span>&#8203;(<a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a>&nbsp;src)</code></th>
 <td class="colLast">
 <div class="block">Copies the specified struct data to this struct.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>sizeof(struct)</code>.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#validate(long)">validate</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Validates pointer members that should not be <code>NULL</code>.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#validate(long,int)">validate</a></span>&#8203;(long&nbsp;array,
         int&nbsp;count)</code></th>
@@ -782,9 +819,12 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <a id="PVULKANFUNCTIONS">
 <!--   -->
 </a>
+<a id="PRECORDSETTINGS">
+<!--   -->
+</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>FLAGS, PHYSICALDEVICE, DEVICE, PREFERREDLARGEHEAPBLOCKSIZE, PALLOCATIONCALLBACKS, PDEVICEMEMORYCALLBACKS, FRAMEINUSECOUNT, PHEAPSIZELIMIT, PVULKANFUNCTIONS</h4>
+<h4>FLAGS, PHYSICALDEVICE, DEVICE, PREFERREDLARGEHEAPBLOCKSIZE, PALLOCATIONCALLBACKS, PDEVICEMEMORYCALLBACKS, FRAMEINUSECOUNT, PHEAPSIZELIMIT, PVULKANFUNCTIONS, PRECORDSETTINGS</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -932,6 +972,17 @@ public&nbsp;java.nio.LongBuffer&nbsp;pHeapSizeLimit&#8203;(int&nbsp;capacity)</p
 <div class="block">Returns a <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma"><code>VmaVulkanFunctions</code></a> view of the struct pointed to by the <code>pVulkanFunctions</code> field.</div>
 </li>
 </ul>
+<a id="pRecordSettings()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pRecordSettings</h4>
+<pre>@Nullable
+public&nbsp;<a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a>&nbsp;pRecordSettings()</pre>
+<div class="block">Returns a <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma"><code>VmaRecordSettings</code></a> view of the struct pointed to by the <code>pRecordSettings</code> field.</div>
+</li>
+</ul>
 <a id="flags(int)">
 <!--   -->
 </a>
@@ -1025,7 +1076,18 @@ public&nbsp;java.nio.LongBuffer&nbsp;pHeapSizeLimit&#8203;(int&nbsp;capacity)</p
 <div class="block">Sets the address of the specified <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma"><code>VmaVulkanFunctions</code></a> to the <code>pVulkanFunctions</code> field.</div>
 </li>
 </ul>
-<a id="set(int,org.lwjgl.vulkan.VkPhysicalDevice,org.lwjgl.vulkan.VkDevice,long,org.lwjgl.vulkan.VkAllocationCallbacks,org.lwjgl.util.vma.VmaDeviceMemoryCallbacks,int,java.nio.LongBuffer,org.lwjgl.util.vma.VmaVulkanFunctions)">
+<a id="pRecordSettings(org.lwjgl.util.vma.VmaRecordSettings)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pRecordSettings</h4>
+<pre>public&nbsp;<a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html" title="class in org.lwjgl.util.vma">VmaAllocatorCreateInfo</a>&nbsp;pRecordSettings&#8203;(@Nullable
+                                              <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a>&nbsp;value)</pre>
+<div class="block">Sets the address of the specified <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma"><code>VmaRecordSettings</code></a> to the <code>pRecordSettings</code> field.</div>
+</li>
+</ul>
+<a id="set(int,org.lwjgl.vulkan.VkPhysicalDevice,org.lwjgl.vulkan.VkDevice,long,org.lwjgl.vulkan.VkAllocationCallbacks,org.lwjgl.util.vma.VmaDeviceMemoryCallbacks,int,java.nio.LongBuffer,org.lwjgl.util.vma.VmaVulkanFunctions,org.lwjgl.util.vma.VmaRecordSettings)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -1042,7 +1104,9 @@ public&nbsp;java.nio.LongBuffer&nbsp;pHeapSizeLimit&#8203;(int&nbsp;capacity)</p
                                   int&nbsp;frameInUseCount,
                                   @Nullable
                                   java.nio.LongBuffer&nbsp;pHeapSizeLimit,
-                                  <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;pVulkanFunctions)</pre>
+                                  <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;pVulkanFunctions,
+                                  @Nullable
+                                  <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a>&nbsp;pRecordSettings)</pre>
 <div class="block">Initializes this struct with the specified values.</div>
 </li>
 </ul>
@@ -1255,6 +1319,17 @@ public static&nbsp;java.nio.LongBuffer&nbsp;npHeapSizeLimit&#8203;(long&nbsp;str
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pVulkanFunctions()"><code>pVulkanFunctions()</code></a>.</div>
 </li>
 </ul>
+<a id="npRecordSettings(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>npRecordSettings</h4>
+<pre>@Nullable
+public static&nbsp;<a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a>&nbsp;npRecordSettings&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pRecordSettings()"><code>pRecordSettings()</code></a>.</div>
+</li>
+</ul>
 <a id="nflags(long,int)">
 <!--   -->
 </a>
@@ -1355,6 +1430,18 @@ public static&nbsp;java.nio.LongBuffer&nbsp;npHeapSizeLimit&#8203;(long&nbsp;str
 <pre>public static&nbsp;void&nbsp;npVulkanFunctions&#8203;(long&nbsp;struct,
                                      <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;value)</pre>
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pVulkanFunctions(org.lwjgl.util.vma.VmaVulkanFunctions)"><code>pVulkanFunctions</code></a>.</div>
+</li>
+</ul>
+<a id="npRecordSettings(long,org.lwjgl.util.vma.VmaRecordSettings)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>npRecordSettings</h4>
+<pre>public static&nbsp;void&nbsp;npRecordSettings&#8203;(long&nbsp;struct,
+                                    @Nullable
+                                    <a href="../../../../org/lwjgl/util/vma/VmaRecordSettings.html" title="class in org.lwjgl.util.vma">VmaRecordSettings</a>&nbsp;value)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaAllocatorCreateInfo.html#pRecordSettings(org.lwjgl.util.vma.VmaRecordSettings)"><code>pRecordSettings</code></a>.</div>
 </li>
 </ul>
 <a id="validate(long)">

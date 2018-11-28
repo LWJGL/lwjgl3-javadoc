@@ -58,7 +58,7 @@ var pathtoroot = "../../../";loadScripts(document, 'script');</script>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../org/lwjgl/vulkan/KHRSurface.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../org/lwjgl/vulkan/KHRVariablePointers.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../org/lwjgl/vulkan/KHRSwapchainMutableFormat.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../index.html?org/lwjgl/vulkan/KHRSwapchain.html" target="_top">Frames</a></li>
@@ -1051,7 +1051,7 @@ extends java.lang.Object</pre>
 <dd><code>timeout</code> - specifies how long the function waits, in nanoseconds, if no image is available.</dd>
 <dd><code>semaphore</code> - <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a> or a semaphore to signal.</dd>
 <dd><code>fence</code> - <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a> or a fence to signal.</dd>
-<dd><code>pImageIndex</code> - a pointer to a <code>uint32_t</code> that is set to the index of the next image to use (i.e. an index into the array of images returned by <a href="../../../org/lwjgl/vulkan/KHRSwapchain.html#vkGetSwapchainImagesKHR(org.lwjgl.vulkan.VkDevice,long,java.nio.IntBuffer,java.nio.LongBuffer)"><code>GetSwapchainImagesKHR</code></a>).</dd>
+<dd><code>pImageIndex</code> - a pointer to a <code>uint32_t</code> that is set to the index of the next image to use (i.e. an index into the array of images returned by <code>vkGetSwapchainImagesKHR</code>).</dd>
 </dl>
 </li>
 </ul>
@@ -1095,7 +1095,7 @@ extends java.lang.Object</pre>
  <h5>Valid Usage</h5>
  
  <ul>
- <li>Each element of <code>pSwapchains</code> member of <code>pPresentInfo</code> <b>must</b> be a swapchain that is created for a surface for which presentation is supported from <code>queue</code> as determined using a call to <a href="../../../org/lwjgl/vulkan/KHRSurface.html#vkGetPhysicalDeviceSurfaceSupportKHR(org.lwjgl.vulkan.VkPhysicalDevice,int,long,java.nio.IntBuffer)"><code>GetPhysicalDeviceSurfaceSupportKHR</code></a></li>
+ <li>Each element of <code>pSwapchains</code> member of <code>pPresentInfo</code> <b>must</b> be a swapchain that is created for a surface for which presentation is supported from <code>queue</code> as determined using a call to <code>vkGetPhysicalDeviceSurfaceSupportKHR</code></li>
  <li>If more than one member of <code>pSwapchains</code> was created from a display surface, all display surfaces referenced that refer to the same display <b>must</b> use the same display mode</li>
  <li>When a semaphore unsignal operation defined by the elements of the <code>pWaitSemaphores</code> member of <code>pPresentInfo</code> executes on <code>queue</code>, no other queue <b>must</b> be waiting on the same semaphore.</li>
  <li>All elements of the <code>pWaitSemaphores</code> member of <code>pPresentInfo</code> <b>must</b> be semaphores that are signaled, or have <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#synchronization-semaphores-signaling">semaphore signal operations</a> previously submitted for execution.</li>
@@ -1105,9 +1105,9 @@ extends java.lang.Object</pre>
  
  <p>Queueing an image for presentation defines a set of <em>queue operations</em>, including waiting on the semaphores and submitting a presentation request to the presentation engine. However, the scope of this set of queue operations does not include the actual processing of the image by the presentation engine.</p>
  
- <p>If <a href="../../../org/lwjgl/vulkan/KHRSwapchain.html#vkQueuePresentKHR(org.lwjgl.vulkan.VkQueue,org.lwjgl.vulkan.VkPresentInfoKHR)"><code>QueuePresentKHR</code></a> fails to enqueue the corresponding set of queue operations, it <b>may</b> return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_OUT_OF_HOST_MEMORY"><code>ERROR_OUT_OF_HOST_MEMORY</code></a> or <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_OUT_OF_DEVICE_MEMORY"><code>ERROR_OUT_OF_DEVICE_MEMORY</code></a>. If it does, the implementation <b>must</b> ensure that the state and contents of any resources or synchronization primitives referenced is unaffected by the call or its failure.</p>
+ <p>If <code>vkQueuePresentKHR</code> fails to enqueue the corresponding set of queue operations, it <b>may</b> return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_OUT_OF_HOST_MEMORY"><code>ERROR_OUT_OF_HOST_MEMORY</code></a> or <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_OUT_OF_DEVICE_MEMORY"><code>ERROR_OUT_OF_DEVICE_MEMORY</code></a>. If it does, the implementation <b>must</b> ensure that the state and contents of any resources or synchronization primitives referenced is unaffected by the call or its failure.</p>
  
- <p>If <a href="../../../org/lwjgl/vulkan/KHRSwapchain.html#vkQueuePresentKHR(org.lwjgl.vulkan.VkQueue,org.lwjgl.vulkan.VkPresentInfoKHR)"><code>QueuePresentKHR</code></a> fails in such a way that the implementation is unable to make that guarantee, the implementation <b>must</b> return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_DEVICE_LOST"><code>ERROR_DEVICE_LOST</code></a>.</p>
+ <p>If <code>vkQueuePresentKHR</code> fails in such a way that the implementation is unable to make that guarantee, the implementation <b>must</b> return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_DEVICE_LOST"><code>ERROR_DEVICE_LOST</code></a>.</p>
  
  <p>However, if the presentation request is rejected by the presentation engine with an error <a href="../../../org/lwjgl/vulkan/KHRSwapchain.html#VK_ERROR_OUT_OF_DATE_KHR"><code>ERROR_OUT_OF_DATE_KHR</code></a> or <a href="../../../org/lwjgl/vulkan/KHRSurface.html#VK_ERROR_SURFACE_LOST_KHR"><code>ERROR_SURFACE_LOST_KHR</code></a>, the set of queue operations are still considered to be enqueued and thus any semaphore to be waited on gets unsignaled when the corresponding queue operation is complete.</p>
  
@@ -1583,7 +1583,7 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../org/lwjgl/vulkan/KHRSurface.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../org/lwjgl/vulkan/KHRVariablePointers.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../org/lwjgl/vulkan/KHRSwapchainMutableFormat.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../index.html?org/lwjgl/vulkan/KHRSwapchain.html" target="_top">Frames</a></li>

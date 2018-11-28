@@ -156,8 +156,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h3>Member documentation</h3>
  
  <ul>
- <li><code>currentDisplay</code> &ndash; the handle of the display the plane is currently associated with. If the plane is not currently attached to any displays, this will be <code>VK_NULL_HANDLE</code>.</li>
- <li><code>currentStackIndex</code> &ndash; the current z-order of the plane. This will be between 0 and the value returned by <a href="../../../org/lwjgl/vulkan/KHRDisplay.html#vkGetPhysicalDeviceDisplayPlanePropertiesKHR(org.lwjgl.vulkan.VkPhysicalDevice,java.nio.IntBuffer,org.lwjgl.vulkan.VkDisplayPlanePropertiesKHR.Buffer)"><code>GetPhysicalDeviceDisplayPlanePropertiesKHR</code></a> in <code>pPropertyCount</code>.</li>
+ <li><code>currentDisplay</code> &ndash; the handle of the display the plane is currently associated with. If the plane is not currently attached to any displays, this will be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a>.</li>
+ <li><code>currentStackIndex</code> &ndash; the current z-order of the plane. This will be between 0 and the value returned by <code>vkGetPhysicalDeviceDisplayPlanePropertiesKHR</code> in <code>pPropertyCount</code>.</li>
  </ul>
  
  <h3>Layout</h3>

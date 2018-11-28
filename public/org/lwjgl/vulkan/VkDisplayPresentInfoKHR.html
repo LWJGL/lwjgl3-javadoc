@@ -162,7 +162,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <ul>
  <li><code>srcRect</code> <b>must</b> specify a rectangular region that is a subset of the image being presented</li>
  <li><code>dstRect</code> <b>must</b> specify a rectangular region that is a subset of the <code>visibleRegion</code> parameter of the display mode the swapchain being presented uses</li>
- <li>If the <code>persistentContent</code> member of the <a href="../../../org/lwjgl/vulkan/VkDisplayPropertiesKHR.html" title="class in org.lwjgl.vulkan"><code>VkDisplayPropertiesKHR</code></a> structure returned by <a href="../../../org/lwjgl/vulkan/KHRDisplay.html#vkGetPhysicalDeviceDisplayPropertiesKHR(org.lwjgl.vulkan.VkPhysicalDevice,java.nio.IntBuffer,org.lwjgl.vulkan.VkDisplayPropertiesKHR.Buffer)"><code>GetPhysicalDeviceDisplayPropertiesKHR</code></a> for the display the present operation targets then <code>persistent</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a></li>
+ <li>If the <code>persistentContent</code> member of the <a href="../../../org/lwjgl/vulkan/VkDisplayPropertiesKHR.html" title="class in org.lwjgl.vulkan"><code>VkDisplayPropertiesKHR</code></a> structure returned by <code>vkGetPhysicalDeviceDisplayPropertiesKHR</code> for the display the present operation targets then <code>persistent</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a></li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>

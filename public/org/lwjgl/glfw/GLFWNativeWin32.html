@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -183,34 +183,42 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/glfw/GLFWNativeWin32.html#glfwAttachWin32Window(long,long)">glfwAttachWin32Window</a></span>&#8203;(long&nbsp;handle,
+                     long&nbsp;share)</code></th>
+<td class="colLast">
+<div class="block">Wraps an existing <code>HWND</code> in a new GLFW window object.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/glfw/GLFWNativeWin32.html#glfwGetWin32Adapter(long)">glfwGetWin32Adapter</a></span>&#8203;(long&nbsp;monitor)</code></th>
 <td class="colLast">
 <div class="block">Returns the adapter device name of the specified monitor.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/glfw/GLFWNativeWin32.html#glfwGetWin32Monitor(long)">glfwGetWin32Monitor</a></span>&#8203;(long&nbsp;monitor)</code></th>
 <td class="colLast">
 <div class="block">Returns the display device name of the specified monitor.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/glfw/GLFWNativeWin32.html#glfwGetWin32Window(long)">glfwGetWin32Window</a></span>&#8203;(long&nbsp;window)</code></th>
 <td class="colLast">
 <div class="block">Returns the <code>HWND</code> of the specified window.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/glfw/GLFWNativeWin32.html#nglfwGetWin32Adapter(long)">nglfwGetWin32Adapter</a></span>&#8203;(long&nbsp;monitor)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/glfw/GLFWNativeWin32.html#glfwGetWin32Adapter(long)"><code>GetWin32Adapter</code></a></div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/glfw/GLFWNativeWin32.html#nglfwGetWin32Monitor(long)">nglfwGetWin32Monitor</a></span>&#8203;(long&nbsp;monitor)</code></th>
 <td class="colLast">
@@ -266,7 +274,7 @@ public static&nbsp;java.lang.String&nbsp;glfwGetWin32Adapter&#8203;(long&nbsp;mo
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>monitor</code> - the GLFW monitor</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The UTF-8 encoded adapter device name (for example `\\.\DISPLAY1`) of the specified monitor, or <code>NULL</code> if an error occurred.</dd>
+<dd>the UTF-8 encoded adapter device name (for example `\\.\DISPLAY1`) of the specified monitor, or <code>NULL</code> if an error occurred</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>version 3.1</dd>
 </dl>
@@ -297,7 +305,7 @@ public static&nbsp;java.lang.String&nbsp;glfwGetWin32Monitor&#8203;(long&nbsp;mo
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>monitor</code> - the GLFW monitor</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The UTF-8 encoded display device name (for example `\\.\DISPLAY1\Monitor0`) of the specified monitor, or <code>NULL</code> if an error occurred.</dd>
+<dd>the UTF-8 encoded display device name (for example `\\.\DISPLAY1\Monitor0`) of the specified monitor, or <code>NULL</code> if an error occurred</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>version 3.1</dd>
 </dl>
@@ -306,7 +314,7 @@ public static&nbsp;java.lang.String&nbsp;glfwGetWin32Monitor&#8203;(long&nbsp;mo
 <a id="glfwGetWin32Window(long)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>glfwGetWin32Window</h4>
 <pre>public static&nbsp;long&nbsp;glfwGetWin32Window&#8203;(long&nbsp;window)</pre>
@@ -317,9 +325,36 @@ public static&nbsp;java.lang.String&nbsp;glfwGetWin32Monitor&#8203;(long&nbsp;mo
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>window</code> - the GLFW window</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The <code>HWND</code> of the specified window, or <code>NULL</code> if an error occurred.</dd>
+<dd>the <code>HWND</code> of the specified window, or <code>NULL</code> if an error occurred</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>version 3.0</dd>
+</dl>
+</li>
+</ul>
+<a id="glfwAttachWin32Window(long,long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>glfwAttachWin32Window</h4>
+<pre>public static&nbsp;long&nbsp;glfwAttachWin32Window&#8203;(long&nbsp;handle,
+                                         long&nbsp;share)</pre>
+<div class="block">Wraps an existing <code>HWND</code> in a new GLFW window object.
+ 
+ <p>This function creates a GLFW window object and its associated OpenGL or OpenGL ES context for an existing <code>HWND</code>. The <code>HWND</code> is not
+ destroyed by GLFW.</p>
+ 
+ <p>This function may be called from any thread.</p>
+ 
+ <p><b>LWJGL</b>: This functionality is experimental and not officially supported by GLFW yet.</p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>handle</code> - the <code>HWND</code> to attach to the window object</dd>
+<dd><code>share</code> - the window whose context to share resources with, or <code>NULL</code> to not share resources</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the handle of the created window, or <code>NULL</code> if an error occurred</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>version 3.3</dd>
 </dl>
 </li>
 </ul>

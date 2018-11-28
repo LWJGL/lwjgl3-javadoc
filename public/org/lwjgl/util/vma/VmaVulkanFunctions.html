@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":10,"i42":10,"i43":10,"i44":10,"i45":9,"i46":9,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10,"i68":10,"i69":10,"i70":10,"i71":10,"i72":10,"i73":10,"i74":10,"i75":10,"i76":10,"i77":10,"i78":10};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":10,"i46":10,"i47":10,"i48":10,"i49":9,"i50":9,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10,"i68":10,"i69":10,"i70":10,"i71":10,"i72":10,"i73":10,"i74":10,"i75":10,"i76":10,"i77":10,"i78":10,"i79":10,"i80":10,"i81":10,"i82":10,"i83":10,"i84":10,"i85":10,"i86":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -165,6 +165,8 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
      PFN_vkFreeMemory vkFreeMemory;
      PFN_vkMapMemory vkMapMemory;
      PFN_vkUnmapMemory vkUnmapMemory;
+     PFN_vkFlushMappedMemoryRanges vkFlushMappedMemoryRanges;
+     PFN_vkInvalidateMappedMemoryRanges vkInvalidateMappedMemoryRanges;
      PFN_vkBindBufferMemory vkBindBufferMemory;
      PFN_vkBindImageMemory vkBindImageMemory;
      PFN_vkGetBufferMemoryRequirements vkGetBufferMemoryRequirements;
@@ -236,6 +238,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKCREATEIMAGE">VKCREATEIMAGE</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKDESTROYBUFFER">VKDESTROYBUFFER</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKDESTROYIMAGE">VKDESTROYIMAGE</a>
+<br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKFLUSHMAPPEDMEMORYRANGES">VKFLUSHMAPPEDMEMORYRANGES</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKFREEMEMORY">VKFREEMEMORY</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKGETBUFFERMEMORYREQUIREMENTS">VKGETBUFFERMEMORYREQUIREMENTS</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKGETBUFFERMEMORYREQUIREMENTS2KHR">VKGETBUFFERMEMORYREQUIREMENTS2KHR</a>
@@ -243,6 +246,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKGETIMAGEMEMORYREQUIREMENTS2KHR">VKGETIMAGEMEMORYREQUIREMENTS2KHR</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKGETPHYSICALDEVICEMEMORYPROPERTIES">VKGETPHYSICALDEVICEMEMORYPROPERTIES</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKGETPHYSICALDEVICEPROPERTIES">VKGETPHYSICALDEVICEPROPERTIES</a>
+<br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKINVALIDATEMAPPEDMEMORYRANGES">VKINVALIDATEMAPPEDMEMORYRANGES</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKMAPMEMORY">VKMAPMEMORY</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#VKUNMAPMEMORY">VKUNMAPMEMORY</a></span></code></th>
 <td class="colLast">
@@ -467,12 +471,27 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkFlushMappedMemoryRanges(long)">nvkFlushMappedMemoryRanges</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFlushMappedMemoryRanges()"><code>vkFlushMappedMemoryRanges()</code></a>.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkFlushMappedMemoryRanges(long,long)">nvkFlushMappedMemoryRanges</a></span>&#8203;(long&nbsp;struct,
+                          long&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFlushMappedMemoryRanges(long)"><code>vkFlushMappedMemoryRanges</code></a>.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkFreeMemory(long)">nvkFreeMemory</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFreeMemory()"><code>vkFreeMemory()</code></a>.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkFreeMemory(long,long)">nvkFreeMemory</a></span>&#8203;(long&nbsp;struct,
              long&nbsp;value)</code></th>
@@ -480,14 +499,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFreeMemory(long)"><code>vkFreeMemory</code></a>.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetBufferMemoryRequirements(long)">nvkGetBufferMemoryRequirements</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetBufferMemoryRequirements()"><code>vkGetBufferMemoryRequirements()</code></a>.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetBufferMemoryRequirements(long,long)">nvkGetBufferMemoryRequirements</a></span>&#8203;(long&nbsp;struct,
                               long&nbsp;value)</code></th>
@@ -495,14 +514,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetBufferMemoryRequirements(long)"><code>vkGetBufferMemoryRequirements</code></a>.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetBufferMemoryRequirements2KHR(long)">nvkGetBufferMemoryRequirements2KHR</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetBufferMemoryRequirements2KHR()"><code>vkGetBufferMemoryRequirements2KHR()</code></a>.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetBufferMemoryRequirements2KHR(long,long)">nvkGetBufferMemoryRequirements2KHR</a></span>&#8203;(long&nbsp;struct,
                                   long&nbsp;value)</code></th>
@@ -510,14 +529,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetBufferMemoryRequirements2KHR(long)"><code>vkGetBufferMemoryRequirements2KHR</code></a>.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetImageMemoryRequirements(long)">nvkGetImageMemoryRequirements</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetImageMemoryRequirements()"><code>vkGetImageMemoryRequirements()</code></a>.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetImageMemoryRequirements(long,long)">nvkGetImageMemoryRequirements</a></span>&#8203;(long&nbsp;struct,
                              long&nbsp;value)</code></th>
@@ -525,14 +544,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetImageMemoryRequirements(long)"><code>vkGetImageMemoryRequirements</code></a>.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetImageMemoryRequirements2KHR(long)">nvkGetImageMemoryRequirements2KHR</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetImageMemoryRequirements2KHR()"><code>vkGetImageMemoryRequirements2KHR()</code></a>.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetImageMemoryRequirements2KHR(long,long)">nvkGetImageMemoryRequirements2KHR</a></span>&#8203;(long&nbsp;struct,
                                  long&nbsp;value)</code></th>
@@ -540,14 +559,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetImageMemoryRequirements2KHR(long)"><code>vkGetImageMemoryRequirements2KHR</code></a>.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetPhysicalDeviceMemoryProperties(long)">nvkGetPhysicalDeviceMemoryProperties</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetPhysicalDeviceMemoryProperties()"><code>vkGetPhysicalDeviceMemoryProperties()</code></a>.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetPhysicalDeviceMemoryProperties(long,long)">nvkGetPhysicalDeviceMemoryProperties</a></span>&#8203;(long&nbsp;struct,
                                     long&nbsp;value)</code></th>
@@ -555,14 +574,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetPhysicalDeviceMemoryProperties(long)"><code>vkGetPhysicalDeviceMemoryProperties</code></a>.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetPhysicalDeviceProperties(long)">nvkGetPhysicalDeviceProperties</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetPhysicalDeviceProperties()"><code>vkGetPhysicalDeviceProperties()</code></a>.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkGetPhysicalDeviceProperties(long,long)">nvkGetPhysicalDeviceProperties</a></span>&#8203;(long&nbsp;struct,
                               long&nbsp;value)</code></th>
@@ -570,14 +589,29 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetPhysicalDeviceProperties(long)"><code>vkGetPhysicalDeviceProperties</code></a>.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i39" class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkInvalidateMappedMemoryRanges(long)">nvkInvalidateMappedMemoryRanges</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkInvalidateMappedMemoryRanges()"><code>vkInvalidateMappedMemoryRanges()</code></a>.</div>
+</td>
+</tr>
+<tr id="i40" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkInvalidateMappedMemoryRanges(long,long)">nvkInvalidateMappedMemoryRanges</a></span>&#8203;(long&nbsp;struct,
+                               long&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkInvalidateMappedMemoryRanges(long)"><code>vkInvalidateMappedMemoryRanges</code></a>.</div>
+</td>
+</tr>
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkMapMemory(long)">nvkMapMemory</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkMapMemory()"><code>vkMapMemory()</code></a>.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkMapMemory(long,long)">nvkMapMemory</a></span>&#8203;(long&nbsp;struct,
             long&nbsp;value)</code></th>
@@ -585,14 +619,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkMapMemory(long)"><code>vkMapMemory</code></a>.</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkUnmapMemory(long)">nvkUnmapMemory</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkUnmapMemory()"><code>vkUnmapMemory()</code></a>.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#nvkUnmapMemory(long,long)">nvkUnmapMemory</a></span>&#8203;(long&nbsp;struct,
               long&nbsp;value)</code></th>
@@ -600,14 +634,16 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkUnmapMemory(long)"><code>vkUnmapMemory</code></a>.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#set(long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long)">set</a></span>&#8203;(long&nbsp;vkGetPhysicalDeviceProperties,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#set(long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long)">set</a></span>&#8203;(long&nbsp;vkGetPhysicalDeviceProperties,
    long&nbsp;vkGetPhysicalDeviceMemoryProperties,
    long&nbsp;vkAllocateMemory,
    long&nbsp;vkFreeMemory,
    long&nbsp;vkMapMemory,
    long&nbsp;vkUnmapMemory,
+   long&nbsp;vkFlushMappedMemoryRanges,
+   long&nbsp;vkInvalidateMappedMemoryRanges,
    long&nbsp;vkBindBufferMemory,
    long&nbsp;vkBindImageMemory,
    long&nbsp;vkGetBufferMemoryRequirements,
@@ -622,14 +658,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Initializes this struct with the specified values.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#set(org.lwjgl.util.vma.VmaVulkanFunctions)">set</a></span>&#8203;(<a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;src)</code></th>
 <td class="colLast">
 <div class="block">Copies the specified struct data to this struct.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#set(org.lwjgl.vulkan.VkInstance,org.lwjgl.vulkan.VkDevice)">set</a></span>&#8203;(<a href="../../../../org/lwjgl/vulkan/VkInstance.html" title="class in org.lwjgl.vulkan">VkInstance</a>&nbsp;instance,
    <a href="../../../../org/lwjgl/vulkan/VkDevice.html" title="class in org.lwjgl.vulkan">VkDevice</a>&nbsp;device)</code></th>
@@ -637,21 +673,21 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Helper method that populates this struct with required Vulkan function pointers from the specified Vulkan instance and device.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>sizeof(struct)</code>.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#validate(long)">validate</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Validates pointer members that should not be <code>NULL</code>.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#validate(long,int)">validate</a></span>&#8203;(long&nbsp;array,
         int&nbsp;count)</code></th>
@@ -659,224 +695,252 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Calls <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#validate(long)"><code>validate(long)</code></a> for each struct contained in the specified struct array.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkAllocateMemory()">vkAllocateMemory</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkAllocateMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkAllocateMemory(long)">vkAllocateMemory</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkAllocateMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkBindBufferMemory()">vkBindBufferMemory</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkBindBufferMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkBindBufferMemory(long)">vkBindBufferMemory</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkBindBufferMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkBindImageMemory()">vkBindImageMemory</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkBindImageMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkBindImageMemory(long)">vkBindImageMemory</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkBindImageMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkCreateBuffer()">vkCreateBuffer</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkCreateBuffer</code> field.</div>
 </td>
 </tr>
-<tr id="i54" class="altColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkCreateBuffer(long)">vkCreateBuffer</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkCreateBuffer</code> field.</div>
 </td>
 </tr>
-<tr id="i55" class="rowColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkCreateImage()">vkCreateImage</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkCreateImage</code> field.</div>
 </td>
 </tr>
-<tr id="i56" class="altColor">
+<tr id="i60" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkCreateImage(long)">vkCreateImage</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkCreateImage</code> field.</div>
 </td>
 </tr>
-<tr id="i57" class="rowColor">
+<tr id="i61" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkDestroyBuffer()">vkDestroyBuffer</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkDestroyBuffer</code> field.</div>
 </td>
 </tr>
-<tr id="i58" class="altColor">
+<tr id="i62" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkDestroyBuffer(long)">vkDestroyBuffer</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkDestroyBuffer</code> field.</div>
 </td>
 </tr>
-<tr id="i59" class="rowColor">
+<tr id="i63" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkDestroyImage()">vkDestroyImage</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkDestroyImage</code> field.</div>
 </td>
 </tr>
-<tr id="i60" class="altColor">
+<tr id="i64" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkDestroyImage(long)">vkDestroyImage</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkDestroyImage</code> field.</div>
 </td>
 </tr>
-<tr id="i61" class="rowColor">
+<tr id="i65" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFlushMappedMemoryRanges()">vkFlushMappedMemoryRanges</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>vkFlushMappedMemoryRanges</code> field.</div>
+</td>
+</tr>
+<tr id="i66" class="altColor">
+<td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFlushMappedMemoryRanges(long)">vkFlushMappedMemoryRanges</a></span>&#8203;(long&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Sets the specified value to the <code>vkFlushMappedMemoryRanges</code> field.</div>
+</td>
+</tr>
+<tr id="i67" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFreeMemory()">vkFreeMemory</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkFreeMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i62" class="altColor">
+<tr id="i68" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFreeMemory(long)">vkFreeMemory</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkFreeMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i63" class="rowColor">
+<tr id="i69" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetBufferMemoryRequirements()">vkGetBufferMemoryRequirements</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkGetBufferMemoryRequirements</code> field.</div>
 </td>
 </tr>
-<tr id="i64" class="altColor">
+<tr id="i70" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetBufferMemoryRequirements(long)">vkGetBufferMemoryRequirements</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkGetBufferMemoryRequirements</code> field.</div>
 </td>
 </tr>
-<tr id="i65" class="rowColor">
+<tr id="i71" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetBufferMemoryRequirements2KHR()">vkGetBufferMemoryRequirements2KHR</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkGetBufferMemoryRequirements2KHR</code> field.</div>
 </td>
 </tr>
-<tr id="i66" class="altColor">
+<tr id="i72" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetBufferMemoryRequirements2KHR(long)">vkGetBufferMemoryRequirements2KHR</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkGetBufferMemoryRequirements2KHR</code> field.</div>
 </td>
 </tr>
-<tr id="i67" class="rowColor">
+<tr id="i73" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetImageMemoryRequirements()">vkGetImageMemoryRequirements</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkGetImageMemoryRequirements</code> field.</div>
 </td>
 </tr>
-<tr id="i68" class="altColor">
+<tr id="i74" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetImageMemoryRequirements(long)">vkGetImageMemoryRequirements</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkGetImageMemoryRequirements</code> field.</div>
 </td>
 </tr>
-<tr id="i69" class="rowColor">
+<tr id="i75" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetImageMemoryRequirements2KHR()">vkGetImageMemoryRequirements2KHR</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkGetImageMemoryRequirements2KHR</code> field.</div>
 </td>
 </tr>
-<tr id="i70" class="altColor">
+<tr id="i76" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetImageMemoryRequirements2KHR(long)">vkGetImageMemoryRequirements2KHR</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkGetImageMemoryRequirements2KHR</code> field.</div>
 </td>
 </tr>
-<tr id="i71" class="rowColor">
+<tr id="i77" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetPhysicalDeviceMemoryProperties()">vkGetPhysicalDeviceMemoryProperties</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkGetPhysicalDeviceMemoryProperties</code> field.</div>
 </td>
 </tr>
-<tr id="i72" class="altColor">
+<tr id="i78" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetPhysicalDeviceMemoryProperties(long)">vkGetPhysicalDeviceMemoryProperties</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkGetPhysicalDeviceMemoryProperties</code> field.</div>
 </td>
 </tr>
-<tr id="i73" class="rowColor">
+<tr id="i79" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetPhysicalDeviceProperties()">vkGetPhysicalDeviceProperties</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkGetPhysicalDeviceProperties</code> field.</div>
 </td>
 </tr>
-<tr id="i74" class="altColor">
+<tr id="i80" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkGetPhysicalDeviceProperties(long)">vkGetPhysicalDeviceProperties</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkGetPhysicalDeviceProperties</code> field.</div>
 </td>
 </tr>
-<tr id="i75" class="rowColor">
+<tr id="i81" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkInvalidateMappedMemoryRanges()">vkInvalidateMappedMemoryRanges</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>vkInvalidateMappedMemoryRanges</code> field.</div>
+</td>
+</tr>
+<tr id="i82" class="altColor">
+<td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkInvalidateMappedMemoryRanges(long)">vkInvalidateMappedMemoryRanges</a></span>&#8203;(long&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Sets the specified value to the <code>vkInvalidateMappedMemoryRanges</code> field.</div>
+</td>
+</tr>
+<tr id="i83" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkMapMemory()">vkMapMemory</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkMapMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i76" class="altColor">
+<tr id="i84" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkMapMemory(long)">vkMapMemory</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>vkMapMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i77" class="rowColor">
+<tr id="i85" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkUnmapMemory()">vkUnmapMemory</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>vkUnmapMemory</code> field.</div>
 </td>
 </tr>
-<tr id="i78" class="altColor">
+<tr id="i86" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkUnmapMemory(long)">vkUnmapMemory</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
@@ -962,6 +1026,12 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <a id="VKUNMAPMEMORY">
 <!--   -->
 </a>
+<a id="VKFLUSHMAPPEDMEMORYRANGES">
+<!--   -->
+</a>
+<a id="VKINVALIDATEMAPPEDMEMORYRANGES">
+<!--   -->
+</a>
 <a id="VKBINDBUFFERMEMORY">
 <!--   -->
 </a>
@@ -994,7 +1064,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>VKGETPHYSICALDEVICEPROPERTIES, VKGETPHYSICALDEVICEMEMORYPROPERTIES, VKALLOCATEMEMORY, VKFREEMEMORY, VKMAPMEMORY, VKUNMAPMEMORY, VKBINDBUFFERMEMORY, VKBINDIMAGEMEMORY, VKGETBUFFERMEMORYREQUIREMENTS, VKGETIMAGEMEMORYREQUIREMENTS, VKCREATEBUFFER, VKDESTROYBUFFER, VKCREATEIMAGE, VKDESTROYIMAGE, VKGETBUFFERMEMORYREQUIREMENTS2KHR, VKGETIMAGEMEMORYREQUIREMENTS2KHR</h4>
+<h4>VKGETPHYSICALDEVICEPROPERTIES, VKGETPHYSICALDEVICEMEMORYPROPERTIES, VKALLOCATEMEMORY, VKFREEMEMORY, VKMAPMEMORY, VKUNMAPMEMORY, VKFLUSHMAPPEDMEMORYRANGES, VKINVALIDATEMAPPEDMEMORYRANGES, VKBINDBUFFERMEMORY, VKBINDIMAGEMEMORY, VKGETBUFFERMEMORYREQUIREMENTS, VKGETIMAGEMEMORYREQUIREMENTS, VKCREATEBUFFER, VKDESTROYBUFFER, VKCREATEIMAGE, VKDESTROYIMAGE, VKGETBUFFERMEMORYREQUIREMENTS2KHR, VKGETIMAGEMEMORYREQUIREMENTS2KHR</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -1103,6 +1173,26 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <h4>vkUnmapMemory</h4>
 <pre>public&nbsp;long&nbsp;vkUnmapMemory()</pre>
 <div class="block">Returns the value of the <code>vkUnmapMemory</code> field.</div>
+</li>
+</ul>
+<a id="vkFlushMappedMemoryRanges()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vkFlushMappedMemoryRanges</h4>
+<pre>public&nbsp;long&nbsp;vkFlushMappedMemoryRanges()</pre>
+<div class="block">Returns the value of the <code>vkFlushMappedMemoryRanges</code> field.</div>
+</li>
+</ul>
+<a id="vkInvalidateMappedMemoryRanges()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vkInvalidateMappedMemoryRanges</h4>
+<pre>public&nbsp;long&nbsp;vkInvalidateMappedMemoryRanges()</pre>
+<div class="block">Returns the value of the <code>vkInvalidateMappedMemoryRanges</code> field.</div>
 </li>
 </ul>
 <a id="vkBindBufferMemory()">
@@ -1265,6 +1355,26 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Sets the specified value to the <code>vkUnmapMemory</code> field.</div>
 </li>
 </ul>
+<a id="vkFlushMappedMemoryRanges(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vkFlushMappedMemoryRanges</h4>
+<pre>public&nbsp;<a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;vkFlushMappedMemoryRanges&#8203;(long&nbsp;value)</pre>
+<div class="block">Sets the specified value to the <code>vkFlushMappedMemoryRanges</code> field.</div>
+</li>
+</ul>
+<a id="vkInvalidateMappedMemoryRanges(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>vkInvalidateMappedMemoryRanges</h4>
+<pre>public&nbsp;<a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html" title="class in org.lwjgl.util.vma">VmaVulkanFunctions</a>&nbsp;vkInvalidateMappedMemoryRanges&#8203;(long&nbsp;value)</pre>
+<div class="block">Sets the specified value to the <code>vkInvalidateMappedMemoryRanges</code> field.</div>
+</li>
+</ul>
 <a id="vkBindBufferMemory(long)">
 <!--   -->
 </a>
@@ -1365,7 +1475,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Sets the specified value to the <code>vkGetImageMemoryRequirements2KHR</code> field.</div>
 </li>
 </ul>
-<a id="set(long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long)">
+<a id="set(long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -1377,6 +1487,8 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
                               long&nbsp;vkFreeMemory,
                               long&nbsp;vkMapMemory,
                               long&nbsp;vkUnmapMemory,
+                              long&nbsp;vkFlushMappedMemoryRanges,
+                              long&nbsp;vkInvalidateMappedMemoryRanges,
                               long&nbsp;vkBindBufferMemory,
                               long&nbsp;vkBindImageMemory,
                               long&nbsp;vkGetBufferMemoryRequirements,
@@ -1565,6 +1677,26 @@ public static&nbsp;<a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.ht
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkUnmapMemory()"><code>vkUnmapMemory()</code></a>.</div>
 </li>
 </ul>
+<a id="nvkFlushMappedMemoryRanges(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nvkFlushMappedMemoryRanges</h4>
+<pre>public static&nbsp;long&nbsp;nvkFlushMappedMemoryRanges&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFlushMappedMemoryRanges()"><code>vkFlushMappedMemoryRanges()</code></a>.</div>
+</li>
+</ul>
+<a id="nvkInvalidateMappedMemoryRanges(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nvkInvalidateMappedMemoryRanges</h4>
+<pre>public static&nbsp;long&nbsp;nvkInvalidateMappedMemoryRanges&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkInvalidateMappedMemoryRanges()"><code>vkInvalidateMappedMemoryRanges()</code></a>.</div>
+</li>
+</ul>
 <a id="nvkBindBufferMemory(long)">
 <!--   -->
 </a>
@@ -1729,6 +1861,28 @@ public static&nbsp;<a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.ht
 <pre>public static&nbsp;void&nbsp;nvkUnmapMemory&#8203;(long&nbsp;struct,
                                   long&nbsp;value)</pre>
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkUnmapMemory(long)"><code>vkUnmapMemory</code></a>.</div>
+</li>
+</ul>
+<a id="nvkFlushMappedMemoryRanges(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nvkFlushMappedMemoryRanges</h4>
+<pre>public static&nbsp;void&nbsp;nvkFlushMappedMemoryRanges&#8203;(long&nbsp;struct,
+                                              long&nbsp;value)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkFlushMappedMemoryRanges(long)"><code>vkFlushMappedMemoryRanges</code></a>.</div>
+</li>
+</ul>
+<a id="nvkInvalidateMappedMemoryRanges(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nvkInvalidateMappedMemoryRanges</h4>
+<pre>public static&nbsp;void&nbsp;nvkInvalidateMappedMemoryRanges&#8203;(long&nbsp;struct,
+                                                   long&nbsp;value)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaVulkanFunctions.html#vkInvalidateMappedMemoryRanges(long)"><code>vkInvalidateMappedMemoryRanges</code></a>.</div>
 </li>
 </ul>
 <a id="nvkBindBufferMemory(long,long)">

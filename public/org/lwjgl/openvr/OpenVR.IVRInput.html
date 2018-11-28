@@ -156,10 +156,14 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>long</code></td>
-<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetActionHandle">GetActionHandle</a>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#DecompressSkeletalBoneData">DecompressSkeletalBoneData</a>
+<br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetActionHandle">GetActionHandle</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetActionOrigins">GetActionOrigins</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetActionSetHandle">GetActionSetHandle</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetAnalogActionData">GetAnalogActionData</a>
+<br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetBoneCount">GetBoneCount</a>
+<br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetBoneHierarchy">GetBoneHierarchy</a>
+<br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetBoneName">GetBoneName</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetDigitalActionData">GetDigitalActionData</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetInputSourceHandle">GetInputSourceHandle</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetOriginLocalizedName">GetOriginLocalizedName</a>
@@ -168,11 +172,13 @@ extends java.lang.Object</pre>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetSkeletalActionData">GetSkeletalActionData</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetSkeletalBoneData">GetSkeletalBoneData</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetSkeletalBoneDataCompressed">GetSkeletalBoneDataCompressed</a>
+<br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetSkeletalReferenceTransforms">GetSkeletalReferenceTransforms</a>
+<br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetSkeletalSummaryData">GetSkeletalSummaryData</a>
+<br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#GetSkeletalTrackingLevel">GetSkeletalTrackingLevel</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#SetActionManifestPath">SetActionManifestPath</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#ShowActionOrigins">ShowActionOrigins</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#ShowBindingsForActionSet">ShowBindingsForActionSet</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#TriggerHapticVibrationAction">TriggerHapticVibrationAction</a>
-<br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#UncompressSkeletalActionData">UncompressSkeletalActionData</a>
 <br><a href="../../../org/lwjgl/openvr/OpenVR.IVRInput.html#UpdateActionState">UpdateActionState</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -312,6 +318,51 @@ extends java.lang.Object</pre>
 <pre>public final&nbsp;long GetSkeletalActionData</pre>
 </li>
 </ul>
+<a id="GetBoneCount">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GetBoneCount</h4>
+<pre>public final&nbsp;long GetBoneCount</pre>
+</li>
+</ul>
+<a id="GetBoneHierarchy">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GetBoneHierarchy</h4>
+<pre>public final&nbsp;long GetBoneHierarchy</pre>
+</li>
+</ul>
+<a id="GetBoneName">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GetBoneName</h4>
+<pre>public final&nbsp;long GetBoneName</pre>
+</li>
+</ul>
+<a id="GetSkeletalReferenceTransforms">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GetSkeletalReferenceTransforms</h4>
+<pre>public final&nbsp;long GetSkeletalReferenceTransforms</pre>
+</li>
+</ul>
+<a id="GetSkeletalTrackingLevel">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GetSkeletalTrackingLevel</h4>
+<pre>public final&nbsp;long GetSkeletalTrackingLevel</pre>
+</li>
+</ul>
 <a id="GetSkeletalBoneData">
 <!--   -->
 </a>
@@ -319,6 +370,15 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>GetSkeletalBoneData</h4>
 <pre>public final&nbsp;long GetSkeletalBoneData</pre>
+</li>
+</ul>
+<a id="GetSkeletalSummaryData">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GetSkeletalSummaryData</h4>
+<pre>public final&nbsp;long GetSkeletalSummaryData</pre>
 </li>
 </ul>
 <a id="GetSkeletalBoneDataCompressed">
@@ -330,13 +390,13 @@ extends java.lang.Object</pre>
 <pre>public final&nbsp;long GetSkeletalBoneDataCompressed</pre>
 </li>
 </ul>
-<a id="UncompressSkeletalActionData">
+<a id="DecompressSkeletalBoneData">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>UncompressSkeletalActionData</h4>
-<pre>public final&nbsp;long UncompressSkeletalActionData</pre>
+<h4>DecompressSkeletalBoneData</h4>
+<pre>public final&nbsp;long DecompressSkeletalBoneData</pre>
 </li>
 </ul>
 <a id="TriggerHapticVibrationAction">

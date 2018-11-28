@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -160,26 +160,34 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathDivideUnsigned(long,long)">mathDivideUnsigned</a></span>&#8203;(long&nbsp;dividend,
+                  long&nbsp;divisor)</code></th>
+<td class="colLast">
+<div class="block">Returns the unsigned quotient of dividing the first argument by the second where each argument and the result is interpreted as an unsigned value.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathHasZeroByte(int)">mathHasZeroByte</a></span>&#8203;(int&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathHasZeroByte(long)">mathHasZeroByte</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathHasZeroShort(int)">mathHasZeroShort</a></span>&#8203;(int&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathHasZeroShort(long)">mathHasZeroShort</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathIsPoT(int)">mathIsPoT</a></span>&#8203;(int&nbsp;value)</code></th>
 <td class="colLast">
@@ -187,7 +195,31 @@ extends java.lang.Object</pre>
  number.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathMultiplyHighS64(long,long)">mathMultiplyHighS64</a></span>&#8203;(long&nbsp;x,
+                   long&nbsp;y)</code></th>
+<td class="colLast">
+<div class="block">Returns as the most significant 64 bits of the 128-bit product of two <code>int64_t</code> factors.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathMultiplyHighU64(long,long)">mathMultiplyHighU64</a></span>&#8203;(long&nbsp;x,
+                   long&nbsp;y)</code></th>
+<td class="colLast">
+<div class="block">Returns as the most significant 64 bits of the 128-bit product of two <code>uint64_t</code> factors.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathRemainderUnsigned(long,long)">mathRemainderUnsigned</a></span>&#8203;(long&nbsp;dividend,
+                     long&nbsp;divisor)</code></th>
+<td class="colLast">
+<div class="block">Returns the unsigned remainder from dividing the first argument by the second where each argument and the result is interpreted as an unsigned value.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/MathUtil.html#mathRoundPoT(int)">mathRoundPoT</a></span>&#8203;(int&nbsp;value)</code></th>
 <td class="colLast">
@@ -285,10 +317,88 @@ extends java.lang.Object</pre>
 <a id="mathHasZeroShort(long)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>mathHasZeroShort</h4>
 <pre>public static&nbsp;boolean&nbsp;mathHasZeroShort&#8203;(long&nbsp;value)</pre>
+</li>
+</ul>
+<a id="mathMultiplyHighU64(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mathMultiplyHighU64</h4>
+<pre>public static&nbsp;long&nbsp;mathMultiplyHighU64&#8203;(long&nbsp;x,
+                                       long&nbsp;y)</pre>
+<div class="block">Returns as the most significant 64 bits of the 128-bit product of two <code>uint64_t</code> factors.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the first value</dd>
+<dd><code>y</code> - the second value</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the result</dd>
+</dl>
+</li>
+</ul>
+<a id="mathMultiplyHighS64(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mathMultiplyHighS64</h4>
+<pre>public static&nbsp;long&nbsp;mathMultiplyHighS64&#8203;(long&nbsp;x,
+                                       long&nbsp;y)</pre>
+<div class="block">Returns as the most significant 64 bits of the 128-bit product of two <code>int64_t</code> factors.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the first value</dd>
+<dd><code>y</code> - the second value</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the result</dd>
+</dl>
+</li>
+</ul>
+<a id="mathDivideUnsigned(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mathDivideUnsigned</h4>
+<pre>public static&nbsp;long&nbsp;mathDivideUnsigned&#8203;(long&nbsp;dividend,
+                                      long&nbsp;divisor)</pre>
+<div class="block">Returns the unsigned quotient of dividing the first argument by the second where each argument and the result is interpreted as an unsigned value.
+
+ <p>When either argument is negative (i.e. a <code>uint64_t</code> value higher than <code>0x8000_0000_0000_0000L</code>), this method uses bit twiddling to
+ implement the division. The JDK implementation uses <code>BigInteger</code> for this case, which has a negative impact on performance.</p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dividend</code> - the value to be divided</dd>
+<dd><code>divisor</code> - the value doing the dividing</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the unsigned quotient of the first argument divided by the second argument</dd>
+</dl>
+</li>
+</ul>
+<a id="mathRemainderUnsigned(long,long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>mathRemainderUnsigned</h4>
+<pre>public static&nbsp;long&nbsp;mathRemainderUnsigned&#8203;(long&nbsp;dividend,
+                                         long&nbsp;divisor)</pre>
+<div class="block">Returns the unsigned remainder from dividing the first argument by the second where each argument and the result is interpreted as an unsigned value.
+
+ <p>When either argument is negative (i.e. a <code>uint64_t</code> value higher than <code>0x8000_0000_0000_0000L</code>), this method uses bit twiddling to
+ implement the remainder. The JDK implementation uses <code>BigInteger</code> for this case, which has a negative impact on performance.</p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dividend</code> - the value to be divided</dd>
+<dd><code>divisor</code> - the value doing the dividing</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the unsigned remainder of the first argument divided by the second argument</dd>
+</dl>
 </li>
 </ul>
 </li>

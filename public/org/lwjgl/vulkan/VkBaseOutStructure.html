@@ -151,7 +151,24 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">VkBaseOutStructure</span>
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a>
 implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
-<div class="block"><h3>Layout</h3>
+<div class="block">Base structure for a read-only pointer chain.
+ 
+ <h5>Description</h5>
+ 
+ <p><a href="../../../org/lwjgl/vulkan/VkBaseOutStructure.html" title="class in org.lwjgl.vulkan"><code>VkBaseOutStructure</code></a> can be used to facilitate iterating through a structure pointer chain that returns data back to the application.</p>
+ 
+ <h5>See Also</h5>
+ 
+ <p><a href="../../../org/lwjgl/vulkan/VkBaseOutStructure.html" title="class in org.lwjgl.vulkan"><code>VkBaseOutStructure</code></a></p>
+ 
+ <h3>Member documentation</h3>
+ 
+ <ul>
+ <li><code>sType</code> &ndash; the structure type of the structure being iterated through.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to the next structure in a structure chain.</li>
+ </ul>
+ 
+ <h3>Layout</h3>
  
  <pre><code>
  struct VkBaseOutStructure {

@@ -164,7 +164,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <p>Note that using a <code>maxLod</code> of zero would cause <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#textures-texel-filtering">magnification</a> to always be performed, and the <code>magFilter</code> to always be used. This is valid, just not an exact match for OpenGL behavior. Clamping the maximum LOD to 0.25 allows the <code>λ</code> value to be non-zero and minification to be performed, while still always rounding down to the base level. If the <code>minFilter</code> and <code>magFilter</code> are equal, then using a <code>maxLod</code> of zero also works.</p>
  </div>
  
- <p>The maximum number of sampler objects which <b>can</b> be simultaneously created on a device is implementation-dependent and specified by the <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#features-limits-maxSamplerAllocationCount">maxSamplerAllocationCount</a> member of the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceLimits.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceLimits</code></a> structure. If <code>maxSamplerAllocationCount</code> is exceeded, <a href="../../../org/lwjgl/vulkan/VK10.html#vkCreateSampler(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkSamplerCreateInfo,org.lwjgl.vulkan.VkAllocationCallbacks,java.nio.LongBuffer)"><code>CreateSampler</code></a> will return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_TOO_MANY_OBJECTS"><code>ERROR_TOO_MANY_OBJECTS</code></a>.</p>
+ <p>The maximum number of sampler objects which <b>can</b> be simultaneously created on a device is implementation-dependent and specified by the <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#features-limits-maxSamplerAllocationCount">maxSamplerAllocationCount</a> member of the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceLimits.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceLimits</code></a> structure. If <code>maxSamplerAllocationCount</code> is exceeded, <code>vkCreateSampler</code> will return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_TOO_MANY_OBJECTS"><code>ERROR_TOO_MANY_OBJECTS</code></a>.</p>
  
  <p>Since <code>VkSampler</code> is a non-dispatchable handle type, implementations <b>may</b> return the same handle for sampler state vectors that are identical. In such cases, all such objects would only count once against the <code>maxSamplerAllocationCount</code> limit.</p>
  
@@ -190,6 +190,13 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <li>If either <code>magFilter</code> or <code>minFilter</code> is <a href="../../../org/lwjgl/vulkan/IMGFilterCubic.html#VK_FILTER_CUBIC_IMG"><code>FILTER_CUBIC_IMG</code></a>, <code>anisotropyEnable</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a></li>
  <li>If either <code>magFilter</code> or <code>minFilter</code> is <a href="../../../org/lwjgl/vulkan/IMGFilterCubic.html#VK_FILTER_CUBIC_IMG"><code>FILTER_CUBIC_IMG</code></a>, the <code>reductionMode</code> member of <a href="../../../org/lwjgl/vulkan/VkSamplerReductionModeCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkSamplerReductionModeCreateInfoEXT</code></a> <b>must</b> be <a href="../../../org/lwjgl/vulkan/EXTSamplerFilterMinmax.html#VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_EXT"><code>SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_EXT</code></a></li>
  <li>If <code>compareEnable</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>, the <code>reductionMode</code> member of <a href="../../../org/lwjgl/vulkan/VkSamplerReductionModeCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkSamplerReductionModeCreateInfoEXT</code></a> <b>must</b> be <a href="../../../org/lwjgl/vulkan/EXTSamplerFilterMinmax.html#VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_EXT"><code>SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_EXT</code></a></li>
+ <li>If <code>flags</code> includes <a href="../../../org/lwjgl/vulkan/EXTFragmentDensityMap.html#VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT"><code>SAMPLER_CREATE_SUBSAMPLED_BIT_EXT</code></a>, then <code>minFilter</code> and <code>magFilter</code> <b>must</b> be equal.</li>
+ <li>If <code>flags</code> includes <a href="../../../org/lwjgl/vulkan/EXTFragmentDensityMap.html#VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT"><code>SAMPLER_CREATE_SUBSAMPLED_BIT_EXT</code></a>, then <code>mipmapMode</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SAMPLER_MIPMAP_MODE_NEAREST"><code>SAMPLER_MIPMAP_MODE_NEAREST</code></a>.</li>
+ <li>If <code>flags</code> includes <a href="../../../org/lwjgl/vulkan/EXTFragmentDensityMap.html#VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT"><code>SAMPLER_CREATE_SUBSAMPLED_BIT_EXT</code></a>, then <code>minLod</code> and <code>maxLod</code> <b>must</b> be zero.</li>
+ <li>If <code>flags</code> includes <a href="../../../org/lwjgl/vulkan/EXTFragmentDensityMap.html#VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT"><code>SAMPLER_CREATE_SUBSAMPLED_BIT_EXT</code></a>, then <code>addressModeU</code> and <code>addressModeV</code> <b>must</b> each be either <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE"><code>SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE</code></a> or <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_BORDER"><code>SAMPLER_ADDRESS_MODE_CLAMP_TO_BORDER</code></a>.</li>
+ <li>If <code>flags</code> includes <a href="../../../org/lwjgl/vulkan/EXTFragmentDensityMap.html#VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT"><code>SAMPLER_CREATE_SUBSAMPLED_BIT_EXT</code></a>, then <code>anisotropyEnable</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>.</li>
+ <li>If <code>flags</code> includes <a href="../../../org/lwjgl/vulkan/EXTFragmentDensityMap.html#VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT"><code>SAMPLER_CREATE_SUBSAMPLED_BIT_EXT</code></a>, then <code>compareEnable</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>.</li>
+ <li>If <code>flags</code> includes <a href="../../../org/lwjgl/vulkan/EXTFragmentDensityMap.html#VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT"><code>SAMPLER_CREATE_SUBSAMPLED_BIT_EXT</code></a>, then <code>unnormalizedCoordinates</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>.</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -198,7 +205,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO"><code>STRUCTURE_TYPE_SAMPLER_CREATE_INFO</code></a></li>
  <li>Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <b>must</b> be either <code>NULL</code> or a pointer to a valid instance of <a href="../../../org/lwjgl/vulkan/VkSamplerReductionModeCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkSamplerReductionModeCreateInfoEXT</code></a> or <a href="../../../org/lwjgl/vulkan/VkSamplerYcbcrConversionInfo.html" title="class in org.lwjgl.vulkan"><code>VkSamplerYcbcrConversionInfo</code></a></li>
  <li>Each <code>sType</code> member in the <code>pNext</code> chain <b>must</b> be unique</li>
- <li><code>flags</code> <b>must</b> be 0</li>
+ <li><code>flags</code> <b>must</b> be a valid combination of <code>VkSamplerCreateFlagBits</code> values</li>
  <li><code>magFilter</code> <b>must</b> be a valid <code>VkFilter</code> value</li>
  <li><code>minFilter</code> <b>must</b> be a valid <code>VkFilter</code> value</li>
  <li><code>mipmapMode</code> <b>must</b> be a valid <code>VkSamplerMipmapMode</code> value</li>
@@ -216,7 +223,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <ul>
  <li><code>sType</code> &ndash; the type of this structure.</li>
  <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
- <li><code>flags</code> &ndash; reserved for future use.</li>
+ <li><code>flags</code> &ndash; a bitmask of <code>VkSamplerCreateFlagBits</code> describing additional parameters of the sampler.</li>
  <li><code>magFilter</code> &ndash; a <code>VkFilter</code> value specifying the magnification filter to apply to lookups.</li>
  <li><code>minFilter</code> &ndash; a <code>VkFilter</code> value specifying the minification filter to apply to lookups.</li>
  <li><code>mipmapMode</code> &ndash; a <code>VkSamplerMipmapMode</code> value specifying the mipmap filter to apply to lookups.</li>
@@ -245,6 +252,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <li><code>anisotropyEnable</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>.</li>
  <li><code>compareEnable</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>.</li>
  <li>The sampler <b>must</b> not enable sampler Y&#8217;C<sub>B</sub>C<sub>R</sub> conversion.</li>
+ <li><code>flags</code> <b>must</b> not include <a href="../../../org/lwjgl/vulkan/EXTFragmentDensityMap.html#VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT"><code>SAMPLER_CREATE_SUBSAMPLED_BIT_EXT</code></a></li>
  </ul>
  
  <p>When <code>unnormalizedCoordinates</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>, images the sampler is used with in the shader have the following requirements:</p>

@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":10,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":10,"i20":9,"i21":10,"i22":10,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":10,"i29":10,"i30":10,"i31":10};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":10,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":10,"i20":9,"i21":10,"i22":10,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -151,7 +151,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">CameraVideoStreamFrameHeader</span>
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a>
 implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
-<div class="block"><h3>Layout</h3>
+<div class="block"><h3>Member documentation</h3>
+ 
+ <ul>
+ <li><code>ulFrameExposureTime</code> &ndash; mid-point of the exposure of the image in host system ticks</li>
+ </ul>
+ 
+ <h3>Layout</h3>
  
  <pre><code>
  struct CameraVideoStreamFrameHeader_t {
@@ -161,6 +167,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
      uint32_t nBytesPerPixel;
      uint32_t nFrameSequence;
      <a href="../../../org/lwjgl/openvr/TrackedDevicePose.html" title="class in org.lwjgl.openvr"><code>TrackedDevicePose_t</code></a> standingTrackedDevicePose;
+     uint64_t ulFrameExposureTime;
  }</code></pre></div>
 </li>
 </ul>
@@ -241,7 +248,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#STANDINGTRACKEDDEVICEPOSE">STANDINGTRACKEDDEVICEPOSE</a></span></code></th>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#STANDINGTRACKEDDEVICEPOSE">STANDINGTRACKEDDEVICEPOSE</a>
+<br><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#ULFRAMEEXPOSURETIME">ULFRAMEEXPOSURETIME</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct member offsets.</div>
 </td>
@@ -495,31 +503,45 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </td>
 </tr>
 <tr id="i28" class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#nulFrameExposureTime(long)">nulFrameExposureTime</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#ulFrameExposureTime()"><code>ulFrameExposureTime()</code></a>.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#nWidth()">nWidth</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>nWidth</code> field.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>sizeof(struct)</code>.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/openvr/TrackedDevicePose.html" title="class in org.lwjgl.openvr">TrackedDevicePose</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#standingTrackedDevicePose()">standingTrackedDevicePose</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a <a href="../../../org/lwjgl/openvr/TrackedDevicePose.html" title="class in org.lwjgl.openvr"><code>TrackedDevicePose</code></a> view of the <code>standingTrackedDevicePose</code> field.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html" title="class in org.lwjgl.openvr">CameraVideoStreamFrameHeader</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#standingTrackedDevicePose(java.util.function.Consumer)">standingTrackedDevicePose</a></span>&#8203;(java.util.function.Consumer&lt;<a href="../../../org/lwjgl/openvr/TrackedDevicePose.html" title="class in org.lwjgl.openvr">TrackedDevicePose</a>&gt;&nbsp;consumer)</code></th>
 <td class="colLast">
 <div class="block">Passes the <code>standingTrackedDevicePose</code> field to the specified <code>Consumer</code>.</div>
+</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#ulFrameExposureTime()">ulFrameExposureTime</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>ulFrameExposureTime</code> field.</div>
 </td>
 </tr>
 </table>
@@ -601,9 +623,12 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <a id="STANDINGTRACKEDDEVICEPOSE">
 <!--   -->
 </a>
+<a id="ULFRAMEEXPOSURETIME">
+<!--   -->
+</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>EFRAMETYPE, NWIDTH, NHEIGHT, NBYTESPERPIXEL, NFRAMESEQUENCE, STANDINGTRACKEDDEVICEPOSE</h4>
+<h4>EFRAMETYPE, NWIDTH, NHEIGHT, NBYTESPERPIXEL, NFRAMESEQUENCE, STANDINGTRACKEDDEVICEPOSE, ULFRAMEEXPOSURETIME</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -722,6 +747,16 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <h4>standingTrackedDevicePose</h4>
 <pre>public&nbsp;<a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html" title="class in org.lwjgl.openvr">CameraVideoStreamFrameHeader</a>&nbsp;standingTrackedDevicePose&#8203;(java.util.function.Consumer&lt;<a href="../../../org/lwjgl/openvr/TrackedDevicePose.html" title="class in org.lwjgl.openvr">TrackedDevicePose</a>&gt;&nbsp;consumer)</pre>
 <div class="block">Passes the <code>standingTrackedDevicePose</code> field to the specified <code>Consumer</code>.</div>
+</li>
+</ul>
+<a id="ulFrameExposureTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ulFrameExposureTime</h4>
+<pre>public&nbsp;long&nbsp;ulFrameExposureTime()</pre>
+<div class="block">Returns the value of the <code>ulFrameExposureTime</code> field.</div>
 </li>
 </ul>
 <a id="malloc()">
@@ -1006,11 +1041,21 @@ public static&nbsp;<a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHead
 <a id="nstandingTrackedDevicePose(long)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>nstandingTrackedDevicePose</h4>
 <pre>public static&nbsp;<a href="../../../org/lwjgl/openvr/TrackedDevicePose.html" title="class in org.lwjgl.openvr">TrackedDevicePose</a>&nbsp;nstandingTrackedDevicePose&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#standingTrackedDevicePose()"><code>standingTrackedDevicePose()</code></a>.</div>
+</li>
+</ul>
+<a id="nulFrameExposureTime(long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>nulFrameExposureTime</h4>
+<pre>public static&nbsp;long&nbsp;nulFrameExposureTime&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/CameraVideoStreamFrameHeader.html#ulFrameExposureTime()"><code>ulFrameExposureTime()</code></a>.</div>
 </li>
 </ul>
 </li>

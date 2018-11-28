@@ -155,7 +155,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <h5>Description</h5>
  
- <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProtectedMemoryProperties.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProtectedMemoryProperties</code></a> structure is included in the <code>pNext</code> chain of flink:VkPhysicalDeviceProperties2, it is filled with a value indicating the implementation-dependent behavior.</p>
+ <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProtectedMemoryProperties.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProtectedMemoryProperties</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with a value indicating the implementation-dependent behavior.</p>
  
  <h5>Valid Usage (Implicit)</h5>
  
@@ -168,7 +168,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <ul>
  <li><code>sType</code> &ndash; the type of this structure.</li>
  <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
- <li><code>protectedNoFault</code> &ndash; specifies whether the undefined behavior will not include process termination or device loss. If <code>protectedNoFault</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>, undefined behavior <b>may</b> include process termination or device loss. If <code>protectedNoFault</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>, undefined behavior will not include process termination or device loss.</li>
+ <li><code>protectedNoFault</code> &ndash; specifies whether the undefined behavior <b>may</b> include process termination or device loss. If <code>protectedNoFault</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>, undefined behavior <b>may</b> include process termination or device loss. If <code>protectedNoFault</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>, undefined behavior will not include process termination or device loss.</li>
  </ul>
  
  <h3>Layout</h3>

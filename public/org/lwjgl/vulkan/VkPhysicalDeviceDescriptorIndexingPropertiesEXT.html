@@ -154,7 +154,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
  
  <h5>Description</h5>
  
- <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceDescriptorIndexingPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDescriptorIndexingPropertiesEXT</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2KHR.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2KHR</code></a>, it is filled with the implementation-dependent limits.</p>
+ <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceDescriptorIndexingPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDescriptorIndexingPropertiesEXT</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
  
  <h5>Valid Usage (Implicit)</h5>
  
@@ -165,6 +165,8 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
  <h3>Member documentation</h3>
  
  <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
  <li><code>maxUpdateAfterBindDescriptorsInAllPools</code> &ndash; the maximum number of descriptors (summed over all descriptor types) that <b>can</b> be created across all pools that are created with the <a href="../../../org/lwjgl/vulkan/EXTDescriptorIndexing.html#VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT_EXT"><code>DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT_EXT</code></a> bit set. Pool creation <b>may</b> fail when this limit is exceeded, or when the space this limit represents is unable to satisfy a pool creation due to fragmentation.</li>
  <li><code>shaderUniformBufferArrayNonUniformIndexingNative</code> &ndash; a boolean value indicating whether uniform buffer descriptors natively support nonuniform indexing. If this is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>, then a single dynamic instance of an instruction that nonuniformly indexes an array of uniform buffers <b>may</b> execute multiple times in order to access all the descriptors.</li>
  <li><code>shaderSampledImageArrayNonUniformIndexingNative</code> &ndash; a boolean value indicating whether sampler and image descriptors natively support nonuniform indexing. If this is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>, then a single dynamic instance of an instruction that nonuniformly indexes an array of samplers or images <b>may</b> execute multiple times in order to access all the descriptors.</li>

@@ -161,7 +161,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>shadingRate</code> <b>must</b> be a shading rate that generates fragments with more than one pixel.</li>
- <li><code>sampleCount</code> <b>must</b> correspond to a sample count enumerated in <code>VkSampleCountFlags</code> whose corresponding bit is set in <code>VkPhysicalDeviceLimits</code><code>::framebufferNoAttachmentsSampleCounts</code>.</li>
+ <li><code>sampleCount</code> <b>must</b> correspond to a sample count enumerated in <code>VkSampleCountFlags</code> whose corresponding bit is set in <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceLimits.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceLimits</code></a><code>::framebufferNoAttachmentsSampleCounts</code>.</li>
  <li><code>sampleLocationCount</code> <b>must</b> be equal to the product of <code>sampleCount</code>, the fragment width for <code>shadingRate</code>, and the fragment height for <code>shadingRate</code>.</li>
  <li><code>sampleLocationCount</code> <b>must</b> be less than or equal to the value of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceShadingRateImagePropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceShadingRateImagePropertiesNV</code></a><code>::shadingRateMaxCoarseSamples</code>.</li>
  <li>The array <code>pSampleLocations</code> <b>must</b> contain exactly one entry for every combination of valid values for <code>pixelX</code>, <code>pixelY</code>, and <code>sample</code> in the structure <a href="../../../org/lwjgl/vulkan/VkCoarseSampleOrderCustomNV.html" title="class in org.lwjgl.vulkan"><code>VkCoarseSampleOrderCustomNV</code></a>.</li>

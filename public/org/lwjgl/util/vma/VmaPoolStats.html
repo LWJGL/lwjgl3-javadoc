@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10};
+var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -159,10 +159,11 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
  <li><code>allocationCount</code> &ndash; number of <code>VmaAllocation</code> objects created from this pool that were not destroyed or lost</li>
  <li><code>unusedRangeCount</code> &ndash; number of continuous memory ranges in the pool not used by any <code>VmaAllocation</code></li>
  <li><code>unusedRangeSizeMax</code> &ndash; 
- size of the largest continuous free memory region.
+ size of the largest continuous free memory region available for new allocation.
  
  <p>Making a new allocation of that size is not guaranteed to succeed because of possible additional margin required to respect alignment and buffer/imag
  granularity.</p></li>
+ <li><code>blockCount</code> &ndash; number of <code>VkDeviceMemory</code> blocks allocated for this pool</li>
  </ul>
  
  <h3>Layout</h3>
@@ -174,6 +175,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
      size_t allocationCount;
      size_t unusedRangeCount;
      VkDeviceSize unusedRangeSizeMax;
+     size_t blockCount;
  }</code></pre></div>
 </li>
 </ul>
@@ -237,6 +239,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#ALLOCATIONCOUNT">ALLOCATIONCOUNT</a>
+<br><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#BLOCKCOUNT">BLOCKCOUNT</a>
 <br><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#SIZE">SIZE</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct member offsets.</div>
@@ -244,7 +247,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#SIZEOF">SIZEOF</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#SIZEOF">SIZEOF</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct size in bytes.</div>
 </td>
@@ -314,34 +317,41 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#blockCount()">blockCount</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>blockCount</code> field.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma">VmaPoolStats</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#calloc()">calloc</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats</code></a> instance allocated with <a href="../../../../org/lwjgl/system/MemoryUtil.html#memCalloc(int,int)"><code>memCalloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#calloc(int)">calloc</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats.Buffer</code></a> instance allocated with <a href="../../../../org/lwjgl/system/MemoryUtil.html#memCalloc(int,int)"><code>memCalloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma">VmaPoolStats</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#callocStack()">callocStack</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats</code></a> instance allocated on the thread-local <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#callocStack(int)">callocStack</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats.Buffer</code></a> instance allocated on the thread-local <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#callocStack(int,org.lwjgl.system.MemoryStack)">callocStack</a></span>&#8203;(int&nbsp;capacity,
            <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
@@ -349,35 +359,35 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats.Buffer</code></a> instance allocated on the specified <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma">VmaPoolStats</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#callocStack(org.lwjgl.system.MemoryStack)">callocStack</a></span>&#8203;(<a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats</code></a> instance allocated on the specified <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma">VmaPoolStats</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#create()">create</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats</code></a> instance allocated with <a href="../../../../org/lwjgl/BufferUtils.html" title="class in org.lwjgl"><code>BufferUtils</code></a>.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#create(int)">create</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats.Buffer</code></a> instance allocated with <a href="../../../../org/lwjgl/BufferUtils.html" title="class in org.lwjgl"><code>BufferUtils</code></a>.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma">VmaPoolStats</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#create(long)">create</a></span>&#8203;(long&nbsp;address)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats</code></a> instance for the specified memory address.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#create(long,int)">create</a></span>&#8203;(long&nbsp;address,
       int&nbsp;capacity)</code></th>
@@ -385,14 +395,14 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Create a <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats.Buffer</code></a> instance at the specified memory.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma">VmaPoolStats</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#createSafe(long)">createSafe</a></span>&#8203;(long&nbsp;address)</code></th>
 <td class="colLast">
 <div class="block">Like <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#create(long)"><code>create</code></a>, but returns <code>null</code> if <code>address</code> is <code>NULL</code>.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#createSafe(long,int)">createSafe</a></span>&#8203;(long&nbsp;address,
           int&nbsp;capacity)</code></th>
@@ -400,35 +410,35 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Like <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#create(long,int)"><code>create</code></a>, but returns <code>null</code> if <code>address</code> is <code>NULL</code>.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma">VmaPoolStats</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#malloc()">malloc</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats</code></a> instance allocated with <a href="../../../../org/lwjgl/system/MemoryUtil.html#memAlloc(int)"><code>memAlloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#malloc(int)">malloc</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats.Buffer</code></a> instance allocated with <a href="../../../../org/lwjgl/system/MemoryUtil.html#memAlloc(int)"><code>memAlloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma">VmaPoolStats</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#mallocStack()">mallocStack</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats</code></a> instance allocated on the thread-local <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#mallocStack(int)">mallocStack</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats.Buffer</code></a> instance allocated on the thread-local <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma">VmaPoolStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#mallocStack(int,org.lwjgl.system.MemoryStack)">mallocStack</a></span>&#8203;(int&nbsp;capacity,
            <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
@@ -436,77 +446,84 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats.Buffer</code></a> instance allocated on the specified <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma">VmaPoolStats</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#mallocStack(org.lwjgl.system.MemoryStack)">mallocStack</a></span>&#8203;(<a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html" title="class in org.lwjgl.util.vma"><code>VmaPoolStats</code></a> instance allocated on the specified <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#nallocationCount(long)">nallocationCount</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#allocationCount()"><code>allocationCount()</code></a>.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#nblockCount(long)">nblockCount</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#blockCount()"><code>blockCount()</code></a>.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#nsize(long)">nsize</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#size()"><code>size()</code></a>.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#nunusedRangeCount(long)">nunusedRangeCount</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#unusedRangeCount()"><code>unusedRangeCount()</code></a>.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#nunusedRangeSizeMax(long)">nunusedRangeSizeMax</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#unusedRangeSizeMax()"><code>unusedRangeSizeMax()</code></a>.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#nunusedSize(long)">nunusedSize</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#unusedSize()"><code>unusedSize()</code></a>.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#size()">size</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>size</code> field.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>sizeof(struct)</code>.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#unusedRangeCount()">unusedRangeCount</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>unusedRangeCount</code> field.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#unusedRangeSizeMax()">unusedRangeSizeMax</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>unusedRangeSizeMax</code> field.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#unusedSize()">unusedSize</a></span>()</code></th>
 <td class="colLast">
@@ -589,9 +606,12 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <a id="UNUSEDRANGESIZEMAX">
 <!--   -->
 </a>
+<a id="BLOCKCOUNT">
+<!--   -->
+</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>SIZE, UNUSEDSIZE, ALLOCATIONCOUNT, UNUSEDRANGECOUNT, UNUSEDRANGESIZEMAX</h4>
+<h4>SIZE, UNUSEDSIZE, ALLOCATIONCOUNT, UNUSEDRANGECOUNT, UNUSEDRANGESIZEMAX, BLOCKCOUNT</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -690,6 +710,16 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <h4>unusedRangeSizeMax</h4>
 <pre>public&nbsp;long&nbsp;unusedRangeSizeMax()</pre>
 <div class="block">Returns the value of the <code>unusedRangeSizeMax</code> field.</div>
+</li>
+</ul>
+<a id="blockCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>blockCount</h4>
+<pre>public&nbsp;long&nbsp;blockCount()</pre>
+<div class="block">Returns the value of the <code>blockCount</code> field.</div>
 </li>
 </ul>
 <a id="malloc()">
@@ -964,11 +994,21 @@ public static&nbsp;<a href="../../../../org/lwjgl/util/vma/VmaPoolStats.Buffer.h
 <a id="nunusedRangeSizeMax(long)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>nunusedRangeSizeMax</h4>
 <pre>public static&nbsp;long&nbsp;nunusedRangeSizeMax&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#unusedRangeSizeMax()"><code>unusedRangeSizeMax()</code></a>.</div>
+</li>
+</ul>
+<a id="nblockCount(long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>nblockCount</h4>
+<pre>public static&nbsp;long&nbsp;nblockCount&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/vma/VmaPoolStats.html#blockCount()"><code>blockCount()</code></a>.</div>
 </li>
 </ul>
 </li>

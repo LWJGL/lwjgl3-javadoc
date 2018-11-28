@@ -263,7 +263,7 @@ extends java.lang.Object</pre>
 <br><a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD">VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD</a>
 <br><a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_STATISTICS_AMD">VK_SHADER_INFO_TYPE_STATISTICS_AMD</a></span></code></th>
 <td class="colLast">
-<div class="block">VkShaderInfoTypeAMD</div>
+<div class="block">VkShaderInfoTypeAMD - Enum specifying which type of shader info to query</div>
 </td>
 </tr>
 </table>
@@ -360,15 +360,19 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4><a href="../../../constant-values.html#org.lwjgl.vulkan.AMDShaderInfo.VK_SHADER_INFO_TYPE_STATISTICS_AMD">VK_SHADER_INFO_TYPE_STATISTICS_AMD</a>, <a href="../../../constant-values.html#org.lwjgl.vulkan.AMDShaderInfo.VK_SHADER_INFO_TYPE_BINARY_AMD">VK_SHADER_INFO_TYPE_BINARY_AMD</a>, <a href="../../../constant-values.html#org.lwjgl.vulkan.AMDShaderInfo.VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD">VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD</a></h4>
-<div class="block">VkShaderInfoTypeAMD
+<div class="block">VkShaderInfoTypeAMD - Enum specifying which type of shader info to query
  
- <h5>Enum values:</h5>
+ <h5>Description</h5>
  
  <ul>
- <li><a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_STATISTICS_AMD"><code>SHADER_INFO_TYPE_STATISTICS_AMD</code></a></li>
- <li><a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_BINARY_AMD"><code>SHADER_INFO_TYPE_BINARY_AMD</code></a></li>
- <li><a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD"><code>SHADER_INFO_TYPE_DISASSEMBLY_AMD</code></a></li>
- </ul></div>
+ <li><a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_STATISTICS_AMD"><code>SHADER_INFO_TYPE_STATISTICS_AMD</code></a> specifies that device resources used by a shader will be queried.</li>
+ <li><a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_BINARY_AMD"><code>SHADER_INFO_TYPE_BINARY_AMD</code></a> specifies that implementation-specific information will be queried.</li>
+ <li><a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD"><code>SHADER_INFO_TYPE_DISASSEMBLY_AMD</code></a> specifies that human-readable dissassembly of a shader.</li>
+ </ul>
+ 
+ <h5>See Also</h5>
+ 
+ <p><a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#vkGetShaderInfoAMD(org.lwjgl.vulkan.VkDevice,long,int,int,org.lwjgl.PointerBuffer,java.nio.ByteBuffer)"><code>GetShaderInfoAMD</code></a></p></div>
 </li></ul>
 </li>
 </ul>
@@ -431,17 +435,17 @@ extends java.lang.Object</pre>
  
  <p>If <code>pInfo</code> is <code>NULL</code>, then the maximum size of the information that <b>can</b> be retrieved about the shader, in bytes, is returned in <code>pInfoSize</code>. Otherwise, <code>pInfoSize</code> <b>must</b> point to a variable set by the user to the size of the buffer, in bytes, pointed to by <code>pInfo</code>, and on return the variable is overwritten with the amount of data actually written to <code>pInfo</code>.</p>
  
- <p>If <code>pInfoSize</code> is less than the maximum size that <b>can</b> be retrieved by the pipeline cache, then at most <code>pInfoSize</code> bytes will be written to <code>pInfo</code>, and <a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#vkGetShaderInfoAMD(org.lwjgl.vulkan.VkDevice,long,int,int,org.lwjgl.PointerBuffer,java.nio.ByteBuffer)"><code>GetShaderInfoAMD</code></a> will return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_INCOMPLETE"><code>INCOMPLETE</code></a>.</p>
+ <p>If <code>pInfoSize</code> is less than the maximum size that <b>can</b> be retrieved by the pipeline cache, then at most <code>pInfoSize</code> bytes will be written to <code>pInfo</code>, and <code>vkGetShaderInfoAMD</code> will return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_INCOMPLETE"><code>INCOMPLETE</code></a>.</p>
  
  <p>Not all information is available for every shader and implementations may not support all kinds of information for any shader. When a certain type of information is unavailable, the function returns <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_FEATURE_NOT_PRESENT"><code>ERROR_FEATURE_NOT_PRESENT</code></a>.</p>
  
  <p>If information is successfully and fully queried, the function will return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SUCCESS"><code>SUCCESS</code></a>.</p>
  
- <p>For <a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_STATISTICS_AMD"><code>SHADER_INFO_TYPE_STATISTICS_AMD</code></a>, an instance of <a href="../../../org/lwjgl/vulkan/VkShaderStatisticsInfoAMD.html" title="class in org.lwjgl.vulkan"><code>VkShaderStatisticsInfoAMD</code></a> will be written to the buffer pointed to by <code>pInfo</code>. This structure will be populated with statistics regarding the physical device resources used by that shader along with other miscellaneous information and is described in further detail below.</p>
+ <p>For <code>infoType</code> <a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_STATISTICS_AMD"><code>SHADER_INFO_TYPE_STATISTICS_AMD</code></a>, an instance of <a href="../../../org/lwjgl/vulkan/VkShaderStatisticsInfoAMD.html" title="class in org.lwjgl.vulkan"><code>VkShaderStatisticsInfoAMD</code></a> will be written to the buffer pointed to by <code>pInfo</code>. This structure will be populated with statistics regarding the physical device resources used by that shader along with other miscellaneous information and is described in further detail below.</p>
  
- <p>For <a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD"><code>SHADER_INFO_TYPE_DISASSEMBLY_AMD</code></a>, <code>pInfo</code> points to a UTF-8 null-terminated string containing human-readable disassembly. The exact formatting and contents of the disassembly string are vendor-specific.</p>
+ <p>For <code>infoType</code> <a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD"><code>SHADER_INFO_TYPE_DISASSEMBLY_AMD</code></a>, <code>pInfo</code> points to a UTF-8 null-terminated string containing human-readable disassembly. The exact formatting and contents of the disassembly string are vendor-specific.</p>
  
- <p>The formatting and contents of all other types of information, including <a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_BINARY_AMD"><code>SHADER_INFO_TYPE_BINARY_AMD</code></a>, are left to the vendor and are not further specified by this extension.</p>
+ <p>The formatting and contents of all other types of information, including <code>infoType</code> <a href="../../../org/lwjgl/vulkan/AMDShaderInfo.html#VK_SHADER_INFO_TYPE_BINARY_AMD"><code>SHADER_INFO_TYPE_BINARY_AMD</code></a>, are left to the vendor and are not further specified by this extension.</p>
  
  <h5>Valid Usage (Implicit)</h5>
  

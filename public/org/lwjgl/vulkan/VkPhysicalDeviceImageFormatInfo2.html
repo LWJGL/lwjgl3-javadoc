@@ -57,7 +57,7 @@ var pathtoroot = "../../../";loadScripts(document, 'script');</script>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceIDPropertiesKHR.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageDrmFormatModifierInfoEXT.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -161,11 +161,19 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <p>The members of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceImageFormatInfo2</code></a> correspond to the arguments to <a href="../../../org/lwjgl/vulkan/VK10.html#vkGetPhysicalDeviceImageFormatProperties(org.lwjgl.vulkan.VkPhysicalDevice,int,int,int,int,int,org.lwjgl.vulkan.VkImageFormatProperties)"><code>GetPhysicalDeviceImageFormatProperties</code></a>, with <code>sType</code> and <code>pNext</code> added for extensibility.</p>
  
+ <h5>Valid Usage</h5>
+ 
+ <ul>
+ <li><code>tiling</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/EXTImageDrmFormatModifier.html#VK_IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT"><code>IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT</code></a> if and only if the <code>pNext</code> chain contains <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageDrmFormatModifierInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceImageDrmFormatModifierInfoEXT</code></a>.</li>
+ <li>If <code>tiling</code> is <a href="../../../org/lwjgl/vulkan/EXTImageDrmFormatModifier.html#VK_IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT"><code>IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT</code></a> and <code>flags</code> contains <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_CREATE_MUTABLE_FORMAT_BIT"><code>IMAGE_CREATE_MUTABLE_FORMAT_BIT</code></a>, then the <code>pNext</code> chain <b>must</b> contain <a href="../../../org/lwjgl/vulkan/VkImageFormatListCreateInfoKHR.html" title="class in org.lwjgl.vulkan"><code>VkImageFormatListCreateInfoKHR</code></a> with non-zero <code>viewFormatCount</code>.</li>
+ </ul>
+ 
  <h5>Valid Usage (Implicit)</h5>
  
  <ul>
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK11.html#VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_FORMAT_INFO_2"><code>STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_FORMAT_INFO_2</code></a></li>
- <li><code>pNext</code> <b>must</b> be <code>NULL</code> or a pointer to a valid instance of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceExternalImageFormatInfo.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceExternalImageFormatInfo</code></a></li>
+ <li>Each <code>pNext</code> member of any structure (including this one) in the <code>pNext</code> chain <b>must</b> be either <code>NULL</code> or a pointer to a valid instance of <a href="../../../org/lwjgl/vulkan/VkImageFormatListCreateInfoKHR.html" title="class in org.lwjgl.vulkan"><code>VkImageFormatListCreateInfoKHR</code></a>, <a href="../../../org/lwjgl/vulkan/VkImageStencilUsageCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkImageStencilUsageCreateInfoEXT</code></a>, <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceExternalImageFormatInfo.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceExternalImageFormatInfo</code></a>, or <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageDrmFormatModifierInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceImageDrmFormatModifierInfoEXT</code></a></li>
+ <li>Each <code>sType</code> member in the <code>pNext</code> chain <b>must</b> be unique</li>
  <li><code>format</code> <b>must</b> be a valid <code>VkFormat</code> value</li>
  <li><code>type</code> <b>must</b> be a valid <code>VkImageType</code> value</li>
  <li><code>tiling</code> <b>must</b> be a valid <code>VkImageTiling</code> value</li>
@@ -182,7 +190,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>sType</code> &ndash; the type of this structure.</li>
- <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure. The <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceImageFormatInfo2</code></a> is used to provide additional image parameters to <a href="../../../org/lwjgl/vulkan/VK11.html#vkGetPhysicalDeviceImageFormatProperties2(org.lwjgl.vulkan.VkPhysicalDevice,org.lwjgl.vulkan.VkPhysicalDeviceImageFormatInfo2,org.lwjgl.vulkan.VkImageFormatProperties2)"><code>GetPhysicalDeviceImageFormatProperties2</code></a>.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure. The <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceImageFormatInfo2</code></a> is used to provide additional image parameters to <code>vkGetPhysicalDeviceImageFormatProperties2</code>.</li>
  <li><code>format</code> &ndash; a <code>VkFormat</code> value indicating the image format, corresponding to <a href="../../../org/lwjgl/vulkan/VkImageCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkImageCreateInfo</code></a><code>::format</code>.</li>
  <li><code>type</code> &ndash; a <code>VkImageType</code> value indicating the image type, corresponding to <a href="../../../org/lwjgl/vulkan/VkImageCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkImageCreateInfo</code></a><code>::imageType</code>.</li>
  <li><code>tiling</code> &ndash; a <code>VkImageTiling</code> value indicating the image tiling, corresponding to <a href="../../../org/lwjgl/vulkan/VkImageCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkImageCreateInfo</code></a><code>::tiling</code>.</li>
@@ -1407,7 +1415,7 @@ public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageForma
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceIDPropertiesKHR.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageDrmFormatModifierInfoEXT.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceImageFormatInfo2.Buffer.html" title="class in org.lwjgl.vulkan"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

@@ -1138,7 +1138,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/nuklear/NkCommand.html" title="class in org.lwjgl.nuklear">NkCommand</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/nuklear/Nuklear.html#nk__begin(org.lwjgl.nuklear.NkContext)">nk__begin</a></span>&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx)</code></th>
 <td class="colLast">
-<div class="block">Returns the first draw command in the context draw command list to be drawn.</div>
+<div class="block">Returns draw command pointer pointing to the next command inside the draw command list.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -1146,7 +1146,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/nuklear/Nuklear.html#nk__draw_begin(org.lwjgl.nuklear.NkContext,org.lwjgl.nuklear.NkBuffer)">nk__draw_begin</a></span>&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx,
               <a href="../../../org/lwjgl/nuklear/NkBuffer.html" title="class in org.lwjgl.nuklear">NkBuffer</a>&nbsp;buffer)</code></th>
 <td class="colLast">
-<div class="block">Returns the first vertex command in the context vertex draw list to be executed.</div>
+<div class="block">Returns a draw vertex command buffer iterator to iterate over the vertex draw command buffer.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -1215,7 +1215,7 @@ extends java.lang.Object</pre>
                <a href="../../../org/lwjgl/nuklear/NkRect.html" title="class in org.lwjgl.nuklear">NkRect</a>&nbsp;bounds,
                int&nbsp;flags)</code></th>
 <td class="colLast">
-<div class="block">Extended window start with separated title and identifier to allow multiple windows with same name but not title.</div>
+<div class="block">Extended window start with separated title and identifier to allow multiple windows with same title but not name.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
@@ -1226,7 +1226,7 @@ extends java.lang.Object</pre>
                <a href="../../../org/lwjgl/nuklear/NkRect.html" title="class in org.lwjgl.nuklear">NkRect</a>&nbsp;bounds,
                int&nbsp;flags)</code></th>
 <td class="colLast">
-<div class="block">Extended window start with separated title and identifier to allow multiple windows with same name but not title.</div>
+<div class="block">Extended window start with separated title and identifier to allow multiple windows with same title but not name.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -3388,7 +3388,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/nuklear/Nuklear.html#nk_input_begin(org.lwjgl.nuklear.NkContext)">nk_input_begin</a></span>&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx)</code></th>
 <td class="colLast">
-<div class="block">Begins the input mirroring process.</div>
+<div class="block">Begins the input mirroring process by resetting text, scroll, mouse, previous mouse position and movement as well as key state transitions.</div>
 </td>
 </tr>
 <tr id="i283" class="rowColor">
@@ -3399,7 +3399,7 @@ extends java.lang.Object</pre>
                int&nbsp;y,
                boolean&nbsp;down)</code></th>
 <td class="colLast">
-<div class="block">Mirrors mouse button state with either pressed or released.</div>
+<div class="block">Mirrors the state of a specific mouse button to nuklear.</div>
 </td>
 </tr>
 <tr id="i284" class="altColor">
@@ -3515,7 +3515,7 @@ extends java.lang.Object</pre>
             int&nbsp;key,
             boolean&nbsp;down)</code></th>
 <td class="colLast">
-<div class="block">Mirrors key state with either pressed or released.</div>
+<div class="block">Mirrors the state of a specific key to nuklear.</div>
 </td>
 </tr>
 <tr id="i301" class="rowColor">
@@ -3524,7 +3524,7 @@ extends java.lang.Object</pre>
                int&nbsp;x,
                int&nbsp;y)</code></th>
 <td class="colLast">
-<div class="block">Mirrors mouse cursor position.</div>
+<div class="block">Mirrors current mouse position to nuklear.</div>
 </td>
 </tr>
 <tr id="i302" class="altColor">
@@ -6407,7 +6407,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/nuklear/Nuklear.html#nk_window_find(org.lwjgl.nuklear.NkContext,java.lang.CharSequence)">nk_window_find</a></span>&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx,
               java.lang.CharSequence&nbsp;name)</code></th>
 <td class="colLast">
-<div class="block">Finds and returns the window with give name.</div>
+<div class="block">Finds and returns a window from passed name.</div>
 </td>
 </tr>
 <tr id="i665" class="rowColor">
@@ -6415,7 +6415,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/nuklear/Nuklear.html#nk_window_find(org.lwjgl.nuklear.NkContext,java.nio.ByteBuffer)">nk_window_find</a></span>&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx,
               java.nio.ByteBuffer&nbsp;name)</code></th>
 <td class="colLast">
-<div class="block">Finds and returns the window with give name.</div>
+<div class="block">Finds and returns a window from passed name.</div>
 </td>
 </tr>
 <tr id="i666" class="altColor">
@@ -13205,7 +13205,7 @@ public static&nbsp;boolean&nbsp;nk_begin_titled&#8203;(<a href="../../../org/lwj
                                       <a href="../../../org/lwjgl/nuklear/NkRect.html" title="class in org.lwjgl.nuklear">NkRect</a>&nbsp;bounds,
                                       int&nbsp;flags)
 </pre>
-<div class="block">Extended window start with separated title and identifier to allow multiple windows with same name but not title.</div>
+<div class="block">Extended window start with separated title and identifier to allow multiple windows with same title but not name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ctx</code> - the nuklear context</dd>
@@ -13264,7 +13264,7 @@ public static&nbsp;<a href="../../../org/lwjgl/nuklear/NkWindow.html" title="cla
 public static&nbsp;<a href="../../../org/lwjgl/nuklear/NkWindow.html" title="class in org.lwjgl.nuklear">NkWindow</a>&nbsp;nk_window_find&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx,
                                       java.lang.CharSequence&nbsp;name)
 </pre>
-<div class="block">Finds and returns the window with give name.</div>
+<div class="block">Finds and returns a window from passed name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ctx</code> - the nuklear context</dd>
@@ -20284,7 +20284,7 @@ public static&nbsp;boolean&nbsp;nk_menu_item_symbol_label&#8203;(<a href="../../
 <li class="blockList">
 <h4>nk_input_begin</h4>
 <pre>public static&nbsp;void&nbsp;nk_input_begin&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx)</pre>
-<div class="block">Begins the input mirroring process. Needs to be called before all other <code>nk_input_xxx</code> calls</div>
+<div class="block">Begins the input mirroring process by resetting text, scroll, mouse, previous mouse position and movement as well as key state transitions.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ctx</code> - the nuklear context</dd>
@@ -20312,7 +20312,7 @@ public static&nbsp;boolean&nbsp;nk_menu_item_symbol_label&#8203;(<a href="../../
 <pre>public static&nbsp;void&nbsp;nk_input_motion&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx,
                                    int&nbsp;x,
                                    int&nbsp;y)</pre>
-<div class="block">Mirrors mouse cursor position.</div>
+<div class="block">Mirrors current mouse position to nuklear.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ctx</code> - the nuklear context</dd>
@@ -20340,7 +20340,7 @@ public static&nbsp;boolean&nbsp;nk_menu_item_symbol_label&#8203;(<a href="../../
 <pre>public static&nbsp;void&nbsp;nk_input_key&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx,
                                 int&nbsp;key,
                                 boolean&nbsp;down)</pre>
-<div class="block">Mirrors key state with either pressed or released.</div>
+<div class="block">Mirrors the state of a specific key to nuklear.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ctx</code> - the nuklear context</dd>
@@ -20373,7 +20373,7 @@ public static&nbsp;boolean&nbsp;nk_menu_item_symbol_label&#8203;(<a href="../../
                                    int&nbsp;x,
                                    int&nbsp;y,
                                    boolean&nbsp;down)</pre>
-<div class="block">Mirrors mouse button state with either pressed or released.</div>
+<div class="block">Mirrors the state of a specific mouse button to nuklear.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ctx</code> - the nuklear context</dd>
@@ -25075,7 +25075,7 @@ public static&nbsp;<a href="../../../org/lwjgl/nuklear/NkCommand.html" title="cl
 <h4>nk__begin</h4>
 <pre>@Nullable
 public static&nbsp;<a href="../../../org/lwjgl/nuklear/NkCommand.html" title="class in org.lwjgl.nuklear">NkCommand</a>&nbsp;nk__begin&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx)</pre>
-<div class="block">Returns the first draw command in the context draw command list to be drawn.</div>
+<div class="block">Returns draw command pointer pointing to the next command inside the draw command list.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ctx</code> - the nuklear context</dd>
@@ -25568,7 +25568,7 @@ public static&nbsp;<a href="../../../org/lwjgl/nuklear/NkDrawCommand.html" title
 <pre>@Nullable
 public static&nbsp;<a href="../../../org/lwjgl/nuklear/NkDrawCommand.html" title="class in org.lwjgl.nuklear">NkDrawCommand</a>&nbsp;nk__draw_begin&#8203;(<a href="../../../org/lwjgl/nuklear/NkContext.html" title="class in org.lwjgl.nuklear">NkContext</a>&nbsp;ctx,
                                            <a href="../../../org/lwjgl/nuklear/NkBuffer.html" title="class in org.lwjgl.nuklear">NkBuffer</a>&nbsp;buffer)</pre>
-<div class="block">Returns the first vertex command in the context vertex draw list to be executed.</div>
+<div class="block">Returns a draw vertex command buffer iterator to iterate over the vertex draw command buffer.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ctx</code> - the nuklear context</dd>

@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":9,"i47":9,"i48":9,"i49":9,"i50":9,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10,"i68":9,"i69":9,"i70":9,"i71":9,"i72":10,"i73":10,"i74":10,"i75":10,"i76":10,"i77":10,"i78":10,"i79":10,"i80":10,"i81":10,"i82":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":9,"i47":9,"i48":9,"i49":9,"i50":9,"i51":9,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10,"i68":10,"i69":10,"i70":9,"i71":9,"i72":9,"i73":9,"i74":10,"i75":10,"i76":10,"i77":10,"i78":10,"i79":10,"i80":10,"i81":10,"i82":10,"i83":10,"i84":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -168,6 +168,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
  <li><code>waitSubmit</code> &ndash; time spent waiting for submit thread to advance to next frame</li>
  <li><code>numDraw</code> &ndash; number of draw calls submitted</li>
  <li><code>numCompute</code> &ndash; number of compute calls submitted</li>
+ <li><code>numBlit</code> &ndash; number of blit calls submitted</li>
  <li><code>maxGpuLatency</code> &ndash; GPU driver latency</li>
  <li><code>numDynamicIndexBuffers</code> &ndash; number of used dynamic index buffers</li>
  <li><code>numDynamicVertexBuffers</code> &ndash; number of used dynamic vertex buffers</li>
@@ -212,6 +213,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
      int64_t waitSubmit;
      uint32_t numDraw;
      uint32_t numCompute;
+     uint32_t numBlit;
      uint32_t maxGpuLatency;
      uint16_t numDynamicIndexBuffers;
      uint16_t numDynamicVertexBuffers;
@@ -313,6 +315,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <br><a href="../../../org/lwjgl/bgfx/BGFXStats.html#GPUTIMERFREQ">GPUTIMERFREQ</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXStats.html#HEIGHT">HEIGHT</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXStats.html#MAXGPULATENCY">MAXGPULATENCY</a>
+<br><a href="../../../org/lwjgl/bgfx/BGFXStats.html#NUMBLIT">NUMBLIT</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXStats.html#NUMCOMPUTE">NUMCOMPUTE</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXStats.html#NUMDRAW">NUMDRAW</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXStats.html#NUMDYNAMICINDEXBUFFERS">NUMDYNAMICINDEXBUFFERS</a>
@@ -336,7 +339,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#SIZEOF">SIZEOF</a></span></code></th>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#SIZEOF">SIZEOF</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct size in bytes.</div>
 </td>
@@ -604,68 +607,75 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 </tr>
 <tr id="i28" class="altColor">
 <td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumBlit(long)">nnumBlit</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numBlit()"><code>numBlit()</code></a>.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumCompute(long)">nnumCompute</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numCompute()"><code>numCompute()</code></a>.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumDraw(long)">nnumDraw</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numDraw()"><code>numDraw()</code></a>.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumDynamicIndexBuffers(long)">nnumDynamicIndexBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numDynamicIndexBuffers()"><code>numDynamicIndexBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumDynamicVertexBuffers(long)">nnumDynamicVertexBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numDynamicVertexBuffers()"><code>numDynamicVertexBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumEncoder(long)">nnumEncoder</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numEncoder()"><code>numEncoder()</code></a>.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumFrameBuffers(long)">nnumFrameBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numFrameBuffers()"><code>numFrameBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumIndexBuffers(long)">nnumIndexBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numIndexBuffers()"><code>numIndexBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumOcclusionQueries(long)">nnumOcclusionQueries</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numOcclusionQueries()"><code>numOcclusionQueries()</code></a>.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>static java.nio.IntBuffer</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumPrims(long)">nnumPrims</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numPrims()"><code>numPrims()</code></a>.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumPrims(long,int)">nnumPrims</a></span>&#8203;(long&nbsp;struct,
          int&nbsp;index)</code></th>
@@ -673,315 +683,322 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numPrims(int)"><code>numPrims</code></a>.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumPrograms(long)">nnumPrograms</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numPrograms()"><code>numPrograms()</code></a>.</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumShaders(long)">nnumShaders</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numShaders()"><code>numShaders()</code></a>.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumTextures(long)">nnumTextures</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numTextures()"><code>numTextures()</code></a>.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumUniforms(long)">nnumUniforms</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numUniforms()"><code>numUniforms()</code></a>.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumVertexBuffers(long)">nnumVertexBuffers</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numVertexBuffers()"><code>numVertexBuffers()</code></a>.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumVertexDecls(long)">nnumVertexDecls</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numVertexDecls()"><code>numVertexDecls()</code></a>.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nnumViews(long)">nnumViews</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numViews()"><code>numViews()</code></a>.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nrtMemoryUsed(long)">nrtMemoryUsed</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#rtMemoryUsed()"><code>rtMemoryUsed()</code></a>.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#ntextHeight(long)">ntextHeight</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#textHeight()"><code>textHeight()</code></a>.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#ntextureMemoryUsed(long)">ntextureMemoryUsed</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#textureMemoryUsed()"><code>textureMemoryUsed()</code></a>.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#ntextWidth(long)">ntextWidth</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#textWidth()"><code>textWidth()</code></a>.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#ntransientIbUsed(long)">ntransientIbUsed</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#transientIbUsed()"><code>transientIbUsed()</code></a>.</div>
 </td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#ntransientVbUsed(long)">ntransientVbUsed</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#transientVbUsed()"><code>transientVbUsed()</code></a>.</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i52" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numBlit()">numBlit</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>numBlit</code> field.</div>
+</td>
+</tr>
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numCompute()">numCompute</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numCompute</code> field.</div>
 </td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numDraw()">numDraw</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numDraw</code> field.</div>
 </td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numDynamicIndexBuffers()">numDynamicIndexBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numDynamicIndexBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i54" class="altColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numDynamicVertexBuffers()">numDynamicVertexBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numDynamicVertexBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i55" class="rowColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numEncoder()">numEncoder</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numEncoder</code> field.</div>
 </td>
 </tr>
-<tr id="i56" class="altColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numFrameBuffers()">numFrameBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numFrameBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i57" class="rowColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numIndexBuffers()">numIndexBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numIndexBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i58" class="altColor">
+<tr id="i60" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numOcclusionQueries()">numOcclusionQueries</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numOcclusionQueries</code> field.</div>
 </td>
 </tr>
-<tr id="i59" class="rowColor">
+<tr id="i61" class="rowColor">
 <td class="colFirst"><code>java.nio.IntBuffer</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numPrims()">numPrims</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a <code>IntBuffer</code> view of the <code>numPrims</code> field.</div>
 </td>
 </tr>
-<tr id="i60" class="altColor">
+<tr id="i62" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numPrims(int)">numPrims</a></span>&#8203;(int&nbsp;index)</code></th>
 <td class="colLast">
 <div class="block">Returns the value at the specified index of the <code>numPrims</code> field.</div>
 </td>
 </tr>
-<tr id="i61" class="rowColor">
+<tr id="i63" class="rowColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numPrograms()">numPrograms</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numPrograms</code> field.</div>
 </td>
 </tr>
-<tr id="i62" class="altColor">
+<tr id="i64" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numShaders()">numShaders</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numShaders</code> field.</div>
 </td>
 </tr>
-<tr id="i63" class="rowColor">
+<tr id="i65" class="rowColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numTextures()">numTextures</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numTextures</code> field.</div>
 </td>
 </tr>
-<tr id="i64" class="altColor">
+<tr id="i66" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numUniforms()">numUniforms</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numUniforms</code> field.</div>
 </td>
 </tr>
-<tr id="i65" class="rowColor">
+<tr id="i67" class="rowColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numVertexBuffers()">numVertexBuffers</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numVertexBuffers</code> field.</div>
 </td>
 </tr>
-<tr id="i66" class="altColor">
+<tr id="i68" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numVertexDecls()">numVertexDecls</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numVertexDecls</code> field.</div>
 </td>
 </tr>
-<tr id="i67" class="rowColor">
+<tr id="i69" class="rowColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#numViews()">numViews</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>numViews</code> field.</div>
 </td>
 </tr>
-<tr id="i68" class="altColor">
+<tr id="i70" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXViewStats.Buffer.html" title="class in org.lwjgl.bgfx">BGFXViewStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nviewStats(long)">nviewStats</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#viewStats()"><code>viewStats()</code></a>.</div>
 </td>
 </tr>
-<tr id="i69" class="rowColor">
+<tr id="i71" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nwaitRender(long)">nwaitRender</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#waitRender()"><code>waitRender()</code></a>.</div>
 </td>
 </tr>
-<tr id="i70" class="altColor">
+<tr id="i72" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nwaitSubmit(long)">nwaitSubmit</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#waitSubmit()"><code>waitSubmit()</code></a>.</div>
 </td>
 </tr>
-<tr id="i71" class="rowColor">
+<tr id="i73" class="rowColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#nwidth(long)">nwidth</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#width()"><code>width()</code></a>.</div>
 </td>
 </tr>
-<tr id="i72" class="altColor">
+<tr id="i74" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#rtMemoryUsed()">rtMemoryUsed</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>rtMemoryUsed</code> field.</div>
 </td>
 </tr>
-<tr id="i73" class="rowColor">
+<tr id="i75" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>sizeof(struct)</code>.</div>
 </td>
 </tr>
-<tr id="i74" class="altColor">
+<tr id="i76" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#textHeight()">textHeight</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>textHeight</code> field.</div>
 </td>
 </tr>
-<tr id="i75" class="rowColor">
+<tr id="i77" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#textureMemoryUsed()">textureMemoryUsed</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>textureMemoryUsed</code> field.</div>
 </td>
 </tr>
-<tr id="i76" class="altColor">
+<tr id="i78" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#textWidth()">textWidth</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>textWidth</code> field.</div>
 </td>
 </tr>
-<tr id="i77" class="rowColor">
+<tr id="i79" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#transientIbUsed()">transientIbUsed</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>transientIbUsed</code> field.</div>
 </td>
 </tr>
-<tr id="i78" class="altColor">
+<tr id="i80" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#transientVbUsed()">transientVbUsed</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>transientVbUsed</code> field.</div>
 </td>
 </tr>
-<tr id="i79" class="rowColor">
+<tr id="i81" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXViewStats.Buffer.html" title="class in org.lwjgl.bgfx">BGFXViewStats.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#viewStats()">viewStats</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a <a href="../../../org/lwjgl/bgfx/BGFXViewStats.Buffer.html" title="class in org.lwjgl.bgfx"><code>BGFXViewStats.Buffer</code></a> view of the struct array pointed to by the <code>viewStats</code> field.</div>
 </td>
 </tr>
-<tr id="i80" class="altColor">
+<tr id="i82" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#waitRender()">waitRender</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>waitRender</code> field.</div>
 </td>
 </tr>
-<tr id="i81" class="rowColor">
+<tr id="i83" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#waitSubmit()">waitSubmit</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>waitSubmit</code> field.</div>
 </td>
 </tr>
-<tr id="i82" class="altColor">
+<tr id="i84" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXStats.html#width()">width</a></span>()</code></th>
 <td class="colLast">
@@ -1075,6 +1092,9 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <a id="NUMCOMPUTE">
 <!--   -->
 </a>
+<a id="NUMBLIT">
+<!--   -->
+</a>
 <a id="MAXGPULATENCY">
 <!--   -->
 </a>
@@ -1158,7 +1178,7 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>CPUTIMEFRAME, CPUTIMEBEGIN, CPUTIMEEND, CPUTIMERFREQ, GPUTIMEBEGIN, GPUTIMEEND, GPUTIMERFREQ, WAITRENDER, WAITSUBMIT, NUMDRAW, NUMCOMPUTE, MAXGPULATENCY, NUMDYNAMICINDEXBUFFERS, NUMDYNAMICVERTEXBUFFERS, NUMFRAMEBUFFERS, NUMINDEXBUFFERS, NUMOCCLUSIONQUERIES, NUMPROGRAMS, NUMSHADERS, NUMTEXTURES, NUMUNIFORMS, NUMVERTEXBUFFERS, NUMVERTEXDECLS, TEXTUREMEMORYUSED, RTMEMORYUSED, TRANSIENTVBUSED, TRANSIENTIBUSED, NUMPRIMS, GPUMEMORYMAX, GPUMEMORYUSED, WIDTH, HEIGHT, TEXTWIDTH, TEXTHEIGHT, NUMVIEWS, VIEWSTATS, NUMENCODER, ENCODERSTATS</h4>
+<h4>CPUTIMEFRAME, CPUTIMEBEGIN, CPUTIMEEND, CPUTIMERFREQ, GPUTIMEBEGIN, GPUTIMEEND, GPUTIMERFREQ, WAITRENDER, WAITSUBMIT, NUMDRAW, NUMCOMPUTE, NUMBLIT, MAXGPULATENCY, NUMDYNAMICINDEXBUFFERS, NUMDYNAMICVERTEXBUFFERS, NUMFRAMEBUFFERS, NUMINDEXBUFFERS, NUMOCCLUSIONQUERIES, NUMPROGRAMS, NUMSHADERS, NUMTEXTURES, NUMUNIFORMS, NUMVERTEXBUFFERS, NUMVERTEXDECLS, TEXTUREMEMORYUSED, RTMEMORYUSED, TRANSIENTVBUSED, TRANSIENTIBUSED, NUMPRIMS, GPUMEMORYMAX, GPUMEMORYUSED, WIDTH, HEIGHT, TEXTWIDTH, TEXTHEIGHT, NUMVIEWS, VIEWSTATS, NUMENCODER, ENCODERSTATS</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -1317,6 +1337,16 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 <h4>numCompute</h4>
 <pre>public&nbsp;int&nbsp;numCompute()</pre>
 <div class="block">Returns the value of the <code>numCompute</code> field.</div>
+</li>
+</ul>
+<a id="numBlit()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>numBlit</h4>
+<pre>public&nbsp;int&nbsp;numBlit()</pre>
+<div class="block">Returns the value of the <code>numBlit</code> field.</div>
 </li>
 </ul>
 <a id="maxGpuLatency()">
@@ -1756,6 +1786,16 @@ public static&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXStats.Buffer.html" title
 <h4>nnumCompute</h4>
 <pre>public static&nbsp;int&nbsp;nnumCompute&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numCompute()"><code>numCompute()</code></a>.</div>
+</li>
+</ul>
+<a id="nnumBlit(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nnumBlit</h4>
+<pre>public static&nbsp;int&nbsp;nnumBlit&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXStats.html#numBlit()"><code>numBlit()</code></a>.</div>
 </li>
 </ul>
 <a id="nmaxGpuLatency(long)">

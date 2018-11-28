@@ -1003,7 +1003,7 @@ extends java.lang.Object</pre>
  <h5>Valid Usage</h5>
  
  <ul>
- <li>There <b>must</b> be an outstanding <a href="../../../org/lwjgl/vulkan/EXTDebugUtils.html#vkQueueBeginDebugUtilsLabelEXT(org.lwjgl.vulkan.VkQueue,org.lwjgl.vulkan.VkDebugUtilsLabelEXT)"><code>QueueBeginDebugUtilsLabelEXT</code></a> command prior to the <a href="../../../org/lwjgl/vulkan/EXTDebugUtils.html#vkQueueEndDebugUtilsLabelEXT(org.lwjgl.vulkan.VkQueue)"><code>QueueEndDebugUtilsLabelEXT</code></a> on the queue</li>
+ <li>There <b>must</b> be an outstanding <code>vkQueueBeginDebugUtilsLabelEXT</code> command prior to the <code>vkQueueEndDebugUtilsLabelEXT</code> on the queue</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -1164,8 +1164,8 @@ extends java.lang.Object</pre>
  <h5>Valid Usage</h5>
  
  <ul>
- <li>There <b>must</b> be an outstanding <a href="../../../org/lwjgl/vulkan/EXTDebugUtils.html#vkCmdBeginDebugUtilsLabelEXT(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkDebugUtilsLabelEXT)"><code>CmdBeginDebugUtilsLabelEXT</code></a> command prior to the <a href="../../../org/lwjgl/vulkan/EXTDebugUtils.html#vkCmdEndDebugUtilsLabelEXT(org.lwjgl.vulkan.VkCommandBuffer)"><code>CmdEndDebugUtilsLabelEXT</code></a> on the queue that <code>commandBuffer</code> is submitted to</li>
- <li>If <code>commandBuffer</code> is a secondary command buffer, there <b>must</b> be an outstanding <a href="../../../org/lwjgl/vulkan/EXTDebugUtils.html#vkCmdBeginDebugUtilsLabelEXT(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkDebugUtilsLabelEXT)"><code>CmdBeginDebugUtilsLabelEXT</code></a> command recorded to <code>commandBuffer</code> that has not previously been ended by a call to <a href="../../../org/lwjgl/vulkan/EXTDebugUtils.html#vkCmdEndDebugUtilsLabelEXT(org.lwjgl.vulkan.VkCommandBuffer)"><code>CmdEndDebugUtilsLabelEXT</code></a>.</li>
+ <li>There <b>must</b> be an outstanding <code>vkCmdBeginDebugUtilsLabelEXT</code> command prior to the <code>vkCmdEndDebugUtilsLabelEXT</code> on the queue that <code>commandBuffer</code> is submitted to</li>
+ <li>If <code>commandBuffer</code> is a secondary command buffer, there <b>must</b> be an outstanding <code>vkCmdBeginDebugUtilsLabelEXT</code> command recorded to <code>commandBuffer</code> that has not previously been ended by a call to <code>vkCmdEndDebugUtilsLabelEXT</code>.</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -1388,7 +1388,7 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>instance</code> - the instance where the callback was created.</dd>
-<dd><code>messenger</code> - the <code>VkDebugUtilsMessengerEXT</code> object to destroy. <code>messenger</code> is an externally synchronized object and <b>must</b> not be used on more than one thread at a time. This means that <a href="../../../org/lwjgl/vulkan/EXTDebugUtils.html#vkDestroyDebugUtilsMessengerEXT(org.lwjgl.vulkan.VkInstance,long,org.lwjgl.vulkan.VkAllocationCallbacks)"><code>DestroyDebugUtilsMessengerEXT</code></a> <b>must</b> not be called when a callback is active.</dd>
+<dd><code>messenger</code> - the <code>VkDebugUtilsMessengerEXT</code> object to destroy. <code>messenger</code> is an externally synchronized object and <b>must</b> not be used on more than one thread at a time. This means that <code>vkDestroyDebugUtilsMessengerEXT</code> <b>must</b> not be called when a callback is active.</dd>
 <dd><code>pAllocator</code> - controls host memory allocation as described in the <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#memory-allocation">Memory Allocation</a> chapter.</dd>
 </dl>
 </li>

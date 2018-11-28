@@ -160,7 +160,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h5>Valid Usage</h5>
  
  <ul>
- <li><code>samples</code> <b>must</b> be a bit value that is set in <a href="../../../org/lwjgl/vulkan/VkImageFormatProperties.html" title="class in org.lwjgl.vulkan"><code>VkImageFormatProperties</code></a><code>::sampleCounts</code> returned by <a href="../../../org/lwjgl/vulkan/VK10.html#vkGetPhysicalDeviceImageFormatProperties(org.lwjgl.vulkan.VkPhysicalDevice,int,int,int,int,int,org.lwjgl.vulkan.VkImageFormatProperties)"><code>GetPhysicalDeviceImageFormatProperties</code></a> with <code>format</code>, <code>type</code>, <code>tiling</code>, and <code>usage</code> equal to those in this command and <code>flags</code> equal to the value that is set in <a href="../../../org/lwjgl/vulkan/VkImageCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkImageCreateInfo</code></a><code>::flags</code> when the image is created</li>
+ <li><code>samples</code> <b>must</b> be a bit value that is set in <a href="../../../org/lwjgl/vulkan/VkImageFormatProperties.html" title="class in org.lwjgl.vulkan"><code>VkImageFormatProperties</code></a><code>::sampleCounts</code> returned by <code>vkGetPhysicalDeviceImageFormatProperties</code> with <code>format</code>, <code>type</code>, <code>tiling</code>, and <code>usage</code> equal to those in this command and <code>flags</code> equal to the value that is set in <a href="../../../org/lwjgl/vulkan/VkImageCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkImageCreateInfo</code></a><code>::flags</code> when the image is created</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -189,7 +189,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <li><code>type</code> &ndash; the dimensionality of image.</li>
  <li><code>samples</code> &ndash; the number of samples per texel as defined in <code>VkSampleCountFlagBits</code>.</li>
  <li><code>usage</code> &ndash; a bitmask describing the intended usage of the image.</li>
- <li><code>tiling</code> &ndash; the tiling arrangement of the data elements in memory.</li>
+ <li><code>tiling</code> &ndash; the tiling arrangement of the texel blocks in memory.</li>
  </ul>
  
  <h3>Layout</h3>

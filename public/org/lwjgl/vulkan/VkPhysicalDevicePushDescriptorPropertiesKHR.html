@@ -153,6 +153,10 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
 <div class="block">Structure describing push descriptor limits that can be supported by an implementation.
  
+ <h5>Description</h5>
+ 
+ <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDevicePushDescriptorPropertiesKHR.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDevicePushDescriptorPropertiesKHR</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
+ 
  <h5>Valid Usage (Implicit)</h5>
  
  <ul>
@@ -162,6 +166,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h3>Member documentation</h3>
  
  <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
  <li><code>maxPushDescriptors</code> &ndash; the maximum number of descriptors that <b>can</b> be used in a descriptor set created with <a href="../../../org/lwjgl/vulkan/KHRPushDescriptor.html#VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR"><code>DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR</code></a> set.</li>
  </ul>
  

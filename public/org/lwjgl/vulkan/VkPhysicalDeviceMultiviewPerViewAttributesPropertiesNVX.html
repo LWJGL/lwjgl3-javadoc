@@ -152,17 +152,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a></pre>
 <div class="block">Structure describing multiview limits that can be supported by an implementation.
  
+ <h5>Description</h5>
+ 
+ <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
+ 
  <h5>Valid Usage (Implicit)</h5>
  
  <ul>
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/NVXMultiviewPerViewAttributes.html#VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_ATTRIBUTES_PROPERTIES_NVX"><code>STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_ATTRIBUTES_PROPERTIES_NVX</code></a></li>
  </ul>
  
- <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
- 
  <h3>Member documentation</h3>
  
  <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
  <li><code>perViewPositionAllComponents</code> &ndash; <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a> if the implementation supports per-view position values that differ in components other than the X component.</li>
  </ul>
  

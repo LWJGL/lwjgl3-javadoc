@@ -152,13 +152,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a></pre>
 <div class="block">Structure describing sample location limits that can be supported by an implementation.
  
+ <h5>Description</h5>
+ 
+ <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceSampleLocationsPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceSampleLocationsPropertiesEXT</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
+ 
  <h5>Valid Usage (Implicit)</h5>
  
  <ul>
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/EXTSampleLocations.html#VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLE_LOCATIONS_PROPERTIES_EXT"><code>STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLE_LOCATIONS_PROPERTIES_EXT</code></a></li>
  </ul>
- 
- <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceSampleLocationsPropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceSampleLocationsPropertiesEXT</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
  
  <h5>See Also</h5>
  
@@ -167,6 +169,8 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
  <h3>Member documentation</h3>
  
  <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
  <li><code>sampleLocationSampleCounts</code> &ndash; a bitmask of <code>VkSampleCountFlagBits</code> indicating the sample counts supporting custom sample locations.</li>
  <li><code>maxSampleLocationGridSize</code> &ndash; the maximum size of the pixel grid in which sample locations <b>can</b> vary that is supported for all sample counts in <code>sampleLocationSampleCounts</code>.</li>
  <li><code>sampleLocationCoordinateRange</code> &ndash; the range of supported sample location coordinates.</li>

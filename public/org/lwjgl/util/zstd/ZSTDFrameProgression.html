@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":10,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":10,"i24":10};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":10,"i14":10,"i15":10,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":10,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":10,"i30":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -57,7 +57,7 @@ var pathtoroot = "../../../../";loadScripts(document, 'script');</script>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameHeader.Buffer.html" title="class in org.lwjgl.util.zstd"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameParameters.Buffer.html" title="class in org.lwjgl.util.zstd"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.Buffer.html" title="class in org.lwjgl.util.zstd"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -151,13 +151,27 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">ZSTDFrameProgression</span>
 extends <a href="../../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a>
 implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
-<div class="block"><h3>Layout</h3>
+<div class="block"><h3>Member documentation</h3>
+ 
+ <ul>
+ <li><code>ingested</code> &ndash; nb input bytes read and buffered</li>
+ <li><code>consumed</code> &ndash; nb input bytes actually compressed</li>
+ <li><code>produced</code> &ndash; nb of compressed bytes generated and buffered</li>
+ <li><code>flushed</code> &ndash; nb of compressed bytes flushed: not provided; can be tracked from caller side</li>
+ <li><code>currentJobID</code> &ndash; MT only: latest started job nb</li>
+ <li><code>nbActiveWorkers</code> &ndash; MT only: nb of workers actively compressing at probe time</li>
+ </ul>
+ 
+ <h3>Layout</h3>
  
  <pre><code>
  struct ZSTD_frameProgression {
      unsigned long long ingested;
      unsigned long long consumed;
      unsigned long long produced;
+     unsigned long long flushed;
+     unsigned currentJobID;
+     unsigned nbActiveWorkers;
  }</code></pre></div>
 </li>
 </ul>
@@ -221,7 +235,10 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#CONSUMED">CONSUMED</a>
+<br><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#CURRENTJOBID">CURRENTJOBID</a>
+<br><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#FLUSHED">FLUSHED</a>
 <br><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#INGESTED">INGESTED</a>
+<br><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#NBACTIVEWORKERS">NBACTIVEWORKERS</a>
 <br><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#PRODUCED">PRODUCED</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct member offsets.</div>
@@ -229,7 +246,7 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#SIZEOF">SIZEOF</a></span></code></th>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#SIZEOF">SIZEOF</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct size in bytes.</div>
 </td>
@@ -377,41 +394,55 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 </td>
 </tr>
 <tr id="i13" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#currentJobID()">currentJobID</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>currentJobID</code> field.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#flushed()">flushed</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>flushed</code> field.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#ingested()">ingested</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>ingested</code> field.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html" title="class in org.lwjgl.util.zstd">ZSTDFrameProgression</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#malloc()">malloc</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html" title="class in org.lwjgl.util.zstd"><code>ZSTDFrameProgression</code></a> instance allocated with <a href="../../../../org/lwjgl/system/MemoryUtil.html#memAlloc(int)"><code>memAlloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.Buffer.html" title="class in org.lwjgl.util.zstd">ZSTDFrameProgression.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#malloc(int)">malloc</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.Buffer.html" title="class in org.lwjgl.util.zstd"><code>ZSTDFrameProgression.Buffer</code></a> instance allocated with <a href="../../../../org/lwjgl/system/MemoryUtil.html#memAlloc(int)"><code>memAlloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html" title="class in org.lwjgl.util.zstd">ZSTDFrameProgression</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#mallocStack()">mallocStack</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html" title="class in org.lwjgl.util.zstd"><code>ZSTDFrameProgression</code></a> instance allocated on the thread-local <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.Buffer.html" title="class in org.lwjgl.util.zstd">ZSTDFrameProgression.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#mallocStack(int)">mallocStack</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.Buffer.html" title="class in org.lwjgl.util.zstd"><code>ZSTDFrameProgression.Buffer</code></a> instance allocated on the thread-local <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.Buffer.html" title="class in org.lwjgl.util.zstd">ZSTDFrameProgression.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#mallocStack(int,org.lwjgl.system.MemoryStack)">mallocStack</a></span>&#8203;(int&nbsp;capacity,
            <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
@@ -419,42 +450,70 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.Buffer.html" title="class in org.lwjgl.util.zstd"><code>ZSTDFrameProgression.Buffer</code></a> instance allocated on the specified <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html" title="class in org.lwjgl.util.zstd">ZSTDFrameProgression</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#mallocStack(org.lwjgl.system.MemoryStack)">mallocStack</a></span>&#8203;(<a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html" title="class in org.lwjgl.util.zstd"><code>ZSTDFrameProgression</code></a> instance allocated on the specified <a href="../../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#nbActiveWorkers()">nbActiveWorkers</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>nbActiveWorkers</code> field.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#nconsumed(long)">nconsumed</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#consumed()"><code>consumed()</code></a>.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#ncurrentJobID(long)">ncurrentJobID</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#currentJobID()"><code>currentJobID()</code></a>.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#nflushed(long)">nflushed</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#flushed()"><code>flushed()</code></a>.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#ningested(long)">ningested</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#ingested()"><code>ingested()</code></a>.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#nnbActiveWorkers(long)">nnbActiveWorkers</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#nbActiveWorkers()"><code>nbActiveWorkers()</code></a>.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#nproduced(long)">nproduced</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#produced()"><code>produced()</code></a>.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#produced()">produced</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>produced</code> field.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
@@ -531,9 +590,18 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <a id="PRODUCED">
 <!--   -->
 </a>
+<a id="FLUSHED">
+<!--   -->
+</a>
+<a id="CURRENTJOBID">
+<!--   -->
+</a>
+<a id="NBACTIVEWORKERS">
+<!--   -->
+</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>INGESTED, CONSUMED, PRODUCED</h4>
+<h4>INGESTED, CONSUMED, PRODUCED, FLUSHED, CURRENTJOBID, NBACTIVEWORKERS</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -612,6 +680,36 @@ implements <a href="../../../../org/lwjgl/system/NativeResource.html" title="int
 <h4>produced</h4>
 <pre>public&nbsp;long&nbsp;produced()</pre>
 <div class="block">Returns the value of the <code>produced</code> field.</div>
+</li>
+</ul>
+<a id="flushed()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>flushed</h4>
+<pre>public&nbsp;long&nbsp;flushed()</pre>
+<div class="block">Returns the value of the <code>flushed</code> field.</div>
+</li>
+</ul>
+<a id="currentJobID()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>currentJobID</h4>
+<pre>public&nbsp;int&nbsp;currentJobID()</pre>
+<div class="block">Returns the value of the <code>currentJobID</code> field.</div>
+</li>
+</ul>
+<a id="nbActiveWorkers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nbActiveWorkers</h4>
+<pre>public&nbsp;int&nbsp;nbActiveWorkers()</pre>
+<div class="block">Returns the value of the <code>nbActiveWorkers</code> field.</div>
 </li>
 </ul>
 <a id="malloc()">
@@ -866,11 +964,41 @@ public static&nbsp;<a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression
 <a id="nproduced(long)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>nproduced</h4>
 <pre>public static&nbsp;long&nbsp;nproduced&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#produced()"><code>produced()</code></a>.</div>
+</li>
+</ul>
+<a id="nflushed(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nflushed</h4>
+<pre>public static&nbsp;long&nbsp;nflushed&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#flushed()"><code>flushed()</code></a>.</div>
+</li>
+</ul>
+<a id="ncurrentJobID(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ncurrentJobID</h4>
+<pre>public static&nbsp;int&nbsp;ncurrentJobID&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#currentJobID()"><code>currentJobID()</code></a>.</div>
+</li>
+</ul>
+<a id="nnbActiveWorkers(long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>nnbActiveWorkers</h4>
+<pre>public static&nbsp;int&nbsp;nnbActiveWorkers&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.html#nbActiveWorkers()"><code>nbActiveWorkers()</code></a>.</div>
 </li>
 </ul>
 </li>
@@ -902,7 +1030,7 @@ public static&nbsp;<a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameHeader.Buffer.html" title="class in org.lwjgl.util.zstd"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameParameters.Buffer.html" title="class in org.lwjgl.util.zstd"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../org/lwjgl/util/zstd/ZSTDFrameProgression.Buffer.html" title="class in org.lwjgl.util.zstd"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

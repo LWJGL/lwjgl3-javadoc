@@ -153,18 +153,22 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
 <div class="block">Structure describing discard rectangle limits that can be supported by an implementation.
  
+ <h5>Description</h5>
+ 
+ <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceDiscardRectanglePropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDiscardRectanglePropertiesEXT</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
+ 
  <h5>Valid Usage (Implicit)</h5>
  
  <ul>
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/EXTDiscardRectangles.html#VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISCARD_RECTANGLE_PROPERTIES_EXT"><code>STRUCTURE_TYPE_PHYSICAL_DEVICE_DISCARD_RECTANGLE_PROPERTIES_EXT</code></a></li>
  </ul>
  
- <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceDiscardRectanglePropertiesEXT.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDiscardRectanglePropertiesEXT</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
- 
  <h3>Member documentation</h3>
  
  <ul>
- <li><code>maxDiscardRectangles</code> &ndash; the maximum number of discard rectangles that <b>can</b> be specified.</li>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
+ <li><code>maxDiscardRectangles</code> &ndash; the maximum number of active discard rectangles that <b>can</b> be specified.</li>
  </ul>
  
  <h3>Layout</h3>

@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":9,"i47":9,"i48":9,"i49":9,"i50":9,"i51":9,"i52":9,"i53":9,"i54":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -158,13 +158,24 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_DecompressSkeletalBoneData(long,int,int,long,int)">nVRInput_DecompressSkeletalBoneData</a></span>&#8203;(long&nbsp;pvCompressedBuffer,
+                                   int&nbsp;unCompressedBufferSize,
+                                   int&nbsp;eTransformSpace,
+                                   long&nbsp;pTransformArray,
+                                   int&nbsp;unTransformArrayCount)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_DecompressSkeletalBoneData(java.nio.ByteBuffer,int,org.lwjgl.openvr.VRBoneTransform.Buffer)"><code>DecompressSkeletalBoneData</code></a></div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetActionHandle(long,long)">nVRInput_GetActionHandle</a></span>&#8203;(long&nbsp;pchActionName,
                         long&nbsp;pHandle)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetActionHandle(java.nio.ByteBuffer,java.nio.LongBuffer)"><code>GetActionHandle</code></a></div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetActionOrigins(long,long,long,int)">nVRInput_GetActionOrigins</a></span>&#8203;(long&nbsp;actionSetHandle,
                          long&nbsp;digitalActionHandle,
@@ -174,7 +185,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetActionOrigins(long,long,java.nio.LongBuffer)"><code>GetActionOrigins</code></a></div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetActionSetHandle(long,long)">nVRInput_GetActionSetHandle</a></span>&#8203;(long&nbsp;pchActionSetName,
                            long&nbsp;pHandle)</code></th>
@@ -182,27 +193,54 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetActionSetHandle(java.nio.ByteBuffer,java.nio.LongBuffer)"><code>GetActionSetHandle</code></a></div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetAnalogActionData(long,long,int,long)">nVRInput_GetAnalogActionData</a></span>&#8203;(long&nbsp;action,
                             long&nbsp;pActionData,
                             int&nbsp;unActionDataSize,
                             long&nbsp;ulRestrictToDevice)</code></th>
 <td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData.Buffer,long)"><code>GetAnalogActionData</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData,int,long)"><code>GetAnalogActionData</code></a></div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetBoneCount(long,long)">nVRInput_GetBoneCount</a></span>&#8203;(long&nbsp;action,
+                     long&nbsp;pBoneCount)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetBoneCount(long,java.nio.IntBuffer)"><code>GetBoneCount</code></a></div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetBoneHierarchy(long,long,int)">nVRInput_GetBoneHierarchy</a></span>&#8203;(long&nbsp;action,
+                         long&nbsp;pParentIndices,
+                         int&nbsp;unIndexArrayCount)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetBoneHierarchy(long,java.nio.IntBuffer)"><code>GetBoneHierarchy</code></a></div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetBoneName(long,int,long,int)">nVRInput_GetBoneName</a></span>&#8203;(long&nbsp;action,
+                    int&nbsp;nBoneIndex,
+                    long&nbsp;pchBoneName,
+                    int&nbsp;unNameBufferSize)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetBoneName(long,int,java.nio.ByteBuffer)"><code>GetBoneName</code></a></div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetDigitalActionData(long,long,int,long)">nVRInput_GetDigitalActionData</a></span>&#8203;(long&nbsp;action,
                              long&nbsp;pActionData,
                              int&nbsp;unActionDataSize,
                              long&nbsp;ulRestrictToDevice)</code></th>
 <td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData.Buffer,long)"><code>GetDigitalActionData</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData,int,long)"><code>GetDigitalActionData</code></a></div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetInputSourceHandle(long,long)">nVRInput_GetInputSourceHandle</a></span>&#8203;(long&nbsp;pchInputSourcePath,
                              long&nbsp;pHandle)</code></th>
@@ -210,25 +248,26 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetInputSourceHandle(java.nio.ByteBuffer,java.nio.LongBuffer)"><code>GetInputSourceHandle</code></a></div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetOriginLocalizedName(long,long,int)">nVRInput_GetOriginLocalizedName</a></span>&#8203;(long&nbsp;origin,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetOriginLocalizedName(long,long,int,int)">nVRInput_GetOriginLocalizedName</a></span>&#8203;(long&nbsp;origin,
                                long&nbsp;pchNameArray,
-                               int&nbsp;unNameArraySize)</code></th>
+                               int&nbsp;unNameArraySize,
+                               int&nbsp;unStringSectionsToInclude)</code></th>
 <td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginLocalizedName(long,java.nio.ByteBuffer)"><code>GetOriginLocalizedName</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginLocalizedName(long,java.nio.ByteBuffer,int)"><code>GetOriginLocalizedName</code></a></div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetOriginTrackedDeviceInfo(long,long,int)">nVRInput_GetOriginTrackedDeviceInfo</a></span>&#8203;(long&nbsp;origin,
                                    long&nbsp;pOriginInfo,
                                    int&nbsp;unOriginInfoSize)</code></th>
 <td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo.Buffer)"><code>GetOriginTrackedDeviceInfo</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo,int)"><code>GetOriginTrackedDeviceInfo</code></a></div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetPoseActionData(long,int,float,long,int,long)">nVRInput_GetPoseActionData</a></span>&#8203;(long&nbsp;action,
                           int&nbsp;eOrigin,
@@ -237,52 +276,75 @@ extends java.lang.Object</pre>
                           int&nbsp;unActionDataSize,
                           long&nbsp;ulRestrictToDevice)</code></th>
 <td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData.Buffer,long)"><code>GetPoseActionData</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData,int,long)"><code>GetPoseActionData</code></a></div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetSkeletalActionData(long,long,int,long)">nVRInput_GetSkeletalActionData</a></span>&#8203;(long&nbsp;action,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetSkeletalActionData(long,long,int)">nVRInput_GetSkeletalActionData</a></span>&#8203;(long&nbsp;action,
                               long&nbsp;pActionData,
-                              int&nbsp;unActionDataSize,
-                              long&nbsp;ulRestrictToDevice)</code></th>
+                              int&nbsp;unActionDataSize)</code></th>
 <td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData.Buffer,long)"><code>GetSkeletalActionData</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData,int)"><code>GetSkeletalActionData</code></a></div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetSkeletalBoneData(long,int,int,long,int,long)">nVRInput_GetSkeletalBoneData</a></span>&#8203;(long&nbsp;action,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetSkeletalBoneData(long,int,int,long,int)">nVRInput_GetSkeletalBoneData</a></span>&#8203;(long&nbsp;action,
                             int&nbsp;eTransformSpace,
                             int&nbsp;eMotionRange,
                             long&nbsp;pTransformArray,
-                            int&nbsp;unTransformArrayCount,
-                            long&nbsp;ulRestrictToDevice)</code></th>
+                            int&nbsp;unTransformArrayCount)</code></th>
 <td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneData(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer,long)"><code>GetSkeletalBoneData</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneData(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer)"><code>GetSkeletalBoneData</code></a></div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetSkeletalBoneDataCompressed(long,int,int,long,int,long,long)">nVRInput_GetSkeletalBoneDataCompressed</a></span>&#8203;(long&nbsp;action,
-                                      int&nbsp;eTransformSpace,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetSkeletalBoneDataCompressed(long,int,long,int,long)">nVRInput_GetSkeletalBoneDataCompressed</a></span>&#8203;(long&nbsp;action,
                                       int&nbsp;eMotionRange,
                                       long&nbsp;pvCompressedData,
                                       int&nbsp;unCompressedSize,
-                                      long&nbsp;punRequiredCompressedSize,
-                                      long&nbsp;ulRestrictToDevice)</code></th>
+                                      long&nbsp;punRequiredCompressedSize)</code></th>
 <td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,int,java.nio.ByteBuffer,java.nio.IntBuffer,long)"><code>GetSkeletalBoneDataCompressed</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,java.nio.ByteBuffer,java.nio.IntBuffer)"><code>GetSkeletalBoneDataCompressed</code></a></div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetSkeletalReferenceTransforms(long,int,int,long,int)">nVRInput_GetSkeletalReferenceTransforms</a></span>&#8203;(long&nbsp;action,
+                                       int&nbsp;eTransformSpace,
+                                       int&nbsp;eReferencePose,
+                                       long&nbsp;pTransformArray,
+                                       int&nbsp;unTransformArrayCount)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalReferenceTransforms(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer)"><code>GetSkeletalReferenceTransforms</code></a></div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetSkeletalSummaryData(long,long)">nVRInput_GetSkeletalSummaryData</a></span>&#8203;(long&nbsp;action,
+                               long&nbsp;pSkeletalSummaryData)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalSummaryData(long,org.lwjgl.openvr.VRSkeletalSummaryData)"><code>GetSkeletalSummaryData</code></a></div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_GetSkeletalTrackingLevel(long,long)">nVRInput_GetSkeletalTrackingLevel</a></span>&#8203;(long&nbsp;action,
+                                 long&nbsp;pSkeletalTrackingLevel)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalTrackingLevel(long,java.nio.IntBuffer)"><code>GetSkeletalTrackingLevel</code></a></div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_SetActionManifestPath(long)">nVRInput_SetActionManifestPath</a></span>&#8203;(long&nbsp;pchActionManifestPath)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_SetActionManifestPath(java.nio.ByteBuffer)"><code>SetActionManifestPath</code></a></div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_ShowBindingsForActionSet(long,int,int,long)">nVRInput_ShowBindingsForActionSet</a></span>&#8203;(long&nbsp;pSets,
                                  int&nbsp;unSizeOfVRSelectedActionSet_t,
@@ -292,18 +354,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_ShowBindingsForActionSet(org.lwjgl.openvr.VRActiveActionSet.Buffer,int,long)"><code>ShowBindingsForActionSet</code></a></div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_UncompressSkeletalActionData(long,int,long,long,int)">nVRInput_UncompressSkeletalActionData</a></span>&#8203;(long&nbsp;pvCompressedBuffer,
-                                     int&nbsp;unCompressedBufferSize,
-                                     long&nbsp;peTransformSpace,
-                                     long&nbsp;pTransformArray,
-                                     int&nbsp;unTransformArrayCount)</code></th>
-<td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_UncompressSkeletalActionData(java.nio.ByteBuffer,java.nio.IntBuffer,org.lwjgl.openvr.VRBoneTransform.Buffer)"><code>UncompressSkeletalActionData</code></a></div>
-</td>
-</tr>
-<tr id="i15" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#nVRInput_UpdateActionState(long,int,int)">nVRInput_UpdateActionState</a></span>&#8203;(long&nbsp;pSets,
                           int&nbsp;unSizeOfVRSelectedActionSet_t,
@@ -312,7 +363,16 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_UpdateActionState(org.lwjgl.openvr.VRActiveActionSet.Buffer,int)"><code>UpdateActionState</code></a></div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_DecompressSkeletalBoneData(java.nio.ByteBuffer,int,org.lwjgl.openvr.VRBoneTransform.Buffer)">VRInput_DecompressSkeletalBoneData</a></span>&#8203;(java.nio.ByteBuffer&nbsp;pvCompressedBuffer,
+                                  int&nbsp;eTransformSpace,
+                                  <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray)</code></th>
+<td class="colLast">
+<div class="block">Turns a compressed buffer from <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,java.nio.ByteBuffer,java.nio.IntBuffer)"><code>GetSkeletalBoneDataCompressed</code></a> and turns it back into a bone transform array.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetActionHandle(java.lang.CharSequence,java.nio.LongBuffer)">VRInput_GetActionHandle</a></span>&#8203;(java.lang.CharSequence&nbsp;pchActionName,
                        java.nio.LongBuffer&nbsp;pHandle)</code></th>
@@ -320,7 +380,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns a handle for an action.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetActionHandle(java.nio.ByteBuffer,java.nio.LongBuffer)">VRInput_GetActionHandle</a></span>&#8203;(java.nio.ByteBuffer&nbsp;pchActionName,
                        java.nio.LongBuffer&nbsp;pHandle)</code></th>
@@ -328,7 +388,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns a handle for an action.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetActionOrigins(long,long,java.nio.LongBuffer)">VRInput_GetActionOrigins</a></span>&#8203;(long&nbsp;actionSetHandle,
                         long&nbsp;digitalActionHandle,
@@ -337,7 +397,7 @@ extends java.lang.Object</pre>
 <div class="block">Retrieve origin handles for an action.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetActionSetHandle(java.lang.CharSequence,java.nio.LongBuffer)">VRInput_GetActionSetHandle</a></span>&#8203;(java.lang.CharSequence&nbsp;pchActionSetName,
                           java.nio.LongBuffer&nbsp;pHandle)</code></th>
@@ -345,7 +405,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns a handle for an action set.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetActionSetHandle(java.nio.ByteBuffer,java.nio.LongBuffer)">VRInput_GetActionSetHandle</a></span>&#8203;(java.nio.ByteBuffer&nbsp;pchActionSetName,
                           java.nio.LongBuffer&nbsp;pHandle)</code></th>
@@ -353,25 +413,70 @@ extends java.lang.Object</pre>
 <div class="block">Returns a handle for an action set.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData.Buffer,long)">VRInput_GetAnalogActionData</a></span>&#8203;(long&nbsp;action,
-                           <a href="../../../org/lwjgl/openvr/InputAnalogActionData.Buffer.html" title="class in org.lwjgl.openvr">InputAnalogActionData.Buffer</a>&nbsp;pActionData,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData,int,long)">VRInput_GetAnalogActionData</a></span>&#8203;(long&nbsp;action,
+                           <a href="../../../org/lwjgl/openvr/InputAnalogActionData.html" title="class in org.lwjgl.openvr">InputAnalogActionData</a>&nbsp;pActionData,
+                           int&nbsp;unActionDataSize,
                            long&nbsp;ulRestrictToDevice)</code></th>
 <td class="colLast">
 <div class="block">Reads the state of an analog action given its handle.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData.Buffer,long)">VRInput_GetDigitalActionData</a></span>&#8203;(long&nbsp;action,
-                            <a href="../../../org/lwjgl/openvr/InputDigitalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputDigitalActionData.Buffer</a>&nbsp;pActionData,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData,long)">VRInput_GetAnalogActionData</a></span>&#8203;(long&nbsp;action,
+                           <a href="../../../org/lwjgl/openvr/InputAnalogActionData.html" title="class in org.lwjgl.openvr">InputAnalogActionData</a>&nbsp;pActionData,
+                           long&nbsp;ulRestrictToDevice)</code></th>
+<td class="colLast">
+<div class="block">Reads the state of an analog action given its handle.</div>
+</td>
+</tr>
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetBoneCount(long,java.nio.IntBuffer)">VRInput_GetBoneCount</a></span>&#8203;(long&nbsp;action,
+                    java.nio.IntBuffer&nbsp;pBoneCount)</code></th>
+<td class="colLast">
+<div class="block">Reads the number of bones in skeleton associated with the given action.</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetBoneHierarchy(long,java.nio.IntBuffer)">VRInput_GetBoneHierarchy</a></span>&#8203;(long&nbsp;action,
+                        java.nio.IntBuffer&nbsp;pParentIndices)</code></th>
+<td class="colLast">
+<div class="block">Fills the given array with the index of each bone's parent in the skeleton associated with the given action.</div>
+</td>
+</tr>
+<tr id="i32" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetBoneName(long,int,java.nio.ByteBuffer)">VRInput_GetBoneName</a></span>&#8203;(long&nbsp;action,
+                   int&nbsp;nBoneIndex,
+                   java.nio.ByteBuffer&nbsp;pchBoneName)</code></th>
+<td class="colLast">
+<div class="block">Fills the given buffer with the name of the bone at the given index in the skeleton associated with the given action.</div>
+</td>
+</tr>
+<tr id="i33" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData,int,long)">VRInput_GetDigitalActionData</a></span>&#8203;(long&nbsp;action,
+                            <a href="../../../org/lwjgl/openvr/InputDigitalActionData.html" title="class in org.lwjgl.openvr">InputDigitalActionData</a>&nbsp;pActionData,
+                            int&nbsp;unActionDataSize,
                             long&nbsp;ulRestrictToDevice)</code></th>
 <td class="colLast">
 <div class="block">Reads the state of a digital action given its handle.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i34" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData,long)">VRInput_GetDigitalActionData</a></span>&#8203;(long&nbsp;action,
+                            <a href="../../../org/lwjgl/openvr/InputDigitalActionData.html" title="class in org.lwjgl.openvr">InputDigitalActionData</a>&nbsp;pActionData,
+                            long&nbsp;ulRestrictToDevice)</code></th>
+<td class="colLast">
+<div class="block">Reads the state of a digital action given its handle.</div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetInputSourceHandle(java.lang.CharSequence,java.nio.LongBuffer)">VRInput_GetInputSourceHandle</a></span>&#8203;(java.lang.CharSequence&nbsp;pchInputSourcePath,
                             java.nio.LongBuffer&nbsp;pHandle)</code></th>
@@ -379,7 +484,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns a handle for any path in the input system.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetInputSourceHandle(java.nio.ByteBuffer,java.nio.LongBuffer)">VRInput_GetInputSourceHandle</a></span>&#8203;(java.nio.ByteBuffer&nbsp;pchInputSourcePath,
                             java.nio.LongBuffer&nbsp;pHandle)</code></th>
@@ -387,80 +492,133 @@ extends java.lang.Object</pre>
 <div class="block">Returns a handle for any path in the input system.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginLocalizedName(long,java.nio.ByteBuffer)">VRInput_GetOriginLocalizedName</a></span>&#8203;(long&nbsp;origin,
-                              java.nio.ByteBuffer&nbsp;pchNameArray)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginLocalizedName(long,java.nio.ByteBuffer,int)">VRInput_GetOriginLocalizedName</a></span>&#8203;(long&nbsp;origin,
+                              java.nio.ByteBuffer&nbsp;pchNameArray,
+                              int&nbsp;unStringSectionsToInclude)</code></th>
 <td class="colLast">
 <div class="block">Retrieves the name of the origin in the current language.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo.Buffer)">VRInput_GetOriginTrackedDeviceInfo</a></span>&#8203;(long&nbsp;origin,
-                                  <a href="../../../org/lwjgl/openvr/InputOriginInfo.Buffer.html" title="class in org.lwjgl.openvr">InputOriginInfo.Buffer</a>&nbsp;pOriginInfo)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo)">VRInput_GetOriginTrackedDeviceInfo</a></span>&#8203;(long&nbsp;origin,
+                                  <a href="../../../org/lwjgl/openvr/InputOriginInfo.html" title="class in org.lwjgl.openvr">InputOriginInfo</a>&nbsp;pOriginInfo)</code></th>
 <td class="colLast">
 <div class="block">Retrieves useful information for the origin of this action.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData.Buffer,long)">VRInput_GetPoseActionData</a></span>&#8203;(long&nbsp;action,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo,int)">VRInput_GetOriginTrackedDeviceInfo</a></span>&#8203;(long&nbsp;origin,
+                                  <a href="../../../org/lwjgl/openvr/InputOriginInfo.html" title="class in org.lwjgl.openvr">InputOriginInfo</a>&nbsp;pOriginInfo,
+                                  int&nbsp;unOriginInfoSize)</code></th>
+<td class="colLast">
+<div class="block">Retrieves useful information for the origin of this action.</div>
+</td>
+</tr>
+<tr id="i40" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData,int,long)">VRInput_GetPoseActionData</a></span>&#8203;(long&nbsp;action,
                          int&nbsp;eOrigin,
                          float&nbsp;fPredictedSecondsFromNow,
-                         <a href="../../../org/lwjgl/openvr/InputPoseActionData.Buffer.html" title="class in org.lwjgl.openvr">InputPoseActionData.Buffer</a>&nbsp;pActionData,
+                         <a href="../../../org/lwjgl/openvr/InputPoseActionData.html" title="class in org.lwjgl.openvr">InputPoseActionData</a>&nbsp;pActionData,
+                         int&nbsp;unActionDataSize,
                          long&nbsp;ulRestrictToDevice)</code></th>
 <td class="colLast">
 <div class="block">Reads the state of a pose action given its handle.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData.Buffer,long)">VRInput_GetSkeletalActionData</a></span>&#8203;(long&nbsp;action,
-                             <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a>&nbsp;pActionData,
-                             long&nbsp;ulRestrictToDevice)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData,long)">VRInput_GetPoseActionData</a></span>&#8203;(long&nbsp;action,
+                         int&nbsp;eOrigin,
+                         float&nbsp;fPredictedSecondsFromNow,
+                         <a href="../../../org/lwjgl/openvr/InputPoseActionData.html" title="class in org.lwjgl.openvr">InputPoseActionData</a>&nbsp;pActionData,
+                         long&nbsp;ulRestrictToDevice)</code></th>
+<td class="colLast">
+<div class="block">Reads the state of a pose action given its handle.</div>
+</td>
+</tr>
+<tr id="i42" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData)">VRInput_GetSkeletalActionData</a></span>&#8203;(long&nbsp;action,
+                             <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a>&nbsp;pActionData)</code></th>
 <td class="colLast">
 <div class="block">Reads the state of a skeletal action given its handle.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneData(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer,long)">VRInput_GetSkeletalBoneData</a></span>&#8203;(long&nbsp;action,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData,int)">VRInput_GetSkeletalActionData</a></span>&#8203;(long&nbsp;action,
+                             <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a>&nbsp;pActionData,
+                             int&nbsp;unActionDataSize)</code></th>
+<td class="colLast">
+<div class="block">Reads the state of a skeletal action given its handle.</div>
+</td>
+</tr>
+<tr id="i44" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneData(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer)">VRInput_GetSkeletalBoneData</a></span>&#8203;(long&nbsp;action,
                            int&nbsp;eTransformSpace,
                            int&nbsp;eMotionRange,
-                           <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray,
-                           long&nbsp;ulRestrictToDevice)</code></th>
+                           <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray)</code></th>
 <td class="colLast">
 <div class="block">Reads the state of the skeletal bone data associated with this action and copies it into the given buffer.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,int,java.nio.ByteBuffer,java.nio.IntBuffer,long)">VRInput_GetSkeletalBoneDataCompressed</a></span>&#8203;(long&nbsp;action,
-                                     int&nbsp;eTransformSpace,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,java.nio.ByteBuffer,java.nio.IntBuffer)">VRInput_GetSkeletalBoneDataCompressed</a></span>&#8203;(long&nbsp;action,
                                      int&nbsp;eMotionRange,
                                      java.nio.ByteBuffer&nbsp;pvCompressedData,
-                                     java.nio.IntBuffer&nbsp;punRequiredCompressedSize,
-                                     long&nbsp;ulRestrictToDevice)</code></th>
+                                     java.nio.IntBuffer&nbsp;punRequiredCompressedSize)</code></th>
 <td class="colLast">
 <div class="block">Reads the state of the skeletal bone data in a compressed form that is suitable for sending over the network.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i46" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalReferenceTransforms(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer)">VRInput_GetSkeletalReferenceTransforms</a></span>&#8203;(long&nbsp;action,
+                                      int&nbsp;eTransformSpace,
+                                      int&nbsp;eReferencePose,
+                                      <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray)</code></th>
+<td class="colLast">
+<div class="block">Fills the given buffer with the transforms for a specific static skeletal reference pose.</div>
+</td>
+</tr>
+<tr id="i47" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalSummaryData(long,org.lwjgl.openvr.VRSkeletalSummaryData)">VRInput_GetSkeletalSummaryData</a></span>&#8203;(long&nbsp;action,
+                              <a href="../../../org/lwjgl/openvr/VRSkeletalSummaryData.html" title="class in org.lwjgl.openvr">VRSkeletalSummaryData</a>&nbsp;pSkeletalSummaryData)</code></th>
+<td class="colLast">
+<div class="block">Reads summary information about the current pose of the skeleton associated with the given action.</div>
+</td>
+</tr>
+<tr id="i48" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalTrackingLevel(long,java.nio.IntBuffer)">VRInput_GetSkeletalTrackingLevel</a></span>&#8203;(long&nbsp;action,
+                                java.nio.IntBuffer&nbsp;pSkeletalTrackingLevel)</code></th>
+<td class="colLast">
+<div class="block">Reads the level of accuracy to which the controller is able to track the user to recreate a skeletal pose.</div>
+</td>
+</tr>
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_SetActionManifestPath(java.lang.CharSequence)">VRInput_SetActionManifestPath</a></span>&#8203;(java.lang.CharSequence&nbsp;pchActionManifestPath)</code></th>
 <td class="colLast">
 <div class="block">Sets the path to the action manifest JSON file that is used by this application.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_SetActionManifestPath(java.nio.ByteBuffer)">VRInput_SetActionManifestPath</a></span>&#8203;(java.nio.ByteBuffer&nbsp;pchActionManifestPath)</code></th>
 <td class="colLast">
 <div class="block">Sets the path to the action manifest JSON file that is used by this application.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_ShowActionOrigins(long,long)">VRInput_ShowActionOrigins</a></span>&#8203;(long&nbsp;actionSetHandle,
                          long&nbsp;ulActionHandle)</code></th>
@@ -468,7 +626,7 @@ extends java.lang.Object</pre>
 <div class="block">Shows the current binding for the action in-headset.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_ShowBindingsForActionSet(org.lwjgl.openvr.VRActiveActionSet.Buffer,int,long)">VRInput_ShowBindingsForActionSet</a></span>&#8203;(<a href="../../../org/lwjgl/openvr/VRActiveActionSet.Buffer.html" title="class in org.lwjgl.openvr">VRActiveActionSet.Buffer</a>&nbsp;pSets,
                                 int&nbsp;unSizeOfVRSelectedActionSet_t,
@@ -477,7 +635,7 @@ extends java.lang.Object</pre>
 <div class="block">Shows the current binding all the actions in the specified action sets.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_TriggerHapticVibrationAction(long,float,float,float,float,long)">VRInput_TriggerHapticVibrationAction</a></span>&#8203;(long&nbsp;action,
                                     float&nbsp;fStartSecondsFromNow,
@@ -489,16 +647,7 @@ extends java.lang.Object</pre>
 <div class="block">Triggers a haptic event as described by the specified action.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_UncompressSkeletalActionData(java.nio.ByteBuffer,java.nio.IntBuffer,org.lwjgl.openvr.VRBoneTransform.Buffer)">VRInput_UncompressSkeletalActionData</a></span>&#8203;(java.nio.ByteBuffer&nbsp;pvCompressedBuffer,
-                                    java.nio.IntBuffer&nbsp;peTransformSpace,
-                                    <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray)</code></th>
-<td class="colLast">
-<div class="block">Turns a compressed buffer from <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,int,java.nio.ByteBuffer,java.nio.IntBuffer,long)"><code>GetSkeletalBoneDataCompressed</code></a> and turns it back into a bone transform array.</div>
-</td>
-</tr>
-<tr id="i37" class="rowColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_UpdateActionState(org.lwjgl.openvr.VRActiveActionSet.Buffer,int)">VRInput_UpdateActionState</a></span>&#8203;(<a href="../../../org/lwjgl/openvr/VRActiveActionSet.Buffer.html" title="class in org.lwjgl.openvr">VRActiveActionSet.Buffer</a>&nbsp;pSets,
                          int&nbsp;unSizeOfVRSelectedActionSet_t)</code></th>
@@ -677,22 +826,30 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
                                                 long&nbsp;pActionData,
                                                 int&nbsp;unActionDataSize,
                                                 long&nbsp;ulRestrictToDevice)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData.Buffer,long)"><code>GetDigitalActionData</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData,int,long)"><code>GetDigitalActionData</code></a></div>
 </li>
 </ul>
-<a id="VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData.Buffer,long)">
+<a id="VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData,int,long)">
+<!--   -->
+</a>
+<a id="VRInput_GetDigitalActionData(long,org.lwjgl.openvr.InputDigitalActionData,long)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>VRInput_GetDigitalActionData</h4>
 <pre>public static&nbsp;int&nbsp;VRInput_GetDigitalActionData&#8203;(long&nbsp;action,
-                                               <a href="../../../org/lwjgl/openvr/InputDigitalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputDigitalActionData.Buffer</a>&nbsp;pActionData,
-                                               long&nbsp;ulRestrictToDevice)</pre>
+                                               <a href="../../../org/lwjgl/openvr/InputDigitalActionData.html" title="class in org.lwjgl.openvr">InputDigitalActionData</a>&nbsp;pActionData,
+                                               int&nbsp;unActionDataSize,
+                                               long&nbsp;ulRestrictToDevice)
+
+public static&nbsp;int&nbsp;VRInput_GetDigitalActionData&#8203;(long&nbsp;action,
+                                               <a href="../../../org/lwjgl/openvr/InputDigitalActionData.html" title="class in org.lwjgl.openvr">InputDigitalActionData</a>&nbsp;pActionData,
+                                               long&nbsp;ulRestrictToDevice)
+</pre>
 <div class="block">Reads the state of a digital action given its handle. This will return <a href="../../../org/lwjgl/openvr/VR.html#EVRInputError_VRInputError_WrongType"><code>VR.EVRInputError_VRInputError_WrongType</code></a> if the type of action is something other
  than digital.</div>
-</li>
-</ul>
+</li></ul>
 <a id="nVRInput_GetAnalogActionData(long,long,int,long)">
 <!--   -->
 </a>
@@ -703,22 +860,30 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
                                                long&nbsp;pActionData,
                                                int&nbsp;unActionDataSize,
                                                long&nbsp;ulRestrictToDevice)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData.Buffer,long)"><code>GetAnalogActionData</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData,int,long)"><code>GetAnalogActionData</code></a></div>
 </li>
 </ul>
-<a id="VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData.Buffer,long)">
+<a id="VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData,int,long)">
+<!--   -->
+</a>
+<a id="VRInput_GetAnalogActionData(long,org.lwjgl.openvr.InputAnalogActionData,long)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>VRInput_GetAnalogActionData</h4>
 <pre>public static&nbsp;int&nbsp;VRInput_GetAnalogActionData&#8203;(long&nbsp;action,
-                                              <a href="../../../org/lwjgl/openvr/InputAnalogActionData.Buffer.html" title="class in org.lwjgl.openvr">InputAnalogActionData.Buffer</a>&nbsp;pActionData,
-                                              long&nbsp;ulRestrictToDevice)</pre>
+                                              <a href="../../../org/lwjgl/openvr/InputAnalogActionData.html" title="class in org.lwjgl.openvr">InputAnalogActionData</a>&nbsp;pActionData,
+                                              int&nbsp;unActionDataSize,
+                                              long&nbsp;ulRestrictToDevice)
+
+public static&nbsp;int&nbsp;VRInput_GetAnalogActionData&#8203;(long&nbsp;action,
+                                              <a href="../../../org/lwjgl/openvr/InputAnalogActionData.html" title="class in org.lwjgl.openvr">InputAnalogActionData</a>&nbsp;pActionData,
+                                              long&nbsp;ulRestrictToDevice)
+</pre>
 <div class="block">Reads the state of an analog action given its handle. This will return <a href="../../../org/lwjgl/openvr/VR.html#EVRInputError_VRInputError_WrongType"><code>VR.EVRInputError_VRInputError_WrongType</code></a> if the type of action is something other
  than analog.</div>
-</li>
-</ul>
+</li></ul>
 <a id="nVRInput_GetPoseActionData(long,int,float,long,int,long)">
 <!--   -->
 </a>
@@ -731,10 +896,13 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
                                              long&nbsp;pActionData,
                                              int&nbsp;unActionDataSize,
                                              long&nbsp;ulRestrictToDevice)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData.Buffer,long)"><code>GetPoseActionData</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData,int,long)"><code>GetPoseActionData</code></a></div>
 </li>
 </ul>
-<a id="VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData.Buffer,long)">
+<a id="VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData,int,long)">
+<!--   -->
+</a>
+<a id="VRInput_GetPoseActionData(long,int,float,org.lwjgl.openvr.InputPoseActionData,long)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -743,16 +911,23 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
 <pre>public static&nbsp;int&nbsp;VRInput_GetPoseActionData&#8203;(long&nbsp;action,
                                             int&nbsp;eOrigin,
                                             float&nbsp;fPredictedSecondsFromNow,
-                                            <a href="../../../org/lwjgl/openvr/InputPoseActionData.Buffer.html" title="class in org.lwjgl.openvr">InputPoseActionData.Buffer</a>&nbsp;pActionData,
-                                            long&nbsp;ulRestrictToDevice)</pre>
+                                            <a href="../../../org/lwjgl/openvr/InputPoseActionData.html" title="class in org.lwjgl.openvr">InputPoseActionData</a>&nbsp;pActionData,
+                                            int&nbsp;unActionDataSize,
+                                            long&nbsp;ulRestrictToDevice)
+
+public static&nbsp;int&nbsp;VRInput_GetPoseActionData&#8203;(long&nbsp;action,
+                                            int&nbsp;eOrigin,
+                                            float&nbsp;fPredictedSecondsFromNow,
+                                            <a href="../../../org/lwjgl/openvr/InputPoseActionData.html" title="class in org.lwjgl.openvr">InputPoseActionData</a>&nbsp;pActionData,
+                                            long&nbsp;ulRestrictToDevice)
+</pre>
 <div class="block">Reads the state of a pose action given its handle.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>eOrigin</code> - one of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#ETrackingUniverseOrigin_TrackingUniverseSeated"><code>VR.ETrackingUniverseOrigin_TrackingUniverseSeated</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#ETrackingUniverseOrigin_TrackingUniverseStanding"><code>VR.ETrackingUniverseOrigin_TrackingUniverseStanding</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#ETrackingUniverseOrigin_TrackingUniverseRawAndUncalibrated"><code>VR.ETrackingUniverseOrigin_TrackingUniverseRawAndUncalibrated</code></a></td></tr></table></dd>
 </dl>
-</li>
-</ul>
-<a id="nVRInput_GetSkeletalActionData(long,long,int,long)">
+</li></ul>
+<a id="nVRInput_GetSkeletalActionData(long,long,int)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -760,24 +935,153 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
 <h4>nVRInput_GetSkeletalActionData</h4>
 <pre>public static&nbsp;int&nbsp;nVRInput_GetSkeletalActionData&#8203;(long&nbsp;action,
                                                  long&nbsp;pActionData,
-                                                 int&nbsp;unActionDataSize,
-                                                 long&nbsp;ulRestrictToDevice)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData.Buffer,long)"><code>GetSkeletalActionData</code></a></div>
+                                                 int&nbsp;unActionDataSize)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData,int)"><code>GetSkeletalActionData</code></a></div>
 </li>
 </ul>
-<a id="VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData.Buffer,long)">
+<a id="VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData,int)">
+<!--   -->
+</a>
+<a id="VRInput_GetSkeletalActionData(long,org.lwjgl.openvr.InputSkeletalActionData)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>VRInput_GetSkeletalActionData</h4>
 <pre>public static&nbsp;int&nbsp;VRInput_GetSkeletalActionData&#8203;(long&nbsp;action,
-                                                <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a>&nbsp;pActionData,
-                                                long&nbsp;ulRestrictToDevice)</pre>
+                                                <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a>&nbsp;pActionData,
+                                                int&nbsp;unActionDataSize)
+
+public static&nbsp;int&nbsp;VRInput_GetSkeletalActionData&#8203;(long&nbsp;action,
+                                                <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a>&nbsp;pActionData)
+</pre>
 <div class="block">Reads the state of a skeletal action given its handle.</div>
+</li></ul>
+<a id="nVRInput_GetBoneCount(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nVRInput_GetBoneCount</h4>
+<pre>public static&nbsp;int&nbsp;nVRInput_GetBoneCount&#8203;(long&nbsp;action,
+                                        long&nbsp;pBoneCount)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetBoneCount(long,java.nio.IntBuffer)"><code>GetBoneCount</code></a></div>
 </li>
 </ul>
-<a id="nVRInput_GetSkeletalBoneData(long,int,int,long,int,long)">
+<a id="VRInput_GetBoneCount(long,java.nio.IntBuffer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VRInput_GetBoneCount</h4>
+<pre>public static&nbsp;int&nbsp;VRInput_GetBoneCount&#8203;(long&nbsp;action,
+                                       java.nio.IntBuffer&nbsp;pBoneCount)</pre>
+<div class="block">Reads the number of bones in skeleton associated with the given action.</div>
+</li>
+</ul>
+<a id="nVRInput_GetBoneHierarchy(long,long,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nVRInput_GetBoneHierarchy</h4>
+<pre>public static&nbsp;int&nbsp;nVRInput_GetBoneHierarchy&#8203;(long&nbsp;action,
+                                            long&nbsp;pParentIndices,
+                                            int&nbsp;unIndexArrayCount)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetBoneHierarchy(long,java.nio.IntBuffer)"><code>GetBoneHierarchy</code></a></div>
+</li>
+</ul>
+<a id="VRInput_GetBoneHierarchy(long,java.nio.IntBuffer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VRInput_GetBoneHierarchy</h4>
+<pre>public static&nbsp;int&nbsp;VRInput_GetBoneHierarchy&#8203;(long&nbsp;action,
+                                           java.nio.IntBuffer&nbsp;pParentIndices)</pre>
+<div class="block">Fills the given array with the index of each bone's parent in the skeleton associated with the given action.</div>
+</li>
+</ul>
+<a id="nVRInput_GetBoneName(long,int,long,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nVRInput_GetBoneName</h4>
+<pre>public static&nbsp;int&nbsp;nVRInput_GetBoneName&#8203;(long&nbsp;action,
+                                       int&nbsp;nBoneIndex,
+                                       long&nbsp;pchBoneName,
+                                       int&nbsp;unNameBufferSize)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetBoneName(long,int,java.nio.ByteBuffer)"><code>GetBoneName</code></a></div>
+</li>
+</ul>
+<a id="VRInput_GetBoneName(long,int,java.nio.ByteBuffer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VRInput_GetBoneName</h4>
+<pre>public static&nbsp;int&nbsp;VRInput_GetBoneName&#8203;(long&nbsp;action,
+                                      int&nbsp;nBoneIndex,
+                                      java.nio.ByteBuffer&nbsp;pchBoneName)</pre>
+<div class="block">Fills the given buffer with the name of the bone at the given index in the skeleton associated with the given action.</div>
+</li>
+</ul>
+<a id="nVRInput_GetSkeletalReferenceTransforms(long,int,int,long,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nVRInput_GetSkeletalReferenceTransforms</h4>
+<pre>public static&nbsp;int&nbsp;nVRInput_GetSkeletalReferenceTransforms&#8203;(long&nbsp;action,
+                                                          int&nbsp;eTransformSpace,
+                                                          int&nbsp;eReferencePose,
+                                                          long&nbsp;pTransformArray,
+                                                          int&nbsp;unTransformArrayCount)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalReferenceTransforms(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer)"><code>GetSkeletalReferenceTransforms</code></a></div>
+</li>
+</ul>
+<a id="VRInput_GetSkeletalReferenceTransforms(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VRInput_GetSkeletalReferenceTransforms</h4>
+<pre>public static&nbsp;int&nbsp;VRInput_GetSkeletalReferenceTransforms&#8203;(long&nbsp;action,
+                                                         int&nbsp;eTransformSpace,
+                                                         int&nbsp;eReferencePose,
+                                                         <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray)</pre>
+<div class="block">Fills the given buffer with the transforms for a specific static skeletal reference pose.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>eTransformSpace</code> - one of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent</code></a></td></tr></table></dd>
+<dd><code>eReferencePose</code> - one of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalReferencePose_VRSkeletalReferencePose_BindPose"><code>VR.EVRSkeletalReferencePose_VRSkeletalReferencePose_BindPose</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalReferencePose_VRSkeletalReferencePose_OpenHand"><code>VR.EVRSkeletalReferencePose_VRSkeletalReferencePose_OpenHand</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalReferencePose_VRSkeletalReferencePose_Fist"><code>VR.EVRSkeletalReferencePose_VRSkeletalReferencePose_Fist</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalReferencePose_VRSkeletalReferencePose_GripLimit"><code>VR.EVRSkeletalReferencePose_VRSkeletalReferencePose_GripLimit</code></a></td></tr></table></dd>
+</dl>
+</li>
+</ul>
+<a id="nVRInput_GetSkeletalTrackingLevel(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nVRInput_GetSkeletalTrackingLevel</h4>
+<pre>public static&nbsp;int&nbsp;nVRInput_GetSkeletalTrackingLevel&#8203;(long&nbsp;action,
+                                                    long&nbsp;pSkeletalTrackingLevel)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalTrackingLevel(long,java.nio.IntBuffer)"><code>GetSkeletalTrackingLevel</code></a></div>
+</li>
+</ul>
+<a id="VRInput_GetSkeletalTrackingLevel(long,java.nio.IntBuffer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VRInput_GetSkeletalTrackingLevel</h4>
+<pre>public static&nbsp;int&nbsp;VRInput_GetSkeletalTrackingLevel&#8203;(long&nbsp;action,
+                                                   java.nio.IntBuffer&nbsp;pSkeletalTrackingLevel)</pre>
+<div class="block">Reads the level of accuracy to which the controller is able to track the user to recreate a skeletal pose.</div>
+</li>
+</ul>
+<a id="nVRInput_GetSkeletalBoneData(long,int,int,long,int)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -787,12 +1091,11 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
                                                int&nbsp;eTransformSpace,
                                                int&nbsp;eMotionRange,
                                                long&nbsp;pTransformArray,
-                                               int&nbsp;unTransformArrayCount,
-                                               long&nbsp;ulRestrictToDevice)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneData(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer,long)"><code>GetSkeletalBoneData</code></a></div>
+                                               int&nbsp;unTransformArrayCount)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneData(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer)"><code>GetSkeletalBoneData</code></a></div>
 </li>
 </ul>
-<a id="VRInput_GetSkeletalBoneData(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer,long)">
+<a id="VRInput_GetSkeletalBoneData(long,int,int,org.lwjgl.openvr.VRBoneTransform.Buffer)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -801,79 +1104,99 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
 <pre>public static&nbsp;int&nbsp;VRInput_GetSkeletalBoneData&#8203;(long&nbsp;action,
                                               int&nbsp;eTransformSpace,
                                               int&nbsp;eMotionRange,
-                                              <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray,
-                                              long&nbsp;ulRestrictToDevice)</pre>
+                                              <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray)</pre>
 <div class="block">Reads the state of the skeletal bone data associated with this action and copies it into the given buffer.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>eTransformSpace</code> - one of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Additive"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Additive</code></a></td></tr></table></dd>
+<dd><code>eTransformSpace</code> - one of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent</code></a></td></tr></table></dd>
 <dd><code>eMotionRange</code> - one of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalMotionRange_VRSkeletalMotionRange_WithController"><code>VR.EVRSkeletalMotionRange_VRSkeletalMotionRange_WithController</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalMotionRange_VRSkeletalMotionRange_WithoutController"><code>VR.EVRSkeletalMotionRange_VRSkeletalMotionRange_WithoutController</code></a></td></tr></table></dd>
 </dl>
 </li>
 </ul>
-<a id="nVRInput_GetSkeletalBoneDataCompressed(long,int,int,long,int,long,long)">
+<a id="nVRInput_GetSkeletalSummaryData(long,long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nVRInput_GetSkeletalSummaryData</h4>
+<pre>public static&nbsp;int&nbsp;nVRInput_GetSkeletalSummaryData&#8203;(long&nbsp;action,
+                                                  long&nbsp;pSkeletalSummaryData)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalSummaryData(long,org.lwjgl.openvr.VRSkeletalSummaryData)"><code>GetSkeletalSummaryData</code></a></div>
+</li>
+</ul>
+<a id="VRInput_GetSkeletalSummaryData(long,org.lwjgl.openvr.VRSkeletalSummaryData)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VRInput_GetSkeletalSummaryData</h4>
+<pre>public static&nbsp;int&nbsp;VRInput_GetSkeletalSummaryData&#8203;(long&nbsp;action,
+                                                 <a href="../../../org/lwjgl/openvr/VRSkeletalSummaryData.html" title="class in org.lwjgl.openvr">VRSkeletalSummaryData</a>&nbsp;pSkeletalSummaryData)</pre>
+<div class="block">Reads summary information about the current pose of the skeleton associated with the given action.</div>
+</li>
+</ul>
+<a id="nVRInput_GetSkeletalBoneDataCompressed(long,int,long,int,long)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>nVRInput_GetSkeletalBoneDataCompressed</h4>
 <pre>public static&nbsp;int&nbsp;nVRInput_GetSkeletalBoneDataCompressed&#8203;(long&nbsp;action,
-                                                         int&nbsp;eTransformSpace,
                                                          int&nbsp;eMotionRange,
                                                          long&nbsp;pvCompressedData,
                                                          int&nbsp;unCompressedSize,
-                                                         long&nbsp;punRequiredCompressedSize,
-                                                         long&nbsp;ulRestrictToDevice)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,int,java.nio.ByteBuffer,java.nio.IntBuffer,long)"><code>GetSkeletalBoneDataCompressed</code></a></div>
+                                                         long&nbsp;punRequiredCompressedSize)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,java.nio.ByteBuffer,java.nio.IntBuffer)"><code>GetSkeletalBoneDataCompressed</code></a></div>
 </li>
 </ul>
-<a id="VRInput_GetSkeletalBoneDataCompressed(long,int,int,java.nio.ByteBuffer,java.nio.IntBuffer,long)">
+<a id="VRInput_GetSkeletalBoneDataCompressed(long,int,java.nio.ByteBuffer,java.nio.IntBuffer)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>VRInput_GetSkeletalBoneDataCompressed</h4>
 <pre>public static&nbsp;int&nbsp;VRInput_GetSkeletalBoneDataCompressed&#8203;(long&nbsp;action,
-                                                        int&nbsp;eTransformSpace,
                                                         int&nbsp;eMotionRange,
                                                         @Nullable
                                                         java.nio.ByteBuffer&nbsp;pvCompressedData,
                                                         @Nullable
-                                                        java.nio.IntBuffer&nbsp;punRequiredCompressedSize,
-                                                        long&nbsp;ulRestrictToDevice)</pre>
+                                                        java.nio.IntBuffer&nbsp;punRequiredCompressedSize)</pre>
 <div class="block">Reads the state of the skeletal bone data in a compressed form that is suitable for sending over the network. The required buffer size will never
  exceed (<code>sizeof(VR_BoneTransform_t)*boneCount + 2</code>). Usually the size will be much smaller.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>eTransformSpace</code> - one of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Additive"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Additive</code></a></td></tr></table></dd>
 <dd><code>eMotionRange</code> - one of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalMotionRange_VRSkeletalMotionRange_WithController"><code>VR.EVRSkeletalMotionRange_VRSkeletalMotionRange_WithController</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalMotionRange_VRSkeletalMotionRange_WithoutController"><code>VR.EVRSkeletalMotionRange_VRSkeletalMotionRange_WithoutController</code></a></td></tr></table></dd>
 </dl>
 </li>
 </ul>
-<a id="nVRInput_UncompressSkeletalActionData(long,int,long,long,int)">
+<a id="nVRInput_DecompressSkeletalBoneData(long,int,int,long,int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>nVRInput_UncompressSkeletalActionData</h4>
-<pre>public static&nbsp;int&nbsp;nVRInput_UncompressSkeletalActionData&#8203;(long&nbsp;pvCompressedBuffer,
-                                                        int&nbsp;unCompressedBufferSize,
-                                                        long&nbsp;peTransformSpace,
-                                                        long&nbsp;pTransformArray,
-                                                        int&nbsp;unTransformArrayCount)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_UncompressSkeletalActionData(java.nio.ByteBuffer,java.nio.IntBuffer,org.lwjgl.openvr.VRBoneTransform.Buffer)"><code>UncompressSkeletalActionData</code></a></div>
+<h4>nVRInput_DecompressSkeletalBoneData</h4>
+<pre>public static&nbsp;int&nbsp;nVRInput_DecompressSkeletalBoneData&#8203;(long&nbsp;pvCompressedBuffer,
+                                                      int&nbsp;unCompressedBufferSize,
+                                                      int&nbsp;eTransformSpace,
+                                                      long&nbsp;pTransformArray,
+                                                      int&nbsp;unTransformArrayCount)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_DecompressSkeletalBoneData(java.nio.ByteBuffer,int,org.lwjgl.openvr.VRBoneTransform.Buffer)"><code>DecompressSkeletalBoneData</code></a></div>
 </li>
 </ul>
-<a id="VRInput_UncompressSkeletalActionData(java.nio.ByteBuffer,java.nio.IntBuffer,org.lwjgl.openvr.VRBoneTransform.Buffer)">
+<a id="VRInput_DecompressSkeletalBoneData(java.nio.ByteBuffer,int,org.lwjgl.openvr.VRBoneTransform.Buffer)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>VRInput_UncompressSkeletalActionData</h4>
-<pre>public static&nbsp;int&nbsp;VRInput_UncompressSkeletalActionData&#8203;(java.nio.ByteBuffer&nbsp;pvCompressedBuffer,
-                                                       java.nio.IntBuffer&nbsp;peTransformSpace,
-                                                       <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray)</pre>
-<div class="block">Turns a compressed buffer from <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,int,java.nio.ByteBuffer,java.nio.IntBuffer,long)"><code>GetSkeletalBoneDataCompressed</code></a> and turns it back into a bone transform array.</div>
+<h4>VRInput_DecompressSkeletalBoneData</h4>
+<pre>public static&nbsp;int&nbsp;VRInput_DecompressSkeletalBoneData&#8203;(java.nio.ByteBuffer&nbsp;pvCompressedBuffer,
+                                                     int&nbsp;eTransformSpace,
+                                                     <a href="../../../org/lwjgl/openvr/VRBoneTransform.Buffer.html" title="class in org.lwjgl.openvr">VRBoneTransform.Buffer</a>&nbsp;pTransformArray)</pre>
+<div class="block">Turns a compressed buffer from <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetSkeletalBoneDataCompressed(long,int,java.nio.ByteBuffer,java.nio.IntBuffer)"><code>GetSkeletalBoneDataCompressed</code></a> and turns it back into a bone transform array.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>eTransformSpace</code> - one of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Model</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent"><code>VR.EVRSkeletalTransformSpace_VRSkeletalTransformSpace_Parent</code></a></td></tr></table></dd>
+</dl>
 </li>
 </ul>
 <a id="VRInput_TriggerHapticVibrationAction(long,float,float,float,float,long)">
@@ -916,7 +1239,7 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
 <div class="block">Retrieve origin handles for an action.</div>
 </li>
 </ul>
-<a id="nVRInput_GetOriginLocalizedName(long,long,int)">
+<a id="nVRInput_GetOriginLocalizedName(long,long,int,int)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -924,19 +1247,26 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
 <h4>nVRInput_GetOriginLocalizedName</h4>
 <pre>public static&nbsp;int&nbsp;nVRInput_GetOriginLocalizedName&#8203;(long&nbsp;origin,
                                                   long&nbsp;pchNameArray,
-                                                  int&nbsp;unNameArraySize)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginLocalizedName(long,java.nio.ByteBuffer)"><code>GetOriginLocalizedName</code></a></div>
+                                                  int&nbsp;unNameArraySize,
+                                                  int&nbsp;unStringSectionsToInclude)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginLocalizedName(long,java.nio.ByteBuffer,int)"><code>GetOriginLocalizedName</code></a></div>
 </li>
 </ul>
-<a id="VRInput_GetOriginLocalizedName(long,java.nio.ByteBuffer)">
+<a id="VRInput_GetOriginLocalizedName(long,java.nio.ByteBuffer,int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>VRInput_GetOriginLocalizedName</h4>
 <pre>public static&nbsp;int&nbsp;VRInput_GetOriginLocalizedName&#8203;(long&nbsp;origin,
-                                                 java.nio.ByteBuffer&nbsp;pchNameArray)</pre>
+                                                 java.nio.ByteBuffer&nbsp;pchNameArray,
+                                                 int&nbsp;unStringSectionsToInclude)</pre>
 <div class="block">Retrieves the name of the origin in the current language.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>unStringSectionsToInclude</code> - a bitfield of values in <code>EVRInputStringBits</code> that allows the application to specify which parts of the origin's information it wants a string
+                                  for. One or more of:<br><table><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRInputStringBits_VRInputString_Hand"><code>VR.EVRInputStringBits_VRInputString_Hand</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRInputStringBits_VRInputString_ControllerType"><code>VR.EVRInputStringBits_VRInputString_ControllerType</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRInputStringBits_VRInputString_InputSource"><code>VR.EVRInputStringBits_VRInputString_InputSource</code></a></td></tr><tr><td><a href="../../../org/lwjgl/openvr/VR.html#EVRInputStringBits_VRInputString_All"><code>VR.EVRInputStringBits_VRInputString_All</code></a></td></tr></table></dd>
+</dl>
 </li>
 </ul>
 <a id="nVRInput_GetOriginTrackedDeviceInfo(long,long,int)">
@@ -948,20 +1278,27 @@ public static&nbsp;int&nbsp;VRInput_GetInputSourceHandle&#8203;(java.lang.CharSe
 <pre>public static&nbsp;int&nbsp;nVRInput_GetOriginTrackedDeviceInfo&#8203;(long&nbsp;origin,
                                                       long&nbsp;pOriginInfo,
                                                       int&nbsp;unOriginInfoSize)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo.Buffer)"><code>GetOriginTrackedDeviceInfo</code></a></div>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/openvr/VRInput.html#VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo,int)"><code>GetOriginTrackedDeviceInfo</code></a></div>
 </li>
 </ul>
-<a id="VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo.Buffer)">
+<a id="VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo,int)">
+<!--   -->
+</a>
+<a id="VRInput_GetOriginTrackedDeviceInfo(long,org.lwjgl.openvr.InputOriginInfo)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>VRInput_GetOriginTrackedDeviceInfo</h4>
 <pre>public static&nbsp;int&nbsp;VRInput_GetOriginTrackedDeviceInfo&#8203;(long&nbsp;origin,
-                                                     <a href="../../../org/lwjgl/openvr/InputOriginInfo.Buffer.html" title="class in org.lwjgl.openvr">InputOriginInfo.Buffer</a>&nbsp;pOriginInfo)</pre>
+                                                     <a href="../../../org/lwjgl/openvr/InputOriginInfo.html" title="class in org.lwjgl.openvr">InputOriginInfo</a>&nbsp;pOriginInfo,
+                                                     int&nbsp;unOriginInfoSize)
+
+public static&nbsp;int&nbsp;VRInput_GetOriginTrackedDeviceInfo&#8203;(long&nbsp;origin,
+                                                     <a href="../../../org/lwjgl/openvr/InputOriginInfo.html" title="class in org.lwjgl.openvr">InputOriginInfo</a>&nbsp;pOriginInfo)
+</pre>
 <div class="block">Retrieves useful information for the origin of this action.</div>
-</li>
-</ul>
+</li></ul>
 <a id="VRInput_ShowActionOrigins(long,long)">
 <!--   -->
 </a>

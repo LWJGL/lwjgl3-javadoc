@@ -404,7 +404,7 @@ extends java.lang.Object</pre>
  
  <p>The custom sample locations used for rasterization when <a href="../../../org/lwjgl/vulkan/VkPipelineSampleLocationsStateCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkPipelineSampleLocationsStateCreateInfoEXT</code></a><code>::sampleLocationsEnable</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a> are specified by the <a href="../../../org/lwjgl/vulkan/VkPipelineSampleLocationsStateCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkPipelineSampleLocationsStateCreateInfoEXT</code></a><code>::sampleLocationsInfo</code> property of the bound graphics pipeline, if the pipeline was not created with <a href="../../../org/lwjgl/vulkan/EXTSampleLocations.html#VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_EXT"><code>DYNAMIC_STATE_SAMPLE_LOCATIONS_EXT</code></a> enabled.</p>
  
- <p>Otherwise, the sample locations used for rasterization are set by calling <a href="../../../org/lwjgl/vulkan/EXTSampleLocations.html#vkCmdSetSampleLocationsEXT(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkSampleLocationsInfoEXT)"><code>CmdSetSampleLocationsEXT</code></a>:</p>
+ <p>Otherwise, the sample locations used for rasterization are set by calling <code>vkCmdSetSampleLocationsEXT</code>:</p>
  
  <pre><code>
  void vkCmdSetSampleLocationsEXT(

@@ -143,7 +143,7 @@ extends java.lang.Object</pre>
  <ul>
  <li>Elements of <a href="../../../org/lwjgl/vulkan/VkRenderPassMultiviewCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassMultiviewCreateInfo</code></a><code>::pViewMasks</code> are now specified in <a href="../../../org/lwjgl/vulkan/VkSubpassDescription2KHR.html" title="class in org.lwjgl.vulkan"><code>VkSubpassDescription2KHR</code></a><code>::viewMask</code>.</li>
  <li>Elements of <a href="../../../org/lwjgl/vulkan/VkRenderPassMultiviewCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassMultiviewCreateInfo</code></a><code>::pViewOffsets</code> are now specified in <a href="../../../org/lwjgl/vulkan/VkSubpassDependency2KHR.html" title="class in org.lwjgl.vulkan"><code>VkSubpassDependency2KHR</code></a><code>::viewOffset</code>.</li>
- <li><a href="../../../org/lwjgl/vulkan/VkRenderPassMultiviewCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassMultiviewCreateInfo</code></a><code>::correlationMaskCount</code> and <a href="../../../org/lwjgl/vulkan/VkRenderPassMultiviewCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassMultiviewCreateInfo</code></a><code>::pCorrelationMasks</code> are directly specified in slink::VkRenderPassCreateInfo2KHR.</li>
+ <li><a href="../../../org/lwjgl/vulkan/VkRenderPassMultiviewCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassMultiviewCreateInfo</code></a><code>::correlationMaskCount</code> and <a href="../../../org/lwjgl/vulkan/VkRenderPassMultiviewCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassMultiviewCreateInfo</code></a><code>::pCorrelationMasks</code> are directly specified in <a href="../../../org/lwjgl/vulkan/VkRenderPassCreateInfo2KHR.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassCreateInfo2KHR</code></a>.</li>
  <li><a href="../../../org/lwjgl/vulkan/VkInputAttachmentAspectReference.html" title="class in org.lwjgl.vulkan"><code>VkInputAttachmentAspectReference</code></a><code>::aspectMask</code> is now specified in the relevant input attachment description in <a href="../../../org/lwjgl/vulkan/VkAttachmentDescription2KHR.html" title="class in org.lwjgl.vulkan"><code>VkAttachmentDescription2KHR</code></a><code>::aspectMask</code></li>
  </ul>
  
@@ -533,7 +533,8 @@ extends java.lang.Object</pre>
  <li>If any of the <code>initialLayout</code> or <code>finalLayout</code> member of the <a href="../../../org/lwjgl/vulkan/VkAttachmentDescription.html" title="class in org.lwjgl.vulkan"><code>VkAttachmentDescription</code></a> structures or the <code>layout</code> member of the <a href="../../../org/lwjgl/vulkan/VkAttachmentReference.html" title="class in org.lwjgl.vulkan"><code>VkAttachmentReference</code></a> structures specified when creating the render pass specified in the <code>renderPass</code> member of <code>pRenderPassBegin</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL"><code>IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL</code></a> then the corresponding attachment image subresource of the framebuffer specified in the <code>framebuffer</code> member of <code>pRenderPassBegin</code> <b>must</b> have been created with <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_USAGE_TRANSFER_SRC_BIT"><code>IMAGE_USAGE_TRANSFER_SRC_BIT</code></a> set</li>
  <li>If any of the <code>initialLayout</code> or <code>finalLayout</code> member of the <a href="../../../org/lwjgl/vulkan/VkAttachmentDescription.html" title="class in org.lwjgl.vulkan"><code>VkAttachmentDescription</code></a> structures or the <code>layout</code> member of the <a href="../../../org/lwjgl/vulkan/VkAttachmentReference.html" title="class in org.lwjgl.vulkan"><code>VkAttachmentReference</code></a> structures specified when creating the render pass specified in the <code>renderPass</code> member of <code>pRenderPassBegin</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL"><code>IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</code></a> then the corresponding attachment image subresource of the framebuffer specified in the <code>framebuffer</code> member of <code>pRenderPassBegin</code> <b>must</b> have been created with <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_USAGE_TRANSFER_DST_BIT"><code>IMAGE_USAGE_TRANSFER_DST_BIT</code></a> set</li>
  <li>If any of the <code>initialLayout</code> members of the <a href="../../../org/lwjgl/vulkan/VkAttachmentDescription.html" title="class in org.lwjgl.vulkan"><code>VkAttachmentDescription</code></a> structures specified when creating the render pass specified in the <code>renderPass</code> member of <code>pRenderPassBegin</code> is not <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_LAYOUT_UNDEFINED"><code>IMAGE_LAYOUT_UNDEFINED</code></a>, then each such <code>initialLayout</code> <b>must</b> be equal to the current layout of the corresponding attachment image subresource of the framebuffer specified in the <code>framebuffer</code> member of <code>pRenderPassBegin</code></li>
- <li>The <code>srcStageMask</code> and <code>dstStageMask</code> members of any element of the <code>pDependencies</code> member of <a href="../../../org/lwjgl/vulkan/VkRenderPassCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassCreateInfo</code></a> used to create <code>renderPass</code> <b>must</b> be supported by the capabilities of the queue family identified by the <code>queueFamilyIndex</code> member of the <a href="../../../org/lwjgl/vulkan/VkCommandPoolCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkCommandPoolCreateInfo</code></a> used to create the command pool which <code>commandBuffer</code> was allocated from.</li>
+ <li>The <code>srcStageMask</code> and <code>dstStageMask</code> members of any element of the <code>pDependencies</code> member of <a href="../../../org/lwjgl/vulkan/VkRenderPassCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkRenderPassCreateInfo</code></a> used to create <code>renderPass</code> <b>must</b> be supported by the capabilities of the queue family identified by the <code>queueFamilyIndex</code> member of the <a href="../../../org/lwjgl/vulkan/VkCommandPoolCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkCommandPoolCreateInfo</code></a> used to create the command pool which <code>commandBuffer</code> was allocated from</li>
+ <li>For any attachment in <code>framebuffer</code> that is used by <code>renderPass</code> and is bound to memory locations that are also bound to another attachment used by <code>renderPass</code>, and if at least one of those uses causes either attachment to be written to, both attachments <b>must</b> have had the <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT"><code>ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT</code></a> set</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -608,12 +609,13 @@ extends java.lang.Object</pre>
  
  <h5>Description</h5>
  
- <p><a href="../../../org/lwjgl/vulkan/KHRCreateRenderpass2.html#vkCmdNextSubpass2KHR(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkSubpassBeginInfoKHR,org.lwjgl.vulkan.VkSubpassEndInfoKHR)"><code>CmdNextSubpass2KHR</code></a> is semantically identical to <a href="../../../org/lwjgl/vulkan/VK10.html#vkCmdNextSubpass(org.lwjgl.vulkan.VkCommandBuffer,int)"><code>CmdNextSubpass</code></a>, except that it is extensible, and that <code>contents</code> is provided as part of an extensible structure instead of as a flat parameter.</p>
+ <p><code>vkCmdNextSubpass2KHR</code> is semantically identical to <a href="../../../org/lwjgl/vulkan/VK10.html#vkCmdNextSubpass(org.lwjgl.vulkan.VkCommandBuffer,int)"><code>CmdNextSubpass</code></a>, except that it is extensible, and that <code>contents</code> is provided as part of an extensible structure instead of as a flat parameter.</p>
  
  <h5>Valid Usage</h5>
  
  <ul>
  <li>The current subpass index <b>must</b> be less than the number of subpasses in the render pass minus one</li>
+ <li>This command <b>must</b> not be recorded when transform feedback is active</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -685,12 +687,13 @@ extends java.lang.Object</pre>
  
  <h5>Description</h5>
  
- <p><a href="../../../org/lwjgl/vulkan/KHRCreateRenderpass2.html#vkCmdEndRenderPass2KHR(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkSubpassEndInfoKHR)"><code>CmdEndRenderPass2KHR</code></a> is semantically identical to <a href="../../../org/lwjgl/vulkan/VK10.html#vkCmdEndRenderPass(org.lwjgl.vulkan.VkCommandBuffer)"><code>CmdEndRenderPass</code></a>, except that it is extensible.</p>
+ <p><code>vkCmdEndRenderPass2KHR</code> is semantically identical to <a href="../../../org/lwjgl/vulkan/VK10.html#vkCmdEndRenderPass(org.lwjgl.vulkan.VkCommandBuffer)"><code>CmdEndRenderPass</code></a>, except that it is extensible.</p>
  
  <h5>Valid Usage</h5>
  
  <ul>
  <li>The current subpass index <b>must</b> be equal to the number of subpasses in the render pass minus one</li>
+ <li>This command <b>must</b> not be recorded when transform feedback is active</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>

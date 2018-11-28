@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -222,19 +222,29 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/system/SharedLibrary.html" title="interface in org.lwjgl.system">SharedLibrary</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/Library.html#loadNative(java.lang.Class,org.lwjgl.system.Configuration,java.util.function.Supplier,java.lang.String...)">loadNative</a></span>&#8203;(java.lang.Class&lt;?&gt;&nbsp;context,
+          <a href="../../../org/lwjgl/system/Configuration.html" title="class in org.lwjgl.system">Configuration</a>&lt;java.lang.String&gt;&nbsp;name,
+          java.util.function.Supplier&lt;<a href="../../../org/lwjgl/system/SharedLibrary.html" title="interface in org.lwjgl.system">SharedLibrary</a>&gt;&nbsp;fallback,
+          java.lang.String...&nbsp;defaultNames)</code></th>
+<td class="colLast">
+<div class="block">Loads a shared library using <a href="../../../org/lwjgl/system/Library.html#loadNative(java.lang.String)"><code>loadNative(String)</code></a> with the name specified by <code>name</code>.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static <a href="../../../org/lwjgl/system/SharedLibrary.html" title="interface in org.lwjgl.system">SharedLibrary</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/Library.html#loadNative(java.lang.String)">loadNative</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Calls <a href="../../../org/lwjgl/system/Library.html#loadNative(java.lang.Class,java.lang.String)"><code>loadNative(Class, String)</code></a> using <code>Library.class</code> as the context parameter.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/Library.html#loadSystem(java.lang.String)">loadSystem</a></span>&#8203;(java.lang.String&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Loads a JNI shared library.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/system/Library.html#loadSystem(java.util.function.Consumer,java.util.function.Consumer,java.lang.Class,java.lang.String)">loadSystem</a></span>&#8203;(java.util.function.Consumer&lt;java.lang.String&gt;&nbsp;load,
           java.util.function.Consumer&lt;java.lang.String&gt;&nbsp;loadLibrary,
@@ -401,7 +411,7 @@ extends java.lang.Object</pre>
 <a id="loadNative(java.lang.Class,org.lwjgl.system.Configuration,java.lang.String...)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>loadNative</h4>
 <pre>public static&nbsp;<a href="../../../org/lwjgl/system/SharedLibrary.html" title="interface in org.lwjgl.system">SharedLibrary</a>&nbsp;loadNative&#8203;(java.lang.Class&lt;?&gt;&nbsp;context,
@@ -412,7 +422,33 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - a <a href="../../../org/lwjgl/system/Configuration.html" title="class in org.lwjgl.system"><code>Configuration</code></a> that specifies the library name</dd>
-<dd><code>defaultNames</code> - the default library name</dd>
+<dd><code>defaultNames</code> - the default library name(s)</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the shared library</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsatisfiedLinkError</code> - if the library could not be loaded</dd>
+</dl>
+</li>
+</ul>
+<a id="loadNative(java.lang.Class,org.lwjgl.system.Configuration,java.util.function.Supplier,java.lang.String...)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>loadNative</h4>
+<pre>public static&nbsp;<a href="../../../org/lwjgl/system/SharedLibrary.html" title="interface in org.lwjgl.system">SharedLibrary</a>&nbsp;loadNative&#8203;(java.lang.Class&lt;?&gt;&nbsp;context,
+                                       <a href="../../../org/lwjgl/system/Configuration.html" title="class in org.lwjgl.system">Configuration</a>&lt;java.lang.String&gt;&nbsp;name,
+                                       @Nullable
+                                       java.util.function.Supplier&lt;<a href="../../../org/lwjgl/system/SharedLibrary.html" title="interface in org.lwjgl.system">SharedLibrary</a>&gt;&nbsp;fallback,
+                                       java.lang.String...&nbsp;defaultNames)</pre>
+<div class="block">Loads a shared library using <a href="../../../org/lwjgl/system/Library.html#loadNative(java.lang.String)"><code>loadNative(String)</code></a> with the name specified by <code>name</code>. If <code>name</code> is not set,
+ <a href="../../../org/lwjgl/system/Library.html#loadNative(java.lang.String)"><code>loadNative(String)</code></a> will be called with the names specified by <code>defaultNames</code>. The first successful will be returned. If the library could
+ not be loaded, the <code>fallback</code> will be called.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - a <a href="../../../org/lwjgl/system/Configuration.html" title="class in org.lwjgl.system"><code>Configuration</code></a> that specifies the library name</dd>
+<dd><code>fallback</code> - fallback to use if everything else fails</dd>
+<dd><code>defaultNames</code> - the default library name(s)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the shared library</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>

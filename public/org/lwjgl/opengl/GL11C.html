@@ -4309,10 +4309,12 @@ public static&nbsp;void&nbsp;glDrawElements&#8203;(int&nbsp;mode,
 <li class="blockList">
 <h4>glGetError</h4>
 <pre>public static&nbsp;int&nbsp;glGetError()</pre>
-<div class="block">Returns error information. Each detectable error is assigned a numeric code. When an error is detected, a flag is set and the code is recorded. Further
- errors, if they occur, do not affect this recorded code. When <code>GetError</code> is called, the code is returned and the flag is cleared, so that a
- further error will again record its code. If a call to <code>GetError</code> returns <a href="../../../org/lwjgl/opengl/GL11C.html#GL_NO_ERROR"><code>NO_ERROR</code></a>, then there has been no detectable error since
- the last call to <code>GetError</code> (or since the GL was initialized).</div>
+<div class="block">Returns error information.
+ 
+ <p>Each detectable error is assigned a numeric code. When an error is detected, a flag is set and the code is recorded. Further errors, if they occur, do
+ not affect this recorded code. When <code>GetError</code> is called, the code is returned and the flag is cleared, so that a further error will again record
+ its code. If a call to <code>GetError</code> returns <a href="../../../org/lwjgl/opengl/GL11C.html#GL_NO_ERROR"><code>NO_ERROR</code></a>, then there has been no detectable error since the last call to <code>GetError</code> (or since
+ the GL was initialized).</p></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a target="_blank" href="http://docs.gl/gl4/glGetError">Reference Page</a></dd>

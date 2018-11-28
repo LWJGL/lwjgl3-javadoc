@@ -177,7 +177,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h3>Member documentation</h3>
  
  <ul>
- <li><code>stageFlags</code> &ndash; a set of stage flags describing the shader stages that will access a range of push constants. If a particular stage is not included in the range, then accessing members of that range of push constants from the corresponding shader stage will result in undefined data being read.</li>
+ <li><code>stageFlags</code> &ndash; a set of stage flags describing the shader stages that will access a range of push constants. If a particular stage is not included in the range, then accessing members of that range of push constants from the corresponding shader stage will return undefined values.</li>
  <li><code>offset</code> &ndash; <code>offset</code> and <code>size</code> are the start offset and size, respectively, consumed by the range. Both <code>offset</code> and <code>size</code> are in units of bytes and <b>must</b> be a multiple of 4. The layout of the push constant variables is specified in the shader.</li>
  <li><code>size</code> &ndash; see <code>offset</code></li>
  </ul>

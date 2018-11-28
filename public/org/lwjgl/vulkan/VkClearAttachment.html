@@ -155,9 +155,9 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <h5>Description</h5>
  
- <p>No memory barriers are needed between <a href="../../../org/lwjgl/vulkan/VK10.html#vkCmdClearAttachments(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkClearAttachment.Buffer,org.lwjgl.vulkan.VkClearRect.Buffer)"><code>CmdClearAttachments</code></a> and preceding or subsequent draw or attachment clear commands in the same subpass.</p>
+ <p>No memory barriers are needed between <code>vkCmdClearAttachments</code> and preceding or subsequent draw or attachment clear commands in the same subpass.</p>
  
- <p>The <a href="../../../org/lwjgl/vulkan/VK10.html#vkCmdClearAttachments(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkClearAttachment.Buffer,org.lwjgl.vulkan.VkClearRect.Buffer)"><code>CmdClearAttachments</code></a> command is not affected by the bound pipeline state.</p>
+ <p>The <code>vkCmdClearAttachments</code> command is not affected by the bound pipeline state.</p>
  
  <p>Attachments <b>can</b> also be cleared at the beginning of a render pass instance by setting <code>loadOp</code> (or <code>stencilLoadOp</code>) of <a href="../../../org/lwjgl/vulkan/VkAttachmentDescription.html" title="class in org.lwjgl.vulkan"><code>VkAttachmentDescription</code></a> to <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ATTACHMENT_LOAD_OP_CLEAR"><code>ATTACHMENT_LOAD_OP_CLEAR</code></a>, as described for <a href="../../../org/lwjgl/vulkan/VK10.html#vkCreateRenderPass(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkRenderPassCreateInfo,org.lwjgl.vulkan.VkAllocationCallbacks,java.nio.LongBuffer)"><code>CreateRenderPass</code></a>.</p>
  
@@ -166,9 +166,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <ul>
  <li>If <code>aspectMask</code> includes <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_ASPECT_COLOR_BIT"><code>IMAGE_ASPECT_COLOR_BIT</code></a>, it <b>must</b> not include <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_ASPECT_DEPTH_BIT"><code>IMAGE_ASPECT_DEPTH_BIT</code></a> or <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_ASPECT_STENCIL_BIT"><code>IMAGE_ASPECT_STENCIL_BIT</code></a></li>
  <li><code>aspectMask</code> <b>must</b> not include <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_ASPECT_METADATA_BIT"><code>IMAGE_ASPECT_METADATA_BIT</code></a></li>
+ <li><code>aspectMask</code> <b>must</b> not include <code>VK_IMAGE_ASPECT_MEMORY_PLANE__i__BIT_EXT</code> for any index <em>i</em>.</li>
  <li><code>clearValue</code> <b>must</b> be a valid <a href="../../../org/lwjgl/vulkan/VkClearValue.html" title="class in org.lwjgl.vulkan"><code>VkClearValue</code></a> union</li>
- <li>If <code>commandBuffer</code> is an unprotected command buffer, then the attachment to be cleared <b>must</b> not be a protected image.</li>
- <li>If <code>commandBuffer</code> is a protected command buffer, then the attachment to be cleared <b>must</b> not be an unprotected image.</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -185,8 +184,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h3>Member documentation</h3>
  
  <ul>
- <li><code>aspectMask</code> &ndash; a mask selecting the color, depth and/or stencil aspects of the attachment to be cleared. <code>aspectMask</code> <b>can</b> include <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_ASPECT_COLOR_BIT"><code>IMAGE_ASPECT_COLOR_BIT</code></a> for color attachments, <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_ASPECT_DEPTH_BIT"><code>IMAGE_ASPECT_DEPTH_BIT</code></a> for depth/stencil attachments with a depth component, and <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_ASPECT_STENCIL_BIT"><code>IMAGE_ASPECT_STENCIL_BIT</code></a> for depth/stencil attachments with a stencil component. If the subpass&#8217;s depth/stencil attachment is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ATTACHMENT_UNUSED"><code>ATTACHMENT_UNUSED</code></a>, then the clear has no effect.</li>
- <li><code>colorAttachment</code> &ndash; only meaningful if <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_ASPECT_COLOR_BIT"><code>IMAGE_ASPECT_COLOR_BIT</code></a> is set in <code>aspectMask</code>, in which case it is an index to the <code>pColorAttachments</code> array in the <a href="../../../org/lwjgl/vulkan/VkSubpassDescription.html" title="class in org.lwjgl.vulkan"><code>VkSubpassDescription</code></a> structure of the current subpass which selects the color attachment to clear. If <code>colorAttachment</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ATTACHMENT_UNUSED"><code>ATTACHMENT_UNUSED</code></a> then the clear has no effect.</li>
+ <li><code>aspectMask</code> &ndash; a mask selecting the color, depth and/or stencil aspects of the attachment to be cleared.</li>
+ <li><code>colorAttachment</code> &ndash; only meaningful if <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_ASPECT_COLOR_BIT"><code>IMAGE_ASPECT_COLOR_BIT</code></a> is set in <code>aspectMask</code>, in which case it is an index to the <code>pColorAttachments</code> array in the <a href="../../../org/lwjgl/vulkan/VkSubpassDescription.html" title="class in org.lwjgl.vulkan"><code>VkSubpassDescription</code></a> structure of the current subpass which selects the color attachment to clear.</li>
  <li><code>clearValue</code> &ndash; the color or depth/stencil value to clear the attachment to, as described in <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#clears-values">Clear Values</a> below.</li>
  </ul>
  

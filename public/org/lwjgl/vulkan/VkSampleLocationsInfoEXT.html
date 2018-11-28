@@ -159,6 +159,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <p>The sample locations in <code>pSampleLocations</code> specify <code>sampleLocationsPerPixel</code> number of sample locations for each pixel in the grid of the size specified in <code>sampleLocationGridSize</code>. The sample location for sample <code>i</code> at the pixel grid location <code>(x,y)</code> is taken from <code>pSampleLocations[(x + y <b> sampleLocationGridSize.width) </b> sampleLocationsPerPixel + i]</code>.</p>
  
+ <p>If the render pass has a fragment density map, the implementation will choose the sample locations for the fragment and the contents of <code>pSampleLocations</code> <b>may</b> be ignored.</p>
+ 
  <h5>Valid Usage</h5>
  
  <ul>
@@ -170,9 +172,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/EXTSampleLocations.html#VK_STRUCTURE_TYPE_SAMPLE_LOCATIONS_INFO_EXT"><code>STRUCTURE_TYPE_SAMPLE_LOCATIONS_INFO_EXT</code></a></li>
- <li><code>sampleLocationsPerPixel</code> <b>must</b> be a valid <code>VkSampleCountFlagBits</code> value</li>
- <li><code>pSampleLocations</code> <b>must</b> be a valid pointer to an array of <code>sampleLocationsCount</code> <a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.html" title="class in org.lwjgl.vulkan"><code>VkSampleLocationEXT</code></a> structures</li>
- <li><code>sampleLocationsCount</code> <b>must</b> be greater than 0</li>
+ <li>If <code>sampleLocationsPerPixel</code> is not 0, <code>sampleLocationsPerPixel</code> <b>must</b> be a valid <code>VkSampleCountFlagBits</code> value</li>
+ <li>If <code>sampleLocationsCount</code> is not 0, <code>pSampleLocations</code> <b>must</b> be a valid pointer to an array of <code>sampleLocationsCount</code> <a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.html" title="class in org.lwjgl.vulkan"><code>VkSampleLocationEXT</code></a> structures</li>
  </ul>
  
  <h5>See Also</h5>
@@ -875,7 +876,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>pSampleLocations</h4>
-<pre>public&nbsp;<a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkSampleLocationEXT.Buffer</a>&nbsp;pSampleLocations()</pre>
+<pre>@Nullable
+public&nbsp;<a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkSampleLocationEXT.Buffer</a>&nbsp;pSampleLocations()</pre>
 <div class="block">Returns a <a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan"><code>VkSampleLocationEXT.Buffer</code></a> view of the struct array pointed to by the <code>pSampleLocations</code> field.</div>
 </li>
 </ul>
@@ -925,7 +927,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>pSampleLocations</h4>
-<pre>public&nbsp;<a href="../../../org/lwjgl/vulkan/VkSampleLocationsInfoEXT.html" title="class in org.lwjgl.vulkan">VkSampleLocationsInfoEXT</a>&nbsp;pSampleLocations&#8203;(<a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkSampleLocationEXT.Buffer</a>&nbsp;value)</pre>
+<pre>public&nbsp;<a href="../../../org/lwjgl/vulkan/VkSampleLocationsInfoEXT.html" title="class in org.lwjgl.vulkan">VkSampleLocationsInfoEXT</a>&nbsp;pSampleLocations&#8203;(@Nullable
+                                                 <a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkSampleLocationEXT.Buffer</a>&nbsp;value)</pre>
 <div class="block">Sets the address of the specified <a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan"><code>VkSampleLocationEXT.Buffer</code></a> to the <code>pSampleLocations</code> field.</div>
 </li>
 </ul>
@@ -939,6 +942,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
                                     long&nbsp;pNext,
                                     int&nbsp;sampleLocationsPerPixel,
                                     <a href="../../../org/lwjgl/vulkan/VkExtent2D.html" title="class in org.lwjgl.vulkan">VkExtent2D</a>&nbsp;sampleLocationGridSize,
+                                    @Nullable
                                     <a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkSampleLocationEXT.Buffer</a>&nbsp;pSampleLocations)</pre>
 <div class="block">Initializes this struct with the specified values.</div>
 </li>
@@ -1244,7 +1248,8 @@ public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkSampleLocationsInfoEXT.B
 <ul class="blockList">
 <li class="blockList">
 <h4>npSampleLocations</h4>
-<pre>public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkSampleLocationEXT.Buffer</a>&nbsp;npSampleLocations&#8203;(long&nbsp;struct)</pre>
+<pre>@Nullable
+public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkSampleLocationEXT.Buffer</a>&nbsp;npSampleLocations&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/vulkan/VkSampleLocationsInfoEXT.html#pSampleLocations()"><code>pSampleLocations()</code></a>.</div>
 </li>
 </ul>
@@ -1310,6 +1315,7 @@ public static&nbsp;<a href="../../../org/lwjgl/vulkan/VkSampleLocationsInfoEXT.B
 <li class="blockList">
 <h4>npSampleLocations</h4>
 <pre>public static&nbsp;void&nbsp;npSampleLocations&#8203;(long&nbsp;struct,
+                                     @Nullable
                                      <a href="../../../org/lwjgl/vulkan/VkSampleLocationEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkSampleLocationEXT.Buffer</a>&nbsp;value)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/vulkan/VkSampleLocationsInfoEXT.html#pSampleLocations(org.lwjgl.vulkan.VkSampleLocationEXT.Buffer)"><code>pSampleLocations</code></a>.</div>
 </li>

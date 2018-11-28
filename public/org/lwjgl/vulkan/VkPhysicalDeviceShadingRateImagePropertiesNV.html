@@ -152,13 +152,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a></pre>
 <div class="block">Structure describing shading rate image limits that can be supported by an implementation.
  
+ <h5>Description</h5>
+ 
+ <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceShadingRateImagePropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceShadingRateImagePropertiesNV</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
+ 
  <h5>Valid Usage (Implicit)</h5>
  
  <ul>
  <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/NVShadingRateImage.html#VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADING_RATE_IMAGE_PROPERTIES_NV"><code>STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADING_RATE_IMAGE_PROPERTIES_NV</code></a></li>
  </ul>
- 
- <p>If the <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceShadingRateImagePropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceShadingRateImagePropertiesNV</code></a> structure is included in the <code>pNext</code> chain of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceProperties2.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceProperties2</code></a>, it is filled with the implementation-dependent limits.</p>
  
  <h5>See Also</h5>
  
@@ -167,6 +169,8 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
  <h3>Member documentation</h3>
  
  <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
  <li><code>shadingRateTexelSize</code> &ndash; indicates the width and height of the portion of the framebuffer corresponding to each texel in the shading rate image.</li>
  <li><code>shadingRatePaletteSize</code> &ndash; indicates the maximum number of palette entries supported for the shading rate image.</li>
  <li><code>shadingRateMaxCoarseSamples</code> &ndash; specifies the maximum number of coverage samples supported in a single fragment. If the product of the fragment size derived from the base shading rate and the number of coverage samples per pixel exceeds this limit, the final shading rate will be adjusted so that its product does not exceed the limit.</li>

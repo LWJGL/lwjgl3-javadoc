@@ -309,6 +309,22 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovrFovStencil_BorderLine">ovrFovStencil_BorderLine</a>
+<br><a href="../../../org/lwjgl/ovr/OVR.html#ovrFovStencil_HiddenArea">ovrFovStencil_HiddenArea</a>
+<br><a href="../../../org/lwjgl/ovr/OVR.html#ovrFovStencil_VisibleArea">ovrFovStencil_VisibleArea</a></span></code></th>
+<td class="colLast">
+<div class="block">Viewport stencil types provided by the <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetFovStencil(long,org.lwjgl.ovr.OVRFovStencilDesc,org.lwjgl.ovr.OVRFovStencilMeshBuffer)"><code>GetFovStencil</code></a> call.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovrFovStencilFlag_MeshOriginAtBottomLeft">ovrFovStencilFlag_MeshOriginAtBottomLeft</a></span></code></th>
+<td class="colLast">
+<div class="block">Flags used by <a href="../../../org/lwjgl/ovr/OVRFovStencilDesc.html" title="class in org.lwjgl.ovr"><code>OVRFovStencilDesc</code></a> and which are passed to <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetFovStencil(long,org.lwjgl.ovr.OVRFovStencilDesc,org.lwjgl.ovr.OVRFovStencilMeshBuffer)"><code>GetFovStencil</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
 <th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovrHand_Count">ovrHand_Count</a>
 <br><a href="../../../org/lwjgl/ovr/OVR.html#ovrHand_Left">ovrHand_Left</a>
 <br><a href="../../../org/lwjgl/ovr/OVR.html#ovrHand_Right">ovrHand_Right</a></span></code></th>
@@ -416,6 +432,7 @@ extends java.lang.Object</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_Default">ovrMirrorOption_Default</a>
+<br><a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_ForceSymmetricFov">ovrMirrorOption_ForceSymmetricFov</a>
 <br><a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_IncludeGuardian">ovrMirrorOption_IncludeGuardian</a>
 <br><a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_IncludeNotifications">ovrMirrorOption_IncludeNotifications</a>
 <br><a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_IncludeSystemGui">ovrMirrorOption_IncludeSystemGui</a>
@@ -553,18 +570,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovrTrue">ovrTrue</a></span></code></th>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovrTrue">ovrTrue</a></span></code></th>
 <td class="colLast">
 <div class="block">Boolean values</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovrViewportStencil_BorderLine">ovrViewportStencil_BorderLine</a>
-<br><a href="../../../org/lwjgl/ovr/OVR.html#ovrViewportStencil_HiddenArea">ovrViewportStencil_HiddenArea</a>
-<br><a href="../../../org/lwjgl/ovr/OVR.html#ovrViewportStencil_VisibleArea">ovrViewportStencil_VisibleArea</a></span></code></th>
-<td class="colLast">
-<div class="block"><code>ovrViewportStencilType</code></div>
 </td>
 </tr>
 </table>
@@ -790,6 +798,15 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i23" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetFovStencil(long,long,long)">novr_GetFovStencil</a></span>&#8203;(long&nbsp;session,
+                  long&nbsp;fovStencilDesc,
+                  long&nbsp;meshBuffer)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetFovStencil(long,org.lwjgl.ovr.OVRFovStencilDesc,org.lwjgl.ovr.OVRFovStencilMeshBuffer)"><code>GetFovStencil</code></a></div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetFovTextureSize(long,int,long,float,long)">novr_GetFovTextureSize</a></span>&#8203;(long&nbsp;session,
                       int&nbsp;eye,
@@ -800,7 +817,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetFovTextureSize(long,int,org.lwjgl.ovr.OVRFovPort,float,org.lwjgl.ovr.OVRSizei)"><code>GetFovTextureSize</code></a></div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetHmdDesc(long,long)">novr_GetHmdDesc</a></span>&#8203;(long&nbsp;session,
                long&nbsp;__result)</code></th>
@@ -808,7 +825,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetHmdDesc(long,org.lwjgl.ovr.OVRHmdDesc)"><code>GetHmdDesc</code></a></div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetInputState(long,int,long)">novr_GetInputState</a></span>&#8203;(long&nbsp;session,
                   int&nbsp;controllerType,
@@ -817,7 +834,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetInputState(long,int,org.lwjgl.ovr.OVRInputState)"><code>GetInputState</code></a></div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetInt(long,long,int)">novr_GetInt</a></span>&#8203;(long&nbsp;session,
            long&nbsp;propertyName,
@@ -826,14 +843,14 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetInt(long,java.nio.ByteBuffer,int)"><code>GetInt</code></a></div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetLastErrorInfo(long)">novr_GetLastErrorInfo</a></span>&#8203;(long&nbsp;errorInfo)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetLastErrorInfo(org.lwjgl.ovr.OVRErrorInfo)"><code>GetLastErrorInfo</code></a></div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetPerfStats(long,long)">novr_GetPerfStats</a></span>&#8203;(long&nbsp;session,
                  long&nbsp;outStats)</code></th>
@@ -841,7 +858,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetPerfStats(long,org.lwjgl.ovr.OVRPerfStats)"><code>GetPerfStats</code></a></div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>static double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetPredictedDisplayTime(long,long)">novr_GetPredictedDisplayTime</a></span>&#8203;(long&nbsp;session,
                             long&nbsp;frameIndex)</code></th>
@@ -849,7 +866,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetPredictedDisplayTime(long,long)"><code>GetPredictedDisplayTime</code></a></div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetRenderDesc(long,int,long,long)">novr_GetRenderDesc</a></span>&#8203;(long&nbsp;session,
                   int&nbsp;eyeType,
@@ -859,7 +876,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetRenderDesc(long,int,org.lwjgl.ovr.OVRFovPort,org.lwjgl.ovr.OVREyeRenderDesc)"><code>GetRenderDesc</code></a></div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetSessionStatus(long,long)">novr_GetSessionStatus</a></span>&#8203;(long&nbsp;session,
                      long&nbsp;sessionStatus)</code></th>
@@ -867,7 +884,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetSessionStatus(long,org.lwjgl.ovr.OVRSessionStatus)"><code>GetSessionStatus</code></a></div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetString(long,long,long)">novr_GetString</a></span>&#8203;(long&nbsp;session,
               long&nbsp;propertyName,
@@ -876,7 +893,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetString(long,java.nio.ByteBuffer,java.nio.ByteBuffer)"><code>GetString</code></a></div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTextureSwapChainCurrentIndex(long,long,int%5B%5D)">novr_GetTextureSwapChainCurrentIndex</a></span>&#8203;(long&nbsp;session,
                                     long&nbsp;chain,
@@ -885,7 +902,7 @@ extends java.lang.Object</pre>
 <div class="block">Array version of: <a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTextureSwapChainCurrentIndex(long,long,long)"><code>novr_GetTextureSwapChainCurrentIndex(long, long, long)</code></a></div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTextureSwapChainCurrentIndex(long,long,long)">novr_GetTextureSwapChainCurrentIndex</a></span>&#8203;(long&nbsp;session,
                                     long&nbsp;chain,
@@ -894,7 +911,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainCurrentIndex(long,long,java.nio.IntBuffer)"><code>GetTextureSwapChainCurrentIndex</code></a></div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTextureSwapChainDesc(long,long,long)">novr_GetTextureSwapChainDesc</a></span>&#8203;(long&nbsp;session,
                             long&nbsp;chain,
@@ -903,7 +920,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainDesc(long,long,org.lwjgl.ovr.OVRTextureSwapChainDesc)"><code>GetTextureSwapChainDesc</code></a></div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTextureSwapChainLength(long,long,int%5B%5D)">novr_GetTextureSwapChainLength</a></span>&#8203;(long&nbsp;session,
                               long&nbsp;chain,
@@ -912,7 +929,7 @@ extends java.lang.Object</pre>
 <div class="block">Array version of: <a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTextureSwapChainLength(long,long,long)"><code>novr_GetTextureSwapChainLength(long, long, long)</code></a></div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTextureSwapChainLength(long,long,long)">novr_GetTextureSwapChainLength</a></span>&#8203;(long&nbsp;session,
                               long&nbsp;chain,
@@ -921,7 +938,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainLength(long,long,java.nio.IntBuffer)"><code>GetTextureSwapChainLength</code></a></div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTouchHapticsDesc(long,int,long)">novr_GetTouchHapticsDesc</a></span>&#8203;(long&nbsp;session,
                         int&nbsp;controllerType,
@@ -930,14 +947,14 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTouchHapticsDesc(long,int,org.lwjgl.ovr.OVRTouchHapticsDesc)"><code>GetTouchHapticsDesc</code></a></div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTrackerCount(long)">novr_GetTrackerCount</a></span>&#8203;(long&nbsp;session)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackerCount(long)"><code>GetTrackerCount</code></a></div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTrackerDesc(long,int,long)">novr_GetTrackerDesc</a></span>&#8203;(long&nbsp;session,
                    int&nbsp;trackerDescIndex,
@@ -946,7 +963,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackerDesc(long,int,org.lwjgl.ovr.OVRTrackerDesc)"><code>GetTrackerDesc</code></a></div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTrackerPose(long,int,long)">novr_GetTrackerPose</a></span>&#8203;(long&nbsp;session,
                    int&nbsp;trackerPoseIndex,
@@ -955,14 +972,14 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackerPose(long,int,org.lwjgl.ovr.OVRTrackerPose)"><code>GetTrackerPose</code></a></div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTrackingOriginType(long)">novr_GetTrackingOriginType</a></span>&#8203;(long&nbsp;session)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackingOriginType(long)"><code>GetTrackingOriginType</code></a></div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetTrackingState(long,double,boolean,long)">novr_GetTrackingState</a></span>&#8203;(long&nbsp;session,
                      double&nbsp;absTime,
@@ -972,20 +989,11 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackingState(long,double,boolean,org.lwjgl.ovr.OVRTrackingState)"><code>GetTrackingState</code></a></div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetVersionString()">novr_GetVersionString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetVersionString()"><code>GetVersionString</code></a></div>
-</td>
-</tr>
-<tr id="i45" class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#novr_GetViewportStencil(long,long,long)">novr_GetViewportStencil</a></span>&#8203;(long&nbsp;session,
-                       long&nbsp;viewportStencilDesc,
-                       long&nbsp;outMeshBuffer)</code></th>
-<td class="colLast">
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetViewportStencil(long,org.lwjgl.ovr.OVRViewportStencilDesc,org.lwjgl.ovr.OVRViewportStencilMeshBuffer)"><code>GetViewportStencil</code></a></div>
 </td>
 </tr>
 <tr id="i46" class="altColor">
@@ -1432,6 +1440,16 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i97" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetFovStencil(long,org.lwjgl.ovr.OVRFovStencilDesc,org.lwjgl.ovr.OVRFovStencilMeshBuffer)">ovr_GetFovStencil</a></span>&#8203;(long&nbsp;session,
+                 <a href="../../../org/lwjgl/ovr/OVRFovStencilDesc.html" title="class in org.lwjgl.ovr">OVRFovStencilDesc</a>&nbsp;fovStencilDesc,
+                 <a href="../../../org/lwjgl/ovr/OVRFovStencilMeshBuffer.html" title="class in org.lwjgl.ovr">OVRFovStencilMeshBuffer</a>&nbsp;meshBuffer)</code></th>
+<td class="colLast">
+<div class="block">Returns a viewport stencil mesh to be used for defining the area or outline the user can see through the lens on an area defined by a given
+ <code>ovrFovPort</code>.</div>
+</td>
+</tr>
+<tr id="i98" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/ovr/OVRSizei.html" title="class in org.lwjgl.ovr">OVRSizei</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetFovTextureSize(long,int,org.lwjgl.ovr.OVRFovPort,float,org.lwjgl.ovr.OVRSizei)">ovr_GetFovTextureSize</a></span>&#8203;(long&nbsp;session,
                      int&nbsp;eye,
@@ -1442,7 +1460,7 @@ extends java.lang.Object</pre>
 <div class="block">Calculates the recommended viewport size for rendering a given eye within the HMD with a given FOV cone.</div>
 </td>
 </tr>
-<tr id="i98" class="altColor">
+<tr id="i99" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/ovr/OVRHmdDesc.html" title="class in org.lwjgl.ovr">OVRHmdDesc</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetHmdDesc(long,org.lwjgl.ovr.OVRHmdDesc)">ovr_GetHmdDesc</a></span>&#8203;(long&nbsp;session,
               <a href="../../../org/lwjgl/ovr/OVRHmdDesc.html" title="class in org.lwjgl.ovr">OVRHmdDesc</a>&nbsp;__result)</code></th>
@@ -1450,7 +1468,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns information about the current HMD.</div>
 </td>
 </tr>
-<tr id="i99" class="rowColor">
+<tr id="i100" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetInputState(long,int,org.lwjgl.ovr.OVRInputState)">ovr_GetInputState</a></span>&#8203;(long&nbsp;session,
                  int&nbsp;controllerType,
@@ -1459,7 +1477,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns the most recent input state for controllers, without positional tracking info.</div>
 </td>
 </tr>
-<tr id="i100" class="altColor">
+<tr id="i101" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetInt(long,java.lang.CharSequence,int)">ovr_GetInt</a></span>&#8203;(long&nbsp;session,
           java.lang.CharSequence&nbsp;propertyName,
@@ -1468,7 +1486,7 @@ extends java.lang.Object</pre>
 <div class="block">Reads an integer property.</div>
 </td>
 </tr>
-<tr id="i101" class="rowColor">
+<tr id="i102" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetInt(long,java.nio.ByteBuffer,int)">ovr_GetInt</a></span>&#8203;(long&nbsp;session,
           java.nio.ByteBuffer&nbsp;propertyName,
@@ -1477,14 +1495,14 @@ extends java.lang.Object</pre>
 <div class="block">Reads an integer property.</div>
 </td>
 </tr>
-<tr id="i102" class="altColor">
+<tr id="i103" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetLastErrorInfo(org.lwjgl.ovr.OVRErrorInfo)">ovr_GetLastErrorInfo</a></span>&#8203;(<a href="../../../org/lwjgl/ovr/OVRErrorInfo.html" title="class in org.lwjgl.ovr">OVRErrorInfo</a>&nbsp;errorInfo)</code></th>
 <td class="colLast">
 <div class="block">Returns information about the most recent failed return value by the current thread for this library.</div>
 </td>
 </tr>
-<tr id="i103" class="rowColor">
+<tr id="i104" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetPerfStats(long,org.lwjgl.ovr.OVRPerfStats)">ovr_GetPerfStats</a></span>&#8203;(long&nbsp;session,
                 <a href="../../../org/lwjgl/ovr/OVRPerfStats.html" title="class in org.lwjgl.ovr">OVRPerfStats</a>&nbsp;outStats)</code></th>
@@ -1492,7 +1510,7 @@ extends java.lang.Object</pre>
 <div class="block">Retrieves performance stats for the VR app as well as the SDK compositor.</div>
 </td>
 </tr>
-<tr id="i104" class="altColor">
+<tr id="i105" class="rowColor">
 <td class="colFirst"><code>static double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetPredictedDisplayTime(long,long)">ovr_GetPredictedDisplayTime</a></span>&#8203;(long&nbsp;session,
                            long&nbsp;frameIndex)</code></th>
@@ -1500,7 +1518,7 @@ extends java.lang.Object</pre>
 <div class="block">Gets the time of the specified frame midpoint.</div>
 </td>
 </tr>
-<tr id="i105" class="rowColor">
+<tr id="i106" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/ovr/OVREyeRenderDesc.html" title="class in org.lwjgl.ovr">OVREyeRenderDesc</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetRenderDesc(long,int,org.lwjgl.ovr.OVRFovPort,org.lwjgl.ovr.OVREyeRenderDesc)">ovr_GetRenderDesc</a></span>&#8203;(long&nbsp;session,
                  int&nbsp;eyeType,
@@ -1510,7 +1528,7 @@ extends java.lang.Object</pre>
 <div class="block">Computes the distortion viewport, view adjust, and other rendering parameters for the specified eye.</div>
 </td>
 </tr>
-<tr id="i106" class="altColor">
+<tr id="i107" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetSessionStatus(long,org.lwjgl.ovr.OVRSessionStatus)">ovr_GetSessionStatus</a></span>&#8203;(long&nbsp;session,
                     <a href="../../../org/lwjgl/ovr/OVRSessionStatus.html" title="class in org.lwjgl.ovr">OVRSessionStatus</a>&nbsp;sessionStatus)</code></th>
@@ -1518,7 +1536,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns status information for the application.</div>
 </td>
 </tr>
-<tr id="i107" class="rowColor">
+<tr id="i108" class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetString(long,java.lang.CharSequence,java.lang.CharSequence)">ovr_GetString</a></span>&#8203;(long&nbsp;session,
              java.lang.CharSequence&nbsp;propertyName,
@@ -1527,7 +1545,7 @@ extends java.lang.Object</pre>
 <div class="block">Reads a string property.</div>
 </td>
 </tr>
-<tr id="i108" class="altColor">
+<tr id="i109" class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetString(long,java.nio.ByteBuffer,java.nio.ByteBuffer)">ovr_GetString</a></span>&#8203;(long&nbsp;session,
              java.nio.ByteBuffer&nbsp;propertyName,
@@ -1536,7 +1554,7 @@ extends java.lang.Object</pre>
 <div class="block">Reads a string property.</div>
 </td>
 </tr>
-<tr id="i109" class="rowColor">
+<tr id="i110" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainCurrentIndex(long,long,int%5B%5D)">ovr_GetTextureSwapChainCurrentIndex</a></span>&#8203;(long&nbsp;session,
                                    long&nbsp;chain,
@@ -1545,7 +1563,7 @@ extends java.lang.Object</pre>
 <div class="block">Array version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainCurrentIndex(long,long,java.nio.IntBuffer)"><code>GetTextureSwapChainCurrentIndex</code></a></div>
 </td>
 </tr>
-<tr id="i110" class="altColor">
+<tr id="i111" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainCurrentIndex(long,long,java.nio.IntBuffer)">ovr_GetTextureSwapChainCurrentIndex</a></span>&#8203;(long&nbsp;session,
                                    long&nbsp;chain,
@@ -1554,7 +1572,7 @@ extends java.lang.Object</pre>
 <div class="block">Gets the current index in an <code>ovrTextureSwapChain</code>.</div>
 </td>
 </tr>
-<tr id="i111" class="rowColor">
+<tr id="i112" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainDesc(long,long,org.lwjgl.ovr.OVRTextureSwapChainDesc)">ovr_GetTextureSwapChainDesc</a></span>&#8203;(long&nbsp;session,
                            long&nbsp;chain,
@@ -1563,7 +1581,7 @@ extends java.lang.Object</pre>
 <div class="block">Gets the description of the buffers in an <code>ovrTextureSwapChain</code>.</div>
 </td>
 </tr>
-<tr id="i112" class="altColor">
+<tr id="i113" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainLength(long,long,int%5B%5D)">ovr_GetTextureSwapChainLength</a></span>&#8203;(long&nbsp;session,
                              long&nbsp;chain,
@@ -1572,7 +1590,7 @@ extends java.lang.Object</pre>
 <div class="block">Array version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainLength(long,long,java.nio.IntBuffer)"><code>GetTextureSwapChainLength</code></a></div>
 </td>
 </tr>
-<tr id="i113" class="rowColor">
+<tr id="i114" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTextureSwapChainLength(long,long,java.nio.IntBuffer)">ovr_GetTextureSwapChainLength</a></span>&#8203;(long&nbsp;session,
                              long&nbsp;chain,
@@ -1581,14 +1599,14 @@ extends java.lang.Object</pre>
 <div class="block">Gets the number of buffers in an <code>ovrTextureSwapChain</code>.</div>
 </td>
 </tr>
-<tr id="i114" class="altColor">
+<tr id="i115" class="rowColor">
 <td class="colFirst"><code>static double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTimeInSeconds()">ovr_GetTimeInSeconds</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns global, absolute high-resolution time in seconds.</div>
 </td>
 </tr>
-<tr id="i115" class="rowColor">
+<tr id="i116" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/ovr/OVRTouchHapticsDesc.html" title="class in org.lwjgl.ovr">OVRTouchHapticsDesc</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTouchHapticsDesc(long,int,org.lwjgl.ovr.OVRTouchHapticsDesc)">ovr_GetTouchHapticsDesc</a></span>&#8203;(long&nbsp;session,
                        int&nbsp;controllerType,
@@ -1597,14 +1615,14 @@ extends java.lang.Object</pre>
 <div class="block">Gets information about Haptics engine for the specified Touch controller.</div>
 </td>
 </tr>
-<tr id="i116" class="altColor">
+<tr id="i117" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackerCount(long)">ovr_GetTrackerCount</a></span>&#8203;(long&nbsp;session)</code></th>
 <td class="colLast">
 <div class="block">Returns the number of attached trackers.</div>
 </td>
 </tr>
-<tr id="i117" class="rowColor">
+<tr id="i118" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/ovr/OVRTrackerDesc.html" title="class in org.lwjgl.ovr">OVRTrackerDesc</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackerDesc(long,int,org.lwjgl.ovr.OVRTrackerDesc)">ovr_GetTrackerDesc</a></span>&#8203;(long&nbsp;session,
                   int&nbsp;trackerDescIndex,
@@ -1613,7 +1631,7 @@ extends java.lang.Object</pre>
 <div class="block">Returns a given attached tracker description.</div>
 </td>
 </tr>
-<tr id="i118" class="altColor">
+<tr id="i119" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/ovr/OVRTrackerPose.html" title="class in org.lwjgl.ovr">OVRTrackerPose</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackerPose(long,int,org.lwjgl.ovr.OVRTrackerPose)">ovr_GetTrackerPose</a></span>&#8203;(long&nbsp;session,
                   int&nbsp;trackerPoseIndex,
@@ -1622,14 +1640,14 @@ extends java.lang.Object</pre>
 <div class="block">Returns the <a href="../../../org/lwjgl/ovr/OVRTrackerPose.html" title="class in org.lwjgl.ovr"><code>OVRTrackerPose</code></a> for the given attached tracker.</div>
 </td>
 </tr>
-<tr id="i119" class="rowColor">
+<tr id="i120" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackingOriginType(long)">ovr_GetTrackingOriginType</a></span>&#8203;(long&nbsp;session)</code></th>
 <td class="colLast">
 <div class="block">Gets the tracking origin state.</div>
 </td>
 </tr>
-<tr id="i120" class="altColor">
+<tr id="i121" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/ovr/OVRTrackingState.html" title="class in org.lwjgl.ovr">OVRTrackingState</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetTrackingState(long,double,boolean,org.lwjgl.ovr.OVRTrackingState)">ovr_GetTrackingState</a></span>&#8203;(long&nbsp;session,
                     double&nbsp;absTime,
@@ -1639,19 +1657,12 @@ extends java.lang.Object</pre>
 <div class="block">Returns tracking state reading based on the specified absolute system time.</div>
 </td>
 </tr>
-<tr id="i121" class="rowColor">
+<tr id="i122" class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetVersionString()">ovr_GetVersionString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the version string representing the LibOVRRT version.</div>
 </td>
-</tr>
-<tr id="i122" class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetViewportStencil(long,org.lwjgl.ovr.OVRViewportStencilDesc,org.lwjgl.ovr.OVRViewportStencilMeshBuffer)">ovr_GetViewportStencil</a></span>&#8203;(long&nbsp;session,
-                      <a href="../../../org/lwjgl/ovr/OVRViewportStencilDesc.html" title="class in org.lwjgl.ovr">OVRViewportStencilDesc</a>&nbsp;viewportStencilDesc,
-                      <a href="../../../org/lwjgl/ovr/OVRViewportStencilMeshBuffer.html" title="class in org.lwjgl.ovr">OVRViewportStencilMeshBuffer</a>&nbsp;outMeshBuffer)</code></th>
-<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i123" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
@@ -2477,9 +2488,12 @@ extends java.lang.Object</pre>
 <a id="ovrMirrorOption_IncludeSystemGui">
 <!--   -->
 </a>
+<a id="ovrMirrorOption_ForceSymmetricFov">
+<!--   -->
+</a>
 <ul class="blockList">
 <li class="blockList">
-<h4><a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_Default">ovrMirrorOption_Default</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_PostDistortion">ovrMirrorOption_PostDistortion</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_LeftEyeOnly">ovrMirrorOption_LeftEyeOnly</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_RightEyeOnly">ovrMirrorOption_RightEyeOnly</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_IncludeGuardian">ovrMirrorOption_IncludeGuardian</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_IncludeNotifications">ovrMirrorOption_IncludeNotifications</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_IncludeSystemGui">ovrMirrorOption_IncludeSystemGui</a></h4>
+<h4><a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_Default">ovrMirrorOption_Default</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_PostDistortion">ovrMirrorOption_PostDistortion</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_LeftEyeOnly">ovrMirrorOption_LeftEyeOnly</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_RightEyeOnly">ovrMirrorOption_RightEyeOnly</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_IncludeGuardian">ovrMirrorOption_IncludeGuardian</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_IncludeNotifications">ovrMirrorOption_IncludeNotifications</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_IncludeSystemGui">ovrMirrorOption_IncludeSystemGui</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrMirrorOption_ForceSymmetricFov">ovrMirrorOption_ForceSymmetricFov</a></h4>
 <div class="block">Bit flags used as part of <a href="../../../org/lwjgl/ovr/OVRMirrorTextureDesc.html" title="class in org.lwjgl.ovr"><code>OVRMirrorTextureDesc</code></a>'s <code>MirrorOptions</code> field. <code>ovrMirrorOptions</code>
  
  <h5>Enum values:</h5>
@@ -2504,28 +2518,51 @@ extends java.lang.Object</pre>
  <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_IncludeGuardian"><code>MirrorOption_IncludeGuardian</code></a> - Shows the boundary system aka Guardian on the mirror texture.</li>
  <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_IncludeNotifications"><code>MirrorOption_IncludeNotifications</code></a> - Shows system notifications the user receives on the mirror texture.</li>
  <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_IncludeSystemGui"><code>MirrorOption_IncludeSystemGui</code></a> - Shows the system menu (triggered by hitting the Home button) on the mirror texture.</li>
+ <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_ForceSymmetricFov"><code>MirrorOption_ForceSymmetricFov</code></a> - 
+ Forces mirror output to use max symmetric FOV instead of asymmetric full FOV used by HMD.
+ 
+ <p>Only valid for rectilinear mirrors i.e. using <a href="../../../org/lwjgl/ovr/OVR.html#ovrMirrorOption_PostDistortion"><code>MirrorOption_PostDistortion</code></a> with <code>ovrMirrorOption_ForceSymmetricFov</code> will result in
+ <a href="../../../org/lwjgl/ovr/OVRErrorCode.html#ovrError_InvalidParameter"><code>Error_InvalidParameter</code></a> error.</p>
+ </li>
  </ul></div>
 </li></ul>
-<a id="ovrViewportStencil_HiddenArea">
+<a id="ovrFovStencil_HiddenArea">
 <!--   -->
 </a>
-<a id="ovrViewportStencil_VisibleArea">
+<a id="ovrFovStencil_VisibleArea">
 <!--   -->
 </a>
-<a id="ovrViewportStencil_BorderLine">
+<a id="ovrFovStencil_BorderLine">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4><a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrViewportStencil_HiddenArea">ovrViewportStencil_HiddenArea</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrViewportStencil_VisibleArea">ovrViewportStencil_VisibleArea</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrViewportStencil_BorderLine">ovrViewportStencil_BorderLine</a></h4>
-<div class="block"><code>ovrViewportStencilType</code>
+<h4><a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrFovStencil_HiddenArea">ovrFovStencil_HiddenArea</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrFovStencil_VisibleArea">ovrFovStencil_VisibleArea</a>, <a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrFovStencil_BorderLine">ovrFovStencil_BorderLine</a></h4>
+<div class="block">Viewport stencil types provided by the <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetFovStencil(long,org.lwjgl.ovr.OVRFovStencilDesc,org.lwjgl.ovr.OVRFovStencilMeshBuffer)"><code>GetFovStencil</code></a> call. <code>ovrFovStencilType</code>
  
  <h5>Enum values:</h5>
  
  <ul>
- <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrViewportStencil_HiddenArea"><code>ViewportStencil_HiddenArea</code></a> - Triangle mesh covering parts that are hidden to users.</li>
- <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrViewportStencil_VisibleArea"><code>ViewportStencil_VisibleArea</code></a> - Triangle mesh covering parts that are visible to users.</li>
- <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrViewportStencil_BorderLine"><code>ViewportStencil_BorderLine</code></a> - Line buffer that draws the boundary visible to users.</li>
+ <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrFovStencil_HiddenArea"><code>FovStencil_HiddenArea</code></a> - Triangle list covering parts that are hidden to users.</li>
+ <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrFovStencil_VisibleArea"><code>FovStencil_VisibleArea</code></a> - Triangle list covering parts that are visible to users.</li>
+ <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrFovStencil_BorderLine"><code>FovStencil_BorderLine</code></a> - Line list that draws the boundary visible to users.</li>
+ </ul></div>
+</li></ul>
+<a id="ovrFovStencilFlag_MeshOriginAtBottomLeft">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4><a href="../../../constant-values.html#org.lwjgl.ovr.OVR.ovrFovStencilFlag_MeshOriginAtBottomLeft">ovrFovStencilFlag_MeshOriginAtBottomLeft</a></h4>
+<div class="block">Flags used by <a href="../../../org/lwjgl/ovr/OVRFovStencilDesc.html" title="class in org.lwjgl.ovr"><code>OVRFovStencilDesc</code></a> and which are passed to <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetFovStencil(long,org.lwjgl.ovr.OVRFovStencilDesc,org.lwjgl.ovr.OVRFovStencilMeshBuffer)"><code>GetFovStencil</code></a>. (<code>ovrFovStencilFlags</code>
+ 
+ <h5>Enum values:</h5>
+ 
+ <ul>
+ <li><a href="../../../org/lwjgl/ovr/OVR.html#ovrFovStencilFlag_MeshOriginAtBottomLeft"><code>FovStencilFlag_MeshOriginAtBottomLeft</code></a> - 
+ When used, flips the Y component of the provided 2D mesh coordinates, such that Y increases upwards. When not used, places mesh origin at top-left
+ where Y increases downwards.
+ </li>
  </ul></div>
 </li></ul>
 <a id="ovrButton_A">
@@ -4712,30 +4749,53 @@ public static&nbsp;int&nbsp;ovr_SetExternalCameraProperties&#8203;(long&nbsp;ses
 </dl>
 </li>
 </ul>
-<a id="novr_GetViewportStencil(long,long,long)">
+<a id="novr_GetFovStencil(long,long,long)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>novr_GetViewportStencil</h4>
-<pre>public static&nbsp;int&nbsp;novr_GetViewportStencil&#8203;(long&nbsp;session,
-                                          long&nbsp;viewportStencilDesc,
-                                          long&nbsp;outMeshBuffer)</pre>
-<div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetViewportStencil(long,org.lwjgl.ovr.OVRViewportStencilDesc,org.lwjgl.ovr.OVRViewportStencilMeshBuffer)"><code>GetViewportStencil</code></a></div>
+<h4>novr_GetFovStencil</h4>
+<pre>public static&nbsp;int&nbsp;novr_GetFovStencil&#8203;(long&nbsp;session,
+                                     long&nbsp;fovStencilDesc,
+                                     long&nbsp;meshBuffer)</pre>
+<div class="block">Unsafe version of: <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetFovStencil(long,org.lwjgl.ovr.OVRFovStencilDesc,org.lwjgl.ovr.OVRFovStencilMeshBuffer)"><code>GetFovStencil</code></a></div>
 </li>
 </ul>
-<a id="ovr_GetViewportStencil(long,org.lwjgl.ovr.OVRViewportStencilDesc,org.lwjgl.ovr.OVRViewportStencilMeshBuffer)">
+<a id="ovr_GetFovStencil(long,org.lwjgl.ovr.OVRFovStencilDesc,org.lwjgl.ovr.OVRFovStencilMeshBuffer)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>ovr_GetViewportStencil</h4>
-<pre>public static&nbsp;int&nbsp;ovr_GetViewportStencil&#8203;(long&nbsp;session,
-                                         <a href="../../../org/lwjgl/ovr/OVRViewportStencilDesc.html" title="class in org.lwjgl.ovr">OVRViewportStencilDesc</a>&nbsp;viewportStencilDesc,
-                                         <a href="../../../org/lwjgl/ovr/OVRViewportStencilMeshBuffer.html" title="class in org.lwjgl.ovr">OVRViewportStencilMeshBuffer</a>&nbsp;outMeshBuffer)</pre>
+<h4>ovr_GetFovStencil</h4>
+<pre>public static&nbsp;int&nbsp;ovr_GetFovStencil&#8203;(long&nbsp;session,
+                                    <a href="../../../org/lwjgl/ovr/OVRFovStencilDesc.html" title="class in org.lwjgl.ovr">OVRFovStencilDesc</a>&nbsp;fovStencilDesc,
+                                    <a href="../../../org/lwjgl/ovr/OVRFovStencilMeshBuffer.html" title="class in org.lwjgl.ovr">OVRFovStencilMeshBuffer</a>&nbsp;meshBuffer)</pre>
+<div class="block">Returns a viewport stencil mesh to be used for defining the area or outline the user can see through the lens on an area defined by a given
+ <code>ovrFovPort</code>.
+ 
+ <p>To find out how big the vertex and index buffers in <code>meshBuffer</code> buffer should be, first call this function setting <code>AllocVertexCount</code>
+ &amp; <code>AllocIndexCount</code> to 0 while also sending in <code>nullptr</code> for <code>VertexBuffer</code> &amp; <code>IndexBuffer</code>. The SDK will populate
+ <code>UsedVertexCount</code> &amp; <code>UsedIndexCount</code> values.</p>
+ 
+ <p>If <code>Alloc*Count</code> fields in <code>meshBuffer</code> are smaller than the expected <code>Used*Count</code> fields, (except when they are 0) then the SDK will
+ return <a href="../../../org/lwjgl/ovr/OVRErrorCode.html#ovrError_InvalidParameter"><code>Error_InvalidParameter</code></a> and leave <code>VertexBuffer</code> and <code>IndexBuffer</code> untouched.</p>
+ 
+ <p>2D positions provided in the buffer will be in the <code>[0,1]</code> range where Y increases downward, similar to texture-UV space. If Y coordinates need
+ to be flipped upside down, use the <a href="../../../org/lwjgl/ovr/OVR.html#ovrFovStencilFlag_MeshOriginAtBottomLeft"><code>FovStencilFlag_MeshOriginAtBottomLeft</code></a>.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>session</code> - an <code>ovrSession</code> previously returned by <a href="../../../org/lwjgl/ovr/OVR.html#ovr_Create(org.lwjgl.PointerBuffer,org.lwjgl.ovr.OVRGraphicsLuid)"><code>Create</code></a></dd>
+<dd><code>fovStencilDesc</code> - info provided by caller necessary to generate a stencil mesh</dd>
+<dd><code>meshBuffer</code> - mesh buffer to be partially filled in and returned by the SDK</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an ovrResult indicating success or failure. In the case of failure, use <a href="../../../org/lwjgl/ovr/OVR.html#ovr_GetLastErrorInfo(org.lwjgl.ovr.OVRErrorInfo)"><code>GetLastErrorInfo</code></a> to get more information. Return values include but aren't
+         limited to:
+         
+         <ul>
+         <li><a href="../../../org/lwjgl/ovr/OVRErrorCode.html#ovrSuccess"><code>Success</code></a>: Completed successfully.</li>
+         <li><a href="../../../org/lwjgl/ovr/OVRErrorCode.html#ovrError_ServiceConnection"><code>Error_ServiceConnection</code></a>: The service connection was lost and the application must destroy the session.</li>
+         <li><a href="../../../org/lwjgl/ovr/OVRErrorCode.html#ovrError_InvalidParameter"><code>Error_InvalidParameter</code></a>: One or more of the parameters</li>
+         </ul></dd>
 </dl>
 </li>
 </ul>

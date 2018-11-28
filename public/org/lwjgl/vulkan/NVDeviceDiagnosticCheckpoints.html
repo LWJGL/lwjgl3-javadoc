@@ -344,7 +344,7 @@ extends java.lang.Object</pre>
  
  <h5>C Specification</h5>
  
- <p>Device diagnostic checkpoints are inserted into the command stream by calling <code>vkCmdSetCheckpointNV</code>.</p>
+ <p>Device diagnostic checkpoints are inserted into the command stream by calling <a href="../../../org/lwjgl/vulkan/NVDeviceDiagnosticCheckpoints.html#vkCmdSetCheckpointNV(org.lwjgl.vulkan.VkCommandBuffer,long)"><code>CmdSetCheckpointNV</code></a>.</p>
  
  <pre><code>
  void vkCmdSetCheckpointNV(
@@ -408,7 +408,7 @@ extends java.lang.Object</pre>
  
  <h5>C Specification</h5>
  
- <p>If the device encounters an error during execution, the implementation will return a <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_DEVICE_LOST"><code>ERROR_DEVICE_LOST</code></a> error to the application at a certain point during host execution. When this happens, the application <b>can</b> call <code>vkGetQueueCheckpointDataNV</code> to retrieve information on the most recent diagnostic checkpoints that were executed by the device.</p>
+ <p>If the device encounters an error during execution, the implementation will return a <a href="../../../org/lwjgl/vulkan/VK10.html#VK_ERROR_DEVICE_LOST"><code>ERROR_DEVICE_LOST</code></a> error to the application at a certain point during host execution. When this happens, the application <b>can</b> call <a href="../../../org/lwjgl/vulkan/NVDeviceDiagnosticCheckpoints.html#vkGetQueueCheckpointDataNV(org.lwjgl.vulkan.VkQueue,java.nio.IntBuffer,org.lwjgl.vulkan.VkCheckpointDataNV.Buffer)"><code>GetQueueCheckpointDataNV</code></a> to retrieve information on the most recent diagnostic checkpoints that were executed by the device.</p>
  
  <pre><code>
  void vkGetQueueCheckpointDataNV(

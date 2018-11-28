@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -126,6 +126,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
+<li><a href="../../../org/lwjgl/system/Pointer.Default.html" title="class in org.lwjgl.system">org.lwjgl.system.Pointer.Default</a></li>
+<li>
+<ul class="inheritance">
 <li><a href="../../../org/lwjgl/system/CustomBuffer.html" title="class in org.lwjgl.system">org.lwjgl.system.CustomBuffer</a>&lt;SELF&gt;</li>
 <li>
 <ul class="inheritance">
@@ -133,6 +136,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>
 <ul class="inheritance">
 <li>org.lwjgl.odbc.SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -323,48 +328,41 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html#sizeof()">sizeof</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Returns the <code>sizeof</code> a single element in the buffer.</div>
-</td>
-</tr>
-<tr id="i13" class="rowColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html#timezone_hour()">timezone_hour</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>timezone_hour</code> field.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html" title="class in org.lwjgl.odbc">SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html#timezone_hour(short)">timezone_hour</a></span>&#8203;(short&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>timezone_hour</code> field.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html#timezone_minute()">timezone_minute</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>timezone_minute</code> field.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html" title="class in org.lwjgl.odbc">SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html#timezone_minute(short)">timezone_minute</a></span>&#8203;(short&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>timezone_minute</code> field.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html#year()">year</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>year</code> field.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html" title="class in org.lwjgl.odbc">SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html#year(short)">year</a></span>&#8203;(short&nbsp;value)</code></th>
 <td class="colLast">
@@ -391,14 +389,21 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>equals, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
+<code>getClass, notify, notifyAll, wait, wait, wait</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.org.lwjgl.system.Pointer.Default">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.lwjgl.system.<a href="../../../org/lwjgl/system/Pointer.Default.html" title="class in org.lwjgl.system">Pointer.Default</a></h3>
+<code><a href="../../../org/lwjgl/system/Pointer.Default.html#equals(java.lang.Object)">equals</a>, <a href="../../../org/lwjgl/system/Pointer.Default.html#hashCode()">hashCode</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.lwjgl.system.StructBuffer">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.lwjgl.system.<a href="../../../org/lwjgl/system/StructBuffer.html" title="class in org.lwjgl.system">StructBuffer</a></h3>
-<code><a href="../../../org/lwjgl/system/StructBuffer.html#forEach(java.util.function.Consumer)">forEach</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get()">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(int)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(int,T)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(T)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#iterator()">iterator</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#parallelStream()">parallelStream</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#put(int,T)">put</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#put(T)">put</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#spliterator()">spliterator</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#stream()">stream</a></code></li>
+<code><a href="../../../org/lwjgl/system/StructBuffer.html#forEach(java.util.function.Consumer)">forEach</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get()">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(int)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(int,T)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#get(T)">get</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#iterator()">iterator</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#parallelStream()">parallelStream</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#put(int,T)">put</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#put(T)">put</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#sizeof()">sizeof</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#spliterator()">spliterator</a>, <a href="../../../org/lwjgl/system/StructBuffer.html#stream()">stream</a></code></li>
 </ul>
 </li>
 </ul>
@@ -452,21 +457,6 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="sizeof()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>sizeof</h4>
-<pre>public&nbsp;int&nbsp;sizeof()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/lwjgl/system/CustomBuffer.html#sizeof()">CustomBuffer</a></code></span></div>
-<div class="block">Returns the <code>sizeof</code> a single element in the buffer.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../org/lwjgl/system/CustomBuffer.html#sizeof()">sizeof</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/lwjgl/system/CustomBuffer.html" title="class in org.lwjgl.system">CustomBuffer</a>&lt;<a href="../../../org/lwjgl/odbc/SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer.html" title="class in org.lwjgl.odbc">SQL_SS_TIMESTAMPOFFSET_STRUCT.Buffer</a>&gt;</code></dd>
-</dl>
-</li>
-</ul>
 <a id="year()">
 <!--   -->
 </a>

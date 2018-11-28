@@ -151,7 +151,45 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">VkConditionalRenderingBeginInfoEXT</span>
 extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjgl.system">Struct</a>
 implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
-<div class="block"><h3>Layout</h3>
+<div class="block">Structure specifying conditional rendering begin info.
+ 
+ <h5>Description</h5>
+ 
+ <p>If the 32-bit value at <code>offset</code> in <code>buffer</code> memory is zero, then the rendering commands are discarded, otherwise they are executed as normal. If the value of the predicate in buffer memory changes while conditional rendering is active, the rendering commands <b>may</b> be discarded in an implementation-dependent way. Some implementations may latch the value of the predicate upon beginning conditional rendering while others may read it before every rendering command.</p>
+ 
+ <h5>Valid Usage</h5>
+ 
+ <ul>
+ <li>If <code>buffer</code> is non-sparse then it <b>must</b> be bound completely and contiguously to a single <code>VkDeviceMemory</code> object</li>
+ <li><code>buffer</code> <b>must</b> have been created with the <a href="../../../org/lwjgl/vulkan/EXTConditionalRendering.html#VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT"><code>BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT</code></a> bit set</li>
+ <li><code>offset</code> <b>must</b> be less than the size of <code>buffer</code> by at least 32 bits.</li>
+ <li><code>offset</code> <b>must</b> be a multiple of 4</li>
+ </ul>
+ 
+ <h5>Valid Usage (Implicit)</h5>
+ 
+ <ul>
+ <li><code>sType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/EXTConditionalRendering.html#VK_STRUCTURE_TYPE_CONDITIONAL_RENDERING_BEGIN_INFO_EXT"><code>STRUCTURE_TYPE_CONDITIONAL_RENDERING_BEGIN_INFO_EXT</code></a></li>
+ <li><code>pNext</code> <b>must</b> be <code>NULL</code></li>
+ <li><code>buffer</code> <b>must</b> be a valid <code>VkBuffer</code> handle</li>
+ <li><code>flags</code> <b>must</b> be a valid combination of <code>VkConditionalRenderingFlagBitsEXT</code> values</li>
+ </ul>
+ 
+ <h5>See Also</h5>
+ 
+ <p><a href="../../../org/lwjgl/vulkan/EXTConditionalRendering.html#vkCmdBeginConditionalRenderingEXT(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkConditionalRenderingBeginInfoEXT)"><code>CmdBeginConditionalRenderingEXT</code></a></p>
+ 
+ <h3>Member documentation</h3>
+ 
+ <ul>
+ <li><code>sType</code> &ndash; the type of this structure.</li>
+ <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
+ <li><code>buffer</code> &ndash; a buffer containing the predicate for conditional rendering.</li>
+ <li><code>offset</code> &ndash; the byte offset into <code>buffer</code> where the predicate is located.</li>
+ <li><code>flags</code> &ndash; a bitmask of <code>VkConditionalRenderingFlagsEXT</code> specifying the behavior of conditional rendering.</li>
+ </ul>
+ 
+ <h3>Layout</h3>
  
  <pre><code>
  struct VkConditionalRenderingBeginInfoEXT {

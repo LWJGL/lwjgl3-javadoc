@@ -139,11 +139,11 @@ extends java.lang.Object</pre>
 <div class="block">Native bindings to the <strong>khr_gl_event</strong> extension.
  
  <p>This extension allows creating OpenCL event objects linked to OpenGL fence sync objects, potentially improving efficiency of sharing images and buffers
- between the two APIs. The companion <a href="../../../org/lwjgl/opengl/ARBCLEvent.html" title="class in org.lwjgl.opengl"><code>GL_ARB_cl_event</code></a> extension provides the complementary functionality of creating
- an OpenGL sync object from an OpenCL event object.</p>
+ between the two APIs. The companion <code>GL_ARB_cl_event</code> extension provides the complementary functionality of creating an OpenGL sync object from
+ an OpenCL event object.</p>
  
- <p>In addition, this extension modifies the behavior of <a href="../../../org/lwjgl/opencl/CL10GL.html#clEnqueueAcquireGLObjects(long,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer)"><code>EnqueueAcquireGLObjects</code></a> and <a href="../../../org/lwjgl/opencl/CL10GL.html#clEnqueueReleaseGLObjects(long,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer)"><code>EnqueueReleaseGLObjects</code></a> to implicitly
- guarantee synchronization with an OpenGL context bound in the same thread as the OpenCL context.</p></div>
+ <p>In addition, this extension modifies the behavior of <a href="../../../org/lwjgl/opencl/CL10GL.html#clEnqueueAcquireGLObjects(long,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer)"><code>EnqueueAcquireGLObjects</code></a> and <a href="../../../org/lwjgl/opencl/CL10GL.html#clEnqueueReleaseGLObjects(long,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer)"><code>EnqueueReleaseGLObjects</code></a> to implicitly guarantee synchronization
+ with an OpenGL context bound in the same thread as the OpenCL context.</p></div>
 </li>
 </ul>
 </div>

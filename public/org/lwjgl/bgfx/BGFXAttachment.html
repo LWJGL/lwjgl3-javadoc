@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":10,"i13":10,"i14":10,"i15":10,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":10,"i23":10,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":10,"i31":10,"i32":10};
+var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":10,"i15":10,"i16":10,"i17":10,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":10,"i25":10,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -156,18 +156,22 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h3>Member documentation</h3>
  
  <ul>
+ <li><code>access</code> &ndash; access</li>
  <li><code>handle</code> &ndash; texture handle</li>
  <li><code>mip</code> &ndash; mip level</li>
  <li><code>layer</code> &ndash; cubemap side or depth layer/slice</li>
+ <li><code>resolve</code> &ndash; resolve flags. One of:<br><table><tr><td><a href="../../../org/lwjgl/bgfx/BGFX.html#BGFX_RESOLVE_NONE"><code>RESOLVE_NONE</code></a></td><td><a href="../../../org/lwjgl/bgfx/BGFX.html#BGFX_RESOLVE_AUTO_GEN_MIPS"><code>RESOLVE_AUTO_GEN_MIPS</code></a></td></tr></table></li>
  </ul>
  
  <h3>Layout</h3>
  
  <pre><code>
  struct bgfx_attachment_t {
+     bgfx_access_t access;
      bgfx_texture_handle_t handle;
      uint16_t mip;
      uint16_t layer;
+     uint8_t resolve;
  }</code></pre></div>
 </li>
 </ul>
@@ -223,23 +227,31 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#ACCESS">ACCESS</a></span></code></th>
+<td class="colLast">
+<div class="block">The struct member offsets.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#ALIGNOF">ALIGNOF</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct alignment in bytes.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#HANDLE">HANDLE</a>
 <br><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#LAYER">LAYER</a>
-<br><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#MIP">MIP</a></span></code></th>
+<br><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#MIP">MIP</a>
+<br><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#RESOLVE">RESOLVE</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct member offsets.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#SIZEOF">SIZEOF</a></span></code></th>
+<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#SIZEOF">SIZEOF</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct size in bytes.</div>
 </td>
@@ -293,34 +305,48 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#access()">access</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>access</code> field.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#access(int)">access</a></span>&#8203;(int&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Sets the specified value to the <code>access</code> field.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#calloc()">calloc</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment</code></a> instance allocated with <a href="../../../org/lwjgl/system/MemoryUtil.html#memCalloc(int,int)"><code>memCalloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx">BGFXAttachment.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#calloc(int)">calloc</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment.Buffer</code></a> instance allocated with <a href="../../../org/lwjgl/system/MemoryUtil.html#memCalloc(int,int)"><code>memCalloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#callocStack()">callocStack</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment</code></a> instance allocated on the thread-local <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx">BGFXAttachment.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#callocStack(int)">callocStack</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment.Buffer</code></a> instance allocated on the thread-local <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx">BGFXAttachment.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#callocStack(int,org.lwjgl.system.MemoryStack)">callocStack</a></span>&#8203;(int&nbsp;capacity,
            <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
@@ -328,35 +354,35 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment.Buffer</code></a> instance allocated on the specified <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#callocStack(org.lwjgl.system.MemoryStack)">callocStack</a></span>&#8203;(<a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment</code></a> instance allocated on the specified <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#create()">create</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment</code></a> instance allocated with <a href="../../../org/lwjgl/BufferUtils.html" title="class in org.lwjgl"><code>BufferUtils</code></a>.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx">BGFXAttachment.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#create(int)">create</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment.Buffer</code></a> instance allocated with <a href="../../../org/lwjgl/BufferUtils.html" title="class in org.lwjgl"><code>BufferUtils</code></a>.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#create(long)">create</a></span>&#8203;(long&nbsp;address)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment</code></a> instance for the specified memory address.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx">BGFXAttachment.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#create(long,int)">create</a></span>&#8203;(long&nbsp;address,
       int&nbsp;capacity)</code></th>
@@ -364,14 +390,14 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Create a <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment.Buffer</code></a> instance at the specified memory.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#createSafe(long)">createSafe</a></span>&#8203;(long&nbsp;address)</code></th>
 <td class="colLast">
 <div class="block">Like <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#create(long)"><code>create</code></a>, but returns <code>null</code> if <code>address</code> is <code>NULL</code>.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx">BGFXAttachment.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#createSafe(long,int)">createSafe</a></span>&#8203;(long&nbsp;address,
           int&nbsp;capacity)</code></th>
@@ -379,63 +405,63 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Like <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#create(long,int)"><code>create</code></a>, but returns <code>null</code> if <code>address</code> is <code>NULL</code>.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#handle()">handle</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>handle</code> field.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#handle(short)">handle</a></span>&#8203;(short&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>handle</code> field.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#layer()">layer</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>layer</code> field.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#layer(short)">layer</a></span>&#8203;(short&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>layer</code> field.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#malloc()">malloc</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment</code></a> instance allocated with <a href="../../../org/lwjgl/system/MemoryUtil.html#memAlloc(int)"><code>memAlloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx">BGFXAttachment.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#malloc(int)">malloc</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment.Buffer</code></a> instance allocated with <a href="../../../org/lwjgl/system/MemoryUtil.html#memAlloc(int)"><code>memAlloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#mallocStack()">mallocStack</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment</code></a> instance allocated on the thread-local <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx">BGFXAttachment.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#mallocStack(int)">mallocStack</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment.Buffer</code></a> instance allocated on the thread-local <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx">BGFXAttachment.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#mallocStack(int,org.lwjgl.system.MemoryStack)">mallocStack</a></span>&#8203;(int&nbsp;capacity,
            <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
@@ -443,35 +469,50 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment.Buffer</code></a> instance allocated on the specified <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#mallocStack(org.lwjgl.system.MemoryStack)">mallocStack</a></span>&#8203;(<a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx"><code>BGFXAttachment</code></a> instance allocated on the specified <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#mip()">mip</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>mip</code> field.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#mip(short)">mip</a></span>&#8203;(short&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the specified value to the <code>mip</code> field.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#naccess(long)">naccess</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#access()"><code>access()</code></a>.</div>
+</td>
+</tr>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#naccess(long,int)">naccess</a></span>&#8203;(long&nbsp;struct,
+       int&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#access(int)"><code>access</code></a>.</div>
+</td>
+</tr>
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#nhandle(long)">nhandle</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#handle()"><code>handle()</code></a>.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#nhandle(long,short)">nhandle</a></span>&#8203;(long&nbsp;struct,
        short&nbsp;value)</code></th>
@@ -479,14 +520,14 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#handle(short)"><code>handle</code></a>.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#nlayer(long)">nlayer</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#layer()"><code>layer()</code></a>.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#nlayer(long,short)">nlayer</a></span>&#8203;(long&nbsp;struct,
       short&nbsp;value)</code></th>
@@ -494,14 +535,14 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#layer(short)"><code>layer</code></a>.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#nmip(long)">nmip</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#mip()"><code>mip()</code></a>.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#nmip(long,short)">nmip</a></span>&#8203;(long&nbsp;struct,
     short&nbsp;value)</code></th>
@@ -509,23 +550,54 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#mip(short)"><code>mip</code></a>.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i34" class="altColor">
+<td class="colFirst"><code>static byte</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#nresolve(long)">nresolve</a></span>&#8203;(long&nbsp;struct)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#resolve()"><code>resolve()</code></a>.</div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#nresolve(long,byte)">nresolve</a></span>&#8203;(long&nbsp;struct,
+        byte&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#resolve(byte)"><code>resolve</code></a>.</div>
+</td>
+</tr>
+<tr id="i36" class="altColor">
+<td class="colFirst"><code>byte</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#resolve()">resolve</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the value of the <code>resolve</code> field.</div>
+</td>
+</tr>
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#set(short,short,short)">set</a></span>&#8203;(short&nbsp;handle,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#resolve(byte)">resolve</a></span>&#8203;(byte&nbsp;value)</code></th>
+<td class="colLast">
+<div class="block">Sets the specified value to the <code>resolve</code> field.</div>
+</td>
+</tr>
+<tr id="i38" class="altColor">
+<td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#set(int,short,short,short,byte)">set</a></span>&#8203;(int&nbsp;access,
+   short&nbsp;handle,
    short&nbsp;mip,
-   short&nbsp;layer)</code></th>
+   short&nbsp;layer,
+   byte&nbsp;resolve)</code></th>
 <td class="colLast">
 <div class="block">Initializes this struct with the specified values.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#set(org.lwjgl.bgfx.BGFXAttachment)">set</a></span>&#8203;(<a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a>&nbsp;src)</code></th>
 <td class="colLast">
 <div class="block">Copies the specified struct data to this struct.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
@@ -593,6 +665,9 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <h4>ALIGNOF</h4>
 <div class="block">The struct alignment in bytes.</div>
 </li></ul>
+<a id="ACCESS">
+<!--   -->
+</a>
 <a id="HANDLE">
 <!--   -->
 </a>
@@ -602,9 +677,12 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <a id="LAYER">
 <!--   -->
 </a>
+<a id="RESOLVE">
+<!--   -->
+</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>HANDLE, MIP, LAYER</h4>
+<h4>ACCESS, HANDLE, MIP, LAYER, RESOLVE</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -655,6 +733,16 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </dl>
 </li>
 </ul>
+<a id="access()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>access</h4>
+<pre>public&nbsp;int&nbsp;access()</pre>
+<div class="block">Returns the value of the <code>access</code> field.</div>
+</li>
+</ul>
 <a id="handle()">
 <!--   -->
 </a>
@@ -683,6 +771,26 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <h4>layer</h4>
 <pre>public&nbsp;short&nbsp;layer()</pre>
 <div class="block">Returns the value of the <code>layer</code> field.</div>
+</li>
+</ul>
+<a id="resolve()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resolve</h4>
+<pre>public&nbsp;byte&nbsp;resolve()</pre>
+<div class="block">Returns the value of the <code>resolve</code> field.</div>
+</li>
+</ul>
+<a id="access(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>access</h4>
+<pre>public&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a>&nbsp;access&#8203;(int&nbsp;value)</pre>
+<div class="block">Sets the specified value to the <code>access</code> field.</div>
 </li>
 </ul>
 <a id="handle(short)">
@@ -715,15 +823,27 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Sets the specified value to the <code>layer</code> field.</div>
 </li>
 </ul>
-<a id="set(short,short,short)">
+<a id="resolve(byte)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resolve</h4>
+<pre>public&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a>&nbsp;resolve&#8203;(byte&nbsp;value)</pre>
+<div class="block">Sets the specified value to the <code>resolve</code> field.</div>
+</li>
+</ul>
+<a id="set(int,short,short,short,byte)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a>&nbsp;set&#8203;(short&nbsp;handle,
+<pre>public&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXAttachment.html" title="class in org.lwjgl.bgfx">BGFXAttachment</a>&nbsp;set&#8203;(int&nbsp;access,
+                          short&nbsp;handle,
                           short&nbsp;mip,
-                          short&nbsp;layer)</pre>
+                          short&nbsp;layer,
+                          byte&nbsp;resolve)</pre>
 <div class="block">Initializes this struct with the specified values.</div>
 </li>
 </ul>
@@ -972,6 +1092,16 @@ public static&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" 
 </dl>
 </li>
 </ul>
+<a id="naccess(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>naccess</h4>
+<pre>public static&nbsp;int&nbsp;naccess&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#access()"><code>access()</code></a>.</div>
+</li>
+</ul>
 <a id="nhandle(long)">
 <!--   -->
 </a>
@@ -1002,6 +1132,27 @@ public static&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" 
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#layer()"><code>layer()</code></a>.</div>
 </li>
 </ul>
+<a id="nresolve(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nresolve</h4>
+<pre>public static&nbsp;byte&nbsp;nresolve&#8203;(long&nbsp;struct)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#resolve()"><code>resolve()</code></a>.</div>
+</li>
+</ul>
+<a id="naccess(long,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>naccess</h4>
+<pre>public static&nbsp;void&nbsp;naccess&#8203;(long&nbsp;struct,
+                           int&nbsp;value)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#access(int)"><code>access</code></a>.</div>
+</li>
+</ul>
 <a id="nhandle(long,short)">
 <!--   -->
 </a>
@@ -1027,12 +1178,23 @@ public static&nbsp;<a href="../../../org/lwjgl/bgfx/BGFXAttachment.Buffer.html" 
 <a id="nlayer(long,short)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>nlayer</h4>
 <pre>public static&nbsp;void&nbsp;nlayer&#8203;(long&nbsp;struct,
                           short&nbsp;value)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#layer(short)"><code>layer</code></a>.</div>
+</li>
+</ul>
+<a id="nresolve(long,byte)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>nresolve</h4>
+<pre>public static&nbsp;void&nbsp;nresolve&#8203;(long&nbsp;struct,
+                            byte&nbsp;value)</pre>
+<div class="block">Unsafe version of <a href="../../../org/lwjgl/bgfx/BGFXAttachment.html#resolve(byte)"><code>resolve</code></a>.</div>
 </li>
 </ul>
 </li>

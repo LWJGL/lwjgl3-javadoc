@@ -165,7 +165,7 @@ implements <a href="../../../org/lwjgl/vulkan/VkDebugReportCallbackEXTI.html" ti
  
  <h5>Description</h5>
  
- <p>The callback <b>must</b> not call <a href="../../../org/lwjgl/vulkan/EXTDebugReport.html#vkDestroyDebugReportCallbackEXT(org.lwjgl.vulkan.VkInstance,long,org.lwjgl.vulkan.VkAllocationCallbacks)"><code>DestroyDebugReportCallbackEXT</code></a>.</p>
+ <p>The callback <b>must</b> not call <code>vkDestroyDebugReportCallbackEXT</code>.</p>
  
  <p>The callback returns a <code>VkBool32</code>, which is interpreted in a layer-specified manner. The application <b>should</b> always return <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>. The <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a> value is reserved for use in layer development.</p>
  

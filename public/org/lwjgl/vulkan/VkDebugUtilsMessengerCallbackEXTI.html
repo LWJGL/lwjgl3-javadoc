@@ -150,7 +150,7 @@ extends <a href="../../../org/lwjgl/system/CallbackI.I.html" title="interface in
  <pre><code>
  typedef VkBool32 (VKAPI_PTR *PFN_vkDebugUtilsMessengerCallbackEXT)(
      VkDebugUtilsMessageSeverityFlagBitsEXT           messageSeverity,
-     VkDebugUtilsMessageTypeFlagsEXT                  messageType,
+     VkDebugUtilsMessageTypeFlagsEXT                  messageTypes,
      const VkDebugUtilsMessengerCallbackDataEXT*      pCallbackData,
      void*                                            pUserData);</code></pre>
  
@@ -254,7 +254,7 @@ extends <a href="../../../org/lwjgl/system/CallbackI.I.html" title="interface in
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXTI.html#invoke(int,int,long,long)">invoke</a></span>&#8203;(int&nbsp;messageSeverity,
-      int&nbsp;messageType,
+      int&nbsp;messageTypes,
       long&nbsp;pCallbackData,
       long&nbsp;pUserData)</code></th>
 <td class="colLast">
@@ -347,13 +347,14 @@ extends <a href="../../../org/lwjgl/system/CallbackI.I.html" title="interface in
 <li class="blockList">
 <h4>invoke</h4>
 <pre>int&nbsp;invoke&#8203;(int&nbsp;messageSeverity,
-           int&nbsp;messageType,
+           int&nbsp;messageTypes,
            long&nbsp;pCallbackData,
            long&nbsp;pUserData)</pre>
 <div class="block">Application-defined debug messenger callback function.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>messageSeverity</code> - specifies the <code>VkDebugUtilsMessageSeverityFlagBitsEXT</code> that triggered this callback.</dd>
+<dd><code>messageTypes</code> - a bitmask of <code>VkDebugUtilsMessageTypeFlagBitsEXT</code> specifying which type of event(s) triggered this callback.</dd>
 <dd><code>pCallbackData</code> - contains all the callback related data in the <a href="../../../org/lwjgl/vulkan/VkDebugUtilsMessengerCallbackDataEXT.html" title="class in org.lwjgl.vulkan"><code>VkDebugUtilsMessengerCallbackDataEXT</code></a> structure.</dd>
 <dd><code>pUserData</code> - the user data provided when the <code>VkDebugUtilsMessengerEXT</code> was created.</dd>
 </dl>

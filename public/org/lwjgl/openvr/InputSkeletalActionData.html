@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":10};
+var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -156,7 +156,6 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <ul>
  <li><code>bActive</code> &ndash; whether or not this action is currently available to be bound in the active action set</li>
  <li><code>activeOrigin</code> &ndash; the origin that caused this action's current state</li>
- <li><code>boneCount</code> &ndash; the number of bones in the skeletal data</li>
  </ul>
  
  <h3>Layout</h3>
@@ -165,7 +164,6 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  struct InputSkeletalActionData_t {
      bool bActive;
      VRInputValueHandle_t activeOrigin;
-     uint32_t boneCount;
  }</code></pre></div>
 </li>
 </ul>
@@ -235,15 +233,14 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#BACTIVE">BACTIVE</a>
-<br><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#BONECOUNT">BONECOUNT</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#BACTIVE">BACTIVE</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct member offsets.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#SIZEOF">SIZEOF</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#SIZEOF">SIZEOF</a></span></code></th>
 <td class="colLast">
 <div class="block">The struct size in bytes.</div>
 </td>
@@ -311,41 +308,34 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#boneCount()">boneCount</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Returns the value of the <code>boneCount</code> field.</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#calloc()">calloc</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData</code></a> instance allocated with <a href="../../../org/lwjgl/system/MemoryUtil.html#memCalloc(int,int)"><code>memCalloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#calloc(int)">calloc</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData.Buffer</code></a> instance allocated with <a href="../../../org/lwjgl/system/MemoryUtil.html#memCalloc(int,int)"><code>memCalloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#callocStack()">callocStack</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData</code></a> instance allocated on the thread-local <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#callocStack(int)">callocStack</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData.Buffer</code></a> instance allocated on the thread-local <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#callocStack(int,org.lwjgl.system.MemoryStack)">callocStack</a></span>&#8203;(int&nbsp;capacity,
            <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
@@ -353,35 +343,35 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData.Buffer</code></a> instance allocated on the specified <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#callocStack(org.lwjgl.system.MemoryStack)">callocStack</a></span>&#8203;(<a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData</code></a> instance allocated on the specified <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a> and initializes all its bits to zero.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#create()">create</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData</code></a> instance allocated with <a href="../../../org/lwjgl/BufferUtils.html" title="class in org.lwjgl"><code>BufferUtils</code></a>.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#create(int)">create</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData.Buffer</code></a> instance allocated with <a href="../../../org/lwjgl/BufferUtils.html" title="class in org.lwjgl"><code>BufferUtils</code></a>.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#create(long)">create</a></span>&#8203;(long&nbsp;address)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData</code></a> instance for the specified memory address.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#create(long,int)">create</a></span>&#8203;(long&nbsp;address,
       int&nbsp;capacity)</code></th>
@@ -389,14 +379,14 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Create a <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData.Buffer</code></a> instance at the specified memory.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#createSafe(long)">createSafe</a></span>&#8203;(long&nbsp;address)</code></th>
 <td class="colLast">
 <div class="block">Like <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#create(long)"><code>create</code></a>, but returns <code>null</code> if <code>address</code> is <code>NULL</code>.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#createSafe(long,int)">createSafe</a></span>&#8203;(long&nbsp;address,
           int&nbsp;capacity)</code></th>
@@ -404,35 +394,35 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Like <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#create(long,int)"><code>create</code></a>, but returns <code>null</code> if <code>address</code> is <code>NULL</code>.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#malloc()">malloc</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData</code></a> instance allocated with <a href="../../../org/lwjgl/system/MemoryUtil.html#memAlloc(int)"><code>memAlloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#malloc(int)">malloc</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData.Buffer</code></a> instance allocated with <a href="../../../org/lwjgl/system/MemoryUtil.html#memAlloc(int)"><code>memAlloc</code></a>.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#mallocStack()">mallocStack</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData</code></a> instance allocated on the thread-local <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#mallocStack(int)">mallocStack</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData.Buffer</code></a> instance allocated on the thread-local <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr">InputSkeletalActionData.Buffer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#mallocStack(int,org.lwjgl.system.MemoryStack)">mallocStack</a></span>&#8203;(int&nbsp;capacity,
            <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
@@ -440,35 +430,28 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Buffer.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData.Buffer</code></a> instance allocated on the specified <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr">InputSkeletalActionData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#mallocStack(org.lwjgl.system.MemoryStack)">mallocStack</a></span>&#8203;(<a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></th>
 <td class="colLast">
 <div class="block">Returns a new <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html" title="class in org.lwjgl.openvr"><code>InputSkeletalActionData</code></a> instance allocated on the specified <a href="../../../org/lwjgl/system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#nactiveOrigin(long)">nactiveOrigin</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#activeOrigin()"><code>activeOrigin()</code></a>.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#nbActive(long)">nbActive</a></span>&#8203;(long&nbsp;struct)</code></th>
 <td class="colLast">
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#bActive()"><code>bActive()</code></a>.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#nboneCount(long)">nboneCount</a></span>&#8203;(long&nbsp;struct)</code></th>
-<td class="colLast">
-<div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#boneCount()"><code>boneCount()</code></a>.</div>
-</td>
-</tr>
-<tr id="i24" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#sizeof()">sizeof</a></span>()</code></th>
 <td class="colLast">
@@ -542,12 +525,9 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <a id="ACTIVEORIGIN">
 <!--   -->
 </a>
-<a id="BONECOUNT">
-<!--   -->
-</a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>BACTIVE, ACTIVEORIGIN, BONECOUNT</h4>
+<h4>BACTIVE, ACTIVEORIGIN</h4>
 <div class="block">The struct member offsets.</div>
 </li></ul>
 </li>
@@ -616,16 +596,6 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
 <h4>activeOrigin</h4>
 <pre>public&nbsp;long&nbsp;activeOrigin()</pre>
 <div class="block">Returns the value of the <code>activeOrigin</code> field.</div>
-</li>
-</ul>
-<a id="boneCount()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>boneCount</h4>
-<pre>public&nbsp;int&nbsp;boneCount()</pre>
-<div class="block">Returns the value of the <code>boneCount</code> field.</div>
 </li>
 </ul>
 <a id="malloc()">
@@ -870,21 +840,11 @@ public static&nbsp;<a href="../../../org/lwjgl/openvr/InputSkeletalActionData.Bu
 <a id="nactiveOrigin(long)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>nactiveOrigin</h4>
 <pre>public static&nbsp;long&nbsp;nactiveOrigin&#8203;(long&nbsp;struct)</pre>
 <div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#activeOrigin()"><code>activeOrigin()</code></a>.</div>
-</li>
-</ul>
-<a id="nboneCount(long)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>nboneCount</h4>
-<pre>public static&nbsp;int&nbsp;nboneCount&#8203;(long&nbsp;struct)</pre>
-<div class="block">Unsafe version of <a href="../../../org/lwjgl/openvr/InputSkeletalActionData.html#boneCount()"><code>boneCount()</code></a>.</div>
 </li>
 </ul>
 </li>

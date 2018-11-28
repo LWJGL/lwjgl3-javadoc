@@ -142,8 +142,11 @@ extends java.lang.Object</pre>
  <h3>Introduction</h3>
  
  <p>zstd, short for Zstandard, is a fast lossless compression algorithm, targeting real-time compression scenarios at zlib-level and better compression
- ratios. The zstd compression library provides in-memory compression and decompression functions. The library supports compression levels from 1 up to
- <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_maxCLevel()"><code>maxCLevel</code></a> which is currently 22. Levels &ge; 20, labeled <code>--ultra</code>, should be used with caution, as they require more memory.</p>
+ ratios. The zstd compression library provides in-memory compression and decompression functions.</p>
+ 
+ <p>The library supports regular compression levels from 1 up to <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_maxCLevel()"><code>maxCLevel</code></a>, which is currently 22. Levels &ge; 20, labeled <code>--ultra</code>, should be
+ used with caution, as they require more memory. The library also offers negative compression levels, which extend the range of speed vs. ratio
+ preferences. The lower the level, the faster the speed (at the cost of compression).</p>
  
  <p>Compression can be done in:</p>
  
@@ -153,7 +156,7 @@ extends java.lang.Object</pre>
  <li>unbounded multiple steps (described as Streaming compression)</li>
  </ul>
  
- <p>The compression ratio achievable on small data can be highly improved using a dictionary in:</p>
+ <p>The compression ratio achievable on small data can be highly improved using a dictionary. Dictionary compression can be performed in:</p>
  
  <ul>
  <li>a single step (described as Simple dictionary API)</li>
@@ -161,7 +164,8 @@ extends java.lang.Object</pre>
  </ul>
  
  <p>Advanced experimental functions can be accessed using <code>#define ZSTD_STATIC_LINKING_ONLY</code> before including <code>zstd.h</code>. Advanced experimental
- APIs shall never be used with a dynamic library. They are not "stable", their definition may change in the future. Only static linking is allowed.</p>
+ APIs should never be used with a dynamically-linked library. They are not "stable", their definitions or signatures may change in the future. Only
+ static linking is allowed.</p>
  
  <h3>Streaming compression - HowTo</h3>
  
@@ -486,7 +490,9 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zstd.html#nZSTD_initCStream(long,int)">nZSTD_initCStream</a></span>&#8203;(long&nbsp;zcs,
                  int&nbsp;compressionLevel)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_initCStream(long,int)"><code>initCStream</code></a></div>
+</td>
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
@@ -568,7 +574,9 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_compressStream(long,org.lwjgl.util.zstd.ZSTDOutBuffer,org.lwjgl.util.zstd.ZSTDInBuffer)">ZSTD_compressStream</a></span>&#8203;(long&nbsp;zcs,
                    <a href="../../../../org/lwjgl/util/zstd/ZSTDOutBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDOutBuffer</a>&nbsp;output,
                    <a href="../../../../org/lwjgl/util/zstd/ZSTDInBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDInBuffer</a>&nbsp;input)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Use <code>ZSTD_compressStream()</code> as many times as necessary to consume input stream.</div>
+</td>
 </tr>
 <tr id="i33" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
@@ -588,7 +596,9 @@ extends java.lang.Object</pre>
 <tr id="i35" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_createCStream()">ZSTD_createCStream</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">A <code>ZSTD_CStream</code> object is required to track streaming operation.</div>
+</td>
 </tr>
 <tr id="i36" class="altColor">
 <td class="colFirst"><code>static long</code></td>
@@ -607,7 +617,9 @@ extends java.lang.Object</pre>
 <tr id="i38" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_createDStream()">ZSTD_createDStream</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">A <code>ZSTD_DStream</code> object is required to track streaming operations.</div>
+</td>
 </tr>
 <tr id="i39" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
@@ -663,7 +675,9 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_decompressStream(long,org.lwjgl.util.zstd.ZSTDOutBuffer,org.lwjgl.util.zstd.ZSTDInBuffer)">ZSTD_decompressStream</a></span>&#8203;(long&nbsp;zds,
                      <a href="../../../../org/lwjgl/util/zstd/ZSTDOutBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDOutBuffer</a>&nbsp;output,
                      <a href="../../../../org/lwjgl/util/zstd/ZSTDInBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDInBuffer</a>&nbsp;input)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Use <code>ZSTD_decompressStream()</code> repetitively to consume your input.</div>
+</td>
 </tr>
 <tr id="i46" class="altColor">
 <td class="colFirst"><code>static long</code></td>
@@ -683,13 +697,17 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_endStream(long,org.lwjgl.util.zstd.ZSTDOutBuffer)">ZSTD_endStream</a></span>&#8203;(long&nbsp;zcs,
               <a href="../../../../org/lwjgl/util/zstd/ZSTDOutBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDOutBuffer</a>&nbsp;output)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block"><code>ZSTD_endStream()</code> instructs to finish a frame.</div>
+</td>
 </tr>
 <tr id="i49" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_flushStream(long,org.lwjgl.util.zstd.ZSTDOutBuffer)">ZSTD_flushStream</a></span>&#8203;(long&nbsp;zcs,
                 <a href="../../../../org/lwjgl/util/zstd/ZSTDOutBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDOutBuffer</a>&nbsp;output)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">At any moment, it's possible to flush whatever data might remain stuck within internal buffer, using <code>ZSTD_flushStream()</code>.</div>
+</td>
 </tr>
 <tr id="i50" class="altColor">
 <td class="colFirst"><code>static long</code></td>
@@ -755,12 +773,16 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_initCStream(long,int)">ZSTD_initCStream</a></span>&#8203;(long&nbsp;zcs,
                 int&nbsp;compressionLevel)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Use <code>ZSTD_initCStream()</code> to start a new compression operation.</div>
+</td>
 </tr>
 <tr id="i59" class="rowColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_initDStream(long)">ZSTD_initDStream</a></span>&#8203;(long&nbsp;zds)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Use <code>ZSTD_initDStream()</code> to start a new decompression operation.</div>
+</td>
 </tr>
 <tr id="i60" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
@@ -1294,7 +1316,9 @@ extends java.lang.Object</pre>
  <p><code>ZSTD_createCDict()</code> will create a digested dictionary, ready to start future compression operations without startup delay. <code>ZSTD_CDict</code>
  can be created once and shared by multiple threads concurrently, since its usage is read-only.</p>
  
- <p><code>dictBuffer</code> can be released after <code>ZSTD_CDict</code> creation, since its content is copied within CDict.</p></div>
+ <p><code>dictBuffer</code> can be released after <code>ZSTD_CDict</code> creation, since its content is copied within CDict.</p>
+ 
+ <p>Note: A <code>ZSTD_CDict</code> can be created with an empty dictionary, but it is inefficient for small data.</p></div>
 </li>
 </ul>
 <a id="nZSTD_freeCDict(long)">
@@ -1345,7 +1369,10 @@ extends java.lang.Object</pre>
 <div class="block">Compression using a digested Dictionary.
  
  <p>Faster startup than <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_compress_usingDict(long,java.nio.ByteBuffer,java.nio.ByteBuffer,java.nio.ByteBuffer,int)"><code>compress_usingDict</code></a>, recommended when same dictionary is used multiple times. Note that compression level is decided during
- dictionary creation. Frame parameters are hardcoded (<code>dictID=yes, contentSize=yes, checksum=no</code>)</p></div>
+ dictionary creation. Frame parameters are hardcoded (<code>dictID=yes, contentSize=yes, checksum=no</code>)</p>
+ 
+ <p>Note: <code>ZSTD_compress_usingCDict()</code> can be used with a <code>ZSTD_CDict</code> created from an empty dictionary. But it is inefficient for small data,
+ and it is recommended to use <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_compressCCtx(long,java.nio.ByteBuffer,java.nio.ByteBuffer,int)"><code>compressCCtx</code></a>.</p></div>
 </li>
 </ul>
 <a id="nZSTD_createDDict(long,long)">
@@ -1428,6 +1455,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>ZSTD_createCStream</h4>
 <pre>public static&nbsp;long&nbsp;ZSTD_createCStream()</pre>
+<div class="block">A <code>ZSTD_CStream</code> object is required to track streaming operation.
+ 
+ <p>Use <code>ZSTD_createCStream()</code> and <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_freeCStream(long)"><code>freeCStream</code></a> to create/release resources.</p>
+ 
+ <p><code>ZSTD_CStream</code> objects can be reused multiple times on consecutive compression operations. It is recommended to re-use <code>ZSTD_CStream</code> in
+ situations where many streaming operations will be achieved consecutively, since it will play nicer with system's memory, by re-using already allocated
+ memory. Use one separate <code>ZSTD_CStream</code> per thread for parallel execution.</p></div>
 </li>
 </ul>
 <a id="nZSTD_freeCStream(long)">
@@ -1458,6 +1492,7 @@ extends java.lang.Object</pre>
 <h4>nZSTD_initCStream</h4>
 <pre>public static&nbsp;long&nbsp;nZSTD_initCStream&#8203;(long&nbsp;zcs,
                                      int&nbsp;compressionLevel)</pre>
+<div class="block">Unsafe version of: <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_initCStream(long,int)"><code>initCStream</code></a></div>
 </li>
 </ul>
 <a id="ZSTD_initCStream(long,int)">
@@ -1468,6 +1503,7 @@ extends java.lang.Object</pre>
 <h4>ZSTD_initCStream</h4>
 <pre>public static&nbsp;long&nbsp;ZSTD_initCStream&#8203;(long&nbsp;zcs,
                                     int&nbsp;compressionLevel)</pre>
+<div class="block">Use <code>ZSTD_initCStream()</code> to start a new compression operation.</div>
 </li>
 </ul>
 <a id="nZSTD_compressStream(long,long,long)">
@@ -1491,6 +1527,12 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;long&nbsp;ZSTD_compressStream&#8203;(long&nbsp;zcs,
                                        <a href="../../../../org/lwjgl/util/zstd/ZSTDOutBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDOutBuffer</a>&nbsp;output,
                                        <a href="../../../../org/lwjgl/util/zstd/ZSTDInBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDInBuffer</a>&nbsp;input)</pre>
+<div class="block">Use <code>ZSTD_compressStream()</code> as many times as necessary to consume input stream.
+ 
+ <p>The function will automatically update both <code>pos</code> fields within <code>input</code> and <code>output</code>. Note that the function may not consume the
+ entire input, for example, because the output buffer is already full, in which case <code>input.pos &lt; input.size</code>. The caller must check if input has
+ been entirely consumed. If not, the caller must make some room to receive more compressed data, typically by emptying output buffer, or allocating a
+ new output buffer, and then present again remaining input data.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a size hint, preferred <code>nb</code> of bytes to use as input for next function call or an error code, which can be tested using <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_isError(long)"><code>isError</code></a>.
@@ -1523,9 +1565,17 @@ extends java.lang.Object</pre>
 <h4>ZSTD_flushStream</h4>
 <pre>public static&nbsp;long&nbsp;ZSTD_flushStream&#8203;(long&nbsp;zcs,
                                     <a href="../../../../org/lwjgl/util/zstd/ZSTDOutBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDOutBuffer</a>&nbsp;output)</pre>
+<div class="block">At any moment, it's possible to flush whatever data might remain stuck within internal buffer, using <code>ZSTD_flushStream()</code>.
+ 
+ <p><code>output-&gt;pos</code> will be updated. Note that, if <code>output-&gt;size</code> is too small, a single invocation of <code>ZSTD_flushStream()</code> might not be
+enough (return code &gt; 0). In which case, make some room to receive more compressed data, and call again <code>ZSTD_flushStream()</code>.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>nb</code> of bytes still present within internal buffer (0 if it's empty) or an error code, which can be tested using <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_isError(long)"><code>isError</code></a></dd>
+<dd><ul>
+         <li>0 if internal buffers are entirely flushed,</li>
+         <li>&gt;0 if some data still present within internal buffer (the value is minimal estimation of remaining size),</li>
+         <li>or an error code, which can be tested using <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_isError(long)"><code>isError</code></a></li>
+         </ul></dd>
 </dl>
 </li>
 </ul>
@@ -1548,6 +1598,10 @@ extends java.lang.Object</pre>
 <h4>ZSTD_endStream</h4>
 <pre>public static&nbsp;long&nbsp;ZSTD_endStream&#8203;(long&nbsp;zcs,
                                   <a href="../../../../org/lwjgl/util/zstd/ZSTDOutBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDOutBuffer</a>&nbsp;output)</pre>
+<div class="block"><code>ZSTD_endStream()</code> instructs to finish a frame.
+ 
+ <p>It will perform a flush and write frame epilogue. The epilogue is required for decoders to consider a frame completed. <code>flush()</code> operation is the
+same, and follows same rules as <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_flushStream(long,org.lwjgl.util.zstd.ZSTDOutBuffer)"><code>flushStream</code></a>.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>0 if frame fully completed and fully flushed, or &gt; 0 if some data is still present within internal buffer (value is minimum size estimation for
@@ -1582,6 +1636,9 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>ZSTD_createDStream</h4>
 <pre>public static&nbsp;long&nbsp;ZSTD_createDStream()</pre>
+<div class="block">A <code>ZSTD_DStream</code> object is required to track streaming operations.
+ 
+ <p>Use <code>ZSTD_createDStream()</code> and <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_freeDStream(long)"><code>freeDStream</code></a> to create/release resources. <code>ZSTD_DStream</code> objects can be re-used multiple times.</p></div>
 </li>
 </ul>
 <a id="nZSTD_freeDStream(long)">
@@ -1621,6 +1678,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>ZSTD_initDStream</h4>
 <pre>public static&nbsp;long&nbsp;ZSTD_initDStream&#8203;(long&nbsp;zds)</pre>
+<div class="block">Use <code>ZSTD_initDStream()</code> to start a new decompression operation.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>recommended first input size</dd>
@@ -1648,6 +1706,13 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;long&nbsp;ZSTD_decompressStream&#8203;(long&nbsp;zds,
                                          <a href="../../../../org/lwjgl/util/zstd/ZSTDOutBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDOutBuffer</a>&nbsp;output,
                                          <a href="../../../../org/lwjgl/util/zstd/ZSTDInBuffer.html" title="class in org.lwjgl.util.zstd">ZSTDInBuffer</a>&nbsp;input)</pre>
+<div class="block">Use <code>ZSTD_decompressStream()</code> repetitively to consume your input.
+ 
+ <p>The function will update both <code>pos</code> fields. If <code>input.pos &lt; input.size</code>, some input has not been consumed. It's up to the caller to present
+ again remaining data. The function tries to flush all data decoded immediately, respecting buffer sizes.  If <code>output.pos &lt; output.size</code>, decoder
+ has flushed everything it could. But if <code>output.pos == output.size</code>, there is no such guarantee, it's likely that some decoded data was not
+ flushed and still remains within internal buffers. In which case, call <code>ZSTD_decompressStream()</code> again to flush whatever remains in the buffer.
+ When no additional input is provided, amount of data flushed is necessarily &le; <a href="../../../../org/lwjgl/util/zstd/ZstdX.html#ZSTD_BLOCKSIZE_MAX"><code>BLOCKSIZE_MAX</code></a>.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>0 when a frame is completely decoded and fully flushed, an error code, which can be tested using <a href="../../../../org/lwjgl/util/zstd/Zstd.html#ZSTD_isError(long)"><code>isError</code></a>, any other value &gt; 0, which means there
