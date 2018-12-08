@@ -823,6 +823,13 @@ extends java.lang.Object</pre>
      VkDevice                                    device,
      const VkDebugUtilsObjectNameInfoEXT*        pNameInfo);</code></pre>
  
+ <h5>Valid Usage</h5>
+ 
+ <ul>
+ <li><code>pNameInfo</code>-&gt;<code>objectType</code> <b>must</b> not be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_OBJECT_TYPE_UNKNOWN"><code>OBJECT_TYPE_UNKNOWN</code></a></li>
+ <li><code>pNameInfo</code>-&gt;<code>objectHandle</code> <b>must</b> not be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a></li>
+ </ul>
+ 
  <h5>Valid Usage (Implicit)</h5>
  
  <ul>
@@ -1314,6 +1321,8 @@ extends java.lang.Object</pre>
  </ul></dd>
  </dl>
  
+ <p>The application <b>must</b> ensure that <a href="../../../org/lwjgl/vulkan/EXTDebugUtils.html#vkCreateDebugUtilsMessengerEXT(org.lwjgl.vulkan.VkInstance,org.lwjgl.vulkan.VkDebugUtilsMessengerCreateInfoEXT,org.lwjgl.vulkan.VkAllocationCallbacks,java.nio.LongBuffer)"><code>CreateDebugUtilsMessengerEXT</code></a> is not executed in parallel with any Vulkan command that is also called with <code>instance</code> or child of <code>instance</code> as the dispatchable argument.</p>
+ 
  <h5>See Also</h5>
  
  <p><a href="../../../org/lwjgl/vulkan/VkAllocationCallbacks.html" title="class in org.lwjgl.vulkan"><code>VkAllocationCallbacks</code></a>, <a href="../../../org/lwjgl/vulkan/VkDebugUtilsMessengerCreateInfoEXT.html" title="class in org.lwjgl.vulkan"><code>VkDebugUtilsMessengerCreateInfoEXT</code></a></p></div>
@@ -1382,6 +1391,8 @@ extends java.lang.Object</pre>
  <li>Host access to <code>messenger</code> <b>must</b> be externally synchronized</li>
  </ul>
  
+ <p>The application <b>must</b> ensure that <a href="../../../org/lwjgl/vulkan/EXTDebugUtils.html#vkDestroyDebugUtilsMessengerEXT(org.lwjgl.vulkan.VkInstance,long,org.lwjgl.vulkan.VkAllocationCallbacks)"><code>DestroyDebugUtilsMessengerEXT</code></a> is not executed in parallel with any Vulkan command that is also called with <code>instance</code> or child of <code>instance</code> as the dispatchable argument.</p>
+ 
  <h5>See Also</h5>
  
  <p><a href="../../../org/lwjgl/vulkan/VkAllocationCallbacks.html" title="class in org.lwjgl.vulkan"><code>VkAllocationCallbacks</code></a></p></div>
@@ -1432,6 +1443,12 @@ extends java.lang.Object</pre>
  <h5>Description</h5>
  
  <p>The call will propagate through the layers and generate callback(s) as indicated by the message's flags. The parameters are passed on to the callback in addition to the <code>pUserData</code> value that was defined at the time the messenger was registered.</p>
+ 
+ <h5>Valid Usage</h5>
+ 
+ <ul>
+ <li><code>objectType</code> member of each element of <code>pCallbackData</code>-&gt;<code>pObjects</code> <b>must</b> not be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_OBJECT_TYPE_UNKNOWN"><code>OBJECT_TYPE_UNKNOWN</code></a></li>
+ </ul>
  
  <h5>Valid Usage (Implicit)</h5>
  

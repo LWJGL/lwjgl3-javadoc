@@ -153,15 +153,17 @@ extends <a href="../../../org/lwjgl/system/Struct.html" title="class in org.lwjg
 implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></pre>
 <div class="block">Structure specifying axis-aligned bounding box geometry in a bottom-level acceleration structure.
  
+ <h5>Description</h5>
+ 
+ <p>The AABB data in memory is six 32-bit floats consisting of the minimum x, y, and z values followed by the maximum x, y, and z values.</p>
+ 
  <h5>Valid Usage</h5>
  
  <ul>
  <li><code>offset</code> <b>must</b> be less than the size of <code>aabbData</code></li>
- <li><code>offset</code> <b>must</b> be a multiple of 8.</li>
- <li><code>stride</code> <b>must</b> be a multiple of 8.</li>
+ <li><code>offset</code> <b>must</b> be a multiple of 8</li>
+ <li><code>stride</code> <b>must</b> be a multiple of 8</li>
  </ul>
- 
- <p>The AABB data in memory is 6 32-bit floats consisting of the minimum x, y, and z values followed by the maximum x, y, and z values.</p>
  
  <h5>Valid Usage (Implicit)</h5>
  
@@ -180,7 +182,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <ul>
  <li><code>sType</code> &ndash; the type of this structure.</li>
  <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
- <li><code>aabbData</code> &ndash; the buffer containing axis-aligned bounding box data</li>
+ <li><code>aabbData</code> &ndash; the buffer containing axis-aligned bounding box data.</li>
  <li><code>numAABBs</code> &ndash; the number of AABBs in this geometry.</li>
  <li><code>stride</code> &ndash; the stride in bytes between AABBs in <code>aabbData</code>.</li>
  <li><code>offset</code> &ndash; the offset in bytes of the first AABB in <code>aabbData</code>.</li>

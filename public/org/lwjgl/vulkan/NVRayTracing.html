@@ -149,7 +149,7 @@ extends java.lang.Object</pre>
  <p>This extension adds support for the following SPIR-V extension in Vulkan:</p>
  
  <ul>
- <li>SPV_NV_ray_tracing</li>
+ <li><code>SPV_NV_ray_tracing</code></li>
  </ul>
  
  <h5>Sample Code</h5>
@@ -966,14 +966,14 @@ extends java.lang.Object</pre>
  <h5>Description</h5>
  
  <ul>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_NV"><code>RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_NV</code></a> indicates a shader group with a single <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_SHADER_STAGE_RAYGEN_BIT_NV"><code>SHADER_STAGE_RAYGEN_BIT_NV</code></a>, <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_SHADER_STAGE_MISS_BIT_NV"><code>SHADER_STAGE_MISS_BIT_NV</code></a>, or <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_SHADER_STAGE_CALLABLE_BIT_NV"><code>SHADER_STAGE_CALLABLE_BIT_NV</code></a> shader in it</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_NV"><code>RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_NV</code></a> specifies a shader group that only hits triangles and <b>must</b> not contain an intersection shader, only closest hit and any hit.</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_NV"><code>RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_NV</code></a> specifies a shader group that only intersects with custom geometry and <b>must</b> contain an intersection shader and <b>may</b> contain closest hit and any hit shaders.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_NV"><code>RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_NV</code></a> indicates a shader group with a single <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_SHADER_STAGE_RAYGEN_BIT_NV"><code>SHADER_STAGE_RAYGEN_BIT_NV</code></a>, <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_SHADER_STAGE_MISS_BIT_NV"><code>SHADER_STAGE_MISS_BIT_NV</code></a>, or <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_SHADER_STAGE_CALLABLE_BIT_NV"><code>SHADER_STAGE_CALLABLE_BIT_NV</code></a> shader in it.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_NV"><code>RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_NV</code></a> specifies a shader group that only hits triangles and <b>must</b> not contain an intersection shader, only closest hit and any-hit.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_NV"><code>RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_NV</code></a> specifies a shader group that only intersects with custom geometry and <b>must</b> contain an intersection shader and <b>may</b> contain closest hit and any-hit shaders.</li>
  </ul>
  
  <div style="margin-left: 26px; border-left: 1px solid gray; padding-left: 14px;"><h5>Note</h5>
  
- <p>For current group types, the hit group type could be inferred from the presence or absence of the intersection shader, but we provide the type explicitly for future hit groups that don't have that property.</p>
+ <p>For current group types, the hit group type could be inferred from the presence or absence of the intersection shader, but we provide the type explicitly for future hit groups that do not have that property.</p>
  </div>
  
  <h5>See Also</h5>
@@ -1016,8 +1016,8 @@ extends java.lang.Object</pre>
  <h5>Description</h5>
  
  <ul>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_OPAQUE_BIT_NV"><code>GEOMETRY_OPAQUE_BIT_NV</code></a> indicates that this geometry does not invoke any-hit shaders even if present in a hit group.</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_NV"><code>GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_NV</code></a> indicates that the implementation <b>must</b> only call any hit a single time for each primitive in this geometry. If this bit is absent an implementation <b>may</b> invoke an any hit shader more than once for this geometry.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_OPAQUE_BIT_NV"><code>GEOMETRY_OPAQUE_BIT_NV</code></a> indicates that this geometry does not invoke the any-hit shaders even if present in a hit group.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_NV"><code>GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_NV</code></a> indicates that the implementation <b>must</b> only call the any-hit shader a single time for each primitive in this geometry. If this bit is absent an implementation <b>may</b> invoke the any-hit shader more than once for this geometry.</li>
  </ul>
  
  <h5>See Also</h5>
@@ -1045,9 +1045,9 @@ extends java.lang.Object</pre>
  
  <ul>
  <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_INSTANCE_TRIANGLE_CULL_DISABLE_BIT_NV"><code>GEOMETRY_INSTANCE_TRIANGLE_CULL_DISABLE_BIT_NV</code></a> disables face culling for this instance.</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_NV"><code>GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_NV</code></a> indicates that the front face of the triangle for culling purposes should be the face that&#8217;s counter clockwise in object space relative to the ray origin. Because the facing is determined in object space, an instance transform matrix does not changing winding, but a geometry transform does.</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV"><code>GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV</code></a> causes this instance to act as though <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_OPAQUE_BIT_NV"><code>GEOMETRY_OPAQUE_BIT_NV</code></a> were specified on all geometries referenced by this instance. This behavior can be overridden by the ray flag <code>gl_RayFlagsNoOpaqueNV</code>.</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV"><code>GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV</code></a> causes this instance to act as though <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_OPAQUE_BIT_NV"><code>GEOMETRY_OPAQUE_BIT_NV</code></a> were not specified on all geometries referenced by this instance. This behavior can be overridden by the ray flag <code>gl_RayFlagsOpaqueNV</code>.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_NV"><code>GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_NV</code></a> indicates that the front face of the triangle for culling purposes is the face that is counter clockwise in object space relative to the ray origin. Because the facing is determined in object space, an instance transform matrix does not change the winding, but a geometry transform does.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV"><code>GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV</code></a> causes this instance to act as though <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_OPAQUE_BIT_NV"><code>GEOMETRY_OPAQUE_BIT_NV</code></a> were specified on all geometries referenced by this instance. This behavior <b>can</b> be overridden by the ray flag <code>gl_RayFlagsNoOpaqueNV</code>.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV"><code>GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV</code></a> causes this instance to act as though <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_OPAQUE_BIT_NV"><code>GEOMETRY_OPAQUE_BIT_NV</code></a> were not specified on all geometries referenced by this instance. This behavior <b>can</b> be overridden by the ray flag <code>gl_RayFlagsOpaqueNV</code>.</li>
  </ul>
  
  <p><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV"><code>GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV</code></a> and <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV"><code>GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV</code></a> <b>must</b> not be used in the same flag.</p>
@@ -1070,8 +1070,8 @@ extends java.lang.Object</pre>
  <h5>Description</h5>
  
  <ul>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV"><code>ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV</code></a> is a bottom-level acceleration structure containing the AABBs or geometry to be intersected.</li>
  <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV"><code>ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV</code></a> is a top-level acceleration structure containing instance data referring to bottom-level level acceleration structures.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV"><code>ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV</code></a> is a bottom-level acceleration structure containing the AABBs or geometry to be intersected.</li>
  </ul>
  
  <h5>See Also</h5>
@@ -1101,18 +1101,16 @@ extends java.lang.Object</pre>
  <h5>Description</h5>
  
  <ul>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV</code></a> indicates that the specified acceleration structure <b>may</b> be updated with <code>update</code> of true in <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkCmdBuildAccelerationStructureNV(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkAccelerationStructureInfoNV,long,long,boolean,long,long,long,long)"><code>CmdBuildAccelerationStructureNV</code></a>. This flag <b>must</b> only be set on a build that is not an update or is an update with a source that also had this flag set.</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV</code></a> indicates that the specified acceleration structure <b>may</b> act as the source for <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkCmdCopyAccelerationStructureNV(org.lwjgl.vulkan.VkCommandBuffer,long,long,int)"><code>CmdCopyAccelerationStructureNV</code></a> with <code>mode</code> of <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV"><code>COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV</code></a> to produce a compacted acceleration structure.</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV</code></a> indicates that the given acceleration structure build should prioritize trace performance over build time.</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV</code></a> indicates that the given acceleration structure build should prioritize build time over trace performance.</li>
- <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_NV</code></a> indicates that this acceleration structure should minimize the size of scratch memory and final result build, potentially at the expense of build time or trace performance.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV</code></a> indicates that the specified acceleration structure <b>can</b> be updated with <code>update</code> of <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a> in <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkCmdBuildAccelerationStructureNV(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkAccelerationStructureInfoNV,long,long,boolean,long,long,long,long)"><code>CmdBuildAccelerationStructureNV</code></a>.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV</code></a> indicates that the specified acceleration structure <b>can</b> act as the source for <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkCmdCopyAccelerationStructureNV(org.lwjgl.vulkan.VkCommandBuffer,long,long,int)"><code>CmdCopyAccelerationStructureNV</code></a> with <code>mode</code> of <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV"><code>COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV</code></a> to produce a compacted acceleration structure.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV</code></a> indicates that the given acceleration structure build <b>should</b> prioritize trace performance over build time.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV</code></a> indicates that the given acceleration structure build <b>should</b> prioritize build time over trace performance.</li>
+ <li><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_NV</code></a> indicates that this acceleration structure <b>should</b> minimize the size of the scratch memory and the final result build, potentially at the expense of build time or trace performance.</li>
  </ul>
- 
- <p><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV</code></a> and <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV</code></a> <b>must</b> not be used in the same flags.</p>
  
  <div style="margin-left: 26px; border-left: 1px solid gray; padding-left: 14px;"><h5>Note</h5>
  
- <p><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV</code></a> and <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV</code></a> <b>may</b> take more time and memory than a normal build, so should only be used when those features are used.</p>
+ <p><a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV</code></a> and <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV</code></a> <b>may</b> take more time and memory than a normal build, and so <b>should</b> only be used when those features are used.</p>
  </div>
  
  <h5>See Also</h5>
@@ -1216,7 +1214,7 @@ extends java.lang.Object</pre>
  
  <h5>Description</h5>
  
- <p>Similar to other objects in Vulkan, the acceleration structure creation merely creates an object with a specific "shape" as specified by the information in <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a> and <code>compactedSize</code> in <code>pCreateInfo</code>. Populating the data in the object after allocating and binding memory is done with <code>vkCmdBuildAccelerationStructureNV</code> and <code>vkCmdCopyAccelerationStructureNV</code>.</p>
+ <p>Similar to other objects in Vulkan, the acceleration structure creation merely creates an object with a specific "<code>shape</code>" as specified by the information in <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a> and <code>compactedSize</code> in <code>pCreateInfo</code>. Populating the data in the object after allocating and binding memory is done with <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkCmdBuildAccelerationStructureNV(org.lwjgl.vulkan.VkCommandBuffer,org.lwjgl.vulkan.VkAccelerationStructureInfoNV,long,long,boolean,long,long,long,long)"><code>CmdBuildAccelerationStructureNV</code></a> and <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkCmdCopyAccelerationStructureNV(org.lwjgl.vulkan.VkCommandBuffer,long,long,int)"><code>CmdCopyAccelerationStructureNV</code></a>.</p>
  
  <p>Acceleration structure creation uses the count and type information from the geometries, but does not use the data references in the structures.</p>
  
@@ -1382,7 +1380,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkBindAccelerationStructureMemoryNV(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkBindAccelerationStructureMemoryInfoNV.Buffer)"><code>BindAccelerationStructureMemoryNV</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>bindInfoCount</code> - the number of elements in pBindInfos.</dd>
+<dd><code>bindInfoCount</code> - the number of elements in <code>pBindInfos</code>.</dd>
 </dl>
 </li>
 </ul>
@@ -1405,16 +1403,6 @@ extends java.lang.Object</pre>
      VkDevice                                    device,
      uint32_t                                    bindInfoCount,
      const VkBindAccelerationStructureMemoryInfoNV* pBindInfos);</code></pre>
- 
- <h5>Valid Usage</h5>
- 
- <ul>
- <li><code>accelerationStructure</code> <b>must</b> not already be backed by a memory object</li>
- <li><code>memoryOffset</code> <b>must</b> be less than the size of <code>memory</code></li>
- <li><code>memory</code> <b>must</b> have been allocated using one of the memory types allowed in the <code>memoryTypeBits</code> member of the <a href="../../../org/lwjgl/vulkan/VkMemoryRequirements.html" title="class in org.lwjgl.vulkan"><code>VkMemoryRequirements</code></a> structure returned from a call to <code>vkGetAccelerationStructureMemoryRequirementsNV</code> with <code>accelerationStructure</code> and <code>type</code> of <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV"><code>ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV</code></a></li>
- <li><code>memoryOffset</code> <b>must</b> be an integer multiple of the <code>alignment</code> member of the <a href="../../../org/lwjgl/vulkan/VkMemoryRequirements.html" title="class in org.lwjgl.vulkan"><code>VkMemoryRequirements</code></a> structure returned from a call to <code>vkGetAccelerationStructureMemoryRequirementsNV</code> with <code>accelerationStructure</code> and <code>type</code> of <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV"><code>ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV</code></a></li>
- <li>The <code>size</code> member of the <a href="../../../org/lwjgl/vulkan/VkMemoryRequirements.html" title="class in org.lwjgl.vulkan"><code>VkMemoryRequirements</code></a> structure returned from a call to <code>vkGetImageMemoryRequirements</code> with <code>accelerationStructure</code> and <code>type</code> of <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV"><code>ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV</code></a> <b>must</b> be less than or equal to the size of <code>memory</code> minus <code>memoryOffset</code></li>
- </ul>
  
  <h5>Valid Usage (Implicit)</h5>
  
@@ -1504,10 +1492,10 @@ extends java.lang.Object</pre>
  <ul>
  <li><code>geometryCount</code> <b>must</b> be less than or equal to <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::maxGeometryCount</code></li>
  <li><code>dst</code> <b>must</b> have been created with compatible <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a> where <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a>:<code>::type</code> and <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a><code>::flags</code> are identical, <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a><code>::instanceCount</code> and <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a><code>::geometryCount</code> for <code>dst</code> are greater than or equal to the build size and each geometry in <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a><code>::pGeometries</code> for <code>dst</code> has greater than or equal to the number of vertices, indices, and AABBs.</li>
- <li>If <code>update</code> is true, <code>src</code> <b>must</b> not be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a></li>
- <li>If <code>update</code> is true, <code>src</code> <b>must</b> have been built last with <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV</code></a> set in <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a><code>::flags</code></li>
- <li>If <code>update</code> is false, The <code>size</code> member of the <a href="../../../org/lwjgl/vulkan/VkMemoryRequirements.html" title="class in org.lwjgl.vulkan"><code>VkMemoryRequirements</code></a> structure returned from a call to <code>vkGetAccelerationStructureMemoryRequirementsNV</code> with <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureMemoryRequirementsInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureMemoryRequirementsInfoNV</code></a><code>::accelerationStructure</code> set to <code>dst</code> and <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureMemoryRequirementsInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureMemoryRequirementsInfoNV</code></a><code>::type</code> set to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV"><code>ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV</code></a> <b>must</b> be less than or equal to the size of <code>scratch</code> minus <code>scratchOffset</code></li>
- <li>If <code>update</code> is true, The <code>size</code> member of the <a href="../../../org/lwjgl/vulkan/VkMemoryRequirements.html" title="class in org.lwjgl.vulkan"><code>VkMemoryRequirements</code></a> structure returned from a call to <code>vkGetAccelerationStructureMemoryRequirementsNV</code> with <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureMemoryRequirementsInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureMemoryRequirementsInfoNV</code></a><code>::accelerationStructure</code> set to <code>dst</code> and <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureMemoryRequirementsInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureMemoryRequirementsInfoNV</code></a><code>::type</code> set to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV"><code>ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV</code></a> <b>must</b> be less than or equal to the size of <code>scratch</code> minus <code>scratchOffset</code></li>
+ <li>If <code>update</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>, <code>src</code> <b>must</b> not be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a></li>
+ <li>If <code>update</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>, <code>src</code> <b>must</b> have been built before with <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV"><code>BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV</code></a> set in <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a><code>::flags</code></li>
+ <li>If <code>update</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FALSE"><code>FALSE</code></a>, The <code>size</code> member of the <a href="../../../org/lwjgl/vulkan/VkMemoryRequirements.html" title="class in org.lwjgl.vulkan"><code>VkMemoryRequirements</code></a> structure returned from a call to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkGetAccelerationStructureMemoryRequirementsNV(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkAccelerationStructureMemoryRequirementsInfoNV,org.lwjgl.vulkan.VkMemoryRequirements2KHR)"><code>GetAccelerationStructureMemoryRequirementsNV</code></a> with <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureMemoryRequirementsInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureMemoryRequirementsInfoNV</code></a><code>::accelerationStructure</code> set to <code>dst</code> and <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureMemoryRequirementsInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureMemoryRequirementsInfoNV</code></a><code>::type</code> set to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV"><code>ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV</code></a> <b>must</b> be less than or equal to the size of <code>scratch</code> minus <code>scratchOffset</code></li>
+ <li>If <code>update</code> is <a href="../../../org/lwjgl/vulkan/VK10.html#VK_TRUE"><code>TRUE</code></a>, The <code>size</code> member of the <a href="../../../org/lwjgl/vulkan/VkMemoryRequirements.html" title="class in org.lwjgl.vulkan"><code>VkMemoryRequirements</code></a> structure returned from a call to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkGetAccelerationStructureMemoryRequirementsNV(org.lwjgl.vulkan.VkDevice,org.lwjgl.vulkan.VkAccelerationStructureMemoryRequirementsInfoNV,org.lwjgl.vulkan.VkMemoryRequirements2KHR)"><code>GetAccelerationStructureMemoryRequirementsNV</code></a> with <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureMemoryRequirementsInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureMemoryRequirementsInfoNV</code></a><code>::accelerationStructure</code> set to <code>dst</code> and <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureMemoryRequirementsInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureMemoryRequirementsInfoNV</code></a><code>::type</code> set to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV"><code>ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV</code></a> <b>must</b> be less than or equal to the size of <code>scratch</code> minus <code>scratchOffset</code></li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -1542,14 +1530,15 @@ extends java.lang.Object</pre>
  <p><a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a></p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>commandBuffer</code> - the command buffer into which the command will be recorded</dd>
-<dd><code>instanceData</code> - the buffer containing instance data that will be used to build the acceleration structure as described in <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#acceleration-structure-instance">Accelerator structure instances.</a> This parameter <b>must</b> be NULL for bottom level acceleration structures.</dd>
+<dd><code>commandBuffer</code> - the command buffer into which the command will be recorded.</dd>
+<dd><code>pInfo</code> - contains the shared information for the acceleration structure&#8217;s structure.</dd>
+<dd><code>instanceData</code> - the buffer containing instance data that will be used to build the acceleration structure as described in <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#acceleration-structure-instance">Accelerator structure instances.</a> This parameter <b>must</b> be <code>NULL</code> for bottom level acceleration structures.</dd>
 <dd><code>instanceOffset</code> - the offset in bytes (relative to the start of <code>instanceData</code>) at which the instance data is located.</dd>
 <dd><code>update</code> - specifies whether to update the <code>dst</code> acceleration structure with the data in <code>src</code>.</dd>
 <dd><code>dst</code> - points to the target acceleration structure for the build.</dd>
-<dd><code>src</code> - points to an existing acceleration structure that can be used to update the <code>dst</code> acceleration structure.</dd>
+<dd><code>src</code> - points to an existing acceleration structure that is to be used to update the <code>dst</code> acceleration structure.</dd>
 <dd><code>scratch</code> - the <code>VkBuffer</code> that will be used as scratch memory for the build.</dd>
-<dd><code>scratchOffset</code> - the offset in bytes relative to the start of <code>scratch</code> that will be used as scratch memory.</dd>
+<dd><code>scratchOffset</code> - the offset in bytes relative to the start of <code>scratch</code> that will be used as a scratch memory.</dd>
 </dl>
 </li>
 </ul>
@@ -1610,8 +1599,8 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>commandBuffer</code> - the command buffer into which the command will be recorded.</dd>
-<dd><code>dst</code> - points to the target acceleration structure for the copy</dd>
-<dd><code>src</code> - points to the source acceleration structure for the copy</dd>
+<dd><code>dst</code> - points to the target acceleration structure for the copy.</dd>
+<dd><code>src</code> - points to the source acceleration structure for the copy.</dd>
 <dd><code>mode</code> - a <code>VkCopyAccelerationStructureModeNV</code> value that specifies additional operations to perform during the copy.</dd>
 </dl>
 </li>
@@ -1669,13 +1658,13 @@ extends java.lang.Object</pre>
  
  <ul>
  <li><code>raygenShaderBindingOffset</code> <b>must</b> be less than the size of <code>raygenShaderBindingTableBuffer</code></li>
- <li><code>raygenShaderBindingOffset</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupBaseAlignment</code>.</li>
+ <li><code>raygenShaderBindingOffset</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupBaseAlignment</code></li>
  <li><code>missShaderBindingOffset</code> <b>must</b> be less than the size of <code>missShaderBindingTableBuffer</code></li>
- <li><code>missShaderBindingOffset</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupBaseAlignment</code>.</li>
+ <li><code>missShaderBindingOffset</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupBaseAlignment</code></li>
  <li><code>hitShaderBindingOffset</code> <b>must</b> be less than the size of <code>hitShaderBindingTableBuffer</code></li>
- <li><code>hitShaderBindingOffset</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupBaseAlignment</code>.</li>
+ <li><code>hitShaderBindingOffset</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupBaseAlignment</code></li>
  <li><code>callableShaderBindingOffset</code> <b>must</b> be less than the size of <code>callableShaderBindingTableBuffer</code></li>
- <li><code>callableShaderBindingOffset</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupBaseAlignment</code>.</li>
+ <li><code>callableShaderBindingOffset</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupBaseAlignment</code></li>
  <li><code>missShaderBindingStride</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupHandleSize</code></li>
  <li><code>hitShaderBindingStride</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupHandleSize</code></li>
  <li><code>callableShaderBindingStride</code> <b>must</b> be a multiple of <a href="../../../org/lwjgl/vulkan/VkPhysicalDeviceRayTracingPropertiesNV.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceRayTracingPropertiesNV</code></a><code>::shaderGroupHandleSize</code></li>
@@ -1694,13 +1683,13 @@ extends java.lang.Object</pre>
  <li>If any <code>VkSampler</code> object that is accessed from a shader by the <code>VkPipeline</code> bound to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_BIND_POINT_RAY_TRACING_NV"><code>PIPELINE_BIND_POINT_RAY_TRACING_NV</code></a> uses unnormalized coordinates, it <b>must</b> not be used with any of the SPIR-V <code>OpImageSample*</code> or <code>OpImageSparseSample*</code> instructions that includes a LOD bias or any offset values, in any shader stage</li>
  <li>If the <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#features-features-robustBufferAccess">robust buffer access</a> feature is not enabled, and any shader stage in the <code>VkPipeline</code> object bound to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_BIND_POINT_RAY_TRACING_NV"><code>PIPELINE_BIND_POINT_RAY_TRACING_NV</code></a> accesses a uniform buffer, it <b>must</b> not access values outside of the range of that buffer specified in the bound descriptor set</li>
  <li>If the <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#features-features-robustBufferAccess">robust buffer access</a> feature is not enabled, and any shader stage in the <code>VkPipeline</code> object bound to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_BIND_POINT_RAY_TRACING_NV"><code>PIPELINE_BIND_POINT_RAY_TRACING_NV</code></a> accesses a storage buffer, it <b>must</b> not access values outside of the range of that buffer specified in the bound descriptor set</li>
- <li>If a <code>VkImageView</code> is sampled with <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FILTER_LINEAR"><code>FILTER_LINEAR</code></a> as a result of this command, then the image view&#8217;s <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#resources-image-view-format-features">format features</a> <b>must</b> contain <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_LINEAR_BIT"><code>FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_LINEAR_BIT</code></a>.</li>
- <li>If a <code>VkImageView</code> is sampled with <a href="../../../org/lwjgl/vulkan/IMGFilterCubic.html#VK_FILTER_CUBIC_IMG"><code>FILTER_CUBIC_IMG</code></a> as a result of this command, then the image view&#8217;s <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#resources-image-view-format-features">format features</a> <b>must</b> contain <a href="../../../org/lwjgl/vulkan/IMGFilterCubic.html#VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG"><code>FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG</code></a>.</li>
+ <li>If a <code>VkImageView</code> is sampled with <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FILTER_LINEAR"><code>FILTER_LINEAR</code></a> as a result of this command, then the image view&#8217;s <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#resources-image-view-format-features">format features</a> <b>must</b> contain <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_LINEAR_BIT"><code>FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_LINEAR_BIT</code></a></li>
+ <li>If a <code>VkImageView</code> is sampled with <a href="../../../org/lwjgl/vulkan/IMGFilterCubic.html#VK_FILTER_CUBIC_IMG"><code>FILTER_CUBIC_IMG</code></a> as a result of this command, then the image view&#8217;s <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#resources-image-view-format-features">format features</a> <b>must</b> contain <a href="../../../org/lwjgl/vulkan/IMGFilterCubic.html#VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG"><code>FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG</code></a></li>
  <li>Any <code>VkImageView</code> being sampled with <a href="../../../org/lwjgl/vulkan/IMGFilterCubic.html#VK_FILTER_CUBIC_IMG"><code>FILTER_CUBIC_IMG</code></a> as a result of this command <b>must</b> not have a <code>VkImageViewType</code> of <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_VIEW_TYPE_3D"><code>IMAGE_VIEW_TYPE_3D</code></a>, <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_VIEW_TYPE_CUBE"><code>IMAGE_VIEW_TYPE_CUBE</code></a>, or <a href="../../../org/lwjgl/vulkan/VK10.html#VK_IMAGE_VIEW_TYPE_CUBE_ARRAY"><code>IMAGE_VIEW_TYPE_CUBE_ARRAY</code></a></li>
- <li>If <code>commandBuffer</code> is an unprotected command buffer, and any pipeline stage in the <code>VkPipeline</code> object bound to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_BIND_POINT_RAY_TRACING_NV"><code>PIPELINE_BIND_POINT_RAY_TRACING_NV</code></a> reads from or writes to any image or buffer, that image or buffer <b>must</b> not be a protected image or protected buffer.</li>
- <li>If <code>commandBuffer</code> is a protected command buffer, and any pipeline stage in the <code>VkPipeline</code> object bound to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_BIND_POINT_RAY_TRACING_NV"><code>PIPELINE_BIND_POINT_RAY_TRACING_NV</code></a> writes to any image or buffer, that image or buffer <b>must</b> not be an unprotected image or unprotected buffer.</li>
- <li>If <code>commandBuffer</code> is a protected command buffer, and any pipeline stage other than the ray tracing pipeline stage in the <code>VkPipeline</code> object bound to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_BIND_POINT_RAY_TRACING_NV"><code>PIPELINE_BIND_POINT_RAY_TRACING_NV</code></a> reads from any image or buffer, the image or buffer <b>must</b> not be a protected image or protected buffer.</li>
- <li>Any <code>VkImage</code> created with a <a href="../../../org/lwjgl/vulkan/VkImageCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkImageCreateInfo</code></a><code>::flags</code> containing <a href="../../../org/lwjgl/vulkan/NVCornerSampledImage.html#VK_IMAGE_CREATE_CORNER_SAMPLED_BIT_NV"><code>IMAGE_CREATE_CORNER_SAMPLED_BIT_NV</code></a> sampled as a result of this command <b>must</b> only be sampled using a <code>VkSamplerAddressMode</code> of <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE"><code>SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE</code></a>.</li>
+ <li>If <code>commandBuffer</code> is an unprotected command buffer, and any pipeline stage in the <code>VkPipeline</code> object bound to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_BIND_POINT_RAY_TRACING_NV"><code>PIPELINE_BIND_POINT_RAY_TRACING_NV</code></a> reads from or writes to any image or buffer, that image or buffer <b>must</b> not be a protected image or protected buffer</li>
+ <li>If <code>commandBuffer</code> is a protected command buffer, and any pipeline stage in the <code>VkPipeline</code> object bound to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_BIND_POINT_RAY_TRACING_NV"><code>PIPELINE_BIND_POINT_RAY_TRACING_NV</code></a> writes to any image or buffer, that image or buffer <b>must</b> not be an unprotected image or unprotected buffer</li>
+ <li>If <code>commandBuffer</code> is a protected command buffer, and any pipeline stage other than the ray tracing pipeline stage in the <code>VkPipeline</code> object bound to <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_BIND_POINT_RAY_TRACING_NV"><code>PIPELINE_BIND_POINT_RAY_TRACING_NV</code></a> reads from any image or buffer, the image or buffer <b>must</b> not be a protected image or protected buffer</li>
+ <li>Any <code>VkImage</code> created with a <a href="../../../org/lwjgl/vulkan/VkImageCreateInfo.html" title="class in org.lwjgl.vulkan"><code>VkImageCreateInfo</code></a><code>::flags</code> containing <a href="../../../org/lwjgl/vulkan/NVCornerSampledImage.html#VK_IMAGE_CREATE_CORNER_SAMPLED_BIT_NV"><code>IMAGE_CREATE_CORNER_SAMPLED_BIT_NV</code></a> sampled as a result of this command <b>must</b> only be sampled using a <code>VkSamplerAddressMode</code> of <a href="../../../org/lwjgl/vulkan/VK10.html#VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE"><code>SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE</code></a></li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -1735,13 +1724,13 @@ extends java.lang.Object</pre>
 <dd><code>raygenShaderBindingOffset</code> - the offset in bytes (relative to <code>raygenShaderBindingTableBuffer</code>) of the ray generation shader being used for the trace.</dd>
 <dd><code>missShaderBindingTableBuffer</code> - the buffer object that holds the shader binding table data for the miss shader stage.</dd>
 <dd><code>missShaderBindingOffset</code> - the offset in bytes (relative to <code>missShaderBindingTableBuffer</code>) of the miss shader being used for the trace.</dd>
-<dd><code>missShaderBindingStride</code> - the size in bytes of each shader binding table record in <code>missShaderBindingTableBuffer</code></dd>
+<dd><code>missShaderBindingStride</code> - the size in bytes of each shader binding table record in <code>missShaderBindingTableBuffer</code>.</dd>
 <dd><code>hitShaderBindingTableBuffer</code> - the buffer object that holds the shader binding table data for the hit shader stages.</dd>
 <dd><code>hitShaderBindingOffset</code> - the offset in bytes (relative to <code>hitShaderBindingTableBuffer</code>) of the hit shader group being used for the trace.</dd>
-<dd><code>hitShaderBindingStride</code> - the size in bytes of each shader binding table record in <code>hitShaderBindingTableBuffer</code></dd>
+<dd><code>hitShaderBindingStride</code> - the size in bytes of each shader binding table record in <code>hitShaderBindingTableBuffer</code>.</dd>
 <dd><code>callableShaderBindingTableBuffer</code> - the buffer object that holds the shader binding table data for the callable shader stage.</dd>
 <dd><code>callableShaderBindingOffset</code> - the offset in bytes (relative to <code>callableShaderBindingTableBuffer</code>) of the callable shader being used for the trace.</dd>
-<dd><code>callableShaderBindingStride</code> - the size in bytes of each shader binding table record in <code>callableShaderBindingTableBuffer</code></dd>
+<dd><code>callableShaderBindingStride</code> - the size in bytes of each shader binding table record in <code>callableShaderBindingTableBuffer</code>.</dd>
 <dd><code>width</code> - the width of the ray trace query dimensions.</dd>
 <dd><code>height</code> - height of the ray trace query dimensions.</dd>
 <dd><code>depth</code> - depth of the ray trace query dimensions.</dd>
@@ -1834,10 +1823,10 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>device</code> - the logical device that creates the ray tracing pipelines.</dd>
-<dd><code>pipelineCache</code> - either <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a>, indicating that pipeline caching is disabled; or the handle of a valid <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#pipelines-cache">pipeline cache</a> object, in which case use of that cache is enabled for the duration of the command.</dd>
+<dd><code>pipelineCache</code> - either <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a>, indicating that pipeline caching is disabled, or the handle of a valid <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#pipelines-cache">pipeline cache</a> object, in which case use of that cache is enabled for the duration of the command.</dd>
 <dd><code>pCreateInfos</code> - an array of <a href="../../../org/lwjgl/vulkan/VkRayTracingPipelineCreateInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkRayTracingPipelineCreateInfoNV</code></a> structures.</dd>
 <dd><code>pAllocator</code> - controls host memory allocation as described in the <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#memory-allocation">Memory Allocation</a> chapter.</dd>
-<dd><code>pPipelines</code> - a pointer to an array in which the resulting compute pipeline objects are returned.</dd>
+<dd><code>pPipelines</code> - a pointer to an array in which the resulting ray tracing pipeline objects are returned.</dd>
 </dl>
 </li>
 </ul>
@@ -1856,7 +1845,7 @@ extends java.lang.Object</pre>
 <div class="block">Unsafe version of: <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkGetRayTracingShaderGroupHandlesNV(org.lwjgl.vulkan.VkDevice,long,int,int,java.nio.ByteBuffer)"><code>GetRayTracingShaderGroupHandlesNV</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>dataSize</code> - the size in bytes of the buffer pointed to by pData.</dd>
+<dd><code>dataSize</code> - the size in bytes of the buffer pointed to by <code>pData</code>.</dd>
 </dl>
 </li>
 </ul>
@@ -1998,7 +1987,7 @@ extends java.lang.Object</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>device</code> - the logical device that owns the acceleration structures.</dd>
 <dd><code>accelerationStructure</code> - the acceleration structure.</dd>
-<dd><code>pData</code> - a pointer to a user-allocated buffer where the results will be written</dd>
+<dd><code>pData</code> - a pointer to a user-allocated buffer where the results will be written.</dd>
 </dl>
 </li>
 </ul>
@@ -2084,9 +2073,10 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>commandBuffer</code> - the command buffer into which the command will be recorded.</dd>
+<dd><code>pAccelerationStructures</code> - points to an array of existing previously built acceleration structures.</dd>
 <dd><code>queryType</code> - a <code>VkQueryType</code> value specifying the type of queries managed by the pool.</dd>
 <dd><code>queryPool</code> - the query pool that will manage the results of the query.</dd>
-<dd><code>firstQuery</code> - the first query index within the query pool that will contain the <code>accelerationStructureCount</code> number of results</dd>
+<dd><code>firstQuery</code> - the first query index within the query pool that will contain the <code>accelerationStructureCount</code> number of results.</dd>
 </dl>
 </li>
 </ul>
@@ -2114,8 +2104,8 @@ extends java.lang.Object</pre>
  <h5>Valid Usage</h5>
  
  <ul>
- <li><code>pipeline</code> <b>must</b> have been created with <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_CREATE_DEFER_COMPILE_BIT_NV"><code>PIPELINE_CREATE_DEFER_COMPILE_BIT_NV</code></a>.</li>
- <li><code>shader</code> <b>must</b> not have been called as a deferred compile before.</li>
+ <li><code>pipeline</code> <b>must</b> have been created with <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_PIPELINE_CREATE_DEFER_COMPILE_BIT_NV"><code>PIPELINE_CREATE_DEFER_COMPILE_BIT_NV</code></a></li>
+ <li><code>shader</code> <b>must</b> not have been called as a deferred compile before</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>

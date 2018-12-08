@@ -161,8 +161,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>objectType</code> <b>must</b> not be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_OBJECT_TYPE_UNKNOWN"><code>OBJECT_TYPE_UNKNOWN</code></a></li>
- <li><code>objectHandle</code> <b>must</b> not be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a></li>
- <li><code>objectHandle</code> <b>must</b> be a Vulkan object of the type associated with <code>objectType</code> as defined in <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#debugging-object-types">the “<code>VkObjectType</code> and Vulkan Handle Relationship” table</a>.</li>
+ <li><code>objectHandle</code> <b>must</b> be a valid Vulkan handle of the type associated with <code>objectType</code> as defined in the <a target="_blank" href="https://www.khronos.org/registry/vulkan/specs/1.0-extensions/html/vkspec.html#debugging-object-types">VkObjectType and Vulkan Handle Relationship</a> table</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>

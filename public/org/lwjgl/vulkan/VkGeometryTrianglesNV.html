@@ -161,13 +161,13 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  
  <ul>
  <li><code>vertexOffset</code> <b>must</b> be less than the size of <code>vertexData</code></li>
- <li><code>vertexOffset</code> <b>must</b> be a multiple of the component size of <code>vertexFormat</code>.</li>
+ <li><code>vertexOffset</code> <b>must</b> be a multiple of the component size of <code>vertexFormat</code></li>
  <li><code>vertexFormat</code> <b>must</b> be one of <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FORMAT_R32G32B32_SFLOAT"><code>FORMAT_R32G32B32_SFLOAT</code></a>, <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FORMAT_R32G32_SFLOAT"><code>FORMAT_R32G32_SFLOAT</code></a>, <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FORMAT_R16G16B16_SFLOAT"><code>FORMAT_R16G16B16_SFLOAT</code></a>, <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FORMAT_R16G16_SFLOAT"><code>FORMAT_R16G16_SFLOAT</code></a>, <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FORMAT_R16G16_SNORM"><code>FORMAT_R16G16_SNORM</code></a>, or <a href="../../../org/lwjgl/vulkan/VK10.html#VK_FORMAT_R16G16B16_SNORM"><code>FORMAT_R16G16B16_SNORM</code></a></li>
  <li><code>indexOffset</code> <b>must</b> be less than the size of <code>indexData</code></li>
  <li><code>indexOffset</code> <b>must</b> be a multiple of the element size of <code>indexType</code></li>
  <li><code>indexType</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_INDEX_TYPE_UINT16"><code>INDEX_TYPE_UINT16</code></a>, <a href="../../../org/lwjgl/vulkan/VK10.html#VK_INDEX_TYPE_UINT32"><code>INDEX_TYPE_UINT32</code></a>, or <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_INDEX_TYPE_NONE_NV"><code>INDEX_TYPE_NONE_NV</code></a></li>
  <li><code>indexData</code> <b>must</b> be <a href="../../../org/lwjgl/vulkan/VK10.html#VK_NULL_HANDLE"><code>NULL_HANDLE</code></a> if <code>indexType</code> is <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_INDEX_TYPE_NONE_NV"><code>INDEX_TYPE_NONE_NV</code></a></li>
- <li><code>indexData</code> <b>must</b> be a valid handle if <code>indexType</code> is not <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_INDEX_TYPE_NONE_NV"><code>INDEX_TYPE_NONE_NV</code></a></li>
+ <li><code>indexData</code> <b>must</b> be a valid <code>VkBuffer</code> handle if <code>indexType</code> is not <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_INDEX_TYPE_NONE_NV"><code>INDEX_TYPE_NONE_NV</code></a></li>
  <li><code>indexCount</code> <b>must</b> be 0 if <code>indexType</code> is <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#VK_INDEX_TYPE_NONE_NV"><code>INDEX_TYPE_NONE_NV</code></a></li>
  <li><code>transformOffset</code> <b>must</b> be less than the size of <code>transformData</code></li>
  <li><code>transformOffset</code> <b>must</b> be a multiple of 16</li>

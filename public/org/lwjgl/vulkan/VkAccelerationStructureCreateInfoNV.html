@@ -156,7 +156,7 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <h5>Valid Usage</h5>
  
  <ul>
- <li>If <code>compactedSize</code> is not 0 then both <code>info</code><code>::geometryCount</code> and <code>info</code><code>::instanceCount</code> <b>must</b> be 0</li>
+ <li>If <code>compactedSize</code> is not 0 then both <code>info.geometryCount</code> and <code>info.instanceCount</code> <b>must</b> be 0</li>
  </ul>
  
  <h5>Valid Usage (Implicit)</h5>
@@ -176,8 +176,8 @@ implements <a href="../../../org/lwjgl/system/NativeResource.html" title="interf
  <ul>
  <li><code>sType</code> &ndash; the type of this structure.</li>
  <li><code>pNext</code> &ndash; <code>NULL</code> or a pointer to an extension-specific structure.</li>
- <li><code>compactedSize</code> &ndash; the size from the result of <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkCmdWriteAccelerationStructuresPropertiesNV(org.lwjgl.vulkan.VkCommandBuffer,java.nio.LongBuffer,int,long,int)"><code>CmdWriteAccelerationStructuresPropertiesNV</code></a>, if this acceleration structure is going to be the target of a compacting copy.</li>
- <li><code>info</code> &ndash; contains the <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a> information for the acceleration structure&#8217;s parameters</li>
+ <li><code>compactedSize</code> &ndash; the size from the result of <a href="../../../org/lwjgl/vulkan/NVRayTracing.html#vkCmdWriteAccelerationStructuresPropertiesNV(org.lwjgl.vulkan.VkCommandBuffer,java.nio.LongBuffer,int,long,int)"><code>CmdWriteAccelerationStructuresPropertiesNV</code></a> if this acceleration structure is going to be the target of a compacting copy.</li>
+ <li><code>info</code> &ndash; the <a href="../../../org/lwjgl/vulkan/VkAccelerationStructureInfoNV.html" title="class in org.lwjgl.vulkan"><code>VkAccelerationStructureInfoNV</code></a> structure that specifies further parameters of the created acceleration structure.</li>
  </ul>
  
  <h3>Layout</h3>
