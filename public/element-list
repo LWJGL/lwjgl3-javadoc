@@ -1,7 +1,6 @@
 org.lwjgl
 org.lwjgl.assimp
 org.lwjgl.bgfx
-org.lwjgl.bullet
 org.lwjgl.cuda
 org.lwjgl.egl
 org.lwjgl.glfw
