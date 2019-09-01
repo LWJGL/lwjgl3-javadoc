@@ -33,6 +33,7 @@ org.lwjgl.util.nfd
 org.lwjgl.util.opus
 org.lwjgl.util.par
 org.lwjgl.util.remotery
+org.lwjgl.util.shaderc
 org.lwjgl.util.simd
 org.lwjgl.util.tinyexr
 org.lwjgl.util.tinyfd
