@@ -56,6 +56,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
+<li><a href="#opaque" tabindex="0">opaque</a></li>
+<li><a href="#jboolean" tabindex="0">jboolean</a></li>
+<li><a href="#jbyte" tabindex="0">jbyte</a></li>
+<li><a href="#jchar" tabindex="0">jchar</a></li>
+<li><a href="#jshort" tabindex="0">jshort</a></li>
+<li><a href="#jint" tabindex="0">jint</a></li>
+<li><a href="#jlong" tabindex="0">jlong</a></li>
+<li><a href="#jfloat" tabindex="0">jfloat</a></li>
+<li><a href="#jdouble" tabindex="0">jdouble</a></li>
 <li><a href="#int8_t" tabindex="0">int8_t</a></li>
 <li><a href="#int16_t" tabindex="0">int16_t</a></li>
 <li><a href="#int32_t" tabindex="0">int32_t</a></li>
@@ -68,6 +77,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#ptrdiff_t" tabindex="0">ptrdiff_t</a></li>
 <li><a href="#intptr_t" tabindex="0">intptr_t</a></li>
 <li><a href="#uintptr_t" tabindex="0">uintptr_t</a></li>
+<li><a href="#bool" tabindex="0">bool</a></li>
 <li><a href="#cchar" tabindex="0">cchar</a></li>
 <li><a href="#cshort" tabindex="0">cshort</a></li>
 <li><a href="#cint" tabindex="0">cint</a></li>
@@ -76,7 +86,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#unsigned_char" tabindex="0">unsigned_char</a></li>
 <li><a href="#unsigned_short" tabindex="0">unsigned_short</a></li>
 <li><a href="#unsigned_int" tabindex="0">unsigned_int</a></li>
-<li><a href="#unsigned_clong" tabindex="0">unsigned_clong</a></li>
+<li><a href="#unsigned_long" tabindex="0">unsigned_long</a></li>
 <li><a href="#unsigned_long_long" tabindex="0">unsigned_long_long</a></li>
 <li><a href="#float32" tabindex="0">float32</a></li>
 <li><a href="#float64" tabindex="0">float64</a></li>
@@ -85,21 +95,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#bootstrapDowncall(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,int)" tabindex="0">bootstrapDowncall(MethodHandles.Lookup, String, Class, int)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfByte)" tabindex="0">typedef(String, ValueLayout.OfByte)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfShort)" tabindex="0">typedef(String, ValueLayout.OfShort)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfInt)" tabindex="0">typedef(String, ValueLayout.OfInt)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfLong)" tabindex="0">typedef(String, ValueLayout.OfLong)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfFloat)" tabindex="0">typedef(String, ValueLayout.OfFloat)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfDouble)" tabindex="0">typedef(String, ValueLayout.OfDouble)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout)" tabindex="0">typedef(String, ValueLayout)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.AddressLayout)" tabindex="0">typedef(String, AddressLayout)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.SequenceLayout)" tabindex="0">typedef(String, SequenceLayout)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.StructLayout)" tabindex="0">typedef(String, StructLayout)</a></li>
-<li><a href="#typedef(java.lang.String,java.lang.foreign.UnionLayout)" tabindex="0">typedef(String, UnionLayout)</a></li>
-<li><a href="#array(java.lang.foreign.MemoryLayout,long)" tabindex="0">array(MemoryLayout, long)</a></li>
-<li><a href="#opaque(java.lang.String)" tabindex="0">opaque(String)</a></li>
-<li><a href="#p(org.lwjgl.system.ffm.GroupBinder)" tabindex="0">p(GroupBinder)</a></li>
-<li><a href="#p(java.lang.foreign.MemoryLayout)" tabindex="0">p(MemoryLayout)</a></li>
 <li><a href="#ffmStruct(java.lang.Class)" tabindex="0">ffmStruct(Class)</a></li>
 <li><a href="#ffmUnion(java.lang.Class)" tabindex="0">ffmUnion(Class)</a></li>
 <li><a href="#ffmUpcall(java.lang.Class)" tabindex="0">ffmUpcall(Class)</a></li>
@@ -197,125 +192,175 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></code></div>
-<div class="col-second even-row-color"><code><a href="#cchar" class="member-name-link">cchar</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Boolean.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Boolean</a></code></div>
+<div class="col-second even-row-color"><code><a href="#bool" class="member-name-link">bool</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>char</code> type.</div>
+<div class="block">The C <code>bool</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#cint" class="member-name-link">cint</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#cchar" class="member-name-link">cchar</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>int</code> type.</div>
+<div class="block">The C <code>char</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout</a></code></div>
-<div class="col-second even-row-color"><code><a href="#clong" class="member-name-link">clong</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></code></div>
+<div class="col-second even-row-color"><code><a href="#cint" class="member-name-link">cint</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>long</code> type.</div>
+<div class="block">The C <code>int</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#cshort" class="member-name-link">cshort</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.CLong.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.CLong</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#clong" class="member-name-link">clong</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>short</code> type.</div>
+<div class="block">The C <code>long</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfFloat.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfFloat</a></code></div>
-<div class="col-second even-row-color"><code><a href="#float32" class="member-name-link">float32</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></code></div>
+<div class="col-second even-row-color"><code><a href="#cshort" class="member-name-link">cshort</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>float</code> type.</div>
+<div class="block">The C <code>short</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfDouble.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfDouble</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#float64" class="member-name-link">float64</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Float.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Float</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#float32" class="member-name-link">float32</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>double</code> type.</div>
+<div class="block">The C <code>float</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></code></div>
-<div class="col-second even-row-color"><code><a href="#int16_t" class="member-name-link">int16_t</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Double.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Double</a></code></div>
+<div class="col-second even-row-color"><code><a href="#float64" class="member-name-link">float64</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>int16_t</code> type.</div>
+<div class="block">The C <code>double</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#int32_t" class="member-name-link">int32_t</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#int16_t" class="member-name-link">int16_t</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>int32_t</code> type.</div>
+<div class="block">The C <code>int16_t</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></code></div>
-<div class="col-second even-row-color"><code><a href="#int64_t" class="member-name-link">int64_t</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></code></div>
+<div class="col-second even-row-color"><code><a href="#int32_t" class="member-name-link">int32_t</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>int64_t</code> type.</div>
+<div class="block">The C <code>int32_t</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#int8_t" class="member-name-link">int8_t</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#int64_t" class="member-name-link">int64_t</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>int8_t</code> type.</div>
+<div class="block">The C <code>int64_t</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></code></div>
-<div class="col-second even-row-color"><code><a href="#intptr_t" class="member-name-link">intptr_t</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></code></div>
+<div class="col-second even-row-color"><code><a href="#int8_t" class="member-name-link">int8_t</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>intptr_t</code> type.</div>
+<div class="block">The C <code>int8_t</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#long_long" class="member-name-link">long_long</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Size.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Size</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#intptr_t" class="member-name-link">intptr_t</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>long long</code> type.</div>
+<div class="block">The C <code>intptr_t</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Boolean.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Boolean</a></code></div>
+<div class="col-second even-row-color"><code><a href="#jboolean" class="member-name-link">jboolean</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The Java <code>boolean</code> mapping.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#jbyte" class="member-name-link">jbyte</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">The Java <code>byte</code> mapping.</div>
+</div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Char.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Char</a></code></div>
+<div class="col-second even-row-color"><code><a href="#jchar" class="member-name-link">jchar</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The Java <code>char</code> mapping.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Double.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Double</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#jdouble" class="member-name-link">jdouble</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">The Java <code>double</code> mapping.</div>
+</div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Float.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Float</a></code></div>
+<div class="col-second even-row-color"><code><a href="#jfloat" class="member-name-link">jfloat</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The Java <code>float</code> mapping.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#jint" class="member-name-link">jint</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">The Java <code>int</code> mapping.</div>
+</div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></code></div>
+<div class="col-second even-row-color"><code><a href="#jlong" class="member-name-link">jlong</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The Java <code>long</code> mapping.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#jshort" class="member-name-link">jshort</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">The Java <code>short</code> mapping.</div>
+</div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></code></div>
+<div class="col-second even-row-color"><code><a href="#long_long" class="member-name-link">long_long</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The C <code>long long</code> type mapping.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Opaque.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Opaque</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#opaque" class="member-name-link">opaque</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">A mapping that can be used to typedef opaque C types.</div>
+</div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Size.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Size</a></code></div>
 <div class="col-second even-row-color"><code><a href="#ptrdiff_t" class="member-name-link">ptrdiff_t</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>ssize_t</code> type.</div>
+<div class="block">The C <code>ssize_t</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Size.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Size</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#size_t" class="member-name-link">size_t</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>size_t</code> type.</div>
+<div class="block">The C <code>size_t</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></code></div>
 <div class="col-second even-row-color"><code><a href="#uint16_t" class="member-name-link">uint16_t</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>uint16_t</code> type.</div>
+<div class="block">The C <code>uint16_t</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#uint32_t" class="member-name-link">uint32_t</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>uint32_t</code> type.</div>
+<div class="block">The C <code>uint32_t</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></code></div>
 <div class="col-second even-row-color"><code><a href="#uint64_t" class="member-name-link">uint64_t</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>uint64_t</code> type.</div>
+<div class="block">The C <code>uint64_t</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#uint8_t" class="member-name-link">uint8_t</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>uint8_t</code> type.</div>
+<div class="block">The C <code>uint8_t</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Size.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Size</a></code></div>
 <div class="col-second even-row-color"><code><a href="#uintptr_t" class="member-name-link">uintptr_t</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>uintptr_t</code> type.</div>
+<div class="block">The C <code>uintptr_t</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#unsigned_char" class="member-name-link">unsigned_char</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>unsigned char</code> type.</div>
+<div class="block">The C <code>unsigned char</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout</a></code></div>
-<div class="col-second even-row-color"><code><a href="#unsigned_clong" class="member-name-link">unsigned_clong</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></code></div>
+<div class="col-second even-row-color"><code><a href="#unsigned_int" class="member-name-link">unsigned_int</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>unsigned long</code> type.</div>
+<div class="block">The C <code>unsigned int</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#unsigned_int" class="member-name-link">unsigned_int</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.CLong.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.CLong</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#unsigned_long" class="member-name-link">unsigned_long</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>unsigned int</code> type.</div>
+<div class="block">The C <code>unsigned long</code> type mapping.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></code></div>
 <div class="col-second even-row-color"><code><a href="#unsigned_long_long" class="member-name-link">unsigned_long_long</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">A layout that can be used to map the C <code>unsigned long long</code> type.</div>
+<div class="block">The C <code>unsigned long long</code> type mapping.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#unsigned_short" class="member-name-link">unsigned_short</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A layout that can be used to map the C <code>unsigned short</code> type.</div>
+<div class="block">The C <code>unsigned short</code> type mapping.</div>
 </div>
 </div>
 </section>
@@ -331,167 +376,80 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SequenceLayout.html" title="class or interface in java.lang.foreign" class="external-link">SequenceLayout</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#array(java.lang.foreign.MemoryLayout,long)" class="member-name-link">array</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link">MemoryLayout</a>&nbsp;layout,
- long&nbsp;elementCount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SequenceLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>SequenceLayout</code></a> with the specified named layout and element count.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bootstrapDowncall(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,int)" class="member-name-link">bootstrapDowncall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandles.Lookup.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandles.Lookup</a>&nbsp;lookup,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bootstrapDowncall(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,int)" class="member-name-link">bootstrapDowncall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandles.Lookup.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandles.Lookup</a>&nbsp;lookup,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;bootstrapClass,
  int&nbsp;methodIndex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The Condy boostrap method for downcalls, called the first time the LDC bytecode is executed.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmConfig(java.lang.Class,org.lwjgl.system.ffm.FFMConfig)" class="member-name-link">ffmConfig</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;_class,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmConfig(java.lang.Class,org.lwjgl.system.ffm.FFMConfig)" class="member-name-link">ffmConfig</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;_class,
  @Nullable <a href="FFMConfig.html" title="class in org.lwjgl.system.ffm">FFMConfig</a>&nbsp;config)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Registers a binding configuration for the specified class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmConfig(java.lang.Package,org.lwjgl.system.ffm.FFMConfig)" class="member-name-link">ffmConfig</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Package.html" title="class or interface in java.lang" class="external-link">Package</a>&nbsp;_package,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmConfig(java.lang.Package,org.lwjgl.system.ffm.FFMConfig)" class="member-name-link">ffmConfig</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Package.html" title="class or interface in java.lang" class="external-link">Package</a>&nbsp;_package,
  @Nullable <a href="FFMConfig.html" title="class in org.lwjgl.system.ffm">FFMConfig</a>&nbsp;config)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Registers a binding configuration for the specified package.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FFM.FFMConfigBuilder.html" title="class in org.lwjgl.system.ffm">FFM.FFMConfigBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmConfigBuilder(java.lang.invoke.MethodHandles.Lookup)" class="member-name-link">ffmConfigBuilder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandles.Lookup.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandles.Lookup</a>&nbsp;lookup)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FFM.FFMConfigBuilder.html" title="class in org.lwjgl.system.ffm">FFM.FFMConfigBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmConfigBuilder(java.lang.invoke.MethodHandles.Lookup)" class="member-name-link">ffmConfigBuilder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandles.Lookup.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandles.Lookup</a>&nbsp;lookup)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a builder for <a href="FFMConfig.html" title="class in org.lwjgl.system.ffm"><code>FFMConfig</code></a> instances, with the default state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmGenerate(java.lang.Class)" class="member-name-link">ffmGenerate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;bindingInterface)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmGenerate(java.lang.Class)" class="member-name-link">ffmGenerate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;bindingInterface)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Generates a class that implements the specified binding interface, using the <a href="FFMConfig.html" title="class in org.lwjgl.system.ffm"><code>FFMConfig</code></a> registered for this interface.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmGenerate(java.lang.Class,org.lwjgl.system.ffm.FFMConfig)" class="member-name-link">ffmGenerate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;bindingInterface,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmGenerate(java.lang.Class,org.lwjgl.system.ffm.FFMConfig)" class="member-name-link">ffmGenerate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;bindingInterface,
  <a href="FFMConfig.html" title="class in org.lwjgl.system.ffm">FFMConfig</a>&nbsp;config)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Generates a class that implements the specified binding interface, using the specified <a href="FFMConfig.html" title="class in org.lwjgl.system.ffm"><code>FFMConfig</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.html" title="class or interface in java.lang" class="external-link">ScopedValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmScopedArena()" class="member-name-link">ffmScopedArena</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.html" title="class or interface in java.lang" class="external-link">ScopedValue</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmScopedArena()" class="member-name-link">ffmScopedArena</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the scoped arena.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;R, X extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;<br>R</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmScopedCall(java.lang.foreign.Arena,java.lang.ScopedValue.CallableOp)" class="member-name-link">ffmScopedCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;R, X extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;<br>R</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmScopedCall(java.lang.foreign.Arena,java.lang.ScopedValue.CallableOp)" class="member-name-link">ffmScopedCall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.CallableOp.html" title="class or interface in java.lang" class="external-link">ScopedValue.CallableOp</a>&lt;? extends R, X&gt;&nbsp;op)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Runs the specified operation within the scope of the specified arena.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmScopedRun(java.lang.foreign.Arena,java.lang.Runnable)" class="member-name-link">ffmScopedRun</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmScopedRun(java.lang.foreign.Arena,java.lang.Runnable)" class="member-name-link">ffmScopedRun</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;runnable)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Runs the specified runnable within the scope of the specified arena.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="FFM.StructBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.StructBinderBuilder</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmStruct(java.lang.Class)" class="member-name-link">ffmStruct</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;structInterface)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="FFM.StructBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.StructBinderBuilder</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmStruct(java.lang.Class)" class="member-name-link">ffmStruct</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;structInterface)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a <a href="StructBinder.html" title="interface in org.lwjgl.system.ffm"><code>StructBinder</code></a> builder for the specified struct interface, with the default state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="FFM.UnionBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.UnionBinderBuilder</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmUnion(java.lang.Class)" class="member-name-link">ffmUnion</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;unionInterface)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="FFM.UnionBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.UnionBinderBuilder</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmUnion(java.lang.Class)" class="member-name-link">ffmUnion</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;unionInterface)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a <a href="UnionBinder.html" title="interface in org.lwjgl.system.ffm"><code>UnionBinder</code></a> builder for the specified union interface, with the default state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="UpcallBinder.html" title="interface in org.lwjgl.system.ffm">UpcallBinder</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmUpcall(java.lang.Class)" class="member-name-link">ffmUpcall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;upcallInterface)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="UpcallBinder.html" title="interface in org.lwjgl.system.ffm">UpcallBinder</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmUpcall(java.lang.Class)" class="member-name-link">ffmUpcall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;upcallInterface)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Generates a class that implements the <a href="UpcallBinder.html" title="interface in org.lwjgl.system.ffm"><code>UpcallBinder</code></a> interface for the specified upcall interface, then returns a new instance of that class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="UpcallBinder.html" title="interface in org.lwjgl.system.ffm">UpcallBinder</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmUpcall(java.lang.Class,org.lwjgl.system.libffi.FFICIF)" class="member-name-link">ffmUpcall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;upcallInterface,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="UpcallBinder.html" title="interface in org.lwjgl.system.ffm">UpcallBinder</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ffmUpcall(java.lang.Class,org.lwjgl.system.libffi.FFICIF)" class="member-name-link">ffmUpcall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;upcallInterface,
  @Nullable <a href="../libffi/FFICIF.html" title="class in org.lwjgl.system.libffi">FFICIF</a>&nbsp;cif)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Generates a class that implements the <a href="UpcallBinder.html" title="interface in org.lwjgl.system.ffm"><code>UpcallBinder</code></a> interface for the specified upcall interface and associated libffi call interface, then
 returns a new instance of that class.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opaque(java.lang.String)" class="member-name-link">opaque</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an opaque pointer layout with the specified name.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#p(java.lang.foreign.MemoryLayout)" class="member-name-link">p</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link">MemoryLayout</a>&nbsp;layout)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a pointer layout that targets the specified layout.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#p(org.lwjgl.system.ffm.GroupBinder)" class="member-name-link">p</a><wbr>(<a href="GroupBinder.html" title="interface in org.lwjgl.system.ffm">GroupBinder</a>&lt;?,<wbr>?&gt;&nbsp;binder)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a pointer layout that targets the specified binder's layout.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.AddressLayout)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a>&nbsp;layout)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SequenceLayout.html" title="class or interface in java.lang.foreign" class="external-link">SequenceLayout</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.SequenceLayout)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SequenceLayout.html" title="class or interface in java.lang.foreign" class="external-link">SequenceLayout</a>&nbsp;layout)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/StructLayout.html" title="class or interface in java.lang.foreign" class="external-link">StructLayout</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.StructLayout)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/StructLayout.html" title="class or interface in java.lang.foreign" class="external-link">StructLayout</a>&nbsp;layout)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/UnionLayout.html" title="class or interface in java.lang.foreign" class="external-link">UnionLayout</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.UnionLayout)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/UnionLayout.html" title="class or interface in java.lang.foreign" class="external-link">UnionLayout</a>&nbsp;layout)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout</a>&nbsp;layout)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfByte)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a>&nbsp;layout)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfDouble.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfDouble</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfDouble)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfDouble.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfDouble</a>&nbsp;layout)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfFloat.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfFloat</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfFloat)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfFloat.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfFloat</a>&nbsp;layout)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfInt)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a>&nbsp;layout)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfLong)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a>&nbsp;layout)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#typedef(java.lang.String,java.lang.foreign.ValueLayout.OfShort)" class="member-name-link">typedef</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a>&nbsp;layout)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an alias of the specified layout with a new name.</div>
 </div>
 </div>
 </div>
@@ -511,11 +469,92 @@ returns a new instance of that class.</div>
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="opaque">
+<h3>opaque</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Opaque.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Opaque</a></span>&nbsp;<span class="element-name">opaque</span></div>
+<div class="block">A mapping that can be used to typedef opaque C types.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="jboolean">
+<h3>jboolean</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Boolean.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Boolean</a></span>&nbsp;<span class="element-name">jboolean</span></div>
+<div class="block">The Java <code>boolean</code> mapping.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="jbyte">
+<h3>jbyte</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></span>&nbsp;<span class="element-name">jbyte</span></div>
+<div class="block">The Java <code>byte</code> mapping.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="jchar">
+<h3>jchar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Char.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Char</a></span>&nbsp;<span class="element-name">jchar</span></div>
+<div class="block">The Java <code>char</code> mapping.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="jshort">
+<h3>jshort</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></span>&nbsp;<span class="element-name">jshort</span></div>
+<div class="block">The Java <code>short</code> mapping.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="jint">
+<h3>jint</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></span>&nbsp;<span class="element-name">jint</span></div>
+<div class="block">The Java <code>int</code> mapping.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="jlong">
+<h3>jlong</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></span>&nbsp;<span class="element-name">jlong</span></div>
+<div class="block">The Java <code>long</code> mapping.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="jfloat">
+<h3>jfloat</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Float.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Float</a></span>&nbsp;<span class="element-name">jfloat</span></div>
+<div class="block">The Java <code>float</code> mapping.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="jdouble">
+<h3>jdouble</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Double.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Double</a></span>&nbsp;<span class="element-name">jdouble</span></div>
+<div class="block">The Java <code>double</code> mapping.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="int8_t">
 <h3>int8_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></span>&nbsp;<span class="element-name">int8_t</span></div>
-<div class="block">A layout that can be used to map the C <code>int8_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></span>&nbsp;<span class="element-name">int8_t</span></div>
+<div class="block">The C <code>int8_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -523,8 +562,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="int16_t">
 <h3>int16_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></span>&nbsp;<span class="element-name">int16_t</span></div>
-<div class="block">A layout that can be used to map the C <code>int16_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></span>&nbsp;<span class="element-name">int16_t</span></div>
+<div class="block">The C <code>int16_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -532,8 +571,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="int32_t">
 <h3>int32_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></span>&nbsp;<span class="element-name">int32_t</span></div>
-<div class="block">A layout that can be used to map the C <code>int32_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></span>&nbsp;<span class="element-name">int32_t</span></div>
+<div class="block">The C <code>int32_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -541,8 +580,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="int64_t">
 <h3>int64_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></span>&nbsp;<span class="element-name">int64_t</span></div>
-<div class="block">A layout that can be used to map the C <code>int64_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></span>&nbsp;<span class="element-name">int64_t</span></div>
+<div class="block">The C <code>int64_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -550,8 +589,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="uint8_t">
 <h3>uint8_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></span>&nbsp;<span class="element-name">uint8_t</span></div>
-<div class="block">A layout that can be used to map the C <code>uint8_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></span>&nbsp;<span class="element-name">uint8_t</span></div>
+<div class="block">The C <code>uint8_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -559,8 +598,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="uint16_t">
 <h3>uint16_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></span>&nbsp;<span class="element-name">uint16_t</span></div>
-<div class="block">A layout that can be used to map the C <code>uint16_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></span>&nbsp;<span class="element-name">uint16_t</span></div>
+<div class="block">The C <code>uint16_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -568,8 +607,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="uint32_t">
 <h3>uint32_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></span>&nbsp;<span class="element-name">uint32_t</span></div>
-<div class="block">A layout that can be used to map the C <code>uint32_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></span>&nbsp;<span class="element-name">uint32_t</span></div>
+<div class="block">The C <code>uint32_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -577,8 +616,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="uint64_t">
 <h3>uint64_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></span>&nbsp;<span class="element-name">uint64_t</span></div>
-<div class="block">A layout that can be used to map the C <code>uint64_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></span>&nbsp;<span class="element-name">uint64_t</span></div>
+<div class="block">The C <code>uint64_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -586,8 +625,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="size_t">
 <h3>size_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></span>&nbsp;<span class="element-name">size_t</span></div>
-<div class="block">A layout that can be used to map the C <code>size_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Size.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Size</a></span>&nbsp;<span class="element-name">size_t</span></div>
+<div class="block">The C <code>size_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -595,8 +634,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="ptrdiff_t">
 <h3>ptrdiff_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></span>&nbsp;<span class="element-name">ptrdiff_t</span></div>
-<div class="block">A layout that can be used to map the C <code>ssize_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Size.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Size</a></span>&nbsp;<span class="element-name">ptrdiff_t</span></div>
+<div class="block">The C <code>ssize_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -604,8 +643,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="intptr_t">
 <h3>intptr_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></span>&nbsp;<span class="element-name">intptr_t</span></div>
-<div class="block">A layout that can be used to map the C <code>intptr_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Size.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Size</a></span>&nbsp;<span class="element-name">intptr_t</span></div>
+<div class="block">The C <code>intptr_t</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -613,8 +652,17 @@ returns a new instance of that class.</div>
 <section class="detail" id="uintptr_t">
 <h3>uintptr_t</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></span>&nbsp;<span class="element-name">uintptr_t</span></div>
-<div class="block">A layout that can be used to map the C <code>uintptr_t</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Size.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Size</a></span>&nbsp;<span class="element-name">uintptr_t</span></div>
+<div class="block">The C <code>uintptr_t</code> type mapping.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bool">
+<h3>bool</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Boolean.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Boolean</a></span>&nbsp;<span class="element-name">bool</span></div>
+<div class="block">The C <code>bool</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -622,8 +670,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="cchar">
 <h3>cchar</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></span>&nbsp;<span class="element-name">cchar</span></div>
-<div class="block">A layout that can be used to map the C <code>char</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></span>&nbsp;<span class="element-name">cchar</span></div>
+<div class="block">The C <code>char</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -631,8 +679,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="cshort">
 <h3>cshort</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></span>&nbsp;<span class="element-name">cshort</span></div>
-<div class="block">A layout that can be used to map the C <code>short</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></span>&nbsp;<span class="element-name">cshort</span></div>
+<div class="block">The C <code>short</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -640,8 +688,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="cint">
 <h3>cint</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></span>&nbsp;<span class="element-name">cint</span></div>
-<div class="block">A layout that can be used to map the C <code>int</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></span>&nbsp;<span class="element-name">cint</span></div>
+<div class="block">The C <code>int</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -649,8 +697,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="clong">
 <h3>clong</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout</a></span>&nbsp;<span class="element-name">clong</span></div>
-<div class="block">A layout that can be used to map the C <code>long</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.CLong.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.CLong</a></span>&nbsp;<span class="element-name">clong</span></div>
+<div class="block">The C <code>long</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -658,8 +706,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="long_long">
 <h3>long_long</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></span>&nbsp;<span class="element-name">long_long</span></div>
-<div class="block">A layout that can be used to map the C <code>long long</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></span>&nbsp;<span class="element-name">long_long</span></div>
+<div class="block">The C <code>long long</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -667,8 +715,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="unsigned_char">
 <h3>unsigned_char</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></span>&nbsp;<span class="element-name">unsigned_char</span></div>
-<div class="block">A layout that can be used to map the C <code>unsigned char</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a></span>&nbsp;<span class="element-name">unsigned_char</span></div>
+<div class="block">The C <code>unsigned char</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -676,8 +724,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="unsigned_short">
 <h3>unsigned_short</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></span>&nbsp;<span class="element-name">unsigned_short</span></div>
-<div class="block">A layout that can be used to map the C <code>unsigned short</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a></span>&nbsp;<span class="element-name">unsigned_short</span></div>
+<div class="block">The C <code>unsigned short</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -685,17 +733,17 @@ returns a new instance of that class.</div>
 <section class="detail" id="unsigned_int">
 <h3>unsigned_int</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></span>&nbsp;<span class="element-name">unsigned_int</span></div>
-<div class="block">A layout that can be used to map the C <code>unsigned int</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a></span>&nbsp;<span class="element-name">unsigned_int</span></div>
+<div class="block">The C <code>unsigned int</code> type mapping.</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="unsigned_clong">
-<h3>unsigned_clong</h3>
+<section class="detail" id="unsigned_long">
+<h3>unsigned_long</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout</a></span>&nbsp;<span class="element-name">unsigned_clong</span></div>
-<div class="block">A layout that can be used to map the C <code>unsigned long</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.CLong.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.CLong</a></span>&nbsp;<span class="element-name">unsigned_long</span></div>
+<div class="block">The C <code>unsigned long</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -703,8 +751,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="unsigned_long_long">
 <h3>unsigned_long_long</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></span>&nbsp;<span class="element-name">unsigned_long_long</span></div>
-<div class="block">A layout that can be used to map the C <code>unsigned long long</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a></span>&nbsp;<span class="element-name">unsigned_long_long</span></div>
+<div class="block">The C <code>unsigned long long</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -712,8 +760,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="float32">
 <h3>float32</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfFloat.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfFloat</a></span>&nbsp;<span class="element-name">float32</span></div>
-<div class="block">A layout that can be used to map the C <code>float</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Float.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Float</a></span>&nbsp;<span class="element-name">float32</span></div>
+<div class="block">The C <code>float</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -721,8 +769,8 @@ returns a new instance of that class.</div>
 <section class="detail" id="float64">
 <h3>float64</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfDouble.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfDouble</a></span>&nbsp;<span class="element-name">float64</span></div>
-<div class="block">A layout that can be used to map the C <code>double</code> type.</div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="mapping/Mapping.Double.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Double</a></span>&nbsp;<span class="element-name">float64</span></div>
+<div class="block">The C <code>double</code> type mapping.</div>
 </div>
 </section>
 </li>
@@ -747,255 +795,6 @@ returns a new instance of that class.</div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalAccessException.html" title="class or interface in java.lang" class="external-link">IllegalAccessException</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.ValueLayout.OfByte)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfByte.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfByte</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.ValueLayout.OfShort)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfShort.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfShort</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.ValueLayout.OfInt)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfInt.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfInt</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.ValueLayout.OfLong)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfLong.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfLong</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.ValueLayout.OfFloat)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfFloat.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfFloat</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfFloat.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfFloat</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.ValueLayout.OfDouble)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfDouble.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfDouble</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.OfDouble.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout.OfDouble</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.ValueLayout)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link">ValueLayout</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.AddressLayout)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.SequenceLayout)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SequenceLayout.html" title="class or interface in java.lang.foreign" class="external-link">SequenceLayout</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SequenceLayout.html" title="class or interface in java.lang.foreign" class="external-link">SequenceLayout</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.StructLayout)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/StructLayout.html" title="class or interface in java.lang.foreign" class="external-link">StructLayout</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/StructLayout.html" title="class or interface in java.lang.foreign" class="external-link">StructLayout</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="typedef(java.lang.String,java.lang.foreign.UnionLayout)">
-<h3>typedef</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/UnionLayout.html" title="class or interface in java.lang.foreign" class="external-link">UnionLayout</a></span>&nbsp;<span class="element-name">typedef</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/UnionLayout.html" title="class or interface in java.lang.foreign" class="external-link">UnionLayout</a>&nbsp;layout)</span></div>
-<div class="block">Creates an alias of the specified layout with a new name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the new name</dd>
-<dd><code>layout</code> - the layout to alias</dd>
-<dt>Returns:</dt>
-<dd>the new layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="array(java.lang.foreign.MemoryLayout,long)">
-<h3>array</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SequenceLayout.html" title="class or interface in java.lang.foreign" class="external-link">SequenceLayout</a></span>&nbsp;<span class="element-name">array</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link">MemoryLayout</a>&nbsp;layout,
- long&nbsp;elementCount)</span></div>
-<div class="block">Creates a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SequenceLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>SequenceLayout</code></a> with the specified named layout and element count.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>layout</code> - the element layout, which must be named</dd>
-<dd><code>elementCount</code> - the number of elements</dd>
-<dt>Returns:</dt>
-<dd>the sequence layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="opaque(java.lang.String)">
-<h3>opaque</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></span>&nbsp;<span class="element-name">opaque</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
-<div class="block">Creates an opaque pointer layout with the specified name.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the opaque pointer name</dd>
-<dt>Returns:</dt>
-<dd>the opaque pointer layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="p(org.lwjgl.system.ffm.GroupBinder)">
-<h3>p</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></span>&nbsp;<span class="element-name">p</span><wbr><span class="parameters">(<a href="GroupBinder.html" title="interface in org.lwjgl.system.ffm">GroupBinder</a>&lt;?,<wbr>?&gt;&nbsp;binder)</span></div>
-<div class="block">Creates a pointer layout that targets the specified binder's layout.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>binder</code> - the binder that provides the target layout</dd>
-<dt>Returns:</dt>
-<dd>the pointer layout</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="p(java.lang.foreign.MemoryLayout)">
-<h3>p</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/AddressLayout.html" title="class or interface in java.lang.foreign" class="external-link">AddressLayout</a></span>&nbsp;<span class="element-name">p</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link">MemoryLayout</a>&nbsp;layout)</span></div>
-<div class="block">Creates a pointer layout that targets the specified layout.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>layout</code> - the target layout</dd>
-<dt>Returns:</dt>
-<dd>the pointer layout</dd>
 </dl>
 </div>
 </section>

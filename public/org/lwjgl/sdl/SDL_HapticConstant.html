@@ -168,7 +168,7 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="../system/Struct.html" title="class in org.lwjgl.system">Struct</a>&lt;<a href="SDL_HapticConstant.html" title="class in org.lwjgl.sdl">SDL_HapticConstant</a>&gt;
 implements <a href="../system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></span></div>
 <div class="block"><pre><code>struct SDL_HapticConstant {
-    Uint16 type;
+    SDL_HapticEffectType type;
     <a href="SDL_HapticDirection.html" title="class in org.lwjgl.sdl"><code>SDL_HapticDirection</code></a> direction;
     Uint32 length;
     Uint16 delay;
@@ -815,7 +815,7 @@ visible to the struct instance and vice versa.
 <section class="detail" id="type()">
 <h3>type</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint16")
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffectType")
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">short</span>&nbsp;<span class="element-name">type</span>()</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -957,7 +957,7 @@ visible to the struct instance and vice versa.
 <section class="detail" id="type(short)">
 <h3>type</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_HapticConstant.html" title="class in org.lwjgl.sdl">SDL_HapticConstant</a></span>&nbsp;<span class="element-name">type</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint16")
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_HapticConstant.html" title="class in org.lwjgl.sdl">SDL_HapticConstant</a></span>&nbsp;<span class="element-name">type</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffectType")
  short&nbsp;value)</span></div>
 <div class="block">Sets the specified value to the <code>type</code> field.</div>
 </div>

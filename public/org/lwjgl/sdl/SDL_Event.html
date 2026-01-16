@@ -89,6 +89,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#QUIT" tabindex="0">QUIT</a></li>
 <li><a href="#USER" tabindex="0">USER</a></li>
 <li><a href="#TFINGER" tabindex="0">TFINGER</a></li>
+<li><a href="#PINCH" tabindex="0">PINCH</a></li>
 <li><a href="#PPROXIMITY" tabindex="0">PPROXIMITY</a></li>
 <li><a href="#PTOUCH" tabindex="0">PTOUCH</a></li>
 <li><a href="#PMOTION" tabindex="0">PMOTION</a></li>
@@ -138,6 +139,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#quit()" tabindex="0">quit()</a></li>
 <li><a href="#user()" tabindex="0">user()</a></li>
 <li><a href="#tfinger()" tabindex="0">tfinger()</a></li>
+<li><a href="#pinch()" tabindex="0">pinch()</a></li>
 <li><a href="#pproximity()" tabindex="0">pproximity()</a></li>
 <li><a href="#ptouch()" tabindex="0">ptouch()</a></li>
 <li><a href="#pmotion()" tabindex="0">pmotion()</a></li>
@@ -205,6 +207,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#user(java.util.function.Consumer)" tabindex="0">user(Consumer)</a></li>
 <li><a href="#tfinger(org.lwjgl.sdl.SDL_TouchFingerEvent)" tabindex="0">tfinger(SDL_TouchFingerEvent)</a></li>
 <li><a href="#tfinger(java.util.function.Consumer)" tabindex="0">tfinger(Consumer)</a></li>
+<li><a href="#pinch(org.lwjgl.sdl.SDL_PinchFingerEvent)" tabindex="0">pinch(SDL_PinchFingerEvent)</a></li>
+<li><a href="#pinch(java.util.function.Consumer)" tabindex="0">pinch(Consumer)</a></li>
 <li><a href="#pproximity(org.lwjgl.sdl.SDL_PenProximityEvent)" tabindex="0">pproximity(SDL_PenProximityEvent)</a></li>
 <li><a href="#pproximity(java.util.function.Consumer)" tabindex="0">pproximity(Consumer)</a></li>
 <li><a href="#ptouch(org.lwjgl.sdl.SDL_PenTouchEvent)" tabindex="0">ptouch(SDL_PenTouchEvent)</a></li>
@@ -266,6 +270,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#nquit(long)" tabindex="0">nquit(long)</a></li>
 <li><a href="#nuser(long)" tabindex="0">nuser(long)</a></li>
 <li><a href="#ntfinger(long)" tabindex="0">ntfinger(long)</a></li>
+<li><a href="#npinch(long)" tabindex="0">npinch(long)</a></li>
 <li><a href="#npproximity(long)" tabindex="0">npproximity(long)</a></li>
 <li><a href="#nptouch(long)" tabindex="0">nptouch(long)</a></li>
 <li><a href="#npmotion(long)" tabindex="0">npmotion(long)</a></li>
@@ -306,6 +311,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#nquit(long,org.lwjgl.sdl.SDL_QuitEvent)" tabindex="0">nquit(long, SDL_QuitEvent)</a></li>
 <li><a href="#nuser(long,org.lwjgl.sdl.SDL_UserEvent)" tabindex="0">nuser(long, SDL_UserEvent)</a></li>
 <li><a href="#ntfinger(long,org.lwjgl.sdl.SDL_TouchFingerEvent)" tabindex="0">ntfinger(long, SDL_TouchFingerEvent)</a></li>
+<li><a href="#npinch(long,org.lwjgl.sdl.SDL_PinchFingerEvent)" tabindex="0">npinch(long, SDL_PinchFingerEvent)</a></li>
 <li><a href="#npproximity(long,org.lwjgl.sdl.SDL_PenProximityEvent)" tabindex="0">npproximity(long, SDL_PenProximityEvent)</a></li>
 <li><a href="#nptouch(long,org.lwjgl.sdl.SDL_PenTouchEvent)" tabindex="0">nptouch(long, SDL_PenTouchEvent)</a></li>
 <li><a href="#npmotion(long,org.lwjgl.sdl.SDL_PenMotionEvent)" tabindex="0">npmotion(long, SDL_PenMotionEvent)</a></li>
@@ -373,6 +379,7 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
     <a href="SDL_QuitEvent.html" title="class in org.lwjgl.sdl"><code>SDL_QuitEvent</code></a> quit;
     <a href="SDL_UserEvent.html" title="class in org.lwjgl.sdl"><code>SDL_UserEvent</code></a> user;
     <a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl"><code>SDL_TouchFingerEvent</code></a> tfinger;
+    <a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PinchFingerEvent</code></a> pinch;
     <a href="SDL_PenProximityEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PenProximityEvent</code></a> pproximity;
     <a href="SDL_PenTouchEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PenTouchEvent</code></a> ptouch;
     <a href="SDL_PenMotionEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PenMotionEvent</code></a> pmotion;
@@ -560,68 +567,73 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#PMOTION" class="member-name-link">PMOTION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#PINCH" class="member-name-link">PINCH</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#PPROXIMITY" class="member-name-link">PPROXIMITY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#PMOTION" class="member-name-link">PMOTION</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#PTOUCH" class="member-name-link">PTOUCH</a></code></div>
+<div class="col-second even-row-color"><code><a href="#PPROXIMITY" class="member-name-link">PPROXIMITY</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#QUIT" class="member-name-link">QUIT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#PTOUCH" class="member-name-link">PTOUCH</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#RENDER" class="member-name-link">RENDER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#QUIT" class="member-name-link">QUIT</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SENSOR" class="member-name-link">SENSOR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RENDER" class="member-name-link">RENDER</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SIZEOF" class="member-name-link">SIZEOF</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SENSOR" class="member-name-link">SENSOR</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">The struct member offsets.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SIZEOF" class="member-name-link">SIZEOF</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The struct size in bytes.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#TEXT" class="member-name-link">TEXT</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">The struct member offsets.</div>
-</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#TFINGER" class="member-name-link">TFINGER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TEXT" class="member-name-link">TEXT</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#TYPE" class="member-name-link">TYPE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#TFINGER" class="member-name-link">TFINGER</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#USER" class="member-name-link">USER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TYPE" class="member-name-link">TYPE</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#WHEEL" class="member-name-link">WHEEL</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#USER" class="member-name-link">USER</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#WINDOW" class="member-name-link">WINDOW</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WHEEL" class="member-name-link">WHEEL</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">The struct member offsets.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#WINDOW" class="member-name-link">WINDOW</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 </div>
@@ -1344,6 +1356,17 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#pbutton(org.lwjgl.sdl.SDL_PenButtonEvent)"><code>pbutton</code></a>.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npinch(long)" class="member-name-link">npinch</a><wbr>(long&nbsp;struct)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#pinch()"><code>pinch()</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npinch(long,org.lwjgl.sdl.SDL_PinchFingerEvent)" class="member-name-link">npinch</a><wbr>(long&nbsp;struct,
+ <a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#pinch(org.lwjgl.sdl.SDL_PinchFingerEvent)"><code>pinch</code></a>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SDL_PenMotionEvent.html" title="class in org.lwjgl.sdl">SDL_PenMotionEvent</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npmotion(long)" class="member-name-link">npmotion</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -1502,165 +1525,178 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_PenButtonEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PenButtonEvent</code></a> to the <code>pbutton</code> field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_PenMotionEvent.html" title="class in org.lwjgl.sdl">SDL_PenMotionEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pmotion()" class="member-name-link">pmotion</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pinch()" class="member-name-link">pinch</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pmotion(java.util.function.Consumer)" class="member-name-link">pmotion</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_PenMotionEvent.html" title="class in org.lwjgl.sdl">SDL_PenMotionEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pinch(java.util.function.Consumer)" class="member-name-link">pinch</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a>&gt;&nbsp;consumer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Passes the <code>pinch</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pinch(org.lwjgl.sdl.SDL_PinchFingerEvent)" class="member-name-link">pinch</a><wbr>(<a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a>&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Copies the specified <a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PinchFingerEvent</code></a> to the <code>pinch</code> field.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_PenMotionEvent.html" title="class in org.lwjgl.sdl">SDL_PenMotionEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pmotion()" class="member-name-link">pmotion</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pmotion(java.util.function.Consumer)" class="member-name-link">pmotion</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_PenMotionEvent.html" title="class in org.lwjgl.sdl">SDL_PenMotionEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Passes the <code>pmotion</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pmotion(org.lwjgl.sdl.SDL_PenMotionEvent)" class="member-name-link">pmotion</a><wbr>(<a href="SDL_PenMotionEvent.html" title="class in org.lwjgl.sdl">SDL_PenMotionEvent</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pmotion(org.lwjgl.sdl.SDL_PenMotionEvent)" class="member-name-link">pmotion</a><wbr>(<a href="SDL_PenMotionEvent.html" title="class in org.lwjgl.sdl">SDL_PenMotionEvent</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_PenMotionEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PenMotionEvent</code></a> to the <code>pmotion</code> field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_PenProximityEvent.html" title="class in org.lwjgl.sdl">SDL_PenProximityEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pproximity()" class="member-name-link">pproximity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pproximity(java.util.function.Consumer)" class="member-name-link">pproximity</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_PenProximityEvent.html" title="class in org.lwjgl.sdl">SDL_PenProximityEvent</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_PenProximityEvent.html" title="class in org.lwjgl.sdl">SDL_PenProximityEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pproximity()" class="member-name-link">pproximity</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pproximity(java.util.function.Consumer)" class="member-name-link">pproximity</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_PenProximityEvent.html" title="class in org.lwjgl.sdl">SDL_PenProximityEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Passes the <code>pproximity</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pproximity(org.lwjgl.sdl.SDL_PenProximityEvent)" class="member-name-link">pproximity</a><wbr>(<a href="SDL_PenProximityEvent.html" title="class in org.lwjgl.sdl">SDL_PenProximityEvent</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pproximity(org.lwjgl.sdl.SDL_PenProximityEvent)" class="member-name-link">pproximity</a><wbr>(<a href="SDL_PenProximityEvent.html" title="class in org.lwjgl.sdl">SDL_PenProximityEvent</a>&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_PenProximityEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PenProximityEvent</code></a> to the <code>pproximity</code> field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_PenTouchEvent.html" title="class in org.lwjgl.sdl">SDL_PenTouchEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ptouch()" class="member-name-link">ptouch</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ptouch(java.util.function.Consumer)" class="member-name-link">ptouch</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_PenTouchEvent.html" title="class in org.lwjgl.sdl">SDL_PenTouchEvent</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_PenTouchEvent.html" title="class in org.lwjgl.sdl">SDL_PenTouchEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ptouch()" class="member-name-link">ptouch</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ptouch(java.util.function.Consumer)" class="member-name-link">ptouch</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_PenTouchEvent.html" title="class in org.lwjgl.sdl">SDL_PenTouchEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Passes the <code>ptouch</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ptouch(org.lwjgl.sdl.SDL_PenTouchEvent)" class="member-name-link">ptouch</a><wbr>(<a href="SDL_PenTouchEvent.html" title="class in org.lwjgl.sdl">SDL_PenTouchEvent</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ptouch(org.lwjgl.sdl.SDL_PenTouchEvent)" class="member-name-link">ptouch</a><wbr>(<a href="SDL_PenTouchEvent.html" title="class in org.lwjgl.sdl">SDL_PenTouchEvent</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_PenTouchEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PenTouchEvent</code></a> to the <code>ptouch</code> field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_QuitEvent.html" title="class in org.lwjgl.sdl">SDL_QuitEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit()" class="member-name-link">quit</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit(java.util.function.Consumer)" class="member-name-link">quit</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_QuitEvent.html" title="class in org.lwjgl.sdl">SDL_QuitEvent</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_QuitEvent.html" title="class in org.lwjgl.sdl">SDL_QuitEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit()" class="member-name-link">quit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit(java.util.function.Consumer)" class="member-name-link">quit</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_QuitEvent.html" title="class in org.lwjgl.sdl">SDL_QuitEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Passes the <code>quit</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit(org.lwjgl.sdl.SDL_QuitEvent)" class="member-name-link">quit</a><wbr>(<a href="SDL_QuitEvent.html" title="class in org.lwjgl.sdl">SDL_QuitEvent</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit(org.lwjgl.sdl.SDL_QuitEvent)" class="member-name-link">quit</a><wbr>(<a href="SDL_QuitEvent.html" title="class in org.lwjgl.sdl">SDL_QuitEvent</a>&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_QuitEvent.html" title="class in org.lwjgl.sdl"><code>SDL_QuitEvent</code></a> to the <code>quit</code> field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_RenderEvent.html" title="class in org.lwjgl.sdl">SDL_RenderEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render()" class="member-name-link">render</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(java.util.function.Consumer)" class="member-name-link">render</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_RenderEvent.html" title="class in org.lwjgl.sdl">SDL_RenderEvent</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_RenderEvent.html" title="class in org.lwjgl.sdl">SDL_RenderEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render()" class="member-name-link">render</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(java.util.function.Consumer)" class="member-name-link">render</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_RenderEvent.html" title="class in org.lwjgl.sdl">SDL_RenderEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Passes the <code>render</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(org.lwjgl.sdl.SDL_RenderEvent)" class="member-name-link">render</a><wbr>(<a href="SDL_RenderEvent.html" title="class in org.lwjgl.sdl">SDL_RenderEvent</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(org.lwjgl.sdl.SDL_RenderEvent)" class="member-name-link">render</a><wbr>(<a href="SDL_RenderEvent.html" title="class in org.lwjgl.sdl">SDL_RenderEvent</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_RenderEvent.html" title="class in org.lwjgl.sdl"><code>SDL_RenderEvent</code></a> to the <code>render</code> field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_SensorEvent.html" title="class in org.lwjgl.sdl">SDL_SensorEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sensor()" class="member-name-link">sensor</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sensor(java.util.function.Consumer)" class="member-name-link">sensor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_SensorEvent.html" title="class in org.lwjgl.sdl">SDL_SensorEvent</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_SensorEvent.html" title="class in org.lwjgl.sdl">SDL_SensorEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sensor()" class="member-name-link">sensor</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sensor(java.util.function.Consumer)" class="member-name-link">sensor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_SensorEvent.html" title="class in org.lwjgl.sdl">SDL_SensorEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Passes the <code>sensor</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sensor(org.lwjgl.sdl.SDL_SensorEvent)" class="member-name-link">sensor</a><wbr>(<a href="SDL_SensorEvent.html" title="class in org.lwjgl.sdl">SDL_SensorEvent</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sensor(org.lwjgl.sdl.SDL_SensorEvent)" class="member-name-link">sensor</a><wbr>(<a href="SDL_SensorEvent.html" title="class in org.lwjgl.sdl">SDL_SensorEvent</a>&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_SensorEvent.html" title="class in org.lwjgl.sdl"><code>SDL_SensorEvent</code></a> to the <code>sensor</code> field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(org.lwjgl.sdl.SDL_Event)" class="member-name-link">set</a><wbr>(<a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;src)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(org.lwjgl.sdl.SDL_Event)" class="member-name-link">set</a><wbr>(<a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;src)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified struct data to this struct.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sizeof()" class="member-name-link">sizeof</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sizeof()" class="member-name-link">sizeof</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns <code>sizeof(struct)</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_TextInputEvent.html" title="class in org.lwjgl.sdl">SDL_TextInputEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text()" class="member-name-link">text</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text(java.util.function.Consumer)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_TextInputEvent.html" title="class in org.lwjgl.sdl">SDL_TextInputEvent</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_TextInputEvent.html" title="class in org.lwjgl.sdl">SDL_TextInputEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text()" class="member-name-link">text</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text(java.util.function.Consumer)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_TextInputEvent.html" title="class in org.lwjgl.sdl">SDL_TextInputEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Passes the <code>text</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text(org.lwjgl.sdl.SDL_TextInputEvent)" class="member-name-link">text</a><wbr>(<a href="SDL_TextInputEvent.html" title="class in org.lwjgl.sdl">SDL_TextInputEvent</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#text(org.lwjgl.sdl.SDL_TextInputEvent)" class="member-name-link">text</a><wbr>(<a href="SDL_TextInputEvent.html" title="class in org.lwjgl.sdl">SDL_TextInputEvent</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_TextInputEvent.html" title="class in org.lwjgl.sdl"><code>SDL_TextInputEvent</code></a> to the <code>text</code> field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_TouchFingerEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tfinger()" class="member-name-link">tfinger</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tfinger(java.util.function.Consumer)" class="member-name-link">tfinger</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_TouchFingerEvent</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_TouchFingerEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tfinger()" class="member-name-link">tfinger</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tfinger(java.util.function.Consumer)" class="member-name-link">tfinger</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_TouchFingerEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Passes the <code>tfinger</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tfinger(org.lwjgl.sdl.SDL_TouchFingerEvent)" class="member-name-link">tfinger</a><wbr>(<a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_TouchFingerEvent</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tfinger(org.lwjgl.sdl.SDL_TouchFingerEvent)" class="member-name-link">tfinger</a><wbr>(<a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_TouchFingerEvent</a>&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl"><code>SDL_TouchFingerEvent</code></a> to the <code>tfinger</code> field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type()" class="member-name-link">type</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type(int)" class="member-name-link">type</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>type</code> field.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_UserEvent.html" title="class in org.lwjgl.sdl">SDL_UserEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#user()" class="member-name-link">user</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#user(java.util.function.Consumer)" class="member-name-link">user</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_UserEvent.html" title="class in org.lwjgl.sdl">SDL_UserEvent</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Passes the <code>user</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#user(org.lwjgl.sdl.SDL_UserEvent)" class="member-name-link">user</a><wbr>(<a href="SDL_UserEvent.html" title="class in org.lwjgl.sdl">SDL_UserEvent</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Copies the specified <a href="SDL_UserEvent.html" title="class in org.lwjgl.sdl"><code>SDL_UserEvent</code></a> to the <code>user</code> field.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_MouseWheelEvent.html" title="class in org.lwjgl.sdl">SDL_MouseWheelEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wheel()" class="member-name-link">wheel</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type()" class="member-name-link">type</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wheel(java.util.function.Consumer)" class="member-name-link">wheel</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_MouseWheelEvent.html" title="class in org.lwjgl.sdl">SDL_MouseWheelEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type(int)" class="member-name-link">type</a><wbr>(int&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Passes the <code>wheel</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
+<div class="block">Sets the specified value to the <code>type</code> field.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_UserEvent.html" title="class in org.lwjgl.sdl">SDL_UserEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#user()" class="member-name-link">user</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#user(java.util.function.Consumer)" class="member-name-link">user</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_UserEvent.html" title="class in org.lwjgl.sdl">SDL_UserEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Passes the <code>user</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wheel(org.lwjgl.sdl.SDL_MouseWheelEvent)" class="member-name-link">wheel</a><wbr>(<a href="SDL_MouseWheelEvent.html" title="class in org.lwjgl.sdl">SDL_MouseWheelEvent</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#user(org.lwjgl.sdl.SDL_UserEvent)" class="member-name-link">user</a><wbr>(<a href="SDL_UserEvent.html" title="class in org.lwjgl.sdl">SDL_UserEvent</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Copies the specified <a href="SDL_MouseWheelEvent.html" title="class in org.lwjgl.sdl"><code>SDL_MouseWheelEvent</code></a> to the <code>wheel</code> field.</div>
+<div class="block">Copies the specified <a href="SDL_UserEvent.html" title="class in org.lwjgl.sdl"><code>SDL_UserEvent</code></a> to the <code>user</code> field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_WindowEvent.html" title="class in org.lwjgl.sdl">SDL_WindowEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#window()" class="member-name-link">window</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_MouseWheelEvent.html" title="class in org.lwjgl.sdl">SDL_MouseWheelEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wheel()" class="member-name-link">wheel</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#window(java.util.function.Consumer)" class="member-name-link">window</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_WindowEvent.html" title="class in org.lwjgl.sdl">SDL_WindowEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wheel(java.util.function.Consumer)" class="member-name-link">wheel</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_MouseWheelEvent.html" title="class in org.lwjgl.sdl">SDL_MouseWheelEvent</a>&gt;&nbsp;consumer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Passes the <code>window</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
+<div class="block">Passes the <code>wheel</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#window(org.lwjgl.sdl.SDL_WindowEvent)" class="member-name-link">window</a><wbr>(<a href="SDL_WindowEvent.html" title="class in org.lwjgl.sdl">SDL_WindowEvent</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wheel(org.lwjgl.sdl.SDL_MouseWheelEvent)" class="member-name-link">wheel</a><wbr>(<a href="SDL_MouseWheelEvent.html" title="class in org.lwjgl.sdl">SDL_MouseWheelEvent</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Copies the specified <a href="SDL_MouseWheelEvent.html" title="class in org.lwjgl.sdl"><code>SDL_MouseWheelEvent</code></a> to the <code>wheel</code> field.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_WindowEvent.html" title="class in org.lwjgl.sdl">SDL_WindowEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#window()" class="member-name-link">window</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#window(java.util.function.Consumer)" class="member-name-link">window</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_WindowEvent.html" title="class in org.lwjgl.sdl">SDL_WindowEvent</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Passes the <code>window</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#window(org.lwjgl.sdl.SDL_WindowEvent)" class="member-name-link">window</a><wbr>(<a href="SDL_WindowEvent.html" title="class in org.lwjgl.sdl">SDL_WindowEvent</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified <a href="SDL_WindowEvent.html" title="class in org.lwjgl.sdl"><code>SDL_WindowEvent</code></a> to the <code>window</code> field.</div>
 </div>
 </div>
@@ -1973,6 +2009,15 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <h3>TFINGER</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TFINGER</span></div>
+<div class="block">The struct member offsets.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="PINCH">
+<h3>PINCH</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">PINCH</span></div>
 <div class="block">The struct member offsets.</div>
 </div>
 </section>
@@ -2457,6 +2502,18 @@ visible to the struct instance and vice versa.
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a <a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl"><code>SDL_TouchFingerEvent</code></a> view of the <code>tfinger</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="pinch()">
+<h3>pinch</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a></span>&nbsp;<span class="element-name">pinch</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a <a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PinchFingerEvent</code></a> view of the <code>pinch</code> field.</dd>
 </dl>
 </div>
 </section>
@@ -3090,6 +3147,24 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
+<section class="detail" id="pinch(org.lwjgl.sdl.SDL_PinchFingerEvent)">
+<h3>pinch</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></span>&nbsp;<span class="element-name">pinch</span><wbr><span class="parameters">(<a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a>&nbsp;value)</span></div>
+<div class="block">Copies the specified <a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl"><code>SDL_PinchFingerEvent</code></a> to the <code>pinch</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="pinch(java.util.function.Consumer)">
+<h3>pinch</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a></span>&nbsp;<span class="element-name">pinch</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a>&gt;&nbsp;consumer)</span></div>
+<div class="block">Passes the <code>pinch</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="pproximity(org.lwjgl.sdl.SDL_PenProximityEvent)">
 <h3>pproximity</h3>
 <div class="horizontal-scroll">
@@ -3684,6 +3759,15 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
+<section class="detail" id="npinch(long)">
+<h3>npinch</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a></span>&nbsp;<span class="element-name">npinch</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
+<div class="block">Unsafe version of <a href="#pinch()"><code>pinch()</code></a>.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="npproximity(long)">
 <h3>npproximity</h3>
 <div class="horizontal-scroll">
@@ -4069,6 +4153,16 @@ visible to the struct instance and vice versa.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ntfinger</span><wbr><span class="parameters">(long&nbsp;struct,
  <a href="SDL_TouchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_TouchFingerEvent</a>&nbsp;value)</span></div>
 <div class="block">Unsafe version of <a href="#tfinger(org.lwjgl.sdl.SDL_TouchFingerEvent)"><code>tfinger</code></a>.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="npinch(long,org.lwjgl.sdl.SDL_PinchFingerEvent)">
+<h3>npinch</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npinch</span><wbr><span class="parameters">(long&nbsp;struct,
+ <a href="SDL_PinchFingerEvent.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent</a>&nbsp;value)</span></div>
+<div class="block">Unsafe version of <a href="#pinch(org.lwjgl.sdl.SDL_PinchFingerEvent)"><code>pinch</code></a>.</div>
 </div>
 </section>
 </li>

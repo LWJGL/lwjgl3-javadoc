@@ -115,6 +115,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#addr3()" tabindex="0">addr3()</a></li>
 <li><a href="#__pad2()" tabindex="0">__pad2()</a></li>
 <li><a href="#__pad2(int)" tabindex="0">__pad2(int)</a></li>
+<li><a href="#attr_ptr()" tabindex="0">attr_ptr()</a></li>
+<li><a href="#attr_type_mask()" tabindex="0">attr_type_mask()</a></li>
 <li><a href="#optval()" tabindex="0">optval()</a></li>
 <li><a href="#cmd()" tabindex="0">cmd()</a></li>
 <li><a href="#cmd(int)" tabindex="0">cmd(int)</a></li>
@@ -169,6 +171,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#addr3(long)" tabindex="0">addr3(long)</a></li>
 <li><a href="#__pad2(java.nio.LongBuffer)" tabindex="0">__pad2(LongBuffer)</a></li>
 <li><a href="#__pad2(int,long)" tabindex="0">__pad2(int, long)</a></li>
+<li><a href="#attr_ptr(long)" tabindex="0">attr_ptr(long)</a></li>
+<li><a href="#attr_type_mask(long)" tabindex="0">attr_type_mask(long)</a></li>
 <li><a href="#optval(long)" tabindex="0">optval(long)</a></li>
 <li><a href="#cmd(java.nio.ByteBuffer)" tabindex="0">cmd(ByteBuffer)</a></li>
 <li><a href="#cmd(int,byte)" tabindex="0">cmd(int, byte)</a></li>
@@ -337,6 +341,22 @@ implements <a href="../../NativeResource.html" title="interface in org.lwjgl.sys
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addr3(long)" class="member-name-link">addr3</a><wbr>(long&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the specified value to the <code>addr3</code> field.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attr_ptr()" class="member-name-link">attr_ptr</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IOURingSQE.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingSQE.Buffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attr_ptr(long)" class="member-name-link">attr_ptr</a><wbr>(long&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>attr_ptr</code> field.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attr_type_mask()" class="member-name-link">attr_type_mask</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IOURingSQE.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingSQE.Buffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attr_type_mask(long)" class="member-name-link">attr_type_mask</a><wbr>(long&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>attr_type_mask</code> field.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>short</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buf_group()" class="member-name-link">buf_group</a>()</code></div>
@@ -1416,6 +1436,32 @@ by <a href="IOURingSQE.html#SIZEOF"><code>IOURingSQE.SIZEOF</code></a>, and its 
 </section>
 </li>
 <li>
+<section class="detail" id="attr_ptr()">
+<h3>attr_ptr</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">attr_ptr</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>attr_ptr</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="attr_type_mask()">
+<h3>attr_type_mask</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">attr_type_mask</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>attr_type_mask</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="optval()">
 <h3>optval</h3>
 <div class="horizontal-scroll">
@@ -1963,6 +2009,26 @@ by <a href="IOURingSQE.html#SIZEOF"><code>IOURingSQE.SIZEOF</code></a>, and its 
  <a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
  long&nbsp;value)</span></div>
 <div class="block">Sets the specified value at the specified index of the <code>__pad2</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="attr_ptr(long)">
+<h3>attr_ptr</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="IOURingSQE.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingSQE.Buffer</a></span>&nbsp;<span class="element-name">attr_ptr</span><wbr><span class="parameters">(<a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
+ long&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>attr_ptr</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="attr_type_mask(long)">
+<h3>attr_type_mask</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="IOURingSQE.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingSQE.Buffer</a></span>&nbsp;<span class="element-name">attr_type_mask</span><wbr><span class="parameters">(<a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
+ long&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>attr_type_mask</code> field.</div>
 </div>
 </section>
 </li>

@@ -59,6 +59,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_CAMERA_POSITION_UNKNOWN" tabindex="0">SDL_CAMERA_POSITION_UNKNOWN</a></li>
 <li><a href="#SDL_CAMERA_POSITION_FRONT_FACING" tabindex="0">SDL_CAMERA_POSITION_FRONT_FACING</a></li>
 <li><a href="#SDL_CAMERA_POSITION_BACK_FACING" tabindex="0">SDL_CAMERA_POSITION_BACK_FACING</a></li>
+<li><a href="#SDL_CAMERA_PERMISSION_STATE_DENIED" tabindex="0">SDL_CAMERA_PERMISSION_STATE_DENIED</a></li>
+<li><a href="#SDL_CAMERA_PERMISSION_STATE_PENDING" tabindex="0">SDL_CAMERA_PERMISSION_STATE_PENDING</a></li>
+<li><a href="#SDL_CAMERA_PERMISSION_STATE_APPROVED" tabindex="0">SDL_CAMERA_PERMISSION_STATE_APPROVED</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -135,14 +138,23 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_CAMERA_POSITION_BACK_FACING" class="member-name-link">SDL_CAMERA_POSITION_BACK_FACING</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_CAMERA_PERMISSION_STATE_APPROVED" class="member-name-link">SDL_CAMERA_PERMISSION_STATE_APPROVED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_CAMERA_POSITION_FRONT_FACING" class="member-name-link">SDL_CAMERA_POSITION_FRONT_FACING</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_CAMERA_PERMISSION_STATE_DENIED" class="member-name-link">SDL_CAMERA_PERMISSION_STATE_DENIED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_CAMERA_POSITION_UNKNOWN" class="member-name-link">SDL_CAMERA_POSITION_UNKNOWN</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_CAMERA_PERMISSION_STATE_PENDING" class="member-name-link">SDL_CAMERA_PERMISSION_STATE_PENDING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_CAMERA_POSITION_BACK_FACING" class="member-name-link">SDL_CAMERA_POSITION_BACK_FACING</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_CAMERA_POSITION_FRONT_FACING" class="member-name-link">SDL_CAMERA_POSITION_FRONT_FACING</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_CAMERA_POSITION_UNKNOWN" class="member-name-link">SDL_CAMERA_POSITION_UNKNOWN</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -242,7 +254,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetCameraPermissionState(long)" class="member-name-link">SDL_GetCameraPermissionState</a><wbr>(long&nbsp;camera)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int SDL_GetCameraPermissionState(SDL_Camera * camera)</code></div>
+<div class="block"><code>SDL_CameraPermissionState SDL_GetCameraPermissionState(SDL_Camera * camera)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetCameraPosition(int)" class="member-name-link">SDL_GetCameraPosition</a><wbr>(int&nbsp;instance_id)</code></div>
@@ -345,6 +357,54 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLCamera.SDL_CAMERA_POSITION_BACK_FACING">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_CAMERA_PERMISSION_STATE_DENIED">
+<h3>SDL_CAMERA_PERMISSION_STATE_DENIED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_CAMERA_PERMISSION_STATE_DENIED</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLCamera.SDL_CAMERA_PERMISSION_STATE_DENIED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_CAMERA_PERMISSION_STATE_PENDING">
+<h3>SDL_CAMERA_PERMISSION_STATE_PENDING</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_CAMERA_PERMISSION_STATE_PENDING</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLCamera.SDL_CAMERA_PERMISSION_STATE_PENDING">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_CAMERA_PERMISSION_STATE_APPROVED">
+<h3>SDL_CAMERA_PERMISSION_STATE_APPROVED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_CAMERA_PERMISSION_STATE_APPROVED</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLCamera.SDL_CAMERA_PERMISSION_STATE_APPROVED">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -504,9 +564,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="SDL_GetCameraPermissionState(long)">
 <h3>SDL_GetCameraPermissionState</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_GetCameraPermissionState</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Camera *")
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_CameraPermissionState")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_GetCameraPermissionState</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Camera *")
  long&nbsp;camera)</span></div>
-<div class="block"><code>int SDL_GetCameraPermissionState(SDL_Camera * camera)</code></div>
+<div class="block"><code>SDL_CameraPermissionState SDL_GetCameraPermissionState(SDL_Camera * camera)</code></div>
 </div>
 </section>
 </li>

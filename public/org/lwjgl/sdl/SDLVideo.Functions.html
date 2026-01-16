@@ -110,6 +110,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SetWindowBordered" tabindex="0">SetWindowBordered</a></li>
 <li><a href="#SetWindowResizable" tabindex="0">SetWindowResizable</a></li>
 <li><a href="#SetWindowAlwaysOnTop" tabindex="0">SetWindowAlwaysOnTop</a></li>
+<li><a href="#SetWindowFillDocument" tabindex="0">SetWindowFillDocument</a></li>
 <li><a href="#ShowWindow" tabindex="0">ShowWindow</a></li>
 <li><a href="#HideWindow" tabindex="0">HideWindow</a></li>
 <li><a href="#RaiseWindow" tabindex="0">RaiseWindow</a></li>
@@ -141,6 +142,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#SetWindowHitTest" tabindex="0">SetWindowHitTest</a></li>
 <li><a href="#SetWindowShape" tabindex="0">SetWindowShape</a></li>
 <li><a href="#FlashWindow" tabindex="0">FlashWindow</a></li>
+<li><a href="#SetWindowProgressState" tabindex="0">SetWindowProgressState</a></li>
+<li><a href="#GetWindowProgressState" tabindex="0">GetWindowProgressState</a></li>
+<li><a href="#SetWindowProgressValue" tabindex="0">SetWindowProgressValue</a></li>
+<li><a href="#GetWindowProgressValue" tabindex="0">GetWindowProgressValue</a></li>
 <li><a href="#DestroyWindow" tabindex="0">DestroyWindow</a></li>
 <li><a href="#ScreenSaverEnabled" tabindex="0">ScreenSaverEnabled</a></li>
 <li><a href="#EnableScreenSaver" tabindex="0">EnableScreenSaver</a></li>
@@ -461,6 +466,16 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#GetWindowProgressState" class="member-name-link">GetWindowProgressState</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#GetWindowProgressValue" class="member-name-link">GetWindowProgressValue</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
 <div class="col-second even-row-color"><code><a href="#GetWindowProperties" class="member-name-link">GetWindowProperties</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
@@ -621,128 +636,143 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowFocusable" class="member-name-link">SetWindowFocusable</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowFillDocument" class="member-name-link">SetWindowFillDocument</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetWindowFullscreen" class="member-name-link">SetWindowFullscreen</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowFocusable" class="member-name-link">SetWindowFocusable</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowFullscreenMode" class="member-name-link">SetWindowFullscreenMode</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowFullscreen" class="member-name-link">SetWindowFullscreen</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetWindowHitTest" class="member-name-link">SetWindowHitTest</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowFullscreenMode" class="member-name-link">SetWindowFullscreenMode</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowIcon" class="member-name-link">SetWindowIcon</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowHitTest" class="member-name-link">SetWindowHitTest</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetWindowKeyboardGrab" class="member-name-link">SetWindowKeyboardGrab</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowIcon" class="member-name-link">SetWindowIcon</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowMaximumSize" class="member-name-link">SetWindowMaximumSize</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowKeyboardGrab" class="member-name-link">SetWindowKeyboardGrab</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetWindowMinimumSize" class="member-name-link">SetWindowMinimumSize</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowMaximumSize" class="member-name-link">SetWindowMaximumSize</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowModal" class="member-name-link">SetWindowModal</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowMinimumSize" class="member-name-link">SetWindowMinimumSize</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetWindowMouseGrab" class="member-name-link">SetWindowMouseGrab</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowModal" class="member-name-link">SetWindowModal</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowMouseRect" class="member-name-link">SetWindowMouseRect</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowMouseGrab" class="member-name-link">SetWindowMouseGrab</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetWindowOpacity" class="member-name-link">SetWindowOpacity</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowMouseRect" class="member-name-link">SetWindowMouseRect</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowParent" class="member-name-link">SetWindowParent</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowOpacity" class="member-name-link">SetWindowOpacity</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetWindowPosition" class="member-name-link">SetWindowPosition</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowParent" class="member-name-link">SetWindowParent</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowResizable" class="member-name-link">SetWindowResizable</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowPosition" class="member-name-link">SetWindowPosition</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetWindowShape" class="member-name-link">SetWindowShape</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowProgressState" class="member-name-link">SetWindowProgressState</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowSize" class="member-name-link">SetWindowSize</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowProgressValue" class="member-name-link">SetWindowProgressValue</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetWindowSurfaceVSync" class="member-name-link">SetWindowSurfaceVSync</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowResizable" class="member-name-link">SetWindowResizable</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetWindowTitle" class="member-name-link">SetWindowTitle</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowShape" class="member-name-link">SetWindowShape</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#ShowWindow" class="member-name-link">ShowWindow</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowSize" class="member-name-link">SetWindowSize</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#ShowWindowSystemMenu" class="member-name-link">ShowWindowSystemMenu</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetWindowSurfaceVSync" class="member-name-link">SetWindowSurfaceVSync</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SyncWindow" class="member-name-link">SyncWindow</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetWindowTitle" class="member-name-link">SetWindowTitle</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#UpdateWindowSurface" class="member-name-link">UpdateWindowSurface</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ShowWindow" class="member-name-link">ShowWindow</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#UpdateWindowSurfaceRects" class="member-name-link">UpdateWindowSurfaceRects</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ShowWindowSystemMenu" class="member-name-link">ShowWindowSystemMenu</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#WindowHasSurface" class="member-name-link">WindowHasSurface</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SyncWindow" class="member-name-link">SyncWindow</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#UpdateWindowSurface" class="member-name-link">UpdateWindowSurface</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#UpdateWindowSurfaceRects" class="member-name-link">UpdateWindowSurfaceRects</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#WindowHasSurface" class="member-name-link">WindowHasSurface</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 </div>
@@ -1253,6 +1283,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SetWindowFillDocument">
+<h3>SetWindowFillDocument</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SetWindowFillDocument</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="ShowWindow">
 <h3>ShowWindow</h3>
 <div class="horizontal-scroll">
@@ -1527,6 +1566,42 @@ loadScripts(document, 'script');</script>
 <h3>FlashWindow</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">FlashWindow</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SetWindowProgressState">
+<h3>SetWindowProgressState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SetWindowProgressState</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GetWindowProgressState">
+<h3>GetWindowProgressState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetWindowProgressState</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SetWindowProgressValue">
+<h3>SetWindowProgressValue</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SetWindowProgressValue</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GetWindowProgressValue">
+<h3>GetWindowProgressValue</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetWindowProgressValue</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>

@@ -152,6 +152,21 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">An array of <a href="IOURing.html" title="class in org.lwjgl.system.linux.liburing"><code>IOURing</code></a> structs.</div>
 </div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="IOURingAttrPI.html" title="class in org.lwjgl.system.linux.liburing">IOURingAttrPI</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block"><code>struct io_uring_attr_pi {
+    __u16 flags;
+    __u16 app_tag;
+    __u32 len;
+    __u64 addr;
+    __u64 seed;
+    __u64 rsvd;
+}</code></div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="IOURingAttrPI.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingAttrPI.Buffer</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">An array of <a href="IOURingAttrPI.html" title="class in org.lwjgl.system.linux.liburing"><code>IOURingAttrPI</code></a> structs.</div>
+</div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="IOURingBuf.html" title="class in org.lwjgl.system.linux.liburing">IOURingBuf</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block"><code>struct io_uring_buf {
@@ -365,6 +380,36 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">An array of <a href="IOURingProbeOp.html" title="class in org.lwjgl.system.linux.liburing"><code>IOURingProbeOp</code></a> structs.</div>
 </div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="IOURingQueryHdr.html" title="class in org.lwjgl.system.linux.liburing">IOURingQueryHdr</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block"><code>struct io_uring_query_hdr {
+    __u64 next_entry;
+    __u64 query_data;
+    __u32 query_op;
+    __u32 size;
+    __s32 result;
+    __u32 __resv[3];
+}</code></div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="IOURingQueryHdr.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingQueryHdr.Buffer</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">An array of <a href="IOURingQueryHdr.html" title="class in org.lwjgl.system.linux.liburing"><code>IOURingQueryHdr</code></a> structs.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="IOURingQueryOpcode.html" title="class in org.lwjgl.system.linux.liburing">IOURingQueryOpcode</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block"><code>struct io_uring_query_opcode {
+    __u32 nr_request_opcodes;
+    __u32 nr_register_opcodes;
+    __u64 feature_flags;
+    __u64 ring_setup_flags;
+    __u64 enter_flags;
+    __u64 sqe_flags;
+}</code></div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="IOURingQueryOpcode.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingQueryOpcode.Buffer</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">An array of <a href="IOURingQueryOpcode.html" title="class in org.lwjgl.system.linux.liburing"><code>IOURingQueryOpcode</code></a> structs.</div>
+</div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="IOURingRecvmsgOut.html" title="class in org.lwjgl.system.linux.liburing">IOURingRecvmsgOut</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block"><code>struct io_uring_recvmsg_out {
@@ -561,6 +606,10 @@ loadScripts(document, 'script');</script>
         struct {
             __u64 addr3;
             __u64 __pad2[1];
+        };
+        struct {
+            __u64 attr_ptr;
+            __u64 attr_type_mask;
         };
         __u64 optval;
         __u8 cmd[0];

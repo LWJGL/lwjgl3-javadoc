@@ -60,8 +60,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#checkPadding(boolean)" tabindex="0">checkPadding(boolean)</a></li>
 <li><a href="#pack(long)" tabindex="0">pack(long)</a></li>
 <li><a href="#alignas(long)" tabindex="0">alignas(long)</a></li>
-<li><a href="#m(java.lang.String,org.lwjgl.system.ffm.GroupBinder)" tabindex="0">m(String, GroupBinder)</a></li>
-<li><a href="#m(java.lang.String,java.lang.foreign.MemoryLayout)" tabindex="0">m(String, MemoryLayout)</a></li>
+<li><a href="#m(java.lang.String,org.lwjgl.system.ffm.mapping.DataMapping)" tabindex="0">m(String, DataMapping)</a></li>
 <li><a href="#padding(long)" tabindex="0">padding(long)</a></li>
 <li><a href="#withEquals(java.util.function.BiPredicate)" tabindex="0">withEquals(BiPredicate)</a></li>
 <li><a href="#withHashCode(java.util.function.ToIntFunction)" tabindex="0">withHashCode(ToIntFunction)</a></li>
@@ -111,7 +110,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -138,41 +137,35 @@ of that class.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enables validation of the group size with respect to its alignment.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#m(java.lang.String,java.lang.foreign.MemoryLayout)" class="member-name-link">m</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link">MemoryLayout</a>&nbsp;layout)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#m(java.lang.String,org.lwjgl.system.ffm.mapping.DataMapping)" class="member-name-link">m</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="mapping/DataMapping.html" title="interface in org.lwjgl.system.ffm.mapping">DataMapping</a>&lt;?&gt;&nbsp;mapping)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adds a new member to this group.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#m(java.lang.String,org.lwjgl.system.ffm.GroupBinder)" class="member-name-link">m</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="GroupBinder.html" title="interface in org.lwjgl.system.ffm">GroupBinder</a>&lt;?,<wbr>?&gt;&nbsp;binder)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pack(long)" class="member-name-link">pack</a><wbr>(long&nbsp;alignment)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds a nested group member to this group.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pack(long)" class="member-name-link">pack</a><wbr>(long&nbsp;alignment)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Configures the group pack alignment.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#padding(long)" class="member-name-link">padding</a><wbr>(long&nbsp;padding)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#padding(long)" class="member-name-link">padding</a><wbr>(long&nbsp;padding)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds padding before the next member of this group.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withEquals(java.util.function.BiPredicate)" class="member-name-link">withEquals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="#type-param-T" title="type parameter in FFM.GroupBinderBuilder">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;equals)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withEquals(java.util.function.BiPredicate)" class="member-name-link">withEquals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="#type-param-T" title="type parameter in FFM.GroupBinderBuilder">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;equals)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets a custom <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link"><code>Object.equals(Object)</code></a> implementation for the group.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withHashCode(java.util.function.ToIntFunction)" class="member-name-link">withHashCode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/ToIntFunction.html" title="class or interface in java.util.function" class="external-link">ToIntFunction</a>&lt;<a href="#type-param-T" title="type parameter in FFM.GroupBinderBuilder">T</a>&gt;&nbsp;hashCode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withHashCode(java.util.function.ToIntFunction)" class="member-name-link">withHashCode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/ToIntFunction.html" title="class or interface in java.util.function" class="external-link">ToIntFunction</a>&lt;<a href="#type-param-T" title="type parameter in FFM.GroupBinderBuilder">T</a>&gt;&nbsp;hashCode)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets a custom <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link"><code>Object.hashCode()</code></a> implementation for the group.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withToString(java.util.function.Function)" class="member-name-link">withToString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="#type-param-T" title="type parameter in FFM.GroupBinderBuilder">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;toString)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withToString(java.util.function.Function)" class="member-name-link">withToString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="#type-param-T" title="type parameter in FFM.GroupBinderBuilder">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;toString)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets a custom <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a> implementation for the group.</div>
 </div>
 </div>
@@ -278,33 +271,16 @@ the natural alignment.</p></div>
 </section>
 </li>
 <li>
-<section class="detail" id="m(java.lang.String,org.lwjgl.system.ffm.GroupBinder)">
+<section class="detail" id="m(java.lang.String,org.lwjgl.system.ffm.mapping.DataMapping)">
 <h3>m</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></span>&nbsp;<span class="element-name">m</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="GroupBinder.html" title="interface in org.lwjgl.system.ffm">GroupBinder</a>&lt;?,<wbr>?&gt;&nbsp;binder)</span></div>
-<div class="block">Adds a nested group member to this group.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the member name</dd>
-<dd><code>binder</code> - the member's binder</dd>
-<dt>Returns:</dt>
-<dd>this builder instance</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="m(java.lang.String,java.lang.foreign.MemoryLayout)">
-<h3>m</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></span>&nbsp;<span class="element-name">m</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link">MemoryLayout</a>&nbsp;layout)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></span>&nbsp;<span class="element-name">m</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="mapping/DataMapping.html" title="interface in org.lwjgl.system.ffm.mapping">DataMapping</a>&lt;?&gt;&nbsp;mapping)</span></div>
 <div class="block">Adds a new member to this group.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>name</code> - the member name</dd>
-<dd><code>layout</code> - the member's memory layout</dd>
+<dd><code>mapping</code> - the member's data mapping</dd>
 <dt>Returns:</dt>
 <dd>this builder instance</dd>
 </dl>
@@ -333,13 +309,19 @@ the natural alignment.</p></div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></span>&nbsp;<span class="element-name">withEquals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiPredicate.html" title="class or interface in java.util.function" class="external-link">BiPredicate</a>&lt;<a href="#type-param-T" title="type parameter in FFM.GroupBinderBuilder">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;equals)</span></div>
 <div class="block">Sets a custom <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link"><code>Object.equals(Object)</code></a> implementation for the group.
 
-<p>By default, an <code>equals</code> method will be generated with the same semantics as <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link"><code>Record.equals(Object)</code></a>, where getters take the place of
+<p>By default, an <code>equals</code> method will be generated with the same semantics as <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link"><code>Record.equals(Object)</code></a>, where the canonical getters act as
 components. This means that the default implementation will not consider padding members or members with no corresponding getters.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>equals</code> - the <code>equals</code> implementation</dd>
 <dt>Returns:</dt>
 <dd>this builder instance</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="FFMCanonical.html" title="annotation interface in org.lwjgl.system.ffm"><code>FFMCanonical</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -351,13 +333,19 @@ components. This means that the default implementation will not consider padding
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></span>&nbsp;<span class="element-name">withHashCode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/ToIntFunction.html" title="class or interface in java.util.function" class="external-link">ToIntFunction</a>&lt;<a href="#type-param-T" title="type parameter in FFM.GroupBinderBuilder">T</a>&gt;&nbsp;hashCode)</span></div>
 <div class="block">Sets a custom <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link"><code>Object.hashCode()</code></a> implementation for the group.
 
-<p>By default, a <code>hashCode</code> method will be generated with the same semantics as <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html#hashCode()" title="class or interface in java.lang" class="external-link"><code>Record.hashCode()</code></a>, where getters take the place of
+<p>By default, a <code>hashCode</code> method will be generated with the same semantics as <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html#hashCode()" title="class or interface in java.lang" class="external-link"><code>Record.hashCode()</code></a>, where the canonical getters act as
 components. This means that the default implementation will not consider padding members or members with no corresponding getters.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>hashCode</code> - the <code>hashCode</code> implementation</dd>
 <dt>Returns:</dt>
 <dd>this builder instance</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="FFMCanonical.html" title="annotation interface in org.lwjgl.system.ffm"><code>FFMCanonical</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -369,13 +357,19 @@ components. This means that the default implementation will not consider padding
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-SELF" title="type parameter in FFM.GroupBinderBuilder">SELF</a></span>&nbsp;<span class="element-name">withToString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="#type-param-T" title="type parameter in FFM.GroupBinderBuilder">T</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;toString)</span></div>
 <div class="block">Sets a custom <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link"><code>Object.toString()</code></a> implementation for the group.
 
-<p>By default, a <code>toString</code> method will be generated with the same semantics as <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html#toString()" title="class or interface in java.lang" class="external-link"><code>Record.toString()</code></a>, where getters take the place of
+<p>By default, a <code>toString</code> method will be generated with the same semantics as <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html#toString()" title="class or interface in java.lang" class="external-link"><code>Record.toString()</code></a>, where the canonical getters act as
 components. This means that the default implementation will not consider padding members or members with no corresponding getters.</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>toString</code> - the <code>toString</code> implementation</dd>
 <dt>Returns:</dt>
 <dd>this builder instance</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="FFMCanonical.html" title="annotation interface in org.lwjgl.system.ffm"><code>FFMCanonical</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>

@@ -57,9 +57,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#SDL_SOFTWARE_RENDERER" tabindex="0">SDL_SOFTWARE_RENDERER</a></li>
+<li><a href="#SDL_GPU_RENDERER" tabindex="0">SDL_GPU_RENDERER</a></li>
 <li><a href="#SDL_TEXTUREACCESS_STATIC" tabindex="0">SDL_TEXTUREACCESS_STATIC</a></li>
 <li><a href="#SDL_TEXTUREACCESS_STREAMING" tabindex="0">SDL_TEXTUREACCESS_STREAMING</a></li>
 <li><a href="#SDL_TEXTUREACCESS_TARGET" tabindex="0">SDL_TEXTUREACCESS_TARGET</a></li>
+<li><a href="#SDL_TEXTURE_ADDRESS_INVALID" tabindex="0">SDL_TEXTURE_ADDRESS_INVALID</a></li>
+<li><a href="#SDL_TEXTURE_ADDRESS_AUTO" tabindex="0">SDL_TEXTURE_ADDRESS_AUTO</a></li>
+<li><a href="#SDL_TEXTURE_ADDRESS_CLAMP" tabindex="0">SDL_TEXTURE_ADDRESS_CLAMP</a></li>
+<li><a href="#SDL_TEXTURE_ADDRESS_WRAP" tabindex="0">SDL_TEXTURE_ADDRESS_WRAP</a></li>
 <li><a href="#SDL_LOGICAL_PRESENTATION_DISABLED" tabindex="0">SDL_LOGICAL_PRESENTATION_DISABLED</a></li>
 <li><a href="#SDL_LOGICAL_PRESENTATION_STRETCH" tabindex="0">SDL_LOGICAL_PRESENTATION_STRETCH</a></li>
 <li><a href="#SDL_LOGICAL_PRESENTATION_LETTERBOX" tabindex="0">SDL_LOGICAL_PRESENTATION_LETTERBOX</a></li>
@@ -70,6 +75,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_PROP_RENDERER_CREATE_SURFACE_POINTER" tabindex="0">SDL_PROP_RENDERER_CREATE_SURFACE_POINTER</a></li>
 <li><a href="#SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER" tabindex="0">SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER</a></li>
 <li><a href="#SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_NUMBER" tabindex="0">SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_NUMBER</a></li>
+<li><a href="#SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER" tabindex="0">SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER</a></li>
+<li><a href="#SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN" tabindex="0">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN</a></li>
+<li><a href="#SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN" tabindex="0">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN</a></li>
+<li><a href="#SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN" tabindex="0">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN</a></li>
 <li><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_INSTANCE_POINTER" tabindex="0">SDL_PROP_RENDERER_CREATE_VULKAN_INSTANCE_POINTER</a></li>
 <li><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_SURFACE_NUMBER" tabindex="0">SDL_PROP_RENDERER_CREATE_VULKAN_SURFACE_NUMBER</a></li>
 <li><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_PHYSICAL_DEVICE_POINTER" tabindex="0">SDL_PROP_RENDERER_CREATE_VULKAN_PHYSICAL_DEVICE_POINTER</a></li>
@@ -82,6 +91,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_PROP_RENDERER_VSYNC_NUMBER" tabindex="0">SDL_PROP_RENDERER_VSYNC_NUMBER</a></li>
 <li><a href="#SDL_PROP_RENDERER_MAX_TEXTURE_SIZE_NUMBER" tabindex="0">SDL_PROP_RENDERER_MAX_TEXTURE_SIZE_NUMBER</a></li>
 <li><a href="#SDL_PROP_RENDERER_TEXTURE_FORMATS_POINTER" tabindex="0">SDL_PROP_RENDERER_TEXTURE_FORMATS_POINTER</a></li>
+<li><a href="#SDL_PROP_RENDERER_TEXTURE_WRAPPING_BOOLEAN" tabindex="0">SDL_PROP_RENDERER_TEXTURE_WRAPPING_BOOLEAN</a></li>
 <li><a href="#SDL_PROP_RENDERER_OUTPUT_COLORSPACE_NUMBER" tabindex="0">SDL_PROP_RENDERER_OUTPUT_COLORSPACE_NUMBER</a></li>
 <li><a href="#SDL_PROP_RENDERER_HDR_ENABLED_BOOLEAN" tabindex="0">SDL_PROP_RENDERER_HDR_ENABLED_BOOLEAN</a></li>
 <li><a href="#SDL_PROP_RENDERER_SDR_WHITE_POINT_FLOAT" tabindex="0">SDL_PROP_RENDERER_SDR_WHITE_POINT_FLOAT</a></li>
@@ -105,6 +115,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_PROP_TEXTURE_CREATE_ACCESS_NUMBER" tabindex="0">SDL_PROP_TEXTURE_CREATE_ACCESS_NUMBER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_CREATE_WIDTH_NUMBER" tabindex="0">SDL_PROP_TEXTURE_CREATE_WIDTH_NUMBER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_CREATE_HEIGHT_NUMBER" tabindex="0">SDL_PROP_TEXTURE_CREATE_HEIGHT_NUMBER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_CREATE_PALETTE_POINTER" tabindex="0">SDL_PROP_TEXTURE_CREATE_PALETTE_POINTER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT" tabindex="0">SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT</a></li>
 <li><a href="#SDL_PROP_TEXTURE_CREATE_HDR_HEADROOM_FLOAT" tabindex="0">SDL_PROP_TEXTURE_CREATE_HDR_HEADROOM_FLOAT</a></li>
 <li><a href="#SDL_PROP_TEXTURE_CREATE_D3D11_TEXTURE_POINTER" tabindex="0">SDL_PROP_TEXTURE_CREATE_D3D11_TEXTURE_POINTER</a></li>
@@ -123,6 +134,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_U_NUMBER" tabindex="0">SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_U_NUMBER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_V_NUMBER" tabindex="0">SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_V_NUMBER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_CREATE_VULKAN_TEXTURE_NUMBER" tabindex="0">SDL_PROP_TEXTURE_CREATE_VULKAN_TEXTURE_NUMBER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_CREATE_VULKAN_LAYOUT_NUMBER" tabindex="0">SDL_PROP_TEXTURE_CREATE_VULKAN_LAYOUT_NUMBER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_POINTER" tabindex="0">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_POINTER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_UV_POINTER" tabindex="0">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_UV_POINTER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_U_POINTER" tabindex="0">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_U_POINTER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_V_POINTER" tabindex="0">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_V_POINTER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_COLORSPACE_NUMBER" tabindex="0">SDL_PROP_TEXTURE_COLORSPACE_NUMBER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_FORMAT_NUMBER" tabindex="0">SDL_PROP_TEXTURE_FORMAT_NUMBER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_ACCESS_NUMBER" tabindex="0">SDL_PROP_TEXTURE_ACCESS_NUMBER</a></li>
@@ -149,6 +165,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_PROP_TEXTURE_OPENGLES2_TEXTURE_V_NUMBER" tabindex="0">SDL_PROP_TEXTURE_OPENGLES2_TEXTURE_V_NUMBER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_OPENGLES2_TEXTURE_TARGET_NUMBER" tabindex="0">SDL_PROP_TEXTURE_OPENGLES2_TEXTURE_TARGET_NUMBER</a></li>
 <li><a href="#SDL_PROP_TEXTURE_VULKAN_TEXTURE_NUMBER" tabindex="0">SDL_PROP_TEXTURE_VULKAN_TEXTURE_NUMBER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_GPU_TEXTURE_POINTER" tabindex="0">SDL_PROP_TEXTURE_GPU_TEXTURE_POINTER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_GPU_TEXTURE_UV_POINTER" tabindex="0">SDL_PROP_TEXTURE_GPU_TEXTURE_UV_POINTER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_GPU_TEXTURE_U_POINTER" tabindex="0">SDL_PROP_TEXTURE_GPU_TEXTURE_U_POINTER</a></li>
+<li><a href="#SDL_PROP_TEXTURE_GPU_TEXTURE_V_POINTER" tabindex="0">SDL_PROP_TEXTURE_GPU_TEXTURE_V_POINTER</a></li>
 <li><a href="#SDL_RENDERER_VSYNC_DISABLED" tabindex="0">SDL_RENDERER_VSYNC_DISABLED</a></li>
 <li><a href="#SDL_RENDERER_VSYNC_ADAPTIVE" tabindex="0">SDL_RENDERER_VSYNC_ADAPTIVE</a></li>
 <li><a href="#SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE" tabindex="0">SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE</a></li>
@@ -166,6 +186,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_CreateRenderer(long,java.nio.ByteBuffer)" tabindex="0">SDL_CreateRenderer(long, ByteBuffer)</a></li>
 <li><a href="#SDL_CreateRenderer(long,java.lang.CharSequence)" tabindex="0">SDL_CreateRenderer(long, CharSequence)</a></li>
 <li><a href="#SDL_CreateRendererWithProperties(int)" tabindex="0">SDL_CreateRendererWithProperties(int)</a></li>
+<li><a href="#SDL_CreateGPURenderer(long,long)" tabindex="0">SDL_CreateGPURenderer(long, long)</a></li>
+<li><a href="#SDL_GetGPURendererDevice(long)" tabindex="0">SDL_GetGPURendererDevice(long)</a></li>
 <li><a href="#nSDL_CreateSoftwareRenderer(long)" tabindex="0">nSDL_CreateSoftwareRenderer(long)</a></li>
 <li><a href="#SDL_CreateSoftwareRenderer(org.lwjgl.sdl.SDL_Surface)" tabindex="0">SDL_CreateSoftwareRenderer(SDL_Surface)</a></li>
 <li><a href="#SDL_GetRenderer(long)" tabindex="0">SDL_GetRenderer(long)</a></li>
@@ -189,6 +211,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_GetRendererFromTexture(org.lwjgl.sdl.SDL_Texture)" tabindex="0">SDL_GetRendererFromTexture(SDL_Texture)</a></li>
 <li><a href="#nSDL_GetTextureSize(long,long,long)" tabindex="0">nSDL_GetTextureSize(long, long, long)</a></li>
 <li><a href="#SDL_GetTextureSize(org.lwjgl.sdl.SDL_Texture,java.nio.FloatBuffer,java.nio.FloatBuffer)" tabindex="0">SDL_GetTextureSize(SDL_Texture, FloatBuffer, FloatBuffer)</a></li>
+<li><a href="#nSDL_SetTexturePalette(long,long)" tabindex="0">nSDL_SetTexturePalette(long, long)</a></li>
+<li><a href="#SDL_SetTexturePalette(org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_Palette)" tabindex="0">SDL_SetTexturePalette(SDL_Texture, SDL_Palette)</a></li>
+<li><a href="#nSDL_GetTexturePalette(long)" tabindex="0">nSDL_GetTexturePalette(long)</a></li>
+<li><a href="#SDL_GetTexturePalette(org.lwjgl.sdl.SDL_Texture)" tabindex="0">SDL_GetTexturePalette(SDL_Texture)</a></li>
 <li><a href="#nSDL_SetTextureColorMod(long,byte,byte,byte)" tabindex="0">nSDL_SetTextureColorMod(long, byte, byte, byte)</a></li>
 <li><a href="#SDL_SetTextureColorMod(org.lwjgl.sdl.SDL_Texture,byte,byte,byte)" tabindex="0">SDL_SetTextureColorMod(SDL_Texture, byte, byte, byte)</a></li>
 <li><a href="#nSDL_SetTextureColorModFloat(long,float,float,float)" tabindex="0">nSDL_SetTextureColorModFloat(long, float, float, float)</a></li>
@@ -292,12 +318,17 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_RenderTextureTiled(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,float,org.lwjgl.sdl.SDL_FRect)" tabindex="0">SDL_RenderTextureTiled(long, SDL_Texture, SDL_FRect, float, SDL_FRect)</a></li>
 <li><a href="#nSDL_RenderTexture9Grid(long,long,long,float,float,float,float,float,long)" tabindex="0">nSDL_RenderTexture9Grid(long, long, long, float, float, float, float, float, long)</a></li>
 <li><a href="#SDL_RenderTexture9Grid(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,float,float,float,float,float,org.lwjgl.sdl.SDL_FRect)" tabindex="0">SDL_RenderTexture9Grid(long, SDL_Texture, SDL_FRect, float, float, float, float, float, SDL_FRect)</a></li>
+<li><a href="#nSDL_RenderTexture9GridTiled(long,long,long,float,float,float,float,float,long,float)" tabindex="0">nSDL_RenderTexture9GridTiled(long, long, long, float, float, float, float, float, long, float)</a></li>
+<li><a href="#SDL_RenderTexture9GridTiled(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,float,float,float,float,float,org.lwjgl.sdl.SDL_FRect,float)" tabindex="0">SDL_RenderTexture9GridTiled(long, SDL_Texture, SDL_FRect, float, float, float, float, float, SDL_FRect, float)</a></li>
 <li><a href="#nSDL_RenderGeometry(long,long,long,int,long,int)" tabindex="0">nSDL_RenderGeometry(long, long, long, int, long, int)</a></li>
 <li><a href="#SDL_RenderGeometry(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_Vertex.Buffer,java.nio.IntBuffer)" tabindex="0">SDL_RenderGeometry(long, SDL_Texture, SDL_Vertex.Buffer, IntBuffer)</a></li>
 <li><a href="#nSDL_RenderGeometryRaw(long,long,long,int,long,int,long,int,int,long,int,int)" tabindex="0">nSDL_RenderGeometryRaw(long, long, long, int, long, int, long, int, int, long, int, int)</a></li>
 <li><a href="#SDL_RenderGeometryRaw(long,org.lwjgl.sdl.SDL_Texture,java.nio.FloatBuffer,int,org.lwjgl.sdl.SDL_FColor.Buffer,int,java.nio.FloatBuffer,int,int,java.nio.ByteBuffer,int,int)" tabindex="0">SDL_RenderGeometryRaw(long, SDL_Texture, FloatBuffer, int, SDL_FColor.Buffer, int, FloatBuffer, int, int, ByteBuffer, int, int)</a></li>
 <li><a href="#SDL_RenderGeometryRaw(long,org.lwjgl.sdl.SDL_Texture,java.nio.FloatBuffer,int,org.lwjgl.sdl.SDL_FColor.Buffer,int,java.nio.FloatBuffer,int,int,java.nio.ShortBuffer,int,int)" tabindex="0">SDL_RenderGeometryRaw(long, SDL_Texture, FloatBuffer, int, SDL_FColor.Buffer, int, FloatBuffer, int, int, ShortBuffer, int, int)</a></li>
 <li><a href="#SDL_RenderGeometryRaw(long,org.lwjgl.sdl.SDL_Texture,java.nio.FloatBuffer,int,org.lwjgl.sdl.SDL_FColor.Buffer,int,java.nio.FloatBuffer,int,int,java.nio.IntBuffer,int,int)" tabindex="0">SDL_RenderGeometryRaw(long, SDL_Texture, FloatBuffer, int, SDL_FColor.Buffer, int, FloatBuffer, int, int, IntBuffer, int, int)</a></li>
+<li><a href="#SDL_SetRenderTextureAddressMode(long,int,int)" tabindex="0">SDL_SetRenderTextureAddressMode(long, int, int)</a></li>
+<li><a href="#nSDL_GetRenderTextureAddressMode(long,long,long)" tabindex="0">nSDL_GetRenderTextureAddressMode(long, long, long)</a></li>
+<li><a href="#SDL_GetRenderTextureAddressMode(long,java.nio.IntBuffer,java.nio.IntBuffer)" tabindex="0">SDL_GetRenderTextureAddressMode(long, IntBuffer, IntBuffer)</a></li>
 <li><a href="#nSDL_RenderReadPixels(long,long)" tabindex="0">nSDL_RenderReadPixels(long, long)</a></li>
 <li><a href="#SDL_RenderReadPixels(long,org.lwjgl.sdl.SDL_Rect)" tabindex="0">SDL_RenderReadPixels(long, SDL_Rect)</a></li>
 <li><a href="#SDL_RenderPresent(long)" tabindex="0">SDL_RenderPresent(long)</a></li>
@@ -317,6 +348,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#nSDL_RenderDebugTextFormat(long,float,float,long)" tabindex="0">nSDL_RenderDebugTextFormat(long, float, float, long)</a></li>
 <li><a href="#SDL_RenderDebugTextFormat(long,float,float,java.nio.ByteBuffer)" tabindex="0">SDL_RenderDebugTextFormat(long, float, float, ByteBuffer)</a></li>
 <li><a href="#SDL_RenderDebugTextFormat(long,float,float,java.lang.CharSequence)" tabindex="0">SDL_RenderDebugTextFormat(long, float, float, CharSequence)</a></li>
+<li><a href="#SDL_SetDefaultTextureScaleMode(long,int)" tabindex="0">SDL_SetDefaultTextureScaleMode(long, int)</a></li>
+<li><a href="#nSDL_GetDefaultTextureScaleMode(long,long)" tabindex="0">nSDL_GetDefaultTextureScaleMode(long, long)</a></li>
+<li><a href="#SDL_GetDefaultTextureScaleMode(long,java.nio.IntBuffer)" tabindex="0">SDL_GetDefaultTextureScaleMode(long, IntBuffer)</a></li>
+<li><a href="#nSDL_CreateGPURenderState(long,long)" tabindex="0">nSDL_CreateGPURenderState(long, long)</a></li>
+<li><a href="#SDL_CreateGPURenderState(long,org.lwjgl.sdl.SDL_GPURenderStateCreateInfo)" tabindex="0">SDL_CreateGPURenderState(long, SDL_GPURenderStateCreateInfo)</a></li>
+<li><a href="#nSDL_SetGPURenderStateFragmentUniforms(long,int,long,int)" tabindex="0">nSDL_SetGPURenderStateFragmentUniforms(long, int, long, int)</a></li>
+<li><a href="#SDL_SetGPURenderStateFragmentUniforms(long,int,java.nio.ByteBuffer)" tabindex="0">SDL_SetGPURenderStateFragmentUniforms(long, int, ByteBuffer)</a></li>
+<li><a href="#SDL_SetGPURenderState(long,long)" tabindex="0">SDL_SetGPURenderState(long, long)</a></li>
+<li><a href="#SDL_DestroyGPURenderState(long)" tabindex="0">SDL_DestroyGPURenderState(long)</a></li>
 </ol>
 </li>
 </ol>
@@ -367,98 +407,116 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE" class="member-name-link">SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_DISABLED" class="member-name-link">SDL_LOGICAL_PRESENTATION_DISABLED</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_GPU_RENDERER" class="member-name-link">SDL_GPU_RENDERER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_INTEGER_SCALE" class="member-name-link">SDL_LOGICAL_PRESENTATION_INTEGER_SCALE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_DISABLED" class="member-name-link">SDL_LOGICAL_PRESENTATION_DISABLED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_LETTERBOX" class="member-name-link">SDL_LOGICAL_PRESENTATION_LETTERBOX</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_INTEGER_SCALE" class="member-name-link">SDL_LOGICAL_PRESENTATION_INTEGER_SCALE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_OVERSCAN" class="member-name-link">SDL_LOGICAL_PRESENTATION_OVERSCAN</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_LETTERBOX" class="member-name-link">SDL_LOGICAL_PRESENTATION_LETTERBOX</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_STRETCH" class="member-name-link">SDL_LOGICAL_PRESENTATION_STRETCH</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_OVERSCAN" class="member-name-link">SDL_LOGICAL_PRESENTATION_OVERSCAN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_NAME_STRING" class="member-name-link">SDL_PROP_RENDERER_CREATE_NAME_STRING</a></code></div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_LOGICAL_PRESENTATION_STRETCH" class="member-name-link">SDL_LOGICAL_PRESENTATION_STRETCH</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN" class="member-name-link">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_SURFACE_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_SURFACE_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN" class="member-name-link">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_DEVICE_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN" class="member-name-link">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_NAME_STRING" class="member-name-link">SDL_PROP_RENDERER_CREATE_NAME_STRING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_INSTANCE_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_INSTANCE_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_OUTPUT_COLORSPACE_NUMBER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_PHYSICAL_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_PHYSICAL_DEVICE_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_SURFACE_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_SURFACE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_SURFACE_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_SURFACE_NUMBER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_DEVICE_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_WINDOW_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_WINDOW_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_GRAPHICS_QUEUE_FAMILY_INDEX_NUMBER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_D3D11_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D11_DEVICE_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_INSTANCE_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_INSTANCE_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_D3D11_SWAPCHAIN_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D11_SWAPCHAIN_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_PHYSICAL_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_PHYSICAL_DEVICE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_D3D12_COMMAND_QUEUE_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D12_COMMAND_QUEUE_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_PRESENT_QUEUE_FAMILY_INDEX_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_D3D12_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D12_DEVICE_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_VULKAN_SURFACE_NUMBER" class="member-name-link">SDL_PROP_RENDERER_CREATE_VULKAN_SURFACE_NUMBER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_D3D12_SWAPCHAIN_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D12_SWAPCHAIN_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_CREATE_WINDOW_POINTER" class="member-name-link">SDL_PROP_RENDERER_CREATE_WINDOW_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_D3D9_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D9_DEVICE_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_D3D11_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D11_DEVICE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_GPU_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_GPU_DEVICE_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_D3D11_SWAPCHAIN_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D11_SWAPCHAIN_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_HDR_ENABLED_BOOLEAN" class="member-name-link">SDL_PROP_RENDERER_HDR_ENABLED_BOOLEAN</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_D3D12_COMMAND_QUEUE_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D12_COMMAND_QUEUE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_HDR_HEADROOM_FLOAT" class="member-name-link">SDL_PROP_RENDERER_HDR_HEADROOM_FLOAT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_D3D12_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D12_DEVICE_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_MAX_TEXTURE_SIZE_NUMBER" class="member-name-link">SDL_PROP_RENDERER_MAX_TEXTURE_SIZE_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_D3D12_SWAPCHAIN_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D12_SWAPCHAIN_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_NAME_STRING" class="member-name-link">SDL_PROP_RENDERER_NAME_STRING</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_D3D9_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_D3D9_DEVICE_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_OUTPUT_COLORSPACE_NUMBER" class="member-name-link">SDL_PROP_RENDERER_OUTPUT_COLORSPACE_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_GPU_DEVICE_POINTER" class="member-name-link">SDL_PROP_RENDERER_GPU_DEVICE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_SDR_WHITE_POINT_FLOAT" class="member-name-link">SDL_PROP_RENDERER_SDR_WHITE_POINT_FLOAT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_HDR_ENABLED_BOOLEAN" class="member-name-link">SDL_PROP_RENDERER_HDR_ENABLED_BOOLEAN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_SURFACE_POINTER" class="member-name-link">SDL_PROP_RENDERER_SURFACE_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_HDR_HEADROOM_FLOAT" class="member-name-link">SDL_PROP_RENDERER_HDR_HEADROOM_FLOAT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_TEXTURE_FORMATS_POINTER" class="member-name-link">SDL_PROP_RENDERER_TEXTURE_FORMATS_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_MAX_TEXTURE_SIZE_NUMBER" class="member-name-link">SDL_PROP_RENDERER_MAX_TEXTURE_SIZE_NUMBER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_NAME_STRING" class="member-name-link">SDL_PROP_RENDERER_NAME_STRING</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_OUTPUT_COLORSPACE_NUMBER" class="member-name-link">SDL_PROP_RENDERER_OUTPUT_COLORSPACE_NUMBER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_SDR_WHITE_POINT_FLOAT" class="member-name-link">SDL_PROP_RENDERER_SDR_WHITE_POINT_FLOAT</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_SURFACE_POINTER" class="member-name-link">SDL_PROP_RENDERER_SURFACE_POINTER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_TEXTURE_FORMATS_POINTER" class="member-name-link">SDL_PROP_RENDERER_TEXTURE_FORMATS_POINTER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_RENDERER_TEXTURE_WRAPPING_BOOLEAN" class="member-name-link">SDL_PROP_RENDERER_TEXTURE_WRAPPING_BOOLEAN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_PROP_RENDERER_VSYNC_NUMBER" class="member-name-link">SDL_PROP_RENDERER_VSYNC_NUMBER</a></code></div>
@@ -521,6 +579,18 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_FORMAT_NUMBER" class="member-name-link">SDL_PROP_TEXTURE_CREATE_FORMAT_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_POINTER" class="member-name-link">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_POINTER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_U_POINTER" class="member-name-link">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_U_POINTER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_UV_POINTER" class="member-name-link">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_UV_POINTER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_V_POINTER" class="member-name-link">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_V_POINTER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_HDR_HEADROOM_FLOAT" class="member-name-link">SDL_PROP_TEXTURE_CREATE_HDR_HEADROOM_FLOAT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -554,7 +624,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_V_NUMBER" class="member-name-link">SDL_PROP_TEXTURE_CREATE_OPENGLES2_TEXTURE_V_NUMBER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT" class="member-name-link">SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_PALETTE_POINTER" class="member-name-link">SDL_PROP_TEXTURE_CREATE_PALETTE_POINTER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT" class="member-name-link">SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_VULKAN_LAYOUT_NUMBER" class="member-name-link">SDL_PROP_TEXTURE_CREATE_VULKAN_LAYOUT_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_PROP_TEXTURE_CREATE_VULKAN_TEXTURE_NUMBER" class="member-name-link">SDL_PROP_TEXTURE_CREATE_VULKAN_TEXTURE_NUMBER</a></code></div>
@@ -582,6 +658,18 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_PROP_TEXTURE_FORMAT_NUMBER" class="member-name-link">SDL_PROP_TEXTURE_FORMAT_NUMBER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_TEXTURE_GPU_TEXTURE_POINTER" class="member-name-link">SDL_PROP_TEXTURE_GPU_TEXTURE_POINTER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_TEXTURE_GPU_TEXTURE_U_POINTER" class="member-name-link">SDL_PROP_TEXTURE_GPU_TEXTURE_U_POINTER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_TEXTURE_GPU_TEXTURE_UV_POINTER" class="member-name-link">SDL_PROP_TEXTURE_GPU_TEXTURE_UV_POINTER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_TEXTURE_GPU_TEXTURE_V_POINTER" class="member-name-link">SDL_PROP_TEXTURE_GPU_TEXTURE_V_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_PROP_TEXTURE_HDR_HEADROOM_FLOAT" class="member-name-link">SDL_PROP_TEXTURE_HDR_HEADROOM_FLOAT</a></code></div>
@@ -644,6 +732,18 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#SDL_SOFTWARE_RENDERER" class="member-name-link">SDL_SOFTWARE_RENDERER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_TEXTURE_ADDRESS_AUTO" class="member-name-link">SDL_TEXTURE_ADDRESS_AUTO</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_TEXTURE_ADDRESS_CLAMP" class="member-name-link">SDL_TEXTURE_ADDRESS_CLAMP</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_TEXTURE_ADDRESS_INVALID" class="member-name-link">SDL_TEXTURE_ADDRESS_INVALID</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_TEXTURE_ADDRESS_WRAP" class="member-name-link">SDL_TEXTURE_ADDRESS_WRAP</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_TEXTUREACCESS_STATIC" class="member-name-link">SDL_TEXTUREACCESS_STATIC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
@@ -673,58 +773,70 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>bool SDL_ConvertEventToRenderCoordinates(SDL_Renderer * renderer, SDL_Event * event)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateRenderer(long,long)" class="member-name-link">nSDL_CreateRenderer</a><wbr>(long&nbsp;window,
- long&nbsp;name)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateGPURenderState(long,long)" class="member-name-link">nSDL_CreateGPURenderState</a><wbr>(long&nbsp;renderer,
+ long&nbsp;createinfo)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>SDL_Renderer * SDL_CreateRenderer(SDL_Window * window, char const * name)</code></div>
+<div class="block"><code>SDL_GPURenderState * SDL_CreateGPURenderState(SDL_Renderer * renderer, SDL_GPURenderStateCreateInfo * createinfo)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateSoftwareRenderer(long)" class="member-name-link">nSDL_CreateSoftwareRenderer</a><wbr>(long&nbsp;surface)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateRenderer(long,long)" class="member-name-link">nSDL_CreateRenderer</a><wbr>(long&nbsp;window,
+ long&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>SDL_Renderer * SDL_CreateSoftwareRenderer(SDL_Surface * surface)</code></div>
+<div class="block"><code>SDL_Renderer * SDL_CreateRenderer(SDL_Window * window, char const * name)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateTexture(long,int,int,int,int)" class="member-name-link">nSDL_CreateTexture</a><wbr>(long&nbsp;renderer,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateSoftwareRenderer(long)" class="member-name-link">nSDL_CreateSoftwareRenderer</a><wbr>(long&nbsp;surface)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_Renderer * SDL_CreateSoftwareRenderer(SDL_Surface * surface)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateTexture(long,int,int,int,int)" class="member-name-link">nSDL_CreateTexture</a><wbr>(long&nbsp;renderer,
  int&nbsp;format,
  int&nbsp;access,
  int&nbsp;w,
  int&nbsp;h)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Texture * SDL_CreateTexture(SDL_Renderer * renderer, SDL_PixelFormat format, SDL_TextureAccess access, int w, int h)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateTextureFromSurface(long,long)" class="member-name-link">nSDL_CreateTextureFromSurface</a><wbr>(long&nbsp;renderer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateTextureFromSurface(long,long)" class="member-name-link">nSDL_CreateTextureFromSurface</a><wbr>(long&nbsp;renderer,
  long&nbsp;surface)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Texture * SDL_CreateTextureFromSurface(SDL_Renderer * renderer, SDL_Surface * surface)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateTextureWithProperties(long,int)" class="member-name-link">nSDL_CreateTextureWithProperties</a><wbr>(long&nbsp;renderer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateTextureWithProperties(long,int)" class="member-name-link">nSDL_CreateTextureWithProperties</a><wbr>(long&nbsp;renderer,
  int&nbsp;props)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Texture * SDL_CreateTextureWithProperties(SDL_Renderer * renderer, SDL_PropertiesID props)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateWindowAndRenderer(long,int,int,long,long,long)" class="member-name-link">nSDL_CreateWindowAndRenderer</a><wbr>(long&nbsp;title,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateWindowAndRenderer(long,int,int,long,long,long)" class="member-name-link">nSDL_CreateWindowAndRenderer</a><wbr>(long&nbsp;title,
  int&nbsp;width,
  int&nbsp;height,
  long&nbsp;window_flags,
  long&nbsp;window,
  long&nbsp;renderer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_CreateWindowAndRenderer(char const * title, int width, int height, SDL_WindowFlags window_flags, SDL_Window ** window, SDL_Renderer ** renderer)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_DestroyTexture(long)" class="member-name-link">nSDL_DestroyTexture</a><wbr>(long&nbsp;texture)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_DestroyTexture(long)" class="member-name-link">nSDL_DestroyTexture</a><wbr>(long&nbsp;texture)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void SDL_DestroyTexture(SDL_Texture * texture)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetCurrentRenderOutputSize(long,long,long)" class="member-name-link">nSDL_GetCurrentRenderOutputSize</a><wbr>(long&nbsp;renderer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetCurrentRenderOutputSize(long,long,long)" class="member-name-link">nSDL_GetCurrentRenderOutputSize</a><wbr>(long&nbsp;renderer,
  long&nbsp;w,
  long&nbsp;h)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetCurrentRenderOutputSize(SDL_Renderer * renderer, int * w, int * h)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetDefaultTextureScaleMode(long,long)" class="member-name-link">nSDL_GetDefaultTextureScaleMode</a><wbr>(long&nbsp;renderer,
+ long&nbsp;scale_mode)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_GetDefaultTextureScaleMode(SDL_Renderer * renderer, SDL_ScaleMode * scale_mode)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetRenderClipRect(long,long)" class="member-name-link">nSDL_GetRenderClipRect</a><wbr>(long&nbsp;renderer,
@@ -817,50 +929,62 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>SDL_Texture * SDL_GetRenderTarget(SDL_Renderer * renderer)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetRenderViewport(long,long)" class="member-name-link">nSDL_GetRenderViewport</a><wbr>(long&nbsp;renderer,
- long&nbsp;rect)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetRenderTextureAddressMode(long,long,long)" class="member-name-link">nSDL_GetRenderTextureAddressMode</a><wbr>(long&nbsp;renderer,
+ long&nbsp;u_mode,
+ long&nbsp;v_mode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_GetRenderTextureAddressMode(SDL_Renderer * renderer, SDL_TextureAddressMode * u_mode, SDL_TextureAddressMode * v_mode)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetRenderViewport(long,long)" class="member-name-link">nSDL_GetRenderViewport</a><wbr>(long&nbsp;renderer,
+ long&nbsp;rect)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetRenderViewport(SDL_Renderer * renderer, SDL_Rect * rect)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetRenderVSync(long,long)" class="member-name-link">nSDL_GetRenderVSync</a><wbr>(long&nbsp;renderer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetRenderVSync(long,long)" class="member-name-link">nSDL_GetRenderVSync</a><wbr>(long&nbsp;renderer,
  long&nbsp;vsync)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetRenderVSync(SDL_Renderer * renderer, int * vsync)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureAlphaMod(long,long)" class="member-name-link">nSDL_GetTextureAlphaMod</a><wbr>(long&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureAlphaMod(long,long)" class="member-name-link">nSDL_GetTextureAlphaMod</a><wbr>(long&nbsp;texture,
  long&nbsp;alpha)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetTextureAlphaMod(SDL_Texture * texture, Uint8 * alpha)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureAlphaModFloat(long,long)" class="member-name-link">nSDL_GetTextureAlphaModFloat</a><wbr>(long&nbsp;texture,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureAlphaModFloat(long,long)" class="member-name-link">nSDL_GetTextureAlphaModFloat</a><wbr>(long&nbsp;texture,
  long&nbsp;alpha)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetTextureAlphaModFloat(SDL_Texture * texture, float * alpha)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureBlendMode(long,long)" class="member-name-link">nSDL_GetTextureBlendMode</a><wbr>(long&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureBlendMode(long,long)" class="member-name-link">nSDL_GetTextureBlendMode</a><wbr>(long&nbsp;texture,
  long&nbsp;blendMode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetTextureBlendMode(SDL_Texture * texture, SDL_BlendMode * blendMode)</code></div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureColorMod(long,long,long,long)" class="member-name-link">nSDL_GetTextureColorMod</a><wbr>(long&nbsp;texture,
+ long&nbsp;r,
+ long&nbsp;g,
+ long&nbsp;b)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_GetTextureColorMod(SDL_Texture * texture, Uint8 * r, Uint8 * g, Uint8 * b)</code></div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureColorMod(long,long,long,long)" class="member-name-link">nSDL_GetTextureColorMod</a><wbr>(long&nbsp;texture,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureColorModFloat(long,long,long,long)" class="member-name-link">nSDL_GetTextureColorModFloat</a><wbr>(long&nbsp;texture,
  long&nbsp;r,
  long&nbsp;g,
  long&nbsp;b)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>bool SDL_GetTextureColorMod(SDL_Texture * texture, Uint8 * r, Uint8 * g, Uint8 * b)</code></div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureColorModFloat(long,long,long,long)" class="member-name-link">nSDL_GetTextureColorModFloat</a><wbr>(long&nbsp;texture,
- long&nbsp;r,
- long&nbsp;g,
- long&nbsp;b)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetTextureColorModFloat(SDL_Texture * texture, float * r, float * g, float * b)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTexturePalette(long)" class="member-name-link">nSDL_GetTexturePalette</a><wbr>(long&nbsp;texture)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_Palette * SDL_GetTexturePalette(SDL_Texture * texture)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetTextureProperties(long)" class="member-name-link">nSDL_GetTextureProperties</a><wbr>(long&nbsp;texture)</code></div>
@@ -1023,34 +1147,56 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>bool SDL_RenderTexture9Grid(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, SDL_FRect const * dstrect)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_RenderTextureAffine(long,long,long,long,long,long)" class="member-name-link">nSDL_RenderTextureAffine</a><wbr>(long&nbsp;renderer,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_RenderTexture9GridTiled(long,long,long,float,float,float,float,float,long,float)" class="member-name-link">nSDL_RenderTexture9GridTiled</a><wbr>(long&nbsp;renderer,
+ long&nbsp;texture,
+ long&nbsp;srcrect,
+ float&nbsp;left_width,
+ float&nbsp;right_width,
+ float&nbsp;top_height,
+ float&nbsp;bottom_height,
+ float&nbsp;scale,
+ long&nbsp;dstrect,
+ float&nbsp;tileScale)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_RenderTexture9GridTiled(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, SDL_FRect const * dstrect, float tileScale)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_RenderTextureAffine(long,long,long,long,long,long)" class="member-name-link">nSDL_RenderTextureAffine</a><wbr>(long&nbsp;renderer,
  long&nbsp;texture,
  long&nbsp;srcrect,
  long&nbsp;origin,
  long&nbsp;right,
  long&nbsp;down)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_RenderTextureAffine(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, SDL_FPoint const * origin, SDL_FPoint const * right, SDL_FPoint const * down)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_RenderTextureRotated(long,long,long,long,double,long,int)" class="member-name-link">nSDL_RenderTextureRotated</a><wbr>(long&nbsp;renderer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_RenderTextureRotated(long,long,long,long,double,long,int)" class="member-name-link">nSDL_RenderTextureRotated</a><wbr>(long&nbsp;renderer,
  long&nbsp;texture,
  long&nbsp;srcrect,
  long&nbsp;dstrect,
  double&nbsp;angle,
  long&nbsp;center,
  int&nbsp;flip)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_RenderTextureRotated(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, SDL_FRect const * dstrect, double angle, SDL_FPoint const * center, SDL_FlipMode flip)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_RenderTextureTiled(long,long,long,float,long)" class="member-name-link">nSDL_RenderTextureTiled</a><wbr>(long&nbsp;renderer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_RenderTextureTiled(long,long,long,float,long)" class="member-name-link">nSDL_RenderTextureTiled</a><wbr>(long&nbsp;renderer,
  long&nbsp;texture,
  long&nbsp;srcrect,
  float&nbsp;scale,
  long&nbsp;dstrect)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_RenderTextureTiled(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, float scale, SDL_FRect const * dstrect)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_SetGPURenderStateFragmentUniforms(long,int,long,int)" class="member-name-link">nSDL_SetGPURenderStateFragmentUniforms</a><wbr>(long&nbsp;state,
+ int&nbsp;slot_index,
+ long&nbsp;data,
+ int&nbsp;length)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetGPURenderStateFragmentUniforms(SDL_GPURenderState * state, Uint32 slot_index, void const * data, Uint32 length)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_SetRenderClipRect(long,long)" class="member-name-link">nSDL_SetRenderClipRect</a><wbr>(long&nbsp;renderer,
@@ -1105,36 +1251,42 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>bool SDL_SetTextureColorModFloat(SDL_Texture * texture, float r, float g, float b)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_SetTextureScaleMode(long,int)" class="member-name-link">nSDL_SetTextureScaleMode</a><wbr>(long&nbsp;texture,
- int&nbsp;scaleMode)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_SetTexturePalette(long,long)" class="member-name-link">nSDL_SetTexturePalette</a><wbr>(long&nbsp;texture,
+ long&nbsp;palette)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetTexturePalette(SDL_Texture * texture, SDL_Palette * palette)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_SetTextureScaleMode(long,int)" class="member-name-link">nSDL_SetTextureScaleMode</a><wbr>(long&nbsp;texture,
+ int&nbsp;scaleMode)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetTextureScaleMode(SDL_Texture * texture, SDL_ScaleMode scaleMode)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_UnlockTexture(long)" class="member-name-link">nSDL_UnlockTexture</a><wbr>(long&nbsp;texture)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_UnlockTexture(long)" class="member-name-link">nSDL_UnlockTexture</a><wbr>(long&nbsp;texture)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void SDL_UnlockTexture(SDL_Texture * texture)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_UpdateNVTexture(long,long,long,int,long,int)" class="member-name-link">nSDL_UpdateNVTexture</a><wbr>(long&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_UpdateNVTexture(long,long,long,int,long,int)" class="member-name-link">nSDL_UpdateNVTexture</a><wbr>(long&nbsp;texture,
  long&nbsp;rect,
  long&nbsp;Yplane,
  int&nbsp;Ypitch,
  long&nbsp;UVplane,
  int&nbsp;UVpitch)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_UpdateNVTexture(SDL_Texture * texture, SDL_Rect const * rect, Uint8 const * Yplane, int Ypitch, Uint8 const * UVplane, int UVpitch)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_UpdateTexture(long,long,long,int)" class="member-name-link">nSDL_UpdateTexture</a><wbr>(long&nbsp;texture,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_UpdateTexture(long,long,long,int)" class="member-name-link">nSDL_UpdateTexture</a><wbr>(long&nbsp;texture,
  long&nbsp;rect,
  long&nbsp;pixels,
  int&nbsp;pitch)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_UpdateTexture(SDL_Texture * texture, SDL_Rect const * rect, void const * pixels, int pitch)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_UpdateYUVTexture(long,long,long,int,long,int,long,int)" class="member-name-link">nSDL_UpdateYUVTexture</a><wbr>(long&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_UpdateYUVTexture(long,long,long,int,long,int,long,int)" class="member-name-link">nSDL_UpdateYUVTexture</a><wbr>(long&nbsp;texture,
  long&nbsp;rect,
  long&nbsp;Yplane,
  int&nbsp;Ypitch,
@@ -1142,68 +1294,90 @@ loadScripts(document, 'script');</script>
  int&nbsp;Upitch,
  long&nbsp;Vplane,
  int&nbsp;Vpitch)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_UpdateYUVTexture(SDL_Texture * texture, SDL_Rect const * rect, Uint8 const * Yplane, int Ypitch, Uint8 const * Uplane, int Upitch, Uint8 const * Vplane, int Vpitch)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_AddVulkanRenderSemaphores(long,int,long,long)" class="member-name-link">SDL_AddVulkanRenderSemaphores</a><wbr>(long&nbsp;renderer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_AddVulkanRenderSemaphores(long,int,long,long)" class="member-name-link">SDL_AddVulkanRenderSemaphores</a><wbr>(long&nbsp;renderer,
  int&nbsp;wait_stage_mask,
  long&nbsp;wait_semaphore,
  long&nbsp;signal_semaphore)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_AddVulkanRenderSemaphores(SDL_Renderer * renderer, Uint32 wait_stage_mask, Sint64 wait_semaphore, Sint64 signal_semaphore)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_ConvertEventToRenderCoordinates(long,org.lwjgl.sdl.SDL_Event)" class="member-name-link">SDL_ConvertEventToRenderCoordinates</a><wbr>(long&nbsp;renderer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_ConvertEventToRenderCoordinates(long,org.lwjgl.sdl.SDL_Event)" class="member-name-link">SDL_ConvertEventToRenderCoordinates</a><wbr>(long&nbsp;renderer,
  <a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_ConvertEventToRenderCoordinates(SDL_Renderer * renderer, SDL_Event * event)</code></div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateGPURenderer(long,long)" class="member-name-link">SDL_CreateGPURenderer</a><wbr>(long&nbsp;device,
+ long&nbsp;window)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_Renderer * SDL_CreateGPURenderer(SDL_GPUDevice * device, SDL_Window * window)</code></div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateRenderer(long,java.lang.CharSequence)" class="member-name-link">SDL_CreateRenderer</a><wbr>(long&nbsp;window,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;name)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateGPURenderState(long,org.lwjgl.sdl.SDL_GPURenderStateCreateInfo)" class="member-name-link">SDL_CreateGPURenderState</a><wbr>(long&nbsp;renderer,
+ <a href="SDL_GPURenderStateCreateInfo.html" title="class in org.lwjgl.sdl">SDL_GPURenderStateCreateInfo</a>&nbsp;createinfo)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>SDL_Renderer * SDL_CreateRenderer(SDL_Window * window, char const * name)</code></div>
+<div class="block"><code>SDL_GPURenderState * SDL_CreateGPURenderState(SDL_Renderer * renderer, SDL_GPURenderStateCreateInfo * createinfo)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateRenderer(long,java.nio.ByteBuffer)" class="member-name-link">SDL_CreateRenderer</a><wbr>(long&nbsp;window,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;name)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateRenderer(long,java.lang.CharSequence)" class="member-name-link">SDL_CreateRenderer</a><wbr>(long&nbsp;window,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Renderer * SDL_CreateRenderer(SDL_Window * window, char const * name)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateRendererWithProperties(int)" class="member-name-link">SDL_CreateRendererWithProperties</a><wbr>(int&nbsp;props)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateRenderer(long,java.nio.ByteBuffer)" class="member-name-link">SDL_CreateRenderer</a><wbr>(long&nbsp;window,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_Renderer * SDL_CreateRenderer(SDL_Window * window, char const * name)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateRendererWithProperties(int)" class="member-name-link">SDL_CreateRendererWithProperties</a><wbr>(int&nbsp;props)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Renderer * SDL_CreateRendererWithProperties(SDL_PropertiesID props)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateSoftwareRenderer(org.lwjgl.sdl.SDL_Surface)" class="member-name-link">SDL_CreateSoftwareRenderer</a><wbr>(<a href="SDL_Surface.html" title="class in org.lwjgl.sdl">SDL_Surface</a>&nbsp;surface)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateSoftwareRenderer(org.lwjgl.sdl.SDL_Surface)" class="member-name-link">SDL_CreateSoftwareRenderer</a><wbr>(<a href="SDL_Surface.html" title="class in org.lwjgl.sdl">SDL_Surface</a>&nbsp;surface)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Renderer * SDL_CreateSoftwareRenderer(SDL_Surface * surface)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateTexture(long,int,int,int,int)" class="member-name-link">SDL_CreateTexture</a><wbr>(long&nbsp;renderer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateTexture(long,int,int,int,int)" class="member-name-link">SDL_CreateTexture</a><wbr>(long&nbsp;renderer,
  int&nbsp;format,
  int&nbsp;access,
  int&nbsp;w,
  int&nbsp;h)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Texture * SDL_CreateTexture(SDL_Renderer * renderer, SDL_PixelFormat format, SDL_TextureAccess access, int w, int h)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateTextureFromSurface(long,org.lwjgl.sdl.SDL_Surface)" class="member-name-link">SDL_CreateTextureFromSurface</a><wbr>(long&nbsp;renderer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateTextureFromSurface(long,org.lwjgl.sdl.SDL_Surface)" class="member-name-link">SDL_CreateTextureFromSurface</a><wbr>(long&nbsp;renderer,
  <a href="SDL_Surface.html" title="class in org.lwjgl.sdl">SDL_Surface</a>&nbsp;surface)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Texture * SDL_CreateTextureFromSurface(SDL_Renderer * renderer, SDL_Surface * surface)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateTextureWithProperties(long,int)" class="member-name-link">SDL_CreateTextureWithProperties</a><wbr>(long&nbsp;renderer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateTextureWithProperties(long,int)" class="member-name-link">SDL_CreateTextureWithProperties</a><wbr>(long&nbsp;renderer,
  int&nbsp;props)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Texture * SDL_CreateTextureWithProperties(SDL_Renderer * renderer, SDL_PropertiesID props)</code></div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateWindowAndRenderer(java.lang.CharSequence,int,int,long,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer)" class="member-name-link">SDL_CreateWindowAndRenderer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;title,
+ int&nbsp;width,
+ int&nbsp;height,
+ long&nbsp;window_flags,
+ <a href="../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;window,
+ <a href="../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;renderer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_CreateWindowAndRenderer(char const * title, int width, int height, SDL_WindowFlags window_flags, SDL_Window ** window, SDL_Renderer ** renderer)</code></div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateWindowAndRenderer(java.lang.CharSequence,int,int,long,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer)" class="member-name-link">SDL_CreateWindowAndRenderer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;title,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateWindowAndRenderer(java.nio.ByteBuffer,int,int,long,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer)" class="member-name-link">SDL_CreateWindowAndRenderer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;title,
  int&nbsp;width,
  int&nbsp;height,
  long&nbsp;window_flags,
@@ -1212,15 +1386,10 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_CreateWindowAndRenderer(char const * title, int width, int height, SDL_WindowFlags window_flags, SDL_Window ** window, SDL_Renderer ** renderer)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateWindowAndRenderer(java.nio.ByteBuffer,int,int,long,org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer)" class="member-name-link">SDL_CreateWindowAndRenderer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;title,
- int&nbsp;width,
- int&nbsp;height,
- long&nbsp;window_flags,
- <a href="../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;window,
- <a href="../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;renderer)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_DestroyGPURenderState(long)" class="member-name-link">SDL_DestroyGPURenderState</a><wbr>(long&nbsp;state)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>bool SDL_CreateWindowAndRenderer(char const * title, int width, int height, SDL_WindowFlags window_flags, SDL_Window ** window, SDL_Renderer ** renderer)</code></div>
+<div class="block"><code>void SDL_DestroyGPURenderState(SDL_GPURenderState * state)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_DestroyRenderer(long)" class="member-name-link">SDL_DestroyRenderer</a><wbr>(long&nbsp;renderer)</code></div>
@@ -1243,6 +1412,17 @@ loadScripts(document, 'script');</script>
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;h)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetCurrentRenderOutputSize(SDL_Renderer * renderer, int * w, int * h)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetDefaultTextureScaleMode(long,java.nio.IntBuffer)" class="member-name-link">SDL_GetDefaultTextureScaleMode</a><wbr>(long&nbsp;renderer,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;scale_mode)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_GetDefaultTextureScaleMode(SDL_Renderer * renderer, SDL_ScaleMode * scale_mode)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetGPURendererDevice(long)" class="member-name-link">SDL_GetGPURendererDevice</a><wbr>(long&nbsp;renderer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_GPUDevice * SDL_GetGPURendererDevice(SDL_Renderer * renderer)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetNumRenderDrivers()" class="member-name-link">SDL_GetNumRenderDrivers</a>()</code></div>
@@ -1360,55 +1540,67 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>SDL_Texture * SDL_GetRenderTarget(SDL_Renderer * renderer)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetRenderViewport(long,org.lwjgl.sdl.SDL_Rect)" class="member-name-link">SDL_GetRenderViewport</a><wbr>(long&nbsp;renderer,
- <a href="SDL_Rect.html" title="class in org.lwjgl.sdl">SDL_Rect</a>&nbsp;rect)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetRenderTextureAddressMode(long,java.nio.IntBuffer,java.nio.IntBuffer)" class="member-name-link">SDL_GetRenderTextureAddressMode</a><wbr>(long&nbsp;renderer,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;u_mode,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;v_mode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_GetRenderTextureAddressMode(SDL_Renderer * renderer, SDL_TextureAddressMode * u_mode, SDL_TextureAddressMode * v_mode)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetRenderViewport(long,org.lwjgl.sdl.SDL_Rect)" class="member-name-link">SDL_GetRenderViewport</a><wbr>(long&nbsp;renderer,
+ <a href="SDL_Rect.html" title="class in org.lwjgl.sdl">SDL_Rect</a>&nbsp;rect)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetRenderViewport(SDL_Renderer * renderer, SDL_Rect * rect)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetRenderVSync(long,java.nio.IntBuffer)" class="member-name-link">SDL_GetRenderVSync</a><wbr>(long&nbsp;renderer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetRenderVSync(long,java.nio.IntBuffer)" class="member-name-link">SDL_GetRenderVSync</a><wbr>(long&nbsp;renderer,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;vsync)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetRenderVSync(SDL_Renderer * renderer, int * vsync)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetRenderWindow(long)" class="member-name-link">SDL_GetRenderWindow</a><wbr>(long&nbsp;renderer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetRenderWindow(long)" class="member-name-link">SDL_GetRenderWindow</a><wbr>(long&nbsp;renderer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Window * SDL_GetRenderWindow(SDL_Renderer * renderer)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureAlphaMod(org.lwjgl.sdl.SDL_Texture,java.nio.ByteBuffer)" class="member-name-link">SDL_GetTextureAlphaMod</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureAlphaMod(org.lwjgl.sdl.SDL_Texture,java.nio.ByteBuffer)" class="member-name-link">SDL_GetTextureAlphaMod</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;alpha)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetTextureAlphaMod(SDL_Texture * texture, Uint8 * alpha)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureAlphaModFloat(org.lwjgl.sdl.SDL_Texture,java.nio.FloatBuffer)" class="member-name-link">SDL_GetTextureAlphaModFloat</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureAlphaModFloat(org.lwjgl.sdl.SDL_Texture,java.nio.FloatBuffer)" class="member-name-link">SDL_GetTextureAlphaModFloat</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;alpha)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetTextureAlphaModFloat(SDL_Texture * texture, float * alpha)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureBlendMode(org.lwjgl.sdl.SDL_Texture,java.nio.IntBuffer)" class="member-name-link">SDL_GetTextureBlendMode</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureBlendMode(org.lwjgl.sdl.SDL_Texture,java.nio.IntBuffer)" class="member-name-link">SDL_GetTextureBlendMode</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;blendMode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetTextureBlendMode(SDL_Texture * texture, SDL_BlendMode * blendMode)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureColorMod(org.lwjgl.sdl.SDL_Texture,java.nio.ByteBuffer,java.nio.ByteBuffer,java.nio.ByteBuffer)" class="member-name-link">SDL_GetTextureColorMod</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureColorMod(org.lwjgl.sdl.SDL_Texture,java.nio.ByteBuffer,java.nio.ByteBuffer,java.nio.ByteBuffer)" class="member-name-link">SDL_GetTextureColorMod</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;r,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;g,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;b)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetTextureColorMod(SDL_Texture * texture, Uint8 * r, Uint8 * g, Uint8 * b)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureColorModFloat(org.lwjgl.sdl.SDL_Texture,java.nio.FloatBuffer,java.nio.FloatBuffer,java.nio.FloatBuffer)" class="member-name-link">SDL_GetTextureColorModFloat</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureColorModFloat(org.lwjgl.sdl.SDL_Texture,java.nio.FloatBuffer,java.nio.FloatBuffer,java.nio.FloatBuffer)" class="member-name-link">SDL_GetTextureColorModFloat</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;r,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;g,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;b)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetTextureColorModFloat(SDL_Texture * texture, float * r, float * g, float * b)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="SDL_Palette.html" title="class in org.lwjgl.sdl">SDL_Palette</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTexturePalette(org.lwjgl.sdl.SDL_Texture)" class="member-name-link">SDL_GetTexturePalette</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_Palette * SDL_GetTexturePalette(SDL_Texture * texture)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetTextureProperties(org.lwjgl.sdl.SDL_Texture)" class="member-name-link">SDL_GetTextureProperties</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture)</code></div>
@@ -1644,39 +1836,72 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>bool SDL_RenderTexture9Grid(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, SDL_FRect const * dstrect)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_RenderTextureAffine(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,org.lwjgl.sdl.SDL_FPoint,org.lwjgl.sdl.SDL_FPoint,org.lwjgl.sdl.SDL_FPoint)" class="member-name-link">SDL_RenderTextureAffine</a><wbr>(long&nbsp;renderer,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_RenderTexture9GridTiled(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,float,float,float,float,float,org.lwjgl.sdl.SDL_FRect,float)" class="member-name-link">SDL_RenderTexture9GridTiled</a><wbr>(long&nbsp;renderer,
+ <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+ @Nullable <a href="SDL_FRect.html" title="class in org.lwjgl.sdl">SDL_FRect</a>&nbsp;srcrect,
+ float&nbsp;left_width,
+ float&nbsp;right_width,
+ float&nbsp;top_height,
+ float&nbsp;bottom_height,
+ float&nbsp;scale,
+ @Nullable <a href="SDL_FRect.html" title="class in org.lwjgl.sdl">SDL_FRect</a>&nbsp;dstrect,
+ float&nbsp;tileScale)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_RenderTexture9GridTiled(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, SDL_FRect const * dstrect, float tileScale)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_RenderTextureAffine(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,org.lwjgl.sdl.SDL_FPoint,org.lwjgl.sdl.SDL_FPoint,org.lwjgl.sdl.SDL_FPoint)" class="member-name-link">SDL_RenderTextureAffine</a><wbr>(long&nbsp;renderer,
  <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  @Nullable <a href="SDL_FRect.html" title="class in org.lwjgl.sdl">SDL_FRect</a>&nbsp;srcrect,
  @Nullable <a href="SDL_FPoint.html" title="class in org.lwjgl.sdl">SDL_FPoint</a>&nbsp;origin,
  @Nullable <a href="SDL_FPoint.html" title="class in org.lwjgl.sdl">SDL_FPoint</a>&nbsp;right,
  @Nullable <a href="SDL_FPoint.html" title="class in org.lwjgl.sdl">SDL_FPoint</a>&nbsp;down)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_RenderTextureAffine(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, SDL_FPoint const * origin, SDL_FPoint const * right, SDL_FPoint const * down)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_RenderTextureRotated(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,org.lwjgl.sdl.SDL_FRect,double,org.lwjgl.sdl.SDL_FPoint,int)" class="member-name-link">SDL_RenderTextureRotated</a><wbr>(long&nbsp;renderer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_RenderTextureRotated(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,org.lwjgl.sdl.SDL_FRect,double,org.lwjgl.sdl.SDL_FPoint,int)" class="member-name-link">SDL_RenderTextureRotated</a><wbr>(long&nbsp;renderer,
  <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  @Nullable <a href="SDL_FRect.html" title="class in org.lwjgl.sdl">SDL_FRect</a>&nbsp;srcrect,
  @Nullable <a href="SDL_FRect.html" title="class in org.lwjgl.sdl">SDL_FRect</a>&nbsp;dstrect,
  double&nbsp;angle,
  @Nullable <a href="SDL_FPoint.html" title="class in org.lwjgl.sdl">SDL_FPoint</a>&nbsp;center,
  int&nbsp;flip)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_RenderTextureRotated(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, SDL_FRect const * dstrect, double angle, SDL_FPoint const * center, SDL_FlipMode flip)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_RenderTextureTiled(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,float,org.lwjgl.sdl.SDL_FRect)" class="member-name-link">SDL_RenderTextureTiled</a><wbr>(long&nbsp;renderer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_RenderTextureTiled(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,float,org.lwjgl.sdl.SDL_FRect)" class="member-name-link">SDL_RenderTextureTiled</a><wbr>(long&nbsp;renderer,
  <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  @Nullable <a href="SDL_FRect.html" title="class in org.lwjgl.sdl">SDL_FRect</a>&nbsp;srcrect,
  float&nbsp;scale,
  @Nullable <a href="SDL_FRect.html" title="class in org.lwjgl.sdl">SDL_FRect</a>&nbsp;dstrect)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_RenderTextureTiled(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, float scale, SDL_FRect const * dstrect)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_RenderViewportSet(long)" class="member-name-link">SDL_RenderViewportSet</a><wbr>(long&nbsp;renderer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_RenderViewportSet(long)" class="member-name-link">SDL_RenderViewportSet</a><wbr>(long&nbsp;renderer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_RenderViewportSet(SDL_Renderer * renderer)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetDefaultTextureScaleMode(long,int)" class="member-name-link">SDL_SetDefaultTextureScaleMode</a><wbr>(long&nbsp;renderer,
+ int&nbsp;scale_mode)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetDefaultTextureScaleMode(SDL_Renderer * renderer, SDL_ScaleMode scale_mode)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetGPURenderState(long,long)" class="member-name-link">SDL_SetGPURenderState</a><wbr>(long&nbsp;renderer,
+ long&nbsp;state)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetGPURenderState(SDL_Renderer * renderer, SDL_GPURenderState * state)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetGPURenderStateFragmentUniforms(long,int,java.nio.ByteBuffer)" class="member-name-link">SDL_SetGPURenderStateFragmentUniforms</a><wbr>(long&nbsp;state,
+ int&nbsp;slot_index,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetGPURenderStateFragmentUniforms(SDL_GPURenderState * state, Uint32 slot_index, void const * data, Uint32 length)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetRenderClipRect(long,org.lwjgl.sdl.SDL_Rect)" class="member-name-link">SDL_SetRenderClipRect</a><wbr>(long&nbsp;renderer,
@@ -1736,50 +1961,63 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>bool SDL_SetRenderTarget(SDL_Renderer * renderer, SDL_Texture * texture)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetRenderViewport(long,org.lwjgl.sdl.SDL_Rect)" class="member-name-link">SDL_SetRenderViewport</a><wbr>(long&nbsp;renderer,
- @Nullable <a href="SDL_Rect.html" title="class in org.lwjgl.sdl">SDL_Rect</a>&nbsp;rect)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetRenderTextureAddressMode(long,int,int)" class="member-name-link">SDL_SetRenderTextureAddressMode</a><wbr>(long&nbsp;renderer,
+ int&nbsp;u_mode,
+ int&nbsp;v_mode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetRenderTextureAddressMode(SDL_Renderer * renderer, SDL_TextureAddressMode u_mode, SDL_TextureAddressMode v_mode)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetRenderViewport(long,org.lwjgl.sdl.SDL_Rect)" class="member-name-link">SDL_SetRenderViewport</a><wbr>(long&nbsp;renderer,
+ @Nullable <a href="SDL_Rect.html" title="class in org.lwjgl.sdl">SDL_Rect</a>&nbsp;rect)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetRenderViewport(SDL_Renderer * renderer, SDL_Rect const * rect)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetRenderVSync(long,int)" class="member-name-link">SDL_SetRenderVSync</a><wbr>(long&nbsp;renderer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetRenderVSync(long,int)" class="member-name-link">SDL_SetRenderVSync</a><wbr>(long&nbsp;renderer,
  int&nbsp;vsync)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetRenderVSync(SDL_Renderer * renderer, int vsync)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureAlphaMod(org.lwjgl.sdl.SDL_Texture,byte)" class="member-name-link">SDL_SetTextureAlphaMod</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureAlphaMod(org.lwjgl.sdl.SDL_Texture,byte)" class="member-name-link">SDL_SetTextureAlphaMod</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  byte&nbsp;alpha)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetTextureAlphaMod(SDL_Texture * texture, Uint8 alpha)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureAlphaModFloat(org.lwjgl.sdl.SDL_Texture,float)" class="member-name-link">SDL_SetTextureAlphaModFloat</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureAlphaModFloat(org.lwjgl.sdl.SDL_Texture,float)" class="member-name-link">SDL_SetTextureAlphaModFloat</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  float&nbsp;alpha)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetTextureAlphaModFloat(SDL_Texture * texture, float alpha)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureBlendMode(org.lwjgl.sdl.SDL_Texture,int)" class="member-name-link">SDL_SetTextureBlendMode</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureBlendMode(org.lwjgl.sdl.SDL_Texture,int)" class="member-name-link">SDL_SetTextureBlendMode</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  int&nbsp;blendMode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetTextureBlendMode(SDL_Texture * texture, SDL_BlendMode blendMode)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureColorMod(org.lwjgl.sdl.SDL_Texture,byte,byte,byte)" class="member-name-link">SDL_SetTextureColorMod</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureColorMod(org.lwjgl.sdl.SDL_Texture,byte,byte,byte)" class="member-name-link">SDL_SetTextureColorMod</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  byte&nbsp;r,
  byte&nbsp;g,
  byte&nbsp;b)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetTextureColorMod(SDL_Texture * texture, Uint8 r, Uint8 g, Uint8 b)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureColorModFloat(org.lwjgl.sdl.SDL_Texture,float,float,float)" class="member-name-link">SDL_SetTextureColorModFloat</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureColorModFloat(org.lwjgl.sdl.SDL_Texture,float,float,float)" class="member-name-link">SDL_SetTextureColorModFloat</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
  float&nbsp;r,
  float&nbsp;g,
  float&nbsp;b)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetTextureColorModFloat(SDL_Texture * texture, float r, float g, float b)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTexturePalette(org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_Palette)" class="member-name-link">SDL_SetTexturePalette</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+ <a href="SDL_Palette.html" title="class in org.lwjgl.sdl">SDL_Palette</a>&nbsp;palette)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetTexturePalette(SDL_Texture * texture, SDL_Palette * palette)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetTextureScaleMode(org.lwjgl.sdl.SDL_Texture,int)" class="member-name-link">SDL_SetTextureScaleMode</a><wbr>(<a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
@@ -1856,6 +2094,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_GPU_RENDERER">
+<h3>SDL_GPU_RENDERER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_GPU_RENDERER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_GPU_RENDERER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_TEXTUREACCESS_STATIC">
 <h3>SDL_TEXTUREACCESS_STATIC</h3>
 <div class="horizontal-scroll">
@@ -1897,6 +2151,70 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_TEXTUREACCESS_TARGET">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_TEXTURE_ADDRESS_INVALID">
+<h3>SDL_TEXTURE_ADDRESS_INVALID</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_TEXTURE_ADDRESS_INVALID</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_TEXTURE_ADDRESS_INVALID">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_TEXTURE_ADDRESS_AUTO">
+<h3>SDL_TEXTURE_ADDRESS_AUTO</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_TEXTURE_ADDRESS_AUTO</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_TEXTURE_ADDRESS_AUTO">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_TEXTURE_ADDRESS_CLAMP">
+<h3>SDL_TEXTURE_ADDRESS_CLAMP</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_TEXTURE_ADDRESS_CLAMP</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_TEXTURE_ADDRESS_CLAMP">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_TEXTURE_ADDRESS_WRAP">
+<h3>SDL_TEXTURE_ADDRESS_WRAP</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_TEXTURE_ADDRESS_WRAP</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_TEXTURE_ADDRESS_WRAP">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -2057,6 +2375,70 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_RENDERER_CREATE_PRESENT_VSYNC_NUMBER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER">
+<h3>SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_RENDERER_CREATE_GPU_DEVICE_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN">
+<h3>SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_RENDERER_CREATE_GPU_SHADERS_SPIRV_BOOLEAN">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN">
+<h3>SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_RENDERER_CREATE_GPU_SHADERS_DXIL_BOOLEAN">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN">
+<h3>SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_RENDERER_CREATE_GPU_SHADERS_MSL_BOOLEAN">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -2249,6 +2631,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_RENDERER_TEXTURE_FORMATS_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_RENDERER_TEXTURE_WRAPPING_BOOLEAN">
+<h3>SDL_PROP_RENDERER_TEXTURE_WRAPPING_BOOLEAN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_RENDERER_TEXTURE_WRAPPING_BOOLEAN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_RENDERER_TEXTURE_WRAPPING_BOOLEAN">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -2624,6 +3022,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_PROP_TEXTURE_CREATE_PALETTE_POINTER">
+<h3>SDL_PROP_TEXTURE_CREATE_PALETTE_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_CREATE_PALETTE_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_CREATE_PALETTE_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT">
 <h3>SDL_PROP_TEXTURE_CREATE_SDR_WHITE_POINT_FLOAT</h3>
 <div class="horizontal-scroll">
@@ -2905,6 +3319,86 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_CREATE_VULKAN_TEXTURE_NUMBER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_TEXTURE_CREATE_VULKAN_LAYOUT_NUMBER">
+<h3>SDL_PROP_TEXTURE_CREATE_VULKAN_LAYOUT_NUMBER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_CREATE_VULKAN_LAYOUT_NUMBER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_CREATE_VULKAN_LAYOUT_NUMBER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_POINTER">
+<h3>SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_UV_POINTER">
+<h3>SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_UV_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_UV_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_UV_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_U_POINTER">
+<h3>SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_U_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_U_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_U_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_V_POINTER">
+<h3>SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_V_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_V_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_CREATE_GPU_TEXTURE_V_POINTER">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -3328,6 +3822,70 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_PROP_TEXTURE_GPU_TEXTURE_POINTER">
+<h3>SDL_PROP_TEXTURE_GPU_TEXTURE_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_GPU_TEXTURE_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_GPU_TEXTURE_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_TEXTURE_GPU_TEXTURE_UV_POINTER">
+<h3>SDL_PROP_TEXTURE_GPU_TEXTURE_UV_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_GPU_TEXTURE_UV_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_GPU_TEXTURE_UV_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_TEXTURE_GPU_TEXTURE_U_POINTER">
+<h3>SDL_PROP_TEXTURE_GPU_TEXTURE_U_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_GPU_TEXTURE_U_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_GPU_TEXTURE_U_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_TEXTURE_GPU_TEXTURE_V_POINTER">
+<h3>SDL_PROP_TEXTURE_GPU_TEXTURE_V_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_TEXTURE_GPU_TEXTURE_V_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLRender.SDL_PROP_TEXTURE_GPU_TEXTURE_V_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_RENDERER_VSYNC_DISABLED">
 <h3>SDL_RENDERER_VSYNC_DISABLED</h3>
 <div class="horizontal-scroll">
@@ -3507,6 +4065,30 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SDL_CreateRendererWithProperties</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_PropertiesID")
  int&nbsp;props)</span></div>
 <div class="block"><code>SDL_Renderer * SDL_CreateRendererWithProperties(SDL_PropertiesID props)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_CreateGPURenderer(long,long)">
+<h3>SDL_CreateGPURenderer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Renderer *")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SDL_CreateGPURenderer</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_GPUDevice *")
+ long&nbsp;device,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Window *")
+ long&nbsp;window)</span></div>
+<div class="block"><code>SDL_Renderer * SDL_CreateGPURenderer(SDL_GPUDevice * device, SDL_Window * window)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_GetGPURendererDevice(long)">
+<h3>SDL_GetGPURendererDevice</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_GPUDevice *")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SDL_GetGPURendererDevice</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Renderer *")
+ long&nbsp;renderer)</span></div>
+<div class="block"><code>SDL_GPUDevice * SDL_GetGPURendererDevice(SDL_Renderer * renderer)</code></div>
 </div>
 </section>
 </li>
@@ -3774,6 +4356,49 @@ loadScripts(document, 'script');</script>
  <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("float *")
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;h)</span></div>
 <div class="block"><code>bool SDL_GetTextureSize(SDL_Texture * texture, float * w, float * h)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_SetTexturePalette(long,long)">
+<h3>nSDL_SetTexturePalette</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nSDL_SetTexturePalette</span><wbr><span class="parameters">(long&nbsp;texture,
+ long&nbsp;palette)</span></div>
+<div class="block"><code>bool SDL_SetTexturePalette(SDL_Texture * texture, SDL_Palette * palette)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_SetTexturePalette(org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_Palette)">
+<h3>SDL_SetTexturePalette</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_SetTexturePalette</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Texture *")
+ <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Palette *")
+ <a href="SDL_Palette.html" title="class in org.lwjgl.sdl">SDL_Palette</a>&nbsp;palette)</span></div>
+<div class="block"><code>bool SDL_SetTexturePalette(SDL_Texture * texture, SDL_Palette * palette)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_GetTexturePalette(long)">
+<h3>nSDL_GetTexturePalette</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">nSDL_GetTexturePalette</span><wbr><span class="parameters">(long&nbsp;texture)</span></div>
+<div class="block"><code>SDL_Palette * SDL_GetTexturePalette(SDL_Texture * texture)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_GetTexturePalette(org.lwjgl.sdl.SDL_Texture)">
+<h3>SDL_GetTexturePalette</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Palette *")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">@Nullable <a href="SDL_Palette.html" title="class in org.lwjgl.sdl">SDL_Palette</a></span>&nbsp;<span class="element-name">SDL_GetTexturePalette</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Texture *")
+ <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture)</span></div>
+<div class="block"><code>SDL_Palette * SDL_GetTexturePalette(SDL_Texture * texture)</code></div>
 </div>
 </section>
 </li>
@@ -5137,6 +5762,47 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="nSDL_RenderTexture9GridTiled(long,long,long,float,float,float,float,float,long,float)">
+<h3>nSDL_RenderTexture9GridTiled</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nSDL_RenderTexture9GridTiled</span><wbr><span class="parameters">(long&nbsp;renderer,
+ long&nbsp;texture,
+ long&nbsp;srcrect,
+ float&nbsp;left_width,
+ float&nbsp;right_width,
+ float&nbsp;top_height,
+ float&nbsp;bottom_height,
+ float&nbsp;scale,
+ long&nbsp;dstrect,
+ float&nbsp;tileScale)</span></div>
+<div class="block"><code>bool SDL_RenderTexture9GridTiled(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, SDL_FRect const * dstrect, float tileScale)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_RenderTexture9GridTiled(long,org.lwjgl.sdl.SDL_Texture,org.lwjgl.sdl.SDL_FRect,float,float,float,float,float,org.lwjgl.sdl.SDL_FRect,float)">
+<h3>SDL_RenderTexture9GridTiled</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_RenderTexture9GridTiled</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Renderer *")
+ long&nbsp;renderer,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Texture *")
+ <a href="SDL_Texture.html" title="class in org.lwjgl.sdl">SDL_Texture</a>&nbsp;texture,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_FRect const *")
+ @Nullable <a href="SDL_FRect.html" title="class in org.lwjgl.sdl">SDL_FRect</a>&nbsp;srcrect,
+ float&nbsp;left_width,
+ float&nbsp;right_width,
+ float&nbsp;top_height,
+ float&nbsp;bottom_height,
+ float&nbsp;scale,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_FRect const *")
+ @Nullable <a href="SDL_FRect.html" title="class in org.lwjgl.sdl">SDL_FRect</a>&nbsp;dstrect,
+ float&nbsp;tileScale)</span></div>
+<div class="block"><code>bool SDL_RenderTexture9GridTiled(SDL_Renderer * renderer, SDL_Texture * texture, SDL_FRect const * srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, SDL_FRect const * dstrect, float tileScale)</code></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="nSDL_RenderGeometry(long,long,long,int,long,int)">
 <h3>nSDL_RenderGeometry</h3>
 <div class="horizontal-scroll">
@@ -5265,6 +5931,47 @@ loadScripts(document, 'script');</script>
  int&nbsp;num_indices,
  int&nbsp;size_indices)</span></div>
 <div class="block"><code>bool SDL_RenderGeometryRaw(SDL_Renderer * renderer, SDL_Texture * texture, float const * xy, int xy_stride, SDL_FColor const * color, int color_stride, float const * uv, int uv_stride, int num_vertices, void const * indices, int num_indices, int size_indices)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_SetRenderTextureAddressMode(long,int,int)">
+<h3>SDL_SetRenderTextureAddressMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_SetRenderTextureAddressMode</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Renderer *")
+ long&nbsp;renderer,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_TextureAddressMode")
+ int&nbsp;u_mode,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_TextureAddressMode")
+ int&nbsp;v_mode)</span></div>
+<div class="block"><code>bool SDL_SetRenderTextureAddressMode(SDL_Renderer * renderer, SDL_TextureAddressMode u_mode, SDL_TextureAddressMode v_mode)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_GetRenderTextureAddressMode(long,long,long)">
+<h3>nSDL_GetRenderTextureAddressMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nSDL_GetRenderTextureAddressMode</span><wbr><span class="parameters">(long&nbsp;renderer,
+ long&nbsp;u_mode,
+ long&nbsp;v_mode)</span></div>
+<div class="block"><code>bool SDL_GetRenderTextureAddressMode(SDL_Renderer * renderer, SDL_TextureAddressMode * u_mode, SDL_TextureAddressMode * v_mode)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_GetRenderTextureAddressMode(long,java.nio.IntBuffer,java.nio.IntBuffer)">
+<h3>SDL_GetRenderTextureAddressMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_GetRenderTextureAddressMode</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Renderer *")
+ long&nbsp;renderer,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_TextureAddressMode *")
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;u_mode,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_TextureAddressMode *")
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;v_mode)</span></div>
+<div class="block"><code>bool SDL_GetRenderTextureAddressMode(SDL_Renderer * renderer, SDL_TextureAddressMode * u_mode, SDL_TextureAddressMode * v_mode)</code></div>
 </div>
 </section>
 </li>
@@ -5497,6 +6204,115 @@ loadScripts(document, 'script');</script>
  <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("char const *")
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;fmt)</span></div>
 <div class="block"><code>bool SDL_RenderDebugTextFormat(SDL_Renderer * renderer, float x, float y, char const * fmt)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_SetDefaultTextureScaleMode(long,int)">
+<h3>SDL_SetDefaultTextureScaleMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_SetDefaultTextureScaleMode</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Renderer *")
+ long&nbsp;renderer,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_ScaleMode")
+ int&nbsp;scale_mode)</span></div>
+<div class="block"><code>bool SDL_SetDefaultTextureScaleMode(SDL_Renderer * renderer, SDL_ScaleMode scale_mode)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_GetDefaultTextureScaleMode(long,long)">
+<h3>nSDL_GetDefaultTextureScaleMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nSDL_GetDefaultTextureScaleMode</span><wbr><span class="parameters">(long&nbsp;renderer,
+ long&nbsp;scale_mode)</span></div>
+<div class="block"><code>bool SDL_GetDefaultTextureScaleMode(SDL_Renderer * renderer, SDL_ScaleMode * scale_mode)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_GetDefaultTextureScaleMode(long,java.nio.IntBuffer)">
+<h3>SDL_GetDefaultTextureScaleMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_GetDefaultTextureScaleMode</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Renderer *")
+ long&nbsp;renderer,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_ScaleMode *")
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;scale_mode)</span></div>
+<div class="block"><code>bool SDL_GetDefaultTextureScaleMode(SDL_Renderer * renderer, SDL_ScaleMode * scale_mode)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_CreateGPURenderState(long,long)">
+<h3>nSDL_CreateGPURenderState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">nSDL_CreateGPURenderState</span><wbr><span class="parameters">(long&nbsp;renderer,
+ long&nbsp;createinfo)</span></div>
+<div class="block"><code>SDL_GPURenderState * SDL_CreateGPURenderState(SDL_Renderer * renderer, SDL_GPURenderStateCreateInfo * createinfo)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_CreateGPURenderState(long,org.lwjgl.sdl.SDL_GPURenderStateCreateInfo)">
+<h3>SDL_CreateGPURenderState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_GPURenderState *")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SDL_CreateGPURenderState</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Renderer *")
+ long&nbsp;renderer,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_GPURenderStateCreateInfo *")
+ <a href="SDL_GPURenderStateCreateInfo.html" title="class in org.lwjgl.sdl">SDL_GPURenderStateCreateInfo</a>&nbsp;createinfo)</span></div>
+<div class="block"><code>SDL_GPURenderState * SDL_CreateGPURenderState(SDL_Renderer * renderer, SDL_GPURenderStateCreateInfo * createinfo)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_SetGPURenderStateFragmentUniforms(long,int,long,int)">
+<h3>nSDL_SetGPURenderStateFragmentUniforms</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nSDL_SetGPURenderStateFragmentUniforms</span><wbr><span class="parameters">(long&nbsp;state,
+ int&nbsp;slot_index,
+ long&nbsp;data,
+ int&nbsp;length)</span></div>
+<div class="block"><code>bool SDL_SetGPURenderStateFragmentUniforms(SDL_GPURenderState * state, Uint32 slot_index, void const * data, Uint32 length)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_SetGPURenderStateFragmentUniforms(long,int,java.nio.ByteBuffer)">
+<h3>SDL_SetGPURenderStateFragmentUniforms</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_SetGPURenderStateFragmentUniforms</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_GPURenderState *")
+ long&nbsp;state,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint32")
+ int&nbsp;slot_index,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</span></div>
+<div class="block"><code>bool SDL_SetGPURenderStateFragmentUniforms(SDL_GPURenderState * state, Uint32 slot_index, void const * data, Uint32 length)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_SetGPURenderState(long,long)">
+<h3>SDL_SetGPURenderState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_SetGPURenderState</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Renderer *")
+ long&nbsp;renderer,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_GPURenderState *")
+ long&nbsp;state)</span></div>
+<div class="block"><code>bool SDL_SetGPURenderState(SDL_Renderer * renderer, SDL_GPURenderState * state)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_DestroyGPURenderState(long)">
+<h3>SDL_DestroyGPURenderState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">SDL_DestroyGPURenderState</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_GPURenderState *")
+ long&nbsp;state)</span></div>
+<div class="block"><code>void SDL_DestroyGPURenderState(SDL_GPURenderState * state)</code></div>
 </div>
 </section>
 </li>

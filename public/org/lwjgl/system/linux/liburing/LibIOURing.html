@@ -55,6 +55,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
+<li><a href="#IORING_RW_ATTR_FLAG_PI" tabindex="0">IORING_RW_ATTR_FLAG_PI</a></li>
 <li><a href="#IORING_FILE_INDEX_ALLOC" tabindex="0">IORING_FILE_INDEX_ALLOC</a></li>
 <li><a href="#IORING_MAX_ENTRIES" tabindex="0">IORING_MAX_ENTRIES</a></li>
 <li><a href="#IOSQE_FIXED_FILE_BIT" tabindex="0">IOSQE_FIXED_FILE_BIT</a></li>
@@ -89,6 +90,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#IORING_SETUP_REGISTERED_FD_ONLY" tabindex="0">IORING_SETUP_REGISTERED_FD_ONLY</a></li>
 <li><a href="#IORING_SETUP_NO_SQARRAY" tabindex="0">IORING_SETUP_NO_SQARRAY</a></li>
 <li><a href="#IORING_SETUP_HYBRID_IOPOLL" tabindex="0">IORING_SETUP_HYBRID_IOPOLL</a></li>
+<li><a href="#IORING_SETUP_CQE_MIXED" tabindex="0">IORING_SETUP_CQE_MIXED</a></li>
+<li><a href="#IORING_SETUP_SQE_MIXED" tabindex="0">IORING_SETUP_SQE_MIXED</a></li>
 <li><a href="#IORING_OP_NOP" tabindex="0">IORING_OP_NOP</a></li>
 <li><a href="#IORING_OP_READV" tabindex="0">IORING_OP_READV</a></li>
 <li><a href="#IORING_OP_WRITEV" tabindex="0">IORING_OP_WRITEV</a></li>
@@ -152,6 +155,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#IORING_OP_READV_FIXED" tabindex="0">IORING_OP_READV_FIXED</a></li>
 <li><a href="#IORING_OP_WRITEV_FIXED" tabindex="0">IORING_OP_WRITEV_FIXED</a></li>
 <li><a href="#IORING_OP_PIPE" tabindex="0">IORING_OP_PIPE</a></li>
+<li><a href="#IORING_OP_NOP128" tabindex="0">IORING_OP_NOP128</a></li>
+<li><a href="#IORING_OP_URING_CMD128" tabindex="0">IORING_OP_URING_CMD128</a></li>
 <li><a href="#IORING_OP_LAST" tabindex="0">IORING_OP_LAST</a></li>
 <li><a href="#IORING_URING_CMD_FIXED" tabindex="0">IORING_URING_CMD_FIXED</a></li>
 <li><a href="#IORING_URING_CMD_MASK" tabindex="0">IORING_URING_CMD_MASK</a></li>
@@ -192,11 +197,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#IORING_MSG_RING_FLAGS_PASS" tabindex="0">IORING_MSG_RING_FLAGS_PASS</a></li>
 <li><a href="#IORING_FIXED_FD_NO_CLOEXEC" tabindex="0">IORING_FIXED_FD_NO_CLOEXEC</a></li>
 <li><a href="#IORING_NOP_INJECT_RESULT" tabindex="0">IORING_NOP_INJECT_RESULT</a></li>
+<li><a href="#IORING_NOP_CQE32" tabindex="0">IORING_NOP_CQE32</a></li>
 <li><a href="#IORING_CQE_F_BUFFER" tabindex="0">IORING_CQE_F_BUFFER</a></li>
 <li><a href="#IORING_CQE_F_MORE" tabindex="0">IORING_CQE_F_MORE</a></li>
 <li><a href="#IORING_CQE_F_SOCK_NONEMPTY" tabindex="0">IORING_CQE_F_SOCK_NONEMPTY</a></li>
 <li><a href="#IORING_CQE_F_NOTIF" tabindex="0">IORING_CQE_F_NOTIF</a></li>
 <li><a href="#IORING_CQE_F_BUF_MORE" tabindex="0">IORING_CQE_F_BUF_MORE</a></li>
+<li><a href="#IORING_CQE_F_SKIP" tabindex="0">IORING_CQE_F_SKIP</a></li>
+<li><a href="#IORING_CQE_F_32" tabindex="0">IORING_CQE_F_32</a></li>
 <li><a href="#IORING_CQE_BUFFER_SHIFT" tabindex="0">IORING_CQE_BUFFER_SHIFT</a></li>
 <li><a href="#IORING_OFF_SQ_RING" tabindex="0">IORING_OFF_SQ_RING</a></li>
 <li><a href="#IORING_OFF_CQ_RING" tabindex="0">IORING_OFF_CQ_RING</a></li>
@@ -269,6 +277,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#IORING_REGISTER_ZCRX_IFQ" tabindex="0">IORING_REGISTER_ZCRX_IFQ</a></li>
 <li><a href="#IORING_REGISTER_RESIZE_RINGS" tabindex="0">IORING_REGISTER_RESIZE_RINGS</a></li>
 <li><a href="#IORING_REGISTER_MEM_REGION" tabindex="0">IORING_REGISTER_MEM_REGION</a></li>
+<li><a href="#IORING_REGISTER_QUERY" tabindex="0">IORING_REGISTER_QUERY</a></li>
 <li><a href="#IORING_REGISTER_LAST" tabindex="0">IORING_REGISTER_LAST</a></li>
 <li><a href="#IORING_REGISTER_USE_REGISTERED_RING" tabindex="0">IORING_REGISTER_USE_REGISTERED_RING</a></li>
 <li><a href="#IO_WQ_BOUND" tabindex="0">IO_WQ_BOUND</a></li>
@@ -292,12 +301,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#SOCKET_URING_OP_SIOCOUTQ" tabindex="0">SOCKET_URING_OP_SIOCOUTQ</a></li>
 <li><a href="#SOCKET_URING_OP_GETSOCKOPT" tabindex="0">SOCKET_URING_OP_GETSOCKOPT</a></li>
 <li><a href="#SOCKET_URING_OP_SETSOCKOPT" tabindex="0">SOCKET_URING_OP_SETSOCKOPT</a></li>
+<li><a href="#SOCKET_URING_OP_TX_TIMESTAMP" tabindex="0">SOCKET_URING_OP_TX_TIMESTAMP</a></li>
+<li><a href="#SOCKET_URING_OP_GETSOCKNAME" tabindex="0">SOCKET_URING_OP_GETSOCKNAME</a></li>
 <li><a href="#IORING_TIMESTAMP_HW_SHIFT" tabindex="0">IORING_TIMESTAMP_HW_SHIFT</a></li>
 <li><a href="#IORING_TIMESTAMP_TYPE_SHIFT" tabindex="0">IORING_TIMESTAMP_TYPE_SHIFT</a></li>
 <li><a href="#IORING_CQE_F_TSTAMP_HW" tabindex="0">IORING_CQE_F_TSTAMP_HW</a></li>
 <li><a href="#IORING_ZCRX_AREA_SHIFT" tabindex="0">IORING_ZCRX_AREA_SHIFT</a></li>
 <li><a href="#IORING_ZCRX_AREA_MASK" tabindex="0">IORING_ZCRX_AREA_MASK</a></li>
 <li><a href="#IORING_ZCRX_AREA_DMABUF" tabindex="0">IORING_ZCRX_AREA_DMABUF</a></li>
+<li><a href="#IORING_QUERY_OPCODES" tabindex="0">IORING_QUERY_OPCODES</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -383,16 +395,22 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#IORING_CQE_BUFFER_SHIFT" class="member-name-link">IORING_CQE_BUFFER_SHIFT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_CQE_F_BUF_MORE" class="member-name-link">IORING_CQE_F_BUF_MORE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_CQE_F_32" class="member-name-link">IORING_CQE_F_32</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_CQE_F_BUFFER" class="member-name-link">IORING_CQE_F_BUFFER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_CQE_F_BUF_MORE" class="member-name-link">IORING_CQE_F_BUF_MORE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_CQE_F_MORE" class="member-name-link">IORING_CQE_F_MORE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_CQE_F_BUFFER" class="member-name-link">IORING_CQE_F_BUFFER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_CQE_F_NOTIF" class="member-name-link">IORING_CQE_F_NOTIF</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_CQE_F_MORE" class="member-name-link">IORING_CQE_F_MORE</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_CQE_F_NOTIF" class="member-name-link">IORING_CQE_F_NOTIF</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_CQE_F_SKIP" class="member-name-link">IORING_CQE_F_SKIP</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#IORING_CQE_F_SOCK_NONEMPTY" class="member-name-link">IORING_CQE_F_SOCK_NONEMPTY</a></code></div>
@@ -512,109 +530,115 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#IORING_MSG_SEND_FD" class="member-name-link">IORING_MSG_SEND_FD</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_NOP_INJECT_RESULT" class="member-name-link">IORING_NOP_INJECT_RESULT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_NOP_CQE32" class="member-name-link">IORING_NOP_CQE32</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_NOTIF_USAGE_ZC_COPIED" class="member-name-link">IORING_NOTIF_USAGE_ZC_COPIED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_NOP_INJECT_RESULT" class="member-name-link">IORING_NOP_INJECT_RESULT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OFF_CQ_RING" class="member-name-link">IORING_OFF_CQ_RING</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_NOTIF_USAGE_ZC_COPIED" class="member-name-link">IORING_NOTIF_USAGE_ZC_COPIED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OFF_MMAP_MASK" class="member-name-link">IORING_OFF_MMAP_MASK</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OFF_CQ_RING" class="member-name-link">IORING_OFF_CQ_RING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OFF_PBUF_RING" class="member-name-link">IORING_OFF_PBUF_RING</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OFF_MMAP_MASK" class="member-name-link">IORING_OFF_MMAP_MASK</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OFF_PBUF_SHIFT" class="member-name-link">IORING_OFF_PBUF_SHIFT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OFF_PBUF_RING" class="member-name-link">IORING_OFF_PBUF_RING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OFF_SQ_RING" class="member-name-link">IORING_OFF_SQ_RING</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OFF_PBUF_SHIFT" class="member-name-link">IORING_OFF_PBUF_SHIFT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OFF_SQES" class="member-name-link">IORING_OFF_SQES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OFF_SQ_RING" class="member-name-link">IORING_OFF_SQ_RING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_ACCEPT" class="member-name-link">IORING_OP_ACCEPT</a></code></div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OFF_SQES" class="member-name-link">IORING_OFF_SQES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_ASYNC_CANCEL" class="member-name-link">IORING_OP_ASYNC_CANCEL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_ACCEPT" class="member-name-link">IORING_OP_ACCEPT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_BIND" class="member-name-link">IORING_OP_BIND</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_ASYNC_CANCEL" class="member-name-link">IORING_OP_ASYNC_CANCEL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_CLOSE" class="member-name-link">IORING_OP_CLOSE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_BIND" class="member-name-link">IORING_OP_BIND</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_CONNECT" class="member-name-link">IORING_OP_CONNECT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_CLOSE" class="member-name-link">IORING_OP_CLOSE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_EPOLL_CTL" class="member-name-link">IORING_OP_EPOLL_CTL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_CONNECT" class="member-name-link">IORING_OP_CONNECT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_EPOLL_WAIT" class="member-name-link">IORING_OP_EPOLL_WAIT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_EPOLL_CTL" class="member-name-link">IORING_OP_EPOLL_CTL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_FADVISE" class="member-name-link">IORING_OP_FADVISE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_EPOLL_WAIT" class="member-name-link">IORING_OP_EPOLL_WAIT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_FALLOCATE" class="member-name-link">IORING_OP_FALLOCATE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_FADVISE" class="member-name-link">IORING_OP_FADVISE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_FGETXATTR" class="member-name-link">IORING_OP_FGETXATTR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_FALLOCATE" class="member-name-link">IORING_OP_FALLOCATE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_FILES_UPDATE" class="member-name-link">IORING_OP_FILES_UPDATE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_FGETXATTR" class="member-name-link">IORING_OP_FGETXATTR</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_FIXED_FD_INSTALL" class="member-name-link">IORING_OP_FIXED_FD_INSTALL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_FILES_UPDATE" class="member-name-link">IORING_OP_FILES_UPDATE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_FSETXATTR" class="member-name-link">IORING_OP_FSETXATTR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_FIXED_FD_INSTALL" class="member-name-link">IORING_OP_FIXED_FD_INSTALL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_FSYNC" class="member-name-link">IORING_OP_FSYNC</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_FSETXATTR" class="member-name-link">IORING_OP_FSETXATTR</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_FTRUNCATE" class="member-name-link">IORING_OP_FTRUNCATE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_FSYNC" class="member-name-link">IORING_OP_FSYNC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_FUTEX_WAIT" class="member-name-link">IORING_OP_FUTEX_WAIT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_FTRUNCATE" class="member-name-link">IORING_OP_FTRUNCATE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_FUTEX_WAITV" class="member-name-link">IORING_OP_FUTEX_WAITV</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_FUTEX_WAIT" class="member-name-link">IORING_OP_FUTEX_WAIT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_FUTEX_WAKE" class="member-name-link">IORING_OP_FUTEX_WAKE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_FUTEX_WAITV" class="member-name-link">IORING_OP_FUTEX_WAITV</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_GETXATTR" class="member-name-link">IORING_OP_GETXATTR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_FUTEX_WAKE" class="member-name-link">IORING_OP_FUTEX_WAKE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_LAST" class="member-name-link">IORING_OP_LAST</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_GETXATTR" class="member-name-link">IORING_OP_GETXATTR</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_LINK_TIMEOUT" class="member-name-link">IORING_OP_LINK_TIMEOUT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_LAST" class="member-name-link">IORING_OP_LAST</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_LINKAT" class="member-name-link">IORING_OP_LINKAT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_LINK_TIMEOUT" class="member-name-link">IORING_OP_LINK_TIMEOUT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_LISTEN" class="member-name-link">IORING_OP_LISTEN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_LINKAT" class="member-name-link">IORING_OP_LINKAT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_MADVISE" class="member-name-link">IORING_OP_MADVISE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_LISTEN" class="member-name-link">IORING_OP_LISTEN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_MKDIRAT" class="member-name-link">IORING_OP_MKDIRAT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_MADVISE" class="member-name-link">IORING_OP_MADVISE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_MSG_RING" class="member-name-link">IORING_OP_MSG_RING</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_MKDIRAT" class="member-name-link">IORING_OP_MKDIRAT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_NOP" class="member-name-link">IORING_OP_NOP</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_MSG_RING" class="member-name-link">IORING_OP_MSG_RING</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final byte</code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_NOP" class="member-name-link">IORING_OP_NOP</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final byte</code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_NOP128" class="member-name-link">IORING_OP_NOP128</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
 <div class="col-second even-row-color"><code><a href="#IORING_OP_OPENAT" class="member-name-link">IORING_OP_OPENAT</a></code></div>
@@ -713,31 +737,37 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#IORING_OP_URING_CMD" class="member-name-link">IORING_OP_URING_CMD</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_WAITID" class="member-name-link">IORING_OP_WAITID</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_URING_CMD128" class="member-name-link">IORING_OP_URING_CMD128</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_WRITE" class="member-name-link">IORING_OP_WRITE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_WAITID" class="member-name-link">IORING_OP_WAITID</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_WRITE_FIXED" class="member-name-link">IORING_OP_WRITE_FIXED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_WRITE" class="member-name-link">IORING_OP_WRITE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final byte</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_OP_WRITEV" class="member-name-link">IORING_OP_WRITEV</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_WRITE_FIXED" class="member-name-link">IORING_OP_WRITE_FIXED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final byte</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_OP_WRITEV_FIXED" class="member-name-link">IORING_OP_WRITEV_FIXED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_OP_WRITEV" class="member-name-link">IORING_OP_WRITEV</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_POLL_ADD_LEVEL" class="member-name-link">IORING_POLL_ADD_LEVEL</a></code></div>
+<div class="col-first odd-row-color"><code>static final byte</code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_OP_WRITEV_FIXED" class="member-name-link">IORING_OP_WRITEV_FIXED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_POLL_ADD_MULTI" class="member-name-link">IORING_POLL_ADD_MULTI</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_POLL_ADD_LEVEL" class="member-name-link">IORING_POLL_ADD_LEVEL</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_POLL_UPDATE_EVENTS" class="member-name-link">IORING_POLL_UPDATE_EVENTS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_POLL_ADD_MULTI" class="member-name-link">IORING_POLL_ADD_MULTI</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_POLL_UPDATE_USER_DATA" class="member-name-link">IORING_POLL_UPDATE_USER_DATA</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_POLL_UPDATE_EVENTS" class="member-name-link">IORING_POLL_UPDATE_EVENTS</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_POLL_UPDATE_USER_DATA" class="member-name-link">IORING_POLL_UPDATE_USER_DATA</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_QUERY_OPCODES" class="member-name-link">IORING_QUERY_OPCODES</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#IORING_RECV_MULTISHOT" class="member-name-link">IORING_RECV_MULTISHOT</a></code></div>
@@ -827,46 +857,52 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#IORING_REGISTER_PROBE" class="member-name-link">IORING_REGISTER_PROBE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_REGISTER_RESIZE_RINGS" class="member-name-link">IORING_REGISTER_RESIZE_RINGS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_REGISTER_QUERY" class="member-name-link">IORING_REGISTER_QUERY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_REGISTER_RESTRICTIONS" class="member-name-link">IORING_REGISTER_RESTRICTIONS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_REGISTER_RESIZE_RINGS" class="member-name-link">IORING_REGISTER_RESIZE_RINGS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_REGISTER_RING_FDS" class="member-name-link">IORING_REGISTER_RING_FDS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_REGISTER_RESTRICTIONS" class="member-name-link">IORING_REGISTER_RESTRICTIONS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_REGISTER_SEND_MSG_RING" class="member-name-link">IORING_REGISTER_SEND_MSG_RING</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_REGISTER_RING_FDS" class="member-name-link">IORING_REGISTER_RING_FDS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_REGISTER_SRC_REGISTERED" class="member-name-link">IORING_REGISTER_SRC_REGISTERED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_REGISTER_SEND_MSG_RING" class="member-name-link">IORING_REGISTER_SEND_MSG_RING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_REGISTER_SYNC_CANCEL" class="member-name-link">IORING_REGISTER_SYNC_CANCEL</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_REGISTER_SRC_REGISTERED" class="member-name-link">IORING_REGISTER_SRC_REGISTERED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_REGISTER_USE_REGISTERED_RING" class="member-name-link">IORING_REGISTER_USE_REGISTERED_RING</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_REGISTER_SYNC_CANCEL" class="member-name-link">IORING_REGISTER_SYNC_CANCEL</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_REGISTER_ZCRX_IFQ" class="member-name-link">IORING_REGISTER_ZCRX_IFQ</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_REGISTER_USE_REGISTERED_RING" class="member-name-link">IORING_REGISTER_USE_REGISTERED_RING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_RESTRICTION_LAST" class="member-name-link">IORING_RESTRICTION_LAST</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_REGISTER_ZCRX_IFQ" class="member-name-link">IORING_REGISTER_ZCRX_IFQ</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_RESTRICTION_REGISTER_OP" class="member-name-link">IORING_RESTRICTION_REGISTER_OP</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_RESTRICTION_LAST" class="member-name-link">IORING_RESTRICTION_LAST</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_RESTRICTION_SQE_FLAGS_ALLOWED" class="member-name-link">IORING_RESTRICTION_SQE_FLAGS_ALLOWED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_RESTRICTION_REGISTER_OP" class="member-name-link">IORING_RESTRICTION_REGISTER_OP</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_RESTRICTION_SQE_FLAGS_REQUIRED" class="member-name-link">IORING_RESTRICTION_SQE_FLAGS_REQUIRED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_RESTRICTION_SQE_FLAGS_ALLOWED" class="member-name-link">IORING_RESTRICTION_SQE_FLAGS_ALLOWED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_RESTRICTION_SQE_OP" class="member-name-link">IORING_RESTRICTION_SQE_OP</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_RESTRICTION_SQE_FLAGS_REQUIRED" class="member-name-link">IORING_RESTRICTION_SQE_FLAGS_REQUIRED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_RSRC_REGISTER_SPARSE" class="member-name-link">IORING_RSRC_REGISTER_SPARSE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_RESTRICTION_SQE_OP" class="member-name-link">IORING_RESTRICTION_SQE_OP</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_RSRC_REGISTER_SPARSE" class="member-name-link">IORING_RSRC_REGISTER_SPARSE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_RW_ATTR_FLAG_PI" class="member-name-link">IORING_RW_ATTR_FLAG_PI</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#IORING_SEND_VECTORIZED" class="member-name-link">IORING_SEND_VECTORIZED</a></code></div>
@@ -884,37 +920,43 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#IORING_SETUP_COOP_TASKRUN" class="member-name-link">IORING_SETUP_COOP_TASKRUN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_CQE32" class="member-name-link">IORING_SETUP_CQE32</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_CQE_MIXED" class="member-name-link">IORING_SETUP_CQE_MIXED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_SETUP_CQSIZE" class="member-name-link">IORING_SETUP_CQSIZE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_SETUP_CQE32" class="member-name-link">IORING_SETUP_CQE32</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_DEFER_TASKRUN" class="member-name-link">IORING_SETUP_DEFER_TASKRUN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_CQSIZE" class="member-name-link">IORING_SETUP_CQSIZE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_SETUP_HYBRID_IOPOLL" class="member-name-link">IORING_SETUP_HYBRID_IOPOLL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_SETUP_DEFER_TASKRUN" class="member-name-link">IORING_SETUP_DEFER_TASKRUN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_IOPOLL" class="member-name-link">IORING_SETUP_IOPOLL</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_HYBRID_IOPOLL" class="member-name-link">IORING_SETUP_HYBRID_IOPOLL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_SETUP_NO_MMAP" class="member-name-link">IORING_SETUP_NO_MMAP</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_SETUP_IOPOLL" class="member-name-link">IORING_SETUP_IOPOLL</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_NO_SQARRAY" class="member-name-link">IORING_SETUP_NO_SQARRAY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_NO_MMAP" class="member-name-link">IORING_SETUP_NO_MMAP</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_SETUP_R_DISABLED" class="member-name-link">IORING_SETUP_R_DISABLED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_SETUP_NO_SQARRAY" class="member-name-link">IORING_SETUP_NO_SQARRAY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_REGISTERED_FD_ONLY" class="member-name-link">IORING_SETUP_REGISTERED_FD_ONLY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_R_DISABLED" class="member-name-link">IORING_SETUP_R_DISABLED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#IORING_SETUP_SINGLE_ISSUER" class="member-name-link">IORING_SETUP_SINGLE_ISSUER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_SETUP_REGISTERED_FD_ONLY" class="member-name-link">IORING_SETUP_REGISTERED_FD_ONLY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_SQ_AFF" class="member-name-link">IORING_SETUP_SQ_AFF</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_SINGLE_ISSUER" class="member-name-link">IORING_SETUP_SINGLE_ISSUER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#IORING_SETUP_SQ_AFF" class="member-name-link">IORING_SETUP_SQ_AFF</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#IORING_SETUP_SQE_MIXED" class="member-name-link">IORING_SETUP_SQE_MIXED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#IORING_SETUP_SQE128" class="member-name-link">IORING_SETUP_SQE128</a></code></div>
@@ -1058,16 +1100,22 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#IOU_PBUF_RING_MMAP" class="member-name-link">IOU_PBUF_RING_MMAP</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SOCKET_URING_OP_GETSOCKOPT" class="member-name-link">SOCKET_URING_OP_GETSOCKOPT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SOCKET_URING_OP_GETSOCKNAME" class="member-name-link">SOCKET_URING_OP_GETSOCKNAME</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SOCKET_URING_OP_SETSOCKOPT" class="member-name-link">SOCKET_URING_OP_SETSOCKOPT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SOCKET_URING_OP_GETSOCKOPT" class="member-name-link">SOCKET_URING_OP_GETSOCKOPT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SOCKET_URING_OP_SIOCINQ" class="member-name-link">SOCKET_URING_OP_SIOCINQ</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SOCKET_URING_OP_SETSOCKOPT" class="member-name-link">SOCKET_URING_OP_SETSOCKOPT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SOCKET_URING_OP_SIOCOUTQ" class="member-name-link">SOCKET_URING_OP_SIOCOUTQ</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SOCKET_URING_OP_SIOCINQ" class="member-name-link">SOCKET_URING_OP_SIOCINQ</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SOCKET_URING_OP_SIOCOUTQ" class="member-name-link">SOCKET_URING_OP_SIOCOUTQ</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SOCKET_URING_OP_TX_TIMESTAMP" class="member-name-link">SOCKET_URING_OP_TX_TIMESTAMP</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -1174,6 +1222,22 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="IORING_RW_ATTR_FLAG_PI">
+<h3>IORING_RW_ATTR_FLAG_PI</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">IORING_RW_ATTR_FLAG_PI</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_RW_ATTR_FLAG_PI">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="IORING_FILE_INDEX_ALLOC">
 <h3>IORING_FILE_INDEX_ALLOC</h3>
@@ -1712,6 +1776,38 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_SETUP_HYBRID_IOPOLL">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="IORING_SETUP_CQE_MIXED">
+<h3>IORING_SETUP_CQE_MIXED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">IORING_SETUP_CQE_MIXED</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_SETUP_CQE_MIXED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="IORING_SETUP_SQE_MIXED">
+<h3>IORING_SETUP_SQE_MIXED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">IORING_SETUP_SQE_MIXED</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_SETUP_SQE_MIXED">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -2727,6 +2823,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="IORING_OP_NOP128">
+<h3>IORING_OP_NOP128</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">IORING_OP_NOP128</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_OP_NOP128">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="IORING_OP_URING_CMD128">
+<h3>IORING_OP_URING_CMD128</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">IORING_OP_URING_CMD128</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_OP_URING_CMD128">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="IORING_OP_LAST">
 <h3>IORING_OP_LAST</h3>
 <div class="horizontal-scroll">
@@ -3367,6 +3495,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="IORING_NOP_CQE32">
+<h3>IORING_NOP_CQE32</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">IORING_NOP_CQE32</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_NOP_CQE32">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="IORING_CQE_F_BUFFER">
 <h3>IORING_CQE_F_BUFFER</h3>
 <div class="horizontal-scroll">
@@ -3440,6 +3584,38 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_CQE_F_BUF_MORE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="IORING_CQE_F_SKIP">
+<h3>IORING_CQE_F_SKIP</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">IORING_CQE_F_SKIP</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_CQE_F_SKIP">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="IORING_CQE_F_32">
+<h3>IORING_CQE_F_32</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">IORING_CQE_F_32</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_CQE_F_32">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -4599,6 +4775,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="IORING_REGISTER_QUERY">
+<h3>IORING_REGISTER_QUERY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">IORING_REGISTER_QUERY</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_REGISTER_QUERY">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="IORING_REGISTER_LAST">
 <h3>IORING_REGISTER_LAST</h3>
 <div class="horizontal-scroll">
@@ -4967,6 +5159,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SOCKET_URING_OP_TX_TIMESTAMP">
+<h3>SOCKET_URING_OP_TX_TIMESTAMP</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SOCKET_URING_OP_TX_TIMESTAMP</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.SOCKET_URING_OP_TX_TIMESTAMP">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SOCKET_URING_OP_GETSOCKNAME">
+<h3>SOCKET_URING_OP_GETSOCKNAME</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SOCKET_URING_OP_GETSOCKNAME</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.SOCKET_URING_OP_GETSOCKNAME">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="IORING_TIMESTAMP_HW_SHIFT">
 <h3>IORING_TIMESTAMP_HW_SHIFT</h3>
 <div class="horizontal-scroll">
@@ -5056,6 +5280,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_ZCRX_AREA_DMABUF">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="IORING_QUERY_OPCODES">
+<h3>IORING_QUERY_OPCODES</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">IORING_QUERY_OPCODES</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../constant-values.html#org.lwjgl.system.linux.liburing.LibIOURing.IORING_QUERY_OPCODES">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>

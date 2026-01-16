@@ -106,6 +106,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#nNFD_PathSet_FreePath(long)" tabindex="0">nNFD_PathSet_FreePath(long)</a></li>
 <li><a href="#NFD_PathSet_FreePath(java.nio.ByteBuffer)" tabindex="0">NFD_PathSet_FreePath(ByteBuffer)</a></li>
 <li><a href="#NFD_PathSet_FreePath(long)" tabindex="0">NFD_PathSet_FreePath(long)</a></li>
+<li><a href="#NFD_PathSet_FreePath(java.lang.CharSequence)" tabindex="0">NFD_PathSet_FreePath(CharSequence)</a></li>
 <li><a href="#nNFD_PathSet_GetEnum(long,long)" tabindex="0">nNFD_PathSet_GetEnum(long, long)</a></li>
 <li><a href="#NFD_PathSet_GetEnum(long,org.lwjgl.util.nfd.NFDPathSetEnum)" tabindex="0">NFD_PathSet_GetEnum(long, NFDPathSetEnum)</a></li>
 <li><a href="#nNFD_PathSet_FreeEnum(long)" tabindex="0">nNFD_PathSet_FreeEnum(long)</a></li>
@@ -265,222 +266,227 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_FreePath(long)" class="member-name-link">NFD_PathSet_FreePath</a><wbr>(long&nbsp;filePath)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t * filePath)</code></div>
+<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t const * filePath)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_FreePath(java.nio.ByteBuffer)" class="member-name-link">NFD_PathSet_FreePath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;filePath)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_FreePath(java.lang.CharSequence)" class="member-name-link">NFD_PathSet_FreePath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;filePath)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t * filePath)</code></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_GetCount(long,int%5B%5D)" class="member-name-link">NFD_PathSet_GetCount</a><wbr>(long&nbsp;pathSet,
- int[]&nbsp;count)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PathSet_GetCount(nfdpathset_t const * pathSet, nfdpathsetsize_t * count)</code></div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_GetCount(long,java.nio.IntBuffer)" class="member-name-link">NFD_PathSet_GetCount</a><wbr>(long&nbsp;pathSet,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;count)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PathSet_GetCount(nfdpathset_t const * pathSet, nfdpathsetsize_t * count)</code></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_GetEnum(long,org.lwjgl.util.nfd.NFDPathSetEnum)" class="member-name-link">NFD_PathSet_GetEnum</a><wbr>(long&nbsp;pathSet,
- <a href="NFDPathSetEnum.html" title="class in org.lwjgl.util.nfd">NFDPathSetEnum</a>&nbsp;outEnumerator)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PathSet_GetEnum(nfdpathset_t const * pathSet, nfdpathsetenum_t * outEnumerator)</code></div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_GetPath(long,int,org.lwjgl.PointerBuffer)" class="member-name-link">NFD_PathSet_GetPath</a><wbr>(long&nbsp;pathSet,
- int&nbsp;index,
- <a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PathSet_GetPath(nfdpathset_t const * pathSet, nfdpathsetsize_t index, nfdchar_t ** outPath)</code></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolder(org.lwjgl.PointerBuffer,java.lang.CharSequence)" class="member-name-link">NFD_PickFolder</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;defaultPath)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PickFolder(nfdchar_t ** outPath, nfdchar_t const * defaultPath)</code></div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolder(org.lwjgl.PointerBuffer,java.nio.ByteBuffer)" class="member-name-link">NFD_PickFolder</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;defaultPath)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PickFolder(nfdchar_t ** outPath, nfdchar_t const * defaultPath)</code></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolder_With(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDPickFolderArgs)" class="member-name-link">NFD_PickFolder_With</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
- <a href="NFDPickFolderArgs.html" title="class in org.lwjgl.util.nfd">NFDPickFolderArgs</a>&nbsp;args)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PickFolder_With(nfdchar_t ** outPath, nfdpickfolderu8args_t const * args)</code></div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolderMultiple(org.lwjgl.PointerBuffer,java.lang.CharSequence)" class="member-name-link">NFD_PickFolderMultiple</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPaths,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;defaultPath)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PickFolderMultiple(nfdpathset_t const ** outPaths, nfdchar_t const * defaultPath)</code></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolderMultiple(org.lwjgl.PointerBuffer,java.nio.ByteBuffer)" class="member-name-link">NFD_PickFolderMultiple</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPaths,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;defaultPath)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PickFolderMultiple(nfdpathset_t const ** outPaths, nfdchar_t const * defaultPath)</code></div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolderMultiple_With(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDPickFolderArgs)" class="member-name-link">NFD_PickFolderMultiple_With</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPaths,
- <a href="NFDPickFolderArgs.html" title="class in org.lwjgl.util.nfd">NFDPickFolderArgs</a>&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PickFolderMultiple_With(nfdpathset_t const ** outPaths, nfdpickfolderu8args_t const * args)</code></div>
+<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t const * filePath)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_Quit()" class="member-name-link">NFD_Quit</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_FreePath(java.nio.ByteBuffer)" class="member-name-link">NFD_PathSet_FreePath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;filePath)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>void NFD_Quit(void)</code></div>
+<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t const * filePath)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_SaveDialog(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDFilterItem.Buffer,java.lang.CharSequence,java.lang.CharSequence)" class="member-name-link">NFD_SaveDialog</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_GetCount(long,int%5B%5D)" class="member-name-link">NFD_PathSet_GetCount</a><wbr>(long&nbsp;pathSet,
+ int[]&nbsp;count)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PathSet_GetCount(nfdpathset_t const * pathSet, nfdpathsetsize_t * count)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_GetCount(long,java.nio.IntBuffer)" class="member-name-link">NFD_PathSet_GetCount</a><wbr>(long&nbsp;pathSet,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;count)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PathSet_GetCount(nfdpathset_t const * pathSet, nfdpathsetsize_t * count)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_GetEnum(long,org.lwjgl.util.nfd.NFDPathSetEnum)" class="member-name-link">NFD_PathSet_GetEnum</a><wbr>(long&nbsp;pathSet,
+ <a href="NFDPathSetEnum.html" title="class in org.lwjgl.util.nfd">NFDPathSetEnum</a>&nbsp;outEnumerator)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PathSet_GetEnum(nfdpathset_t const * pathSet, nfdpathsetenum_t * outEnumerator)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PathSet_GetPath(long,int,org.lwjgl.PointerBuffer)" class="member-name-link">NFD_PathSet_GetPath</a><wbr>(long&nbsp;pathSet,
+ int&nbsp;index,
+ <a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PathSet_GetPath(nfdpathset_t const * pathSet, nfdpathsetsize_t index, nfdchar_t ** outPath)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolder(org.lwjgl.PointerBuffer,java.lang.CharSequence)" class="member-name-link">NFD_PickFolder</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;defaultPath)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PickFolder(nfdchar_t ** outPath, nfdchar_t const * defaultPath)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolder(org.lwjgl.PointerBuffer,java.nio.ByteBuffer)" class="member-name-link">NFD_PickFolder</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;defaultPath)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PickFolder(nfdchar_t ** outPath, nfdchar_t const * defaultPath)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolder_With(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDPickFolderArgs)" class="member-name-link">NFD_PickFolder_With</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
+ <a href="NFDPickFolderArgs.html" title="class in org.lwjgl.util.nfd">NFDPickFolderArgs</a>&nbsp;args)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PickFolder_With(nfdchar_t ** outPath, nfdpickfolderu8args_t const * args)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolderMultiple(org.lwjgl.PointerBuffer,java.lang.CharSequence)" class="member-name-link">NFD_PickFolderMultiple</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPaths,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;defaultPath)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PickFolderMultiple(nfdpathset_t const ** outPaths, nfdchar_t const * defaultPath)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolderMultiple(org.lwjgl.PointerBuffer,java.nio.ByteBuffer)" class="member-name-link">NFD_PickFolderMultiple</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPaths,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;defaultPath)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PickFolderMultiple(nfdpathset_t const ** outPaths, nfdchar_t const * defaultPath)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_PickFolderMultiple_With(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDPickFolderArgs)" class="member-name-link">NFD_PickFolderMultiple_With</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPaths,
+ <a href="NFDPickFolderArgs.html" title="class in org.lwjgl.util.nfd">NFDPickFolderArgs</a>&nbsp;args)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>nfdresult_t NFD_PickFolderMultiple_With(nfdpathset_t const ** outPaths, nfdpickfolderu8args_t const * args)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_Quit()" class="member-name-link">NFD_Quit</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>void NFD_Quit(void)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_SaveDialog(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDFilterItem.Buffer,java.lang.CharSequence,java.lang.CharSequence)" class="member-name-link">NFD_SaveDialog</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
  @Nullable <a href="NFDFilterItem.Buffer.html" title="class in org.lwjgl.util.nfd">NFDFilterItem.Buffer</a>&nbsp;filterList,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;defaultPath,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;defaultName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_SaveDialog(nfdchar_t ** outPath, nfdfilteritem_t const * filterList, nfdfiltersize_t filterCount, nfdchar_t const * defaultPath, nfdchar_t const * defaultName)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_SaveDialog(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDFilterItem.Buffer,java.nio.ByteBuffer,java.nio.ByteBuffer)" class="member-name-link">NFD_SaveDialog</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_SaveDialog(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDFilterItem.Buffer,java.nio.ByteBuffer,java.nio.ByteBuffer)" class="member-name-link">NFD_SaveDialog</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
  @Nullable <a href="NFDFilterItem.Buffer.html" title="class in org.lwjgl.util.nfd">NFDFilterItem.Buffer</a>&nbsp;filterList,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;defaultPath,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;defaultName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_SaveDialog(nfdchar_t ** outPath, nfdfilteritem_t const * filterList, nfdfiltersize_t filterCount, nfdchar_t const * defaultPath, nfdchar_t const * defaultName)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_SaveDialog_With(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDSaveDialogArgs)" class="member-name-link">NFD_SaveDialog_With</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#NFD_SaveDialog_With(org.lwjgl.PointerBuffer,org.lwjgl.util.nfd.NFDSaveDialogArgs)" class="member-name-link">NFD_SaveDialog_With</a><wbr>(<a href="../../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;outPath,
  <a href="NFDSaveDialogArgs.html" title="class in org.lwjgl.util.nfd">NFDSaveDialogArgs</a>&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_SaveDialog_With(nfdchar_t ** outPath, nfdsavedialogu8args_t const * args)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_FreePath(long)" class="member-name-link">nNFD_FreePath</a><wbr>(long&nbsp;filePath)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_FreePath(long)" class="member-name-link">nNFD_FreePath</a><wbr>(long&nbsp;filePath)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void NFD_FreePath(nfdchar_t * filePath)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_GetError()" class="member-name-link">nNFD_GetError</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_GetError()" class="member-name-link">nNFD_GetError</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>char const * NFD_GetError(void)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_OpenDialog(long,long,int,long)" class="member-name-link">nNFD_OpenDialog</a><wbr>(long&nbsp;outPath,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_OpenDialog(long,long,int,long)" class="member-name-link">nNFD_OpenDialog</a><wbr>(long&nbsp;outPath,
  long&nbsp;filterList,
  int&nbsp;filterCount,
  long&nbsp;defaultPath)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_OpenDialog(nfdchar_t ** outPath, nfdfilteritem_t const * filterList, nfdfiltersize_t filterCount, nfdchar_t const * defaultPath)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_OpenDialog_With(long,long)" class="member-name-link">nNFD_OpenDialog_With</a><wbr>(long&nbsp;outPath,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_OpenDialog_With(long,long)" class="member-name-link">nNFD_OpenDialog_With</a><wbr>(long&nbsp;outPath,
  long&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_OpenDialog_With(nfdchar_t ** outPath, nfdopendialogu8args_t const * args)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_OpenDialogMultiple(long,long,int,long)" class="member-name-link">nNFD_OpenDialogMultiple</a><wbr>(long&nbsp;outPath,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_OpenDialogMultiple(long,long,int,long)" class="member-name-link">nNFD_OpenDialogMultiple</a><wbr>(long&nbsp;outPath,
  long&nbsp;filterList,
  int&nbsp;filterCount,
  long&nbsp;defaultPath)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_OpenDialogMultiple(nfdpathset_t const ** outPath, nfdfilteritem_t const * filterList, nfdfiltersize_t filterCount, nfdchar_t const * defaultPath)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_OpenDialogMultiple_With(long,long)" class="member-name-link">nNFD_OpenDialogMultiple_With</a><wbr>(long&nbsp;outPath,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_OpenDialogMultiple_With(long,long)" class="member-name-link">nNFD_OpenDialogMultiple_With</a><wbr>(long&nbsp;outPath,
  long&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_OpenDialogMultiple_With(nfdpathset_t const ** outPath, nfdopendialogu8args_t const * args)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_EnumNext(long,long)" class="member-name-link">nNFD_PathSet_EnumNext</a><wbr>(long&nbsp;enumerator,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_EnumNext(long,long)" class="member-name-link">nNFD_PathSet_EnumNext</a><wbr>(long&nbsp;enumerator,
  long&nbsp;outPath)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_PathSet_EnumNext(nfdpathsetenum_t * enumerator, nfdchar_t ** outPath)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_Free(long)" class="member-name-link">nNFD_PathSet_Free</a><wbr>(long&nbsp;pathSet)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_Free(long)" class="member-name-link">nNFD_PathSet_Free</a><wbr>(long&nbsp;pathSet)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void NFD_PathSet_Free(nfdpathset_t const * pathSet)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_FreeEnum(long)" class="member-name-link">nNFD_PathSet_FreeEnum</a><wbr>(long&nbsp;enumerator)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_FreeEnum(long)" class="member-name-link">nNFD_PathSet_FreeEnum</a><wbr>(long&nbsp;enumerator)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void NFD_PathSet_FreeEnum(nfdpathsetenum_t * enumerator)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_FreePath(long)" class="member-name-link">nNFD_PathSet_FreePath</a><wbr>(long&nbsp;filePath)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_FreePath(long)" class="member-name-link">nNFD_PathSet_FreePath</a><wbr>(long&nbsp;filePath)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t const * filePath)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_GetCount(long,int%5B%5D)" class="member-name-link">nNFD_PathSet_GetCount</a><wbr>(long&nbsp;pathSet,
+ int[]&nbsp;count)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t * filePath)</code></div>
+<div class="block"><code>nfdresult_t NFD_PathSet_GetCount(nfdpathset_t const * pathSet, nfdpathsetsize_t * count)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_GetCount(long,int%5B%5D)" class="member-name-link">nNFD_PathSet_GetCount</a><wbr>(long&nbsp;pathSet,
- int[]&nbsp;count)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_GetCount(long,long)" class="member-name-link">nNFD_PathSet_GetCount</a><wbr>(long&nbsp;pathSet,
+ long&nbsp;count)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_PathSet_GetCount(nfdpathset_t const * pathSet, nfdpathsetsize_t * count)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_GetCount(long,long)" class="member-name-link">nNFD_PathSet_GetCount</a><wbr>(long&nbsp;pathSet,
- long&nbsp;count)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>nfdresult_t NFD_PathSet_GetCount(nfdpathset_t const * pathSet, nfdpathsetsize_t * count)</code></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_GetEnum(long,long)" class="member-name-link">nNFD_PathSet_GetEnum</a><wbr>(long&nbsp;pathSet,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_GetEnum(long,long)" class="member-name-link">nNFD_PathSet_GetEnum</a><wbr>(long&nbsp;pathSet,
  long&nbsp;outEnumerator)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_PathSet_GetEnum(nfdpathset_t const * pathSet, nfdpathsetenum_t * outEnumerator)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_GetPath(long,int,long)" class="member-name-link">nNFD_PathSet_GetPath</a><wbr>(long&nbsp;pathSet,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PathSet_GetPath(long,int,long)" class="member-name-link">nNFD_PathSet_GetPath</a><wbr>(long&nbsp;pathSet,
  int&nbsp;index,
  long&nbsp;outPath)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_PathSet_GetPath(nfdpathset_t const * pathSet, nfdpathsetsize_t index, nfdchar_t ** outPath)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PickFolder(long,long)" class="member-name-link">nNFD_PickFolder</a><wbr>(long&nbsp;outPath,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PickFolder(long,long)" class="member-name-link">nNFD_PickFolder</a><wbr>(long&nbsp;outPath,
  long&nbsp;defaultPath)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_PickFolder(nfdchar_t ** outPath, nfdchar_t const * defaultPath)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PickFolder_With(long,long)" class="member-name-link">nNFD_PickFolder_With</a><wbr>(long&nbsp;outPath,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PickFolder_With(long,long)" class="member-name-link">nNFD_PickFolder_With</a><wbr>(long&nbsp;outPath,
  long&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_PickFolder_With(nfdchar_t ** outPath, nfdpickfolderu8args_t const * args)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PickFolderMultiple(long,long)" class="member-name-link">nNFD_PickFolderMultiple</a><wbr>(long&nbsp;outPaths,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PickFolderMultiple(long,long)" class="member-name-link">nNFD_PickFolderMultiple</a><wbr>(long&nbsp;outPaths,
  long&nbsp;defaultPath)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_PickFolderMultiple(nfdpathset_t const ** outPaths, nfdchar_t const * defaultPath)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PickFolderMultiple_With(long,long)" class="member-name-link">nNFD_PickFolderMultiple_With</a><wbr>(long&nbsp;outPaths,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_PickFolderMultiple_With(long,long)" class="member-name-link">nNFD_PickFolderMultiple_With</a><wbr>(long&nbsp;outPaths,
  long&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_PickFolderMultiple_With(nfdpathset_t const ** outPaths, nfdpickfolderu8args_t const * args)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_SaveDialog(long,long,int,long,long)" class="member-name-link">nNFD_SaveDialog</a><wbr>(long&nbsp;outPath,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_SaveDialog(long,long,int,long,long)" class="member-name-link">nNFD_SaveDialog</a><wbr>(long&nbsp;outPath,
  long&nbsp;filterList,
  int&nbsp;filterCount,
  long&nbsp;defaultPath,
  long&nbsp;defaultName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_SaveDialog(nfdchar_t ** outPath, nfdfilteritem_t const * filterList, nfdfiltersize_t filterCount, nfdchar_t const * defaultPath, nfdchar_t const * defaultName)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_SaveDialog_With(long,long)" class="member-name-link">nNFD_SaveDialog_With</a><wbr>(long&nbsp;outPath,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nNFD_SaveDialog_With(long,long)" class="member-name-link">nNFD_SaveDialog_With</a><wbr>(long&nbsp;outPath,
  long&nbsp;args)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>nfdresult_t NFD_SaveDialog_With(nfdchar_t ** outPath, nfdsavedialogu8args_t const * args)</code></div>
 </div>
 </div>
@@ -1068,7 +1074,7 @@ loadScripts(document, 'script');</script>
 <h3>nNFD_PathSet_FreePath</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nNFD_PathSet_FreePath</span><wbr><span class="parameters">(long&nbsp;filePath)</span></div>
-<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t * filePath)</code></div>
+<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t const * filePath)</code></div>
 </div>
 </section>
 </li>
@@ -1076,9 +1082,9 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="NFD_PathSet_FreePath(java.nio.ByteBuffer)">
 <h3>NFD_PathSet_FreePath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">NFD_PathSet_FreePath</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("nfdchar_t *")
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">NFD_PathSet_FreePath</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("nfdchar_t const *")
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;filePath)</span></div>
-<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t * filePath)</code></div>
+<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t const * filePath)</code></div>
 </div>
 </section>
 </li>
@@ -1086,9 +1092,19 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="NFD_PathSet_FreePath(long)">
 <h3>NFD_PathSet_FreePath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">NFD_PathSet_FreePath</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("nfdchar_t *")
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">NFD_PathSet_FreePath</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("nfdchar_t const *")
  long&nbsp;filePath)</span></div>
-<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t * filePath)</code></div>
+<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t const * filePath)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="NFD_PathSet_FreePath(java.lang.CharSequence)">
+<h3>NFD_PathSet_FreePath</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">NFD_PathSet_FreePath</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("nfdchar_t const *")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;filePath)</span></div>
+<div class="block"><code>void NFD_PathSet_FreePath(nfdchar_t const * filePath)</code></div>
 </div>
 </section>
 </li>

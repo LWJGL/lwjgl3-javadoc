@@ -60,6 +60,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#projection_ambisonics_encoder_create" tabindex="0">projection_ambisonics_encoder_create</a></li>
 <li><a href="#projection_ambisonics_encoder_init" tabindex="0">projection_ambisonics_encoder_init</a></li>
 <li><a href="#projection_encode" tabindex="0">projection_encode</a></li>
+<li><a href="#projection_encode24" tabindex="0">projection_encode24</a></li>
 <li><a href="#projection_encode_float" tabindex="0">projection_encode_float</a></li>
 <li><a href="#projection_encoder_ctl" tabindex="0">projection_encoder_ctl</a></li>
 <li><a href="#projection_encoder_destroy" tabindex="0">projection_encoder_destroy</a></li>
@@ -67,6 +68,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#projection_decoder_create" tabindex="0">projection_decoder_create</a></li>
 <li><a href="#projection_decoder_init" tabindex="0">projection_decoder_init</a></li>
 <li><a href="#projection_decode" tabindex="0">projection_decode</a></li>
+<li><a href="#projection_decode24" tabindex="0">projection_decode24</a></li>
 <li><a href="#projection_decode_float" tabindex="0">projection_decode_float</a></li>
 <li><a href="#projection_decoder_ctl" tabindex="0">projection_decoder_ctl</a></li>
 <li><a href="#projection_decoder_destroy" tabindex="0">projection_decoder_destroy</a></li>
@@ -131,37 +133,47 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#projection_decoder_create" class="member-name-link">projection_decoder_create</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#projection_decode24" class="member-name-link">projection_decode24</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#projection_decoder_ctl" class="member-name-link">projection_decoder_ctl</a></code></div>
+<div class="col-second even-row-color"><code><a href="#projection_decoder_create" class="member-name-link">projection_decoder_create</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#projection_decoder_destroy" class="member-name-link">projection_decoder_destroy</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#projection_decoder_ctl" class="member-name-link">projection_decoder_ctl</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#projection_decoder_get_size" class="member-name-link">projection_decoder_get_size</a></code></div>
+<div class="col-second even-row-color"><code><a href="#projection_decoder_destroy" class="member-name-link">projection_decoder_destroy</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#projection_decoder_init" class="member-name-link">projection_decoder_init</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#projection_decoder_get_size" class="member-name-link">projection_decoder_get_size</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#projection_encode" class="member-name-link">projection_encode</a></code></div>
+<div class="col-second even-row-color"><code><a href="#projection_decoder_init" class="member-name-link">projection_decoder_init</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#projection_encode_float" class="member-name-link">projection_encode_float</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#projection_encode" class="member-name-link">projection_encode</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#projection_encode_float" class="member-name-link">projection_encode_float</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#projection_encode24" class="member-name-link">projection_encode24</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
@@ -233,6 +245,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="projection_encode24">
+<h3>projection_encode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">projection_encode24</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="projection_encode_float">
 <h3>projection_encode_float</h3>
 <div class="horizontal-scroll">
@@ -291,6 +312,15 @@ loadScripts(document, 'script');</script>
 <h3>projection_decode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">projection_decode</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="projection_decode24">
+<h3>projection_decode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">projection_decode24</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>

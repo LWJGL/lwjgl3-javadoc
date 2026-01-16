@@ -62,7 +62,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SAMPLE_COUNT" tabindex="0">SAMPLE_COUNT</a></li>
 <li><a href="#SAMPLE_MASK" tabindex="0">SAMPLE_MASK</a></li>
 <li><a href="#ENABLE_MASK" tabindex="0">ENABLE_MASK</a></li>
-<li><a href="#PADDING1" tabindex="0">PADDING1</a></li>
+<li><a href="#ENABLE_ALPHA_TO_COVERAGE" tabindex="0">ENABLE_ALPHA_TO_COVERAGE</a></li>
 <li><a href="#PADDING2" tabindex="0">PADDING2</a></li>
 <li><a href="#PADDING3" tabindex="0">PADDING3</a></li>
 </ol>
@@ -78,10 +78,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#sample_count()" tabindex="0">sample_count()</a></li>
 <li><a href="#sample_mask()" tabindex="0">sample_mask()</a></li>
 <li><a href="#enable_mask()" tabindex="0">enable_mask()</a></li>
+<li><a href="#enable_alpha_to_coverage()" tabindex="0">enable_alpha_to_coverage()</a></li>
 <li><a href="#sample_count(int)" tabindex="0">sample_count(int)</a></li>
 <li><a href="#sample_mask(int)" tabindex="0">sample_mask(int)</a></li>
 <li><a href="#enable_mask(boolean)" tabindex="0">enable_mask(boolean)</a></li>
-<li><a href="#set(int,int,boolean)" tabindex="0">set(int, int, boolean)</a></li>
+<li><a href="#enable_alpha_to_coverage(boolean)" tabindex="0">enable_alpha_to_coverage(boolean)</a></li>
+<li><a href="#set(int,int,boolean,boolean)" tabindex="0">set(int, int, boolean, boolean)</a></li>
 <li><a href="#set(org.lwjgl.sdl.SDL_GPUMultisampleState)" tabindex="0">set(SDL_GPUMultisampleState)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
@@ -100,13 +102,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#nsample_count(long)" tabindex="0">nsample_count(long)</a></li>
 <li><a href="#nsample_mask(long)" tabindex="0">nsample_mask(long)</a></li>
 <li><a href="#nenable_mask(long)" tabindex="0">nenable_mask(long)</a></li>
-<li><a href="#npadding1(long)" tabindex="0">npadding1(long)</a></li>
+<li><a href="#nenable_alpha_to_coverage(long)" tabindex="0">nenable_alpha_to_coverage(long)</a></li>
 <li><a href="#npadding2(long)" tabindex="0">npadding2(long)</a></li>
 <li><a href="#npadding3(long)" tabindex="0">npadding3(long)</a></li>
 <li><a href="#nsample_count(long,int)" tabindex="0">nsample_count(long, int)</a></li>
 <li><a href="#nsample_mask(long,int)" tabindex="0">nsample_mask(long, int)</a></li>
 <li><a href="#nenable_mask(long,boolean)" tabindex="0">nenable_mask(long, boolean)</a></li>
-<li><a href="#npadding1(long,byte)" tabindex="0">npadding1(long, byte)</a></li>
+<li><a href="#nenable_alpha_to_coverage(long,boolean)" tabindex="0">nenable_alpha_to_coverage(long, boolean)</a></li>
 <li><a href="#npadding2(long,byte)" tabindex="0">npadding2(long, byte)</a></li>
 <li><a href="#npadding3(long,byte)" tabindex="0">npadding3(long, byte)</a></li>
 </ol>
@@ -139,7 +141,7 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
     SDL_GPUSampleCount sample_count;
     Uint32 sample_mask;
     bool enable_mask;
-    Uint8 padding1;
+    bool enable_alpha_to_coverage;
     Uint8 padding2;
     Uint8 padding3;
 }</code></pre></div>
@@ -185,12 +187,12 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">The struct alignment in bytes.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#ENABLE_MASK" class="member-name-link">ENABLE_MASK</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ENABLE_ALPHA_TO_COVERAGE" class="member-name-link">ENABLE_ALPHA_TO_COVERAGE</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#PADDING1" class="member-name-link">PADDING1</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ENABLE_MASK" class="member-name-link">ENABLE_MASK</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
@@ -305,6 +307,14 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">Like <a href="#create(long,int)"><code>create</code></a>, but returns <code>null</code> if <code>address</code> is <code>NULL</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enable_alpha_to_coverage()" class="member-name-link">enable_alpha_to_coverage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_GPUMultisampleState.html" title="class in org.lwjgl.sdl">SDL_GPUMultisampleState</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enable_alpha_to_coverage(boolean)" class="member-name-link">enable_alpha_to_coverage</a><wbr>(boolean&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>enable_alpha_to_coverage</code> field.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enable_mask()" class="member-name-link">enable_mask</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_GPUMultisampleState.html" title="class in org.lwjgl.sdl">SDL_GPUMultisampleState</a></code></div>
@@ -334,6 +344,17 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">Returns a new <code>SDL_GPUMultisampleState</code> instance allocated on the specified <a href="../system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nenable_alpha_to_coverage(long)" class="member-name-link">nenable_alpha_to_coverage</a><wbr>(long&nbsp;struct)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#enable_alpha_to_coverage()"><code>enable_alpha_to_coverage()</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nenable_alpha_to_coverage(long,boolean)" class="member-name-link">nenable_alpha_to_coverage</a><wbr>(long&nbsp;struct,
+ boolean&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#enable_alpha_to_coverage(boolean)"><code>enable_alpha_to_coverage</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nenable_mask(long)" class="member-name-link">nenable_mask</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#enable_mask()"><code>enable_mask()</code></a>.</div>
@@ -344,13 +365,6 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#enable_mask(boolean)"><code>enable_mask</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npadding1(long)" class="member-name-link">npadding1</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npadding1(long,byte)" class="member-name-link">npadding1</a><wbr>(long&nbsp;struct,
- byte&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npadding2(long)" class="member-name-link">npadding2</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -404,9 +418,10 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">Sets the specified value to the <code>sample_mask</code> field.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_GPUMultisampleState.html" title="class in org.lwjgl.sdl">SDL_GPUMultisampleState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,int,boolean)" class="member-name-link">set</a><wbr>(int&nbsp;sample_count,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,int,boolean,boolean)" class="member-name-link">set</a><wbr>(int&nbsp;sample_count,
  int&nbsp;sample_mask,
- boolean&nbsp;enable_mask)</code></div>
+ boolean&nbsp;enable_mask,
+ boolean&nbsp;enable_alpha_to_coverage)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
@@ -492,10 +507,10 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 </section>
 </li>
 <li>
-<section class="detail" id="PADDING1">
-<h3>PADDING1</h3>
+<section class="detail" id="ENABLE_ALPHA_TO_COVERAGE">
+<h3>ENABLE_ALPHA_TO_COVERAGE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">PADDING1</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">ENABLE_ALPHA_TO_COVERAGE</span></div>
 <div class="block">The struct member offsets.</div>
 </div>
 </section>
@@ -600,6 +615,19 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
+<section class="detail" id="enable_alpha_to_coverage()">
+<h3>enable_alpha_to_coverage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">enable_alpha_to_coverage</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>enable_alpha_to_coverage</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="sample_count(int)">
 <h3>sample_count</h3>
 <div class="horizontal-scroll">
@@ -630,12 +658,23 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="set(int,int,boolean)">
+<section class="detail" id="enable_alpha_to_coverage(boolean)">
+<h3>enable_alpha_to_coverage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUMultisampleState.html" title="class in org.lwjgl.sdl">SDL_GPUMultisampleState</a></span>&nbsp;<span class="element-name">enable_alpha_to_coverage</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+ boolean&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>enable_alpha_to_coverage</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="set(int,int,boolean,boolean)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUMultisampleState.html" title="class in org.lwjgl.sdl">SDL_GPUMultisampleState</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;sample_count,
  int&nbsp;sample_mask,
- boolean&nbsp;enable_mask)</span></div>
+ boolean&nbsp;enable_mask,
+ boolean&nbsp;enable_alpha_to_coverage)</span></div>
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
 </section>
@@ -848,10 +887,11 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="npadding1(long)">
-<h3>npadding1</h3>
+<section class="detail" id="nenable_alpha_to_coverage(long)">
+<h3>nenable_alpha_to_coverage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">npadding1</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nenable_alpha_to_coverage</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
+<div class="block">Unsafe version of <a href="#enable_alpha_to_coverage()"><code>enable_alpha_to_coverage()</code></a>.</div>
 </div>
 </section>
 </li>
@@ -902,11 +942,12 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="npadding1(long,byte)">
-<h3>npadding1</h3>
+<section class="detail" id="nenable_alpha_to_coverage(long,boolean)">
+<h3>nenable_alpha_to_coverage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npadding1</span><wbr><span class="parameters">(long&nbsp;struct,
- byte&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nenable_alpha_to_coverage</span><wbr><span class="parameters">(long&nbsp;struct,
+ boolean&nbsp;value)</span></div>
+<div class="block">Unsafe version of <a href="#enable_alpha_to_coverage(boolean)"><code>enable_alpha_to_coverage</code></a>.</div>
 </div>
 </section>
 </li>

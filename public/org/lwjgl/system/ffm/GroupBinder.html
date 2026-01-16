@@ -51,6 +51,7 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
+<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
@@ -79,12 +80,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#allocate(java.lang.foreign.SegmentAllocator)" tabindex="0">allocate(SegmentAllocator)</a></li>
 <li><a href="#allocate(org.lwjgl.system.SegmentStack,long)" tabindex="0">allocate(SegmentStack, long)</a></li>
 <li><a href="#allocate(java.lang.foreign.SegmentAllocator,long)" tabindex="0">allocate(SegmentAllocator, long)</a></li>
-<li><a href="#mallocSegment(org.lwjgl.system.SegmentStack)" tabindex="0">mallocSegment(SegmentStack)</a></li>
-<li><a href="#mallocSegment(org.lwjgl.system.SegmentStack,long)" tabindex="0">mallocSegment(SegmentStack, long)</a></li>
-<li><a href="#allocateSegment(org.lwjgl.system.SegmentStack)" tabindex="0">allocateSegment(SegmentStack)</a></li>
-<li><a href="#allocateSegment(java.lang.foreign.SegmentAllocator)" tabindex="0">allocateSegment(SegmentAllocator)</a></li>
-<li><a href="#allocateSegment(org.lwjgl.system.SegmentStack,long)" tabindex="0">allocateSegment(SegmentStack, long)</a></li>
-<li><a href="#allocateSegment(java.lang.foreign.SegmentAllocator,long)" tabindex="0">allocateSegment(SegmentAllocator, long)</a></li>
 <li><a href="#apply(java.lang.foreign.MemorySegment,long,java.util.function.Consumer)" tabindex="0">apply(MemorySegment, long, Consumer)</a></li>
 <li><a href="#applyAtIndex(java.lang.foreign.MemorySegment,long,java.util.function.Consumer)" tabindex="0">applyAtIndex(MemorySegment, long, Consumer)</a></li>
 <li><a href="#forEach(java.lang.foreign.MemorySegment,java.util.function.Consumer)" tabindex="0">forEach(MemorySegment, Consumer)</a></li>
@@ -111,12 +106,17 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>All Superinterfaces:</dt>
+<dd><code><a href="mapping/DataMapping.html" title="interface in org.lwjgl.system.ffm.mapping">DataMapping</a>&lt;L&gt;, <a href="mapping/GroupMapping.html" title="interface in org.lwjgl.system.ffm.mapping">GroupMapping</a>&lt;L&gt;, <a href="mapping/Mapping.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping</a>&lt;L&gt;</code></dd>
+</dl>
+<dl class="notes">
 <dt>All Known Subinterfaces:</dt>
 <dd><code><a href="StructBinder.html" title="interface in org.lwjgl.system.ffm">StructBinder</a>&lt;T&gt;, <a href="UnionBinder.html" title="interface in org.lwjgl.system.ffm">UnionBinder</a>&lt;T&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
-<div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">GroupBinder&lt;L extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/GroupLayout.html" title="class or interface in java.lang.foreign" class="external-link">GroupLayout</a>, T&gt;</span>
+<div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">GroupBinder&lt;L extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/GroupLayout.html" title="class or interface in java.lang.foreign" class="external-link">GroupLayout</a>, T&gt;</span><span class="extends-implements">
+extends <a href="mapping/GroupMapping.html" title="interface in org.lwjgl.system.ffm.mapping">GroupMapping</a>&lt;L&gt;</span>
 <span class="permits">permits <a href="StructBinder.html" title="interface in org.lwjgl.system.ffm">StructBinder</a>&lt;T&gt;, <a href="UnionBinder.html" title="interface in org.lwjgl.system.ffm">UnionBinder</a>&lt;T&gt;</span></div>
 <div class="block">The base binder class for struct and union interfaces.
 
@@ -134,6 +134,15 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="inherited-list">
+<h3 id="nested-classes-inherited-from-class-org.lwjgl.system.ffm.mapping.Mapping">Nested classes/interfaces inherited from interface&nbsp;<a href="mapping/Mapping.html#nested-class-summary" title="interface in org.lwjgl.system.ffm.mapping">Mapping</a></h3>
+<code><a href="mapping/Mapping.Boolean.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Boolean</a>, <a href="mapping/Mapping.Byte.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Byte</a>, <a href="mapping/Mapping.Char.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Char</a>, <a href="mapping/Mapping.CLong.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.CLong</a>, <a href="mapping/Mapping.Double.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Double</a>, <a href="mapping/Mapping.Float.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Float</a>, <a href="mapping/Mapping.Int.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Int</a>, <a href="mapping/Mapping.Long.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Long</a>, <a href="mapping/Mapping.Opaque.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Opaque</a>, <a href="mapping/Mapping.Pointer.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Pointer</a>, <a href="mapping/Mapping.Sequence.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Sequence</a>, <a href="mapping/Mapping.Short.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Short</a>, <a href="mapping/Mapping.Size.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping.Size</a>, <a href="mapping/Mapping.Struct.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Struct</a>, <a href="mapping/Mapping.Union.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Union</a></code></div>
+</section>
+</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -180,28 +189,6 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#allocate(org.lwjgl.system.SegmentStack,long)" class="member-name-link">allocate</a><wbr>(<a href="../SegmentStack.html" title="class in org.lwjgl.system">SegmentStack</a>&nbsp;stack,
  long&nbsp;elementCount)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Allocates a memory segment, with zero-initialization, for the specified number of group instances on the specified segment stack.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#allocateSegment(java.lang.foreign.SegmentAllocator)" class="member-name-link">allocateSegment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SegmentAllocator.html" title="class or interface in java.lang.foreign" class="external-link">SegmentAllocator</a>&nbsp;allocator)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Allocates a memory segment for a single group instance using the specified segment allocator.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#allocateSegment(java.lang.foreign.SegmentAllocator,long)" class="member-name-link">allocateSegment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SegmentAllocator.html" title="class or interface in java.lang.foreign" class="external-link">SegmentAllocator</a>&nbsp;allocator,
- long&nbsp;elementCount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Allocates a memory segment for the specified number of group instances using the specified segment allocator.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#allocateSegment(org.lwjgl.system.SegmentStack)" class="member-name-link">allocateSegment</a><wbr>(<a href="../SegmentStack.html" title="class in org.lwjgl.system">SegmentStack</a>&nbsp;stack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Allocates a memory segment, with zero-initialization, for a single group instance on the specified segment stack.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#allocateSegment(org.lwjgl.system.SegmentStack,long)" class="member-name-link">allocateSegment</a><wbr>(<a href="../SegmentStack.html" title="class in org.lwjgl.system">SegmentStack</a>&nbsp;stack,
- long&nbsp;elementCount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Allocates a memory segment, with zero-initialization, for the specified number of group instances on the specified segment stack.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="GroupBinder.html" title="interface in org.lwjgl.system.ffm">GroupBinder</a><wbr>&lt;<a href="#type-param-L" title="type parameter in GroupBinder">L</a>,<wbr><a href="#type-param-T" title="type parameter in GroupBinder">T</a>&gt;</code></div>
@@ -324,17 +311,6 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Allocates a memory segment, without zero-initialization, for the specified number of group instances on the specified segment stack.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mallocSegment(org.lwjgl.system.SegmentStack)" class="member-name-link">mallocSegment</a><wbr>(<a href="../SegmentStack.html" title="class in org.lwjgl.system">SegmentStack</a>&nbsp;stack)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Allocates a memory segment, without zero-initialization, for a single group instance on the specified segment stack.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mallocSegment(org.lwjgl.system.SegmentStack,long)" class="member-name-link">mallocSegment</a><wbr>(<a href="../SegmentStack.html" title="class in org.lwjgl.system">SegmentStack</a>&nbsp;stack,
- long&nbsp;elementCount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Allocates a memory segment, without zero-initialization, for the specified number of group instances on the specified segment stack.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-T" title="type parameter in GroupBinder">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#ofAddress(long)" class="member-name-link">ofAddress</a><wbr>(long&nbsp;address)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -414,6 +390,15 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 </div>
 </div>
 </div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.lwjgl.system.ffm.mapping.DataMapping">Methods inherited from interface&nbsp;<a href="mapping/DataMapping.html#method-summary" title="interface in org.lwjgl.system.ffm.mapping">DataMapping</a></h3>
+<code><a href="mapping/DataMapping.html#allocateSegment(java.lang.foreign.SegmentAllocator)" title="allocateSegment(SegmentAllocator)">allocateSegment</a>, <a href="mapping/DataMapping.html#allocateSegment(java.lang.foreign.SegmentAllocator,long)" title="allocateSegment(SegmentAllocator, long)">allocateSegment</a>, <a href="mapping/DataMapping.html#allocateSegment(org.lwjgl.system.SegmentStack)" title="allocateSegment(SegmentStack)">allocateSegment</a>, <a href="mapping/DataMapping.html#allocateSegment(org.lwjgl.system.SegmentStack,long)" title="allocateSegment(SegmentStack, long)">allocateSegment</a>, <a href="mapping/DataMapping.html#array(long)" title="array(long)">array</a>, <a href="mapping/DataMapping.html#mallocSegment(org.lwjgl.system.SegmentStack)" title="mallocSegment(SegmentStack)">mallocSegment</a>, <a href="mapping/DataMapping.html#mallocSegment(org.lwjgl.system.SegmentStack,long)" title="mallocSegment(SegmentStack, long)">mallocSegment</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.lwjgl.system.ffm.mapping.GroupMapping">Methods inherited from interface&nbsp;<a href="mapping/GroupMapping.html#method-summary" title="interface in org.lwjgl.system.ffm.mapping">GroupMapping</a></h3>
+<code><a href="mapping/GroupMapping.html#typedef(java.lang.String)" title="typedef(String)">typedef</a>, <a href="mapping/GroupMapping.html#withByteAlignment(long)" title="withByteAlignment(long)">withByteAlignment</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-org.lwjgl.system.ffm.mapping.Mapping">Methods inherited from interface&nbsp;<a href="mapping/Mapping.html#method-summary" title="interface in org.lwjgl.system.ffm.mapping">Mapping</a></h3>
+<code><a href="mapping/Mapping.html#cconst()" title="cconst()">cconst</a>, <a href="mapping/Mapping.html#p()" title="p()">p</a></code></div>
 </section>
 </li>
 </ul>
@@ -432,6 +417,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <div class="member-signature"><span class="return-type"><a href="#type-param-L" title="type parameter in GroupBinder">L</a></span>&nbsp;<span class="element-name">layout</span>()</div>
 <div class="block">Returns the memory layout of the group type.</div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="mapping/Mapping.html#layout()">layout</a></code>&nbsp;in interface&nbsp;<code><a href="mapping/Mapping.html" title="interface in org.lwjgl.system.ffm.mapping">Mapping</a>&lt;<a href="#type-param-L" title="type parameter in GroupBinder">L</a> extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/GroupLayout.html" title="class or interface in java.lang.foreign" class="external-link">GroupLayout</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd>the group layout</dd>
 </dl>
@@ -818,102 +805,6 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd><code>elementCount</code> - the number of elements</dd>
 <dt>Returns:</dt>
 <dd>the group array</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="mallocSegment(org.lwjgl.system.SegmentStack)">
-<h3>mallocSegment</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">mallocSegment</span><wbr><span class="parameters">(<a href="../SegmentStack.html" title="class in org.lwjgl.system">SegmentStack</a>&nbsp;stack)</span></div>
-<div class="block">Allocates a memory segment, without zero-initialization, for a single group instance on the specified segment stack.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>stack</code> - the segment stack</dd>
-<dt>Returns:</dt>
-<dd>the memory segment</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="mallocSegment(org.lwjgl.system.SegmentStack,long)">
-<h3>mallocSegment</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">mallocSegment</span><wbr><span class="parameters">(<a href="../SegmentStack.html" title="class in org.lwjgl.system">SegmentStack</a>&nbsp;stack,
- long&nbsp;elementCount)</span></div>
-<div class="block">Allocates a memory segment, without zero-initialization, for the specified number of group instances on the specified segment stack.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>stack</code> - the segment stack</dd>
-<dd><code>elementCount</code> - the number of elements</dd>
-<dt>Returns:</dt>
-<dd>the memory segment</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="allocateSegment(org.lwjgl.system.SegmentStack)">
-<h3>allocateSegment</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">allocateSegment</span><wbr><span class="parameters">(<a href="../SegmentStack.html" title="class in org.lwjgl.system">SegmentStack</a>&nbsp;stack)</span></div>
-<div class="block">Allocates a memory segment, with zero-initialization, for a single group instance on the specified segment stack.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>stack</code> - the segment stack</dd>
-<dt>Returns:</dt>
-<dd>the memory segment</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="allocateSegment(java.lang.foreign.SegmentAllocator)">
-<h3>allocateSegment</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">allocateSegment</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SegmentAllocator.html" title="class or interface in java.lang.foreign" class="external-link">SegmentAllocator</a>&nbsp;allocator)</span></div>
-<div class="block">Allocates a memory segment for a single group instance using the specified segment allocator.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>allocator</code> - the segment allocator</dd>
-<dt>Returns:</dt>
-<dd>the memory segment</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="allocateSegment(org.lwjgl.system.SegmentStack,long)">
-<h3>allocateSegment</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">allocateSegment</span><wbr><span class="parameters">(<a href="../SegmentStack.html" title="class in org.lwjgl.system">SegmentStack</a>&nbsp;stack,
- long&nbsp;elementCount)</span></div>
-<div class="block">Allocates a memory segment, with zero-initialization, for the specified number of group instances on the specified segment stack.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>stack</code> - the segment stack</dd>
-<dd><code>elementCount</code> - the number of elements</dd>
-<dt>Returns:</dt>
-<dd>the memory segment</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="allocateSegment(java.lang.foreign.SegmentAllocator,long)">
-<h3>allocateSegment</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">allocateSegment</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SegmentAllocator.html" title="class or interface in java.lang.foreign" class="external-link">SegmentAllocator</a>&nbsp;allocator,
- long&nbsp;elementCount)</span></div>
-<div class="block">Allocates a memory segment for the specified number of group instances using the specified segment allocator.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>allocator</code> - the segment allocator</dd>
-<dd><code>elementCount</code> - the number of elements</dd>
-<dt>Returns:</dt>
-<dd>the memory segment</dd>
 </dl>
 </div>
 </section>

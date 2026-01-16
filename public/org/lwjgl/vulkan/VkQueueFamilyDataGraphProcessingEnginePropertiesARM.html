@@ -80,9 +80,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sType(int)" tabindex="0">sType(int)</a></li>
 <li><a href="#sType$Default()" tabindex="0">sType$Default()</a></li>
 <li><a href="#pNext(long)" tabindex="0">pNext(long)</a></li>
-<li><a href="#foreignSemaphoreHandleTypes(int)" tabindex="0">foreignSemaphoreHandleTypes(int)</a></li>
-<li><a href="#foreignMemoryHandleTypes(int)" tabindex="0">foreignMemoryHandleTypes(int)</a></li>
-<li><a href="#set(int,long,int,int)" tabindex="0">set(int, long, int, int)</a></li>
+<li><a href="#set(int,long)" tabindex="0">set(int, long)</a></li>
 <li><a href="#set(org.lwjgl.vulkan.VkQueueFamilyDataGraphProcessingEnginePropertiesARM)" tabindex="0">set(VkQueueFamilyDataGraphProcessingEnginePropertiesARM)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
@@ -104,8 +102,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#nforeignMemoryHandleTypes(long)" tabindex="0">nforeignMemoryHandleTypes(long)</a></li>
 <li><a href="#nsType(long,int)" tabindex="0">nsType(long, int)</a></li>
 <li><a href="#npNext(long,long)" tabindex="0">npNext(long, long)</a></li>
-<li><a href="#nforeignSemaphoreHandleTypes(long,int)" tabindex="0">nforeignSemaphoreHandleTypes(long, int)</a></li>
-<li><a href="#nforeignMemoryHandleTypes(long,int)" tabindex="0">nforeignMemoryHandleTypes(long, int)</a></li>
 </ol>
 </li>
 </ol>
@@ -134,7 +130,7 @@ loadScripts(document, 'script');</script>
 implements <a href="../system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></span></div>
 <div class="block"><pre><code>struct VkQueueFamilyDataGraphProcessingEnginePropertiesARM {
     VkStructureType sType;
-    void const * pNext;
+    void * pNext;
     VkExternalSemaphoreHandleTypeFlags foreignSemaphoreHandleTypes;
     VkExternalMemoryHandleTypeFlags foreignMemoryHandleTypes;
 }</code></pre></div>
@@ -292,19 +288,9 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#foreignMemoryHandleTypes()" class="member-name-link">foreignMemoryHandleTypes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkQueueFamilyDataGraphProcessingEnginePropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphProcessingEnginePropertiesARM</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#foreignMemoryHandleTypes(int)" class="member-name-link">foreignMemoryHandleTypes</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>foreignMemoryHandleTypes</code> field.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#foreignSemaphoreHandleTypes()" class="member-name-link">foreignSemaphoreHandleTypes</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkQueueFamilyDataGraphProcessingEnginePropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphProcessingEnginePropertiesARM</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#foreignSemaphoreHandleTypes(int)" class="member-name-link">foreignSemaphoreHandleTypes</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>foreignSemaphoreHandleTypes</code> field.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#foreignSemaphoreHandleTypes()" class="member-name-link">foreignSemaphoreHandleTypes</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="VkQueueFamilyDataGraphProcessingEnginePropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphProcessingEnginePropertiesARM</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#malloc()" class="member-name-link">malloc</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -331,22 +317,10 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#foreignMemoryHandleTypes()"><code>foreignMemoryHandleTypes()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nforeignMemoryHandleTypes(long,int)" class="member-name-link">nforeignMemoryHandleTypes</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nforeignSemaphoreHandleTypes(long)" class="member-name-link">nforeignSemaphoreHandleTypes</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#foreignMemoryHandleTypes(int)"><code>foreignMemoryHandleTypes</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nforeignSemaphoreHandleTypes(long)" class="member-name-link">nforeignSemaphoreHandleTypes</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#foreignSemaphoreHandleTypes()"><code>foreignSemaphoreHandleTypes()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nforeignSemaphoreHandleTypes(long,int)" class="member-name-link">nforeignSemaphoreHandleTypes</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#foreignSemaphoreHandleTypes(int)"><code>foreignSemaphoreHandleTypes</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npNext(long)" class="member-name-link">npNext</a><wbr>(long&nbsp;struct)</code></div>
@@ -379,10 +353,8 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">Sets the specified value to the <code>pNext</code> field.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkQueueFamilyDataGraphProcessingEnginePropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphProcessingEnginePropertiesARM</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long,int,int)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
- long&nbsp;pNext,
- int&nbsp;foreignSemaphoreHandleTypes,
- int&nbsp;foreignMemoryHandleTypes)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
+ long&nbsp;pNext)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
@@ -548,7 +520,7 @@ visible to the struct instance and vice versa.
 <section class="detail" id="pNext()">
 <h3>pNext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">pNext</span>()</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -606,40 +578,18 @@ visible to the struct instance and vice versa.
 <section class="detail" id="pNext(long)">
 <h3>pNext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphProcessingEnginePropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphProcessingEnginePropertiesARM</a></span>&nbsp;<span class="element-name">pNext</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphProcessingEnginePropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphProcessingEnginePropertiesARM</a></span>&nbsp;<span class="element-name">pNext</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
  long&nbsp;value)</span></div>
 <div class="block">Sets the specified value to the <code>pNext</code> field.</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="foreignSemaphoreHandleTypes(int)">
-<h3>foreignSemaphoreHandleTypes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphProcessingEnginePropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphProcessingEnginePropertiesARM</a></span>&nbsp;<span class="element-name">foreignSemaphoreHandleTypes</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkExternalSemaphoreHandleTypeFlags")
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>foreignSemaphoreHandleTypes</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="foreignMemoryHandleTypes(int)">
-<h3>foreignMemoryHandleTypes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphProcessingEnginePropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphProcessingEnginePropertiesARM</a></span>&nbsp;<span class="element-name">foreignMemoryHandleTypes</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkExternalMemoryHandleTypeFlags")
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>foreignMemoryHandleTypes</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="set(int,long,int,int)">
+<section class="detail" id="set(int,long)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphProcessingEnginePropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphProcessingEnginePropertiesARM</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;sType,
- long&nbsp;pNext,
- int&nbsp;foreignSemaphoreHandleTypes,
- int&nbsp;foreignMemoryHandleTypes)</span></div>
+ long&nbsp;pNext)</span></div>
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
 </section>
@@ -877,26 +827,6 @@ visible to the struct instance and vice versa.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npNext</span><wbr><span class="parameters">(long&nbsp;struct,
  long&nbsp;value)</span></div>
 <div class="block">Unsafe version of <a href="#pNext(long)"><code>pNext</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nforeignSemaphoreHandleTypes(long,int)">
-<h3>nforeignSemaphoreHandleTypes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nforeignSemaphoreHandleTypes</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#foreignSemaphoreHandleTypes(int)"><code>foreignSemaphoreHandleTypes</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nforeignMemoryHandleTypes(long,int)">
-<h3>nforeignMemoryHandleTypes</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nforeignMemoryHandleTypes</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#foreignMemoryHandleTypes(int)"><code>foreignMemoryHandleTypes</code></a>.</div>
 </div>
 </section>
 </li>

@@ -67,6 +67,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#opus_custom_encode_float(long,java.nio.FloatBuffer,int,java.nio.ByteBuffer)" tabindex="0">opus_custom_encode_float(long, FloatBuffer, int, ByteBuffer)</a></li>
 <li><a href="#nopus_custom_encode(long,long,int,long,int)" tabindex="0">nopus_custom_encode(long, long, int, long, int)</a></li>
 <li><a href="#opus_custom_encode(long,java.nio.ShortBuffer,int,java.nio.ByteBuffer)" tabindex="0">opus_custom_encode(long, ShortBuffer, int, ByteBuffer)</a></li>
+<li><a href="#nopus_custom_encode24(long,long,int,long,int)" tabindex="0">nopus_custom_encode24(long, long, int, long, int)</a></li>
+<li><a href="#opus_custom_encode24(long,java.nio.IntBuffer,int,java.nio.ByteBuffer)" tabindex="0">opus_custom_encode24(long, IntBuffer, int, ByteBuffer)</a></li>
 <li><a href="#opus_custom_decoder_get_size(long,int)" tabindex="0">opus_custom_decoder_get_size(long, int)</a></li>
 <li><a href="#opus_custom_decoder_init(long,long,int)" tabindex="0">opus_custom_decoder_init(long, long, int)</a></li>
 <li><a href="#nopus_custom_decoder_create(long,int,long)" tabindex="0">nopus_custom_decoder_create(long, int, long)</a></li>
@@ -76,6 +78,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#opus_custom_decode_float(long,java.nio.ByteBuffer,java.nio.FloatBuffer,int)" tabindex="0">opus_custom_decode_float(long, ByteBuffer, FloatBuffer, int)</a></li>
 <li><a href="#nopus_custom_decode(long,long,int,long,int)" tabindex="0">nopus_custom_decode(long, long, int, long, int)</a></li>
 <li><a href="#opus_custom_decode(long,java.nio.ByteBuffer,java.nio.ShortBuffer,int)" tabindex="0">opus_custom_decode(long, ByteBuffer, ShortBuffer, int)</a></li>
+<li><a href="#nopus_custom_decode24(long,long,int,long,int)" tabindex="0">nopus_custom_decode24(long, long, int, long, int)</a></li>
+<li><a href="#opus_custom_decode24(long,java.nio.ByteBuffer,java.nio.IntBuffer,int)" tabindex="0">opus_custom_decode24(long, ByteBuffer, IntBuffer, int)</a></li>
 <li><a href="#opus_custom_encoder_ctl(long,int)" tabindex="0">opus_custom_encoder_ctl(long, int)</a></li>
 <li><a href="#opus_custom_encoder_ctl(long,org.lwjgl.util.opus.Opus.CTLRequest)" tabindex="0">opus_custom_encoder_ctl(long, Opus.CTLRequest)</a></li>
 <li><a href="#opus_custom_decoder_ctl(long,int)" tabindex="0">opus_custom_decoder_ctl(long, int)</a></li>
@@ -147,30 +151,48 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_custom_decode_float(OpusCustomDecoder * st, unsigned char const * data, int len, float * pcm, int frame_size)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_custom_decoder_create(long,int,long)" class="member-name-link">nopus_custom_decoder_create</a><wbr>(long&nbsp;mode,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_custom_decode24(long,long,int,long,int)" class="member-name-link">nopus_custom_decode24</a><wbr>(long&nbsp;st,
+ long&nbsp;data,
+ int&nbsp;len,
+ long&nbsp;pcm,
+ int&nbsp;frame_size)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int opus_custom_decode24(OpusCustomDecoder * st, unsigned char const * data, int len, opus_int32 * pcm, int frame_size)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_custom_decoder_create(long,int,long)" class="member-name-link">nopus_custom_decoder_create</a><wbr>(long&nbsp;mode,
  int&nbsp;channels,
  long&nbsp;error)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>OpusCustomDecoder * opus_custom_decoder_create(OpusCustomMode const * mode, int channels, int * error)</code></div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_custom_encode(long,long,int,long,int)" class="member-name-link">nopus_custom_encode</a><wbr>(long&nbsp;st,
+ long&nbsp;pcm,
+ int&nbsp;frame_size,
+ long&nbsp;compressed,
+ int&nbsp;maxCompressedBytes)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int opus_custom_encode(OpusCustomEncoder * st, opus_int16 const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_custom_encode(long,long,int,long,int)" class="member-name-link">nopus_custom_encode</a><wbr>(long&nbsp;st,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_custom_encode_float(long,long,int,long,int)" class="member-name-link">nopus_custom_encode_float</a><wbr>(long&nbsp;st,
  long&nbsp;pcm,
  int&nbsp;frame_size,
  long&nbsp;compressed,
  int&nbsp;maxCompressedBytes)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int opus_custom_encode(OpusCustomEncoder * st, opus_int16 const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
+<div class="block"><code>int opus_custom_encode_float(OpusCustomEncoder * st, float const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_custom_encode_float(long,long,int,long,int)" class="member-name-link">nopus_custom_encode_float</a><wbr>(long&nbsp;st,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_custom_encode24(long,long,int,long,int)" class="member-name-link">nopus_custom_encode24</a><wbr>(long&nbsp;st,
  long&nbsp;pcm,
  int&nbsp;frame_size,
  long&nbsp;compressed,
  int&nbsp;maxCompressedBytes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int opus_custom_encode_float(OpusCustomEncoder * st, float const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
+<div class="block"><code>int opus_custom_encode24(OpusCustomEncoder * st, opus_int32 const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_custom_encoder_create(long,int,long)" class="member-name-link">nopus_custom_encoder_create</a><wbr>(long&nbsp;mode,
@@ -202,58 +224,70 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_custom_decode_float(OpusCustomDecoder * st, unsigned char const * data, int len, float * pcm, int frame_size)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_create(long,int,java.nio.IntBuffer)" class="member-name-link">opus_custom_decoder_create</a><wbr>(long&nbsp;mode,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decode24(long,java.nio.ByteBuffer,java.nio.IntBuffer,int)" class="member-name-link">opus_custom_decode24</a><wbr>(long&nbsp;st,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pcm,
+ int&nbsp;frame_size)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int opus_custom_decode24(OpusCustomDecoder * st, unsigned char const * data, int len, opus_int32 * pcm, int frame_size)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_create(long,int,java.nio.IntBuffer)" class="member-name-link">opus_custom_decoder_create</a><wbr>(long&nbsp;mode,
  int&nbsp;channels,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;error)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>OpusCustomDecoder * opus_custom_decoder_create(OpusCustomMode const * mode, int channels, int * error)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_ctl(long,int)" class="member-name-link">opus_custom_decoder_ctl</a><wbr>(long&nbsp;st,
- int&nbsp;request)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Performs a CTL function on an Opus custom decoder.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_ctl(long,org.lwjgl.util.opus.Opus.CTLRequest)" class="member-name-link">opus_custom_decoder_ctl</a><wbr>(long&nbsp;st,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_ctl(long,int)" class="member-name-link">opus_custom_decoder_ctl</a><wbr>(long&nbsp;st,
+ int&nbsp;request)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_ctl(long,org.lwjgl.util.opus.Opus.CTLRequest)" class="member-name-link">opus_custom_decoder_ctl</a><wbr>(long&nbsp;st,
  <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a>&nbsp;request)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_destroy(long)" class="member-name-link">opus_custom_decoder_destroy</a><wbr>(long&nbsp;st)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Performs a CTL function on an Opus custom decoder.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_destroy(long)" class="member-name-link">opus_custom_decoder_destroy</a><wbr>(long&nbsp;st)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void opus_custom_decoder_destroy(OpusCustomDecoder * st)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_get_size(long,int)" class="member-name-link">opus_custom_decoder_get_size</a><wbr>(long&nbsp;mode,
- int&nbsp;channels)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int opus_custom_decoder_get_size(OpusCustomMode const * mode, int channels)</code></div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_init(long,long,int)" class="member-name-link">opus_custom_decoder_init</a><wbr>(long&nbsp;st,
- long&nbsp;mode,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_get_size(long,int)" class="member-name-link">opus_custom_decoder_get_size</a><wbr>(long&nbsp;mode,
  int&nbsp;channels)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int opus_custom_decoder_init(OpusCustomDecoder * st, OpusCustomMode const * mode, int channels)</code></div>
+<div class="block"><code>int opus_custom_decoder_get_size(OpusCustomMode const * mode, int channels)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_encode(long,java.nio.ShortBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_custom_encode</a><wbr>(long&nbsp;st,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_decoder_init(long,long,int)" class="member-name-link">opus_custom_decoder_init</a><wbr>(long&nbsp;st,
+ long&nbsp;mode,
+ int&nbsp;channels)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int opus_custom_decoder_init(OpusCustomDecoder * st, OpusCustomMode const * mode, int channels)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_encode(long,java.nio.ShortBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_custom_encode</a><wbr>(long&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ShortBuffer.html" title="class or interface in java.nio" class="external-link">ShortBuffer</a>&nbsp;pcm,
  int&nbsp;frame_size,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;compressed)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_custom_encode(OpusCustomEncoder * st, opus_int16 const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_encode_float(long,java.nio.FloatBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_custom_encode_float</a><wbr>(long&nbsp;st,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_encode_float(long,java.nio.FloatBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_custom_encode_float</a><wbr>(long&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;pcm,
  int&nbsp;frame_size,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;compressed)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_custom_encode_float(OpusCustomEncoder * st, float const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_encode24(long,java.nio.IntBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_custom_encode24</a><wbr>(long&nbsp;st,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pcm,
+ int&nbsp;frame_size,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;compressed)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int opus_custom_encode24(OpusCustomEncoder * st, opus_int32 const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_encoder_create(long,int,java.nio.IntBuffer)" class="member-name-link">opus_custom_encoder_create</a><wbr>(long&nbsp;mode,
@@ -265,15 +299,11 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_encoder_ctl(long,int)" class="member-name-link">opus_custom_encoder_ctl</a><wbr>(long&nbsp;st,
  int&nbsp;request)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Performs a CTL function on an Opus custom encoder.</div>
-</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_encoder_ctl(long,org.lwjgl.util.opus.Opus.CTLRequest)" class="member-name-link">opus_custom_encoder_ctl</a><wbr>(long&nbsp;st,
  <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a>&nbsp;request)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Performs a CTL function on an Opus custom encoder.</div>
-</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_custom_encoder_destroy(long)" class="member-name-link">opus_custom_encoder_destroy</a><wbr>(long&nbsp;st)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -472,6 +502,34 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="nopus_custom_encode24(long,long,int,long,int)">
+<h3>nopus_custom_encode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nopus_custom_encode24</span><wbr><span class="parameters">(long&nbsp;st,
+ long&nbsp;pcm,
+ int&nbsp;frame_size,
+ long&nbsp;compressed,
+ int&nbsp;maxCompressedBytes)</span></div>
+<div class="block"><code>int opus_custom_encode24(OpusCustomEncoder * st, opus_int32 const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="opus_custom_encode24(long,java.nio.IntBuffer,int,java.nio.ByteBuffer)">
+<h3>opus_custom_encode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_custom_encode24</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusCustomEncoder *")
+ long&nbsp;st,
+ <a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("opus_int32 const *")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pcm,
+ int&nbsp;frame_size,
+ <a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("unsigned char *")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;compressed)</span></div>
+<div class="block"><code>int opus_custom_encode24(OpusCustomEncoder * st, opus_int32 const * pcm, int frame_size, unsigned char * compressed, int maxCompressedBytes)</code></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="opus_custom_decoder_get_size(long,int)">
 <h3>opus_custom_decoder_get_size</h3>
 <div class="horizontal-scroll">
@@ -587,18 +645,40 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="nopus_custom_decode24(long,long,int,long,int)">
+<h3>nopus_custom_decode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nopus_custom_decode24</span><wbr><span class="parameters">(long&nbsp;st,
+ long&nbsp;data,
+ int&nbsp;len,
+ long&nbsp;pcm,
+ int&nbsp;frame_size)</span></div>
+<div class="block"><code>int opus_custom_decode24(OpusCustomDecoder * st, unsigned char const * data, int len, opus_int32 * pcm, int frame_size)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="opus_custom_decode24(long,java.nio.ByteBuffer,java.nio.IntBuffer,int)">
+<h3>opus_custom_decode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_custom_decode24</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusCustomDecoder *")
+ long&nbsp;st,
+ <a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("unsigned char const *")
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data,
+ <a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("opus_int32 *")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pcm,
+ int&nbsp;frame_size)</span></div>
+<div class="block"><code>int opus_custom_decode24(OpusCustomDecoder * st, unsigned char const * data, int len, opus_int32 * pcm, int frame_size)</code></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="opus_custom_encoder_ctl(long,int)">
 <h3>opus_custom_encoder_ctl</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_custom_encoder_ctl</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusCustomEncoder *")
  long&nbsp;st,
  int&nbsp;request)</span></div>
-<div class="block">Performs a CTL function on an Opus custom encoder.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>st</code> - encoder state</dd>
-<dd><code>request</code> - CTL request</dd>
-</dl>
 </div>
 </section>
 </li>
@@ -609,12 +689,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_custom_encoder_ctl</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusCustomEncoder *")
  long&nbsp;st,
  <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a>&nbsp;request)</span></div>
-<div class="block">Performs a CTL function on an Opus custom encoder.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>st</code> - encoder state</dd>
-<dd><code>request</code> - CTL request</dd>
-</dl>
 </div>
 </section>
 </li>
@@ -625,12 +699,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_custom_decoder_ctl</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusCustomDecoder *")
  long&nbsp;st,
  int&nbsp;request)</span></div>
-<div class="block">Performs a CTL function on an Opus custom decoder.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>st</code> - decoder state</dd>
-<dd><code>request</code> - CTL request</dd>
-</dl>
 </div>
 </section>
 </li>
@@ -641,12 +709,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_custom_decoder_ctl</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusCustomDecoder *")
  long&nbsp;st,
  <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a>&nbsp;request)</span></div>
-<div class="block">Performs a CTL function on an Opus custom decoder.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>st</code> - decoder state</dd>
-<dd><code>request</code> - CTL request</dd>
-</dl>
 </div>
 </section>
 </li>

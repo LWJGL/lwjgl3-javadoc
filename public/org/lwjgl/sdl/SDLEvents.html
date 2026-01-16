@@ -73,6 +73,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_EVENT_DISPLAY_DESKTOP_MODE_CHANGED" tabindex="0">SDL_EVENT_DISPLAY_DESKTOP_MODE_CHANGED</a></li>
 <li><a href="#SDL_EVENT_DISPLAY_CURRENT_MODE_CHANGED" tabindex="0">SDL_EVENT_DISPLAY_CURRENT_MODE_CHANGED</a></li>
 <li><a href="#SDL_EVENT_DISPLAY_CONTENT_SCALE_CHANGED" tabindex="0">SDL_EVENT_DISPLAY_CONTENT_SCALE_CHANGED</a></li>
+<li><a href="#SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED" tabindex="0">SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED</a></li>
 <li><a href="#SDL_EVENT_DISPLAY_FIRST" tabindex="0">SDL_EVENT_DISPLAY_FIRST</a></li>
 <li><a href="#SDL_EVENT_DISPLAY_LAST" tabindex="0">SDL_EVENT_DISPLAY_LAST</a></li>
 <li><a href="#SDL_EVENT_WINDOW_SHOWN" tabindex="0">SDL_EVENT_WINDOW_SHOWN</a></li>
@@ -110,6 +111,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_EVENT_KEYBOARD_ADDED" tabindex="0">SDL_EVENT_KEYBOARD_ADDED</a></li>
 <li><a href="#SDL_EVENT_KEYBOARD_REMOVED" tabindex="0">SDL_EVENT_KEYBOARD_REMOVED</a></li>
 <li><a href="#SDL_EVENT_TEXT_EDITING_CANDIDATES" tabindex="0">SDL_EVENT_TEXT_EDITING_CANDIDATES</a></li>
+<li><a href="#SDL_EVENT_SCREEN_KEYBOARD_SHOWN" tabindex="0">SDL_EVENT_SCREEN_KEYBOARD_SHOWN</a></li>
+<li><a href="#SDL_EVENT_SCREEN_KEYBOARD_HIDDEN" tabindex="0">SDL_EVENT_SCREEN_KEYBOARD_HIDDEN</a></li>
 <li><a href="#SDL_EVENT_MOUSE_MOTION" tabindex="0">SDL_EVENT_MOUSE_MOTION</a></li>
 <li><a href="#SDL_EVENT_MOUSE_BUTTON_DOWN" tabindex="0">SDL_EVENT_MOUSE_BUTTON_DOWN</a></li>
 <li><a href="#SDL_EVENT_MOUSE_BUTTON_UP" tabindex="0">SDL_EVENT_MOUSE_BUTTON_UP</a></li>
@@ -141,6 +144,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_EVENT_FINGER_UP" tabindex="0">SDL_EVENT_FINGER_UP</a></li>
 <li><a href="#SDL_EVENT_FINGER_MOTION" tabindex="0">SDL_EVENT_FINGER_MOTION</a></li>
 <li><a href="#SDL_EVENT_FINGER_CANCELED" tabindex="0">SDL_EVENT_FINGER_CANCELED</a></li>
+<li><a href="#SDL_EVENT_PINCH_BEGIN" tabindex="0">SDL_EVENT_PINCH_BEGIN</a></li>
+<li><a href="#SDL_EVENT_PINCH_UPDATE" tabindex="0">SDL_EVENT_PINCH_UPDATE</a></li>
+<li><a href="#SDL_EVENT_PINCH_END" tabindex="0">SDL_EVENT_PINCH_END</a></li>
 <li><a href="#SDL_EVENT_CLIPBOARD_UPDATE" tabindex="0">SDL_EVENT_CLIPBOARD_UPDATE</a></li>
 <li><a href="#SDL_EVENT_DROP_FILE" tabindex="0">SDL_EVENT_DROP_FILE</a></li>
 <li><a href="#SDL_EVENT_DROP_TEXT" tabindex="0">SDL_EVENT_DROP_TEXT</a></li>
@@ -211,6 +217,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_RegisterEvents(int)" tabindex="0">SDL_RegisterEvents(int)</a></li>
 <li><a href="#nSDL_GetWindowFromEvent(long)" tabindex="0">nSDL_GetWindowFromEvent(long)</a></li>
 <li><a href="#SDL_GetWindowFromEvent(org.lwjgl.sdl.SDL_Event)" tabindex="0">SDL_GetWindowFromEvent(SDL_Event)</a></li>
+<li><a href="#nSDL_GetEventDescription(long,long,int)" tabindex="0">nSDL_GetEventDescription(long, long, int)</a></li>
+<li><a href="#SDL_GetEventDescription(org.lwjgl.sdl.SDL_Event,java.nio.ByteBuffer)" tabindex="0">SDL_GetEventDescription(SDL_Event, ByteBuffer)</a></li>
+<li><a href="#SDL_GetEventDescription(org.lwjgl.sdl.SDL_Event,int)" tabindex="0">SDL_GetEventDescription(SDL_Event, int)</a></li>
+<li><a href="#SDL_GetEventDescription(org.lwjgl.sdl.SDL_Event)" tabindex="0">SDL_GetEventDescription(SDL_Event)</a></li>
 </ol>
 </li>
 </ol>
@@ -319,166 +329,178 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#SDL_EVENT_DISPLAY_REMOVED" class="member-name-link">SDL_EVENT_DISPLAY_REMOVED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_DROP_BEGIN" class="member-name-link">SDL_EVENT_DROP_BEGIN</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED" class="member-name-link">SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_DROP_COMPLETE" class="member-name-link">SDL_EVENT_DROP_COMPLETE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_DROP_BEGIN" class="member-name-link">SDL_EVENT_DROP_BEGIN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_DROP_FILE" class="member-name-link">SDL_EVENT_DROP_FILE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_DROP_COMPLETE" class="member-name-link">SDL_EVENT_DROP_COMPLETE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_DROP_POSITION" class="member-name-link">SDL_EVENT_DROP_POSITION</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_DROP_FILE" class="member-name-link">SDL_EVENT_DROP_FILE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_DROP_TEXT" class="member-name-link">SDL_EVENT_DROP_TEXT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_DROP_POSITION" class="member-name-link">SDL_EVENT_DROP_POSITION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_ENUM_PADDING" class="member-name-link">SDL_EVENT_ENUM_PADDING</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_DROP_TEXT" class="member-name-link">SDL_EVENT_DROP_TEXT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_FINGER_CANCELED" class="member-name-link">SDL_EVENT_FINGER_CANCELED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_ENUM_PADDING" class="member-name-link">SDL_EVENT_ENUM_PADDING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_FINGER_DOWN" class="member-name-link">SDL_EVENT_FINGER_DOWN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_FINGER_CANCELED" class="member-name-link">SDL_EVENT_FINGER_CANCELED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_FINGER_MOTION" class="member-name-link">SDL_EVENT_FINGER_MOTION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_FINGER_DOWN" class="member-name-link">SDL_EVENT_FINGER_DOWN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_FINGER_UP" class="member-name-link">SDL_EVENT_FINGER_UP</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_FINGER_MOTION" class="member-name-link">SDL_EVENT_FINGER_MOTION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_FIRST" class="member-name-link">SDL_EVENT_FIRST</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_FINGER_UP" class="member-name-link">SDL_EVENT_FINGER_UP</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_ADDED" class="member-name-link">SDL_EVENT_GAMEPAD_ADDED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_FIRST" class="member-name-link">SDL_EVENT_FIRST</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_AXIS_MOTION" class="member-name-link">SDL_EVENT_GAMEPAD_AXIS_MOTION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_ADDED" class="member-name-link">SDL_EVENT_GAMEPAD_ADDED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_BUTTON_DOWN" class="member-name-link">SDL_EVENT_GAMEPAD_BUTTON_DOWN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_AXIS_MOTION" class="member-name-link">SDL_EVENT_GAMEPAD_AXIS_MOTION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_BUTTON_UP" class="member-name-link">SDL_EVENT_GAMEPAD_BUTTON_UP</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_BUTTON_DOWN" class="member-name-link">SDL_EVENT_GAMEPAD_BUTTON_DOWN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_REMAPPED" class="member-name-link">SDL_EVENT_GAMEPAD_REMAPPED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_BUTTON_UP" class="member-name-link">SDL_EVENT_GAMEPAD_BUTTON_UP</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_REMOVED" class="member-name-link">SDL_EVENT_GAMEPAD_REMOVED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_REMAPPED" class="member-name-link">SDL_EVENT_GAMEPAD_REMAPPED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_SENSOR_UPDATE" class="member-name-link">SDL_EVENT_GAMEPAD_SENSOR_UPDATE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_REMOVED" class="member-name-link">SDL_EVENT_GAMEPAD_REMOVED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_STEAM_HANDLE_UPDATED" class="member-name-link">SDL_EVENT_GAMEPAD_STEAM_HANDLE_UPDATED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_SENSOR_UPDATE" class="member-name-link">SDL_EVENT_GAMEPAD_SENSOR_UPDATE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_TOUCHPAD_DOWN" class="member-name-link">SDL_EVENT_GAMEPAD_TOUCHPAD_DOWN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_STEAM_HANDLE_UPDATED" class="member-name-link">SDL_EVENT_GAMEPAD_STEAM_HANDLE_UPDATED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_TOUCHPAD_MOTION" class="member-name-link">SDL_EVENT_GAMEPAD_TOUCHPAD_MOTION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_TOUCHPAD_DOWN" class="member-name-link">SDL_EVENT_GAMEPAD_TOUCHPAD_DOWN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_TOUCHPAD_UP" class="member-name-link">SDL_EVENT_GAMEPAD_TOUCHPAD_UP</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_TOUCHPAD_MOTION" class="member-name-link">SDL_EVENT_GAMEPAD_TOUCHPAD_MOTION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_UPDATE_COMPLETE" class="member-name-link">SDL_EVENT_GAMEPAD_UPDATE_COMPLETE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_GAMEPAD_TOUCHPAD_UP" class="member-name-link">SDL_EVENT_GAMEPAD_TOUCHPAD_UP</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_JOYSTICK_ADDED" class="member-name-link">SDL_EVENT_JOYSTICK_ADDED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_GAMEPAD_UPDATE_COMPLETE" class="member-name-link">SDL_EVENT_GAMEPAD_UPDATE_COMPLETE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_JOYSTICK_AXIS_MOTION" class="member-name-link">SDL_EVENT_JOYSTICK_AXIS_MOTION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_JOYSTICK_ADDED" class="member-name-link">SDL_EVENT_JOYSTICK_ADDED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_JOYSTICK_BALL_MOTION" class="member-name-link">SDL_EVENT_JOYSTICK_BALL_MOTION</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_JOYSTICK_AXIS_MOTION" class="member-name-link">SDL_EVENT_JOYSTICK_AXIS_MOTION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_JOYSTICK_BATTERY_UPDATED" class="member-name-link">SDL_EVENT_JOYSTICK_BATTERY_UPDATED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_JOYSTICK_BALL_MOTION" class="member-name-link">SDL_EVENT_JOYSTICK_BALL_MOTION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_JOYSTICK_BUTTON_DOWN" class="member-name-link">SDL_EVENT_JOYSTICK_BUTTON_DOWN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_JOYSTICK_BATTERY_UPDATED" class="member-name-link">SDL_EVENT_JOYSTICK_BATTERY_UPDATED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_JOYSTICK_BUTTON_UP" class="member-name-link">SDL_EVENT_JOYSTICK_BUTTON_UP</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_JOYSTICK_BUTTON_DOWN" class="member-name-link">SDL_EVENT_JOYSTICK_BUTTON_DOWN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_JOYSTICK_HAT_MOTION" class="member-name-link">SDL_EVENT_JOYSTICK_HAT_MOTION</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_JOYSTICK_BUTTON_UP" class="member-name-link">SDL_EVENT_JOYSTICK_BUTTON_UP</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_JOYSTICK_REMOVED" class="member-name-link">SDL_EVENT_JOYSTICK_REMOVED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_JOYSTICK_HAT_MOTION" class="member-name-link">SDL_EVENT_JOYSTICK_HAT_MOTION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_JOYSTICK_UPDATE_COMPLETE" class="member-name-link">SDL_EVENT_JOYSTICK_UPDATE_COMPLETE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_JOYSTICK_REMOVED" class="member-name-link">SDL_EVENT_JOYSTICK_REMOVED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_KEY_DOWN" class="member-name-link">SDL_EVENT_KEY_DOWN</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_JOYSTICK_UPDATE_COMPLETE" class="member-name-link">SDL_EVENT_JOYSTICK_UPDATE_COMPLETE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_KEY_UP" class="member-name-link">SDL_EVENT_KEY_UP</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_KEY_DOWN" class="member-name-link">SDL_EVENT_KEY_DOWN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_KEYBOARD_ADDED" class="member-name-link">SDL_EVENT_KEYBOARD_ADDED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_KEY_UP" class="member-name-link">SDL_EVENT_KEY_UP</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_KEYBOARD_REMOVED" class="member-name-link">SDL_EVENT_KEYBOARD_REMOVED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_KEYBOARD_ADDED" class="member-name-link">SDL_EVENT_KEYBOARD_ADDED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_KEYMAP_CHANGED" class="member-name-link">SDL_EVENT_KEYMAP_CHANGED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_KEYBOARD_REMOVED" class="member-name-link">SDL_EVENT_KEYBOARD_REMOVED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_LAST" class="member-name-link">SDL_EVENT_LAST</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_KEYMAP_CHANGED" class="member-name-link">SDL_EVENT_KEYMAP_CHANGED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_LOCALE_CHANGED" class="member-name-link">SDL_EVENT_LOCALE_CHANGED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_LAST" class="member-name-link">SDL_EVENT_LAST</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_LOW_MEMORY" class="member-name-link">SDL_EVENT_LOW_MEMORY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_LOCALE_CHANGED" class="member-name-link">SDL_EVENT_LOCALE_CHANGED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_MOUSE_ADDED" class="member-name-link">SDL_EVENT_MOUSE_ADDED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_LOW_MEMORY" class="member-name-link">SDL_EVENT_LOW_MEMORY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_MOUSE_BUTTON_DOWN" class="member-name-link">SDL_EVENT_MOUSE_BUTTON_DOWN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_MOUSE_ADDED" class="member-name-link">SDL_EVENT_MOUSE_ADDED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_MOUSE_BUTTON_UP" class="member-name-link">SDL_EVENT_MOUSE_BUTTON_UP</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_MOUSE_BUTTON_DOWN" class="member-name-link">SDL_EVENT_MOUSE_BUTTON_DOWN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_MOUSE_MOTION" class="member-name-link">SDL_EVENT_MOUSE_MOTION</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_MOUSE_BUTTON_UP" class="member-name-link">SDL_EVENT_MOUSE_BUTTON_UP</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_MOUSE_REMOVED" class="member-name-link">SDL_EVENT_MOUSE_REMOVED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_MOUSE_MOTION" class="member-name-link">SDL_EVENT_MOUSE_MOTION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_MOUSE_WHEEL" class="member-name-link">SDL_EVENT_MOUSE_WHEEL</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_MOUSE_REMOVED" class="member-name-link">SDL_EVENT_MOUSE_REMOVED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_PEN_AXIS" class="member-name-link">SDL_EVENT_PEN_AXIS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_MOUSE_WHEEL" class="member-name-link">SDL_EVENT_MOUSE_WHEEL</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PEN_BUTTON_DOWN" class="member-name-link">SDL_EVENT_PEN_BUTTON_DOWN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PEN_AXIS" class="member-name-link">SDL_EVENT_PEN_AXIS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_PEN_BUTTON_UP" class="member-name-link">SDL_EVENT_PEN_BUTTON_UP</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_PEN_BUTTON_DOWN" class="member-name-link">SDL_EVENT_PEN_BUTTON_DOWN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PEN_DOWN" class="member-name-link">SDL_EVENT_PEN_DOWN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PEN_BUTTON_UP" class="member-name-link">SDL_EVENT_PEN_BUTTON_UP</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_PEN_MOTION" class="member-name-link">SDL_EVENT_PEN_MOTION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_PEN_DOWN" class="member-name-link">SDL_EVENT_PEN_DOWN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PEN_PROXIMITY_IN" class="member-name-link">SDL_EVENT_PEN_PROXIMITY_IN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PEN_MOTION" class="member-name-link">SDL_EVENT_PEN_MOTION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_EVENT_PEN_PROXIMITY_OUT" class="member-name-link">SDL_EVENT_PEN_PROXIMITY_OUT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_PEN_PROXIMITY_IN" class="member-name-link">SDL_EVENT_PEN_PROXIMITY_IN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PEN_UP" class="member-name-link">SDL_EVENT_PEN_UP</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PEN_PROXIMITY_OUT" class="member-name-link">SDL_EVENT_PEN_PROXIMITY_OUT</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_PEN_UP" class="member-name-link">SDL_EVENT_PEN_UP</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PINCH_BEGIN" class="member-name-link">SDL_EVENT_PINCH_BEGIN</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_PINCH_END" class="member-name-link">SDL_EVENT_PINCH_END</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_PINCH_UPDATE" class="member-name-link">SDL_EVENT_PINCH_UPDATE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_EVENT_POLL_SENTINEL" class="member-name-link">SDL_EVENT_POLL_SENTINEL</a></code></div>
@@ -506,6 +528,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_EVENT_RENDER_TARGETS_RESET" class="member-name-link">SDL_EVENT_RENDER_TARGETS_RESET</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_EVENT_SCREEN_KEYBOARD_HIDDEN" class="member-name-link">SDL_EVENT_SCREEN_KEYBOARD_HIDDEN</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_EVENT_SCREEN_KEYBOARD_SHOWN" class="member-name-link">SDL_EVENT_SCREEN_KEYBOARD_SHOWN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_EVENT_SENSOR_UPDATE" class="member-name-link">SDL_EVENT_SENSOR_UPDATE</a></code></div>
@@ -647,86 +675,110 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void SDL_FilterEvents(SDL_EventFilter filter, void * userdata)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetEventFilter(long,long)" class="member-name-link">nSDL_GetEventFilter</a><wbr>(long&nbsp;filter,
- long&nbsp;userdata)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetEventDescription(long,long,int)" class="member-name-link">nSDL_GetEventDescription</a><wbr>(long&nbsp;event,
+ long&nbsp;buf,
+ int&nbsp;buflen)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int SDL_GetEventDescription(SDL_Event const * event, char * buf, int buflen)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetEventFilter(long,long)" class="member-name-link">nSDL_GetEventFilter</a><wbr>(long&nbsp;filter,
+ long&nbsp;userdata)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetEventFilter(SDL_EventFilter * filter, void ** userdata)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetWindowFromEvent(long)" class="member-name-link">nSDL_GetWindowFromEvent</a><wbr>(long&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetWindowFromEvent(long)" class="member-name-link">nSDL_GetWindowFromEvent</a><wbr>(long&nbsp;event)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Window * SDL_GetWindowFromEvent(SDL_Event const * event)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_PeepEvents(long,int,int,int,int)" class="member-name-link">nSDL_PeepEvents</a><wbr>(long&nbsp;events,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_PeepEvents(long,int,int,int,int)" class="member-name-link">nSDL_PeepEvents</a><wbr>(long&nbsp;events,
  int&nbsp;numevents,
  int&nbsp;action,
  int&nbsp;minType,
  int&nbsp;maxType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int SDL_PeepEvents(SDL_Event * events, int numevents, SDL_EventAction action, Uint32 minType, Uint32 maxType)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_PollEvent(long)" class="member-name-link">nSDL_PollEvent</a><wbr>(long&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_PollEvent(long)" class="member-name-link">nSDL_PollEvent</a><wbr>(long&nbsp;event)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_PollEvent(SDL_Event * event)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_PushEvent(long)" class="member-name-link">nSDL_PushEvent</a><wbr>(long&nbsp;event)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_PushEvent(long)" class="member-name-link">nSDL_PushEvent</a><wbr>(long&nbsp;event)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_PushEvent(SDL_Event * event)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_RemoveEventWatch(long,long)" class="member-name-link">nSDL_RemoveEventWatch</a><wbr>(long&nbsp;filter,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_RemoveEventWatch(long,long)" class="member-name-link">nSDL_RemoveEventWatch</a><wbr>(long&nbsp;filter,
  long&nbsp;userdata)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void SDL_RemoveEventWatch(SDL_EventFilter filter, void * userdata)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_SetEventFilter(long,long)" class="member-name-link">nSDL_SetEventFilter</a><wbr>(long&nbsp;filter,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_SetEventFilter(long,long)" class="member-name-link">nSDL_SetEventFilter</a><wbr>(long&nbsp;filter,
  long&nbsp;userdata)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void SDL_SetEventFilter(SDL_EventFilter filter, void * userdata)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_WaitEvent(long)" class="member-name-link">nSDL_WaitEvent</a><wbr>(long&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_WaitEvent(long)" class="member-name-link">nSDL_WaitEvent</a><wbr>(long&nbsp;event)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_WaitEvent(SDL_Event * event)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_WaitEventTimeout(long,int)" class="member-name-link">nSDL_WaitEventTimeout</a><wbr>(long&nbsp;event,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_WaitEventTimeout(long,int)" class="member-name-link">nSDL_WaitEventTimeout</a><wbr>(long&nbsp;event,
  int&nbsp;timeoutMS)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_WaitEventTimeout(SDL_Event * event, Sint32 timeoutMS)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_AddEventWatch(org.lwjgl.sdl.SDL_EventFilterI,long)" class="member-name-link">SDL_AddEventWatch</a><wbr>(<a href="SDL_EventFilterI.html" title="interface in org.lwjgl.sdl">SDL_EventFilterI</a>&nbsp;filter,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_AddEventWatch(org.lwjgl.sdl.SDL_EventFilterI,long)" class="member-name-link">SDL_AddEventWatch</a><wbr>(<a href="SDL_EventFilterI.html" title="interface in org.lwjgl.sdl">SDL_EventFilterI</a>&nbsp;filter,
  long&nbsp;userdata)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_AddEventWatch(SDL_EventFilter filter, void * userdata)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_EventEnabled(int)" class="member-name-link">SDL_EventEnabled</a><wbr>(int&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_EventEnabled(int)" class="member-name-link">SDL_EventEnabled</a><wbr>(int&nbsp;type)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_EventEnabled(Uint32 type)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_FilterEvents(org.lwjgl.sdl.SDL_EventFilterI,long)" class="member-name-link">SDL_FilterEvents</a><wbr>(<a href="SDL_EventFilterI.html" title="interface in org.lwjgl.sdl">SDL_EventFilterI</a>&nbsp;filter,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_FilterEvents(org.lwjgl.sdl.SDL_EventFilterI,long)" class="member-name-link">SDL_FilterEvents</a><wbr>(<a href="SDL_EventFilterI.html" title="interface in org.lwjgl.sdl">SDL_EventFilterI</a>&nbsp;filter,
  long&nbsp;userdata)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void SDL_FilterEvents(SDL_EventFilter filter, void * userdata)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_FlushEvent(int)" class="member-name-link">SDL_FlushEvent</a><wbr>(int&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_FlushEvent(int)" class="member-name-link">SDL_FlushEvent</a><wbr>(int&nbsp;type)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void SDL_FlushEvent(Uint32 type)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_FlushEvents(int,int)" class="member-name-link">SDL_FlushEvents</a><wbr>(int&nbsp;minType,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_FlushEvents(int,int)" class="member-name-link">SDL_FlushEvents</a><wbr>(int&nbsp;minType,
  int&nbsp;maxType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void SDL_FlushEvents(Uint32 minType, Uint32 maxType)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetEventDescription(org.lwjgl.sdl.SDL_Event)" class="member-name-link">SDL_GetEventDescription</a><wbr>(@Nullable <a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;event)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int SDL_GetEventDescription(SDL_Event const * event, char * buf, int buflen)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetEventDescription(org.lwjgl.sdl.SDL_Event,int)" class="member-name-link">SDL_GetEventDescription</a><wbr>(@Nullable <a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;event,
+ int&nbsp;buflen)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int SDL_GetEventDescription(SDL_Event const * event, char * buf, int buflen)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetEventDescription(org.lwjgl.sdl.SDL_Event,java.nio.ByteBuffer)" class="member-name-link">SDL_GetEventDescription</a><wbr>(@Nullable <a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;event,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;buf)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int SDL_GetEventDescription(SDL_Event const * event, char * buf, int buflen)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetEventFilter(org.lwjgl.PointerBuffer,org.lwjgl.PointerBuffer)" class="member-name-link">SDL_GetEventFilter</a><wbr>(@Nullable <a href="../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;filter,
@@ -1090,6 +1142,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLEvents.SDL_EVENT_DISPLAY_CONTENT_SCALE_CHANGED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED">
+<h3>SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLEvents.SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -1689,6 +1757,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_EVENT_SCREEN_KEYBOARD_SHOWN">
+<h3>SDL_EVENT_SCREEN_KEYBOARD_SHOWN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_EVENT_SCREEN_KEYBOARD_SHOWN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLEvents.SDL_EVENT_SCREEN_KEYBOARD_SHOWN">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_EVENT_SCREEN_KEYBOARD_HIDDEN">
+<h3>SDL_EVENT_SCREEN_KEYBOARD_HIDDEN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_EVENT_SCREEN_KEYBOARD_HIDDEN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLEvents.SDL_EVENT_SCREEN_KEYBOARD_HIDDEN">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_EVENT_MOUSE_MOTION">
 <h3>SDL_EVENT_MOUSE_MOTION</h3>
 <div class="horizontal-scroll">
@@ -2178,6 +2278,54 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLEvents.SDL_EVENT_FINGER_CANCELED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_EVENT_PINCH_BEGIN">
+<h3>SDL_EVENT_PINCH_BEGIN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_EVENT_PINCH_BEGIN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLEvents.SDL_EVENT_PINCH_BEGIN">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_EVENT_PINCH_UPDATE">
+<h3>SDL_EVENT_PINCH_UPDATE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_EVENT_PINCH_UPDATE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLEvents.SDL_EVENT_PINCH_UPDATE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_EVENT_PINCH_END">
+<h3>SDL_EVENT_PINCH_END</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_EVENT_PINCH_END</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLEvents.SDL_EVENT_PINCH_END">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -3097,6 +3245,52 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SDL_GetWindowFromEvent</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Event const *")
  <a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;event)</span></div>
 <div class="block"><code>SDL_Window * SDL_GetWindowFromEvent(SDL_Event const * event)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_GetEventDescription(long,long,int)">
+<h3>nSDL_GetEventDescription</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nSDL_GetEventDescription</span><wbr><span class="parameters">(long&nbsp;event,
+ long&nbsp;buf,
+ int&nbsp;buflen)</span></div>
+<div class="block"><code>int SDL_GetEventDescription(SDL_Event const * event, char * buf, int buflen)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_GetEventDescription(org.lwjgl.sdl.SDL_Event,java.nio.ByteBuffer)">
+<h3>SDL_GetEventDescription</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_GetEventDescription</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Event const *")
+ @Nullable <a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;event,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("char *")
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;buf)</span></div>
+<div class="block"><code>int SDL_GetEventDescription(SDL_Event const * event, char * buf, int buflen)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_GetEventDescription(org.lwjgl.sdl.SDL_Event,int)">
+<h3>SDL_GetEventDescription</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("int")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_GetEventDescription</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Event const *")
+ @Nullable <a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;event,
+ int&nbsp;buflen)</span></div>
+<div class="block"><code>int SDL_GetEventDescription(SDL_Event const * event, char * buf, int buflen)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_GetEventDescription(org.lwjgl.sdl.SDL_Event)">
+<h3>SDL_GetEventDescription</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("int")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_GetEventDescription</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Event const *")
+ @Nullable <a href="SDL_Event.html" title="class in org.lwjgl.sdl">SDL_Event</a>&nbsp;event)</span></div>
+<div class="block"><code>int SDL_GetEventDescription(SDL_Event const * event, char * buf, int buflen)</code></div>
 </div>
 </section>
 </li>

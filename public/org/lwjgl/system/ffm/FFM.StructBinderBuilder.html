@@ -55,7 +55,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#m(java.lang.String,java.lang.foreign.MemoryLayout)" tabindex="0">m(String, MemoryLayout)</a></li>
+<li><a href="#m(java.lang.String,org.lwjgl.system.ffm.mapping.DataMapping)" tabindex="0">m(String, DataMapping)</a></li>
 <li><a href="#build()" tabindex="0">build()</a></li>
 </ol>
 </li>
@@ -103,8 +103,8 @@ loadScripts(document, 'script');</script>
 of that class.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FFM.StructBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.StructBinderBuilder</a><wbr>&lt;<a href="#type-param-T" title="type parameter in FFM.StructBinderBuilder">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#m(java.lang.String,java.lang.foreign.MemoryLayout)" class="member-name-link">m</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link">MemoryLayout</a>&nbsp;layout)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#m(java.lang.String,org.lwjgl.system.ffm.mapping.DataMapping)" class="member-name-link">m</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="mapping/DataMapping.html" title="interface in org.lwjgl.system.ffm.mapping">DataMapping</a>&lt;?&gt;&nbsp;mapping)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds a new member to this group.</div>
 </div>
@@ -113,7 +113,7 @@ of that class.</div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.lwjgl.system.ffm.FFM.GroupBinderBuilder">Methods inherited from class&nbsp;<a href="FFM.GroupBinderBuilder.html#method-summary" title="class in org.lwjgl.system.ffm">FFM.GroupBinderBuilder</a></h3>
-<code><a href="FFM.GroupBinderBuilder.html#alignas(long)" title="alignas(long)">alignas</a>, <a href="FFM.GroupBinderBuilder.html#automaticPadding(boolean)" title="automaticPadding(boolean)">automaticPadding</a>, <a href="FFM.GroupBinderBuilder.html#checkPadding(boolean)" title="checkPadding(boolean)">checkPadding</a>, <a href="FFM.GroupBinderBuilder.html#m(java.lang.String,org.lwjgl.system.ffm.GroupBinder)" title="m(String, GroupBinder)">m</a>, <a href="FFM.GroupBinderBuilder.html#pack(long)" title="pack(long)">pack</a>, <a href="FFM.GroupBinderBuilder.html#padding(long)" title="padding(long)">padding</a>, <a href="FFM.GroupBinderBuilder.html#withEquals(java.util.function.BiPredicate)" title="withEquals(BiPredicate)">withEquals</a>, <a href="FFM.GroupBinderBuilder.html#withHashCode(java.util.function.ToIntFunction)" title="withHashCode(ToIntFunction)">withHashCode</a>, <a href="FFM.GroupBinderBuilder.html#withToString(java.util.function.Function)" title="withToString(Function)">withToString</a></code></div>
+<code><a href="FFM.GroupBinderBuilder.html#alignas(long)" title="alignas(long)">alignas</a>, <a href="FFM.GroupBinderBuilder.html#automaticPadding(boolean)" title="automaticPadding(boolean)">automaticPadding</a>, <a href="FFM.GroupBinderBuilder.html#checkPadding(boolean)" title="checkPadding(boolean)">checkPadding</a>, <a href="FFM.GroupBinderBuilder.html#pack(long)" title="pack(long)">pack</a>, <a href="FFM.GroupBinderBuilder.html#padding(long)" title="padding(long)">padding</a>, <a href="FFM.GroupBinderBuilder.html#withEquals(java.util.function.BiPredicate)" title="withEquals(BiPredicate)">withEquals</a>, <a href="FFM.GroupBinderBuilder.html#withHashCode(java.util.function.ToIntFunction)" title="withHashCode(ToIntFunction)">withHashCode</a>, <a href="FFM.GroupBinderBuilder.html#withToString(java.util.function.Function)" title="withToString(Function)">withToString</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -129,19 +129,19 @@ of that class.</div>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="m(java.lang.String,java.lang.foreign.MemoryLayout)">
+<section class="detail" id="m(java.lang.String,org.lwjgl.system.ffm.mapping.DataMapping)">
 <h3>m</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FFM.StructBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.StructBinderBuilder</a>&lt;<a href="#type-param-T" title="type parameter in FFM.StructBinderBuilder">T</a>&gt;</span>&nbsp;<span class="element-name">m</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link">MemoryLayout</a>&nbsp;layout)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="FFM.GroupBinderBuilder.html#m(java.lang.String,java.lang.foreign.MemoryLayout)">FFM.GroupBinderBuilder</a></code></span></div>
+ <a href="mapping/DataMapping.html" title="interface in org.lwjgl.system.ffm.mapping">DataMapping</a>&lt;?&gt;&nbsp;mapping)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="FFM.GroupBinderBuilder.html#m(java.lang.String,org.lwjgl.system.ffm.mapping.DataMapping)">FFM.GroupBinderBuilder</a></code></span></div>
 <div class="block">Adds a new member to this group.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="FFM.GroupBinderBuilder.html#m(java.lang.String,java.lang.foreign.MemoryLayout)">m</a></code>&nbsp;in class&nbsp;<code><a href="FFM.GroupBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.GroupBinderBuilder</a>&lt;<a href="#type-param-T" title="type parameter in FFM.StructBinderBuilder">T</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/StructLayout.html" title="class or interface in java.lang.foreign" class="external-link">StructLayout</a>, <a href="StructBinder.html" title="interface in org.lwjgl.system.ffm">StructBinder</a>&lt;<a href="#type-param-T" title="type parameter in FFM.StructBinderBuilder">T</a>&gt;, <a href="FFM.StructBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.StructBinderBuilder</a>&lt;<a href="#type-param-T" title="type parameter in FFM.StructBinderBuilder">T</a>&gt;&gt;</code></dd>
+<dt>Specified by:</dt>
+<dd><code><a href="FFM.GroupBinderBuilder.html#m(java.lang.String,org.lwjgl.system.ffm.mapping.DataMapping)">m</a></code>&nbsp;in class&nbsp;<code><a href="FFM.GroupBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.GroupBinderBuilder</a>&lt;<a href="#type-param-T" title="type parameter in FFM.StructBinderBuilder">T</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/StructLayout.html" title="class or interface in java.lang.foreign" class="external-link">StructLayout</a>, <a href="StructBinder.html" title="interface in org.lwjgl.system.ffm">StructBinder</a>&lt;<a href="#type-param-T" title="type parameter in FFM.StructBinderBuilder">T</a>&gt;, <a href="FFM.StructBinderBuilder.html" title="class in org.lwjgl.system.ffm">FFM.StructBinderBuilder</a>&lt;<a href="#type-param-T" title="type parameter in FFM.StructBinderBuilder">T</a>&gt;&gt;</code></dd>
 <dt>Parameters:</dt>
 <dd><code>name</code> - the member name</dd>
-<dd><code>layout</code> - the member's memory layout</dd>
+<dd><code>mapping</code> - the member's data mapping</dd>
 <dt>Returns:</dt>
 <dd>this builder instance</dd>
 </dl>

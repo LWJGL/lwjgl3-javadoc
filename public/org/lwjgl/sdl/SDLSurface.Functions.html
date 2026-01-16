@@ -71,10 +71,16 @@ loadScripts(document, 'script');</script>
 <li><a href="#RemoveSurfaceAlternateImages" tabindex="0">RemoveSurfaceAlternateImages</a></li>
 <li><a href="#LockSurface" tabindex="0">LockSurface</a></li>
 <li><a href="#UnlockSurface" tabindex="0">UnlockSurface</a></li>
+<li><a href="#LoadSurface_IO" tabindex="0">LoadSurface_IO</a></li>
+<li><a href="#LoadSurface" tabindex="0">LoadSurface</a></li>
 <li><a href="#LoadBMP_IO" tabindex="0">LoadBMP_IO</a></li>
 <li><a href="#LoadBMP" tabindex="0">LoadBMP</a></li>
 <li><a href="#SaveBMP_IO" tabindex="0">SaveBMP_IO</a></li>
 <li><a href="#SaveBMP" tabindex="0">SaveBMP</a></li>
+<li><a href="#LoadPNG_IO" tabindex="0">LoadPNG_IO</a></li>
+<li><a href="#LoadPNG" tabindex="0">LoadPNG</a></li>
+<li><a href="#SavePNG_IO" tabindex="0">SavePNG_IO</a></li>
+<li><a href="#SavePNG" tabindex="0">SavePNG</a></li>
 <li><a href="#SetSurfaceRLE" tabindex="0">SetSurfaceRLE</a></li>
 <li><a href="#SurfaceHasRLE" tabindex="0">SurfaceHasRLE</a></li>
 <li><a href="#SetSurfaceColorKey" tabindex="0">SetSurfaceColorKey</a></li>
@@ -89,6 +95,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SetSurfaceClipRect" tabindex="0">SetSurfaceClipRect</a></li>
 <li><a href="#GetSurfaceClipRect" tabindex="0">GetSurfaceClipRect</a></li>
 <li><a href="#FlipSurface" tabindex="0">FlipSurface</a></li>
+<li><a href="#RotateSurface" tabindex="0">RotateSurface</a></li>
 <li><a href="#DuplicateSurface" tabindex="0">DuplicateSurface</a></li>
 <li><a href="#ScaleSurface" tabindex="0">ScaleSurface</a></li>
 <li><a href="#ConvertSurface" tabindex="0">ConvertSurface</a></li>
@@ -310,6 +317,26 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#LoadPNG" class="member-name-link">LoadPNG</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#LoadPNG_IO" class="member-name-link">LoadPNG_IO</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#LoadSurface" class="member-name-link">LoadSurface</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#LoadSurface_IO" class="member-name-link">LoadSurface_IO</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
 <div class="col-second even-row-color"><code><a href="#LockSurface" class="member-name-link">LockSurface</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
@@ -350,93 +377,108 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SaveBMP" class="member-name-link">SaveBMP</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RotateSurface" class="member-name-link">RotateSurface</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SaveBMP_IO" class="member-name-link">SaveBMP_IO</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SaveBMP" class="member-name-link">SaveBMP</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#ScaleSurface" class="member-name-link">ScaleSurface</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SaveBMP_IO" class="member-name-link">SaveBMP_IO</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetSurfaceAlphaMod" class="member-name-link">SetSurfaceAlphaMod</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SavePNG" class="member-name-link">SavePNG</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetSurfaceBlendMode" class="member-name-link">SetSurfaceBlendMode</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SavePNG_IO" class="member-name-link">SavePNG_IO</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetSurfaceClipRect" class="member-name-link">SetSurfaceClipRect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ScaleSurface" class="member-name-link">ScaleSurface</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetSurfaceColorKey" class="member-name-link">SetSurfaceColorKey</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetSurfaceAlphaMod" class="member-name-link">SetSurfaceAlphaMod</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetSurfaceColorMod" class="member-name-link">SetSurfaceColorMod</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetSurfaceBlendMode" class="member-name-link">SetSurfaceBlendMode</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetSurfaceColorspace" class="member-name-link">SetSurfaceColorspace</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetSurfaceClipRect" class="member-name-link">SetSurfaceClipRect</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetSurfacePalette" class="member-name-link">SetSurfacePalette</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetSurfaceColorKey" class="member-name-link">SetSurfaceColorKey</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetSurfaceRLE" class="member-name-link">SetSurfaceRLE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetSurfaceColorMod" class="member-name-link">SetSurfaceColorMod</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#StretchSurface" class="member-name-link">StretchSurface</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetSurfaceColorspace" class="member-name-link">SetSurfaceColorspace</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SurfaceHasAlternateImages" class="member-name-link">SurfaceHasAlternateImages</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetSurfacePalette" class="member-name-link">SetSurfacePalette</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SurfaceHasColorKey" class="member-name-link">SurfaceHasColorKey</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetSurfaceRLE" class="member-name-link">SetSurfaceRLE</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SurfaceHasRLE" class="member-name-link">SurfaceHasRLE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#StretchSurface" class="member-name-link">StretchSurface</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#UnlockSurface" class="member-name-link">UnlockSurface</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SurfaceHasAlternateImages" class="member-name-link">SurfaceHasAlternateImages</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#WriteSurfacePixel" class="member-name-link">WriteSurfacePixel</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SurfaceHasColorKey" class="member-name-link">SurfaceHasColorKey</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#WriteSurfacePixelFloat" class="member-name-link">WriteSurfacePixelFloat</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SurfaceHasRLE" class="member-name-link">SurfaceHasRLE</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#UnlockSurface" class="member-name-link">UnlockSurface</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#WriteSurfacePixel" class="member-name-link">WriteSurfacePixel</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#WriteSurfacePixelFloat" class="member-name-link">WriteSurfacePixelFloat</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 </div>
@@ -596,6 +638,24 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="LoadSurface_IO">
+<h3>LoadSurface_IO</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">LoadSurface_IO</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="LoadSurface">
+<h3>LoadSurface</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">LoadSurface</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="LoadBMP_IO">
 <h3>LoadBMP_IO</h3>
 <div class="horizontal-scroll">
@@ -627,6 +687,42 @@ loadScripts(document, 'script');</script>
 <h3>SaveBMP</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SaveBMP</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="LoadPNG_IO">
+<h3>LoadPNG_IO</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">LoadPNG_IO</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="LoadPNG">
+<h3>LoadPNG</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">LoadPNG</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SavePNG_IO">
+<h3>SavePNG_IO</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SavePNG_IO</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SavePNG">
+<h3>SavePNG</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SavePNG</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>
@@ -753,6 +849,15 @@ loadScripts(document, 'script');</script>
 <h3>FlipSurface</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">FlipSurface</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="RotateSurface">
+<h3>RotateSurface</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">RotateSurface</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>

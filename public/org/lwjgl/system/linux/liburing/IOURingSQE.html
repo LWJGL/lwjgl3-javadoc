@@ -108,6 +108,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#__PAD3" tabindex="0">__PAD3</a></li>
 <li><a href="#ADDR3" tabindex="0">ADDR3</a></li>
 <li><a href="#__PAD2" tabindex="0">__PAD2</a></li>
+<li><a href="#ATTR_PTR" tabindex="0">ATTR_PTR</a></li>
+<li><a href="#ATTR_TYPE_MASK" tabindex="0">ATTR_TYPE_MASK</a></li>
 <li><a href="#OPTVAL" tabindex="0">OPTVAL</a></li>
 <li><a href="#CMD" tabindex="0">CMD</a></li>
 </ol>
@@ -171,6 +173,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#addr3()" tabindex="0">addr3()</a></li>
 <li><a href="#__pad2()" tabindex="0">__pad2()</a></li>
 <li><a href="#__pad2(int)" tabindex="0">__pad2(int)</a></li>
+<li><a href="#attr_ptr()" tabindex="0">attr_ptr()</a></li>
+<li><a href="#attr_type_mask()" tabindex="0">attr_type_mask()</a></li>
 <li><a href="#optval()" tabindex="0">optval()</a></li>
 <li><a href="#cmd()" tabindex="0">cmd()</a></li>
 <li><a href="#cmd(int)" tabindex="0">cmd(int)</a></li>
@@ -225,6 +229,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#addr3(long)" tabindex="0">addr3(long)</a></li>
 <li><a href="#__pad2(java.nio.LongBuffer)" tabindex="0">__pad2(LongBuffer)</a></li>
 <li><a href="#__pad2(int,long)" tabindex="0">__pad2(int, long)</a></li>
+<li><a href="#attr_ptr(long)" tabindex="0">attr_ptr(long)</a></li>
+<li><a href="#attr_type_mask(long)" tabindex="0">attr_type_mask(long)</a></li>
 <li><a href="#optval(long)" tabindex="0">optval(long)</a></li>
 <li><a href="#cmd(java.nio.ByteBuffer)" tabindex="0">cmd(ByteBuffer)</a></li>
 <li><a href="#cmd(int,byte)" tabindex="0">cmd(int, byte)</a></li>
@@ -294,6 +300,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#naddr3(long)" tabindex="0">naddr3(long)</a></li>
 <li><a href="#n__pad2(long)" tabindex="0">n__pad2(long)</a></li>
 <li><a href="#n__pad2(long,int)" tabindex="0">n__pad2(long, int)</a></li>
+<li><a href="#nattr_ptr(long)" tabindex="0">nattr_ptr(long)</a></li>
+<li><a href="#nattr_type_mask(long)" tabindex="0">nattr_type_mask(long)</a></li>
 <li><a href="#noptval(long)" tabindex="0">noptval(long)</a></li>
 <li><a href="#ncmd(long)" tabindex="0">ncmd(long)</a></li>
 <li><a href="#ncmd(long,int)" tabindex="0">ncmd(long, int)</a></li>
@@ -348,6 +356,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#naddr3(long,long)" tabindex="0">naddr3(long, long)</a></li>
 <li><a href="#n__pad2(long,java.nio.LongBuffer)" tabindex="0">n__pad2(long, LongBuffer)</a></li>
 <li><a href="#n__pad2(long,int,long)" tabindex="0">n__pad2(long, int, long)</a></li>
+<li><a href="#nattr_ptr(long,long)" tabindex="0">nattr_ptr(long, long)</a></li>
+<li><a href="#nattr_type_mask(long,long)" tabindex="0">nattr_type_mask(long, long)</a></li>
 <li><a href="#noptval(long,long)" tabindex="0">noptval(long, long)</a></li>
 <li><a href="#ncmd(long,java.nio.ByteBuffer)" tabindex="0">ncmd(long, ByteBuffer)</a></li>
 <li><a href="#ncmd(long,int,byte)" tabindex="0">ncmd(long, int, byte)</a></li>
@@ -447,6 +457,10 @@ implements <a href="../../NativeResource.html" title="interface in org.lwjgl.sys
             __u64 addr3;
             __u64 __pad2[1];
         };
+        struct {
+            __u64 attr_ptr;
+            __u64 attr_type_mask;
+        };
         __u64 optval;
         __u8 cmd[0];
     };
@@ -531,6 +545,16 @@ implements <a href="../../NativeResource.html" title="interface in org.lwjgl.sys
 <div class="col-second even-row-color"><code><a href="#ALIGNOF" class="member-name-link">ALIGNOF</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The struct alignment in bytes.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#ATTR_PTR" class="member-name-link">ATTR_PTR</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">The struct member offsets.</div>
+</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#ATTR_TYPE_MASK" class="member-name-link">ATTR_TYPE_MASK</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#BUF_GROUP" class="member-name-link">BUF_GROUP</a></code></div>
@@ -866,6 +890,22 @@ implements <a href="../../NativeResource.html" title="interface in org.lwjgl.sys
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the specified value to the <code>addr3</code> field.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attr_ptr()" class="member-name-link">attr_ptr</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IOURingSQE.html" title="class in org.lwjgl.system.linux.liburing">IOURingSQE</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attr_ptr(long)" class="member-name-link">attr_ptr</a><wbr>(long&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>attr_ptr</code> field.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attr_type_mask()" class="member-name-link">attr_type_mask</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="IOURingSQE.html" title="class in org.lwjgl.system.linux.liburing">IOURingSQE</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attr_type_mask(long)" class="member-name-link">attr_type_mask</a><wbr>(long&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>attr_type_mask</code> field.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>short</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buf_group()" class="member-name-link">buf_group</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -1186,6 +1226,28 @@ implements <a href="../../NativeResource.html" title="interface in org.lwjgl.sys
  long&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#addr3(long)"><code>addr3</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nattr_ptr(long)" class="member-name-link">nattr_ptr</a><wbr>(long&nbsp;struct)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#attr_ptr()"><code>attr_ptr()</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nattr_ptr(long,long)" class="member-name-link">nattr_ptr</a><wbr>(long&nbsp;struct,
+ long&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#attr_ptr(long)"><code>attr_ptr</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nattr_type_mask(long)" class="member-name-link">nattr_type_mask</a><wbr>(long&nbsp;struct)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#attr_type_mask()"><code>attr_type_mask()</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nattr_type_mask(long,long)" class="member-name-link">nattr_type_mask</a><wbr>(long&nbsp;struct,
+ long&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#attr_type_mask(long)"><code>attr_type_mask</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static short</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nbuf_group(long)" class="member-name-link">nbuf_group</a><wbr>(long&nbsp;struct)</code></div>
@@ -2369,6 +2431,24 @@ implements <a href="../../NativeResource.html" title="interface in org.lwjgl.sys
 </section>
 </li>
 <li>
+<section class="detail" id="ATTR_PTR">
+<h3>ATTR_PTR</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">ATTR_PTR</span></div>
+<div class="block">The struct member offsets.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ATTR_TYPE_MASK">
+<h3>ATTR_TYPE_MASK</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">ATTR_TYPE_MASK</span></div>
+<div class="block">The struct member offsets.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="OPTVAL">
 <h3>OPTVAL</h3>
 <div class="horizontal-scroll">
@@ -3092,6 +3172,32 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
+<section class="detail" id="attr_ptr()">
+<h3>attr_ptr</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">attr_ptr</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>attr_ptr</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="attr_type_mask()">
+<h3>attr_type_mask</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">attr_type_mask</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>attr_type_mask</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="optval()">
 <h3>optval</h3>
 <div class="horizontal-scroll">
@@ -3639,6 +3745,26 @@ visible to the struct instance and vice versa.
  <a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
  long&nbsp;value)</span></div>
 <div class="block">Sets the specified value at the specified index of the <code>__pad2</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="attr_ptr(long)">
+<h3>attr_ptr</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="IOURingSQE.html" title="class in org.lwjgl.system.linux.liburing">IOURingSQE</a></span>&nbsp;<span class="element-name">attr_ptr</span><wbr><span class="parameters">(<a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
+ long&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>attr_ptr</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="attr_type_mask(long)">
+<h3>attr_type_mask</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="IOURingSQE.html" title="class in org.lwjgl.system.linux.liburing">IOURingSQE</a></span>&nbsp;<span class="element-name">attr_type_mask</span><wbr><span class="parameters">(<a href="../../NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("__u64")
+ long&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>attr_type_mask</code> field.</div>
 </div>
 </section>
 </li>
@@ -4310,6 +4436,24 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
+<section class="detail" id="nattr_ptr(long)">
+<h3>nattr_ptr</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">nattr_ptr</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
+<div class="block">Unsafe version of <a href="#attr_ptr()"><code>attr_ptr()</code></a>.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nattr_type_mask(long)">
+<h3>nattr_type_mask</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">nattr_type_mask</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
+<div class="block">Unsafe version of <a href="#attr_type_mask()"><code>attr_type_mask()</code></a>.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="noptval(long)">
 <h3>noptval</h3>
 <div class="horizontal-scroll">
@@ -4841,6 +4985,26 @@ visible to the struct instance and vice versa.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">n__pad2</span><wbr><span class="parameters">(long&nbsp;struct,
  int&nbsp;index,
  long&nbsp;value)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nattr_ptr(long,long)">
+<h3>nattr_ptr</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nattr_ptr</span><wbr><span class="parameters">(long&nbsp;struct,
+ long&nbsp;value)</span></div>
+<div class="block">Unsafe version of <a href="#attr_ptr(long)"><code>attr_ptr</code></a>.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nattr_type_mask(long,long)">
+<h3>nattr_type_mask</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nattr_type_mask</span><wbr><span class="parameters">(long&nbsp;struct,
+ long&nbsp;value)</span></div>
+<div class="block">Unsafe version of <a href="#attr_type_mask(long)"><code>attr_type_mask</code></a>.</div>
 </div>
 </section>
 </li>

@@ -90,13 +90,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sType(int)" tabindex="0">sType(int)</a></li>
 <li><a href="#sType$Default()" tabindex="0">sType$Default()</a></li>
 <li><a href="#pNext(long)" tabindex="0">pNext(long)</a></li>
-<li><a href="#presentId(long)" tabindex="0">presentId(long)</a></li>
-<li><a href="#targetTime(long)" tabindex="0">targetTime(long)</a></li>
-<li><a href="#pPresentStages(org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer)" tabindex="0">pPresentStages(VkPresentStageTimeEXT.Buffer)</a></li>
-<li><a href="#timeDomain(int)" tabindex="0">timeDomain(int)</a></li>
-<li><a href="#timeDomainId(long)" tabindex="0">timeDomainId(long)</a></li>
-<li><a href="#reportComplete(boolean)" tabindex="0">reportComplete(boolean)</a></li>
-<li><a href="#set(int,long,long,long,org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer,int,long,boolean)" tabindex="0">set(int, long, long, long, VkPresentStageTimeEXT.Buffer, int, long, boolean)</a></li>
+<li><a href="#set(int,long)" tabindex="0">set(int, long)</a></li>
 <li><a href="#set(org.lwjgl.vulkan.VkPastPresentationTimingEXT)" tabindex="0">set(VkPastPresentationTimingEXT)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
@@ -123,14 +117,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#nreportComplete(long)" tabindex="0">nreportComplete(long)</a></li>
 <li><a href="#nsType(long,int)" tabindex="0">nsType(long, int)</a></li>
 <li><a href="#npNext(long,long)" tabindex="0">npNext(long, long)</a></li>
-<li><a href="#npresentId(long,long)" tabindex="0">npresentId(long, long)</a></li>
-<li><a href="#ntargetTime(long,long)" tabindex="0">ntargetTime(long, long)</a></li>
-<li><a href="#npresentStageCount(long,int)" tabindex="0">npresentStageCount(long, int)</a></li>
-<li><a href="#npPresentStages(long,org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer)" tabindex="0">npPresentStages(long, VkPresentStageTimeEXT.Buffer)</a></li>
-<li><a href="#ntimeDomain(long,int)" tabindex="0">ntimeDomain(long, int)</a></li>
-<li><a href="#ntimeDomainId(long,long)" tabindex="0">ntimeDomainId(long, long)</a></li>
-<li><a href="#nreportComplete(long,int)" tabindex="0">nreportComplete(long, int)</a></li>
-<li><a href="#validate(long)" tabindex="0">validate(long)</a></li>
 </ol>
 </li>
 </ol>
@@ -381,44 +367,20 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#pPresentStages()"><code>pPresentStages()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npPresentStages(long,org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer)" class="member-name-link">npPresentStages</a><wbr>(long&nbsp;struct,
- <a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT.Buffer</a>&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentId(long)" class="member-name-link">npresentId</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#pPresentStages(org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer)"><code>pPresentStages</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentId(long)" class="member-name-link">npresentId</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#presentId()"><code>presentId()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentId(long,long)" class="member-name-link">npresentId</a><wbr>(long&nbsp;struct,
- long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#presentId(long)"><code>presentId</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentStageCount(long)" class="member-name-link">npresentStageCount</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#presentStageCount()"><code>presentStageCount()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentStageCount(long,int)" class="member-name-link">npresentStageCount</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nreportComplete(long)" class="member-name-link">nreportComplete</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>presentStageCount</code> field of the specified <code>struct</code>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nreportComplete(long)" class="member-name-link">nreportComplete</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#reportComplete()"><code>reportComplete()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nreportComplete(long,int)" class="member-name-link">nreportComplete</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#reportComplete(boolean)"><code>reportComplete</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nsType(long)" class="member-name-link">nsType</a><wbr>(long&nbsp;struct)</code></div>
@@ -436,78 +398,39 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#targetTime()"><code>targetTime()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntargetTime(long,long)" class="member-name-link">ntargetTime</a><wbr>(long&nbsp;struct,
- long&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntimeDomain(long)" class="member-name-link">ntimeDomain</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#targetTime(long)"><code>targetTime</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntimeDomain(long)" class="member-name-link">ntimeDomain</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#timeDomain()"><code>timeDomain()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntimeDomain(long,int)" class="member-name-link">ntimeDomain</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#timeDomain(int)"><code>timeDomain</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntimeDomainId(long)" class="member-name-link">ntimeDomainId</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#timeDomainId()"><code>timeDomainId()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntimeDomainId(long,long)" class="member-name-link">ntimeDomainId</a><wbr>(long&nbsp;struct,
- long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#timeDomainId(long)"><code>timeDomainId</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext()" class="member-name-link">pNext</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext(long)" class="member-name-link">pNext</a><wbr>(long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext()" class="member-name-link">pNext</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext(long)" class="member-name-link">pNext</a><wbr>(long&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the specified value to the <code>pNext</code> field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT.Buffer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pPresentStages()" class="member-name-link">pPresentStages</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pPresentStages(org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer)" class="member-name-link">pPresentStages</a><wbr>(<a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT.Buffer</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the address of the specified <a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan"><code>VkPresentStageTimeEXT.Buffer</code></a> to the <code>pPresentStages</code> field.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT.Buffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pPresentStages()" class="member-name-link">pPresentStages</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentId()" class="member-name-link">presentId</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentId(long)" class="member-name-link">presentId</a><wbr>(long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>presentId</code> field.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentStageCount()" class="member-name-link">presentStageCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reportComplete()" class="member-name-link">reportComplete</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentStageCount()" class="member-name-link">presentStageCount</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reportComplete(boolean)" class="member-name-link">reportComplete</a><wbr>(boolean&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>reportComplete</code> field.</div>
-</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reportComplete()" class="member-name-link">reportComplete</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long,long,long,org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer,int,long,boolean)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
- long&nbsp;pNext,
- long&nbsp;presentId,
- long&nbsp;targetTime,
- <a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT.Buffer</a>&nbsp;pPresentStages,
- int&nbsp;timeDomain,
- long&nbsp;timeDomainId,
- boolean&nbsp;reportComplete)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
+ long&nbsp;pNext)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
@@ -537,32 +460,12 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#targetTime()" class="member-name-link">targetTime</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#targetTime(long)" class="member-name-link">targetTime</a><wbr>(long&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>targetTime</code> field.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#timeDomain()" class="member-name-link">timeDomain</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#timeDomain(int)" class="member-name-link">timeDomain</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>timeDomain</code> field.</div>
-</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#timeDomain()" class="member-name-link">timeDomain</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#timeDomainId()" class="member-name-link">timeDomainId</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#timeDomainId(long)" class="member-name-link">timeDomainId</a><wbr>(long&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>timeDomainId</code> field.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#validate(long)" class="member-name-link">validate</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Validates pointer members that should not be <code>NULL</code>.</div>
-</div>
 </div>
 </div>
 </div>
@@ -877,77 +780,11 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="presentId(long)">
-<h3>presentId</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></span>&nbsp;<span class="element-name">presentId</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("uint64_t")
- long&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>presentId</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="targetTime(long)">
-<h3>targetTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></span>&nbsp;<span class="element-name">targetTime</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("uint64_t")
- long&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>targetTime</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pPresentStages(org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer)">
-<h3>pPresentStages</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></span>&nbsp;<span class="element-name">pPresentStages</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkPresentStageTimeEXT *")
- <a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT.Buffer</a>&nbsp;value)</span></div>
-<div class="block">Sets the address of the specified <a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan"><code>VkPresentStageTimeEXT.Buffer</code></a> to the <code>pPresentStages</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="timeDomain(int)">
-<h3>timeDomain</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></span>&nbsp;<span class="element-name">timeDomain</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkTimeDomainKHR")
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>timeDomain</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="timeDomainId(long)">
-<h3>timeDomainId</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></span>&nbsp;<span class="element-name">timeDomainId</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("uint64_t")
- long&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>timeDomainId</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="reportComplete(boolean)">
-<h3>reportComplete</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></span>&nbsp;<span class="element-name">reportComplete</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkBool32")
- boolean&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>reportComplete</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="set(int,long,long,long,org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer,int,long,boolean)">
+<section class="detail" id="set(int,long)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPastPresentationTimingEXT.html" title="class in org.lwjgl.vulkan">VkPastPresentationTimingEXT</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;sType,
- long&nbsp;pNext,
- long&nbsp;presentId,
- long&nbsp;targetTime,
- <a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT.Buffer</a>&nbsp;pPresentStages,
- int&nbsp;timeDomain,
- long&nbsp;timeDomainId,
- boolean&nbsp;reportComplete)</span></div>
+ long&nbsp;pNext)</span></div>
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
 </section>
@@ -1230,89 +1067,6 @@ visible to the struct instance and vice versa.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npNext</span><wbr><span class="parameters">(long&nbsp;struct,
  long&nbsp;value)</span></div>
 <div class="block">Unsafe version of <a href="#pNext(long)"><code>pNext</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npresentId(long,long)">
-<h3>npresentId</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npresentId</span><wbr><span class="parameters">(long&nbsp;struct,
- long&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#presentId(long)"><code>presentId</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ntargetTime(long,long)">
-<h3>ntargetTime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ntargetTime</span><wbr><span class="parameters">(long&nbsp;struct,
- long&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#targetTime(long)"><code>targetTime</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npresentStageCount(long,int)">
-<h3>npresentStageCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npresentStageCount</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>presentStageCount</code> field of the specified <code>struct</code>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npPresentStages(long,org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer)">
-<h3>npPresentStages</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npPresentStages</span><wbr><span class="parameters">(long&nbsp;struct,
- <a href="VkPresentStageTimeEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT.Buffer</a>&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#pPresentStages(org.lwjgl.vulkan.VkPresentStageTimeEXT.Buffer)"><code>pPresentStages</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ntimeDomain(long,int)">
-<h3>ntimeDomain</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ntimeDomain</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#timeDomain(int)"><code>timeDomain</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ntimeDomainId(long,long)">
-<h3>ntimeDomainId</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ntimeDomainId</span><wbr><span class="parameters">(long&nbsp;struct,
- long&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#timeDomainId(long)"><code>timeDomainId</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nreportComplete(long,int)">
-<h3>nreportComplete</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nreportComplete</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#reportComplete(boolean)"><code>reportComplete</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="validate(long)">
-<h3>validate</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">validate</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
-<div class="block">Validates pointer members that should not be <code>NULL</code>.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>struct</code> - the struct to validate</dd>
-</dl>
 </div>
 </section>
 </li>

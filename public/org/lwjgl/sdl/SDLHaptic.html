@@ -56,6 +56,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
+<li><a href="#SDL_HAPTIC_INFINITY" tabindex="0">SDL_HAPTIC_INFINITY</a></li>
 <li><a href="#SDL_HAPTIC_CONSTANT" tabindex="0">SDL_HAPTIC_CONSTANT</a></li>
 <li><a href="#SDL_HAPTIC_SINE" tabindex="0">SDL_HAPTIC_SINE</a></li>
 <li><a href="#SDL_HAPTIC_SQUARE" tabindex="0">SDL_HAPTIC_SQUARE</a></li>
@@ -80,7 +81,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HAPTIC_CARTESIAN" tabindex="0">SDL_HAPTIC_CARTESIAN</a></li>
 <li><a href="#SDL_HAPTIC_SPHERICAL" tabindex="0">SDL_HAPTIC_SPHERICAL</a></li>
 <li><a href="#SDL_HAPTIC_STEERING_AXIS" tabindex="0">SDL_HAPTIC_STEERING_AXIS</a></li>
-<li><a href="#SDL_HAPTIC_INFINITY" tabindex="0">SDL_HAPTIC_INFINITY</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -262,7 +262,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateHapticEffect(long,long)" class="member-name-link">nSDL_CreateHapticEffect</a><wbr>(long&nbsp;haptic,
  long&nbsp;effect)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int SDL_CreateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffect const * effect)</code></div>
+<div class="block"><code>SDL_HapticEffectID SDL_CreateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffect const * effect)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetHapticName(long)" class="member-name-link">nSDL_GetHapticName</a><wbr>(long&nbsp;haptic)</code></div>
@@ -290,7 +290,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;effect,
  long&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>bool SDL_UpdateHapticEffect(SDL_Haptic * haptic, int effect, SDL_HapticEffect const * data)</code></div>
+<div class="block"><code>bool SDL_UpdateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect, SDL_HapticEffect const * data)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CloseHaptic(long)" class="member-name-link">SDL_CloseHaptic</a><wbr>(long&nbsp;haptic)</code></div>
@@ -301,19 +301,19 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateHapticEffect(long,org.lwjgl.sdl.SDL_HapticEffect)" class="member-name-link">SDL_CreateHapticEffect</a><wbr>(long&nbsp;haptic,
  <a href="SDL_HapticEffect.html" title="class in org.lwjgl.sdl">SDL_HapticEffect</a>&nbsp;effect)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int SDL_CreateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffect const * effect)</code></div>
+<div class="block"><code>SDL_HapticEffectID SDL_CreateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffect const * effect)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_DestroyHapticEffect(long,int)" class="member-name-link">SDL_DestroyHapticEffect</a><wbr>(long&nbsp;haptic,
  int&nbsp;effect)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>void SDL_DestroyHapticEffect(SDL_Haptic * haptic, int effect)</code></div>
+<div class="block"><code>void SDL_DestroyHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetHapticEffectStatus(long,int)" class="member-name-link">SDL_GetHapticEffectStatus</a><wbr>(long&nbsp;haptic,
  int&nbsp;effect)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>bool SDL_GetHapticEffectStatus(SDL_Haptic * haptic, int effect)</code></div>
+<div class="block"><code>bool SDL_GetHapticEffectStatus(SDL_Haptic * haptic, SDL_HapticEffectID effect)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetHapticFeatures(long)" class="member-name-link">SDL_GetHapticFeatures</a><wbr>(long&nbsp;haptic)</code></div>
@@ -423,7 +423,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;effect,
  int&nbsp;iterations)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>bool SDL_RunHapticEffect(SDL_Haptic * haptic, int effect, Uint32 iterations)</code></div>
+<div class="block"><code>bool SDL_RunHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect, Uint32 iterations)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetHapticAutocenter(long,int)" class="member-name-link">SDL_SetHapticAutocenter</a><wbr>(long&nbsp;haptic,
@@ -441,7 +441,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_StopHapticEffect(long,int)" class="member-name-link">SDL_StopHapticEffect</a><wbr>(long&nbsp;haptic,
  int&nbsp;effect)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>bool SDL_StopHapticEffect(SDL_Haptic * haptic, int effect)</code></div>
+<div class="block"><code>bool SDL_StopHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_StopHapticEffects(long)" class="member-name-link">SDL_StopHapticEffects</a><wbr>(long&nbsp;haptic)</code></div>
@@ -458,7 +458,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;effect,
  <a href="SDL_HapticEffect.html" title="class in org.lwjgl.sdl">SDL_HapticEffect</a>&nbsp;data)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>bool SDL_UpdateHapticEffect(SDL_Haptic * haptic, int effect, SDL_HapticEffect const * data)</code></div>
+<div class="block"><code>bool SDL_UpdateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect, SDL_HapticEffect const * data)</code></div>
 </div>
 </div>
 </div>
@@ -477,6 +477,22 @@ loadScripts(document, 'script');</script>
 <section class="field-details" id="field-detail">
 <h2>Field Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="SDL_HAPTIC_INFINITY">
+<h3>SDL_HAPTIC_INFINITY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_HAPTIC_INFINITY</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHaptic.SDL_HAPTIC_INFINITY">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="SDL_HAPTIC_CONSTANT">
 <h3>SDL_HAPTIC_CONSTANT</h3>
@@ -861,22 +877,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<li>
-<section class="detail" id="SDL_HAPTIC_INFINITY">
-<h3>SDL_HAPTIC_INFINITY</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_HAPTIC_INFINITY</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHaptic.SDL_HAPTIC_INFINITY">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</div>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -1099,7 +1099,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nSDL_CreateHapticEffect</span><wbr><span class="parameters">(long&nbsp;haptic,
  long&nbsp;effect)</span></div>
-<div class="block"><code>int SDL_CreateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffect const * effect)</code></div>
+<div class="block"><code>SDL_HapticEffectID SDL_CreateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffect const * effect)</code></div>
 </div>
 </section>
 </li>
@@ -1107,11 +1107,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="SDL_CreateHapticEffect(long,org.lwjgl.sdl.SDL_HapticEffect)">
 <h3>SDL_CreateHapticEffect</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_CreateHapticEffect</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Haptic *")
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffectID")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_CreateHapticEffect</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Haptic *")
  long&nbsp;haptic,
  <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffect const *")
  <a href="SDL_HapticEffect.html" title="class in org.lwjgl.sdl">SDL_HapticEffect</a>&nbsp;effect)</span></div>
-<div class="block"><code>int SDL_CreateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffect const * effect)</code></div>
+<div class="block"><code>SDL_HapticEffectID SDL_CreateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffect const * effect)</code></div>
 </div>
 </section>
 </li>
@@ -1122,7 +1123,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nSDL_UpdateHapticEffect</span><wbr><span class="parameters">(long&nbsp;haptic,
  int&nbsp;effect,
  long&nbsp;data)</span></div>
-<div class="block"><code>bool SDL_UpdateHapticEffect(SDL_Haptic * haptic, int effect, SDL_HapticEffect const * data)</code></div>
+<div class="block"><code>bool SDL_UpdateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect, SDL_HapticEffect const * data)</code></div>
 </div>
 </section>
 </li>
@@ -1133,10 +1134,11 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_UpdateHapticEffect</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Haptic *")
  long&nbsp;haptic,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffectID")
  int&nbsp;effect,
  <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffect const *")
  <a href="SDL_HapticEffect.html" title="class in org.lwjgl.sdl">SDL_HapticEffect</a>&nbsp;data)</span></div>
-<div class="block"><code>bool SDL_UpdateHapticEffect(SDL_Haptic * haptic, int effect, SDL_HapticEffect const * data)</code></div>
+<div class="block"><code>bool SDL_UpdateHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect, SDL_HapticEffect const * data)</code></div>
 </div>
 </section>
 </li>
@@ -1147,10 +1149,11 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_RunHapticEffect</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Haptic *")
  long&nbsp;haptic,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffectID")
  int&nbsp;effect,
  <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint32")
  int&nbsp;iterations)</span></div>
-<div class="block"><code>bool SDL_RunHapticEffect(SDL_Haptic * haptic, int effect, Uint32 iterations)</code></div>
+<div class="block"><code>bool SDL_RunHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect, Uint32 iterations)</code></div>
 </div>
 </section>
 </li>
@@ -1161,8 +1164,9 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_StopHapticEffect</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Haptic *")
  long&nbsp;haptic,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffectID")
  int&nbsp;effect)</span></div>
-<div class="block"><code>bool SDL_StopHapticEffect(SDL_Haptic * haptic, int effect)</code></div>
+<div class="block"><code>bool SDL_StopHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect)</code></div>
 </div>
 </section>
 </li>
@@ -1172,8 +1176,9 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">SDL_DestroyHapticEffect</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Haptic *")
  long&nbsp;haptic,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffectID")
  int&nbsp;effect)</span></div>
-<div class="block"><code>void SDL_DestroyHapticEffect(SDL_Haptic * haptic, int effect)</code></div>
+<div class="block"><code>void SDL_DestroyHapticEffect(SDL_Haptic * haptic, SDL_HapticEffectID effect)</code></div>
 </div>
 </section>
 </li>
@@ -1184,8 +1189,9 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_GetHapticEffectStatus</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Haptic *")
  long&nbsp;haptic,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_HapticEffectID")
  int&nbsp;effect)</span></div>
-<div class="block"><code>bool SDL_GetHapticEffectStatus(SDL_Haptic * haptic, int effect)</code></div>
+<div class="block"><code>bool SDL_GetHapticEffectStatus(SDL_Haptic * haptic, SDL_HapticEffectID effect)</code></div>
 </div>
 </section>
 </li>

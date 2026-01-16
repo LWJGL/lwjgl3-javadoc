@@ -65,6 +65,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#GetGPUDriver" tabindex="0">GetGPUDriver</a></li>
 <li><a href="#GetGPUDeviceDriver" tabindex="0">GetGPUDeviceDriver</a></li>
 <li><a href="#GetGPUShaderFormats" tabindex="0">GetGPUShaderFormats</a></li>
+<li><a href="#GetGPUDeviceProperties" tabindex="0">GetGPUDeviceProperties</a></li>
 <li><a href="#CreateGPUComputePipeline" tabindex="0">CreateGPUComputePipeline</a></li>
 <li><a href="#CreateGPUGraphicsPipeline" tabindex="0">CreateGPUGraphicsPipeline</a></li>
 <li><a href="#CreateGPUSampler" tabindex="0">CreateGPUSampler</a></li>
@@ -148,6 +149,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#GPUTextureSupportsFormat" tabindex="0">GPUTextureSupportsFormat</a></li>
 <li><a href="#GPUTextureSupportsSampleCount" tabindex="0">GPUTextureSupportsSampleCount</a></li>
 <li><a href="#CalculateGPUTextureFormatSize" tabindex="0">CalculateGPUTextureFormatSize</a></li>
+<li><a href="#GetPixelFormatFromGPUTextureFormat" tabindex="0">GetPixelFormatFromGPUTextureFormat</a></li>
+<li><a href="#GetGPUTextureFormatFromPixelFormat" tabindex="0">GetGPUTextureFormatFromPixelFormat</a></li>
 </ol>
 </li>
 </ol>
@@ -419,17 +422,27 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetGPUDriver" class="member-name-link">GetGPUDriver</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetGPUDeviceProperties" class="member-name-link">GetGPUDeviceProperties</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetGPUShaderFormats" class="member-name-link">GetGPUShaderFormats</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetGPUDriver" class="member-name-link">GetGPUDriver</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetGPUSwapchainTextureFormat" class="member-name-link">GetGPUSwapchainTextureFormat</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetGPUShaderFormats" class="member-name-link">GetGPUShaderFormats</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#GetGPUSwapchainTextureFormat" class="member-name-link">GetGPUSwapchainTextureFormat</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#GetGPUTextureFormatFromPixelFormat" class="member-name-link">GetGPUTextureFormatFromPixelFormat</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
@@ -439,208 +452,213 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GPUSupportsProperties" class="member-name-link">GPUSupportsProperties</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetPixelFormatFromGPUTextureFormat" class="member-name-link">GetPixelFormatFromGPUTextureFormat</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GPUSupportsShaderFormats" class="member-name-link">GPUSupportsShaderFormats</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GPUSupportsProperties" class="member-name-link">GPUSupportsProperties</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GPUTextureFormatTexelBlockSize" class="member-name-link">GPUTextureFormatTexelBlockSize</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GPUSupportsShaderFormats" class="member-name-link">GPUSupportsShaderFormats</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GPUTextureSupportsFormat" class="member-name-link">GPUTextureSupportsFormat</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GPUTextureFormatTexelBlockSize" class="member-name-link">GPUTextureFormatTexelBlockSize</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GPUTextureSupportsSampleCount" class="member-name-link">GPUTextureSupportsSampleCount</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GPUTextureSupportsFormat" class="member-name-link">GPUTextureSupportsFormat</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#InsertGPUDebugLabel" class="member-name-link">InsertGPUDebugLabel</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GPUTextureSupportsSampleCount" class="member-name-link">GPUTextureSupportsSampleCount</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#MapGPUTransferBuffer" class="member-name-link">MapGPUTransferBuffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#InsertGPUDebugLabel" class="member-name-link">InsertGPUDebugLabel</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#PopGPUDebugGroup" class="member-name-link">PopGPUDebugGroup</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MapGPUTransferBuffer" class="member-name-link">MapGPUTransferBuffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#PushGPUComputeUniformData" class="member-name-link">PushGPUComputeUniformData</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#PopGPUDebugGroup" class="member-name-link">PopGPUDebugGroup</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#PushGPUDebugGroup" class="member-name-link">PushGPUDebugGroup</a></code></div>
+<div class="col-second even-row-color"><code><a href="#PushGPUComputeUniformData" class="member-name-link">PushGPUComputeUniformData</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#PushGPUFragmentUniformData" class="member-name-link">PushGPUFragmentUniformData</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#PushGPUDebugGroup" class="member-name-link">PushGPUDebugGroup</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#PushGPUVertexUniformData" class="member-name-link">PushGPUVertexUniformData</a></code></div>
+<div class="col-second even-row-color"><code><a href="#PushGPUFragmentUniformData" class="member-name-link">PushGPUFragmentUniformData</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#QueryGPUFence" class="member-name-link">QueryGPUFence</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#PushGPUVertexUniformData" class="member-name-link">PushGPUVertexUniformData</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#ReleaseGPUBuffer" class="member-name-link">ReleaseGPUBuffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#QueryGPUFence" class="member-name-link">QueryGPUFence</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#ReleaseGPUComputePipeline" class="member-name-link">ReleaseGPUComputePipeline</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ReleaseGPUBuffer" class="member-name-link">ReleaseGPUBuffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#ReleaseGPUFence" class="member-name-link">ReleaseGPUFence</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ReleaseGPUComputePipeline" class="member-name-link">ReleaseGPUComputePipeline</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#ReleaseGPUGraphicsPipeline" class="member-name-link">ReleaseGPUGraphicsPipeline</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ReleaseGPUFence" class="member-name-link">ReleaseGPUFence</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#ReleaseGPUSampler" class="member-name-link">ReleaseGPUSampler</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ReleaseGPUGraphicsPipeline" class="member-name-link">ReleaseGPUGraphicsPipeline</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#ReleaseGPUShader" class="member-name-link">ReleaseGPUShader</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ReleaseGPUSampler" class="member-name-link">ReleaseGPUSampler</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#ReleaseGPUTexture" class="member-name-link">ReleaseGPUTexture</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ReleaseGPUShader" class="member-name-link">ReleaseGPUShader</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#ReleaseGPUTransferBuffer" class="member-name-link">ReleaseGPUTransferBuffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ReleaseGPUTexture" class="member-name-link">ReleaseGPUTexture</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#ReleaseWindowFromGPUDevice" class="member-name-link">ReleaseWindowFromGPUDevice</a></code></div>
+<div class="col-second even-row-color"><code><a href="#ReleaseGPUTransferBuffer" class="member-name-link">ReleaseGPUTransferBuffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetGPUAllowedFramesInFlight" class="member-name-link">SetGPUAllowedFramesInFlight</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#ReleaseWindowFromGPUDevice" class="member-name-link">ReleaseWindowFromGPUDevice</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetGPUBlendConstants" class="member-name-link">SetGPUBlendConstants</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetGPUAllowedFramesInFlight" class="member-name-link">SetGPUAllowedFramesInFlight</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetGPUBufferName" class="member-name-link">SetGPUBufferName</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetGPUBlendConstants" class="member-name-link">SetGPUBlendConstants</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetGPUScissor" class="member-name-link">SetGPUScissor</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetGPUBufferName" class="member-name-link">SetGPUBufferName</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetGPUStencilReference" class="member-name-link">SetGPUStencilReference</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetGPUScissor" class="member-name-link">SetGPUScissor</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetGPUSwapchainParameters" class="member-name-link">SetGPUSwapchainParameters</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetGPUStencilReference" class="member-name-link">SetGPUStencilReference</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetGPUTextureName" class="member-name-link">SetGPUTextureName</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetGPUSwapchainParameters" class="member-name-link">SetGPUSwapchainParameters</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetGPUViewport" class="member-name-link">SetGPUViewport</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetGPUTextureName" class="member-name-link">SetGPUTextureName</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SubmitGPUCommandBuffer" class="member-name-link">SubmitGPUCommandBuffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetGPUViewport" class="member-name-link">SetGPUViewport</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SubmitGPUCommandBufferAndAcquireFence" class="member-name-link">SubmitGPUCommandBufferAndAcquireFence</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SubmitGPUCommandBuffer" class="member-name-link">SubmitGPUCommandBuffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#UnmapGPUTransferBuffer" class="member-name-link">UnmapGPUTransferBuffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SubmitGPUCommandBufferAndAcquireFence" class="member-name-link">SubmitGPUCommandBufferAndAcquireFence</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#UploadToGPUBuffer" class="member-name-link">UploadToGPUBuffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#UnmapGPUTransferBuffer" class="member-name-link">UnmapGPUTransferBuffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#UploadToGPUTexture" class="member-name-link">UploadToGPUTexture</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#UploadToGPUBuffer" class="member-name-link">UploadToGPUBuffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#WaitAndAcquireGPUSwapchainTexture" class="member-name-link">WaitAndAcquireGPUSwapchainTexture</a></code></div>
+<div class="col-second even-row-color"><code><a href="#UploadToGPUTexture" class="member-name-link">UploadToGPUTexture</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#WaitForGPUFences" class="member-name-link">WaitForGPUFences</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WaitAndAcquireGPUSwapchainTexture" class="member-name-link">WaitAndAcquireGPUSwapchainTexture</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#WaitForGPUIdle" class="member-name-link">WaitForGPUIdle</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WaitForGPUFences" class="member-name-link">WaitForGPUFences</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#WaitForGPUSwapchain" class="member-name-link">WaitForGPUSwapchain</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WaitForGPUIdle" class="member-name-link">WaitForGPUIdle</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#WindowSupportsGPUPresentMode" class="member-name-link">WindowSupportsGPUPresentMode</a></code></div>
+<div class="col-second even-row-color"><code><a href="#WaitForGPUSwapchain" class="member-name-link">WaitForGPUSwapchain</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#WindowSupportsGPUSwapchainComposition" class="member-name-link">WindowSupportsGPUSwapchainComposition</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#WindowSupportsGPUPresentMode" class="member-name-link">WindowSupportsGPUPresentMode</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#WindowSupportsGPUSwapchainComposition" class="member-name-link">WindowSupportsGPUSwapchainComposition</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 </div>
@@ -741,6 +759,15 @@ loadScripts(document, 'script');</script>
 <h3>GetGPUShaderFormats</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetGPUShaderFormats</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GetGPUDeviceProperties">
+<h3>GetGPUDeviceProperties</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetGPUDeviceProperties</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>
@@ -1488,6 +1515,24 @@ loadScripts(document, 'script');</script>
 <h3>CalculateGPUTextureFormatSize</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">CalculateGPUTextureFormatSize</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GetPixelFormatFromGPUTextureFormat">
+<h3>GetPixelFormatFromGPUTextureFormat</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetPixelFormatFromGPUTextureFormat</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GetGPUTextureFormatFromPixelFormat">
+<h3>GetGPUTextureFormatFromPixelFormat</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetGPUTextureFormatFromPixelFormat</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>

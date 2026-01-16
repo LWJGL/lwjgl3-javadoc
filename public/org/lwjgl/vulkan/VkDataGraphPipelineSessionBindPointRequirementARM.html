@@ -82,10 +82,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sType(int)" tabindex="0">sType(int)</a></li>
 <li><a href="#sType$Default()" tabindex="0">sType$Default()</a></li>
 <li><a href="#pNext(long)" tabindex="0">pNext(long)</a></li>
-<li><a href="#bindPoint(int)" tabindex="0">bindPoint(int)</a></li>
-<li><a href="#bindPointType(int)" tabindex="0">bindPointType(int)</a></li>
-<li><a href="#numObjects(int)" tabindex="0">numObjects(int)</a></li>
-<li><a href="#set(int,long,int,int,int)" tabindex="0">set(int, long, int, int, int)</a></li>
+<li><a href="#set(int,long)" tabindex="0">set(int, long)</a></li>
 <li><a href="#set(org.lwjgl.vulkan.VkDataGraphPipelineSessionBindPointRequirementARM)" tabindex="0">set(VkDataGraphPipelineSessionBindPointRequirementARM)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
@@ -108,9 +105,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#nnumObjects(long)" tabindex="0">nnumObjects(long)</a></li>
 <li><a href="#nsType(long,int)" tabindex="0">nsType(long, int)</a></li>
 <li><a href="#npNext(long,long)" tabindex="0">npNext(long, long)</a></li>
-<li><a href="#nbindPoint(long,int)" tabindex="0">nbindPoint(long, int)</a></li>
-<li><a href="#nbindPointType(long,int)" tabindex="0">nbindPointType(long, int)</a></li>
-<li><a href="#nnumObjects(long,int)" tabindex="0">nnumObjects(long, int)</a></li>
 </ol>
 </li>
 </ol>
@@ -139,7 +133,7 @@ loadScripts(document, 'script');</script>
 implements <a href="../system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></span></div>
 <div class="block"><pre><code>struct VkDataGraphPipelineSessionBindPointRequirementARM {
     VkStructureType sType;
-    void const * pNext;
+    void * pNext;
     VkDataGraphPipelineSessionBindPointARM bindPoint;
     VkDataGraphPipelineSessionBindPointTypeARM bindPointType;
     uint32_t numObjects;
@@ -250,19 +244,9 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bindPoint()" class="member-name-link">bindPoint</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bindPoint(int)" class="member-name-link">bindPoint</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>bindPoint</code> field.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bindPointType()" class="member-name-link">bindPointType</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bindPointType(int)" class="member-name-link">bindPointType</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>bindPointType</code> field.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bindPointType()" class="member-name-link">bindPointType</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#calloc()" class="member-name-link">calloc</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -342,64 +326,41 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#bindPoint()"><code>bindPoint()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nbindPoint(long,int)" class="member-name-link">nbindPoint</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nbindPointType(long)" class="member-name-link">nbindPointType</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#bindPoint(int)"><code>bindPoint</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nbindPointType(long)" class="member-name-link">nbindPointType</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#bindPointType()"><code>bindPointType()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nbindPointType(long,int)" class="member-name-link">nbindPointType</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#bindPointType(int)"><code>bindPointType</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nnumObjects(long)" class="member-name-link">nnumObjects</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#numObjects()"><code>numObjects()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nnumObjects(long,int)" class="member-name-link">nnumObjects</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npNext(long)" class="member-name-link">npNext</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#numObjects(int)"><code>numObjects</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npNext(long)" class="member-name-link">npNext</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#pNext()"><code>pNext()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npNext(long,long)" class="member-name-link">npNext</a><wbr>(long&nbsp;struct,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npNext(long,long)" class="member-name-link">npNext</a><wbr>(long&nbsp;struct,
  long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#pNext(long)"><code>pNext</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nsType(long)" class="member-name-link">nsType</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nsType(long)" class="member-name-link">nsType</a><wbr>(long&nbsp;struct)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#sType()"><code>sType()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nsType(long,int)" class="member-name-link">nsType</a><wbr>(long&nbsp;struct,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nsType(long,int)" class="member-name-link">nsType</a><wbr>(long&nbsp;struct,
  int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#sType(int)"><code>sType</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#numObjects()" class="member-name-link">numObjects</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#numObjects(int)" class="member-name-link">numObjects</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>numObjects</code> field.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#numObjects()" class="member-name-link">numObjects</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext()" class="member-name-link">pNext</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -409,11 +370,8 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">Sets the specified value to the <code>pNext</code> field.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long,int,int,int)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
- long&nbsp;pNext,
- int&nbsp;bindPoint,
- int&nbsp;bindPointType,
- int&nbsp;numObjects)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
+ long&nbsp;pNext)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
@@ -588,7 +546,7 @@ visible to the struct instance and vice versa.
 <section class="detail" id="pNext()">
 <h3>pNext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">pNext</span>()</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -659,51 +617,18 @@ visible to the struct instance and vice versa.
 <section class="detail" id="pNext(long)">
 <h3>pNext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></span>&nbsp;<span class="element-name">pNext</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></span>&nbsp;<span class="element-name">pNext</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
  long&nbsp;value)</span></div>
 <div class="block">Sets the specified value to the <code>pNext</code> field.</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="bindPoint(int)">
-<h3>bindPoint</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></span>&nbsp;<span class="element-name">bindPoint</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkDataGraphPipelineSessionBindPointARM")
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>bindPoint</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="bindPointType(int)">
-<h3>bindPointType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></span>&nbsp;<span class="element-name">bindPointType</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkDataGraphPipelineSessionBindPointTypeARM")
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>bindPointType</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="numObjects(int)">
-<h3>numObjects</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></span>&nbsp;<span class="element-name">numObjects</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("uint32_t")
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>numObjects</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="set(int,long,int,int,int)">
+<section class="detail" id="set(int,long)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;sType,
- long&nbsp;pNext,
- int&nbsp;bindPoint,
- int&nbsp;bindPointType,
- int&nbsp;numObjects)</span></div>
+ long&nbsp;pNext)</span></div>
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
 </section>
@@ -950,36 +875,6 @@ visible to the struct instance and vice versa.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npNext</span><wbr><span class="parameters">(long&nbsp;struct,
  long&nbsp;value)</span></div>
 <div class="block">Unsafe version of <a href="#pNext(long)"><code>pNext</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nbindPoint(long,int)">
-<h3>nbindPoint</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nbindPoint</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#bindPoint(int)"><code>bindPoint</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nbindPointType(long,int)">
-<h3>nbindPointType</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nbindPointType</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#bindPointType(int)"><code>bindPointType</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nnumObjects(long,int)">
-<h3>nnumObjects</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nnumObjects</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#numObjects(int)"><code>numObjects</code></a>.</div>
 </div>
 </section>
 </li>

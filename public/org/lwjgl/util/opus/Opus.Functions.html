@@ -60,6 +60,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#encoder_create" tabindex="0">encoder_create</a></li>
 <li><a href="#encoder_init" tabindex="0">encoder_init</a></li>
 <li><a href="#encode" tabindex="0">encode</a></li>
+<li><a href="#encode24" tabindex="0">encode24</a></li>
 <li><a href="#encode_float" tabindex="0">encode_float</a></li>
 <li><a href="#encoder_destroy" tabindex="0">encoder_destroy</a></li>
 <li><a href="#encoder_ctl" tabindex="0">encoder_ctl</a></li>
@@ -67,6 +68,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#decoder_create" tabindex="0">decoder_create</a></li>
 <li><a href="#decoder_init" tabindex="0">decoder_init</a></li>
 <li><a href="#decode" tabindex="0">decode</a></li>
+<li><a href="#decode24" tabindex="0">decode24</a></li>
 <li><a href="#decode_float" tabindex="0">decode_float</a></li>
 <li><a href="#decoder_ctl" tabindex="0">decoder_ctl</a></li>
 <li><a href="#decoder_destroy" tabindex="0">decoder_destroy</a></li>
@@ -81,6 +83,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#dred_parse" tabindex="0">dred_parse</a></li>
 <li><a href="#dred_process" tabindex="0">dred_process</a></li>
 <li><a href="#decoder_dred_decode" tabindex="0">decoder_dred_decode</a></li>
+<li><a href="#decoder_dred_decode24" tabindex="0">decoder_dred_decode24</a></li>
 <li><a href="#decoder_dred_decode_float" tabindex="0">decoder_dred_decode_float</a></li>
 <li><a href="#packet_parse" tabindex="0">packet_parse</a></li>
 <li><a href="#packet_get_bandwidth" tabindex="0">packet_get_bandwidth</a></li>
@@ -151,27 +154,37 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#decoder_create" class="member-name-link">decoder_create</a></code></div>
+<div class="col-second even-row-color"><code><a href="#decode24" class="member-name-link">decode24</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#decoder_ctl" class="member-name-link">decoder_ctl</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#decoder_create" class="member-name-link">decoder_create</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#decoder_destroy" class="member-name-link">decoder_destroy</a></code></div>
+<div class="col-second even-row-color"><code><a href="#decoder_ctl" class="member-name-link">decoder_ctl</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#decoder_dred_decode" class="member-name-link">decoder_dred_decode</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#decoder_destroy" class="member-name-link">decoder_destroy</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#decoder_dred_decode_float" class="member-name-link">decoder_dred_decode_float</a></code></div>
+<div class="col-second even-row-color"><code><a href="#decoder_dred_decode" class="member-name-link">decoder_dred_decode</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#decoder_dred_decode_float" class="member-name-link">decoder_dred_decode_float</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#decoder_dred_decode24" class="member-name-link">decoder_dred_decode24</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
@@ -251,138 +264,143 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_create" class="member-name-link">encoder_create</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encode24" class="member-name-link">encode24</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_ctl" class="member-name-link">encoder_ctl</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_create" class="member-name-link">encoder_create</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_destroy" class="member-name-link">encoder_destroy</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_ctl" class="member-name-link">encoder_ctl</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_get_size" class="member-name-link">encoder_get_size</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_destroy" class="member-name-link">encoder_destroy</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_init" class="member-name-link">encoder_init</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_get_size" class="member-name-link">encoder_get_size</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#get_version_string" class="member-name-link">get_version_string</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_init" class="member-name-link">encoder_init</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#multistream_packet_pad" class="member-name-link">multistream_packet_pad</a></code></div>
+<div class="col-second even-row-color"><code><a href="#get_version_string" class="member-name-link">get_version_string</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#multistream_packet_unpad" class="member-name-link">multistream_packet_unpad</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#multistream_packet_pad" class="member-name-link">multistream_packet_pad</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#packet_get_bandwidth" class="member-name-link">packet_get_bandwidth</a></code></div>
+<div class="col-second even-row-color"><code><a href="#multistream_packet_unpad" class="member-name-link">multistream_packet_unpad</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#packet_get_nb_channels" class="member-name-link">packet_get_nb_channels</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#packet_get_bandwidth" class="member-name-link">packet_get_bandwidth</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#packet_get_nb_frames" class="member-name-link">packet_get_nb_frames</a></code></div>
+<div class="col-second even-row-color"><code><a href="#packet_get_nb_channels" class="member-name-link">packet_get_nb_channels</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#packet_get_nb_samples" class="member-name-link">packet_get_nb_samples</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#packet_get_nb_frames" class="member-name-link">packet_get_nb_frames</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#packet_get_samples_per_frame" class="member-name-link">packet_get_samples_per_frame</a></code></div>
+<div class="col-second even-row-color"><code><a href="#packet_get_nb_samples" class="member-name-link">packet_get_nb_samples</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#packet_has_lbrr" class="member-name-link">packet_has_lbrr</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#packet_get_samples_per_frame" class="member-name-link">packet_get_samples_per_frame</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#packet_pad" class="member-name-link">packet_pad</a></code></div>
+<div class="col-second even-row-color"><code><a href="#packet_has_lbrr" class="member-name-link">packet_has_lbrr</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#packet_parse" class="member-name-link">packet_parse</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#packet_pad" class="member-name-link">packet_pad</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#packet_unpad" class="member-name-link">packet_unpad</a></code></div>
+<div class="col-second even-row-color"><code><a href="#packet_parse" class="member-name-link">packet_parse</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#pcm_soft_clip" class="member-name-link">pcm_soft_clip</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#packet_unpad" class="member-name-link">packet_unpad</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#repacketizer_cat" class="member-name-link">repacketizer_cat</a></code></div>
+<div class="col-second even-row-color"><code><a href="#pcm_soft_clip" class="member-name-link">pcm_soft_clip</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#repacketizer_create" class="member-name-link">repacketizer_create</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#repacketizer_cat" class="member-name-link">repacketizer_cat</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#repacketizer_destroy" class="member-name-link">repacketizer_destroy</a></code></div>
+<div class="col-second even-row-color"><code><a href="#repacketizer_create" class="member-name-link">repacketizer_create</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#repacketizer_get_nb_frames" class="member-name-link">repacketizer_get_nb_frames</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#repacketizer_destroy" class="member-name-link">repacketizer_destroy</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#repacketizer_get_size" class="member-name-link">repacketizer_get_size</a></code></div>
+<div class="col-second even-row-color"><code><a href="#repacketizer_get_nb_frames" class="member-name-link">repacketizer_get_nb_frames</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#repacketizer_init" class="member-name-link">repacketizer_init</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#repacketizer_get_size" class="member-name-link">repacketizer_get_size</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#repacketizer_out" class="member-name-link">repacketizer_out</a></code></div>
+<div class="col-second even-row-color"><code><a href="#repacketizer_init" class="member-name-link">repacketizer_init</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#repacketizer_out_range" class="member-name-link">repacketizer_out_range</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#repacketizer_out" class="member-name-link">repacketizer_out</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#strerror" class="member-name-link">strerror</a></code></div>
+<div class="col-second even-row-color"><code><a href="#repacketizer_out_range" class="member-name-link">repacketizer_out_range</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#strerror" class="member-name-link">strerror</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 </div>
@@ -438,6 +456,15 @@ loadScripts(document, 'script');</script>
 <h3>encode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">encode</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="encode24">
+<h3>encode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">encode24</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>
@@ -501,6 +528,15 @@ loadScripts(document, 'script');</script>
 <h3>decode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">decode</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="decode24">
+<h3>decode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">decode24</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>
@@ -627,6 +663,15 @@ loadScripts(document, 'script');</script>
 <h3>decoder_dred_decode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">decoder_dred_decode</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="decoder_dred_decode24">
+<h3>decoder_dred_decode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">decoder_dred_decode24</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>

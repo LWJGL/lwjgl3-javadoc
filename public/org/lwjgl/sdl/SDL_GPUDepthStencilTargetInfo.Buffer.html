@@ -72,6 +72,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#stencil_store_op()" tabindex="0">stencil_store_op()</a></li>
 <li><a href="#cycle()" tabindex="0">cycle()</a></li>
 <li><a href="#clear_stencil()" tabindex="0">clear_stencil()</a></li>
+<li><a href="#mip_level()" tabindex="0">mip_level()</a></li>
+<li><a href="#layer()" tabindex="0">layer()</a></li>
 <li><a href="#texture(long)" tabindex="0">texture(long)</a></li>
 <li><a href="#clear_depth(float)" tabindex="0">clear_depth(float)</a></li>
 <li><a href="#load_op(int)" tabindex="0">load_op(int)</a></li>
@@ -80,6 +82,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#stencil_store_op(int)" tabindex="0">stencil_store_op(int)</a></li>
 <li><a href="#cycle(boolean)" tabindex="0">cycle(boolean)</a></li>
 <li><a href="#clear_stencil(byte)" tabindex="0">clear_stencil(byte)</a></li>
+<li><a href="#mip_level(byte)" tabindex="0">mip_level(byte)</a></li>
+<li><a href="#layer(byte)" tabindex="0">layer(byte)</a></li>
 </ol>
 </li>
 </ol>
@@ -188,6 +192,14 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the specified value to the <code>cycle</code> field.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#layer()" class="member-name-link">layer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_GPUDepthStencilTargetInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo.Buffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#layer(byte)" class="member-name-link">layer</a><wbr>(byte&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>layer</code> field.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load_op()" class="member-name-link">load_op</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -195,6 +207,14 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load_op(int)" class="member-name-link">load_op</a><wbr>(int&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the specified value to the <code>load_op</code> field.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mip_level()" class="member-name-link">mip_level</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_GPUDepthStencilTargetInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo.Buffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mip_level(byte)" class="member-name-link">mip_level</a><wbr>(byte&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>mip_level</code> field.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stencil_load_op()" class="member-name-link">stencil_load_op</a>()</code></div>
@@ -393,6 +413,32 @@ by <a href="SDL_GPUDepthStencilTargetInfo.html#SIZEOF"><code>SDL_GPUDepthStencil
 </section>
 </li>
 <li>
+<section class="detail" id="mip_level()">
+<h3>mip_level</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint8")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">mip_level</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>mip_level</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="layer()">
+<h3>layer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint8")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">layer</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>layer</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="texture(long)">
 <h3>texture</h3>
 <div class="horizontal-scroll">
@@ -468,6 +514,26 @@ by <a href="SDL_GPUDepthStencilTargetInfo.html#SIZEOF"><code>SDL_GPUDepthStencil
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUDepthStencilTargetInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo.Buffer</a></span>&nbsp;<span class="element-name">clear_stencil</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint8")
  byte&nbsp;value)</span></div>
 <div class="block">Sets the specified value to the <code>clear_stencil</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="mip_level(byte)">
+<h3>mip_level</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUDepthStencilTargetInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo.Buffer</a></span>&nbsp;<span class="element-name">mip_level</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint8")
+ byte&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>mip_level</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="layer(byte)">
+<h3>layer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUDepthStencilTargetInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo.Buffer</a></span>&nbsp;<span class="element-name">layer</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint8")
+ byte&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>layer</code> field.</div>
 </div>
 </section>
 </li>

@@ -17,6 +17,7 @@ org.lwjgl.sdl
 org.lwjgl.stb
 org.lwjgl.system
 org.lwjgl.system.ffm
+org.lwjgl.system.ffm.mapping
 org.lwjgl.system.freebsd
 org.lwjgl.system.jawt
 org.lwjgl.system.jemalloc

@@ -78,6 +78,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#MSDF_EDGE_COLOR_MAGENTA" tabindex="0">MSDF_EDGE_COLOR_MAGENTA</a></li>
 <li><a href="#MSDF_EDGE_COLOR_CYAN" tabindex="0">MSDF_EDGE_COLOR_CYAN</a></li>
 <li><a href="#MSDF_EDGE_COLOR_WHITE" tabindex="0">MSDF_EDGE_COLOR_WHITE</a></li>
+<li><a href="#MSDF_ORIENTATION_Y_UPWARD" tabindex="0">MSDF_ORIENTATION_Y_UPWARD</a></li>
+<li><a href="#MSDF_ORIENTATION_Y_DOWNWARD" tabindex="0">MSDF_ORIENTATION_Y_DOWNWARD</a></li>
 <li><a href="#MSDF_ERROR_CORRECTION_MODE_DISABLED" tabindex="0">MSDF_ERROR_CORRECTION_MODE_DISABLED</a></li>
 <li><a href="#MSDF_ERROR_CORRECTION_MODE_INDISCRIMINATE" tabindex="0">MSDF_ERROR_CORRECTION_MODE_INDISCRIMINATE</a></li>
 <li><a href="#MSDF_ERROR_CORRECTION_MODE_EDGE_PRIORITY" tabindex="0">MSDF_ERROR_CORRECTION_MODE_EDGE_PRIORITY</a></li>
@@ -113,8 +115,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#msdf_shape_get_contour(long,long,org.lwjgl.PointerBuffer)" tabindex="0">msdf_shape_get_contour(long, long, PointerBuffer)</a></li>
 <li><a href="#nmsdf_shape_get_edge_count(long,long)" tabindex="0">nmsdf_shape_get_edge_count(long, long)</a></li>
 <li><a href="#msdf_shape_get_edge_count(long,org.lwjgl.PointerBuffer)" tabindex="0">msdf_shape_get_edge_count(long, PointerBuffer)</a></li>
-<li><a href="#nmsdf_shape_has_inverse_y_axis(long,long)" tabindex="0">nmsdf_shape_has_inverse_y_axis(long, long)</a></li>
-<li><a href="#msdf_shape_has_inverse_y_axis(long,java.nio.IntBuffer)" tabindex="0">msdf_shape_has_inverse_y_axis(long, IntBuffer)</a></li>
+<li><a href="#nmsdf_shape_get_y_axis_orientation(long,long)" tabindex="0">nmsdf_shape_get_y_axis_orientation(long, long)</a></li>
+<li><a href="#msdf_shape_get_y_axis_orientation(long,java.nio.IntBuffer)" tabindex="0">msdf_shape_get_y_axis_orientation(long, IntBuffer)</a></li>
+<li><a href="#nmsdf_shape_set_y_axis_orientation(long,int)" tabindex="0">nmsdf_shape_set_y_axis_orientation(long, int)</a></li>
+<li><a href="#msdf_shape_set_y_axis_orientation(long,int)" tabindex="0">msdf_shape_set_y_axis_orientation(long, int)</a></li>
 <li><a href="#nmsdf_shape_normalize(long)" tabindex="0">nmsdf_shape_normalize(long)</a></li>
 <li><a href="#msdf_shape_normalize(long)" tabindex="0">msdf_shape_normalize(long)</a></li>
 <li><a href="#nmsdf_shape_validate(long,long)" tabindex="0">nmsdf_shape_validate(long, long)</a></li>
@@ -311,6 +315,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#MSDF_FALSE" class="member-name-link">MSDF_FALSE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#MSDF_ORIENTATION_Y_DOWNWARD" class="member-name-link">MSDF_ORIENTATION_Y_DOWNWARD</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#MSDF_ORIENTATION_Y_UPWARD" class="member-name-link">MSDF_ORIENTATION_Y_UPWARD</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#MSDF_SEGMENT_TYPE_CUBIC" class="member-name-link">MSDF_SEGMENT_TYPE_CUBIC</a></code></div>
@@ -681,10 +691,10 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>int msdf_shape_get_edge_count(msdf_shape_const_handle shape, size_t * count)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#msdf_shape_has_inverse_y_axis(long,java.nio.IntBuffer)" class="member-name-link">msdf_shape_has_inverse_y_axis</a><wbr>(long&nbsp;shape,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;inverse_y_axis)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#msdf_shape_get_y_axis_orientation(long,java.nio.IntBuffer)" class="member-name-link">msdf_shape_get_y_axis_orientation</a><wbr>(long&nbsp;shape,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;yAxisOrientation)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int msdf_shape_has_inverse_y_axis(msdf_shape_const_handle shape, int * inverse_y_axis)</code></div>
+<div class="block"><code>int msdf_shape_get_y_axis_orientation(msdf_shape_const_handle shape, int * yAxisOrientation)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#msdf_shape_normalize(long)" class="member-name-link">msdf_shape_normalize</a><wbr>(long&nbsp;shape)</code></div>
@@ -710,378 +720,390 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>int msdf_shape_remove_contour(msdf_shape_handle shape, msdf_contour_const_handle contour)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#msdf_shape_validate(long,java.nio.IntBuffer)" class="member-name-link">msdf_shape_validate</a><wbr>(long&nbsp;shape,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;result)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#msdf_shape_set_y_axis_orientation(long,int)" class="member-name-link">msdf_shape_set_y_axis_orientation</a><wbr>(long&nbsp;shape,
+ int&nbsp;yAxisOrientation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int msdf_shape_validate(msdf_shape_handle shape, int * result)</code></div>
+<div class="block"><code>int msdf_shape_set_y_axis_orientation(msdf_shape_handle shape, int yAxisOrientation)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_alloc(int,int,int,long)" class="member-name-link">nmsdf_bitmap_alloc</a><wbr>(int&nbsp;type,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#msdf_shape_validate(long,java.nio.IntBuffer)" class="member-name-link">msdf_shape_validate</a><wbr>(long&nbsp;shape,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;result)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int msdf_shape_validate(msdf_shape_handle shape, int * result)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_alloc(int,int,int,long)" class="member-name-link">nmsdf_bitmap_alloc</a><wbr>(int&nbsp;type,
  int&nbsp;width,
  int&nbsp;height,
  long&nbsp;bitmap)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_bitmap_alloc(int type, int width, int height, struct msdf_bitmap * bitmap)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_free(long)" class="member-name-link">nmsdf_bitmap_free</a><wbr>(long&nbsp;bitmap)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_free(long)" class="member-name-link">nmsdf_bitmap_free</a><wbr>(long&nbsp;bitmap)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void msdf_bitmap_free(struct msdf_bitmap * bitmap)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_get_byte_size(long,long)" class="member-name-link">nmsdf_bitmap_get_byte_size</a><wbr>(long&nbsp;bitmap,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_get_byte_size(long,long)" class="member-name-link">nmsdf_bitmap_get_byte_size</a><wbr>(long&nbsp;bitmap,
  long&nbsp;size)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_bitmap_get_byte_size(struct msdf_bitmap const * bitmap, size_t * size)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_get_channel_count(long,long)" class="member-name-link">nmsdf_bitmap_get_channel_count</a><wbr>(long&nbsp;bitmap,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_get_channel_count(long,long)" class="member-name-link">nmsdf_bitmap_get_channel_count</a><wbr>(long&nbsp;bitmap,
  long&nbsp;channel_count)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_bitmap_get_channel_count(struct msdf_bitmap const * bitmap, int * channel_count)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_get_pixels(long,long)" class="member-name-link">nmsdf_bitmap_get_pixels</a><wbr>(long&nbsp;bitmap,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_bitmap_get_pixels(long,long)" class="member-name-link">nmsdf_bitmap_get_pixels</a><wbr>(long&nbsp;bitmap,
  long&nbsp;pixels)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_bitmap_get_pixels(struct msdf_bitmap const * bitmap, void ** pixels)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_add_edge(long,long)" class="member-name-link">nmsdf_contour_add_edge</a><wbr>(long&nbsp;contour,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_add_edge(long,long)" class="member-name-link">nmsdf_contour_add_edge</a><wbr>(long&nbsp;contour,
  long&nbsp;segment)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_contour_add_edge(msdf_contour_handle contour, msdf_segment_handle segment)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_alloc(long)" class="member-name-link">nmsdf_contour_alloc</a><wbr>(long&nbsp;contour)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_alloc(long)" class="member-name-link">nmsdf_contour_alloc</a><wbr>(long&nbsp;contour)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_contour_alloc(msdf_contour_handle * contour)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_bound(long,long)" class="member-name-link">nmsdf_contour_bound</a><wbr>(long&nbsp;contour,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_bound(long,long)" class="member-name-link">nmsdf_contour_bound</a><wbr>(long&nbsp;contour,
  long&nbsp;bounds)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_contour_bound(msdf_contour_const_handle contour, struct msdf_bounds * bounds)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_bound_miters(long,long,double,double,int)" class="member-name-link">nmsdf_contour_bound_miters</a><wbr>(long&nbsp;contour,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_bound_miters(long,long,double,double,int)" class="member-name-link">nmsdf_contour_bound_miters</a><wbr>(long&nbsp;contour,
  long&nbsp;bounds,
  double&nbsp;border,
  double&nbsp;miter_limit,
  int&nbsp;polarity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_contour_bound_miters(msdf_contour_const_handle contour, struct msdf_bounds * bounds, double border, double miter_limit, int polarity)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_free(long)" class="member-name-link">nmsdf_contour_free</a><wbr>(long&nbsp;contour)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_free(long)" class="member-name-link">nmsdf_contour_free</a><wbr>(long&nbsp;contour)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void msdf_contour_free(msdf_contour_handle contour)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_get_edge(long,long,long)" class="member-name-link">nmsdf_contour_get_edge</a><wbr>(long&nbsp;contour,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_get_edge(long,long,long)" class="member-name-link">nmsdf_contour_get_edge</a><wbr>(long&nbsp;contour,
  long&nbsp;index,
  long&nbsp;segment)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_contour_get_edge(msdf_contour_const_handle contour, size_t index, msdf_segment_const_handle * segment)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_get_edge_count(long,long)" class="member-name-link">nmsdf_contour_get_edge_count</a><wbr>(long&nbsp;contour,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_get_edge_count(long,long)" class="member-name-link">nmsdf_contour_get_edge_count</a><wbr>(long&nbsp;contour,
  long&nbsp;count)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_contour_get_edge_count(msdf_contour_const_handle contour, size_t * count)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_get_winding(long,long)" class="member-name-link">nmsdf_contour_get_winding</a><wbr>(long&nbsp;contour,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_get_winding(long,long)" class="member-name-link">nmsdf_contour_get_winding</a><wbr>(long&nbsp;contour,
  long&nbsp;winding)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_contour_get_winding(msdf_contour_const_handle contour, int * winding)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_remove_edge(long,long)" class="member-name-link">nmsdf_contour_remove_edge</a><wbr>(long&nbsp;contour,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_remove_edge(long,long)" class="member-name-link">nmsdf_contour_remove_edge</a><wbr>(long&nbsp;contour,
  long&nbsp;segment)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_contour_remove_edge(msdf_contour_handle contour, msdf_segment_handle segment)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_reverse(long)" class="member-name-link">nmsdf_contour_reverse</a><wbr>(long&nbsp;contour)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_contour_reverse(long)" class="member-name-link">nmsdf_contour_reverse</a><wbr>(long&nbsp;contour)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_contour_reverse(msdf_contour_handle contour)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_error_correction(long,long,long)" class="member-name-link">nmsdf_error_correction</a><wbr>(long&nbsp;bitmap,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_error_correction(long,long,long)" class="member-name-link">nmsdf_error_correction</a><wbr>(long&nbsp;bitmap,
  long&nbsp;shape,
  long&nbsp;transform)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_error_correction(struct msdf_bitmap * bitmap, msdf_shape_const_handle shape, struct msdf_transform const * transform)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_error_correction_fast_distance(long,long)" class="member-name-link">nmsdf_error_correction_fast_distance</a><wbr>(long&nbsp;bitmap,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_error_correction_fast_distance(long,long)" class="member-name-link">nmsdf_error_correction_fast_distance</a><wbr>(long&nbsp;bitmap,
  long&nbsp;transform)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_error_correction_fast_distance(struct msdf_bitmap * bitmap, struct msdf_transform const * transform)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_error_correction_fast_edge(long,long)" class="member-name-link">nmsdf_error_correction_fast_edge</a><wbr>(long&nbsp;bitmap,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_error_correction_fast_edge(long,long)" class="member-name-link">nmsdf_error_correction_fast_edge</a><wbr>(long&nbsp;bitmap,
  long&nbsp;transform)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_error_correction_fast_edge(struct msdf_bitmap * bitmap, struct msdf_transform const * transform)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_msdf(long,long,long)" class="member-name-link">nmsdf_generate_msdf</a><wbr>(long&nbsp;output,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_msdf(long,long,long)" class="member-name-link">nmsdf_generate_msdf</a><wbr>(long&nbsp;output,
  long&nbsp;shape,
  long&nbsp;transform)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_generate_msdf(struct msdf_bitmap * output, msdf_shape_const_handle shape, struct msdf_transform const * transform)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_msdf_with_config(long,long,long,long)" class="member-name-link">nmsdf_generate_msdf_with_config</a><wbr>(long&nbsp;output,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_msdf_with_config(long,long,long,long)" class="member-name-link">nmsdf_generate_msdf_with_config</a><wbr>(long&nbsp;output,
  long&nbsp;shape,
  long&nbsp;transform,
  long&nbsp;config)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_generate_msdf_with_config(struct msdf_bitmap * output, msdf_shape_const_handle shape, struct msdf_transform const * transform, struct msdf_multichannel_config const * config)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_mtsdf(long,long,long)" class="member-name-link">nmsdf_generate_mtsdf</a><wbr>(long&nbsp;output,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_mtsdf(long,long,long)" class="member-name-link">nmsdf_generate_mtsdf</a><wbr>(long&nbsp;output,
  long&nbsp;shape,
  long&nbsp;transform)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_generate_mtsdf(struct msdf_bitmap * output, msdf_shape_const_handle shape, struct msdf_transform const * transform)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_mtsdf_with_config(long,long,long,long)" class="member-name-link">nmsdf_generate_mtsdf_with_config</a><wbr>(long&nbsp;output,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_mtsdf_with_config(long,long,long,long)" class="member-name-link">nmsdf_generate_mtsdf_with_config</a><wbr>(long&nbsp;output,
  long&nbsp;shape,
  long&nbsp;transform,
  long&nbsp;config)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_generate_mtsdf_with_config(struct msdf_bitmap * output, msdf_shape_const_handle shape, struct msdf_transform const * transform, struct msdf_multichannel_config const * config)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_psdf(long,long,long)" class="member-name-link">nmsdf_generate_psdf</a><wbr>(long&nbsp;output,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_psdf(long,long,long)" class="member-name-link">nmsdf_generate_psdf</a><wbr>(long&nbsp;output,
  long&nbsp;shape,
  long&nbsp;transform)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_generate_psdf(struct msdf_bitmap * output, msdf_shape_const_handle shape, struct msdf_transform const * transform)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_psdf_with_config(long,long,long,long)" class="member-name-link">nmsdf_generate_psdf_with_config</a><wbr>(long&nbsp;output,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_psdf_with_config(long,long,long,long)" class="member-name-link">nmsdf_generate_psdf_with_config</a><wbr>(long&nbsp;output,
  long&nbsp;shape,
  long&nbsp;transform,
  long&nbsp;config)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_generate_psdf_with_config(struct msdf_bitmap * output, msdf_shape_const_handle shape, struct msdf_transform const * transform, struct msdf_config const * config)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_sdf(long,long,long)" class="member-name-link">nmsdf_generate_sdf</a><wbr>(long&nbsp;output,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_sdf(long,long,long)" class="member-name-link">nmsdf_generate_sdf</a><wbr>(long&nbsp;output,
  long&nbsp;shape,
  long&nbsp;transform)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_generate_sdf(struct msdf_bitmap * output, msdf_shape_const_handle shape, struct msdf_transform const * transform)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_sdf_with_config(long,long,long,long)" class="member-name-link">nmsdf_generate_sdf_with_config</a><wbr>(long&nbsp;output,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_generate_sdf_with_config(long,long,long,long)" class="member-name-link">nmsdf_generate_sdf_with_config</a><wbr>(long&nbsp;output,
  long&nbsp;shape,
  long&nbsp;transform,
  long&nbsp;config)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_generate_sdf_with_config(struct msdf_bitmap * output, msdf_shape_const_handle shape, struct msdf_transform const * transform, struct msdf_config const * config)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_render_sdf(long,long)" class="member-name-link">nmsdf_render_sdf</a><wbr>(long&nbsp;output,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_render_sdf(long,long)" class="member-name-link">nmsdf_render_sdf</a><wbr>(long&nbsp;output,
  long&nbsp;sdf)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_render_sdf(struct msdf_bitmap * output, struct msdf_bitmap * sdf)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_alloc(int,long)" class="member-name-link">nmsdf_segment_alloc</a><wbr>(int&nbsp;type,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_alloc(int,long)" class="member-name-link">nmsdf_segment_alloc</a><wbr>(int&nbsp;type,
  long&nbsp;segment)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_alloc(int type, msdf_segment_handle * segment)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_bound(long,long)" class="member-name-link">nmsdf_segment_bound</a><wbr>(long&nbsp;segment,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_bound(long,long)" class="member-name-link">nmsdf_segment_bound</a><wbr>(long&nbsp;segment,
  long&nbsp;bounds)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_bound(msdf_segment_const_handle segment, struct msdf_bounds * bounds)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_free(long)" class="member-name-link">nmsdf_segment_free</a><wbr>(long&nbsp;segment)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_free(long)" class="member-name-link">nmsdf_segment_free</a><wbr>(long&nbsp;segment)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void msdf_segment_free(msdf_segment_handle segment)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_color(long,long)" class="member-name-link">nmsdf_segment_get_color</a><wbr>(long&nbsp;segment,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_color(long,long)" class="member-name-link">nmsdf_segment_get_color</a><wbr>(long&nbsp;segment,
  long&nbsp;color)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_get_color(msdf_segment_const_handle segment, int * color)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_direction(long,double,long)" class="member-name-link">nmsdf_segment_get_direction</a><wbr>(long&nbsp;segment,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_direction(long,double,long)" class="member-name-link">nmsdf_segment_get_direction</a><wbr>(long&nbsp;segment,
  double&nbsp;param,
  long&nbsp;direction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_get_direction(msdf_segment_const_handle segment, double param, struct msdf_vector2 * direction)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_direction_change(long,double,long)" class="member-name-link">nmsdf_segment_get_direction_change</a><wbr>(long&nbsp;segment,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_direction_change(long,double,long)" class="member-name-link">nmsdf_segment_get_direction_change</a><wbr>(long&nbsp;segment,
  double&nbsp;param,
  long&nbsp;direction_change)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_get_direction_change(msdf_segment_const_handle segment, double param, struct msdf_vector2 * direction_change)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_point(long,long,long)" class="member-name-link">nmsdf_segment_get_point</a><wbr>(long&nbsp;segment,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_point(long,long,long)" class="member-name-link">nmsdf_segment_get_point</a><wbr>(long&nbsp;segment,
  long&nbsp;index,
  long&nbsp;point)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_get_point(msdf_segment_const_handle segment, size_t index, struct msdf_vector2 * point)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_point_count(long,long)" class="member-name-link">nmsdf_segment_get_point_count</a><wbr>(long&nbsp;segment,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_point_count(long,long)" class="member-name-link">nmsdf_segment_get_point_count</a><wbr>(long&nbsp;segment,
  long&nbsp;count)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_get_point_count(msdf_segment_const_handle segment, size_t * count)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_type(long,long)" class="member-name-link">nmsdf_segment_get_type</a><wbr>(long&nbsp;segment,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_get_type(long,long)" class="member-name-link">nmsdf_segment_get_type</a><wbr>(long&nbsp;segment,
  long&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_get_type(msdf_segment_const_handle segment, int * type)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_move_end_point(long,long)" class="member-name-link">nmsdf_segment_move_end_point</a><wbr>(long&nbsp;segment,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_move_end_point(long,long)" class="member-name-link">nmsdf_segment_move_end_point</a><wbr>(long&nbsp;segment,
  long&nbsp;point)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_move_end_point(msdf_segment_handle segment, struct msdf_vector2 const * point)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_move_start_point(long,long)" class="member-name-link">nmsdf_segment_move_start_point</a><wbr>(long&nbsp;segment,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_move_start_point(long,long)" class="member-name-link">nmsdf_segment_move_start_point</a><wbr>(long&nbsp;segment,
  long&nbsp;point)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_move_start_point(msdf_segment_handle segment, struct msdf_vector2 const * point)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_point(long,double,long)" class="member-name-link">nmsdf_segment_point</a><wbr>(long&nbsp;segment,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_point(long,double,long)" class="member-name-link">nmsdf_segment_point</a><wbr>(long&nbsp;segment,
  double&nbsp;param,
  long&nbsp;point)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_point(msdf_segment_const_handle segment, double param, struct msdf_vector2 * point)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_set_color(long,int)" class="member-name-link">nmsdf_segment_set_color</a><wbr>(long&nbsp;segment,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_set_color(long,int)" class="member-name-link">nmsdf_segment_set_color</a><wbr>(long&nbsp;segment,
  int&nbsp;color)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_set_color(msdf_segment_handle segment, int color)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_set_point(long,long,long)" class="member-name-link">nmsdf_segment_set_point</a><wbr>(long&nbsp;segment,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_segment_set_point(long,long,long)" class="member-name-link">nmsdf_segment_set_point</a><wbr>(long&nbsp;segment,
  long&nbsp;index,
  long&nbsp;point)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_segment_set_point(msdf_segment_handle segment, size_t index, struct msdf_vector2 const * point)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_add_contour(long,long)" class="member-name-link">nmsdf_shape_add_contour</a><wbr>(long&nbsp;shape,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_add_contour(long,long)" class="member-name-link">nmsdf_shape_add_contour</a><wbr>(long&nbsp;shape,
  long&nbsp;contour)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_add_contour(msdf_shape_handle shape, msdf_contour_const_handle * contour)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_alloc(long)" class="member-name-link">nmsdf_shape_alloc</a><wbr>(long&nbsp;shape)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_alloc(long)" class="member-name-link">nmsdf_shape_alloc</a><wbr>(long&nbsp;shape)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_alloc(msdf_shape_handle * shape)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_bound(long,long)" class="member-name-link">nmsdf_shape_bound</a><wbr>(long&nbsp;shape,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_bound(long,long)" class="member-name-link">nmsdf_shape_bound</a><wbr>(long&nbsp;shape,
  long&nbsp;bounds)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_bound(msdf_shape_const_handle shape, struct msdf_bounds * bounds)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_bound_miters(long,long,double,double,int)" class="member-name-link">nmsdf_shape_bound_miters</a><wbr>(long&nbsp;shape,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_bound_miters(long,long,double,double,int)" class="member-name-link">nmsdf_shape_bound_miters</a><wbr>(long&nbsp;shape,
  long&nbsp;bounds,
  double&nbsp;border,
  double&nbsp;miter_limit,
  int&nbsp;polarity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_bound_miters(msdf_shape_const_handle shape, struct msdf_bounds * bounds, double border, double miter_limit, int polarity)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_edge_colors_by_distance(long,double)" class="member-name-link">nmsdf_shape_edge_colors_by_distance</a><wbr>(long&nbsp;shape,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_edge_colors_by_distance(long,double)" class="member-name-link">nmsdf_shape_edge_colors_by_distance</a><wbr>(long&nbsp;shape,
  double&nbsp;angle_threshold)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_edge_colors_by_distance(msdf_shape_handle shape, double angle_threshold)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_edge_colors_ink_trap(long,double)" class="member-name-link">nmsdf_shape_edge_colors_ink_trap</a><wbr>(long&nbsp;shape,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_edge_colors_ink_trap(long,double)" class="member-name-link">nmsdf_shape_edge_colors_ink_trap</a><wbr>(long&nbsp;shape,
  double&nbsp;angle_threshold)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_edge_colors_ink_trap(msdf_shape_handle shape, double angle_threshold)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_edge_colors_simple(long,double)" class="member-name-link">nmsdf_shape_edge_colors_simple</a><wbr>(long&nbsp;shape,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_edge_colors_simple(long,double)" class="member-name-link">nmsdf_shape_edge_colors_simple</a><wbr>(long&nbsp;shape,
  double&nbsp;angle_threshold)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_edge_colors_simple(msdf_shape_handle shape, double angle_threshold)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_free(long)" class="member-name-link">nmsdf_shape_free</a><wbr>(long&nbsp;shape)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_free(long)" class="member-name-link">nmsdf_shape_free</a><wbr>(long&nbsp;shape)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void msdf_shape_free(msdf_shape_handle shape)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_get_bounds(long,long)" class="member-name-link">nmsdf_shape_get_bounds</a><wbr>(long&nbsp;shape,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_get_bounds(long,long)" class="member-name-link">nmsdf_shape_get_bounds</a><wbr>(long&nbsp;shape,
  long&nbsp;bounds)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_get_bounds(msdf_shape_const_handle shape, struct msdf_bounds * bounds)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_get_contour(long,long,long)" class="member-name-link">nmsdf_shape_get_contour</a><wbr>(long&nbsp;shape,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_get_contour(long,long,long)" class="member-name-link">nmsdf_shape_get_contour</a><wbr>(long&nbsp;shape,
  long&nbsp;index,
  long&nbsp;contour)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_get_contour(msdf_shape_const_handle shape, size_t index, msdf_contour_const_handle * contour)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_get_contour_count(long,long)" class="member-name-link">nmsdf_shape_get_contour_count</a><wbr>(long&nbsp;shape,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_get_contour_count(long,long)" class="member-name-link">nmsdf_shape_get_contour_count</a><wbr>(long&nbsp;shape,
  long&nbsp;size)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_get_contour_count(msdf_shape_const_handle shape, size_t * size)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_get_edge_count(long,long)" class="member-name-link">nmsdf_shape_get_edge_count</a><wbr>(long&nbsp;shape,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_get_edge_count(long,long)" class="member-name-link">nmsdf_shape_get_edge_count</a><wbr>(long&nbsp;shape,
  long&nbsp;count)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_get_edge_count(msdf_shape_const_handle shape, size_t * count)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_has_inverse_y_axis(long,long)" class="member-name-link">nmsdf_shape_has_inverse_y_axis</a><wbr>(long&nbsp;shape,
- long&nbsp;inverse_y_axis)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int msdf_shape_has_inverse_y_axis(msdf_shape_const_handle shape, int * inverse_y_axis)</code></div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_normalize(long)" class="member-name-link">nmsdf_shape_normalize</a><wbr>(long&nbsp;shape)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_get_y_axis_orientation(long,long)" class="member-name-link">nmsdf_shape_get_y_axis_orientation</a><wbr>(long&nbsp;shape,
+ long&nbsp;yAxisOrientation)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int msdf_shape_get_y_axis_orientation(msdf_shape_const_handle shape, int * yAxisOrientation)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_normalize(long)" class="member-name-link">nmsdf_shape_normalize</a><wbr>(long&nbsp;shape)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_normalize(msdf_shape_handle shape)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_one_shot_distance(long,long,long)" class="member-name-link">nmsdf_shape_one_shot_distance</a><wbr>(long&nbsp;shape,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_one_shot_distance(long,long,long)" class="member-name-link">nmsdf_shape_one_shot_distance</a><wbr>(long&nbsp;shape,
  long&nbsp;origin,
  long&nbsp;distance)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_one_shot_distance(msdf_shape_const_handle shape, struct msdf_vector2 const * origin, double * distance)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_orient_contours(long)" class="member-name-link">nmsdf_shape_orient_contours</a><wbr>(long&nbsp;shape)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_orient_contours(long)" class="member-name-link">nmsdf_shape_orient_contours</a><wbr>(long&nbsp;shape)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_orient_contours(msdf_shape_handle shape)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_remove_contour(long,long)" class="member-name-link">nmsdf_shape_remove_contour</a><wbr>(long&nbsp;shape,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_remove_contour(long,long)" class="member-name-link">nmsdf_shape_remove_contour</a><wbr>(long&nbsp;shape,
  long&nbsp;contour)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int msdf_shape_remove_contour(msdf_shape_handle shape, msdf_contour_const_handle contour)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_set_y_axis_orientation(long,int)" class="member-name-link">nmsdf_shape_set_y_axis_orientation</a><wbr>(long&nbsp;shape,
+ int&nbsp;yAxisOrientation)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int msdf_shape_set_y_axis_orientation(msdf_shape_handle shape, int yAxisOrientation)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmsdf_shape_validate(long,long)" class="member-name-link">nmsdf_shape_validate</a><wbr>(long&nbsp;shape,
@@ -1475,6 +1497,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="MSDF_ORIENTATION_Y_UPWARD">
+<h3>MSDF_ORIENTATION_Y_UPWARD</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MSDF_ORIENTATION_Y_UPWARD</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#org.lwjgl.util.msdfgen.MSDFGen.MSDF_ORIENTATION_Y_UPWARD">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="MSDF_ORIENTATION_Y_DOWNWARD">
+<h3>MSDF_ORIENTATION_Y_DOWNWARD</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MSDF_ORIENTATION_Y_DOWNWARD</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../constant-values.html#org.lwjgl.util.msdfgen.MSDFGen.MSDF_ORIENTATION_Y_DOWNWARD">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="MSDF_ERROR_CORRECTION_MODE_DISABLED">
 <h3>MSDF_ERROR_CORRECTION_MODE_DISABLED</h3>
 <div class="horizontal-scroll">
@@ -1859,24 +1913,45 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="nmsdf_shape_has_inverse_y_axis(long,long)">
-<h3>nmsdf_shape_has_inverse_y_axis</h3>
+<section class="detail" id="nmsdf_shape_get_y_axis_orientation(long,long)">
+<h3>nmsdf_shape_get_y_axis_orientation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nmsdf_shape_has_inverse_y_axis</span><wbr><span class="parameters">(long&nbsp;shape,
- long&nbsp;inverse_y_axis)</span></div>
-<div class="block"><code>int msdf_shape_has_inverse_y_axis(msdf_shape_const_handle shape, int * inverse_y_axis)</code></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nmsdf_shape_get_y_axis_orientation</span><wbr><span class="parameters">(long&nbsp;shape,
+ long&nbsp;yAxisOrientation)</span></div>
+<div class="block"><code>int msdf_shape_get_y_axis_orientation(msdf_shape_const_handle shape, int * yAxisOrientation)</code></div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="msdf_shape_has_inverse_y_axis(long,java.nio.IntBuffer)">
-<h3>msdf_shape_has_inverse_y_axis</h3>
+<section class="detail" id="msdf_shape_get_y_axis_orientation(long,java.nio.IntBuffer)">
+<h3>msdf_shape_get_y_axis_orientation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">msdf_shape_has_inverse_y_axis</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("msdf_shape_const_handle")
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">msdf_shape_get_y_axis_orientation</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("msdf_shape_const_handle")
  long&nbsp;shape,
  <a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("int *")
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;inverse_y_axis)</span></div>
-<div class="block"><code>int msdf_shape_has_inverse_y_axis(msdf_shape_const_handle shape, int * inverse_y_axis)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;yAxisOrientation)</span></div>
+<div class="block"><code>int msdf_shape_get_y_axis_orientation(msdf_shape_const_handle shape, int * yAxisOrientation)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nmsdf_shape_set_y_axis_orientation(long,int)">
+<h3>nmsdf_shape_set_y_axis_orientation</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nmsdf_shape_set_y_axis_orientation</span><wbr><span class="parameters">(long&nbsp;shape,
+ int&nbsp;yAxisOrientation)</span></div>
+<div class="block"><code>int msdf_shape_set_y_axis_orientation(msdf_shape_handle shape, int yAxisOrientation)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="msdf_shape_set_y_axis_orientation(long,int)">
+<h3>msdf_shape_set_y_axis_orientation</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">msdf_shape_set_y_axis_orientation</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("msdf_shape_handle")
+ long&nbsp;shape,
+ int&nbsp;yAxisOrientation)</span></div>
+<div class="block"><code>int msdf_shape_set_y_axis_orientation(msdf_shape_handle shape, int yAxisOrientation)</code></div>
 </div>
 </section>
 </li>

@@ -107,6 +107,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_GetRelativeMouseState(java.nio.FloatBuffer,java.nio.FloatBuffer)" tabindex="0">SDL_GetRelativeMouseState(FloatBuffer, FloatBuffer)</a></li>
 <li><a href="#SDL_WarpMouseInWindow(long,float,float)" tabindex="0">SDL_WarpMouseInWindow(long, float, float)</a></li>
 <li><a href="#SDL_WarpMouseGlobal(float,float)" tabindex="0">SDL_WarpMouseGlobal(float, float)</a></li>
+<li><a href="#nSDL_SetRelativeMouseTransform(long,long)" tabindex="0">nSDL_SetRelativeMouseTransform(long, long)</a></li>
+<li><a href="#SDL_SetRelativeMouseTransform(org.lwjgl.sdl.SDL_MouseMotionTransformCallbackI,long)" tabindex="0">SDL_SetRelativeMouseTransform(SDL_MouseMotionTransformCallbackI, long)</a></li>
 <li><a href="#SDL_SetWindowRelativeMouseMode(long,boolean)" tabindex="0">SDL_SetWindowRelativeMouseMode(long, boolean)</a></li>
 <li><a href="#SDL_GetWindowRelativeMouseMode(long)" tabindex="0">SDL_GetWindowRelativeMouseMode(long)</a></li>
 <li><a href="#SDL_CaptureMouse(boolean)" tabindex="0">SDL_CaptureMouse(boolean)</a></li>
@@ -114,6 +116,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_CreateCursor(java.nio.ByteBuffer,java.nio.ByteBuffer,int,int,int,int)" tabindex="0">SDL_CreateCursor(ByteBuffer, ByteBuffer, int, int, int, int)</a></li>
 <li><a href="#nSDL_CreateColorCursor(long,int,int)" tabindex="0">nSDL_CreateColorCursor(long, int, int)</a></li>
 <li><a href="#SDL_CreateColorCursor(org.lwjgl.sdl.SDL_Surface,int,int)" tabindex="0">SDL_CreateColorCursor(SDL_Surface, int, int)</a></li>
+<li><a href="#nSDL_CreateAnimatedCursor(long,int,int,int)" tabindex="0">nSDL_CreateAnimatedCursor(long, int, int, int)</a></li>
+<li><a href="#SDL_CreateAnimatedCursor(org.lwjgl.sdl.SDL_CursorFrameInfo.Buffer,int,int)" tabindex="0">SDL_CreateAnimatedCursor(SDL_CursorFrameInfo.Buffer, int, int)</a></li>
 <li><a href="#SDL_CreateSystemCursor(int)" tabindex="0">SDL_CreateSystemCursor(int)</a></li>
 <li><a href="#SDL_SetCursor(long)" tabindex="0">SDL_SetCursor(long)</a></li>
 <li><a href="#SDL_GetCursor()" tabindex="0">SDL_GetCursor()</a></li>
@@ -283,49 +287,63 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateColorCursor(long,int,int)" class="member-name-link">nSDL_CreateColorCursor</a><wbr>(long&nbsp;surface,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateAnimatedCursor(long,int,int,int)" class="member-name-link">nSDL_CreateAnimatedCursor</a><wbr>(long&nbsp;frames,
+ int&nbsp;frame_count,
  int&nbsp;hot_x,
  int&nbsp;hot_y)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>SDL_Cursor * SDL_CreateColorCursor(SDL_Surface * surface, int hot_x, int hot_y)</code></div>
+<div class="block"><code>SDL_Cursor * SDL_CreateAnimatedCursor(SDL_CursorFrameInfo * frames, int frame_count, int hot_x, int hot_y)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateCursor(long,long,int,int,int,int)" class="member-name-link">nSDL_CreateCursor</a><wbr>(long&nbsp;data,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateColorCursor(long,int,int)" class="member-name-link">nSDL_CreateColorCursor</a><wbr>(long&nbsp;surface,
+ int&nbsp;hot_x,
+ int&nbsp;hot_y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_Cursor * SDL_CreateColorCursor(SDL_Surface * surface, int hot_x, int hot_y)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_CreateCursor(long,long,int,int,int,int)" class="member-name-link">nSDL_CreateCursor</a><wbr>(long&nbsp;data,
  long&nbsp;mask,
  int&nbsp;w,
  int&nbsp;h,
  int&nbsp;hot_x,
  int&nbsp;hot_y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Cursor * SDL_CreateCursor(Uint8 const * data, Uint8 const * mask, int w, int h, int hot_x, int hot_y)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetGlobalMouseState(long,long)" class="member-name-link">nSDL_GetGlobalMouseState</a><wbr>(long&nbsp;x,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetGlobalMouseState(long,long)" class="member-name-link">nSDL_GetGlobalMouseState</a><wbr>(long&nbsp;x,
  long&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_MouseButtonFlags SDL_GetGlobalMouseState(float * x, float * y)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetMice(long)" class="member-name-link">nSDL_GetMice</a><wbr>(long&nbsp;count)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetMice(long)" class="member-name-link">nSDL_GetMice</a><wbr>(long&nbsp;count)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_MouseID * SDL_GetMice(int * count)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetMouseNameForID(int)" class="member-name-link">nSDL_GetMouseNameForID</a><wbr>(int&nbsp;instance_id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetMouseNameForID(int)" class="member-name-link">nSDL_GetMouseNameForID</a><wbr>(int&nbsp;instance_id)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>char const * SDL_GetMouseNameForID(SDL_MouseID instance_id)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetMouseState(long,long)" class="member-name-link">nSDL_GetMouseState</a><wbr>(long&nbsp;x,
- long&nbsp;y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>SDL_MouseButtonFlags SDL_GetMouseState(float * x, float * y)</code></div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetRelativeMouseState(long,long)" class="member-name-link">nSDL_GetRelativeMouseState</a><wbr>(long&nbsp;x,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetMouseState(long,long)" class="member-name-link">nSDL_GetMouseState</a><wbr>(long&nbsp;x,
  long&nbsp;y)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_MouseButtonFlags SDL_GetMouseState(float * x, float * y)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_GetRelativeMouseState(long,long)" class="member-name-link">nSDL_GetRelativeMouseState</a><wbr>(long&nbsp;x,
+ long&nbsp;y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_MouseButtonFlags SDL_GetRelativeMouseState(float * x, float * y)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_SetRelativeMouseTransform(long,long)" class="member-name-link">nSDL_SetRelativeMouseTransform</a><wbr>(long&nbsp;callback,
+ long&nbsp;userdata)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetRelativeMouseTransform(SDL_MouseMotionTransformCallback callback, void * userdata)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CaptureMouse(boolean)" class="member-name-link">SDL_CaptureMouse</a><wbr>(boolean&nbsp;enabled)</code></div>
@@ -333,99 +351,112 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>bool SDL_CaptureMouse(bool enabled)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateColorCursor(org.lwjgl.sdl.SDL_Surface,int,int)" class="member-name-link">SDL_CreateColorCursor</a><wbr>(<a href="SDL_Surface.html" title="class in org.lwjgl.sdl">SDL_Surface</a>&nbsp;surface,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateAnimatedCursor(org.lwjgl.sdl.SDL_CursorFrameInfo.Buffer,int,int)" class="member-name-link">SDL_CreateAnimatedCursor</a><wbr>(<a href="SDL_CursorFrameInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_CursorFrameInfo.Buffer</a>&nbsp;frames,
  int&nbsp;hot_x,
  int&nbsp;hot_y)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>SDL_Cursor * SDL_CreateColorCursor(SDL_Surface * surface, int hot_x, int hot_y)</code></div>
+<div class="block"><code>SDL_Cursor * SDL_CreateAnimatedCursor(SDL_CursorFrameInfo * frames, int frame_count, int hot_x, int hot_y)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateCursor(java.nio.ByteBuffer,java.nio.ByteBuffer,int,int,int,int)" class="member-name-link">SDL_CreateCursor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateColorCursor(org.lwjgl.sdl.SDL_Surface,int,int)" class="member-name-link">SDL_CreateColorCursor</a><wbr>(<a href="SDL_Surface.html" title="class in org.lwjgl.sdl">SDL_Surface</a>&nbsp;surface,
+ int&nbsp;hot_x,
+ int&nbsp;hot_y)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_Cursor * SDL_CreateColorCursor(SDL_Surface * surface, int hot_x, int hot_y)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateCursor(java.nio.ByteBuffer,java.nio.ByteBuffer,int,int,int,int)" class="member-name-link">SDL_CreateCursor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;mask,
  int&nbsp;w,
  int&nbsp;h,
  int&nbsp;hot_x,
  int&nbsp;hot_y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Cursor * SDL_CreateCursor(Uint8 const * data, Uint8 const * mask, int w, int h, int hot_x, int hot_y)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateSystemCursor(int)" class="member-name-link">SDL_CreateSystemCursor</a><wbr>(int&nbsp;id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CreateSystemCursor(int)" class="member-name-link">SDL_CreateSystemCursor</a><wbr>(int&nbsp;id)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Cursor * SDL_CreateSystemCursor(SDL_SystemCursor id)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CursorVisible()" class="member-name-link">SDL_CursorVisible</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_CursorVisible()" class="member-name-link">SDL_CursorVisible</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_CursorVisible(void)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_DestroyCursor(long)" class="member-name-link">SDL_DestroyCursor</a><wbr>(long&nbsp;cursor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_DestroyCursor(long)" class="member-name-link">SDL_DestroyCursor</a><wbr>(long&nbsp;cursor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>void SDL_DestroyCursor(SDL_Cursor * cursor)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetCursor()" class="member-name-link">SDL_GetCursor</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetCursor()" class="member-name-link">SDL_GetCursor</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Cursor * SDL_GetCursor(void)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetDefaultCursor()" class="member-name-link">SDL_GetDefaultCursor</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetDefaultCursor()" class="member-name-link">SDL_GetDefaultCursor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Cursor * SDL_GetDefaultCursor(void)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetGlobalMouseState(java.nio.FloatBuffer,java.nio.FloatBuffer)" class="member-name-link">SDL_GetGlobalMouseState</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;x,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetGlobalMouseState(java.nio.FloatBuffer,java.nio.FloatBuffer)" class="member-name-link">SDL_GetGlobalMouseState</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;x,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_MouseButtonFlags SDL_GetGlobalMouseState(float * x, float * y)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetMice()" class="member-name-link">SDL_GetMice</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetMice()" class="member-name-link">SDL_GetMice</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_MouseID * SDL_GetMice(int * count)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetMouseFocus()" class="member-name-link">SDL_GetMouseFocus</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetMouseFocus()" class="member-name-link">SDL_GetMouseFocus</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_Window * SDL_GetMouseFocus(void)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetMouseNameForID(int)" class="member-name-link">SDL_GetMouseNameForID</a><wbr>(int&nbsp;instance_id)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetMouseNameForID(int)" class="member-name-link">SDL_GetMouseNameForID</a><wbr>(int&nbsp;instance_id)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>char const * SDL_GetMouseNameForID(SDL_MouseID instance_id)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetMouseState(java.nio.FloatBuffer,java.nio.FloatBuffer)" class="member-name-link">SDL_GetMouseState</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;x,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetMouseState(java.nio.FloatBuffer,java.nio.FloatBuffer)" class="member-name-link">SDL_GetMouseState</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;x,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;y)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_MouseButtonFlags SDL_GetMouseState(float * x, float * y)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetRelativeMouseState(java.nio.FloatBuffer,java.nio.FloatBuffer)" class="member-name-link">SDL_GetRelativeMouseState</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;x,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetRelativeMouseState(java.nio.FloatBuffer,java.nio.FloatBuffer)" class="member-name-link">SDL_GetRelativeMouseState</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;x,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_MouseButtonFlags SDL_GetRelativeMouseState(float * x, float * y)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetWindowRelativeMouseMode(long)" class="member-name-link">SDL_GetWindowRelativeMouseMode</a><wbr>(long&nbsp;window)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetWindowRelativeMouseMode(long)" class="member-name-link">SDL_GetWindowRelativeMouseMode</a><wbr>(long&nbsp;window)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_GetWindowRelativeMouseMode(SDL_Window * window)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_HasMouse()" class="member-name-link">SDL_HasMouse</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_HasMouse()" class="member-name-link">SDL_HasMouse</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_HasMouse(void)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_HideCursor()" class="member-name-link">SDL_HideCursor</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_HideCursor()" class="member-name-link">SDL_HideCursor</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_HideCursor(void)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetCursor(long)" class="member-name-link">SDL_SetCursor</a><wbr>(long&nbsp;cursor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetCursor(long)" class="member-name-link">SDL_SetCursor</a><wbr>(long&nbsp;cursor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetCursor(SDL_Cursor * cursor)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetRelativeMouseTransform(org.lwjgl.sdl.SDL_MouseMotionTransformCallbackI,long)" class="member-name-link">SDL_SetRelativeMouseTransform</a><wbr>(<a href="SDL_MouseMotionTransformCallbackI.html" title="interface in org.lwjgl.sdl">SDL_MouseMotionTransformCallbackI</a>&nbsp;callback,
+ long&nbsp;userdata)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetRelativeMouseTransform(SDL_MouseMotionTransformCallback callback, void * userdata)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowRelativeMouseMode(long,boolean)" class="member-name-link">SDL_SetWindowRelativeMouseMode</a><wbr>(long&nbsp;window,
@@ -1116,6 +1147,29 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="nSDL_SetRelativeMouseTransform(long,long)">
+<h3>nSDL_SetRelativeMouseTransform</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nSDL_SetRelativeMouseTransform</span><wbr><span class="parameters">(long&nbsp;callback,
+ long&nbsp;userdata)</span></div>
+<div class="block"><code>bool SDL_SetRelativeMouseTransform(SDL_MouseMotionTransformCallback callback, void * userdata)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_SetRelativeMouseTransform(org.lwjgl.sdl.SDL_MouseMotionTransformCallbackI,long)">
+<h3>SDL_SetRelativeMouseTransform</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_SetRelativeMouseTransform</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_MouseMotionTransformCallback")
+ <a href="SDL_MouseMotionTransformCallbackI.html" title="interface in org.lwjgl.sdl">SDL_MouseMotionTransformCallbackI</a>&nbsp;callback,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
+ long&nbsp;userdata)</span></div>
+<div class="block"><code>bool SDL_SetRelativeMouseTransform(SDL_MouseMotionTransformCallback callback, void * userdata)</code></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_SetWindowRelativeMouseMode(long,boolean)">
 <h3>SDL_SetWindowRelativeMouseMode</h3>
 <div class="horizontal-scroll">
@@ -1202,6 +1256,31 @@ loadScripts(document, 'script');</script>
  int&nbsp;hot_x,
  int&nbsp;hot_y)</span></div>
 <div class="block"><code>SDL_Cursor * SDL_CreateColorCursor(SDL_Surface * surface, int hot_x, int hot_y)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_CreateAnimatedCursor(long,int,int,int)">
+<h3>nSDL_CreateAnimatedCursor</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">nSDL_CreateAnimatedCursor</span><wbr><span class="parameters">(long&nbsp;frames,
+ int&nbsp;frame_count,
+ int&nbsp;hot_x,
+ int&nbsp;hot_y)</span></div>
+<div class="block"><code>SDL_Cursor * SDL_CreateAnimatedCursor(SDL_CursorFrameInfo * frames, int frame_count, int hot_x, int hot_y)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_CreateAnimatedCursor(org.lwjgl.sdl.SDL_CursorFrameInfo.Buffer,int,int)">
+<h3>SDL_CreateAnimatedCursor</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Cursor *")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SDL_CreateAnimatedCursor</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_CursorFrameInfo *")
+ <a href="SDL_CursorFrameInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_CursorFrameInfo.Buffer</a>&nbsp;frames,
+ int&nbsp;hot_x,
+ int&nbsp;hot_y)</span></div>
+<div class="block"><code>SDL_Cursor * SDL_CreateAnimatedCursor(SDL_CursorFrameInfo * frames, int frame_count, int hot_x, int hot_y)</code></div>
 </div>
 </section>
 </li>

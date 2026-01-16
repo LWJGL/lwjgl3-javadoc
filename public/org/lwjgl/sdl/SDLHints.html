@@ -74,6 +74,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES" tabindex="0">SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES</a></li>
 <li><a href="#SDL_HINT_AUDIO_DEVICE_STREAM_NAME" tabindex="0">SDL_HINT_AUDIO_DEVICE_STREAM_NAME</a></li>
 <li><a href="#SDL_HINT_AUDIO_DEVICE_STREAM_ROLE" tabindex="0">SDL_HINT_AUDIO_DEVICE_STREAM_ROLE</a></li>
+<li><a href="#SDL_HINT_AUDIO_DEVICE_RAW_STREAM" tabindex="0">SDL_HINT_AUDIO_DEVICE_RAW_STREAM</a></li>
 <li><a href="#SDL_HINT_AUDIO_DISK_INPUT_FILE" tabindex="0">SDL_HINT_AUDIO_DISK_INPUT_FILE</a></li>
 <li><a href="#SDL_HINT_AUDIO_DISK_OUTPUT_FILE" tabindex="0">SDL_HINT_AUDIO_DISK_OUTPUT_FILE</a></li>
 <li><a href="#SDL_HINT_AUDIO_DISK_TIMESCALE" tabindex="0">SDL_HINT_AUDIO_DISK_TIMESCALE</a></li>
@@ -90,6 +91,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_JOYSTICK_DIRECTINPUT" tabindex="0">SDL_HINT_JOYSTICK_DIRECTINPUT</a></li>
 <li><a href="#SDL_HINT_FILE_DIALOG_DRIVER" tabindex="0">SDL_HINT_FILE_DIALOG_DRIVER</a></li>
 <li><a href="#SDL_HINT_DISPLAY_USABLE_BOUNDS" tabindex="0">SDL_HINT_DISPLAY_USABLE_BOUNDS</a></li>
+<li><a href="#SDL_HINT_INVALID_PARAM_CHECKS" tabindex="0">SDL_HINT_INVALID_PARAM_CHECKS</a></li>
 <li><a href="#SDL_HINT_EMSCRIPTEN_ASYNCIFY" tabindex="0">SDL_HINT_EMSCRIPTEN_ASYNCIFY</a></li>
 <li><a href="#SDL_HINT_EMSCRIPTEN_CANVAS_SELECTOR" tabindex="0">SDL_HINT_EMSCRIPTEN_CANVAS_SELECTOR</a></li>
 <li><a href="#SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT" tabindex="0">SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT</a></li>
@@ -110,6 +112,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_GDK_TEXTINPUT_SCOPE" tabindex="0">SDL_HINT_GDK_TEXTINPUT_SCOPE</a></li>
 <li><a href="#SDL_HINT_GDK_TEXTINPUT_TITLE" tabindex="0">SDL_HINT_GDK_TEXTINPUT_TITLE</a></li>
 <li><a href="#SDL_HINT_HIDAPI_LIBUSB" tabindex="0">SDL_HINT_HIDAPI_LIBUSB</a></li>
+<li><a href="#SDL_HINT_HIDAPI_LIBUSB_GAMECUBE" tabindex="0">SDL_HINT_HIDAPI_LIBUSB_GAMECUBE</a></li>
 <li><a href="#SDL_HINT_HIDAPI_LIBUSB_WHITELIST" tabindex="0">SDL_HINT_HIDAPI_LIBUSB_WHITELIST</a></li>
 <li><a href="#SDL_HINT_HIDAPI_UDEV" tabindex="0">SDL_HINT_HIDAPI_UDEV</a></li>
 <li><a href="#SDL_HINT_GPU_DRIVER" tabindex="0">SDL_HINT_GPU_DRIVER</a></li>
@@ -149,9 +152,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAM_HOME_LED" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_STEAM_HOME_LED</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAMDECK" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_STEAMDECK</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAM_HORI" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_STEAM_HORI</a></li>
+<li><a href="#SDL_HINT_JOYSTICK_HIDAPI_LG4FF" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_LG4FF</a></li>
+<li><a href="#SDL_HINT_JOYSTICK_HIDAPI_8BITDO" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_8BITDO</a></li>
+<li><a href="#SDL_HINT_JOYSTICK_HIDAPI_SINPUT" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_SINPUT</a></li>
+<li><a href="#SDL_HINT_JOYSTICK_HIDAPI_ZUIKI" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_ZUIKI</a></li>
+<li><a href="#SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_SWITCH</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED</a></li>
+<li><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH2" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_SWITCH2</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_VERTICAL_JOY_CONS" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_VERTICAL_JOY_CONS</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_WII" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_WII</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_WII_PLAYER_LED" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_WII_PLAYER_LED</a></li>
@@ -161,6 +170,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_XBOX_360_WIRELESS" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_XBOX_360_WIRELESS</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED</a></li>
+<li><a href="#SDL_HINT_JOYSTICK_HIDAPI_GIP" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_GIP</a></li>
+<li><a href="#SDL_HINT_JOYSTICK_HIDAPI_GIP_RESET_FOR_METADATA" tabindex="0">SDL_HINT_JOYSTICK_HIDAPI_GIP_RESET_FOR_METADATA</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_IOKIT" tabindex="0">SDL_HINT_JOYSTICK_IOKIT</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_LINUX_CLASSIC" tabindex="0">SDL_HINT_JOYSTICK_LINUX_CLASSIC</a></li>
 <li><a href="#SDL_HINT_JOYSTICK_LINUX_DEADZONES" tabindex="0">SDL_HINT_JOYSTICK_LINUX_DEADZONES</a></li>
@@ -181,17 +192,20 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_KEYCODE_OPTIONS" tabindex="0">SDL_HINT_KEYCODE_OPTIONS</a></li>
 <li><a href="#SDL_HINT_KMSDRM_DEVICE_INDEX" tabindex="0">SDL_HINT_KMSDRM_DEVICE_INDEX</a></li>
 <li><a href="#SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER" tabindex="0">SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER</a></li>
+<li><a href="#SDL_HINT_KMSDRM_ATOMIC" tabindex="0">SDL_HINT_KMSDRM_ATOMIC</a></li>
 <li><a href="#SDL_HINT_LOGGING" tabindex="0">SDL_HINT_LOGGING</a></li>
 <li><a href="#SDL_HINT_MAC_BACKGROUND_APP" tabindex="0">SDL_HINT_MAC_BACKGROUND_APP</a></li>
 <li><a href="#SDL_HINT_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK" tabindex="0">SDL_HINT_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK</a></li>
 <li><a href="#SDL_HINT_MAC_OPENGL_ASYNC_DISPATCH" tabindex="0">SDL_HINT_MAC_OPENGL_ASYNC_DISPATCH</a></li>
 <li><a href="#SDL_HINT_MAC_OPTION_AS_ALT" tabindex="0">SDL_HINT_MAC_OPTION_AS_ALT</a></li>
 <li><a href="#SDL_HINT_MAC_SCROLL_MOMENTUM" tabindex="0">SDL_HINT_MAC_SCROLL_MOMENTUM</a></li>
+<li><a href="#SDL_HINT_MAC_PRESS_AND_HOLD" tabindex="0">SDL_HINT_MAC_PRESS_AND_HOLD</a></li>
 <li><a href="#SDL_HINT_MAIN_CALLBACK_RATE" tabindex="0">SDL_HINT_MAIN_CALLBACK_RATE</a></li>
 <li><a href="#SDL_HINT_MOUSE_AUTO_CAPTURE" tabindex="0">SDL_HINT_MOUSE_AUTO_CAPTURE</a></li>
 <li><a href="#SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS" tabindex="0">SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS</a></li>
 <li><a href="#SDL_HINT_MOUSE_DOUBLE_CLICK_TIME" tabindex="0">SDL_HINT_MOUSE_DOUBLE_CLICK_TIME</a></li>
 <li><a href="#SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR" tabindex="0">SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR</a></li>
+<li><a href="#SDL_HINT_MOUSE_DPI_SCALE_CURSORS" tabindex="0">SDL_HINT_MOUSE_DPI_SCALE_CURSORS</a></li>
 <li><a href="#SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE" tabindex="0">SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE</a></li>
 <li><a href="#SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH" tabindex="0">SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH</a></li>
 <li><a href="#SDL_HINT_MOUSE_NORMAL_SPEED_SCALE" tabindex="0">SDL_HINT_MOUSE_NORMAL_SPEED_SCALE</a></li>
@@ -213,6 +227,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_QUIT_ON_LAST_WINDOW_CLOSE" tabindex="0">SDL_HINT_QUIT_ON_LAST_WINDOW_CLOSE</a></li>
 <li><a href="#SDL_HINT_RENDER_DIRECT3D_THREADSAFE" tabindex="0">SDL_HINT_RENDER_DIRECT3D_THREADSAFE</a></li>
 <li><a href="#SDL_HINT_RENDER_DIRECT3D11_DEBUG" tabindex="0">SDL_HINT_RENDER_DIRECT3D11_DEBUG</a></li>
+<li><a href="#SDL_HINT_RENDER_DIRECT3D11_WARP" tabindex="0">SDL_HINT_RENDER_DIRECT3D11_WARP</a></li>
 <li><a href="#SDL_HINT_RENDER_VULKAN_DEBUG" tabindex="0">SDL_HINT_RENDER_VULKAN_DEBUG</a></li>
 <li><a href="#SDL_HINT_RENDER_GPU_DEBUG" tabindex="0">SDL_HINT_RENDER_GPU_DEBUG</a></li>
 <li><a href="#SDL_HINT_RENDER_GPU_LOW_POWER" tabindex="0">SDL_HINT_RENDER_GPU_LOW_POWER</a></li>
@@ -223,6 +238,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_RETURN_KEY_HIDES_IME" tabindex="0">SDL_HINT_RETURN_KEY_HIDES_IME</a></li>
 <li><a href="#SDL_HINT_ROG_GAMEPAD_MICE" tabindex="0">SDL_HINT_ROG_GAMEPAD_MICE</a></li>
 <li><a href="#SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED" tabindex="0">SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED</a></li>
+<li><a href="#SDL_HINT_PS2_GS_WIDTH" tabindex="0">SDL_HINT_PS2_GS_WIDTH</a></li>
+<li><a href="#SDL_HINT_PS2_GS_HEIGHT" tabindex="0">SDL_HINT_PS2_GS_HEIGHT</a></li>
+<li><a href="#SDL_HINT_PS2_GS_PROGRESSIVE" tabindex="0">SDL_HINT_PS2_GS_PROGRESSIVE</a></li>
+<li><a href="#SDL_HINT_PS2_GS_MODE" tabindex="0">SDL_HINT_PS2_GS_MODE</a></li>
 <li><a href="#SDL_HINT_RPI_VIDEO_LAYER" tabindex="0">SDL_HINT_RPI_VIDEO_LAYER</a></li>
 <li><a href="#SDL_HINT_SCREENSAVER_INHIBIT_ACTIVITY_NAME" tabindex="0">SDL_HINT_SCREENSAVER_INHIBIT_ACTIVITY_NAME</a></li>
 <li><a href="#SDL_HINT_SHUTDOWN_DBUS_ON_QUIT" tabindex="0">SDL_HINT_SHUTDOWN_DBUS_ON_QUIT</a></li>
@@ -243,6 +262,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_VIDEO_FORCE_EGL" tabindex="0">SDL_HINT_VIDEO_FORCE_EGL</a></li>
 <li><a href="#SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES" tabindex="0">SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES</a></li>
 <li><a href="#SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY" tabindex="0">SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY</a></li>
+<li><a href="#SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE" tabindex="0">SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE</a></li>
+<li><a href="#SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE" tabindex="0">SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE</a></li>
 <li><a href="#SDL_HINT_VIDEO_MINIMIZE_ON_FOCUS_LOSS" tabindex="0">SDL_HINT_VIDEO_MINIMIZE_ON_FOCUS_LOSS</a></li>
 <li><a href="#SDL_HINT_VIDEO_OFFSCREEN_SAVE_FRAMES" tabindex="0">SDL_HINT_VIDEO_OFFSCREEN_SAVE_FRAMES</a></li>
 <li><a href="#SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS" tabindex="0">SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS</a></li>
@@ -282,6 +303,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP" tabindex="0">SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP</a></li>
 <li><a href="#SDL_HINT_WINDOWS_GAMEINPUT" tabindex="0">SDL_HINT_WINDOWS_GAMEINPUT</a></li>
 <li><a href="#SDL_HINT_WINDOWS_RAW_KEYBOARD" tabindex="0">SDL_HINT_WINDOWS_RAW_KEYBOARD</a></li>
+<li><a href="#SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS" tabindex="0">SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS</a></li>
 <li><a href="#SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL" tabindex="0">SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL</a></li>
 <li><a href="#SDL_HINT_WINDOWS_INTRESOURCE_ICON" tabindex="0">SDL_HINT_WINDOWS_INTRESOURCE_ICON</a></li>
 <li><a href="#SDL_HINT_WINDOWS_INTRESOURCE_ICON_SMALL" tabindex="0">SDL_HINT_WINDOWS_INTRESOURCE_ICON_SMALL</a></li>
@@ -419,133 +441,139 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_DEVICE_APP_ICON_NAME" class="member-name-link">SDL_HINT_AUDIO_DEVICE_APP_ICON_NAME</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES" class="member-name-link">SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_DEVICE_RAW_STREAM" class="member-name-link">SDL_HINT_AUDIO_DEVICE_RAW_STREAM</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_DEVICE_STREAM_NAME" class="member-name-link">SDL_HINT_AUDIO_DEVICE_STREAM_NAME</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES" class="member-name-link">SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_DEVICE_STREAM_ROLE" class="member-name-link">SDL_HINT_AUDIO_DEVICE_STREAM_ROLE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_DEVICE_STREAM_NAME" class="member-name-link">SDL_HINT_AUDIO_DEVICE_STREAM_NAME</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_DISK_INPUT_FILE" class="member-name-link">SDL_HINT_AUDIO_DISK_INPUT_FILE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_DEVICE_STREAM_ROLE" class="member-name-link">SDL_HINT_AUDIO_DEVICE_STREAM_ROLE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_DISK_OUTPUT_FILE" class="member-name-link">SDL_HINT_AUDIO_DISK_OUTPUT_FILE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_DISK_INPUT_FILE" class="member-name-link">SDL_HINT_AUDIO_DISK_INPUT_FILE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_DISK_TIMESCALE" class="member-name-link">SDL_HINT_AUDIO_DISK_TIMESCALE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_DISK_OUTPUT_FILE" class="member-name-link">SDL_HINT_AUDIO_DISK_OUTPUT_FILE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_DRIVER" class="member-name-link">SDL_HINT_AUDIO_DRIVER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_DISK_TIMESCALE" class="member-name-link">SDL_HINT_AUDIO_DISK_TIMESCALE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_DUMMY_TIMESCALE" class="member-name-link">SDL_HINT_AUDIO_DUMMY_TIMESCALE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_DRIVER" class="member-name-link">SDL_HINT_AUDIO_DRIVER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_FORMAT" class="member-name-link">SDL_HINT_AUDIO_FORMAT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_DUMMY_TIMESCALE" class="member-name-link">SDL_HINT_AUDIO_DUMMY_TIMESCALE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_FREQUENCY" class="member-name-link">SDL_HINT_AUDIO_FREQUENCY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_FORMAT" class="member-name-link">SDL_HINT_AUDIO_FORMAT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_INCLUDE_MONITORS" class="member-name-link">SDL_HINT_AUDIO_INCLUDE_MONITORS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUDIO_FREQUENCY" class="member-name-link">SDL_HINT_AUDIO_FREQUENCY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUTO_UPDATE_JOYSTICKS" class="member-name-link">SDL_HINT_AUTO_UPDATE_JOYSTICKS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUDIO_INCLUDE_MONITORS" class="member-name-link">SDL_HINT_AUDIO_INCLUDE_MONITORS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUTO_UPDATE_SENSORS" class="member-name-link">SDL_HINT_AUTO_UPDATE_SENSORS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_AUTO_UPDATE_JOYSTICKS" class="member-name-link">SDL_HINT_AUTO_UPDATE_JOYSTICKS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_BMP_SAVE_LEGACY_FORMAT" class="member-name-link">SDL_HINT_BMP_SAVE_LEGACY_FORMAT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_AUTO_UPDATE_SENSORS" class="member-name-link">SDL_HINT_AUTO_UPDATE_SENSORS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_CAMERA_DRIVER" class="member-name-link">SDL_HINT_CAMERA_DRIVER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_BMP_SAVE_LEGACY_FORMAT" class="member-name-link">SDL_HINT_BMP_SAVE_LEGACY_FORMAT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_CPU_FEATURE_MASK" class="member-name-link">SDL_HINT_CPU_FEATURE_MASK</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_DEFAULT" class="member-name-link">SDL_HINT_DEFAULT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_DISPLAY_USABLE_BOUNDS" class="member-name-link">SDL_HINT_DISPLAY_USABLE_BOUNDS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_CAMERA_DRIVER" class="member-name-link">SDL_HINT_CAMERA_DRIVER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_EGL_LIBRARY" class="member-name-link">SDL_HINT_EGL_LIBRARY</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_CPU_FEATURE_MASK" class="member-name-link">SDL_HINT_CPU_FEATURE_MASK</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_EMSCRIPTEN_ASYNCIFY" class="member-name-link">SDL_HINT_EMSCRIPTEN_ASYNCIFY</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_DEFAULT" class="member-name-link">SDL_HINT_DEFAULT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_EMSCRIPTEN_CANVAS_SELECTOR" class="member-name-link">SDL_HINT_EMSCRIPTEN_CANVAS_SELECTOR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_DISPLAY_USABLE_BOUNDS" class="member-name-link">SDL_HINT_DISPLAY_USABLE_BOUNDS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT" class="member-name-link">SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_EGL_LIBRARY" class="member-name-link">SDL_HINT_EGL_LIBRARY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_ENABLE_SCREEN_KEYBOARD" class="member-name-link">SDL_HINT_ENABLE_SCREEN_KEYBOARD</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_EMSCRIPTEN_ASYNCIFY" class="member-name-link">SDL_HINT_EMSCRIPTEN_ASYNCIFY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_EVDEV_DEVICES" class="member-name-link">SDL_HINT_EVDEV_DEVICES</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_EMSCRIPTEN_CANVAS_SELECTOR" class="member-name-link">SDL_HINT_EMSCRIPTEN_CANVAS_SELECTOR</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_EVENT_LOGGING" class="member-name-link">SDL_HINT_EVENT_LOGGING</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT" class="member-name-link">SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_FILE_DIALOG_DRIVER" class="member-name-link">SDL_HINT_FILE_DIALOG_DRIVER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_ENABLE_SCREEN_KEYBOARD" class="member-name-link">SDL_HINT_ENABLE_SCREEN_KEYBOARD</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_FORCE_RAISEWINDOW" class="member-name-link">SDL_HINT_FORCE_RAISEWINDOW</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_EVDEV_DEVICES" class="member-name-link">SDL_HINT_EVDEV_DEVICES</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_FRAMEBUFFER_ACCELERATION" class="member-name-link">SDL_HINT_FRAMEBUFFER_ACCELERATION</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_EVENT_LOGGING" class="member-name-link">SDL_HINT_EVENT_LOGGING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES" class="member-name-link">SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_FILE_DIALOG_DRIVER" class="member-name-link">SDL_HINT_FILE_DIALOG_DRIVER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT" class="member-name-link">SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_FORCE_RAISEWINDOW" class="member-name-link">SDL_HINT_FORCE_RAISEWINDOW</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_GAMECONTROLLER_SENSOR_FUSION" class="member-name-link">SDL_HINT_GAMECONTROLLER_SENSOR_FUSION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_FRAMEBUFFER_ACCELERATION" class="member-name-link">SDL_HINT_FRAMEBUFFER_ACCELERATION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GAMECONTROLLERCONFIG" class="member-name-link">SDL_HINT_GAMECONTROLLERCONFIG</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES" class="member-name-link">SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_GAMECONTROLLERCONFIG_FILE" class="member-name-link">SDL_HINT_GAMECONTROLLERCONFIG_FILE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT" class="member-name-link">SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GAMECONTROLLERTYPE" class="member-name-link">SDL_HINT_GAMECONTROLLERTYPE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GAMECONTROLLER_SENSOR_FUSION" class="member-name-link">SDL_HINT_GAMECONTROLLER_SENSOR_FUSION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_DEFAULT_TEXT" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_DEFAULT_TEXT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_GAMECONTROLLERCONFIG" class="member-name-link">SDL_HINT_GAMECONTROLLERCONFIG</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_DESCRIPTION" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_DESCRIPTION</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GAMECONTROLLERCONFIG_FILE" class="member-name-link">SDL_HINT_GAMECONTROLLERCONFIG_FILE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_MAX_LENGTH" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_MAX_LENGTH</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_GAMECONTROLLERTYPE" class="member-name-link">SDL_HINT_GAMECONTROLLERTYPE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_SCOPE" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_SCOPE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_DEFAULT_TEXT" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_DEFAULT_TEXT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_TITLE" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_TITLE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_DESCRIPTION" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_DESCRIPTION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GPU_DRIVER" class="member-name-link">SDL_HINT_GPU_DRIVER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_MAX_LENGTH" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_MAX_LENGTH</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_HIDAPI_ENUMERATE_ONLY_CONTROLLERS" class="member-name-link">SDL_HINT_HIDAPI_ENUMERATE_ONLY_CONTROLLERS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_SCOPE" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_SCOPE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_HIDAPI_IGNORE_DEVICES" class="member-name-link">SDL_HINT_HIDAPI_IGNORE_DEVICES</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_GDK_TEXTINPUT_TITLE" class="member-name-link">SDL_HINT_GDK_TEXTINPUT_TITLE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_HIDAPI_LIBUSB" class="member-name-link">SDL_HINT_HIDAPI_LIBUSB</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_GPU_DRIVER" class="member-name-link">SDL_HINT_GPU_DRIVER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_HIDAPI_ENUMERATE_ONLY_CONTROLLERS" class="member-name-link">SDL_HINT_HIDAPI_ENUMERATE_ONLY_CONTROLLERS</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_HIDAPI_IGNORE_DEVICES" class="member-name-link">SDL_HINT_HIDAPI_IGNORE_DEVICES</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_HIDAPI_LIBUSB" class="member-name-link">SDL_HINT_HIDAPI_LIBUSB</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_HIDAPI_LIBUSB_GAMECUBE" class="member-name-link">SDL_HINT_HIDAPI_LIBUSB_GAMECUBE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_HINT_HIDAPI_LIBUSB_WHITELIST" class="member-name-link">SDL_HINT_HIDAPI_LIBUSB_WHITELIST</a></code></div>
@@ -557,67 +585,85 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#SDL_HINT_IME_IMPLEMENTED_UI" class="member-name-link">SDL_HINT_IME_IMPLEMENTED_UI</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_IOS_HIDE_HOME_INDICATOR" class="member-name-link">SDL_HINT_IOS_HIDE_HOME_INDICATOR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_INVALID_PARAM_CHECKS" class="member-name-link">SDL_HINT_INVALID_PARAM_CHECKS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS" class="member-name-link">SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_IOS_HIDE_HOME_INDICATOR" class="member-name-link">SDL_HINT_IOS_HIDE_HOME_INDICATOR</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS" class="member-name-link">SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES_EXCLUDED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_BLACKLIST_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_BLACKLIST_DEVICES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES_EXCLUDED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_BLACKLIST_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_BLACKLIST_DEVICES_EXCLUDED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_BLACKLIST_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_BLACKLIST_DEVICES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_DEVICE" class="member-name-link">SDL_HINT_JOYSTICK_DEVICE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_BLACKLIST_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_BLACKLIST_DEVICES_EXCLUDED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_DIRECTINPUT" class="member-name-link">SDL_HINT_JOYSTICK_DIRECTINPUT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_DEVICE" class="member-name-link">SDL_HINT_JOYSTICK_DEVICE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_ENHANCED_REPORTS" class="member-name-link">SDL_HINT_JOYSTICK_ENHANCED_REPORTS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_DIRECTINPUT" class="member-name-link">SDL_HINT_JOYSTICK_DIRECTINPUT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_ENHANCED_REPORTS" class="member-name-link">SDL_HINT_JOYSTICK_ENHANCED_REPORTS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES_EXCLUDED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_GAMECUBE_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_GAMECUBE_DEVICES</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES_EXCLUDED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_GAMECUBE_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_GAMECUBE_DEVICES_EXCLUDED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_GAMECUBE_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_GAMECUBE_DEVICES</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_GAMEINPUT" class="member-name-link">SDL_HINT_JOYSTICK_GAMEINPUT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_GAMECUBE_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_GAMECUBE_DEVICES_EXCLUDED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HAPTIC_AXES" class="member-name-link">SDL_HINT_JOYSTICK_HAPTIC_AXES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_GAMEINPUT" class="member-name-link">SDL_HINT_JOYSTICK_GAMEINPUT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HAPTIC_AXES" class="member-name-link">SDL_HINT_JOYSTICK_HAPTIC_AXES</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_8BITDO" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_8BITDO</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_COMBINE_JOY_CONS" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_COMBINE_JOY_CONS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE_RUMBLE_BRAKE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_JOYCON_HOME_LED" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_JOYCON_HOME_LED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_GIP" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_GIP</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_GIP_RESET_FOR_METADATA" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_GIP_RESET_FOR_METADATA</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_JOYCON_HOME_LED" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_JOYCON_HOME_LED</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_LG4FF" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_LG4FF</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_LUNA" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_LUNA</a></code></div>
@@ -647,28 +693,34 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_SHIELD" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_SHIELD</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STADIA" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STADIA</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_SINPUT" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_SINPUT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAM" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STEAM</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STADIA" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STADIA</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAM_HOME_LED" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STEAM_HOME_LED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAM" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STEAM</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAM_HORI" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STEAM_HORI</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAM_HOME_LED" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STEAM_HOME_LED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAMDECK" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STEAMDECK</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAM_HORI" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STEAM_HORI</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_SWITCH</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_STEAMDECK" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_STEAMDECK</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_SWITCH</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_SWITCH2" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_SWITCH2</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_VERTICAL_JOY_CONS" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_VERTICAL_JOY_CONS</a></code></div>
@@ -698,55 +750,61 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_IOKIT" class="member-name-link">SDL_HINT_JOYSTICK_IOKIT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_HIDAPI_ZUIKI" class="member-name-link">SDL_HINT_JOYSTICK_HIDAPI_ZUIKI</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_LINUX_CLASSIC" class="member-name-link">SDL_HINT_JOYSTICK_LINUX_CLASSIC</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_IOKIT" class="member-name-link">SDL_HINT_JOYSTICK_IOKIT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_LINUX_DEADZONES" class="member-name-link">SDL_HINT_JOYSTICK_LINUX_DEADZONES</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_LINUX_CLASSIC" class="member-name-link">SDL_HINT_JOYSTICK_LINUX_CLASSIC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_LINUX_DIGITAL_HATS" class="member-name-link">SDL_HINT_JOYSTICK_LINUX_DIGITAL_HATS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_LINUX_DEADZONES" class="member-name-link">SDL_HINT_JOYSTICK_LINUX_DEADZONES</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_LINUX_HAT_DEADZONES" class="member-name-link">SDL_HINT_JOYSTICK_LINUX_HAT_DEADZONES</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_LINUX_DIGITAL_HATS" class="member-name-link">SDL_HINT_JOYSTICK_LINUX_DIGITAL_HATS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_MFI" class="member-name-link">SDL_HINT_JOYSTICK_MFI</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_LINUX_HAT_DEADZONES" class="member-name-link">SDL_HINT_JOYSTICK_LINUX_HAT_DEADZONES</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_RAWINPUT" class="member-name-link">SDL_HINT_JOYSTICK_RAWINPUT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_MFI" class="member-name-link">SDL_HINT_JOYSTICK_MFI</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_RAWINPUT_CORRELATE_XINPUT" class="member-name-link">SDL_HINT_JOYSTICK_RAWINPUT_CORRELATE_XINPUT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_RAWINPUT" class="member-name-link">SDL_HINT_JOYSTICK_RAWINPUT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_ROG_CHAKRAM" class="member-name-link">SDL_HINT_JOYSTICK_ROG_CHAKRAM</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_RAWINPUT_CORRELATE_XINPUT" class="member-name-link">SDL_HINT_JOYSTICK_RAWINPUT_CORRELATE_XINPUT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_THREAD" class="member-name-link">SDL_HINT_JOYSTICK_THREAD</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_ROG_CHAKRAM" class="member-name-link">SDL_HINT_JOYSTICK_ROG_CHAKRAM</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_THROTTLE_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_THROTTLE_DEVICES</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_THREAD" class="member-name-link">SDL_HINT_JOYSTICK_THREAD</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_THROTTLE_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_THROTTLE_DEVICES_EXCLUDED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_THROTTLE_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_THROTTLE_DEVICES</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_WGI" class="member-name-link">SDL_HINT_JOYSTICK_WGI</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_THROTTLE_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_THROTTLE_DEVICES_EXCLUDED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_WHEEL_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_WHEEL_DEVICES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_WGI" class="member-name-link">SDL_HINT_JOYSTICK_WGI</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_WHEEL_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_WHEEL_DEVICES_EXCLUDED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_WHEEL_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_WHEEL_DEVICES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_ZERO_CENTERED_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_ZERO_CENTERED_DEVICES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_JOYSTICK_WHEEL_DEVICES_EXCLUDED" class="member-name-link">SDL_HINT_JOYSTICK_WHEEL_DEVICES_EXCLUDED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_KEYCODE_OPTIONS" class="member-name-link">SDL_HINT_KEYCODE_OPTIONS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_JOYSTICK_ZERO_CENTERED_DEVICES" class="member-name-link">SDL_HINT_JOYSTICK_ZERO_CENTERED_DEVICES</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_KEYCODE_OPTIONS" class="member-name-link">SDL_HINT_KEYCODE_OPTIONS</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_KMSDRM_ATOMIC" class="member-name-link">SDL_HINT_KMSDRM_ATOMIC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_HINT_KMSDRM_DEVICE_INDEX" class="member-name-link">SDL_HINT_KMSDRM_DEVICE_INDEX</a></code></div>
@@ -770,22 +828,28 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#SDL_HINT_MAC_OPTION_AS_ALT" class="member-name-link">SDL_HINT_MAC_OPTION_AS_ALT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_MAC_SCROLL_MOMENTUM" class="member-name-link">SDL_HINT_MAC_SCROLL_MOMENTUM</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_MAC_PRESS_AND_HOLD" class="member-name-link">SDL_HINT_MAC_PRESS_AND_HOLD</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_MAIN_CALLBACK_RATE" class="member-name-link">SDL_HINT_MAIN_CALLBACK_RATE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_MAC_SCROLL_MOMENTUM" class="member-name-link">SDL_HINT_MAC_SCROLL_MOMENTUM</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_MOUSE_AUTO_CAPTURE" class="member-name-link">SDL_HINT_MOUSE_AUTO_CAPTURE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_MAIN_CALLBACK_RATE" class="member-name-link">SDL_HINT_MAIN_CALLBACK_RATE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR" class="member-name-link">SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_MOUSE_AUTO_CAPTURE" class="member-name-link">SDL_HINT_MOUSE_AUTO_CAPTURE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS" class="member-name-link">SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR" class="member-name-link">SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_MOUSE_DOUBLE_CLICK_TIME" class="member-name-link">SDL_HINT_MOUSE_DOUBLE_CLICK_TIME</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS" class="member-name-link">SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_MOUSE_DOUBLE_CLICK_TIME" class="member-name-link">SDL_HINT_MOUSE_DOUBLE_CLICK_TIME</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_MOUSE_DPI_SCALE_CURSORS" class="member-name-link">SDL_HINT_MOUSE_DPI_SCALE_CURSORS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE" class="member-name-link">SDL_HINT_MOUSE_EMULATE_WARP_WITH_RELATIVE</a></code></div>
@@ -851,6 +915,18 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#SDL_HINT_PREFERRED_LOCALES" class="member-name-link">SDL_HINT_PREFERRED_LOCALES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_PS2_GS_HEIGHT" class="member-name-link">SDL_HINT_PS2_GS_HEIGHT</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_PS2_GS_MODE" class="member-name-link">SDL_HINT_PS2_GS_MODE</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_PS2_GS_PROGRESSIVE" class="member-name-link">SDL_HINT_PS2_GS_PROGRESSIVE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_PS2_GS_WIDTH" class="member-name-link">SDL_HINT_PS2_GS_WIDTH</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_HINT_QUIT_ON_LAST_WINDOW_CLOSE" class="member-name-link">SDL_HINT_QUIT_ON_LAST_WINDOW_CLOSE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -860,223 +936,235 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#SDL_HINT_RENDER_DIRECT3D11_DEBUG" class="member-name-link">SDL_HINT_RENDER_DIRECT3D11_DEBUG</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RENDER_DRIVER" class="member-name-link">SDL_HINT_RENDER_DRIVER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RENDER_DIRECT3D11_WARP" class="member-name-link">SDL_HINT_RENDER_DIRECT3D11_WARP</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_RENDER_GPU_DEBUG" class="member-name-link">SDL_HINT_RENDER_GPU_DEBUG</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_RENDER_DRIVER" class="member-name-link">SDL_HINT_RENDER_DRIVER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RENDER_GPU_LOW_POWER" class="member-name-link">SDL_HINT_RENDER_GPU_LOW_POWER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RENDER_GPU_DEBUG" class="member-name-link">SDL_HINT_RENDER_GPU_DEBUG</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_RENDER_LINE_METHOD" class="member-name-link">SDL_HINT_RENDER_LINE_METHOD</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_RENDER_GPU_LOW_POWER" class="member-name-link">SDL_HINT_RENDER_GPU_LOW_POWER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RENDER_METAL_PREFER_LOW_POWER_DEVICE" class="member-name-link">SDL_HINT_RENDER_METAL_PREFER_LOW_POWER_DEVICE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RENDER_LINE_METHOD" class="member-name-link">SDL_HINT_RENDER_LINE_METHOD</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_RENDER_VSYNC" class="member-name-link">SDL_HINT_RENDER_VSYNC</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_RENDER_METAL_PREFER_LOW_POWER_DEVICE" class="member-name-link">SDL_HINT_RENDER_METAL_PREFER_LOW_POWER_DEVICE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RENDER_VULKAN_DEBUG" class="member-name-link">SDL_HINT_RENDER_VULKAN_DEBUG</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RENDER_VSYNC" class="member-name-link">SDL_HINT_RENDER_VSYNC</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_RETURN_KEY_HIDES_IME" class="member-name-link">SDL_HINT_RETURN_KEY_HIDES_IME</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_RENDER_VULKAN_DEBUG" class="member-name-link">SDL_HINT_RENDER_VULKAN_DEBUG</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_ROG_GAMEPAD_MICE" class="member-name-link">SDL_HINT_ROG_GAMEPAD_MICE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RETURN_KEY_HIDES_IME" class="member-name-link">SDL_HINT_RETURN_KEY_HIDES_IME</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED" class="member-name-link">SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_ROG_GAMEPAD_MICE" class="member-name-link">SDL_HINT_ROG_GAMEPAD_MICE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_RPI_VIDEO_LAYER" class="member-name-link">SDL_HINT_RPI_VIDEO_LAYER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED" class="member-name-link">SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_SCREENSAVER_INHIBIT_ACTIVITY_NAME" class="member-name-link">SDL_HINT_SCREENSAVER_INHIBIT_ACTIVITY_NAME</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_RPI_VIDEO_LAYER" class="member-name-link">SDL_HINT_RPI_VIDEO_LAYER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_SHUTDOWN_DBUS_ON_QUIT" class="member-name-link">SDL_HINT_SHUTDOWN_DBUS_ON_QUIT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_SCREENSAVER_INHIBIT_ACTIVITY_NAME" class="member-name-link">SDL_HINT_SCREENSAVER_INHIBIT_ACTIVITY_NAME</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_STORAGE_TITLE_DRIVER" class="member-name-link">SDL_HINT_STORAGE_TITLE_DRIVER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_SHUTDOWN_DBUS_ON_QUIT" class="member-name-link">SDL_HINT_SHUTDOWN_DBUS_ON_QUIT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_STORAGE_USER_DRIVER" class="member-name-link">SDL_HINT_STORAGE_USER_DRIVER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_STORAGE_TITLE_DRIVER" class="member-name-link">SDL_HINT_STORAGE_TITLE_DRIVER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_THREAD_FORCE_REALTIME_TIME_CRITICAL" class="member-name-link">SDL_HINT_THREAD_FORCE_REALTIME_TIME_CRITICAL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_STORAGE_USER_DRIVER" class="member-name-link">SDL_HINT_STORAGE_USER_DRIVER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_THREAD_PRIORITY_POLICY" class="member-name-link">SDL_HINT_THREAD_PRIORITY_POLICY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_THREAD_FORCE_REALTIME_TIME_CRITICAL" class="member-name-link">SDL_HINT_THREAD_FORCE_REALTIME_TIME_CRITICAL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_TIMER_RESOLUTION" class="member-name-link">SDL_HINT_TIMER_RESOLUTION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_THREAD_PRIORITY_POLICY" class="member-name-link">SDL_HINT_THREAD_PRIORITY_POLICY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_TOUCH_MOUSE_EVENTS" class="member-name-link">SDL_HINT_TOUCH_MOUSE_EVENTS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_TIMER_RESOLUTION" class="member-name-link">SDL_HINT_TIMER_RESOLUTION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_TRACKPAD_IS_TOUCH_ONLY" class="member-name-link">SDL_HINT_TRACKPAD_IS_TOUCH_ONLY</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_TOUCH_MOUSE_EVENTS" class="member-name-link">SDL_HINT_TOUCH_MOUSE_EVENTS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_TV_REMOTE_AS_JOYSTICK" class="member-name-link">SDL_HINT_TV_REMOTE_AS_JOYSTICK</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_TRACKPAD_IS_TOUCH_ONLY" class="member-name-link">SDL_HINT_TRACKPAD_IS_TOUCH_ONLY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_ALLOW_SCREENSAVER" class="member-name-link">SDL_HINT_VIDEO_ALLOW_SCREENSAVER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_TV_REMOTE_AS_JOYSTICK" class="member-name-link">SDL_HINT_TV_REMOTE_AS_JOYSTICK</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_DISPLAY_PRIORITY" class="member-name-link">SDL_HINT_VIDEO_DISPLAY_PRIORITY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_ALLOW_SCREENSAVER" class="member-name-link">SDL_HINT_VIDEO_ALLOW_SCREENSAVER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_DOUBLE_BUFFER" class="member-name-link">SDL_HINT_VIDEO_DOUBLE_BUFFER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_DISPLAY_PRIORITY" class="member-name-link">SDL_HINT_VIDEO_DISPLAY_PRIORITY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_DRIVER" class="member-name-link">SDL_HINT_VIDEO_DRIVER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_DOUBLE_BUFFER" class="member-name-link">SDL_HINT_VIDEO_DOUBLE_BUFFER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_DUMMY_SAVE_FRAMES" class="member-name-link">SDL_HINT_VIDEO_DUMMY_SAVE_FRAMES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_DRIVER" class="member-name-link">SDL_HINT_VIDEO_DRIVER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_EGL_ALLOW_GETDISPLAY_FALLBACK" class="member-name-link">SDL_HINT_VIDEO_EGL_ALLOW_GETDISPLAY_FALLBACK</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_DUMMY_SAVE_FRAMES" class="member-name-link">SDL_HINT_VIDEO_DUMMY_SAVE_FRAMES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_FORCE_EGL" class="member-name-link">SDL_HINT_VIDEO_FORCE_EGL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_EGL_ALLOW_GETDISPLAY_FALLBACK" class="member-name-link">SDL_HINT_VIDEO_EGL_ALLOW_GETDISPLAY_FALLBACK</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY" class="member-name-link">SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_FORCE_EGL" class="member-name-link">SDL_HINT_VIDEO_FORCE_EGL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES" class="member-name-link">SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY" class="member-name-link">SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_MINIMIZE_ON_FOCUS_LOSS" class="member-name-link">SDL_HINT_VIDEO_MINIMIZE_ON_FOCUS_LOSS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES" class="member-name-link">SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_OFFSCREEN_SAVE_FRAMES" class="member-name-link">SDL_HINT_VIDEO_OFFSCREEN_SAVE_FRAMES</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE" class="member-name-link">SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS" class="member-name-link">SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE" class="member-name-link">SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_ALLOW_LIBDECOR" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_ALLOW_LIBDECOR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_MINIMIZE_ON_FOCUS_LOSS" class="member-name-link">SDL_HINT_VIDEO_MINIMIZE_ON_FOCUS_LOSS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_MODE_EMULATION" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_MODE_EMULATION</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_OFFSCREEN_SAVE_FRAMES" class="member-name-link">SDL_HINT_VIDEO_OFFSCREEN_SAVE_FRAMES</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_MODE_SCALING" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_MODE_SCALING</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS" class="member-name-link">SDL_HINT_VIDEO_SYNC_WINDOW_OPERATIONS</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_PREFER_LIBDECOR" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_PREFER_LIBDECOR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_ALLOW_LIBDECOR" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_ALLOW_LIBDECOR</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_MODE_EMULATION" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_MODE_EMULATION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_WIN_D3DCOMPILER" class="member-name-link">SDL_HINT_VIDEO_WIN_D3DCOMPILER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_MODE_SCALING" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_MODE_SCALING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_X11_EXTERNAL_WINDOW_INPUT" class="member-name-link">SDL_HINT_VIDEO_X11_EXTERNAL_WINDOW_INPUT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_PREFER_LIBDECOR" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_PREFER_LIBDECOR</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR" class="member-name-link">SDL_HINT_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY" class="member-name-link">SDL_HINT_VIDEO_WAYLAND_SCALE_TO_DISPLAY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_X11_NET_WM_PING" class="member-name-link">SDL_HINT_VIDEO_X11_NET_WM_PING</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_WIN_D3DCOMPILER" class="member-name-link">SDL_HINT_VIDEO_WIN_D3DCOMPILER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_X11_NODIRECTCOLOR" class="member-name-link">SDL_HINT_VIDEO_X11_NODIRECTCOLOR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_X11_EXTERNAL_WINDOW_INPUT" class="member-name-link">SDL_HINT_VIDEO_X11_EXTERNAL_WINDOW_INPUT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_X11_SCALING_FACTOR" class="member-name-link">SDL_HINT_VIDEO_X11_SCALING_FACTOR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR" class="member-name-link">SDL_HINT_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_X11_VISUALID" class="member-name-link">SDL_HINT_VIDEO_X11_VISUALID</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_X11_NET_WM_PING" class="member-name-link">SDL_HINT_VIDEO_X11_NET_WM_PING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_X11_WINDOW_VISUALID" class="member-name-link">SDL_HINT_VIDEO_X11_WINDOW_VISUALID</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_X11_NODIRECTCOLOR" class="member-name-link">SDL_HINT_VIDEO_X11_NODIRECTCOLOR</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_X11_XRANDR" class="member-name-link">SDL_HINT_VIDEO_X11_XRANDR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_X11_SCALING_FACTOR" class="member-name-link">SDL_HINT_VIDEO_X11_SCALING_FACTOR</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VITA_ENABLE_BACK_TOUCH" class="member-name-link">SDL_HINT_VITA_ENABLE_BACK_TOUCH</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_X11_VISUALID" class="member-name-link">SDL_HINT_VIDEO_X11_VISUALID</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VITA_ENABLE_FRONT_TOUCH" class="member-name-link">SDL_HINT_VITA_ENABLE_FRONT_TOUCH</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VIDEO_X11_WINDOW_VISUALID" class="member-name-link">SDL_HINT_VIDEO_X11_WINDOW_VISUALID</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VITA_MODULE_PATH" class="member-name-link">SDL_HINT_VITA_MODULE_PATH</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VIDEO_X11_XRANDR" class="member-name-link">SDL_HINT_VIDEO_X11_XRANDR</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VITA_PVR_INIT" class="member-name-link">SDL_HINT_VITA_PVR_INIT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VITA_ENABLE_BACK_TOUCH" class="member-name-link">SDL_HINT_VITA_ENABLE_BACK_TOUCH</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VITA_PVR_OPENGL" class="member-name-link">SDL_HINT_VITA_PVR_OPENGL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VITA_ENABLE_FRONT_TOUCH" class="member-name-link">SDL_HINT_VITA_ENABLE_FRONT_TOUCH</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VITA_RESOLUTION" class="member-name-link">SDL_HINT_VITA_RESOLUTION</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VITA_MODULE_PATH" class="member-name-link">SDL_HINT_VITA_MODULE_PATH</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VITA_TOUCH_MOUSE_DEVICE" class="member-name-link">SDL_HINT_VITA_TOUCH_MOUSE_DEVICE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VITA_PVR_INIT" class="member-name-link">SDL_HINT_VITA_PVR_INIT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VULKAN_DISPLAY" class="member-name-link">SDL_HINT_VULKAN_DISPLAY</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VITA_PVR_OPENGL" class="member-name-link">SDL_HINT_VITA_PVR_OPENGL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_VULKAN_LIBRARY" class="member-name-link">SDL_HINT_VULKAN_LIBRARY</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VITA_RESOLUTION" class="member-name-link">SDL_HINT_VITA_RESOLUTION</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WAVE_CHUNK_LIMIT" class="member-name-link">SDL_HINT_WAVE_CHUNK_LIMIT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VITA_TOUCH_MOUSE_DEVICE" class="member-name-link">SDL_HINT_VITA_TOUCH_MOUSE_DEVICE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_WAVE_FACT_CHUNK" class="member-name-link">SDL_HINT_WAVE_FACT_CHUNK</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_VULKAN_DISPLAY" class="member-name-link">SDL_HINT_VULKAN_DISPLAY</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WAVE_RIFF_CHUNK_SIZE" class="member-name-link">SDL_HINT_WAVE_RIFF_CHUNK_SIZE</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_VULKAN_LIBRARY" class="member-name-link">SDL_HINT_VULKAN_LIBRARY</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_WAVE_TRUNCATION" class="member-name-link">SDL_HINT_WAVE_TRUNCATION</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_WAVE_CHUNK_LIMIT" class="member-name-link">SDL_HINT_WAVE_CHUNK_LIMIT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOW_ACTIVATE_WHEN_RAISED" class="member-name-link">SDL_HINT_WINDOW_ACTIVATE_WHEN_RAISED</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WAVE_FACT_CHUNK" class="member-name-link">SDL_HINT_WAVE_FACT_CHUNK</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOW_ACTIVATE_WHEN_SHOWN" class="member-name-link">SDL_HINT_WINDOW_ACTIVATE_WHEN_SHOWN</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_WAVE_RIFF_CHUNK_SIZE" class="member-name-link">SDL_HINT_WAVE_RIFF_CHUNK_SIZE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOW_ALLOW_TOPMOST" class="member-name-link">SDL_HINT_WINDOW_ALLOW_TOPMOST</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WAVE_TRUNCATION" class="member-name-link">SDL_HINT_WAVE_TRUNCATION</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN" class="member-name-link">SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOW_ACTIVATE_WHEN_RAISED" class="member-name-link">SDL_HINT_WINDOW_ACTIVATE_WHEN_RAISED</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4" class="member-name-link">SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOW_ACTIVATE_WHEN_SHOWN" class="member-name-link">SDL_HINT_WINDOW_ACTIVATE_WHEN_SHOWN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_ENABLE_MENU_MNEMONICS" class="member-name-link">SDL_HINT_WINDOWS_ENABLE_MENU_MNEMONICS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOW_ALLOW_TOPMOST" class="member-name-link">SDL_HINT_WINDOW_ALLOW_TOPMOST</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP" class="member-name-link">SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN" class="member-name-link">SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_ERASE_BACKGROUND_MODE" class="member-name-link">SDL_HINT_WINDOWS_ERASE_BACKGROUND_MODE</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4" class="member-name-link">SDL_HINT_WINDOWS_CLOSE_ON_ALT_F4</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL" class="member-name-link">SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_ENABLE_MENU_MNEMONICS" class="member-name-link">SDL_HINT_WINDOWS_ENABLE_MENU_MNEMONICS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_GAMEINPUT" class="member-name-link">SDL_HINT_WINDOWS_GAMEINPUT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP" class="member-name-link">SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_INTRESOURCE_ICON" class="member-name-link">SDL_HINT_WINDOWS_INTRESOURCE_ICON</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_ERASE_BACKGROUND_MODE" class="member-name-link">SDL_HINT_WINDOWS_ERASE_BACKGROUND_MODE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_INTRESOURCE_ICON_SMALL" class="member-name-link">SDL_HINT_WINDOWS_INTRESOURCE_ICON_SMALL</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL" class="member-name-link">SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_RAW_KEYBOARD" class="member-name-link">SDL_HINT_WINDOWS_RAW_KEYBOARD</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_GAMEINPUT" class="member-name-link">SDL_HINT_WINDOWS_GAMEINPUT</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_INTRESOURCE_ICON" class="member-name-link">SDL_HINT_WINDOWS_INTRESOURCE_ICON</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_INTRESOURCE_ICON_SMALL" class="member-name-link">SDL_HINT_WINDOWS_INTRESOURCE_ICON_SMALL</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_RAW_KEYBOARD" class="member-name-link">SDL_HINT_WINDOWS_RAW_KEYBOARD</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS" class="member-name-link">SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_HINT_WINDOWS_USE_D3D9EX" class="member-name-link">SDL_HINT_WINDOWS_USE_D3D9EX</a></code></div>
@@ -1547,6 +1635,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_HINT_AUDIO_DEVICE_RAW_STREAM">
+<h3>SDL_HINT_AUDIO_DEVICE_RAW_STREAM</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_AUDIO_DEVICE_RAW_STREAM</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_AUDIO_DEVICE_RAW_STREAM">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_HINT_AUDIO_DISK_INPUT_FILE">
 <h3>SDL_HINT_AUDIO_DISK_INPUT_FILE</h3>
 <div class="horizontal-scroll">
@@ -1796,6 +1900,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_DISPLAY_USABLE_BOUNDS">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_INVALID_PARAM_CHECKS">
+<h3>SDL_HINT_INVALID_PARAM_CHECKS</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_INVALID_PARAM_CHECKS</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_INVALID_PARAM_CHECKS">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -2116,6 +2236,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_HIDAPI_LIBUSB">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_HIDAPI_LIBUSB_GAMECUBE">
+<h3>SDL_HINT_HIDAPI_LIBUSB_GAMECUBE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_HIDAPI_LIBUSB_GAMECUBE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_HIDAPI_LIBUSB_GAMECUBE">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -2747,6 +2883,86 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_HINT_JOYSTICK_HIDAPI_LG4FF">
+<h3>SDL_HINT_JOYSTICK_HIDAPI_LG4FF</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_JOYSTICK_HIDAPI_LG4FF</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_LG4FF">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_JOYSTICK_HIDAPI_8BITDO">
+<h3>SDL_HINT_JOYSTICK_HIDAPI_8BITDO</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_JOYSTICK_HIDAPI_8BITDO</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_8BITDO">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_JOYSTICK_HIDAPI_SINPUT">
+<h3>SDL_HINT_JOYSTICK_HIDAPI_SINPUT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_JOYSTICK_HIDAPI_SINPUT</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_SINPUT">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_JOYSTICK_HIDAPI_ZUIKI">
+<h3>SDL_HINT_JOYSTICK_HIDAPI_ZUIKI</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_JOYSTICK_HIDAPI_ZUIKI</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_ZUIKI">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI">
+<h3>SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_FLYDIGI">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_HINT_JOYSTICK_HIDAPI_SWITCH">
 <h3>SDL_HINT_JOYSTICK_HIDAPI_SWITCH</h3>
 <div class="horizontal-scroll">
@@ -2788,6 +3004,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_SWITCH_PLAYER_LED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_JOYSTICK_HIDAPI_SWITCH2">
+<h3>SDL_HINT_JOYSTICK_HIDAPI_SWITCH2</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_JOYSTICK_HIDAPI_SWITCH2</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_SWITCH2">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -2932,6 +3164,38 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_JOYSTICK_HIDAPI_GIP">
+<h3>SDL_HINT_JOYSTICK_HIDAPI_GIP</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_JOYSTICK_HIDAPI_GIP</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_GIP">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_JOYSTICK_HIDAPI_GIP_RESET_FOR_METADATA">
+<h3>SDL_HINT_JOYSTICK_HIDAPI_GIP_RESET_FOR_METADATA</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_JOYSTICK_HIDAPI_GIP_RESET_FOR_METADATA</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_JOYSTICK_HIDAPI_GIP_RESET_FOR_METADATA">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -3259,6 +3523,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_HINT_KMSDRM_ATOMIC">
+<h3>SDL_HINT_KMSDRM_ATOMIC</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_KMSDRM_ATOMIC</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_KMSDRM_ATOMIC">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_HINT_LOGGING">
 <h3>SDL_HINT_LOGGING</h3>
 <div class="horizontal-scroll">
@@ -3355,6 +3635,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_HINT_MAC_PRESS_AND_HOLD">
+<h3>SDL_HINT_MAC_PRESS_AND_HOLD</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_MAC_PRESS_AND_HOLD</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_MAC_PRESS_AND_HOLD">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_HINT_MAIN_CALLBACK_RATE">
 <h3>SDL_HINT_MAIN_CALLBACK_RATE</h3>
 <div class="horizontal-scroll">
@@ -3428,6 +3724,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_MOUSE_DEFAULT_SYSTEM_CURSOR">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_MOUSE_DPI_SCALE_CURSORS">
+<h3>SDL_HINT_MOUSE_DPI_SCALE_CURSORS</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_MOUSE_DPI_SCALE_CURSORS</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_MOUSE_DPI_SCALE_CURSORS">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -3771,6 +4083,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_HINT_RENDER_DIRECT3D11_WARP">
+<h3>SDL_HINT_RENDER_DIRECT3D11_WARP</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_RENDER_DIRECT3D11_WARP</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_RENDER_DIRECT3D11_WARP">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_HINT_RENDER_VULKAN_DEBUG">
 <h3>SDL_HINT_RENDER_VULKAN_DEBUG</h3>
 <div class="horizontal-scroll">
@@ -3924,6 +4252,70 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_PS2_GS_WIDTH">
+<h3>SDL_HINT_PS2_GS_WIDTH</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_PS2_GS_WIDTH</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_PS2_GS_WIDTH">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_PS2_GS_HEIGHT">
+<h3>SDL_HINT_PS2_GS_HEIGHT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_PS2_GS_HEIGHT</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_PS2_GS_HEIGHT">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_PS2_GS_PROGRESSIVE">
+<h3>SDL_HINT_PS2_GS_PROGRESSIVE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_PS2_GS_PROGRESSIVE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_PS2_GS_PROGRESSIVE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_PS2_GS_MODE">
+<h3>SDL_HINT_PS2_GS_MODE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_PS2_GS_MODE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_PS2_GS_MODE">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -4244,6 +4636,38 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_VIDEO_MAC_FULLSCREEN_MENU_VISIBILITY">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE">
+<h3>SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_VIDEO_METAL_AUTO_RESIZE_DRAWABLE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE">
+<h3>SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_VIDEO_MATCH_EXCLUSIVE_MODE_ON_MOVE">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -4868,6 +5292,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_WINDOWS_RAW_KEYBOARD">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS">
+<h3>SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHints.SDL_HINT_WINDOWS_RAW_KEYBOARD_EXCLUDE_HOTKEYS">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>

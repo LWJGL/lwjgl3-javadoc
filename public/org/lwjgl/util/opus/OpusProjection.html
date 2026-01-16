@@ -70,6 +70,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#opus_projection_ambisonics_encoder_init(long,int,int,int,java.nio.IntBuffer,java.nio.IntBuffer,int)" tabindex="0">opus_projection_ambisonics_encoder_init(long, int, int, int, IntBuffer, IntBuffer, int)</a></li>
 <li><a href="#nopus_projection_encode(long,long,int,long,int)" tabindex="0">nopus_projection_encode(long, long, int, long, int)</a></li>
 <li><a href="#opus_projection_encode(long,java.nio.ShortBuffer,int,java.nio.ByteBuffer)" tabindex="0">opus_projection_encode(long, ShortBuffer, int, ByteBuffer)</a></li>
+<li><a href="#nopus_projection_encode24(long,long,int,long,int)" tabindex="0">nopus_projection_encode24(long, long, int, long, int)</a></li>
+<li><a href="#opus_projection_encode24(long,java.nio.IntBuffer,int,java.nio.ByteBuffer)" tabindex="0">opus_projection_encode24(long, IntBuffer, int, ByteBuffer)</a></li>
 <li><a href="#nopus_projection_encode_float(long,long,int,long,int)" tabindex="0">nopus_projection_encode_float(long, long, int, long, int)</a></li>
 <li><a href="#opus_projection_encode_float(long,java.nio.FloatBuffer,int,java.nio.ByteBuffer)" tabindex="0">opus_projection_encode_float(long, FloatBuffer, int, ByteBuffer)</a></li>
 <li><a href="#opus_projection_encoder_destroy(long)" tabindex="0">opus_projection_encoder_destroy(long)</a></li>
@@ -80,6 +82,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#opus_projection_decoder_init(long,int,int,int,int,java.nio.ByteBuffer)" tabindex="0">opus_projection_decoder_init(long, int, int, int, int, ByteBuffer)</a></li>
 <li><a href="#nopus_projection_decode(long,long,int,long,int,int)" tabindex="0">nopus_projection_decode(long, long, int, long, int, int)</a></li>
 <li><a href="#opus_projection_decode(long,java.nio.ByteBuffer,java.nio.ShortBuffer,int,int)" tabindex="0">opus_projection_decode(long, ByteBuffer, ShortBuffer, int, int)</a></li>
+<li><a href="#nopus_projection_decode24(long,long,int,long,int,int)" tabindex="0">nopus_projection_decode24(long, long, int, long, int, int)</a></li>
+<li><a href="#opus_projection_decode24(long,java.nio.ByteBuffer,java.nio.IntBuffer,int,int)" tabindex="0">opus_projection_decode24(long, ByteBuffer, IntBuffer, int, int)</a></li>
 <li><a href="#nopus_projection_decode_float(long,long,int,long,int,int)" tabindex="0">nopus_projection_decode_float(long, long, int, long, int, int)</a></li>
 <li><a href="#opus_projection_decode_float(long,java.nio.ByteBuffer,java.nio.FloatBuffer,int,int)" tabindex="0">opus_projection_decode_float(long, ByteBuffer, FloatBuffer, int, int)</a></li>
 <li><a href="#opus_projection_decoder_destroy(long)" tabindex="0">opus_projection_decoder_destroy(long)</a></li>
@@ -202,45 +206,64 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_projection_decode_float(OpusMSDecoder * st, unsigned char const * data, opus_int32 len, float * pcm, int frame_size, int decode_fec)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_decoder_create(int,int,int,int,long,int,long)" class="member-name-link">nopus_projection_decoder_create</a><wbr>(int&nbsp;Fs,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_decode24(long,long,int,long,int,int)" class="member-name-link">nopus_projection_decode24</a><wbr>(long&nbsp;st,
+ long&nbsp;data,
+ int&nbsp;len,
+ long&nbsp;pcm,
+ int&nbsp;frame_size,
+ int&nbsp;decode_fec)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int opus_projection_decode24(OpusProjectionDecoder * st, unsigned char const * data, opus_int32 len, opus_int32 * pcm, int frame_size, int decode_fec)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_decoder_create(int,int,int,int,long,int,long)" class="member-name-link">nopus_projection_decoder_create</a><wbr>(int&nbsp;Fs,
  int&nbsp;channels,
  int&nbsp;streams,
  int&nbsp;coupled_streams,
  long&nbsp;demixing_matrix,
  int&nbsp;demixing_matrix_size,
  long&nbsp;error)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>OpusProjectionDecoder * opus_projection_decoder_create(opus_int32 Fs, int channels, int streams, int coupled_streams, unsigned char * demixing_matrix, opus_int32 demixing_matrix_size, int * error)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_decoder_init(long,int,int,int,int,long,int)" class="member-name-link">nopus_projection_decoder_init</a><wbr>(long&nbsp;st,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_decoder_init(long,int,int,int,int,long,int)" class="member-name-link">nopus_projection_decoder_init</a><wbr>(long&nbsp;st,
  int&nbsp;Fs,
  int&nbsp;channels,
  int&nbsp;streams,
  int&nbsp;coupled_streams,
  long&nbsp;demixing_matrix,
  int&nbsp;demixing_matrix_size)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_projection_decoder_init(OpusProjectionDecoder * st, opus_int32 Fs, int channels, int streams, int coupled_streams, unsigned char * demixing_matrix, opus_int32 demixing_matrix_size)</code></div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_encode(long,long,int,long,int)" class="member-name-link">nopus_projection_encode</a><wbr>(long&nbsp;st,
+ long&nbsp;pcm,
+ int&nbsp;frame_size,
+ long&nbsp;data,
+ int&nbsp;max_data_bytes)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int opus_projection_encode(OpusProjectionEncoder * st, opus_int16 const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_encode(long,long,int,long,int)" class="member-name-link">nopus_projection_encode</a><wbr>(long&nbsp;st,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_encode_float(long,long,int,long,int)" class="member-name-link">nopus_projection_encode_float</a><wbr>(long&nbsp;st,
  long&nbsp;pcm,
  int&nbsp;frame_size,
  long&nbsp;data,
  int&nbsp;max_data_bytes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int opus_projection_encode(OpusProjectionEncoder * st, opus_int16 const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
+<div class="block"><code>int opus_projection_encode_float(OpusProjectionEncoder * st, float const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_encode_float(long,long,int,long,int)" class="member-name-link">nopus_projection_encode_float</a><wbr>(long&nbsp;st,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nopus_projection_encode24(long,long,int,long,int)" class="member-name-link">nopus_projection_encode24</a><wbr>(long&nbsp;st,
  long&nbsp;pcm,
  int&nbsp;frame_size,
  long&nbsp;data,
  int&nbsp;max_data_bytes)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>int opus_projection_encode_float(OpusProjectionEncoder * st, float const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
+<div class="block"><code>int opus_projection_encode24(OpusProjectionEncoder * st, opus_int32 const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_ambisonics_encoder_create(int,int,int,java.nio.IntBuffer,java.nio.IntBuffer,int,java.nio.IntBuffer)" class="member-name-link">opus_projection_ambisonics_encoder_create</a><wbr>(int&nbsp;Fs,
@@ -288,78 +311,87 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_projection_decode_float(OpusMSDecoder * st, unsigned char const * data, opus_int32 len, float * pcm, int frame_size, int decode_fec)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_create(int,int,int,int,java.nio.ByteBuffer,java.nio.IntBuffer)" class="member-name-link">opus_projection_decoder_create</a><wbr>(int&nbsp;Fs,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decode24(long,java.nio.ByteBuffer,java.nio.IntBuffer,int,int)" class="member-name-link">opus_projection_decode24</a><wbr>(long&nbsp;st,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pcm,
+ int&nbsp;frame_size,
+ int&nbsp;decode_fec)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int opus_projection_decode24(OpusProjectionDecoder * st, unsigned char const * data, opus_int32 len, opus_int32 * pcm, int frame_size, int decode_fec)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_create(int,int,int,int,java.nio.ByteBuffer,java.nio.IntBuffer)" class="member-name-link">opus_projection_decoder_create</a><wbr>(int&nbsp;Fs,
  int&nbsp;channels,
  int&nbsp;streams,
  int&nbsp;coupled_streams,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;demixing_matrix,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;error)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>OpusProjectionDecoder * opus_projection_decoder_create(opus_int32 Fs, int channels, int streams, int coupled_streams, unsigned char * demixing_matrix, opus_int32 demixing_matrix_size, int * error)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_ctl(long,int)" class="member-name-link">opus_projection_decoder_ctl</a><wbr>(long&nbsp;st,
- int&nbsp;request)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Performs a CTL function on a projection Opus decoder.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_ctl(long,org.lwjgl.util.opus.Opus.CTLRequest)" class="member-name-link">opus_projection_decoder_ctl</a><wbr>(long&nbsp;st,
- <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a>&nbsp;request)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Performs a CTL function on a projection Opus decoder.</div>
-</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_ctl(long,int)" class="member-name-link">opus_projection_decoder_ctl</a><wbr>(long&nbsp;st,
+ int&nbsp;request)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_destroy(long)" class="member-name-link">opus_projection_decoder_destroy</a><wbr>(long&nbsp;st)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_ctl(long,org.lwjgl.util.opus.Opus.CTLRequest)" class="member-name-link">opus_projection_decoder_ctl</a><wbr>(long&nbsp;st,
+ <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a>&nbsp;request)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_destroy(long)" class="member-name-link">opus_projection_decoder_destroy</a><wbr>(long&nbsp;st)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_projection_decoder_destroy(OpusProjectionDecoder * st)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_get_size(int,int,int)" class="member-name-link">opus_projection_decoder_get_size</a><wbr>(int&nbsp;channels,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_get_size(int,int,int)" class="member-name-link">opus_projection_decoder_get_size</a><wbr>(int&nbsp;channels,
  int&nbsp;streams,
  int&nbsp;coupled_streams)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>opus_int32 opus_projection_decoder_get_size(int channels, int streams, int coupled_streams)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_init(long,int,int,int,int,java.nio.ByteBuffer)" class="member-name-link">opus_projection_decoder_init</a><wbr>(long&nbsp;st,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_decoder_init(long,int,int,int,int,java.nio.ByteBuffer)" class="member-name-link">opus_projection_decoder_init</a><wbr>(long&nbsp;st,
  int&nbsp;Fs,
  int&nbsp;channels,
  int&nbsp;streams,
  int&nbsp;coupled_streams,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;demixing_matrix)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_projection_decoder_init(OpusProjectionDecoder * st, opus_int32 Fs, int channels, int streams, int coupled_streams, unsigned char * demixing_matrix, opus_int32 demixing_matrix_size)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_encode(long,java.nio.ShortBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_projection_encode</a><wbr>(long&nbsp;st,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_encode(long,java.nio.ShortBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_projection_encode</a><wbr>(long&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ShortBuffer.html" title="class or interface in java.nio" class="external-link">ShortBuffer</a>&nbsp;pcm,
  int&nbsp;frame_size,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_projection_encode(OpusProjectionEncoder * st, opus_int16 const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_encode_float(long,java.nio.FloatBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_projection_encode_float</a><wbr>(long&nbsp;st,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_encode_float(long,java.nio.FloatBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_projection_encode_float</a><wbr>(long&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/FloatBuffer.html" title="class or interface in java.nio" class="external-link">FloatBuffer</a>&nbsp;pcm,
  int&nbsp;frame_size,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int opus_projection_encode_float(OpusProjectionEncoder * st, float const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_encode24(long,java.nio.IntBuffer,int,java.nio.ByteBuffer)" class="member-name-link">opus_projection_encode24</a><wbr>(long&nbsp;st,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pcm,
+ int&nbsp;frame_size,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>int opus_projection_encode24(OpusProjectionEncoder * st, opus_int32 const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_encoder_ctl(long,int)" class="member-name-link">opus_projection_encoder_ctl</a><wbr>(long&nbsp;st,
  int&nbsp;request)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Performs a CTL function on an projection Opus encoder.</div>
-</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_encoder_ctl(long,org.lwjgl.util.opus.Opus.CTLRequest)" class="member-name-link">opus_projection_encoder_ctl</a><wbr>(long&nbsp;st,
  <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a>&nbsp;request)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Performs a CTL function on an projection Opus encoder.</div>
-</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#opus_projection_encoder_destroy(long)" class="member-name-link">opus_projection_encoder_destroy</a><wbr>(long&nbsp;st)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -367,19 +399,13 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#OPUS_PROJECTION_GET_DEMIXING_MATRIX(java.nio.ByteBuffer)" class="member-name-link">OPUS_PROJECTION_GET_DEMIXING_MATRIX</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;matrix)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Copies the demixing matrix to the supplied pointer location.</div>
-</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#OPUS_PROJECTION_GET_DEMIXING_MATRIX_GAIN(java.nio.IntBuffer)" class="member-name-link">OPUS_PROJECTION_GET_DEMIXING_MATRIX_GAIN</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Gets the gain (in dB.</div>
-</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#OPUS_PROJECTION_GET_DEMIXING_MATRIX_SIZE(java.nio.IntBuffer)" class="member-name-link">OPUS_PROJECTION_GET_DEMIXING_MATRIX_SIZE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Gets the size in bytes of the demixing matrix from the encoder.</div>
-</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -562,6 +588,34 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="nopus_projection_encode24(long,long,int,long,int)">
+<h3>nopus_projection_encode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nopus_projection_encode24</span><wbr><span class="parameters">(long&nbsp;st,
+ long&nbsp;pcm,
+ int&nbsp;frame_size,
+ long&nbsp;data,
+ int&nbsp;max_data_bytes)</span></div>
+<div class="block"><code>int opus_projection_encode24(OpusProjectionEncoder * st, opus_int32 const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="opus_projection_encode24(long,java.nio.IntBuffer,int,java.nio.ByteBuffer)">
+<h3>opus_projection_encode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_projection_encode24</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusProjectionEncoder *")
+ long&nbsp;st,
+ <a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("opus_int32 const *")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pcm,
+ int&nbsp;frame_size,
+ <a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("unsigned char *")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</span></div>
+<div class="block"><code>int opus_projection_encode24(OpusProjectionEncoder * st, opus_int32 const * pcm, int frame_size, unsigned char * data, opus_int32 max_data_bytes)</code></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="nopus_projection_encode_float(long,long,int,long,int)">
 <h3>nopus_projection_encode_float</h3>
 <div class="horizontal-scroll">
@@ -707,6 +761,36 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="nopus_projection_decode24(long,long,int,long,int,int)">
+<h3>nopus_projection_decode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nopus_projection_decode24</span><wbr><span class="parameters">(long&nbsp;st,
+ long&nbsp;data,
+ int&nbsp;len,
+ long&nbsp;pcm,
+ int&nbsp;frame_size,
+ int&nbsp;decode_fec)</span></div>
+<div class="block"><code>int opus_projection_decode24(OpusProjectionDecoder * st, unsigned char const * data, opus_int32 len, opus_int32 * pcm, int frame_size, int decode_fec)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="opus_projection_decode24(long,java.nio.ByteBuffer,java.nio.IntBuffer,int,int)">
+<h3>opus_projection_decode24</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_projection_decode24</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusProjectionDecoder *")
+ long&nbsp;st,
+ <a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("unsigned char const *")
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data,
+ <a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("opus_int32 *")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pcm,
+ int&nbsp;frame_size,
+ int&nbsp;decode_fec)</span></div>
+<div class="block"><code>int opus_projection_decode24(OpusProjectionDecoder * st, unsigned char const * data, opus_int32 len, opus_int32 * pcm, int frame_size, int decode_fec)</code></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="nopus_projection_decode_float(long,long,int,long,int,int)">
 <h3>nopus_projection_decode_float</h3>
 <div class="horizontal-scroll">
@@ -753,12 +837,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_projection_encoder_ctl</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusProjectionEncoder *")
  long&nbsp;st,
  int&nbsp;request)</span></div>
-<div class="block">Performs a CTL function on an projection Opus encoder.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>st</code> - projection encoder state</dd>
-<dd><code>request</code> - CTL request</dd>
-</dl>
 </div>
 </section>
 </li>
@@ -769,12 +847,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_projection_encoder_ctl</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusProjectionEncoder *")
  long&nbsp;st,
  <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a>&nbsp;request)</span></div>
-<div class="block">Performs a CTL function on an projection Opus encoder.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>st</code> - projection encoder state</dd>
-<dd><code>request</code> - CTL request</dd>
-</dl>
 </div>
 </section>
 </li>
@@ -785,12 +857,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_projection_decoder_ctl</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusProjectionDecoder *")
  long&nbsp;st,
  int&nbsp;request)</span></div>
-<div class="block">Performs a CTL function on a projection Opus decoder.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>st</code> - projection decoder state</dd>
-<dd><code>request</code> - CTL request</dd>
-</dl>
 </div>
 </section>
 </li>
@@ -801,12 +867,6 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">opus_projection_decoder_ctl</span><wbr><span class="parameters">(<a href="../../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("OpusProjectionDecoder *")
  long&nbsp;st,
  <a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a>&nbsp;request)</span></div>
-<div class="block">Performs a CTL function on a projection Opus decoder.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>st</code> - projection decoder state</dd>
-<dd><code>request</code> - CTL request</dd>
-</dl>
 </div>
 </section>
 </li>
@@ -815,11 +875,6 @@ loadScripts(document, 'script');</script>
 <h3>OPUS_PROJECTION_GET_DEMIXING_MATRIX_GAIN</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a></span>&nbsp;<span class="element-name">OPUS_PROJECTION_GET_DEMIXING_MATRIX_GAIN</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;value)</span></div>
-<div class="block">Gets the gain (in dB. S7.8-format) of the demixing matrix from the encoder.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the gain (in dB. S7.8-format) of the demixing matrix.</dd>
-</dl>
 </div>
 </section>
 </li>
@@ -828,11 +883,6 @@ loadScripts(document, 'script');</script>
 <h3>OPUS_PROJECTION_GET_DEMIXING_MATRIX_SIZE</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a></span>&nbsp;<span class="element-name">OPUS_PROJECTION_GET_DEMIXING_MATRIX_SIZE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;value)</span></div>
-<div class="block">Gets the size in bytes of the demixing matrix from the encoder.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the size in bytes of the demixing matrix.</dd>
-</dl>
 </div>
 </section>
 </li>
@@ -841,11 +891,6 @@ loadScripts(document, 'script');</script>
 <h3>OPUS_PROJECTION_GET_DEMIXING_MATRIX</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Opus.CTLRequest.html" title="class in org.lwjgl.util.opus">Opus.CTLRequest</a></span>&nbsp;<span class="element-name">OPUS_PROJECTION_GET_DEMIXING_MATRIX</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;matrix)</span></div>
-<div class="block">Copies the demixing matrix to the supplied pointer location.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>matrix</code> - returns the demixing matrix to the supplied pointer location.</dd>
-</dl>
 </div>
 </section>
 </li>

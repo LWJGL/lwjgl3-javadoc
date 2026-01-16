@@ -73,10 +73,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#sizeof()" tabindex="0">sizeof()</a></li>
 <li><a href="#stage()" tabindex="0">stage()</a></li>
 <li><a href="#time()" tabindex="0">time()</a></li>
-<li><a href="#stage(int)" tabindex="0">stage(int)</a></li>
-<li><a href="#time(long)" tabindex="0">time(long)</a></li>
-<li><a href="#set(int,long)" tabindex="0">set(int, long)</a></li>
-<li><a href="#set(org.lwjgl.vulkan.VkPresentStageTimeEXT)" tabindex="0">set(VkPresentStageTimeEXT)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
 <li><a href="#create()" tabindex="0">create()</a></li>
@@ -93,8 +89,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#calloc(int,org.lwjgl.system.MemoryStack)" tabindex="0">calloc(int, MemoryStack)</a></li>
 <li><a href="#nstage(long)" tabindex="0">nstage(long)</a></li>
 <li><a href="#ntime(long)" tabindex="0">ntime(long)</a></li>
-<li><a href="#nstage(long,int)" tabindex="0">nstage(long, int)</a></li>
-<li><a href="#ntime(long,long)" tabindex="0">ntime(long, long)</a></li>
 </ol>
 </li>
 </ol>
@@ -292,33 +286,10 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#stage()"><code>stage()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nstage(long,int)" class="member-name-link">nstage</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntime(long)" class="member-name-link">ntime</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#stage(int)"><code>stage</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntime(long)" class="member-name-link">ntime</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#time()"><code>time()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntime(long,long)" class="member-name-link">ntime</a><wbr>(long&nbsp;struct,
- long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#time(long)"><code>time</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long)" class="member-name-link">set</a><wbr>(int&nbsp;stage,
- long&nbsp;time)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Initializes this struct with the specified values.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(org.lwjgl.vulkan.VkPresentStageTimeEXT)" class="member-name-link">set</a><wbr>(<a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a>&nbsp;src)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Copies the specified struct data to this struct.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sizeof()" class="member-name-link">sizeof</a>()</code></div>
@@ -328,19 +299,9 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stage()" class="member-name-link">stage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stage(int)" class="member-name-link">stage</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>stage</code> field.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#time()" class="member-name-link">time</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#time(long)" class="member-name-link">time</a><wbr>(long&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>time</code> field.</div>
-</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#time()" class="member-name-link">time</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -467,51 +428,6 @@ visible to the struct instance and vice versa.
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the value of the <code>time</code> field.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="stage(int)">
-<h3>stage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a></span>&nbsp;<span class="element-name">stage</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkPresentStageFlagsEXT")
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>stage</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="time(long)">
-<h3>time</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a></span>&nbsp;<span class="element-name">time</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("uint64_t")
- long&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>time</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="set(int,long)">
-<h3>set</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;stage,
- long&nbsp;time)</span></div>
-<div class="block">Initializes this struct with the specified values.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="set(org.lwjgl.vulkan.VkPresentStageTimeEXT)">
-<h3>set</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="VkPresentStageTimeEXT.html" title="class in org.lwjgl.vulkan">VkPresentStageTimeEXT</a>&nbsp;src)</span></div>
-<div class="block">Copies the specified struct data to this struct.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>src</code> - the source struct</dd>
-<dt>Returns:</dt>
-<dd>this struct</dd>
 </dl>
 </div>
 </section>
@@ -696,26 +612,6 @@ visible to the struct instance and vice versa.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">ntime</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
 <div class="block">Unsafe version of <a href="#time()"><code>time()</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nstage(long,int)">
-<h3>nstage</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nstage</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#stage(int)"><code>stage</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ntime(long,long)">
-<h3>ntime</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ntime</span><wbr><span class="parameters">(long&nbsp;struct,
- long&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#time(long)"><code>time</code></a>.</div>
 </div>
 </section>
 </li>

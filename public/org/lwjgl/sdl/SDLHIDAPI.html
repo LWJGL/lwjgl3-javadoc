@@ -61,6 +61,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_HID_API_BUS_BLUETOOTH" tabindex="0">SDL_HID_API_BUS_BLUETOOTH</a></li>
 <li><a href="#SDL_HID_API_BUS_I2C" tabindex="0">SDL_HID_API_BUS_I2C</a></li>
 <li><a href="#SDL_HID_API_BUS_SPI" tabindex="0">SDL_HID_API_BUS_SPI</a></li>
+<li><a href="#SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER" tabindex="0">SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -78,6 +79,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#nSDL_hid_open_path(long)" tabindex="0">nSDL_hid_open_path(long)</a></li>
 <li><a href="#SDL_hid_open_path(java.nio.ByteBuffer)" tabindex="0">SDL_hid_open_path(ByteBuffer)</a></li>
 <li><a href="#SDL_hid_open_path(java.lang.CharSequence)" tabindex="0">SDL_hid_open_path(CharSequence)</a></li>
+<li><a href="#SDL_hid_get_properties(long)" tabindex="0">SDL_hid_get_properties(long)</a></li>
 <li><a href="#nSDL_hid_write(long,long,long)" tabindex="0">nSDL_hid_write(long, long, long)</a></li>
 <li><a href="#SDL_hid_write(long,java.nio.ByteBuffer)" tabindex="0">SDL_hid_write(long, ByteBuffer)</a></li>
 <li><a href="#nSDL_hid_read_timeout(long,long,long,int)" tabindex="0">nSDL_hid_read_timeout(long, long, long, int)</a></li>
@@ -167,6 +169,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_HID_API_BUS_USB" class="member-name-link">SDL_HID_API_BUS_USB</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER" class="member-name-link">SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -356,75 +361,80 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>int SDL_hid_get_product_string(SDL_hid_device * dev, wchar_t * string, size_t maxlen)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_get_report_descriptor(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_get_report_descriptor</a><wbr>(long&nbsp;dev,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;buf)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_get_properties(long)" class="member-name-link">SDL_hid_get_properties</a><wbr>(long&nbsp;dev)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_PropertiesID SDL_hid_get_properties(SDL_hid_device * dev)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_get_report_descriptor(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_get_report_descriptor</a><wbr>(long&nbsp;dev,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;buf)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int SDL_hid_get_report_descriptor(SDL_hid_device * dev, unsigned char * buf, size_t buf_size)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_get_serial_number_string(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_get_serial_number_string</a><wbr>(long&nbsp;dev,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_get_serial_number_string(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_get_serial_number_string</a><wbr>(long&nbsp;dev,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;string)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int SDL_hid_get_serial_number_string(SDL_hid_device * dev, wchar_t * string, size_t maxlen)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_init()" class="member-name-link">SDL_hid_init</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_init()" class="member-name-link">SDL_hid_init</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int SDL_hid_init(void)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_open(short,short,java.lang.CharSequence)" class="member-name-link">SDL_hid_open</a><wbr>(short&nbsp;vendor_id,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_open(short,short,java.lang.CharSequence)" class="member-name-link">SDL_hid_open</a><wbr>(short&nbsp;vendor_id,
  short&nbsp;product_id,
  @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;serial_number)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>SDL_hid_device * SDL_hid_open(unsigned short vendor_id, unsigned short product_id, wchar_t const * serial_number)</code></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_open(short,short,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_open</a><wbr>(short&nbsp;vendor_id,
- short&nbsp;product_id,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;serial_number)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_hid_device * SDL_hid_open(unsigned short vendor_id, unsigned short product_id, wchar_t const * serial_number)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_open_path(java.lang.CharSequence)" class="member-name-link">SDL_hid_open_path</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;path)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_open(short,short,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_open</a><wbr>(short&nbsp;vendor_id,
+ short&nbsp;product_id,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;serial_number)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>SDL_hid_device * SDL_hid_open_path(char const * path)</code></div>
+<div class="block"><code>SDL_hid_device * SDL_hid_open(unsigned short vendor_id, unsigned short product_id, wchar_t const * serial_number)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_open_path(java.nio.ByteBuffer)" class="member-name-link">SDL_hid_open_path</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;path)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_open_path(java.lang.CharSequence)" class="member-name-link">SDL_hid_open_path</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;path)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_hid_device * SDL_hid_open_path(char const * path)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_read(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_read</a><wbr>(long&nbsp;dev,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_open_path(java.nio.ByteBuffer)" class="member-name-link">SDL_hid_open_path</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;path)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_hid_device * SDL_hid_open_path(char const * path)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_read(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_read</a><wbr>(long&nbsp;dev,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int SDL_hid_read(SDL_hid_device * dev, unsigned char * data, size_t length)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_read_timeout(long,java.nio.ByteBuffer,int)" class="member-name-link">SDL_hid_read_timeout</a><wbr>(long&nbsp;dev,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_read_timeout(long,java.nio.ByteBuffer,int)" class="member-name-link">SDL_hid_read_timeout</a><wbr>(long&nbsp;dev,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data,
  int&nbsp;milliseconds)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int SDL_hid_read_timeout(SDL_hid_device * dev, unsigned char const * data, size_t length, int milliseconds)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_send_feature_report(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_send_feature_report</a><wbr>(long&nbsp;dev,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_send_feature_report(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_send_feature_report</a><wbr>(long&nbsp;dev,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int SDL_hid_send_feature_report(SDL_hid_device * dev, unsigned char const * data, size_t length)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_set_nonblocking(long,boolean)" class="member-name-link">SDL_hid_set_nonblocking</a><wbr>(long&nbsp;dev,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_set_nonblocking(long,boolean)" class="member-name-link">SDL_hid_set_nonblocking</a><wbr>(long&nbsp;dev,
  boolean&nbsp;nonblock)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int SDL_hid_set_nonblocking(SDL_hid_device * dev, int nonblock)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_write(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_write</a><wbr>(long&nbsp;dev,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_hid_write(long,java.nio.ByteBuffer)" class="member-name-link">SDL_hid_write</a><wbr>(long&nbsp;dev,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;data)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>int SDL_hid_write(SDL_hid_device * dev, unsigned char const * data, size_t length)</code></div>
 </div>
 </div>
@@ -518,6 +528,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHIDAPI.SDL_HID_API_BUS_SPI">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER">
+<h3>SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLHIDAPI.SDL_PROP_HIDAPI_LIBUSB_DEVICE_HANDLE_POINTER">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -671,6 +697,17 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SDL_hid_open_path</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("char const *")
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;path)</span></div>
 <div class="block"><code>SDL_hid_device * SDL_hid_open_path(char const * path)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_hid_get_properties(long)">
+<h3>SDL_hid_get_properties</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_PropertiesID")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_hid_get_properties</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_hid_device *")
+ long&nbsp;dev)</span></div>
+<div class="block"><code>SDL_PropertiesID SDL_hid_get_properties(SDL_hid_device * dev)</code></div>
 </div>
 </section>
 </li>

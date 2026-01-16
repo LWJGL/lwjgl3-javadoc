@@ -147,6 +147,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#get_texture" tabindex="0">get_texture</a></li>
 <li><a href="#destroy_frame_buffer" tabindex="0">destroy_frame_buffer</a></li>
 <li><a href="#create_uniform" tabindex="0">create_uniform</a></li>
+<li><a href="#create_uniform_with_freq" tabindex="0">create_uniform_with_freq</a></li>
 <li><a href="#get_uniform_info" tabindex="0">get_uniform_info</a></li>
 <li><a href="#destroy_uniform" tabindex="0">destroy_uniform</a></li>
 <li><a href="#create_occlusion_query" tabindex="0">create_occlusion_query</a></li>
@@ -179,6 +180,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#encoder_set_transform_cached" tabindex="0">encoder_set_transform_cached</a></li>
 <li><a href="#encoder_alloc_transform" tabindex="0">encoder_alloc_transform</a></li>
 <li><a href="#encoder_set_uniform" tabindex="0">encoder_set_uniform</a></li>
+<li><a href="#set_view_uniform" tabindex="0">set_view_uniform</a></li>
+<li><a href="#set_frame_uniform" tabindex="0">set_frame_uniform</a></li>
 <li><a href="#encoder_set_index_buffer" tabindex="0">encoder_set_index_buffer</a></li>
 <li><a href="#encoder_set_dynamic_index_buffer" tabindex="0">encoder_set_dynamic_index_buffer</a></li>
 <li><a href="#encoder_set_transient_index_buffer" tabindex="0">encoder_set_transient_index_buffer</a></li>
@@ -441,492 +444,502 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#create_vertex_buffer" class="member-name-link">create_vertex_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#create_uniform_with_freq" class="member-name-link">create_uniform_with_freq</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#create_vertex_layout" class="member-name-link">create_vertex_layout</a></code></div>
+<div class="col-second even-row-color"><code><a href="#create_vertex_buffer" class="member-name-link">create_vertex_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#dbg_text_clear" class="member-name-link">dbg_text_clear</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#create_vertex_layout" class="member-name-link">create_vertex_layout</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#dbg_text_image" class="member-name-link">dbg_text_image</a></code></div>
+<div class="col-second even-row-color"><code><a href="#dbg_text_clear" class="member-name-link">dbg_text_clear</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#dbg_text_printf" class="member-name-link">dbg_text_printf</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#dbg_text_image" class="member-name-link">dbg_text_image</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#dbg_text_vprintf" class="member-name-link">dbg_text_vprintf</a></code></div>
+<div class="col-second even-row-color"><code><a href="#dbg_text_printf" class="member-name-link">dbg_text_printf</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#destroy_dynamic_index_buffer" class="member-name-link">destroy_dynamic_index_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#dbg_text_vprintf" class="member-name-link">dbg_text_vprintf</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#destroy_dynamic_vertex_buffer" class="member-name-link">destroy_dynamic_vertex_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#destroy_dynamic_index_buffer" class="member-name-link">destroy_dynamic_index_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#destroy_frame_buffer" class="member-name-link">destroy_frame_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#destroy_dynamic_vertex_buffer" class="member-name-link">destroy_dynamic_vertex_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#destroy_index_buffer" class="member-name-link">destroy_index_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#destroy_frame_buffer" class="member-name-link">destroy_frame_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#destroy_indirect_buffer" class="member-name-link">destroy_indirect_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#destroy_index_buffer" class="member-name-link">destroy_index_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#destroy_occlusion_query" class="member-name-link">destroy_occlusion_query</a></code></div>
+<div class="col-second even-row-color"><code><a href="#destroy_indirect_buffer" class="member-name-link">destroy_indirect_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#destroy_program" class="member-name-link">destroy_program</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#destroy_occlusion_query" class="member-name-link">destroy_occlusion_query</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#destroy_shader" class="member-name-link">destroy_shader</a></code></div>
+<div class="col-second even-row-color"><code><a href="#destroy_program" class="member-name-link">destroy_program</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#destroy_texture" class="member-name-link">destroy_texture</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#destroy_shader" class="member-name-link">destroy_shader</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#destroy_uniform" class="member-name-link">destroy_uniform</a></code></div>
+<div class="col-second even-row-color"><code><a href="#destroy_texture" class="member-name-link">destroy_texture</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#destroy_vertex_buffer" class="member-name-link">destroy_vertex_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#destroy_uniform" class="member-name-link">destroy_uniform</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#destroy_vertex_layout" class="member-name-link">destroy_vertex_layout</a></code></div>
+<div class="col-second even-row-color"><code><a href="#destroy_vertex_buffer" class="member-name-link">destroy_vertex_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#discard" class="member-name-link">discard</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#destroy_vertex_layout" class="member-name-link">destroy_vertex_layout</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#dispatch" class="member-name-link">dispatch</a></code></div>
+<div class="col-second even-row-color"><code><a href="#discard" class="member-name-link">discard</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#dispatch_indirect" class="member-name-link">dispatch_indirect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#dispatch" class="member-name-link">dispatch</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_alloc_transform" class="member-name-link">encoder_alloc_transform</a></code></div>
+<div class="col-second even-row-color"><code><a href="#dispatch_indirect" class="member-name-link">dispatch_indirect</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_begin" class="member-name-link">encoder_begin</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_alloc_transform" class="member-name-link">encoder_alloc_transform</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_blit" class="member-name-link">encoder_blit</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_begin" class="member-name-link">encoder_begin</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_discard" class="member-name-link">encoder_discard</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_blit" class="member-name-link">encoder_blit</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_dispatch" class="member-name-link">encoder_dispatch</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_discard" class="member-name-link">encoder_discard</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_dispatch_indirect" class="member-name-link">encoder_dispatch_indirect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_dispatch" class="member-name-link">encoder_dispatch</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_end" class="member-name-link">encoder_end</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_dispatch_indirect" class="member-name-link">encoder_dispatch_indirect</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_compute_dynamic_index_buffer" class="member-name-link">encoder_set_compute_dynamic_index_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_end" class="member-name-link">encoder_end</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_compute_dynamic_vertex_buffer" class="member-name-link">encoder_set_compute_dynamic_vertex_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_compute_dynamic_index_buffer" class="member-name-link">encoder_set_compute_dynamic_index_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_compute_index_buffer" class="member-name-link">encoder_set_compute_index_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_compute_dynamic_vertex_buffer" class="member-name-link">encoder_set_compute_dynamic_vertex_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_compute_indirect_buffer" class="member-name-link">encoder_set_compute_indirect_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_compute_index_buffer" class="member-name-link">encoder_set_compute_index_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_compute_vertex_buffer" class="member-name-link">encoder_set_compute_vertex_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_compute_indirect_buffer" class="member-name-link">encoder_set_compute_indirect_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_condition" class="member-name-link">encoder_set_condition</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_compute_vertex_buffer" class="member-name-link">encoder_set_compute_vertex_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_dynamic_index_buffer" class="member-name-link">encoder_set_dynamic_index_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_condition" class="member-name-link">encoder_set_condition</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_dynamic_vertex_buffer" class="member-name-link">encoder_set_dynamic_vertex_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_dynamic_index_buffer" class="member-name-link">encoder_set_dynamic_index_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_dynamic_vertex_buffer_with_layout" class="member-name-link">encoder_set_dynamic_vertex_buffer_with_layout</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_dynamic_vertex_buffer" class="member-name-link">encoder_set_dynamic_vertex_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_image" class="member-name-link">encoder_set_image</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_dynamic_vertex_buffer_with_layout" class="member-name-link">encoder_set_dynamic_vertex_buffer_with_layout</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_index_buffer" class="member-name-link">encoder_set_index_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_image" class="member-name-link">encoder_set_image</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_instance_count" class="member-name-link">encoder_set_instance_count</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_index_buffer" class="member-name-link">encoder_set_index_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_instance_data_buffer" class="member-name-link">encoder_set_instance_data_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_instance_count" class="member-name-link">encoder_set_instance_count</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_instance_data_from_dynamic_vertex_buffer" class="member-name-link">encoder_set_instance_data_from_dynamic_vertex_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_instance_data_buffer" class="member-name-link">encoder_set_instance_data_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_instance_data_from_vertex_buffer" class="member-name-link">encoder_set_instance_data_from_vertex_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_instance_data_from_dynamic_vertex_buffer" class="member-name-link">encoder_set_instance_data_from_dynamic_vertex_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_marker" class="member-name-link">encoder_set_marker</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_instance_data_from_vertex_buffer" class="member-name-link">encoder_set_instance_data_from_vertex_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_scissor" class="member-name-link">encoder_set_scissor</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_marker" class="member-name-link">encoder_set_marker</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_scissor_cached" class="member-name-link">encoder_set_scissor_cached</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_scissor" class="member-name-link">encoder_set_scissor</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_state" class="member-name-link">encoder_set_state</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_scissor_cached" class="member-name-link">encoder_set_scissor_cached</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_stencil" class="member-name-link">encoder_set_stencil</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_state" class="member-name-link">encoder_set_state</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_texture" class="member-name-link">encoder_set_texture</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_stencil" class="member-name-link">encoder_set_stencil</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_transform" class="member-name-link">encoder_set_transform</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_texture" class="member-name-link">encoder_set_texture</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_transform_cached" class="member-name-link">encoder_set_transform_cached</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_transform" class="member-name-link">encoder_set_transform</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_transient_index_buffer" class="member-name-link">encoder_set_transient_index_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_transform_cached" class="member-name-link">encoder_set_transform_cached</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_transient_vertex_buffer" class="member-name-link">encoder_set_transient_vertex_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_transient_index_buffer" class="member-name-link">encoder_set_transient_index_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_transient_vertex_buffer_with_layout" class="member-name-link">encoder_set_transient_vertex_buffer_with_layout</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_transient_vertex_buffer" class="member-name-link">encoder_set_transient_vertex_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_uniform" class="member-name-link">encoder_set_uniform</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_transient_vertex_buffer_with_layout" class="member-name-link">encoder_set_transient_vertex_buffer_with_layout</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_vertex_buffer" class="member-name-link">encoder_set_vertex_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_uniform" class="member-name-link">encoder_set_uniform</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_set_vertex_buffer_with_layout" class="member-name-link">encoder_set_vertex_buffer_with_layout</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_vertex_buffer" class="member-name-link">encoder_set_vertex_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_set_vertex_count" class="member-name-link">encoder_set_vertex_count</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_set_vertex_buffer_with_layout" class="member-name-link">encoder_set_vertex_buffer_with_layout</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_submit" class="member-name-link">encoder_submit</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_set_vertex_count" class="member-name-link">encoder_set_vertex_count</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_submit_indirect" class="member-name-link">encoder_submit_indirect</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_submit" class="member-name-link">encoder_submit</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_submit_indirect_count" class="member-name-link">encoder_submit_indirect_count</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_submit_indirect" class="member-name-link">encoder_submit_indirect</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#encoder_submit_occlusion_query" class="member-name-link">encoder_submit_occlusion_query</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_submit_indirect_count" class="member-name-link">encoder_submit_indirect_count</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#encoder_touch" class="member-name-link">encoder_touch</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#encoder_submit_occlusion_query" class="member-name-link">encoder_submit_occlusion_query</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#frame" class="member-name-link">frame</a></code></div>
+<div class="col-second even-row-color"><code><a href="#encoder_touch" class="member-name-link">encoder_touch</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#get_avail_instance_data_buffer" class="member-name-link">get_avail_instance_data_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#frame" class="member-name-link">frame</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#get_avail_transient_index_buffer" class="member-name-link">get_avail_transient_index_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#get_avail_instance_data_buffer" class="member-name-link">get_avail_instance_data_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#get_avail_transient_vertex_buffer" class="member-name-link">get_avail_transient_vertex_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#get_avail_transient_index_buffer" class="member-name-link">get_avail_transient_index_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#get_caps" class="member-name-link">get_caps</a></code></div>
+<div class="col-second even-row-color"><code><a href="#get_avail_transient_vertex_buffer" class="member-name-link">get_avail_transient_vertex_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#get_direct_access_ptr" class="member-name-link">get_direct_access_ptr</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#get_caps" class="member-name-link">get_caps</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#get_renderer_name" class="member-name-link">get_renderer_name</a></code></div>
+<div class="col-second even-row-color"><code><a href="#get_direct_access_ptr" class="member-name-link">get_direct_access_ptr</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#get_renderer_type" class="member-name-link">get_renderer_type</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#get_renderer_name" class="member-name-link">get_renderer_name</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#get_result" class="member-name-link">get_result</a></code></div>
+<div class="col-second even-row-color"><code><a href="#get_renderer_type" class="member-name-link">get_renderer_type</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#get_shader_uniforms" class="member-name-link">get_shader_uniforms</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#get_result" class="member-name-link">get_result</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#get_stats" class="member-name-link">get_stats</a></code></div>
+<div class="col-second even-row-color"><code><a href="#get_shader_uniforms" class="member-name-link">get_shader_uniforms</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#get_supported_renderers" class="member-name-link">get_supported_renderers</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#get_stats" class="member-name-link">get_stats</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#get_texture" class="member-name-link">get_texture</a></code></div>
+<div class="col-second even-row-color"><code><a href="#get_supported_renderers" class="member-name-link">get_supported_renderers</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#get_uniform_info" class="member-name-link">get_uniform_info</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#get_texture" class="member-name-link">get_texture</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#init" class="member-name-link">init</a></code></div>
+<div class="col-second even-row-color"><code><a href="#get_uniform_info" class="member-name-link">get_uniform_info</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#init_ctor" class="member-name-link">init_ctor</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#init" class="member-name-link">init</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#is_frame_buffer_valid" class="member-name-link">is_frame_buffer_valid</a></code></div>
+<div class="col-second even-row-color"><code><a href="#init_ctor" class="member-name-link">init_ctor</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#is_texture_valid" class="member-name-link">is_texture_valid</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#is_frame_buffer_valid" class="member-name-link">is_frame_buffer_valid</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#make_ref" class="member-name-link">make_ref</a></code></div>
+<div class="col-second even-row-color"><code><a href="#is_texture_valid" class="member-name-link">is_texture_valid</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#make_ref_release" class="member-name-link">make_ref_release</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#make_ref" class="member-name-link">make_ref</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#read_texture" class="member-name-link">read_texture</a></code></div>
+<div class="col-second even-row-color"><code><a href="#make_ref_release" class="member-name-link">make_ref_release</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#request_screen_shot" class="member-name-link">request_screen_shot</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#read_texture" class="member-name-link">read_texture</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#reset" class="member-name-link">reset</a></code></div>
+<div class="col-second even-row-color"><code><a href="#request_screen_shot" class="member-name-link">request_screen_shot</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#reset_view" class="member-name-link">reset_view</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#reset" class="member-name-link">reset</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#set_compute_dynamic_index_buffer" class="member-name-link">set_compute_dynamic_index_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#reset_view" class="member-name-link">reset_view</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#set_compute_dynamic_vertex_buffer" class="member-name-link">set_compute_dynamic_vertex_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#set_compute_dynamic_index_buffer" class="member-name-link">set_compute_dynamic_index_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#set_compute_index_buffer" class="member-name-link">set_compute_index_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#set_compute_dynamic_vertex_buffer" class="member-name-link">set_compute_dynamic_vertex_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#set_compute_indirect_buffer" class="member-name-link">set_compute_indirect_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#set_compute_index_buffer" class="member-name-link">set_compute_index_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#set_compute_vertex_buffer" class="member-name-link">set_compute_vertex_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#set_compute_indirect_buffer" class="member-name-link">set_compute_indirect_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#set_condition" class="member-name-link">set_condition</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#set_compute_vertex_buffer" class="member-name-link">set_compute_vertex_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#set_debug" class="member-name-link">set_debug</a></code></div>
+<div class="col-second even-row-color"><code><a href="#set_condition" class="member-name-link">set_condition</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#set_dynamic_index_buffer" class="member-name-link">set_dynamic_index_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#set_debug" class="member-name-link">set_debug</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#set_dynamic_vertex_buffer" class="member-name-link">set_dynamic_vertex_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#set_dynamic_index_buffer" class="member-name-link">set_dynamic_index_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#set_dynamic_vertex_buffer_with_layout" class="member-name-link">set_dynamic_vertex_buffer_with_layout</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#set_dynamic_vertex_buffer" class="member-name-link">set_dynamic_vertex_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#set_frame_buffer_name" class="member-name-link">set_frame_buffer_name</a></code></div>
+<div class="col-second even-row-color"><code><a href="#set_dynamic_vertex_buffer_with_layout" class="member-name-link">set_dynamic_vertex_buffer_with_layout</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#set_frame_buffer_name" class="member-name-link">set_frame_buffer_name</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#set_frame_uniform" class="member-name-link">set_frame_uniform</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
@@ -1126,133 +1139,138 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#shutdown" class="member-name-link">shutdown</a></code></div>
+<div class="col-second even-row-color"><code><a href="#set_view_uniform" class="member-name-link">set_view_uniform</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#submit" class="member-name-link">submit</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#shutdown" class="member-name-link">shutdown</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#submit_indirect" class="member-name-link">submit_indirect</a></code></div>
+<div class="col-second even-row-color"><code><a href="#submit" class="member-name-link">submit</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#submit_indirect_count" class="member-name-link">submit_indirect_count</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#submit_indirect" class="member-name-link">submit_indirect</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#submit_occlusion_query" class="member-name-link">submit_occlusion_query</a></code></div>
+<div class="col-second even-row-color"><code><a href="#submit_indirect_count" class="member-name-link">submit_indirect_count</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#topology_convert" class="member-name-link">topology_convert</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#submit_occlusion_query" class="member-name-link">submit_occlusion_query</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#topology_sort_tri_list" class="member-name-link">topology_sort_tri_list</a></code></div>
+<div class="col-second even-row-color"><code><a href="#topology_convert" class="member-name-link">topology_convert</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#touch" class="member-name-link">touch</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#topology_sort_tri_list" class="member-name-link">topology_sort_tri_list</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#update_dynamic_index_buffer" class="member-name-link">update_dynamic_index_buffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#touch" class="member-name-link">touch</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#update_dynamic_vertex_buffer" class="member-name-link">update_dynamic_vertex_buffer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#update_dynamic_index_buffer" class="member-name-link">update_dynamic_index_buffer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#update_texture_2d" class="member-name-link">update_texture_2d</a></code></div>
+<div class="col-second even-row-color"><code><a href="#update_dynamic_vertex_buffer" class="member-name-link">update_dynamic_vertex_buffer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#update_texture_3d" class="member-name-link">update_texture_3d</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#update_texture_2d" class="member-name-link">update_texture_2d</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#update_texture_cube" class="member-name-link">update_texture_cube</a></code></div>
+<div class="col-second even-row-color"><code><a href="#update_texture_3d" class="member-name-link">update_texture_3d</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vertex_convert" class="member-name-link">vertex_convert</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#update_texture_cube" class="member-name-link">update_texture_cube</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vertex_layout_add" class="member-name-link">vertex_layout_add</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vertex_convert" class="member-name-link">vertex_convert</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vertex_layout_begin" class="member-name-link">vertex_layout_begin</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vertex_layout_add" class="member-name-link">vertex_layout_add</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vertex_layout_decode" class="member-name-link">vertex_layout_decode</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vertex_layout_begin" class="member-name-link">vertex_layout_begin</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vertex_layout_end" class="member-name-link">vertex_layout_end</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vertex_layout_decode" class="member-name-link">vertex_layout_decode</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vertex_layout_get_offset" class="member-name-link">vertex_layout_get_offset</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vertex_layout_end" class="member-name-link">vertex_layout_end</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vertex_layout_get_size" class="member-name-link">vertex_layout_get_size</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vertex_layout_get_offset" class="member-name-link">vertex_layout_get_offset</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vertex_layout_get_stride" class="member-name-link">vertex_layout_get_stride</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vertex_layout_get_size" class="member-name-link">vertex_layout_get_size</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vertex_layout_has" class="member-name-link">vertex_layout_has</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vertex_layout_get_stride" class="member-name-link">vertex_layout_get_stride</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vertex_layout_skip" class="member-name-link">vertex_layout_skip</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vertex_layout_has" class="member-name-link">vertex_layout_has</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vertex_pack" class="member-name-link">vertex_pack</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vertex_layout_skip" class="member-name-link">vertex_layout_skip</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vertex_unpack" class="member-name-link">vertex_unpack</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vertex_pack" class="member-name-link">vertex_pack</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#weld_vertices" class="member-name-link">weld_vertices</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vertex_unpack" class="member-name-link">vertex_unpack</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#weld_vertices" class="member-name-link">weld_vertices</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 </div>
@@ -2096,6 +2114,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="create_uniform_with_freq">
+<h3>create_uniform_with_freq</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">create_uniform_with_freq</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="get_uniform_info">
 <h3>get_uniform_info</h3>
 <div class="horizontal-scroll">
@@ -2379,6 +2406,24 @@ loadScripts(document, 'script');</script>
 <h3>encoder_set_uniform</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">encoder_set_uniform</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="set_view_uniform">
+<h3>set_view_uniform</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">set_view_uniform</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="set_frame_uniform">
+<h3>set_frame_uniform</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">set_frame_uniform</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>

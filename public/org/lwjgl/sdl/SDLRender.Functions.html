@@ -61,6 +61,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#CreateWindowAndRenderer" tabindex="0">CreateWindowAndRenderer</a></li>
 <li><a href="#CreateRenderer" tabindex="0">CreateRenderer</a></li>
 <li><a href="#CreateRendererWithProperties" tabindex="0">CreateRendererWithProperties</a></li>
+<li><a href="#CreateGPURenderer" tabindex="0">CreateGPURenderer</a></li>
+<li><a href="#GetGPURendererDevice" tabindex="0">GetGPURendererDevice</a></li>
 <li><a href="#CreateSoftwareRenderer" tabindex="0">CreateSoftwareRenderer</a></li>
 <li><a href="#GetRenderer" tabindex="0">GetRenderer</a></li>
 <li><a href="#GetRenderWindow" tabindex="0">GetRenderWindow</a></li>
@@ -74,6 +76,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#GetTextureProperties" tabindex="0">GetTextureProperties</a></li>
 <li><a href="#GetRendererFromTexture" tabindex="0">GetRendererFromTexture</a></li>
 <li><a href="#GetTextureSize" tabindex="0">GetTextureSize</a></li>
+<li><a href="#SetTexturePalette" tabindex="0">SetTexturePalette</a></li>
+<li><a href="#GetTexturePalette" tabindex="0">GetTexturePalette</a></li>
 <li><a href="#SetTextureColorMod" tabindex="0">SetTextureColorMod</a></li>
 <li><a href="#SetTextureColorModFloat" tabindex="0">SetTextureColorModFloat</a></li>
 <li><a href="#GetTextureColorMod" tabindex="0">GetTextureColorMod</a></li>
@@ -131,8 +135,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#RenderTextureAffine" tabindex="0">RenderTextureAffine</a></li>
 <li><a href="#RenderTextureTiled" tabindex="0">RenderTextureTiled</a></li>
 <li><a href="#RenderTexture9Grid" tabindex="0">RenderTexture9Grid</a></li>
+<li><a href="#RenderTexture9GridTiled" tabindex="0">RenderTexture9GridTiled</a></li>
 <li><a href="#RenderGeometry" tabindex="0">RenderGeometry</a></li>
 <li><a href="#RenderGeometryRaw" tabindex="0">RenderGeometryRaw</a></li>
+<li><a href="#SetRenderTextureAddressMode" tabindex="0">SetRenderTextureAddressMode</a></li>
+<li><a href="#GetRenderTextureAddressMode" tabindex="0">GetRenderTextureAddressMode</a></li>
 <li><a href="#RenderReadPixels" tabindex="0">RenderReadPixels</a></li>
 <li><a href="#RenderPresent" tabindex="0">RenderPresent</a></li>
 <li><a href="#DestroyTexture" tabindex="0">DestroyTexture</a></li>
@@ -145,6 +152,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#GetRenderVSync" tabindex="0">GetRenderVSync</a></li>
 <li><a href="#RenderDebugText" tabindex="0">RenderDebugText</a></li>
 <li><a href="#RenderDebugTextFormat" tabindex="0">RenderDebugTextFormat</a></li>
+<li><a href="#SetDefaultTextureScaleMode" tabindex="0">SetDefaultTextureScaleMode</a></li>
+<li><a href="#GetDefaultTextureScaleMode" tabindex="0">GetDefaultTextureScaleMode</a></li>
+<li><a href="#CreateGPURenderState" tabindex="0">CreateGPURenderState</a></li>
+<li><a href="#SetGPURenderStateFragmentUniforms" tabindex="0">SetGPURenderStateFragmentUniforms</a></li>
+<li><a href="#SetGPURenderState" tabindex="0">SetGPURenderState</a></li>
+<li><a href="#DestroyGPURenderState" tabindex="0">DestroyGPURenderState</a></li>
 </ol>
 </li>
 </ol>
@@ -191,6 +204,16 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#CreateGPURenderer" class="member-name-link">CreateGPURenderer</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#CreateGPURenderState" class="member-name-link">CreateGPURenderState</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
 <div class="col-second even-row-color"><code><a href="#CreateRenderer" class="member-name-link">CreateRenderer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
@@ -226,117 +249,137 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#DestroyRenderer" class="member-name-link">DestroyRenderer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#DestroyGPURenderState" class="member-name-link">DestroyGPURenderState</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#DestroyTexture" class="member-name-link">DestroyTexture</a></code></div>
+<div class="col-second even-row-color"><code><a href="#DestroyRenderer" class="member-name-link">DestroyRenderer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#FlushRenderer" class="member-name-link">FlushRenderer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#DestroyTexture" class="member-name-link">DestroyTexture</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetCurrentRenderOutputSize" class="member-name-link">GetCurrentRenderOutputSize</a></code></div>
+<div class="col-second even-row-color"><code><a href="#FlushRenderer" class="member-name-link">FlushRenderer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetNumRenderDrivers" class="member-name-link">GetNumRenderDrivers</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetCurrentRenderOutputSize" class="member-name-link">GetCurrentRenderOutputSize</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetRenderClipRect" class="member-name-link">GetRenderClipRect</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetDefaultTextureScaleMode" class="member-name-link">GetDefaultTextureScaleMode</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetRenderColorScale" class="member-name-link">GetRenderColorScale</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetGPURendererDevice" class="member-name-link">GetGPURendererDevice</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetRenderDrawBlendMode" class="member-name-link">GetRenderDrawBlendMode</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetNumRenderDrivers" class="member-name-link">GetNumRenderDrivers</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetRenderDrawColor" class="member-name-link">GetRenderDrawColor</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRenderClipRect" class="member-name-link">GetRenderClipRect</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetRenderDrawColorFloat" class="member-name-link">GetRenderDrawColorFloat</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetRenderColorScale" class="member-name-link">GetRenderColorScale</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetRenderDriver" class="member-name-link">GetRenderDriver</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRenderDrawBlendMode" class="member-name-link">GetRenderDrawBlendMode</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetRenderer" class="member-name-link">GetRenderer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetRenderDrawColor" class="member-name-link">GetRenderDrawColor</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetRendererFromTexture" class="member-name-link">GetRendererFromTexture</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRenderDrawColorFloat" class="member-name-link">GetRenderDrawColorFloat</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetRendererName" class="member-name-link">GetRendererName</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetRenderDriver" class="member-name-link">GetRenderDriver</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetRendererProperties" class="member-name-link">GetRendererProperties</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRenderer" class="member-name-link">GetRenderer</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetRenderLogicalPresentation" class="member-name-link">GetRenderLogicalPresentation</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetRendererFromTexture" class="member-name-link">GetRendererFromTexture</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetRenderLogicalPresentationRect" class="member-name-link">GetRenderLogicalPresentationRect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRendererName" class="member-name-link">GetRendererName</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetRenderMetalCommandEncoder" class="member-name-link">GetRenderMetalCommandEncoder</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetRendererProperties" class="member-name-link">GetRendererProperties</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetRenderMetalLayer" class="member-name-link">GetRenderMetalLayer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRenderLogicalPresentation" class="member-name-link">GetRenderLogicalPresentation</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetRenderOutputSize" class="member-name-link">GetRenderOutputSize</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetRenderLogicalPresentationRect" class="member-name-link">GetRenderLogicalPresentationRect</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetRenderSafeArea" class="member-name-link">GetRenderSafeArea</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRenderMetalCommandEncoder" class="member-name-link">GetRenderMetalCommandEncoder</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetRenderScale" class="member-name-link">GetRenderScale</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetRenderMetalLayer" class="member-name-link">GetRenderMetalLayer</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetRenderTarget" class="member-name-link">GetRenderTarget</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRenderOutputSize" class="member-name-link">GetRenderOutputSize</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#GetRenderSafeArea" class="member-name-link">GetRenderSafeArea</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRenderScale" class="member-name-link">GetRenderScale</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#GetRenderTarget" class="member-name-link">GetRenderTarget</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#GetRenderTextureAddressMode" class="member-name-link">GetRenderTextureAddressMode</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
@@ -381,127 +424,137 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetTextureProperties" class="member-name-link">GetTextureProperties</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetTexturePalette" class="member-name-link">GetTexturePalette</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#GetTextureScaleMode" class="member-name-link">GetTextureScaleMode</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetTextureProperties" class="member-name-link">GetTextureProperties</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#GetTextureSize" class="member-name-link">GetTextureSize</a></code></div>
+<div class="col-second even-row-color"><code><a href="#GetTextureScaleMode" class="member-name-link">GetTextureScaleMode</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#LockTexture" class="member-name-link">LockTexture</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#GetTextureSize" class="member-name-link">GetTextureSize</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#LockTextureToSurface" class="member-name-link">LockTextureToSurface</a></code></div>
+<div class="col-second even-row-color"><code><a href="#LockTexture" class="member-name-link">LockTexture</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderClear" class="member-name-link">RenderClear</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#LockTextureToSurface" class="member-name-link">LockTextureToSurface</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderClipEnabled" class="member-name-link">RenderClipEnabled</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderClear" class="member-name-link">RenderClear</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderCoordinatesFromWindow" class="member-name-link">RenderCoordinatesFromWindow</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderClipEnabled" class="member-name-link">RenderClipEnabled</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderCoordinatesToWindow" class="member-name-link">RenderCoordinatesToWindow</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderCoordinatesFromWindow" class="member-name-link">RenderCoordinatesFromWindow</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderDebugText" class="member-name-link">RenderDebugText</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderCoordinatesToWindow" class="member-name-link">RenderCoordinatesToWindow</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderDebugTextFormat" class="member-name-link">RenderDebugTextFormat</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderDebugText" class="member-name-link">RenderDebugText</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderFillRect" class="member-name-link">RenderFillRect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderDebugTextFormat" class="member-name-link">RenderDebugTextFormat</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderFillRects" class="member-name-link">RenderFillRects</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderFillRect" class="member-name-link">RenderFillRect</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderGeometry" class="member-name-link">RenderGeometry</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderFillRects" class="member-name-link">RenderFillRects</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderGeometryRaw" class="member-name-link">RenderGeometryRaw</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderGeometry" class="member-name-link">RenderGeometry</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderLine" class="member-name-link">RenderLine</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderGeometryRaw" class="member-name-link">RenderGeometryRaw</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderLines" class="member-name-link">RenderLines</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderLine" class="member-name-link">RenderLine</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderPoint" class="member-name-link">RenderPoint</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderLines" class="member-name-link">RenderLines</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderPoints" class="member-name-link">RenderPoints</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderPoint" class="member-name-link">RenderPoint</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderPresent" class="member-name-link">RenderPresent</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderPoints" class="member-name-link">RenderPoints</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderReadPixels" class="member-name-link">RenderReadPixels</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderPresent" class="member-name-link">RenderPresent</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderRect" class="member-name-link">RenderRect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderReadPixels" class="member-name-link">RenderReadPixels</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderRects" class="member-name-link">RenderRects</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderRect" class="member-name-link">RenderRect</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#RenderTexture" class="member-name-link">RenderTexture</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderRects" class="member-name-link">RenderRects</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#RenderTexture9Grid" class="member-name-link">RenderTexture9Grid</a></code></div>
+<div class="col-second even-row-color"><code><a href="#RenderTexture" class="member-name-link">RenderTexture</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#RenderTexture9Grid" class="member-name-link">RenderTexture9Grid</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#RenderTexture9GridTiled" class="member-name-link">RenderTexture9GridTiled</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
@@ -526,42 +579,62 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetRenderClipRect" class="member-name-link">SetRenderClipRect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetDefaultTextureScaleMode" class="member-name-link">SetDefaultTextureScaleMode</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetRenderColorScale" class="member-name-link">SetRenderColorScale</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetGPURenderState" class="member-name-link">SetGPURenderState</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetRenderDrawBlendMode" class="member-name-link">SetRenderDrawBlendMode</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetGPURenderStateFragmentUniforms" class="member-name-link">SetGPURenderStateFragmentUniforms</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetRenderDrawColor" class="member-name-link">SetRenderDrawColor</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetRenderClipRect" class="member-name-link">SetRenderClipRect</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetRenderDrawColorFloat" class="member-name-link">SetRenderDrawColorFloat</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetRenderColorScale" class="member-name-link">SetRenderColorScale</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetRenderLogicalPresentation" class="member-name-link">SetRenderLogicalPresentation</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetRenderDrawBlendMode" class="member-name-link">SetRenderDrawBlendMode</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SetRenderScale" class="member-name-link">SetRenderScale</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetRenderDrawColor" class="member-name-link">SetRenderDrawColor</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetRenderTarget" class="member-name-link">SetRenderTarget</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetRenderDrawColorFloat" class="member-name-link">SetRenderDrawColorFloat</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#SetRenderLogicalPresentation" class="member-name-link">SetRenderLogicalPresentation</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#SetRenderScale" class="member-name-link">SetRenderScale</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#SetRenderTarget" class="member-name-link">SetRenderTarget</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#SetRenderTextureAddressMode" class="member-name-link">SetRenderTextureAddressMode</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
@@ -601,28 +674,33 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SetTextureScaleMode" class="member-name-link">SetTextureScaleMode</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SetTexturePalette" class="member-name-link">SetTexturePalette</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#UnlockTexture" class="member-name-link">UnlockTexture</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SetTextureScaleMode" class="member-name-link">SetTextureScaleMode</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#UpdateNVTexture" class="member-name-link">UpdateNVTexture</a></code></div>
+<div class="col-second even-row-color"><code><a href="#UnlockTexture" class="member-name-link">UnlockTexture</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#UpdateTexture" class="member-name-link">UpdateTexture</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#UpdateNVTexture" class="member-name-link">UpdateNVTexture</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#UpdateYUVTexture" class="member-name-link">UpdateYUVTexture</a></code></div>
+<div class="col-second even-row-color"><code><a href="#UpdateTexture" class="member-name-link">UpdateTexture</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#UpdateYUVTexture" class="member-name-link">UpdateYUVTexture</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 </div>
@@ -687,6 +765,24 @@ loadScripts(document, 'script');</script>
 <h3>CreateRendererWithProperties</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">CreateRendererWithProperties</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="CreateGPURenderer">
+<h3>CreateGPURenderer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">CreateGPURenderer</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GetGPURendererDevice">
+<h3>GetGPURendererDevice</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetGPURendererDevice</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>
@@ -804,6 +900,24 @@ loadScripts(document, 'script');</script>
 <h3>GetTextureSize</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetTextureSize</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SetTexturePalette">
+<h3>SetTexturePalette</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SetTexturePalette</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GetTexturePalette">
+<h3>GetTexturePalette</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetTexturePalette</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>
@@ -1322,6 +1436,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="RenderTexture9GridTiled">
+<h3>RenderTexture9GridTiled</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">RenderTexture9GridTiled</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="RenderGeometry">
 <h3>RenderGeometry</h3>
 <div class="horizontal-scroll">
@@ -1335,6 +1458,24 @@ loadScripts(document, 'script');</script>
 <h3>RenderGeometryRaw</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">RenderGeometryRaw</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SetRenderTextureAddressMode">
+<h3>SetRenderTextureAddressMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SetRenderTextureAddressMode</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GetRenderTextureAddressMode">
+<h3>GetRenderTextureAddressMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetRenderTextureAddressMode</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>
@@ -1443,6 +1584,60 @@ loadScripts(document, 'script');</script>
 <h3>RenderDebugTextFormat</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">RenderDebugTextFormat</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SetDefaultTextureScaleMode">
+<h3>SetDefaultTextureScaleMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SetDefaultTextureScaleMode</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GetDefaultTextureScaleMode">
+<h3>GetDefaultTextureScaleMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">GetDefaultTextureScaleMode</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="CreateGPURenderState">
+<h3>CreateGPURenderState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">CreateGPURenderState</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SetGPURenderStateFragmentUniforms">
+<h3>SetGPURenderStateFragmentUniforms</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SetGPURenderStateFragmentUniforms</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SetGPURenderState">
+<h3>SetGPURenderState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SetGPURenderState</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="DestroyGPURenderState">
+<h3>DestroyGPURenderState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">DestroyGPURenderState</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>

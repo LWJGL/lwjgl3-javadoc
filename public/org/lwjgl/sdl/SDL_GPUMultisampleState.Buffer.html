@@ -67,9 +67,11 @@ loadScripts(document, 'script');</script>
 <li><a href="#sample_count()" tabindex="0">sample_count()</a></li>
 <li><a href="#sample_mask()" tabindex="0">sample_mask()</a></li>
 <li><a href="#enable_mask()" tabindex="0">enable_mask()</a></li>
+<li><a href="#enable_alpha_to_coverage()" tabindex="0">enable_alpha_to_coverage()</a></li>
 <li><a href="#sample_count(int)" tabindex="0">sample_count(int)</a></li>
 <li><a href="#sample_mask(int)" tabindex="0">sample_mask(int)</a></li>
 <li><a href="#enable_mask(boolean)" tabindex="0">enable_mask(boolean)</a></li>
+<li><a href="#enable_alpha_to_coverage(boolean)" tabindex="0">enable_alpha_to_coverage(boolean)</a></li>
 </ol>
 </li>
 </ol>
@@ -154,6 +156,14 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enable_alpha_to_coverage()" class="member-name-link">enable_alpha_to_coverage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_GPUMultisampleState.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUMultisampleState.Buffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enable_alpha_to_coverage(boolean)" class="member-name-link">enable_alpha_to_coverage</a><wbr>(boolean&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>enable_alpha_to_coverage</code> field.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enable_mask()" class="member-name-link">enable_mask</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -279,6 +289,19 @@ by <a href="SDL_GPUMultisampleState.html#SIZEOF"><code>SDL_GPUMultisampleState.S
 </section>
 </li>
 <li>
+<section class="detail" id="enable_alpha_to_coverage()">
+<h3>enable_alpha_to_coverage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">enable_alpha_to_coverage</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>enable_alpha_to_coverage</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="sample_count(int)">
 <h3>sample_count</h3>
 <div class="horizontal-scroll">
@@ -305,6 +328,16 @@ by <a href="SDL_GPUMultisampleState.html#SIZEOF"><code>SDL_GPUMultisampleState.S
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUMultisampleState.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUMultisampleState.Buffer</a></span>&nbsp;<span class="element-name">enable_mask</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
  boolean&nbsp;value)</span></div>
 <div class="block">Sets the specified value to the <code>enable_mask</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="enable_alpha_to_coverage(boolean)">
+<h3>enable_alpha_to_coverage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUMultisampleState.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUMultisampleState.Buffer</a></span>&nbsp;<span class="element-name">enable_alpha_to_coverage</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+ boolean&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>enable_alpha_to_coverage</code> field.</div>
 </div>
 </section>
 </li>

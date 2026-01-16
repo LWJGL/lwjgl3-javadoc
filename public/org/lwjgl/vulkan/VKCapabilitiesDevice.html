@@ -614,6 +614,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#vkCmdSetViewportWScalingNV" tabindex="0">vkCmdSetViewportWScalingNV</a></li>
 <li><a href="#vkGetClusterAccelerationStructureBuildSizesNV" tabindex="0">vkGetClusterAccelerationStructureBuildSizesNV</a></li>
 <li><a href="#vkCmdBuildClusterAccelerationStructureIndirectNV" tabindex="0">vkCmdBuildClusterAccelerationStructureIndirectNV</a></li>
+<li><a href="#vkCmdSetComputeOccupancyPriorityNV" tabindex="0">vkCmdSetComputeOccupancyPriorityNV</a></li>
 <li><a href="#vkConvertCooperativeVectorMatrixNV" tabindex="0">vkConvertCooperativeVectorMatrixNV</a></li>
 <li><a href="#vkCmdConvertCooperativeVectorMatrixNV" tabindex="0">vkCmdConvertCooperativeVectorMatrixNV</a></li>
 <li><a href="#vkCmdCopyMemoryIndirectNV" tabindex="0">vkCmdCopyMemoryIndirectNV</a></li>
@@ -839,6 +840,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#VK_EXT_shader_demote_to_helper_invocation" tabindex="0">VK_EXT_shader_demote_to_helper_invocation</a></li>
 <li><a href="#VK_EXT_shader_float8" tabindex="0">VK_EXT_shader_float8</a></li>
 <li><a href="#VK_EXT_shader_image_atomic_int64" tabindex="0">VK_EXT_shader_image_atomic_int64</a></li>
+<li><a href="#VK_EXT_shader_long_vector" tabindex="0">VK_EXT_shader_long_vector</a></li>
 <li><a href="#VK_EXT_shader_module_identifier" tabindex="0">VK_EXT_shader_module_identifier</a></li>
 <li><a href="#VK_EXT_shader_object" tabindex="0">VK_EXT_shader_object</a></li>
 <li><a href="#VK_EXT_shader_replicated_composites" tabindex="0">VK_EXT_shader_replicated_composites</a></li>
@@ -852,6 +854,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#VK_EXT_subpass_merge_feedback" tabindex="0">VK_EXT_subpass_merge_feedback</a></li>
 <li><a href="#VK_EXT_swapchain_maintenance1" tabindex="0">VK_EXT_swapchain_maintenance1</a></li>
 <li><a href="#VK_EXT_texel_buffer_alignment" tabindex="0">VK_EXT_texel_buffer_alignment</a></li>
+<li><a href="#VK_EXT_texture_compression_astc_3d" tabindex="0">VK_EXT_texture_compression_astc_3d</a></li>
 <li><a href="#VK_EXT_texture_compression_astc_hdr" tabindex="0">VK_EXT_texture_compression_astc_hdr</a></li>
 <li><a href="#VK_EXT_tooling_info" tabindex="0">VK_EXT_tooling_info</a></li>
 <li><a href="#VK_EXT_transform_feedback" tabindex="0">VK_EXT_transform_feedback</a></li>
@@ -1004,6 +1007,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#VK_NV_clip_space_w_scaling" tabindex="0">VK_NV_clip_space_w_scaling</a></li>
 <li><a href="#VK_NV_cluster_acceleration_structure" tabindex="0">VK_NV_cluster_acceleration_structure</a></li>
 <li><a href="#VK_NV_command_buffer_inheritance" tabindex="0">VK_NV_command_buffer_inheritance</a></li>
+<li><a href="#VK_NV_compute_occupancy_priority" tabindex="0">VK_NV_compute_occupancy_priority</a></li>
 <li><a href="#VK_NV_compute_shader_derivatives" tabindex="0">VK_NV_compute_shader_derivatives</a></li>
 <li><a href="#VK_NV_cooperative_matrix" tabindex="0">VK_NV_cooperative_matrix</a></li>
 <li><a href="#VK_NV_cooperative_matrix2" tabindex="0">VK_NV_cooperative_matrix2</a></li>
@@ -1858,69 +1862,79 @@ loadScripts(document, 'script');</script>
 <div class="block">When true, <code>EXT_shader_image_atomic_int64</code> is supported.</div>
 </div>
 <div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_module_identifier" class="member-name-link">VK_EXT_shader_module_identifier</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_long_vector" class="member-name-link">VK_EXT_shader_long_vector</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">When true, <code>EXT_shader_long_vector</code> is supported.</div>
+</div>
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_EXT_shader_module_identifier" class="member-name-link">VK_EXT_shader_module_identifier</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>EXT_shader_module_identifier</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_EXT_shader_object" class="member-name-link">VK_EXT_shader_object</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_object" class="member-name-link">VK_EXT_shader_object</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>EXT_shader_object</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_replicated_composites" class="member-name-link">VK_EXT_shader_replicated_composites</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_EXT_shader_replicated_composites" class="member-name-link">VK_EXT_shader_replicated_composites</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>EXT_shader_replicated_composites</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_EXT_shader_stencil_export" class="member-name-link">VK_EXT_shader_stencil_export</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_stencil_export" class="member-name-link">VK_EXT_shader_stencil_export</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>EXT_shader_stencil_export</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_subgroup_ballot" class="member-name-link">VK_EXT_shader_subgroup_ballot</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_EXT_shader_subgroup_ballot" class="member-name-link">VK_EXT_shader_subgroup_ballot</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>EXT_shader_subgroup_ballot</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_EXT_shader_subgroup_vote" class="member-name-link">VK_EXT_shader_subgroup_vote</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_subgroup_vote" class="member-name-link">VK_EXT_shader_subgroup_vote</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>EXT_shader_subgroup_vote</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_tile_image" class="member-name-link">VK_EXT_shader_tile_image</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_EXT_shader_tile_image" class="member-name-link">VK_EXT_shader_tile_image</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>EXT_shader_tile_image</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_EXT_shader_uniform_buffer_unsized_array" class="member-name-link">VK_EXT_shader_uniform_buffer_unsized_array</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_uniform_buffer_unsized_array" class="member-name-link">VK_EXT_shader_uniform_buffer_unsized_array</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>EXT_shader_uniform_buffer_unsized_array</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_EXT_shader_viewport_index_layer" class="member-name-link">VK_EXT_shader_viewport_index_layer</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_EXT_shader_viewport_index_layer" class="member-name-link">VK_EXT_shader_viewport_index_layer</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>EXT_shader_viewport_index_layer</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_EXT_subgroup_size_control" class="member-name-link">VK_EXT_subgroup_size_control</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_EXT_subgroup_size_control" class="member-name-link">VK_EXT_subgroup_size_control</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>EXT_subgroup_size_control</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_EXT_subpass_merge_feedback" class="member-name-link">VK_EXT_subpass_merge_feedback</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_EXT_subpass_merge_feedback" class="member-name-link">VK_EXT_subpass_merge_feedback</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>EXT_subpass_merge_feedback</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_EXT_swapchain_maintenance1" class="member-name-link">VK_EXT_swapchain_maintenance1</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_EXT_swapchain_maintenance1" class="member-name-link">VK_EXT_swapchain_maintenance1</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>EXT_swapchain_maintenance1</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_EXT_texel_buffer_alignment" class="member-name-link">VK_EXT_texel_buffer_alignment</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_EXT_texel_buffer_alignment" class="member-name-link">VK_EXT_texel_buffer_alignment</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>EXT_texel_buffer_alignment</code> is supported.</div>
+</div>
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_EXT_texture_compression_astc_3d" class="member-name-link">VK_EXT_texture_compression_astc_3d</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">When true, <code>EXT_texture_compression_astc_3d</code> is supported.</div>
 </div>
 <div class="col-first even-row-color"><code>final boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#VK_EXT_texture_compression_astc_hdr" class="member-name-link">VK_EXT_texture_compression_astc_hdr</a></code></div>
@@ -2683,1359 +2697,1369 @@ loadScripts(document, 'script');</script>
 <div class="block">When true, <code>NV_command_buffer_inheritance</code> is supported.</div>
 </div>
 <div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_compute_shader_derivatives" class="member-name-link">VK_NV_compute_shader_derivatives</a></code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_compute_occupancy_priority" class="member-name-link">VK_NV_compute_occupancy_priority</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">When true, <code>NV_compute_occupancy_priority</code> is supported.</div>
+</div>
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_compute_shader_derivatives" class="member-name-link">VK_NV_compute_shader_derivatives</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_compute_shader_derivatives</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_cooperative_matrix" class="member-name-link">VK_NV_cooperative_matrix</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_cooperative_matrix" class="member-name-link">VK_NV_cooperative_matrix</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_cooperative_matrix</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_cooperative_matrix2" class="member-name-link">VK_NV_cooperative_matrix2</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_cooperative_matrix2" class="member-name-link">VK_NV_cooperative_matrix2</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_cooperative_matrix2</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_cooperative_vector" class="member-name-link">VK_NV_cooperative_vector</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_cooperative_vector" class="member-name-link">VK_NV_cooperative_vector</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_cooperative_vector</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_copy_memory_indirect" class="member-name-link">VK_NV_copy_memory_indirect</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_copy_memory_indirect" class="member-name-link">VK_NV_copy_memory_indirect</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_copy_memory_indirect</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_corner_sampled_image" class="member-name-link">VK_NV_corner_sampled_image</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_corner_sampled_image" class="member-name-link">VK_NV_corner_sampled_image</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_corner_sampled_image</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_coverage_reduction_mode" class="member-name-link">VK_NV_coverage_reduction_mode</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_coverage_reduction_mode" class="member-name-link">VK_NV_coverage_reduction_mode</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_coverage_reduction_mode</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_cuda_kernel_launch" class="member-name-link">VK_NV_cuda_kernel_launch</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_cuda_kernel_launch" class="member-name-link">VK_NV_cuda_kernel_launch</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_cuda_kernel_launch</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_dedicated_allocation" class="member-name-link">VK_NV_dedicated_allocation</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_dedicated_allocation" class="member-name-link">VK_NV_dedicated_allocation</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_dedicated_allocation</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_dedicated_allocation_image_aliasing" class="member-name-link">VK_NV_dedicated_allocation_image_aliasing</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_dedicated_allocation_image_aliasing" class="member-name-link">VK_NV_dedicated_allocation_image_aliasing</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_dedicated_allocation_image_aliasing</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_descriptor_pool_overallocation" class="member-name-link">VK_NV_descriptor_pool_overallocation</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_descriptor_pool_overallocation" class="member-name-link">VK_NV_descriptor_pool_overallocation</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_descriptor_pool_overallocation</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_device_diagnostic_checkpoints" class="member-name-link">VK_NV_device_diagnostic_checkpoints</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_device_diagnostic_checkpoints" class="member-name-link">VK_NV_device_diagnostic_checkpoints</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_device_diagnostic_checkpoints</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_device_diagnostics_config" class="member-name-link">VK_NV_device_diagnostics_config</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_device_diagnostics_config" class="member-name-link">VK_NV_device_diagnostics_config</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_device_diagnostics_config</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_device_generated_commands" class="member-name-link">VK_NV_device_generated_commands</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_device_generated_commands" class="member-name-link">VK_NV_device_generated_commands</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_device_generated_commands</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_device_generated_commands_compute" class="member-name-link">VK_NV_device_generated_commands_compute</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_device_generated_commands_compute" class="member-name-link">VK_NV_device_generated_commands_compute</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_device_generated_commands_compute</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_displacement_micromap" class="member-name-link">VK_NV_displacement_micromap</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_displacement_micromap" class="member-name-link">VK_NV_displacement_micromap</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_displacement_micromap</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_extended_sparse_address_space" class="member-name-link">VK_NV_extended_sparse_address_space</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_extended_sparse_address_space" class="member-name-link">VK_NV_extended_sparse_address_space</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_extended_sparse_address_space</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_external_compute_queue" class="member-name-link">VK_NV_external_compute_queue</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_external_compute_queue" class="member-name-link">VK_NV_external_compute_queue</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_external_compute_queue</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_external_memory" class="member-name-link">VK_NV_external_memory</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_external_memory" class="member-name-link">VK_NV_external_memory</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_external_memory</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_external_memory_rdma" class="member-name-link">VK_NV_external_memory_rdma</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_external_memory_rdma" class="member-name-link">VK_NV_external_memory_rdma</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_external_memory_rdma</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_external_memory_win32" class="member-name-link">VK_NV_external_memory_win32</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_external_memory_win32" class="member-name-link">VK_NV_external_memory_win32</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_external_memory_win32</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_fill_rectangle" class="member-name-link">VK_NV_fill_rectangle</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_fill_rectangle" class="member-name-link">VK_NV_fill_rectangle</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_fill_rectangle</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_fragment_coverage_to_color" class="member-name-link">VK_NV_fragment_coverage_to_color</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_fragment_coverage_to_color" class="member-name-link">VK_NV_fragment_coverage_to_color</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_fragment_coverage_to_color</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_fragment_shader_barycentric" class="member-name-link">VK_NV_fragment_shader_barycentric</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_fragment_shader_barycentric" class="member-name-link">VK_NV_fragment_shader_barycentric</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_fragment_shader_barycentric</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_fragment_shading_rate_enums" class="member-name-link">VK_NV_fragment_shading_rate_enums</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_fragment_shading_rate_enums" class="member-name-link">VK_NV_fragment_shading_rate_enums</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_fragment_shading_rate_enums</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_framebuffer_mixed_samples" class="member-name-link">VK_NV_framebuffer_mixed_samples</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_framebuffer_mixed_samples" class="member-name-link">VK_NV_framebuffer_mixed_samples</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_framebuffer_mixed_samples</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_geometry_shader_passthrough" class="member-name-link">VK_NV_geometry_shader_passthrough</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_geometry_shader_passthrough" class="member-name-link">VK_NV_geometry_shader_passthrough</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_geometry_shader_passthrough</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_glsl_shader" class="member-name-link">VK_NV_glsl_shader</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_glsl_shader" class="member-name-link">VK_NV_glsl_shader</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_glsl_shader</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_inherited_viewport_scissor" class="member-name-link">VK_NV_inherited_viewport_scissor</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_inherited_viewport_scissor" class="member-name-link">VK_NV_inherited_viewport_scissor</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_inherited_viewport_scissor</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_linear_color_attachment" class="member-name-link">VK_NV_linear_color_attachment</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_linear_color_attachment" class="member-name-link">VK_NV_linear_color_attachment</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_linear_color_attachment</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_low_latency" class="member-name-link">VK_NV_low_latency</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_low_latency" class="member-name-link">VK_NV_low_latency</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_low_latency</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_low_latency2" class="member-name-link">VK_NV_low_latency2</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_low_latency2" class="member-name-link">VK_NV_low_latency2</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_low_latency2</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_memory_decompression" class="member-name-link">VK_NV_memory_decompression</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_memory_decompression" class="member-name-link">VK_NV_memory_decompression</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_memory_decompression</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_mesh_shader" class="member-name-link">VK_NV_mesh_shader</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_mesh_shader" class="member-name-link">VK_NV_mesh_shader</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_mesh_shader</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_optical_flow" class="member-name-link">VK_NV_optical_flow</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_optical_flow" class="member-name-link">VK_NV_optical_flow</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_optical_flow</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_partitioned_acceleration_structure" class="member-name-link">VK_NV_partitioned_acceleration_structure</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_partitioned_acceleration_structure" class="member-name-link">VK_NV_partitioned_acceleration_structure</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_partitioned_acceleration_structure</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_per_stage_descriptor_set" class="member-name-link">VK_NV_per_stage_descriptor_set</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_per_stage_descriptor_set" class="member-name-link">VK_NV_per_stage_descriptor_set</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_per_stage_descriptor_set</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_present_barrier" class="member-name-link">VK_NV_present_barrier</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_present_barrier" class="member-name-link">VK_NV_present_barrier</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_present_barrier</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_present_metering" class="member-name-link">VK_NV_present_metering</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_present_metering" class="member-name-link">VK_NV_present_metering</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_present_metering</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_raw_access_chains" class="member-name-link">VK_NV_raw_access_chains</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_raw_access_chains" class="member-name-link">VK_NV_raw_access_chains</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_raw_access_chains</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_ray_tracing" class="member-name-link">VK_NV_ray_tracing</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_ray_tracing" class="member-name-link">VK_NV_ray_tracing</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_ray_tracing</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_ray_tracing_invocation_reorder" class="member-name-link">VK_NV_ray_tracing_invocation_reorder</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_ray_tracing_invocation_reorder" class="member-name-link">VK_NV_ray_tracing_invocation_reorder</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_ray_tracing_invocation_reorder</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_ray_tracing_linear_swept_spheres" class="member-name-link">VK_NV_ray_tracing_linear_swept_spheres</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_ray_tracing_linear_swept_spheres" class="member-name-link">VK_NV_ray_tracing_linear_swept_spheres</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_ray_tracing_linear_swept_spheres</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_ray_tracing_motion_blur" class="member-name-link">VK_NV_ray_tracing_motion_blur</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_ray_tracing_motion_blur" class="member-name-link">VK_NV_ray_tracing_motion_blur</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_ray_tracing_motion_blur</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_ray_tracing_validation" class="member-name-link">VK_NV_ray_tracing_validation</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_ray_tracing_validation" class="member-name-link">VK_NV_ray_tracing_validation</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_ray_tracing_validation</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_representative_fragment_test" class="member-name-link">VK_NV_representative_fragment_test</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_representative_fragment_test" class="member-name-link">VK_NV_representative_fragment_test</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_representative_fragment_test</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_sample_mask_override_coverage" class="member-name-link">VK_NV_sample_mask_override_coverage</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_sample_mask_override_coverage" class="member-name-link">VK_NV_sample_mask_override_coverage</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_sample_mask_override_coverage</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_scissor_exclusive" class="member-name-link">VK_NV_scissor_exclusive</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_scissor_exclusive" class="member-name-link">VK_NV_scissor_exclusive</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_scissor_exclusive</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_shader_atomic_float16_vector" class="member-name-link">VK_NV_shader_atomic_float16_vector</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_shader_atomic_float16_vector" class="member-name-link">VK_NV_shader_atomic_float16_vector</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_shader_atomic_float16_vector</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_shader_image_footprint" class="member-name-link">VK_NV_shader_image_footprint</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_shader_image_footprint" class="member-name-link">VK_NV_shader_image_footprint</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_shader_image_footprint</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_shader_sm_builtins" class="member-name-link">VK_NV_shader_sm_builtins</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_shader_sm_builtins" class="member-name-link">VK_NV_shader_sm_builtins</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_shader_sm_builtins</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_shader_subgroup_partitioned" class="member-name-link">VK_NV_shader_subgroup_partitioned</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_shader_subgroup_partitioned" class="member-name-link">VK_NV_shader_subgroup_partitioned</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_shader_subgroup_partitioned</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_shading_rate_image" class="member-name-link">VK_NV_shading_rate_image</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_shading_rate_image" class="member-name-link">VK_NV_shading_rate_image</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_shading_rate_image</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_viewport_array2" class="member-name-link">VK_NV_viewport_array2</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_viewport_array2" class="member-name-link">VK_NV_viewport_array2</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_viewport_array2</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NV_viewport_swizzle" class="member-name-link">VK_NV_viewport_swizzle</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NV_viewport_swizzle" class="member-name-link">VK_NV_viewport_swizzle</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NV_viewport_swizzle</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NV_win32_keyed_mutex" class="member-name-link">VK_NV_win32_keyed_mutex</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NV_win32_keyed_mutex" class="member-name-link">VK_NV_win32_keyed_mutex</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NV_win32_keyed_mutex</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NVX_binary_import" class="member-name-link">VK_NVX_binary_import</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NVX_binary_import" class="member-name-link">VK_NVX_binary_import</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NVX_binary_import</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_NVX_image_view_handle" class="member-name-link">VK_NVX_image_view_handle</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_NVX_image_view_handle" class="member-name-link">VK_NVX_image_view_handle</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>NVX_image_view_handle</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_NVX_multiview_per_view_attributes" class="member-name-link">VK_NVX_multiview_per_view_attributes</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_NVX_multiview_per_view_attributes" class="member-name-link">VK_NVX_multiview_per_view_attributes</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>NVX_multiview_per_view_attributes</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_QCOM_data_graph_model" class="member-name-link">VK_QCOM_data_graph_model</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_QCOM_data_graph_model" class="member-name-link">VK_QCOM_data_graph_model</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>QCOM_data_graph_model</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_QCOM_filter_cubic_clamp" class="member-name-link">VK_QCOM_filter_cubic_clamp</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_QCOM_filter_cubic_clamp" class="member-name-link">VK_QCOM_filter_cubic_clamp</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>QCOM_filter_cubic_clamp</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_QCOM_filter_cubic_weights" class="member-name-link">VK_QCOM_filter_cubic_weights</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_QCOM_filter_cubic_weights" class="member-name-link">VK_QCOM_filter_cubic_weights</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>QCOM_filter_cubic_weights</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_QCOM_fragment_density_map_offset" class="member-name-link">VK_QCOM_fragment_density_map_offset</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_QCOM_fragment_density_map_offset" class="member-name-link">VK_QCOM_fragment_density_map_offset</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>QCOM_fragment_density_map_offset</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_QCOM_image_processing" class="member-name-link">VK_QCOM_image_processing</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_QCOM_image_processing" class="member-name-link">VK_QCOM_image_processing</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>QCOM_image_processing</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_QCOM_image_processing2" class="member-name-link">VK_QCOM_image_processing2</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_QCOM_image_processing2" class="member-name-link">VK_QCOM_image_processing2</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>QCOM_image_processing2</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_QCOM_multiview_per_view_render_areas" class="member-name-link">VK_QCOM_multiview_per_view_render_areas</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_QCOM_multiview_per_view_render_areas" class="member-name-link">VK_QCOM_multiview_per_view_render_areas</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>QCOM_multiview_per_view_render_areas</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_QCOM_multiview_per_view_viewports" class="member-name-link">VK_QCOM_multiview_per_view_viewports</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_QCOM_multiview_per_view_viewports" class="member-name-link">VK_QCOM_multiview_per_view_viewports</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>QCOM_multiview_per_view_viewports</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_QCOM_render_pass_shader_resolve" class="member-name-link">VK_QCOM_render_pass_shader_resolve</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_QCOM_render_pass_shader_resolve" class="member-name-link">VK_QCOM_render_pass_shader_resolve</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>QCOM_render_pass_shader_resolve</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_QCOM_render_pass_store_ops" class="member-name-link">VK_QCOM_render_pass_store_ops</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_QCOM_render_pass_store_ops" class="member-name-link">VK_QCOM_render_pass_store_ops</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>QCOM_render_pass_store_ops</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_QCOM_render_pass_transform" class="member-name-link">VK_QCOM_render_pass_transform</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_QCOM_render_pass_transform" class="member-name-link">VK_QCOM_render_pass_transform</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>QCOM_render_pass_transform</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_QCOM_rotated_copy_commands" class="member-name-link">VK_QCOM_rotated_copy_commands</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_QCOM_rotated_copy_commands" class="member-name-link">VK_QCOM_rotated_copy_commands</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>QCOM_rotated_copy_commands</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_QCOM_tile_memory_heap" class="member-name-link">VK_QCOM_tile_memory_heap</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_QCOM_tile_memory_heap" class="member-name-link">VK_QCOM_tile_memory_heap</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>QCOM_tile_memory_heap</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_QCOM_tile_properties" class="member-name-link">VK_QCOM_tile_properties</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_QCOM_tile_properties" class="member-name-link">VK_QCOM_tile_properties</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>QCOM_tile_properties</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_QCOM_tile_shading" class="member-name-link">VK_QCOM_tile_shading</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_QCOM_tile_shading" class="member-name-link">VK_QCOM_tile_shading</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>QCOM_tile_shading</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_QCOM_ycbcr_degamma" class="member-name-link">VK_QCOM_ycbcr_degamma</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_QCOM_ycbcr_degamma" class="member-name-link">VK_QCOM_ycbcr_degamma</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>QCOM_ycbcr_degamma</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_SEC_amigo_profiling" class="member-name-link">VK_SEC_amigo_profiling</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_SEC_amigo_profiling" class="member-name-link">VK_SEC_amigo_profiling</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>SEC_amigo_profiling</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_SEC_pipeline_cache_incremental_mode" class="member-name-link">VK_SEC_pipeline_cache_incremental_mode</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_SEC_pipeline_cache_incremental_mode" class="member-name-link">VK_SEC_pipeline_cache_incremental_mode</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>SEC_pipeline_cache_incremental_mode</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_VALVE_descriptor_set_host_mapping" class="member-name-link">VK_VALVE_descriptor_set_host_mapping</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_VALVE_descriptor_set_host_mapping" class="member-name-link">VK_VALVE_descriptor_set_host_mapping</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>VALVE_descriptor_set_host_mapping</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_VALVE_fragment_density_map_layered" class="member-name-link">VK_VALVE_fragment_density_map_layered</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_VALVE_fragment_density_map_layered" class="member-name-link">VK_VALVE_fragment_density_map_layered</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>VALVE_fragment_density_map_layered</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#VK_VALVE_mutable_descriptor_type" class="member-name-link">VK_VALVE_mutable_descriptor_type</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#VK_VALVE_mutable_descriptor_type" class="member-name-link">VK_VALVE_mutable_descriptor_type</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">When true, <code>VALVE_mutable_descriptor_type</code> is supported.</div>
 </div>
-<div class="col-first even-row-color"><code>final boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#VK_VALVE_video_encode_rgb_conversion" class="member-name-link">VK_VALVE_video_encode_rgb_conversion</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#VK_VALVE_video_encode_rgb_conversion" class="member-name-link">VK_VALVE_video_encode_rgb_conversion</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">When true, <code>VALVE_video_encode_rgb_conversion</code> is supported.</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkAcquireFullScreenExclusiveModeEXT" class="member-name-link">vkAcquireFullScreenExclusiveModeEXT</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkAcquireFullScreenExclusiveModeEXT" class="member-name-link">vkAcquireFullScreenExclusiveModeEXT</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for EXT_full_screen_exclusive</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkAcquireNextImage2KHR" class="member-name-link">vkAcquireNextImage2KHR</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkAcquireNextImage2KHR" class="member-name-link">vkAcquireNextImage2KHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_device_group</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkAcquireNextImageKHR" class="member-name-link">vkAcquireNextImageKHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkAcquireNextImageKHR" class="member-name-link">vkAcquireNextImageKHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_swapchain</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkAcquirePerformanceConfigurationINTEL" class="member-name-link">vkAcquirePerformanceConfigurationINTEL</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkAcquirePerformanceConfigurationINTEL" class="member-name-link">vkAcquirePerformanceConfigurationINTEL</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for INTEL_performance_query</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkAcquireProfilingLockKHR" class="member-name-link">vkAcquireProfilingLockKHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkAcquireProfilingLockKHR" class="member-name-link">vkAcquireProfilingLockKHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_performance_query</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkAllocateCommandBuffers" class="member-name-link">vkAllocateCommandBuffers</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for VK10</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkAllocateDescriptorSets" class="member-name-link">vkAllocateDescriptorSets</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkAllocateCommandBuffers" class="member-name-link">vkAllocateCommandBuffers</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkAllocateMemory" class="member-name-link">vkAllocateMemory</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkAllocateDescriptorSets" class="member-name-link">vkAllocateDescriptorSets</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkAntiLagUpdateAMD" class="member-name-link">vkAntiLagUpdateAMD</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkAllocateMemory" class="member-name-link">vkAllocateMemory</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function pointers for VK10</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkAntiLagUpdateAMD" class="member-name-link">vkAntiLagUpdateAMD</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for AMD_anti_lag</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkBeginCommandBuffer" class="member-name-link">vkBeginCommandBuffer</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkBeginCommandBuffer" class="member-name-link">vkBeginCommandBuffer</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkBindAccelerationStructureMemoryNV" class="member-name-link">vkBindAccelerationStructureMemoryNV</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkBindAccelerationStructureMemoryNV" class="member-name-link">vkBindAccelerationStructureMemoryNV</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for NV_ray_tracing</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkBindBufferMemory" class="member-name-link">vkBindBufferMemory</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkBindBufferMemory" class="member-name-link">vkBindBufferMemory</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkBindBufferMemory2" class="member-name-link">vkBindBufferMemory2</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkBindBufferMemory2" class="member-name-link">vkBindBufferMemory2</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK11</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkBindBufferMemory2KHR" class="member-name-link">vkBindBufferMemory2KHR</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkBindBufferMemory2KHR" class="member-name-link">vkBindBufferMemory2KHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_bind_memory2</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkBindDataGraphPipelineSessionMemoryARM" class="member-name-link">vkBindDataGraphPipelineSessionMemoryARM</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkBindDataGraphPipelineSessionMemoryARM" class="member-name-link">vkBindDataGraphPipelineSessionMemoryARM</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for ARM_data_graph</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkBindImageMemory" class="member-name-link">vkBindImageMemory</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkBindImageMemory" class="member-name-link">vkBindImageMemory</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkBindImageMemory2" class="member-name-link">vkBindImageMemory2</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkBindImageMemory2" class="member-name-link">vkBindImageMemory2</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK11</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkBindImageMemory2KHR" class="member-name-link">vkBindImageMemory2KHR</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkBindImageMemory2KHR" class="member-name-link">vkBindImageMemory2KHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_bind_memory2</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkBindOpticalFlowSessionImageNV" class="member-name-link">vkBindOpticalFlowSessionImageNV</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkBindOpticalFlowSessionImageNV" class="member-name-link">vkBindOpticalFlowSessionImageNV</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for NV_optical_flow</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkBindTensorMemoryARM" class="member-name-link">vkBindTensorMemoryARM</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkBindTensorMemoryARM" class="member-name-link">vkBindTensorMemoryARM</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for ARM_tensors</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkBindVideoSessionMemoryKHR" class="member-name-link">vkBindVideoSessionMemoryKHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkBindVideoSessionMemoryKHR" class="member-name-link">vkBindVideoSessionMemoryKHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_video_queue</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkBuildAccelerationStructuresKHR" class="member-name-link">vkBuildAccelerationStructuresKHR</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkBuildAccelerationStructuresKHR" class="member-name-link">vkBuildAccelerationStructuresKHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_acceleration_structure</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkBuildMicromapsEXT" class="member-name-link">vkBuildMicromapsEXT</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkBuildMicromapsEXT" class="member-name-link">vkBuildMicromapsEXT</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for EXT_opacity_micromap</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBeginConditionalRenderingEXT" class="member-name-link">vkCmdBeginConditionalRenderingEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBeginConditionalRenderingEXT" class="member-name-link">vkCmdBeginConditionalRenderingEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_conditional_rendering</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBeginCustomResolveEXT" class="member-name-link">vkCmdBeginCustomResolveEXT</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBeginCustomResolveEXT" class="member-name-link">vkCmdBeginCustomResolveEXT</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for EXT_custom_resolve</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBeginPerTileExecutionQCOM" class="member-name-link">vkCmdBeginPerTileExecutionQCOM</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBeginPerTileExecutionQCOM" class="member-name-link">vkCmdBeginPerTileExecutionQCOM</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for QCOM_tile_shading</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBeginQuery" class="member-name-link">vkCmdBeginQuery</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBeginQuery" class="member-name-link">vkCmdBeginQuery</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBeginQueryIndexedEXT" class="member-name-link">vkCmdBeginQueryIndexedEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBeginQueryIndexedEXT" class="member-name-link">vkCmdBeginQueryIndexedEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_transform_feedback</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBeginRendering" class="member-name-link">vkCmdBeginRendering</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBeginRendering" class="member-name-link">vkCmdBeginRendering</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK13</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBeginRenderingKHR" class="member-name-link">vkCmdBeginRenderingKHR</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBeginRenderingKHR" class="member-name-link">vkCmdBeginRenderingKHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_dynamic_rendering</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBeginRenderPass" class="member-name-link">vkCmdBeginRenderPass</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBeginRenderPass" class="member-name-link">vkCmdBeginRenderPass</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBeginRenderPass2" class="member-name-link">vkCmdBeginRenderPass2</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBeginRenderPass2" class="member-name-link">vkCmdBeginRenderPass2</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK12</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBeginRenderPass2KHR" class="member-name-link">vkCmdBeginRenderPass2KHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBeginRenderPass2KHR" class="member-name-link">vkCmdBeginRenderPass2KHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_create_renderpass2</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBeginTransformFeedbackEXT" class="member-name-link">vkCmdBeginTransformFeedbackEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBeginTransformFeedbackEXT" class="member-name-link">vkCmdBeginTransformFeedbackEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_transform_feedback</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBeginVideoCodingKHR" class="member-name-link">vkCmdBeginVideoCodingKHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBeginVideoCodingKHR" class="member-name-link">vkCmdBeginVideoCodingKHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_video_queue</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindDescriptorBufferEmbeddedSamplers2EXT" class="member-name-link">vkCmdBindDescriptorBufferEmbeddedSamplers2EXT</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for KHR_maintenance6</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBindDescriptorBufferEmbeddedSamplersEXT" class="member-name-link">vkCmdBindDescriptorBufferEmbeddedSamplersEXT</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for EXT_descriptor_buffer</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindDescriptorBuffersEXT" class="member-name-link">vkCmdBindDescriptorBuffersEXT</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for EXT_descriptor_buffer</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBindDescriptorSets" class="member-name-link">vkCmdBindDescriptorSets</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for VK10</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindDescriptorSets2" class="member-name-link">vkCmdBindDescriptorSets2</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for VK14</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBindDescriptorSets2KHR" class="member-name-link">vkCmdBindDescriptorSets2KHR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindDescriptorBufferEmbeddedSamplers2EXT" class="member-name-link">vkCmdBindDescriptorBufferEmbeddedSamplers2EXT</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_maintenance6</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindIndexBuffer" class="member-name-link">vkCmdBindIndexBuffer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBindDescriptorBufferEmbeddedSamplersEXT" class="member-name-link">vkCmdBindDescriptorBufferEmbeddedSamplersEXT</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for EXT_descriptor_buffer</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindDescriptorBuffersEXT" class="member-name-link">vkCmdBindDescriptorBuffersEXT</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for EXT_descriptor_buffer</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBindDescriptorSets" class="member-name-link">vkCmdBindDescriptorSets</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBindIndexBuffer2" class="member-name-link">vkCmdBindIndexBuffer2</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindDescriptorSets2" class="member-name-link">vkCmdBindDescriptorSets2</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for VK14</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindIndexBuffer2KHR" class="member-name-link">vkCmdBindIndexBuffer2KHR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBindDescriptorSets2KHR" class="member-name-link">vkCmdBindDescriptorSets2KHR</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function pointers for KHR_maintenance6</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindIndexBuffer" class="member-name-link">vkCmdBindIndexBuffer</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for VK10</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBindIndexBuffer2" class="member-name-link">vkCmdBindIndexBuffer2</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for VK14</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindIndexBuffer2KHR" class="member-name-link">vkCmdBindIndexBuffer2KHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_maintenance5</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBindInvocationMaskHUAWEI" class="member-name-link">vkCmdBindInvocationMaskHUAWEI</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBindInvocationMaskHUAWEI" class="member-name-link">vkCmdBindInvocationMaskHUAWEI</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for HUAWEI_invocation_mask</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindPipeline" class="member-name-link">vkCmdBindPipeline</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindPipeline" class="member-name-link">vkCmdBindPipeline</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBindPipelineShaderGroupNV" class="member-name-link">vkCmdBindPipelineShaderGroupNV</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBindPipelineShaderGroupNV" class="member-name-link">vkCmdBindPipelineShaderGroupNV</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for NV_device_generated_commands</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindShadersEXT" class="member-name-link">vkCmdBindShadersEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindShadersEXT" class="member-name-link">vkCmdBindShadersEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_shader_object</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBindShadingRateImageNV" class="member-name-link">vkCmdBindShadingRateImageNV</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBindShadingRateImageNV" class="member-name-link">vkCmdBindShadingRateImageNV</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for NV_shading_rate_image</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindTileMemoryQCOM" class="member-name-link">vkCmdBindTileMemoryQCOM</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindTileMemoryQCOM" class="member-name-link">vkCmdBindTileMemoryQCOM</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for QCOM_tile_memory_heap</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBindTransformFeedbackBuffersEXT" class="member-name-link">vkCmdBindTransformFeedbackBuffersEXT</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBindTransformFeedbackBuffersEXT" class="member-name-link">vkCmdBindTransformFeedbackBuffersEXT</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for EXT_transform_feedback</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindVertexBuffers" class="member-name-link">vkCmdBindVertexBuffers</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindVertexBuffers" class="member-name-link">vkCmdBindVertexBuffers</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBindVertexBuffers2" class="member-name-link">vkCmdBindVertexBuffers2</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBindVertexBuffers2" class="member-name-link">vkCmdBindVertexBuffers2</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK13</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBindVertexBuffers2EXT" class="member-name-link">vkCmdBindVertexBuffers2EXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBindVertexBuffers2EXT" class="member-name-link">vkCmdBindVertexBuffers2EXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_extended_dynamic_state</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBlitImage" class="member-name-link">vkCmdBlitImage</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBlitImage" class="member-name-link">vkCmdBlitImage</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBlitImage2" class="member-name-link">vkCmdBlitImage2</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBlitImage2" class="member-name-link">vkCmdBlitImage2</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK13</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBlitImage2KHR" class="member-name-link">vkCmdBlitImage2KHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBlitImage2KHR" class="member-name-link">vkCmdBlitImage2KHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_copy_commands2</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBuildAccelerationStructureNV" class="member-name-link">vkCmdBuildAccelerationStructureNV</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBuildAccelerationStructureNV" class="member-name-link">vkCmdBuildAccelerationStructureNV</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for NV_ray_tracing</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBuildAccelerationStructuresIndirectKHR" class="member-name-link">vkCmdBuildAccelerationStructuresIndirectKHR</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for KHR_acceleration_structure</div>
-</div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBuildAccelerationStructuresKHR" class="member-name-link">vkCmdBuildAccelerationStructuresKHR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBuildAccelerationStructuresIndirectKHR" class="member-name-link">vkCmdBuildAccelerationStructuresIndirectKHR</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_acceleration_structure</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBuildClusterAccelerationStructureIndirectNV" class="member-name-link">vkCmdBuildClusterAccelerationStructureIndirectNV</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBuildAccelerationStructuresKHR" class="member-name-link">vkCmdBuildAccelerationStructuresKHR</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function pointers for KHR_acceleration_structure</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBuildClusterAccelerationStructureIndirectNV" class="member-name-link">vkCmdBuildClusterAccelerationStructureIndirectNV</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for NV_cluster_acceleration_structure</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdBuildMicromapsEXT" class="member-name-link">vkCmdBuildMicromapsEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdBuildMicromapsEXT" class="member-name-link">vkCmdBuildMicromapsEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_opacity_micromap</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdBuildPartitionedAccelerationStructuresNV" class="member-name-link">vkCmdBuildPartitionedAccelerationStructuresNV</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdBuildPartitionedAccelerationStructuresNV" class="member-name-link">vkCmdBuildPartitionedAccelerationStructuresNV</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for NV_partitioned_acceleration_structure</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdClearAttachments" class="member-name-link">vkCmdClearAttachments</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for VK10</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdClearColorImage" class="member-name-link">vkCmdClearColorImage</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdClearAttachments" class="member-name-link">vkCmdClearAttachments</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdClearDepthStencilImage" class="member-name-link">vkCmdClearDepthStencilImage</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdClearColorImage" class="member-name-link">vkCmdClearColorImage</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdControlVideoCodingKHR" class="member-name-link">vkCmdControlVideoCodingKHR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdClearDepthStencilImage" class="member-name-link">vkCmdClearDepthStencilImage</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function pointers for VK10</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdControlVideoCodingKHR" class="member-name-link">vkCmdControlVideoCodingKHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_video_queue</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdConvertCooperativeVectorMatrixNV" class="member-name-link">vkCmdConvertCooperativeVectorMatrixNV</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdConvertCooperativeVectorMatrixNV" class="member-name-link">vkCmdConvertCooperativeVectorMatrixNV</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for NV_cooperative_vector</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyAccelerationStructureKHR" class="member-name-link">vkCmdCopyAccelerationStructureKHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyAccelerationStructureKHR" class="member-name-link">vkCmdCopyAccelerationStructureKHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_acceleration_structure</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyAccelerationStructureNV" class="member-name-link">vkCmdCopyAccelerationStructureNV</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyAccelerationStructureNV" class="member-name-link">vkCmdCopyAccelerationStructureNV</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for NV_ray_tracing</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyAccelerationStructureToMemoryKHR" class="member-name-link">vkCmdCopyAccelerationStructureToMemoryKHR</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for KHR_acceleration_structure</div>
-</div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyBuffer" class="member-name-link">vkCmdCopyBuffer</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for VK10</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyBuffer2" class="member-name-link">vkCmdCopyBuffer2</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for VK13</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyBuffer2KHR" class="member-name-link">vkCmdCopyBuffer2KHR</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for KHR_copy_commands2</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyBufferToImage" class="member-name-link">vkCmdCopyBufferToImage</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for VK10</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyBufferToImage2" class="member-name-link">vkCmdCopyBufferToImage2</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for VK13</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyBufferToImage2KHR" class="member-name-link">vkCmdCopyBufferToImage2KHR</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for KHR_copy_commands2</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyImage" class="member-name-link">vkCmdCopyImage</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for VK10</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyImage2" class="member-name-link">vkCmdCopyImage2</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for VK13</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyImage2KHR" class="member-name-link">vkCmdCopyImage2KHR</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for KHR_copy_commands2</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyImageToBuffer" class="member-name-link">vkCmdCopyImageToBuffer</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for VK10</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyImageToBuffer2" class="member-name-link">vkCmdCopyImageToBuffer2</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for VK13</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyImageToBuffer2KHR" class="member-name-link">vkCmdCopyImageToBuffer2KHR</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for KHR_copy_commands2</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyMemoryIndirectKHR" class="member-name-link">vkCmdCopyMemoryIndirectKHR</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for KHR_copy_memory_indirect</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyMemoryIndirectNV" class="member-name-link">vkCmdCopyMemoryIndirectNV</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for NV_copy_memory_indirect</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyMemoryToAccelerationStructureKHR" class="member-name-link">vkCmdCopyMemoryToAccelerationStructureKHR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyAccelerationStructureToMemoryKHR" class="member-name-link">vkCmdCopyAccelerationStructureToMemoryKHR</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_acceleration_structure</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyMemoryToImageIndirectKHR" class="member-name-link">vkCmdCopyMemoryToImageIndirectKHR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyBuffer" class="member-name-link">vkCmdCopyBuffer</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Function pointers for KHR_copy_memory_indirect</div>
+<div class="block">Function pointers for VK10</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyMemoryToImageIndirectNV" class="member-name-link">vkCmdCopyMemoryToImageIndirectNV</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyBuffer2" class="member-name-link">vkCmdCopyBuffer2</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Function pointers for NV_copy_memory_indirect</div>
+<div class="block">Function pointers for VK13</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyMemoryToMicromapEXT" class="member-name-link">vkCmdCopyMemoryToMicromapEXT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyBuffer2KHR" class="member-name-link">vkCmdCopyBuffer2KHR</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Function pointers for EXT_opacity_micromap</div>
+<div class="block">Function pointers for KHR_copy_commands2</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyMicromapEXT" class="member-name-link">vkCmdCopyMicromapEXT</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for EXT_opacity_micromap</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyMicromapToMemoryEXT" class="member-name-link">vkCmdCopyMicromapToMemoryEXT</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for EXT_opacity_micromap</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCopyQueryPoolResults" class="member-name-link">vkCmdCopyQueryPoolResults</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyBufferToImage" class="member-name-link">vkCmdCopyBufferToImage</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCopyTensorARM" class="member-name-link">vkCmdCopyTensorARM</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyBufferToImage2" class="member-name-link">vkCmdCopyBufferToImage2</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function pointers for VK13</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyBufferToImage2KHR" class="member-name-link">vkCmdCopyBufferToImage2KHR</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for KHR_copy_commands2</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyImage" class="member-name-link">vkCmdCopyImage</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for VK10</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyImage2" class="member-name-link">vkCmdCopyImage2</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for VK13</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyImage2KHR" class="member-name-link">vkCmdCopyImage2KHR</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for KHR_copy_commands2</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyImageToBuffer" class="member-name-link">vkCmdCopyImageToBuffer</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for VK10</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyImageToBuffer2" class="member-name-link">vkCmdCopyImageToBuffer2</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for VK13</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyImageToBuffer2KHR" class="member-name-link">vkCmdCopyImageToBuffer2KHR</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for KHR_copy_commands2</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyMemoryIndirectKHR" class="member-name-link">vkCmdCopyMemoryIndirectKHR</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for KHR_copy_memory_indirect</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyMemoryIndirectNV" class="member-name-link">vkCmdCopyMemoryIndirectNV</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for NV_copy_memory_indirect</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyMemoryToAccelerationStructureKHR" class="member-name-link">vkCmdCopyMemoryToAccelerationStructureKHR</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for KHR_acceleration_structure</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyMemoryToImageIndirectKHR" class="member-name-link">vkCmdCopyMemoryToImageIndirectKHR</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for KHR_copy_memory_indirect</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyMemoryToImageIndirectNV" class="member-name-link">vkCmdCopyMemoryToImageIndirectNV</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for NV_copy_memory_indirect</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyMemoryToMicromapEXT" class="member-name-link">vkCmdCopyMemoryToMicromapEXT</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for EXT_opacity_micromap</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyMicromapEXT" class="member-name-link">vkCmdCopyMicromapEXT</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for EXT_opacity_micromap</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyMicromapToMemoryEXT" class="member-name-link">vkCmdCopyMicromapToMemoryEXT</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for EXT_opacity_micromap</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCopyQueryPoolResults" class="member-name-link">vkCmdCopyQueryPoolResults</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for VK10</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCopyTensorARM" class="member-name-link">vkCmdCopyTensorARM</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for ARM_tensors</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdCudaLaunchKernelNV" class="member-name-link">vkCmdCudaLaunchKernelNV</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdCudaLaunchKernelNV" class="member-name-link">vkCmdCudaLaunchKernelNV</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for NV_cuda_kernel_launch</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdCuLaunchKernelNVX" class="member-name-link">vkCmdCuLaunchKernelNVX</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdCuLaunchKernelNVX" class="member-name-link">vkCmdCuLaunchKernelNVX</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for NVX_binary_import</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDebugMarkerBeginEXT" class="member-name-link">vkCmdDebugMarkerBeginEXT</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for EXT_debug_marker</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDebugMarkerEndEXT" class="member-name-link">vkCmdDebugMarkerEndEXT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDebugMarkerBeginEXT" class="member-name-link">vkCmdDebugMarkerBeginEXT</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_debug_marker</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDebugMarkerInsertEXT" class="member-name-link">vkCmdDebugMarkerInsertEXT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDebugMarkerEndEXT" class="member-name-link">vkCmdDebugMarkerEndEXT</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for EXT_debug_marker</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDecodeVideoKHR" class="member-name-link">vkCmdDecodeVideoKHR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDebugMarkerInsertEXT" class="member-name-link">vkCmdDebugMarkerInsertEXT</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function pointers for EXT_debug_marker</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDecodeVideoKHR" class="member-name-link">vkCmdDecodeVideoKHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_video_decode_queue</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDecompressMemoryEXT" class="member-name-link">vkCmdDecompressMemoryEXT</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for EXT_memory_decompression</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDecompressMemoryIndirectCountEXT" class="member-name-link">vkCmdDecompressMemoryIndirectCountEXT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDecompressMemoryEXT" class="member-name-link">vkCmdDecompressMemoryEXT</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_memory_decompression</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDecompressMemoryIndirectCountNV" class="member-name-link">vkCmdDecompressMemoryIndirectCountNV</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDecompressMemoryIndirectCountEXT" class="member-name-link">vkCmdDecompressMemoryIndirectCountEXT</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Function pointers for NV_memory_decompression</div>
+<div class="block">Function pointers for EXT_memory_decompression</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDecompressMemoryNV" class="member-name-link">vkCmdDecompressMemoryNV</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDecompressMemoryIndirectCountNV" class="member-name-link">vkCmdDecompressMemoryIndirectCountNV</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for NV_memory_decompression</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDispatch" class="member-name-link">vkCmdDispatch</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDecompressMemoryNV" class="member-name-link">vkCmdDecompressMemoryNV</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function pointers for NV_memory_decompression</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDispatch" class="member-name-link">vkCmdDispatch</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDispatchBase" class="member-name-link">vkCmdDispatchBase</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDispatchBase" class="member-name-link">vkCmdDispatchBase</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK11</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDispatchBaseKHR" class="member-name-link">vkCmdDispatchBaseKHR</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDispatchBaseKHR" class="member-name-link">vkCmdDispatchBaseKHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_device_group</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDispatchDataGraphARM" class="member-name-link">vkCmdDispatchDataGraphARM</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDispatchDataGraphARM" class="member-name-link">vkCmdDispatchDataGraphARM</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for ARM_data_graph</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDispatchGraphAMDX" class="member-name-link">vkCmdDispatchGraphAMDX</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for AMDX_shader_enqueue</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDispatchGraphIndirectAMDX" class="member-name-link">vkCmdDispatchGraphIndirectAMDX</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDispatchGraphAMDX" class="member-name-link">vkCmdDispatchGraphAMDX</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for AMDX_shader_enqueue</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDispatchGraphIndirectCountAMDX" class="member-name-link">vkCmdDispatchGraphIndirectCountAMDX</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDispatchGraphIndirectAMDX" class="member-name-link">vkCmdDispatchGraphIndirectAMDX</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for AMDX_shader_enqueue</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDispatchIndirect" class="member-name-link">vkCmdDispatchIndirect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDispatchGraphIndirectCountAMDX" class="member-name-link">vkCmdDispatchGraphIndirectCountAMDX</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function pointers for AMDX_shader_enqueue</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDispatchIndirect" class="member-name-link">vkCmdDispatchIndirect</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDispatchTileQCOM" class="member-name-link">vkCmdDispatchTileQCOM</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDispatchTileQCOM" class="member-name-link">vkCmdDispatchTileQCOM</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for QCOM_tile_shading</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDraw" class="member-name-link">vkCmdDraw</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDraw" class="member-name-link">vkCmdDraw</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawClusterHUAWEI" class="member-name-link">vkCmdDrawClusterHUAWEI</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for HUAWEI_cluster_culling_shader</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawClusterIndirectHUAWEI" class="member-name-link">vkCmdDrawClusterIndirectHUAWEI</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawClusterHUAWEI" class="member-name-link">vkCmdDrawClusterHUAWEI</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for HUAWEI_cluster_culling_shader</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndexed" class="member-name-link">vkCmdDrawIndexed</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawClusterIndirectHUAWEI" class="member-name-link">vkCmdDrawClusterIndirectHUAWEI</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Function pointers for VK10</div>
+<div class="block">Function pointers for HUAWEI_cluster_culling_shader</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndexedIndirect" class="member-name-link">vkCmdDrawIndexedIndirect</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndexed" class="member-name-link">vkCmdDrawIndexed</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndexedIndirectCount" class="member-name-link">vkCmdDrawIndexedIndirectCount</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndexedIndirect" class="member-name-link">vkCmdDrawIndexedIndirect</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function pointers for VK10</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndexedIndirectCount" class="member-name-link">vkCmdDrawIndexedIndirectCount</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK12</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndexedIndirectCountAMD" class="member-name-link">vkCmdDrawIndexedIndirectCountAMD</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndexedIndirectCountAMD" class="member-name-link">vkCmdDrawIndexedIndirectCountAMD</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for AMD_draw_indirect_count</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndexedIndirectCountKHR" class="member-name-link">vkCmdDrawIndexedIndirectCountKHR</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndexedIndirectCountKHR" class="member-name-link">vkCmdDrawIndexedIndirectCountKHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_draw_indirect_count</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndirect" class="member-name-link">vkCmdDrawIndirect</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndirect" class="member-name-link">vkCmdDrawIndirect</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndirectByteCountEXT" class="member-name-link">vkCmdDrawIndirectByteCountEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndirectByteCountEXT" class="member-name-link">vkCmdDrawIndirectByteCountEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_transform_feedback</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndirectCount" class="member-name-link">vkCmdDrawIndirectCount</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndirectCount" class="member-name-link">vkCmdDrawIndirectCount</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK12</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndirectCountAMD" class="member-name-link">vkCmdDrawIndirectCountAMD</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndirectCountAMD" class="member-name-link">vkCmdDrawIndirectCountAMD</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for AMD_draw_indirect_count</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawIndirectCountKHR" class="member-name-link">vkCmdDrawIndirectCountKHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawIndirectCountKHR" class="member-name-link">vkCmdDrawIndirectCountKHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_draw_indirect_count</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawMeshTasksEXT" class="member-name-link">vkCmdDrawMeshTasksEXT</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for EXT_mesh_shader</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawMeshTasksIndirectCountEXT" class="member-name-link">vkCmdDrawMeshTasksIndirectCountEXT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawMeshTasksEXT" class="member-name-link">vkCmdDrawMeshTasksEXT</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_mesh_shader</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawMeshTasksIndirectCountNV" class="member-name-link">vkCmdDrawMeshTasksIndirectCountNV</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawMeshTasksIndirectCountEXT" class="member-name-link">vkCmdDrawMeshTasksIndirectCountEXT</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Function pointers for NV_mesh_shader</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawMeshTasksIndirectEXT" class="member-name-link">vkCmdDrawMeshTasksIndirectEXT</a></code></div>
-<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_mesh_shader</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawMeshTasksIndirectNV" class="member-name-link">vkCmdDrawMeshTasksIndirectNV</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for NV_mesh_shader</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawMeshTasksNV" class="member-name-link">vkCmdDrawMeshTasksNV</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawMeshTasksIndirectCountNV" class="member-name-link">vkCmdDrawMeshTasksIndirectCountNV</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for NV_mesh_shader</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdDrawMultiEXT" class="member-name-link">vkCmdDrawMultiEXT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawMeshTasksIndirectEXT" class="member-name-link">vkCmdDrawMeshTasksIndirectEXT</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Function pointers for EXT_multi_draw</div>
+<div class="block">Function pointers for EXT_mesh_shader</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdDrawMultiIndexedEXT" class="member-name-link">vkCmdDrawMultiIndexedEXT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawMeshTasksIndirectNV" class="member-name-link">vkCmdDrawMeshTasksIndirectNV</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for NV_mesh_shader</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawMeshTasksNV" class="member-name-link">vkCmdDrawMeshTasksNV</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for NV_mesh_shader</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdDrawMultiEXT" class="member-name-link">vkCmdDrawMultiEXT</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_multi_draw</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdEncodeVideoKHR" class="member-name-link">vkCmdEncodeVideoKHR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdDrawMultiIndexedEXT" class="member-name-link">vkCmdDrawMultiIndexedEXT</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function pointers for EXT_multi_draw</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdEncodeVideoKHR" class="member-name-link">vkCmdEncodeVideoKHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_video_encode_queue</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdEndConditionalRenderingEXT" class="member-name-link">vkCmdEndConditionalRenderingEXT</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdEndConditionalRenderingEXT" class="member-name-link">vkCmdEndConditionalRenderingEXT</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for EXT_conditional_rendering</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdEndPerTileExecutionQCOM" class="member-name-link">vkCmdEndPerTileExecutionQCOM</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdEndPerTileExecutionQCOM" class="member-name-link">vkCmdEndPerTileExecutionQCOM</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for QCOM_tile_shading</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdEndQuery" class="member-name-link">vkCmdEndQuery</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdEndQuery" class="member-name-link">vkCmdEndQuery</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdEndQueryIndexedEXT" class="member-name-link">vkCmdEndQueryIndexedEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdEndQueryIndexedEXT" class="member-name-link">vkCmdEndQueryIndexedEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_transform_feedback</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdEndRendering" class="member-name-link">vkCmdEndRendering</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdEndRendering" class="member-name-link">vkCmdEndRendering</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK13</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdEndRendering2EXT" class="member-name-link">vkCmdEndRendering2EXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdEndRendering2EXT" class="member-name-link">vkCmdEndRendering2EXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_fragment_density_map_offset</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdEndRendering2KHR" class="member-name-link">vkCmdEndRendering2KHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdEndRendering2KHR" class="member-name-link">vkCmdEndRendering2KHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_maintenance10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdEndRenderingKHR" class="member-name-link">vkCmdEndRenderingKHR</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdEndRenderingKHR" class="member-name-link">vkCmdEndRenderingKHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_dynamic_rendering</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdEndRenderPass" class="member-name-link">vkCmdEndRenderPass</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdEndRenderPass" class="member-name-link">vkCmdEndRenderPass</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdEndRenderPass2" class="member-name-link">vkCmdEndRenderPass2</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdEndRenderPass2" class="member-name-link">vkCmdEndRenderPass2</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK12</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdEndRenderPass2KHR" class="member-name-link">vkCmdEndRenderPass2KHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdEndRenderPass2KHR" class="member-name-link">vkCmdEndRenderPass2KHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_create_renderpass2</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdEndTransformFeedbackEXT" class="member-name-link">vkCmdEndTransformFeedbackEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdEndTransformFeedbackEXT" class="member-name-link">vkCmdEndTransformFeedbackEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_transform_feedback</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdEndVideoCodingKHR" class="member-name-link">vkCmdEndVideoCodingKHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdEndVideoCodingKHR" class="member-name-link">vkCmdEndVideoCodingKHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_video_queue</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdExecuteCommands" class="member-name-link">vkCmdExecuteCommands</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdExecuteCommands" class="member-name-link">vkCmdExecuteCommands</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdExecuteGeneratedCommandsEXT" class="member-name-link">vkCmdExecuteGeneratedCommandsEXT</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdExecuteGeneratedCommandsEXT" class="member-name-link">vkCmdExecuteGeneratedCommandsEXT</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for EXT_device_generated_commands</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdExecuteGeneratedCommandsNV" class="member-name-link">vkCmdExecuteGeneratedCommandsNV</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdExecuteGeneratedCommandsNV" class="member-name-link">vkCmdExecuteGeneratedCommandsNV</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for NV_device_generated_commands</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdFillBuffer" class="member-name-link">vkCmdFillBuffer</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdFillBuffer" class="member-name-link">vkCmdFillBuffer</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdInitializeGraphScratchMemoryAMDX" class="member-name-link">vkCmdInitializeGraphScratchMemoryAMDX</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdInitializeGraphScratchMemoryAMDX" class="member-name-link">vkCmdInitializeGraphScratchMemoryAMDX</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for AMDX_shader_enqueue</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdNextSubpass" class="member-name-link">vkCmdNextSubpass</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdNextSubpass" class="member-name-link">vkCmdNextSubpass</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdNextSubpass2" class="member-name-link">vkCmdNextSubpass2</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdNextSubpass2" class="member-name-link">vkCmdNextSubpass2</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK12</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdNextSubpass2KHR" class="member-name-link">vkCmdNextSubpass2KHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdNextSubpass2KHR" class="member-name-link">vkCmdNextSubpass2KHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_create_renderpass2</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdOpticalFlowExecuteNV" class="member-name-link">vkCmdOpticalFlowExecuteNV</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdOpticalFlowExecuteNV" class="member-name-link">vkCmdOpticalFlowExecuteNV</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for NV_optical_flow</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdPipelineBarrier" class="member-name-link">vkCmdPipelineBarrier</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdPipelineBarrier" class="member-name-link">vkCmdPipelineBarrier</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdPipelineBarrier2" class="member-name-link">vkCmdPipelineBarrier2</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdPipelineBarrier2" class="member-name-link">vkCmdPipelineBarrier2</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK13</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdPipelineBarrier2KHR" class="member-name-link">vkCmdPipelineBarrier2KHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdPipelineBarrier2KHR" class="member-name-link">vkCmdPipelineBarrier2KHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_synchronization2</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdPreprocessGeneratedCommandsEXT" class="member-name-link">vkCmdPreprocessGeneratedCommandsEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdPreprocessGeneratedCommandsEXT" class="member-name-link">vkCmdPreprocessGeneratedCommandsEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_device_generated_commands</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdPreprocessGeneratedCommandsNV" class="member-name-link">vkCmdPreprocessGeneratedCommandsNV</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdPreprocessGeneratedCommandsNV" class="member-name-link">vkCmdPreprocessGeneratedCommandsNV</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for NV_device_generated_commands</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdPushConstants" class="member-name-link">vkCmdPushConstants</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdPushConstants" class="member-name-link">vkCmdPushConstants</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdPushConstants2" class="member-name-link">vkCmdPushConstants2</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for VK14</div>
-</div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdPushConstants2KHR" class="member-name-link">vkCmdPushConstants2KHR</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for KHR_maintenance6</div>
-</div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdPushDescriptorSet" class="member-name-link">vkCmdPushDescriptorSet</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for VK14</div>
-</div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdPushDescriptorSet2" class="member-name-link">vkCmdPushDescriptorSet2</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdPushConstants2" class="member-name-link">vkCmdPushConstants2</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for VK14</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdPushDescriptorSet2KHR" class="member-name-link">vkCmdPushDescriptorSet2KHR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdPushConstants2KHR" class="member-name-link">vkCmdPushConstants2KHR</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_maintenance6</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdPushDescriptorSetKHR" class="member-name-link">vkCmdPushDescriptorSetKHR</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdPushDescriptorSet" class="member-name-link">vkCmdPushDescriptorSet</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function pointers for VK14</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdPushDescriptorSet2" class="member-name-link">vkCmdPushDescriptorSet2</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Function pointers for VK14</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdPushDescriptorSet2KHR" class="member-name-link">vkCmdPushDescriptorSet2KHR</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for KHR_maintenance6</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdPushDescriptorSetKHR" class="member-name-link">vkCmdPushDescriptorSetKHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_push_descriptor</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdPushDescriptorSetWithTemplate" class="member-name-link">vkCmdPushDescriptorSetWithTemplate</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Function pointers for VK14</div>
-</div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdPushDescriptorSetWithTemplate2" class="member-name-link">vkCmdPushDescriptorSetWithTemplate2</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdPushDescriptorSetWithTemplate" class="member-name-link">vkCmdPushDescriptorSetWithTemplate</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for VK14</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdPushDescriptorSetWithTemplate2KHR" class="member-name-link">vkCmdPushDescriptorSetWithTemplate2KHR</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdPushDescriptorSetWithTemplate2" class="member-name-link">vkCmdPushDescriptorSetWithTemplate2</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function pointers for VK14</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdPushDescriptorSetWithTemplate2KHR" class="member-name-link">vkCmdPushDescriptorSetWithTemplate2KHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_maintenance6</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdPushDescriptorSetWithTemplateKHR" class="member-name-link">vkCmdPushDescriptorSetWithTemplateKHR</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdPushDescriptorSetWithTemplateKHR" class="member-name-link">vkCmdPushDescriptorSetWithTemplateKHR</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for KHR_descriptor_update_template</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdResetEvent" class="member-name-link">vkCmdResetEvent</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdResetEvent" class="member-name-link">vkCmdResetEvent</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdResetEvent2" class="member-name-link">vkCmdResetEvent2</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdResetEvent2" class="member-name-link">vkCmdResetEvent2</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK13</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdResetEvent2KHR" class="member-name-link">vkCmdResetEvent2KHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdResetEvent2KHR" class="member-name-link">vkCmdResetEvent2KHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_synchronization2</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdResetQueryPool" class="member-name-link">vkCmdResetQueryPool</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for VK10</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdResolveImage" class="member-name-link">vkCmdResolveImage</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdResetQueryPool" class="member-name-link">vkCmdResetQueryPool</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdResolveImage2" class="member-name-link">vkCmdResolveImage2</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdResolveImage" class="member-name-link">vkCmdResolveImage</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function pointers for VK10</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdResolveImage2" class="member-name-link">vkCmdResolveImage2</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for VK13</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdResolveImage2KHR" class="member-name-link">vkCmdResolveImage2KHR</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdResolveImage2KHR" class="member-name-link">vkCmdResolveImage2KHR</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for KHR_copy_commands2</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdSetAlphaToCoverageEnableEXT" class="member-name-link">vkCmdSetAlphaToCoverageEnableEXT</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for EXT_extended_dynamic_state3</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdSetAlphaToOneEnableEXT" class="member-name-link">vkCmdSetAlphaToOneEnableEXT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdSetAlphaToCoverageEnableEXT" class="member-name-link">vkCmdSetAlphaToCoverageEnableEXT</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_extended_dynamic_state3</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdSetAttachmentFeedbackLoopEnableEXT" class="member-name-link">vkCmdSetAttachmentFeedbackLoopEnableEXT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdSetAlphaToOneEnableEXT" class="member-name-link">vkCmdSetAlphaToOneEnableEXT</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Function pointers for EXT_extended_dynamic_state3</div>
+</div>
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdSetAttachmentFeedbackLoopEnableEXT" class="member-name-link">vkCmdSetAttachmentFeedbackLoopEnableEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_attachment_feedback_loop_dynamic_state</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdSetBlendConstants" class="member-name-link">vkCmdSetBlendConstants</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdSetBlendConstants" class="member-name-link">vkCmdSetBlendConstants</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for VK10</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdSetCheckpointNV" class="member-name-link">vkCmdSetCheckpointNV</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdSetCheckpointNV" class="member-name-link">vkCmdSetCheckpointNV</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for NV_device_diagnostic_checkpoints</div>
 </div>
-<div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdSetCoarseSampleOrderNV" class="member-name-link">vkCmdSetCoarseSampleOrderNV</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdSetCoarseSampleOrderNV" class="member-name-link">vkCmdSetCoarseSampleOrderNV</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for NV_shading_rate_image</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdSetColorBlendAdvancedEXT" class="member-name-link">vkCmdSetColorBlendAdvancedEXT</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Function pointers for EXT_extended_dynamic_state3</div>
-</div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdSetColorBlendEnableEXT" class="member-name-link">vkCmdSetColorBlendEnableEXT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdSetColorBlendAdvancedEXT" class="member-name-link">vkCmdSetColorBlendAdvancedEXT</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_extended_dynamic_state3</div>
 </div>
 <div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdSetColorBlendEquationEXT" class="member-name-link">vkCmdSetColorBlendEquationEXT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdSetColorBlendEnableEXT" class="member-name-link">vkCmdSetColorBlendEnableEXT</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function pointers for EXT_extended_dynamic_state3</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#vkCmdSetColorWriteEnableEXT" class="member-name-link">vkCmdSetColorWriteEnableEXT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdSetColorBlendEquationEXT" class="member-name-link">vkCmdSetColorBlendEquationEXT</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function pointers for EXT_extended_dynamic_state3</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdSetColorWriteEnableEXT" class="member-name-link">vkCmdSetColorWriteEnableEXT</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function pointers for EXT_color_write_enable</div>
 </div>
-<div class="col-first even-row-color"><code>final long</code></div>
-<div class="col-second even-row-color"><code><a href="#vkCmdSetColorWriteMaskEXT" class="member-name-link">vkCmdSetColorWriteMaskEXT</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#vkCmdSetColorWriteMaskEXT" class="member-name-link">vkCmdSetColorWriteMaskEXT</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Function pointers for EXT_extended_dynamic_state3</div>
+</div>
+<div class="col-first even-row-color"><code>final long</code></div>
+<div class="col-second even-row-color"><code><a href="#vkCmdSetComputeOccupancyPriorityNV" class="member-name-link">vkCmdSetComputeOccupancyPriorityNV</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Function pointers for NV_compute_occupancy_priority</div>
 </div>
 <div class="col-first odd-row-color"><code>final long</code></div>
 <div class="col-second odd-row-color"><code><a href="#vkCmdSetConservativeRasterizationModeEXT" class="member-name-link">vkCmdSetConservativeRasterizationModeEXT</a></code></div>
@@ -11345,6 +11369,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="vkCmdSetComputeOccupancyPriorityNV">
+<h3>vkCmdSetComputeOccupancyPriorityNV</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">vkCmdSetComputeOccupancyPriorityNV</span></div>
+<div class="block">Function pointers for NV_compute_occupancy_priority</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="vkConvertCooperativeVectorMatrixNV">
 <h3>vkConvertCooperativeVectorMatrixNV</h3>
 <div class="horizontal-scroll">
@@ -13370,6 +13403,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="VK_EXT_shader_long_vector">
+<h3>VK_EXT_shader_long_vector</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">VK_EXT_shader_long_vector</span></div>
+<div class="block">When true, <code>EXT_shader_long_vector</code> is supported.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="VK_EXT_shader_module_identifier">
 <h3>VK_EXT_shader_module_identifier</h3>
 <div class="horizontal-scroll">
@@ -13483,6 +13525,15 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">VK_EXT_texel_buffer_alignment</span></div>
 <div class="block">When true, <code>EXT_texel_buffer_alignment</code> is supported.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="VK_EXT_texture_compression_astc_3d">
+<h3>VK_EXT_texture_compression_astc_3d</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">VK_EXT_texture_compression_astc_3d</span></div>
+<div class="block">When true, <code>EXT_texture_compression_astc_3d</code> is supported.</div>
 </div>
 </section>
 </li>
@@ -14851,6 +14902,15 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">VK_NV_command_buffer_inheritance</span></div>
 <div class="block">When true, <code>NV_command_buffer_inheritance</code> is supported.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="VK_NV_compute_occupancy_priority">
+<h3>VK_NV_compute_occupancy_priority</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">VK_NV_compute_occupancy_priority</span></div>
+<div class="block">When true, <code>NV_compute_occupancy_priority</code> is supported.</div>
 </div>
 </section>
 </li>

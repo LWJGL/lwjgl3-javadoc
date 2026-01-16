@@ -80,11 +80,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sType(int)" tabindex="0">sType(int)</a></li>
 <li><a href="#sType$Default()" tabindex="0">sType$Default()</a></li>
 <li><a href="#pNext(long)" tabindex="0">pNext(long)</a></li>
-<li><a href="#engine(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM)" tabindex="0">engine(VkPhysicalDeviceDataGraphProcessingEngineARM)</a></li>
-<li><a href="#engine(java.util.function.Consumer)" tabindex="0">engine(Consumer)</a></li>
-<li><a href="#operation(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)" tabindex="0">operation(VkPhysicalDeviceDataGraphOperationSupportARM)</a></li>
-<li><a href="#operation(java.util.function.Consumer)" tabindex="0">operation(Consumer)</a></li>
-<li><a href="#set(int,long,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)" tabindex="0">set(int, long, VkPhysicalDeviceDataGraphProcessingEngineARM, VkPhysicalDeviceDataGraphOperationSupportARM)</a></li>
+<li><a href="#set(int,long)" tabindex="0">set(int, long)</a></li>
 <li><a href="#set(org.lwjgl.vulkan.VkQueueFamilyDataGraphPropertiesARM)" tabindex="0">set(VkQueueFamilyDataGraphPropertiesARM)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
@@ -106,8 +102,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#noperation(long)" tabindex="0">noperation(long)</a></li>
 <li><a href="#nsType(long,int)" tabindex="0">nsType(long, int)</a></li>
 <li><a href="#npNext(long,long)" tabindex="0">npNext(long, long)</a></li>
-<li><a href="#nengine(long,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM)" tabindex="0">nengine(long, VkPhysicalDeviceDataGraphProcessingEngineARM)</a></li>
-<li><a href="#noperation(long,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)" tabindex="0">noperation(long, VkPhysicalDeviceDataGraphOperationSupportARM)</a></li>
 </ol>
 </li>
 </ol>
@@ -136,7 +130,7 @@ loadScripts(document, 'script');</script>
 implements <a href="../system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></span></div>
 <div class="block"><pre><code>struct VkQueueFamilyDataGraphPropertiesARM {
     VkStructureType sType;
-    void const * pNext;
+    void * pNext;
     <a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDataGraphProcessingEngineARM</code></a> engine;
     <a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDataGraphOperationSupportARM</code></a> operation;
 }</code></pre></div>
@@ -294,16 +288,6 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphProcessingEngineARM</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#engine()" class="member-name-link">engine</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#engine(java.util.function.Consumer)" class="member-name-link">engine</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphProcessingEngineARM</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Passes the <code>engine</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#engine(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM)" class="member-name-link">engine</a><wbr>(<a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphProcessingEngineARM</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Copies the specified <a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDataGraphProcessingEngineARM</code></a> to the <code>engine</code> field.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#malloc()" class="member-name-link">malloc</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -330,22 +314,10 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#engine()"><code>engine()</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nengine(long,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM)" class="member-name-link">nengine</a><wbr>(long&nbsp;struct,
- <a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphProcessingEngineARM</a>&nbsp;value)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#noperation(long)" class="member-name-link">noperation</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#engine(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM)"><code>engine</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#noperation(long)" class="member-name-link">noperation</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#operation()"><code>operation()</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#noperation(long,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)" class="member-name-link">noperation</a><wbr>(long&nbsp;struct,
- <a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#operation(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)"><code>operation</code></a>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npNext(long)" class="member-name-link">npNext</a><wbr>(long&nbsp;struct)</code></div>
@@ -372,16 +344,6 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#operation()" class="member-name-link">operation</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#operation(java.util.function.Consumer)" class="member-name-link">operation</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a>&gt;&nbsp;consumer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Passes the <code>operation</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#operation(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)" class="member-name-link">operation</a><wbr>(<a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Copies the specified <a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDataGraphOperationSupportARM</code></a> to the <code>operation</code> field.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext()" class="member-name-link">pNext</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -391,10 +353,8 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">Sets the specified value to the <code>pNext</code> field.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
- long&nbsp;pNext,
- <a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphProcessingEngineARM</a>&nbsp;engine,
- <a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a>&nbsp;operation)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
+ long&nbsp;pNext)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
@@ -560,7 +520,7 @@ visible to the struct instance and vice versa.
 <section class="detail" id="pNext()">
 <h3>pNext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">pNext</span>()</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -616,56 +576,18 @@ visible to the struct instance and vice versa.
 <section class="detail" id="pNext(long)">
 <h3>pNext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></span>&nbsp;<span class="element-name">pNext</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></span>&nbsp;<span class="element-name">pNext</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
  long&nbsp;value)</span></div>
 <div class="block">Sets the specified value to the <code>pNext</code> field.</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="engine(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM)">
-<h3>engine</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></span>&nbsp;<span class="element-name">engine</span><wbr><span class="parameters">(<a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphProcessingEngineARM</a>&nbsp;value)</span></div>
-<div class="block">Copies the specified <a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDataGraphProcessingEngineARM</code></a> to the <code>engine</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="engine(java.util.function.Consumer)">
-<h3>engine</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></span>&nbsp;<span class="element-name">engine</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphProcessingEngineARM</a>&gt;&nbsp;consumer)</span></div>
-<div class="block">Passes the <code>engine</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="operation(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)">
-<h3>operation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></span>&nbsp;<span class="element-name">operation</span><wbr><span class="parameters">(<a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a>&nbsp;value)</span></div>
-<div class="block">Copies the specified <a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan"><code>VkPhysicalDeviceDataGraphOperationSupportARM</code></a> to the <code>operation</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="operation(java.util.function.Consumer)">
-<h3>operation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></span>&nbsp;<span class="element-name">operation</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a>&gt;&nbsp;consumer)</span></div>
-<div class="block">Passes the <code>operation</code> field to the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="set(int,long,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)">
+<section class="detail" id="set(int,long)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkQueueFamilyDataGraphPropertiesARM.html" title="class in org.lwjgl.vulkan">VkQueueFamilyDataGraphPropertiesARM</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;sType,
- long&nbsp;pNext,
- <a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphProcessingEngineARM</a>&nbsp;engine,
- <a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a>&nbsp;operation)</span></div>
+ long&nbsp;pNext)</span></div>
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
 </section>
@@ -903,26 +825,6 @@ visible to the struct instance and vice versa.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npNext</span><wbr><span class="parameters">(long&nbsp;struct,
  long&nbsp;value)</span></div>
 <div class="block">Unsafe version of <a href="#pNext(long)"><code>pNext</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nengine(long,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM)">
-<h3>nengine</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nengine</span><wbr><span class="parameters">(long&nbsp;struct,
- <a href="VkPhysicalDeviceDataGraphProcessingEngineARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphProcessingEngineARM</a>&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#engine(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphProcessingEngineARM)"><code>engine</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="noperation(long,org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)">
-<h3>noperation</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">noperation</span><wbr><span class="parameters">(long&nbsp;struct,
- <a href="VkPhysicalDeviceDataGraphOperationSupportARM.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceDataGraphOperationSupportARM</a>&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#operation(org.lwjgl.vulkan.VkPhysicalDeviceDataGraphOperationSupportARM)"><code>operation</code></a>.</div>
 </div>
 </section>
 </li>

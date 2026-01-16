@@ -144,7 +144,7 @@ loadScripts(document, 'script');</script>
 implements <a href="../system/NativeResource.html" title="interface in org.lwjgl.system">NativeResource</a></span></div>
 <div class="block"><pre><code>struct VkDataGraphPipelinePropertyQueryResultARM {
     VkStructureType sType;
-    void const * pNext;
+    void * pNext;
     VkDataGraphPipelinePropertyARM property;
     VkBool32 isText;
     size_t dataSize;
@@ -628,7 +628,7 @@ visible to the struct instance and vice versa.
 <section class="detail" id="pNext()">
 <h3>pNext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">pNext</span>()</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -712,7 +712,7 @@ visible to the struct instance and vice versa.
 <section class="detail" id="pNext(long)">
 <h3>pNext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkDataGraphPipelinePropertyQueryResultARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelinePropertyQueryResultARM</a></span>&nbsp;<span class="element-name">pNext</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkDataGraphPipelinePropertyQueryResultARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelinePropertyQueryResultARM</a></span>&nbsp;<span class="element-name">pNext</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
  long&nbsp;value)</span></div>
 <div class="block">Sets the specified value to the <code>pNext</code> field.</div>
 </div>

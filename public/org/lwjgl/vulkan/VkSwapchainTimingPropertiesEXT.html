@@ -80,9 +80,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sType(int)" tabindex="0">sType(int)</a></li>
 <li><a href="#sType$Default()" tabindex="0">sType$Default()</a></li>
 <li><a href="#pNext(long)" tabindex="0">pNext(long)</a></li>
-<li><a href="#refreshDuration(long)" tabindex="0">refreshDuration(long)</a></li>
-<li><a href="#refreshInterval(long)" tabindex="0">refreshInterval(long)</a></li>
-<li><a href="#set(int,long,long,long)" tabindex="0">set(int, long, long, long)</a></li>
+<li><a href="#set(int,long)" tabindex="0">set(int, long)</a></li>
 <li><a href="#set(org.lwjgl.vulkan.VkSwapchainTimingPropertiesEXT)" tabindex="0">set(VkSwapchainTimingPropertiesEXT)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
@@ -104,8 +102,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#nrefreshInterval(long)" tabindex="0">nrefreshInterval(long)</a></li>
 <li><a href="#nsType(long,int)" tabindex="0">nsType(long, int)</a></li>
 <li><a href="#npNext(long,long)" tabindex="0">npNext(long, long)</a></li>
-<li><a href="#nrefreshDuration(long,long)" tabindex="0">nrefreshDuration(long, long)</a></li>
-<li><a href="#nrefreshInterval(long,long)" tabindex="0">nrefreshInterval(long, long)</a></li>
 </ol>
 </li>
 </ol>
@@ -326,22 +322,10 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#refreshDuration()"><code>refreshDuration()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nrefreshDuration(long,long)" class="member-name-link">nrefreshDuration</a><wbr>(long&nbsp;struct,
- long&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nrefreshInterval(long)" class="member-name-link">nrefreshInterval</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#refreshDuration(long)"><code>refreshDuration</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nrefreshInterval(long)" class="member-name-link">nrefreshInterval</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#refreshInterval()"><code>refreshInterval()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nrefreshInterval(long,long)" class="member-name-link">nrefreshInterval</a><wbr>(long&nbsp;struct,
- long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#refreshInterval(long)"><code>refreshInterval</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nsType(long)" class="member-name-link">nsType</a><wbr>(long&nbsp;struct)</code></div>
@@ -365,24 +349,12 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshDuration()" class="member-name-link">refreshDuration</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimingPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimingPropertiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshDuration(long)" class="member-name-link">refreshDuration</a><wbr>(long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>refreshDuration</code> field.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshInterval()" class="member-name-link">refreshInterval</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimingPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimingPropertiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshInterval(long)" class="member-name-link">refreshInterval</a><wbr>(long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>refreshInterval</code> field.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshInterval()" class="member-name-link">refreshInterval</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimingPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimingPropertiesEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long,long,long)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
- long&nbsp;pNext,
- long&nbsp;refreshDuration,
- long&nbsp;refreshInterval)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
+ long&nbsp;pNext)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
@@ -613,33 +585,11 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="refreshDuration(long)">
-<h3>refreshDuration</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkSwapchainTimingPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimingPropertiesEXT</a></span>&nbsp;<span class="element-name">refreshDuration</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("uint64_t")
- long&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>refreshDuration</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="refreshInterval(long)">
-<h3>refreshInterval</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkSwapchainTimingPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimingPropertiesEXT</a></span>&nbsp;<span class="element-name">refreshInterval</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("uint64_t")
- long&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>refreshInterval</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="set(int,long,long,long)">
+<section class="detail" id="set(int,long)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkSwapchainTimingPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimingPropertiesEXT</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;sType,
- long&nbsp;pNext,
- long&nbsp;refreshDuration,
- long&nbsp;refreshInterval)</span></div>
+ long&nbsp;pNext)</span></div>
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
 </section>
@@ -877,26 +827,6 @@ visible to the struct instance and vice versa.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npNext</span><wbr><span class="parameters">(long&nbsp;struct,
  long&nbsp;value)</span></div>
 <div class="block">Unsafe version of <a href="#pNext(long)"><code>pNext</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nrefreshDuration(long,long)">
-<h3>nrefreshDuration</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nrefreshDuration</span><wbr><span class="parameters">(long&nbsp;struct,
- long&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#refreshDuration(long)"><code>refreshDuration</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nrefreshInterval(long,long)">
-<h3>nrefreshInterval</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nrefreshInterval</span><wbr><span class="parameters">(long&nbsp;struct,
- long&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#refreshInterval(long)"><code>refreshInterval</code></a>.</div>
 </div>
 </section>
 </li>

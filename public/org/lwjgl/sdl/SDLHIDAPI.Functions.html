@@ -63,6 +63,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#hid_free_enumeration" tabindex="0">hid_free_enumeration</a></li>
 <li><a href="#hid_open" tabindex="0">hid_open</a></li>
 <li><a href="#hid_open_path" tabindex="0">hid_open_path</a></li>
+<li><a href="#hid_get_properties" tabindex="0">hid_get_properties</a></li>
 <li><a href="#hid_write" tabindex="0">hid_write</a></li>
 <li><a href="#hid_read_timeout" tabindex="0">hid_read_timeout</a></li>
 <li><a href="#hid_read" tabindex="0">hid_read</a></li>
@@ -174,53 +175,58 @@ loadScripts(document, 'script');</script>
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#hid_get_report_descriptor" class="member-name-link">hid_get_report_descriptor</a></code></div>
+<div class="col-second even-row-color"><code><a href="#hid_get_properties" class="member-name-link">hid_get_properties</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#hid_get_serial_number_string" class="member-name-link">hid_get_serial_number_string</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hid_get_report_descriptor" class="member-name-link">hid_get_report_descriptor</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#hid_init" class="member-name-link">hid_init</a></code></div>
+<div class="col-second even-row-color"><code><a href="#hid_get_serial_number_string" class="member-name-link">hid_get_serial_number_string</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#hid_open" class="member-name-link">hid_open</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hid_init" class="member-name-link">hid_init</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#hid_open_path" class="member-name-link">hid_open_path</a></code></div>
+<div class="col-second even-row-color"><code><a href="#hid_open" class="member-name-link">hid_open</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#hid_read" class="member-name-link">hid_read</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hid_open_path" class="member-name-link">hid_open_path</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#hid_read_timeout" class="member-name-link">hid_read_timeout</a></code></div>
+<div class="col-second even-row-color"><code><a href="#hid_read" class="member-name-link">hid_read</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#hid_send_feature_report" class="member-name-link">hid_send_feature_report</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hid_read_timeout" class="member-name-link">hid_read_timeout</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#hid_set_nonblocking" class="member-name-link">hid_set_nonblocking</a></code></div>
+<div class="col-second even-row-color"><code><a href="#hid_send_feature_report" class="member-name-link">hid_send_feature_report</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#hid_write" class="member-name-link">hid_write</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#hid_set_nonblocking" class="member-name-link">hid_set_nonblocking</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Function address.</div>
+</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#hid_write" class="member-name-link">hid_write</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Function address.</div>
 </div>
 </div>
@@ -303,6 +309,15 @@ loadScripts(document, 'script');</script>
 <h3>hid_open_path</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">hid_open_path</span></div>
+<div class="block">Function address.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="hid_get_properties">
+<h3>hid_get_properties</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">hid_get_properties</span></div>
 <div class="block">Function address.</div>
 </div>
 </section>

@@ -74,6 +74,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_AUDIO_F32" tabindex="0">SDL_AUDIO_F32</a></li>
 <li><a href="#SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK" tabindex="0">SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK</a></li>
 <li><a href="#SDL_AUDIO_DEVICE_DEFAULT_RECORDING" tabindex="0">SDL_AUDIO_DEVICE_DEFAULT_RECORDING</a></li>
+<li><a href="#SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN" tabindex="0">SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -141,6 +142,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_SetAudioStreamOutputChannelMap(long,java.nio.IntBuffer)" tabindex="0">SDL_SetAudioStreamOutputChannelMap(long, IntBuffer)</a></li>
 <li><a href="#nSDL_PutAudioStreamData(long,long,int)" tabindex="0">nSDL_PutAudioStreamData(long, long, int)</a></li>
 <li><a href="#SDL_PutAudioStreamData(long,java.nio.ByteBuffer)" tabindex="0">SDL_PutAudioStreamData(long, ByteBuffer)</a></li>
+<li><a href="#nSDL_PutAudioStreamDataNoCopy(long,long,int,long,long)" tabindex="0">nSDL_PutAudioStreamDataNoCopy(long, long, int, long, long)</a></li>
+<li><a href="#SDL_PutAudioStreamDataNoCopy(long,java.nio.ByteBuffer,org.lwjgl.sdl.SDL_AudioStreamDataCompleteCallbackI,long)" tabindex="0">SDL_PutAudioStreamDataNoCopy(long, ByteBuffer, SDL_AudioStreamDataCompleteCallbackI, long)</a></li>
+<li><a href="#nSDL_PutAudioStreamPlanarData(long,long,int,int)" tabindex="0">nSDL_PutAudioStreamPlanarData(long, long, int, int)</a></li>
+<li><a href="#SDL_PutAudioStreamPlanarData(long,org.lwjgl.PointerBuffer,int,int)" tabindex="0">SDL_PutAudioStreamPlanarData(long, PointerBuffer, int, int)</a></li>
 <li><a href="#nSDL_GetAudioStreamData(long,long,int)" tabindex="0">nSDL_GetAudioStreamData(long, long, int)</a></li>
 <li><a href="#SDL_GetAudioStreamData(long,java.nio.ByteBuffer)" tabindex="0">SDL_GetAudioStreamData(long, ByteBuffer)</a></li>
 <li><a href="#SDL_GetAudioStreamAvailable(long)" tabindex="0">SDL_GetAudioStreamAvailable(long)</a></li>
@@ -274,6 +279,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_AUDIO_UNKNOWN" class="member-name-link">SDL_AUDIO_UNKNOWN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN" class="member-name-link">SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -426,6 +434,23 @@ loadScripts(document, 'script');</script>
  int&nbsp;len)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_PutAudioStreamData(SDL_AudioStream * stream, void const * buf, int len)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_PutAudioStreamDataNoCopy(long,long,int,long,long)" class="member-name-link">nSDL_PutAudioStreamDataNoCopy</a><wbr>(long&nbsp;stream,
+ long&nbsp;buf,
+ int&nbsp;len,
+ long&nbsp;callback,
+ long&nbsp;userdata)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_PutAudioStreamDataNoCopy(SDL_AudioStream * stream, void const * buf, int len, SDL_AudioStreamDataCompleteCallback callback, void * userdata)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_PutAudioStreamPlanarData(long,long,int,int)" class="member-name-link">nSDL_PutAudioStreamPlanarData</a><wbr>(long&nbsp;stream,
+ long&nbsp;channel_buffers,
+ int&nbsp;num_channels,
+ int&nbsp;num_samples)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_PutAudioStreamPlanarData(SDL_AudioStream * stream, void const * const * channel_buffers, int num_channels, int num_samples)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nSDL_SetAudioPostmixCallback(int,long,long)" class="member-name-link">nSDL_SetAudioPostmixCallback</a><wbr>(int&nbsp;devid,
@@ -772,6 +797,22 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;buf)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_PutAudioStreamData(SDL_AudioStream * stream, void const * buf, int len)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_PutAudioStreamDataNoCopy(long,java.nio.ByteBuffer,org.lwjgl.sdl.SDL_AudioStreamDataCompleteCallbackI,long)" class="member-name-link">SDL_PutAudioStreamDataNoCopy</a><wbr>(long&nbsp;stream,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;buf,
+ @Nullable <a href="SDL_AudioStreamDataCompleteCallbackI.html" title="interface in org.lwjgl.sdl">SDL_AudioStreamDataCompleteCallbackI</a>&nbsp;callback,
+ long&nbsp;userdata)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_PutAudioStreamDataNoCopy(SDL_AudioStream * stream, void const * buf, int len, SDL_AudioStreamDataCompleteCallback callback, void * userdata)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_PutAudioStreamPlanarData(long,org.lwjgl.PointerBuffer,int,int)" class="member-name-link">SDL_PutAudioStreamPlanarData</a><wbr>(long&nbsp;stream,
+ <a href="../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;channel_buffers,
+ int&nbsp;num_channels,
+ int&nbsp;num_samples)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_PutAudioStreamPlanarData(SDL_AudioStream * stream, void const * const * channel_buffers, int num_channels, int num_samples)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_ResumeAudioDevice(int)" class="member-name-link">SDL_ResumeAudioDevice</a><wbr>(int&nbsp;devid)</code></div>
@@ -1131,6 +1172,22 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLAudio.SDL_AUDIO_DEVICE_DEFAULT_RECORDING">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN">
+<h3>SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLAudio.SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -1841,6 +1898,63 @@ loadScripts(document, 'script');</script>
  <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;buf)</span></div>
 <div class="block"><code>bool SDL_PutAudioStreamData(SDL_AudioStream * stream, void const * buf, int len)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_PutAudioStreamDataNoCopy(long,long,int,long,long)">
+<h3>nSDL_PutAudioStreamDataNoCopy</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nSDL_PutAudioStreamDataNoCopy</span><wbr><span class="parameters">(long&nbsp;stream,
+ long&nbsp;buf,
+ int&nbsp;len,
+ long&nbsp;callback,
+ long&nbsp;userdata)</span></div>
+<div class="block"><code>bool SDL_PutAudioStreamDataNoCopy(SDL_AudioStream * stream, void const * buf, int len, SDL_AudioStreamDataCompleteCallback callback, void * userdata)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PutAudioStreamDataNoCopy(long,java.nio.ByteBuffer,org.lwjgl.sdl.SDL_AudioStreamDataCompleteCallbackI,long)">
+<h3>SDL_PutAudioStreamDataNoCopy</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_PutAudioStreamDataNoCopy</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_AudioStream *")
+ long&nbsp;stream,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const *")
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;buf,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_AudioStreamDataCompleteCallback")
+ @Nullable <a href="SDL_AudioStreamDataCompleteCallbackI.html" title="interface in org.lwjgl.sdl">SDL_AudioStreamDataCompleteCallbackI</a>&nbsp;callback,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void *")
+ long&nbsp;userdata)</span></div>
+<div class="block"><code>bool SDL_PutAudioStreamDataNoCopy(SDL_AudioStream * stream, void const * buf, int len, SDL_AudioStreamDataCompleteCallback callback, void * userdata)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="nSDL_PutAudioStreamPlanarData(long,long,int,int)">
+<h3>nSDL_PutAudioStreamPlanarData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nSDL_PutAudioStreamPlanarData</span><wbr><span class="parameters">(long&nbsp;stream,
+ long&nbsp;channel_buffers,
+ int&nbsp;num_channels,
+ int&nbsp;num_samples)</span></div>
+<div class="block"><code>bool SDL_PutAudioStreamPlanarData(SDL_AudioStream * stream, void const * const * channel_buffers, int num_channels, int num_samples)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PutAudioStreamPlanarData(long,org.lwjgl.PointerBuffer,int,int)">
+<h3>SDL_PutAudioStreamPlanarData</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_PutAudioStreamPlanarData</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_AudioStream *")
+ long&nbsp;stream,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("void const * const *")
+ <a href="../PointerBuffer.html" title="class in org.lwjgl">PointerBuffer</a>&nbsp;channel_buffers,
+ int&nbsp;num_channels,
+ int&nbsp;num_samples)</span></div>
+<div class="block"><code>bool SDL_PutAudioStreamPlanarData(SDL_AudioStream * stream, void const * const * channel_buffers, int num_channels, int num_samples)</code></div>
 </div>
 </section>
 </li>

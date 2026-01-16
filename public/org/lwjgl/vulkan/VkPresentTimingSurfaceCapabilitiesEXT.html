@@ -84,11 +84,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sType(int)" tabindex="0">sType(int)</a></li>
 <li><a href="#sType$Default()" tabindex="0">sType$Default()</a></li>
 <li><a href="#pNext(long)" tabindex="0">pNext(long)</a></li>
-<li><a href="#presentTimingSupported(boolean)" tabindex="0">presentTimingSupported(boolean)</a></li>
-<li><a href="#presentAtAbsoluteTimeSupported(boolean)" tabindex="0">presentAtAbsoluteTimeSupported(boolean)</a></li>
-<li><a href="#presentAtRelativeTimeSupported(boolean)" tabindex="0">presentAtRelativeTimeSupported(boolean)</a></li>
-<li><a href="#presentStageQueries(int)" tabindex="0">presentStageQueries(int)</a></li>
-<li><a href="#set(int,long,boolean,boolean,boolean,int)" tabindex="0">set(int, long, boolean, boolean, boolean, int)</a></li>
+<li><a href="#set(int,long)" tabindex="0">set(int, long)</a></li>
 <li><a href="#set(org.lwjgl.vulkan.VkPresentTimingSurfaceCapabilitiesEXT)" tabindex="0">set(VkPresentTimingSurfaceCapabilitiesEXT)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
@@ -112,10 +108,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#npresentStageQueries(long)" tabindex="0">npresentStageQueries(long)</a></li>
 <li><a href="#nsType(long,int)" tabindex="0">nsType(long, int)</a></li>
 <li><a href="#npNext(long,long)" tabindex="0">npNext(long, long)</a></li>
-<li><a href="#npresentTimingSupported(long,int)" tabindex="0">npresentTimingSupported(long, int)</a></li>
-<li><a href="#npresentAtAbsoluteTimeSupported(long,int)" tabindex="0">npresentAtAbsoluteTimeSupported(long, int)</a></li>
-<li><a href="#npresentAtRelativeTimeSupported(long,int)" tabindex="0">npresentAtRelativeTimeSupported(long, int)</a></li>
-<li><a href="#npresentStageQueries(long,int)" tabindex="0">npresentStageQueries(long, int)</a></li>
 </ol>
 </li>
 </ol>
@@ -348,44 +340,20 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#presentAtAbsoluteTimeSupported()"><code>presentAtAbsoluteTimeSupported()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentAtAbsoluteTimeSupported(long,int)" class="member-name-link">npresentAtAbsoluteTimeSupported</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentAtRelativeTimeSupported(long)" class="member-name-link">npresentAtRelativeTimeSupported</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#presentAtAbsoluteTimeSupported(boolean)"><code>presentAtAbsoluteTimeSupported</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentAtRelativeTimeSupported(long)" class="member-name-link">npresentAtRelativeTimeSupported</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#presentAtRelativeTimeSupported()"><code>presentAtRelativeTimeSupported()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentAtRelativeTimeSupported(long,int)" class="member-name-link">npresentAtRelativeTimeSupported</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#presentAtRelativeTimeSupported(boolean)"><code>presentAtRelativeTimeSupported</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentStageQueries(long)" class="member-name-link">npresentStageQueries</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#presentStageQueries()"><code>presentStageQueries()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentStageQueries(long,int)" class="member-name-link">npresentStageQueries</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentTimingSupported(long)" class="member-name-link">npresentTimingSupported</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#presentStageQueries(int)"><code>presentStageQueries</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentTimingSupported(long)" class="member-name-link">npresentTimingSupported</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#presentTimingSupported()"><code>presentTimingSupported()</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npresentTimingSupported(long,int)" class="member-name-link">npresentTimingSupported</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#presentTimingSupported(boolean)"><code>presentTimingSupported</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nsType(long)" class="member-name-link">nsType</a><wbr>(long&nbsp;struct)</code></div>
@@ -409,42 +377,18 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentAtAbsoluteTimeSupported()" class="member-name-link">presentAtAbsoluteTimeSupported</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentAtAbsoluteTimeSupported(boolean)" class="member-name-link">presentAtAbsoluteTimeSupported</a><wbr>(boolean&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>presentAtAbsoluteTimeSupported</code> field.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentAtRelativeTimeSupported()" class="member-name-link">presentAtRelativeTimeSupported</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentAtRelativeTimeSupported(boolean)" class="member-name-link">presentAtRelativeTimeSupported</a><wbr>(boolean&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>presentAtRelativeTimeSupported</code> field.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentAtRelativeTimeSupported()" class="member-name-link">presentAtRelativeTimeSupported</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentStageQueries()" class="member-name-link">presentStageQueries</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentStageQueries(int)" class="member-name-link">presentStageQueries</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>presentStageQueries</code> field.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentTimingSupported()" class="member-name-link">presentTimingSupported</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentTimingSupported(boolean)" class="member-name-link">presentTimingSupported</a><wbr>(boolean&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>presentTimingSupported</code> field.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#presentTimingSupported()" class="member-name-link">presentTimingSupported</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long,boolean,boolean,boolean,int)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
- long&nbsp;pNext,
- boolean&nbsp;presentTimingSupported,
- boolean&nbsp;presentAtAbsoluteTimeSupported,
- boolean&nbsp;presentAtRelativeTimeSupported,
- int&nbsp;presentStageQueries)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
+ long&nbsp;pNext)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
@@ -719,55 +663,11 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="presentTimingSupported(boolean)">
-<h3>presentTimingSupported</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></span>&nbsp;<span class="element-name">presentTimingSupported</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkBool32")
- boolean&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>presentTimingSupported</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="presentAtAbsoluteTimeSupported(boolean)">
-<h3>presentAtAbsoluteTimeSupported</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></span>&nbsp;<span class="element-name">presentAtAbsoluteTimeSupported</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkBool32")
- boolean&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>presentAtAbsoluteTimeSupported</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="presentAtRelativeTimeSupported(boolean)">
-<h3>presentAtRelativeTimeSupported</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></span>&nbsp;<span class="element-name">presentAtRelativeTimeSupported</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkBool32")
- boolean&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>presentAtRelativeTimeSupported</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="presentStageQueries(int)">
-<h3>presentStageQueries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></span>&nbsp;<span class="element-name">presentStageQueries</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkPresentStageFlagsEXT")
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>presentStageQueries</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="set(int,long,boolean,boolean,boolean,int)">
+<section class="detail" id="set(int,long)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkPresentTimingSurfaceCapabilitiesEXT.html" title="class in org.lwjgl.vulkan">VkPresentTimingSurfaceCapabilitiesEXT</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;sType,
- long&nbsp;pNext,
- boolean&nbsp;presentTimingSupported,
- boolean&nbsp;presentAtAbsoluteTimeSupported,
- boolean&nbsp;presentAtRelativeTimeSupported,
- int&nbsp;presentStageQueries)</span></div>
+ long&nbsp;pNext)</span></div>
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
 </section>
@@ -1023,46 +923,6 @@ visible to the struct instance and vice versa.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npNext</span><wbr><span class="parameters">(long&nbsp;struct,
  long&nbsp;value)</span></div>
 <div class="block">Unsafe version of <a href="#pNext(long)"><code>pNext</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npresentTimingSupported(long,int)">
-<h3>npresentTimingSupported</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npresentTimingSupported</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#presentTimingSupported(boolean)"><code>presentTimingSupported</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npresentAtAbsoluteTimeSupported(long,int)">
-<h3>npresentAtAbsoluteTimeSupported</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npresentAtAbsoluteTimeSupported</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#presentAtAbsoluteTimeSupported(boolean)"><code>presentAtAbsoluteTimeSupported</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npresentAtRelativeTimeSupported(long,int)">
-<h3>npresentAtRelativeTimeSupported</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npresentAtRelativeTimeSupported</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#presentAtRelativeTimeSupported(boolean)"><code>presentAtRelativeTimeSupported</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npresentStageQueries(long,int)">
-<h3>npresentStageQueries</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npresentStageQueries</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#presentStageQueries(int)"><code>presentStageQueries</code></a>.</div>
 </div>
 </section>
 </li>

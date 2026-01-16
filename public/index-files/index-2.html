@@ -2353,6 +2353,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block"><code>bgfx_uniform_handle_t bgfx_create_uniform(char const * _name, bgfx_uniform_type_t _type, uint16_t _num)</code></div>
 </dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_create_uniform_with_freq(java.lang.CharSequence,int,int,int)" class="member-name-link">bgfx_create_uniform_with_freq(CharSequence, int, int, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>bgfx_uniform_handle_t bgfx_create_uniform_with_freq(char const * _name, bgfx_uniform_freq_t _freq, bgfx_uniform_type_t _type, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_create_uniform_with_freq(java.nio.ByteBuffer,int,int,int)" class="member-name-link">bgfx_create_uniform_with_freq(ByteBuffer, int, int, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>bgfx_uniform_handle_t bgfx_create_uniform_with_freq(char const * _name, bgfx_uniform_freq_t _freq, bgfx_uniform_type_t _type, uint16_t _num)</code></div>
+</dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_create_vertex_buffer(org.lwjgl.bgfx.BGFXMemory,org.lwjgl.bgfx.BGFXVertexLayout,int)" class="member-name-link">bgfx_create_vertex_buffer(BGFXMemory, BGFXVertexLayout, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>
 <div class="block"><code>bgfx_vertex_buffer_handle_t bgfx_create_vertex_buffer(bgfx_memory_t const * _mem, bgfx_vertex_layout_t const * _layout, uint16_t _flags)</code></div>
@@ -2973,6 +2981,8 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_RENDERER_TYPE_VULKAN" class="member-name-link">BGFX_RENDERER_TYPE_VULKAN</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_RENDERER_TYPE_WEBGPU" class="member-name-link">BGFX_RENDERER_TYPE_WEBGPU</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_request_screen_shot(short,java.lang.CharSequence)" class="member-name-link">bgfx_request_screen_shot(short, CharSequence)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>
 <div class="block"><code>void bgfx_request_screen_shot(bgfx_frame_buffer_handle_t _handle, char const * _filePath)</code></div>
@@ -3184,6 +3194,50 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_buffer_name(short,java.nio.ByteBuffer)" class="member-name-link">bgfx_set_frame_buffer_name(short, ByteBuffer)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>
 <div class="block"><code>void bgfx_set_frame_buffer_name(bgfx_frame_buffer_handle_t _handle, char const * _name, int32_t _len)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,double%5B%5D,int)" class="member-name-link">bgfx_set_frame_uniform(short, double[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,float%5B%5D,int)" class="member-name-link">bgfx_set_frame_uniform(short, float[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,int%5B%5D,int)" class="member-name-link">bgfx_set_frame_uniform(short, int[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,long%5B%5D,int)" class="member-name-link">bgfx_set_frame_uniform(short, long[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,short%5B%5D,int)" class="member-name-link">bgfx_set_frame_uniform(short, short[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,java.nio.ByteBuffer,int)" class="member-name-link">bgfx_set_frame_uniform(short, ByteBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,java.nio.DoubleBuffer,int)" class="member-name-link">bgfx_set_frame_uniform(short, DoubleBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,java.nio.FloatBuffer,int)" class="member-name-link">bgfx_set_frame_uniform(short, FloatBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,java.nio.IntBuffer,int)" class="member-name-link">bgfx_set_frame_uniform(short, IntBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,java.nio.LongBuffer,int)" class="member-name-link">bgfx_set_frame_uniform(short, LongBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_frame_uniform(short,java.nio.ShortBuffer,int)" class="member-name-link">bgfx_set_frame_uniform(short, ShortBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_frame_uniform(bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
 </dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_image(int,short,int,int,int)" class="member-name-link">bgfx_set_image(int, short, int, int, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>
@@ -3432,6 +3486,50 @@ loadScripts(document, 'script');</script>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_transform(int,java.nio.FloatBuffer,java.nio.FloatBuffer)" class="member-name-link">bgfx_set_view_transform(int, FloatBuffer, FloatBuffer)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>
 <div class="block"><code>void bgfx_set_view_transform(bgfx_view_id_t _id, void const * _view, void const * _proj)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,double%5B%5D,int)" class="member-name-link">bgfx_set_view_uniform(int, short, double[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,float%5B%5D,int)" class="member-name-link">bgfx_set_view_uniform(int, short, float[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,int%5B%5D,int)" class="member-name-link">bgfx_set_view_uniform(int, short, int[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,long%5B%5D,int)" class="member-name-link">bgfx_set_view_uniform(int, short, long[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,short%5B%5D,int)" class="member-name-link">bgfx_set_view_uniform(int, short, short[], int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,java.nio.ByteBuffer,int)" class="member-name-link">bgfx_set_view_uniform(int, short, ByteBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,java.nio.DoubleBuffer,int)" class="member-name-link">bgfx_set_view_uniform(int, short, DoubleBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,java.nio.FloatBuffer,int)" class="member-name-link">bgfx_set_view_uniform(int, short, FloatBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,java.nio.IntBuffer,int)" class="member-name-link">bgfx_set_view_uniform(int, short, IntBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,java.nio.LongBuffer,int)" class="member-name-link">bgfx_set_view_uniform(int, short, LongBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
+</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#bgfx_set_view_uniform(int,short,java.nio.ShortBuffer,int)" class="member-name-link">bgfx_set_view_uniform(int, short, ShortBuffer, int)</a> - Static method in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>
+<div class="block"><code>void bgfx_set_view_uniform(bgfx_view_id_t _id, bgfx_uniform_handle_t _handle, void const * _value, uint16_t _num)</code></div>
 </dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_SHADING_RATE_COUNT" class="member-name-link">BGFX_SHADING_RATE_COUNT</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>&nbsp;</dd>
@@ -3851,6 +3949,14 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_TEXTURE_FORMAT_D32F" class="member-name-link">BGFX_TEXTURE_FORMAT_D32F</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_TEXTURE_FORMAT_EACR11" class="member-name-link">BGFX_TEXTURE_FORMAT_EACR11</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_TEXTURE_FORMAT_EACR11S" class="member-name-link">BGFX_TEXTURE_FORMAT_EACR11S</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_TEXTURE_FORMAT_EACRG11" class="member-name-link">BGFX_TEXTURE_FORMAT_EACRG11</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_TEXTURE_FORMAT_EACRG11S" class="member-name-link">BGFX_TEXTURE_FORMAT_EACRG11S</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_TEXTURE_FORMAT_ETC1" class="member-name-link">BGFX_TEXTURE_FORMAT_ETC1</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_TEXTURE_FORMAT_ETC2" class="member-name-link">BGFX_TEXTURE_FORMAT_ETC2</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
@@ -4093,6 +4199,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block"><code>void bgfx_touch(bgfx_view_id_t _id)</code></div>
 </dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_UNIFORM_FREQ_COUNT" class="member-name-link">BGFX_UNIFORM_FREQ_COUNT</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_UNIFORM_FREQ_DRAW" class="member-name-link">BGFX_UNIFORM_FREQ_DRAW</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_UNIFORM_FREQ_FRAME" class="member-name-link">BGFX_UNIFORM_FREQ_FRAME</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_UNIFORM_FREQ_VIEW" class="member-name-link">BGFX_UNIFORM_FREQ_VIEW</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_UNIFORM_TYPE_COUNT" class="member-name-link">BGFX_UNIFORM_TYPE_COUNT</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/bgfx/BGFX.html#BGFX_UNIFORM_TYPE_END" class="member-name-link">BGFX_UNIFORM_TYPE_END</a> - Static variable in class org.lwjgl.bgfx.<a href="../org/lwjgl/bgfx/BGFX.html" title="class in org.lwjgl.bgfx">BGFX</a></dt>
@@ -4445,6 +4559,7 @@ loadScripts(document, 'script');</script>
     uint64_t capabilities;
     bool debug;
     bool profile;
+    bool fallback;
     <a href="../org/lwjgl/bgfx/BGFXPlatformData.html" title="class in org.lwjgl.bgfx"><code>bgfx_platform_data_t</code></a> platformData;
     <a href="../org/lwjgl/bgfx/BGFXResolution.html" title="class in org.lwjgl.bgfx"><code>bgfx_resolution_t</code></a> resolution;
     <a href="../org/lwjgl/bgfx/BGFXInitLimits.html" title="class in org.lwjgl.bgfx"><code>bgfx_init_limits_t</code></a> limits;
@@ -5455,14 +5570,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Sets the specified value to the <code>bindPoint</code> field.</div>
 </dd>
-<dt><a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.html#bindPoint(int)" class="member-name-link">bindPoint(int)</a> - Method in class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></dt>
-<dd>
-<div class="block">Sets the specified value to the <code>bindPoint</code> field.</div>
-</dd>
-<dt><a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.Buffer.html#bindPoint(int)" class="member-name-link">bindPoint(int)</a> - Method in class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.Buffer.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM.Buffer</a></dt>
-<dd>
-<div class="block">Sets the specified value to the <code>bindPoint</code> field.</div>
-</dd>
 <dt><a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionMemoryRequirementsInfoARM.html#bindPoint(int)" class="member-name-link">bindPoint(int)</a> - Method in class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionMemoryRequirementsInfoARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionMemoryRequirementsInfoARM</a></dt>
 <dd>
 <div class="block">Sets the specified value to the <code>bindPoint</code> field.</div>
@@ -5487,14 +5594,6 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.Buffer.html#bindPointType()" class="member-name-link">bindPointType()</a> - Method in class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.Buffer.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM.Buffer</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.html#bindPointType(int)" class="member-name-link">bindPointType(int)</a> - Method in class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></dt>
-<dd>
-<div class="block">Sets the specified value to the <code>bindPointType</code> field.</div>
-</dd>
-<dt><a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.Buffer.html#bindPointType(int)" class="member-name-link">bindPointType(int)</a> - Method in class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.Buffer.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM.Buffer</a></dt>
-<dd>
-<div class="block">Sets the specified value to the <code>bindPointType</code> field.</div>
-</dd>
 <dt><a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.html#BINDPOINTTYPE" class="member-name-link">BINDPOINTTYPE</a> - Static variable in class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkDataGraphPipelineSessionBindPointRequirementARM.html" title="class in org.lwjgl.vulkan">VkDataGraphPipelineSessionBindPointRequirementARM</a></dt>
 <dd>
 <div class="block">The struct member offsets.</div>
@@ -7235,6 +7334,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The struct member offsets.</div>
 </dd>
+<dt><a href="../org/lwjgl/system/ffm/FFM.html#bool" class="member-name-link">bool</a> - Static variable in class org.lwjgl.system.ffm.<a href="../org/lwjgl/system/ffm/FFM.html" title="class in org.lwjgl.system.ffm">FFM</a></dt>
+<dd>
+<div class="block">The C <code>bool</code> type mapping.</div>
+</dd>
 <dt><a href="../org/lwjgl/util/remotery/RMTPropertyValue.html#Bool()" class="member-name-link">Bool()</a> - Method in class org.lwjgl.util.remotery.<a href="../org/lwjgl/util/remotery/RMTPropertyValue.html" title="class in org.lwjgl.util.remotery">RMTPropertyValue</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/util/remotery/RMTPropertyValue.Buffer.html#Bool()" class="member-name-link">Bool()</a> - Method in class org.lwjgl.util.remotery.<a href="../org/lwjgl/util/remotery/RMTPropertyValue.Buffer.html" title="class in org.lwjgl.util.remotery">RMTPropertyValue.Buffer</a></dt>
@@ -7275,6 +7378,12 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The struct member offsets.</div>
 </dd>
+<dt><a href="../org/lwjgl/system/ffm/mapping/Mapping.Boolean.html#%3Cinit%3E(java.lang.foreign.ValueLayout.OfBoolean,org.lwjgl.system.ffm.mapping.Mapping.Pointer)" class="member-name-link">Boolean(ValueLayout.OfBoolean, Mapping.Pointer)</a> - Constructor for record class org.lwjgl.system.ffm.mapping.<a href="../org/lwjgl/system/ffm/mapping/Mapping.Boolean.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Boolean</a></dt>
+<dd>
+<div class="block">Creates an instance of a <code>Boolean</code> record class.</div>
+</dd>
+<dt><a href="../org/lwjgl/system/ffm/mapping/Mapping.Boolean.html#%3Cinit%3E(java.lang.String)" class="member-name-link">Boolean(String)</a> - Constructor for record class org.lwjgl.system.ffm.mapping.<a href="../org/lwjgl/system/ffm/mapping/Mapping.Boolean.html" title="class in org.lwjgl.system.ffm.mapping">Mapping.Boolean</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/fmod/FMOD_STUDIO_USER_PROPERTY.html#boolvalue()" class="member-name-link">boolvalue()</a> - Method in class org.lwjgl.fmod.<a href="../org/lwjgl/fmod/FMOD_STUDIO_USER_PROPERTY.html" title="class in org.lwjgl.fmod">FMOD_STUDIO_USER_PROPERTY</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/fmod/FMOD_STUDIO_USER_PROPERTY.Buffer.html#boolvalue()" class="member-name-link">boolvalue()</a> - Method in class org.lwjgl.fmod.<a href="../org/lwjgl/fmod/FMOD_STUDIO_USER_PROPERTY.Buffer.html" title="class in org.lwjgl.fmod">FMOD_STUDIO_USER_PROPERTY.Buffer</a></dt>
@@ -9286,6 +9395,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FFT.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.fmod.<a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FFT.Buffer.html" title="class in org.lwjgl.fmod">FMOD_DSP_PARAMETER_FFT.Buffer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FINITE_LENGTH.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.fmod.<a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FINITE_LENGTH.Buffer.html" title="class in org.lwjgl.fmod">FMOD_DSP_PARAMETER_FINITE_LENGTH.Buffer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.fmod.<a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR.Buffer.html" title="class in org.lwjgl.fmod">FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FLOAT_MAPPING.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.fmod.<a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FLOAT_MAPPING.Buffer.html" title="class in org.lwjgl.fmod">FMOD_DSP_PARAMETER_FLOAT_MAPPING.Buffer</a></dt>
@@ -11038,6 +11149,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_CommonEvent.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_CommonEvent.Buffer.html" title="class in org.lwjgl.sdl">SDL_CommonEvent.Buffer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/sdl/SDL_CursorFrameInfo.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_CursorFrameInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_CursorFrameInfo.Buffer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_DateTime.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_DateTime.Buffer.html" title="class in org.lwjgl.sdl">SDL_DateTime.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_DialogFileFilter.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_DialogFileFilter.Buffer.html" title="class in org.lwjgl.sdl">SDL_DialogFileFilter.Buffer</a></dt>
@@ -11108,6 +11221,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_GPURasterizerState.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPURasterizerState.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPURasterizerState.Buffer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/sdl/SDL_GPURenderStateCreateInfo.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPURenderStateCreateInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPURenderStateCreateInfo.Buffer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_GPUSamplerCreateInfo.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPUSamplerCreateInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUSamplerCreateInfo.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_GPUShaderCreateInfo.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPUShaderCreateInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUShaderCreateInfo.Buffer</a></dt>
@@ -11139,6 +11254,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dt><a href="../org/lwjgl/sdl/SDL_GPUVertexInputState.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPUVertexInputState.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUVertexInputState.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_GPUViewport.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPUViewport.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUViewport.Buffer</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/sdl/SDL_GPUVulkanOptions.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPUVulkanOptions.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUVulkanOptions.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_GUID.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GUID.Buffer.html" title="class in org.lwjgl.sdl">SDL_GUID.Buffer</a></dt>
 <dd>&nbsp;</dd>
@@ -11209,6 +11326,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dt><a href="../org/lwjgl/sdl/SDL_PenProximityEvent.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_PenProximityEvent.Buffer.html" title="class in org.lwjgl.sdl">SDL_PenProximityEvent.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_PenTouchEvent.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_PenTouchEvent.Buffer.html" title="class in org.lwjgl.sdl">SDL_PenTouchEvent.Buffer</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/sdl/SDL_PinchFingerEvent.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_PinchFingerEvent.Buffer.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_PixelFormatDetails.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_PixelFormatDetails.Buffer.html" title="class in org.lwjgl.sdl">SDL_PixelFormatDetails.Buffer</a></dt>
 <dd>&nbsp;</dd>
@@ -11322,6 +11441,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/system/linux/liburing/IOURing.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURing.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURing.Buffer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/system/linux/liburing/IOURingAttrPI.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingAttrPI.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingAttrPI.Buffer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/system/linux/liburing/IOURingBuf.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingBuf.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingBuf.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/system/linux/liburing/IOURingBufReg.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingBufReg.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingBufReg.Buffer</a></dt>
@@ -11351,6 +11472,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dt><a href="../org/lwjgl/system/linux/liburing/IOURingProbe.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingProbe.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingProbe.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/system/linux/liburing/IOURingProbeOp.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingProbeOp.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingProbeOp.Buffer</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/system/linux/liburing/IOURingQueryHdr.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingQueryHdr.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingQueryHdr.Buffer</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/system/linux/liburing/IOURingQueryOpcode.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingQueryOpcode.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingQueryOpcode.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/system/linux/liburing/IOURingRecvmsgOut.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingRecvmsgOut.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingRecvmsgOut.Buffer</a></dt>
 <dd>&nbsp;</dd>
@@ -12620,6 +12745,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkComponentMapping.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkComponentMapping.Buffer.html" title="class in org.lwjgl.vulkan">VkComponentMapping.Buffer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/vulkan/VkComputeOccupancyPriorityParametersNV.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkComputeOccupancyPriorityParametersNV.Buffer.html" title="class in org.lwjgl.vulkan">VkComputeOccupancyPriorityParametersNV.Buffer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkComputePipelineCreateInfo.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkComputePipelineCreateInfo.Buffer.html" title="class in org.lwjgl.vulkan">VkComputePipelineCreateInfo.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkComputePipelineIndirectBufferInfoNV.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkComputePipelineIndirectBufferInfoNV.Buffer.html" title="class in org.lwjgl.vulkan">VkComputePipelineIndirectBufferInfoNV.Buffer</a></dt>
@@ -13598,6 +13725,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceCommandBufferInheritanceFeaturesNV.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceCommandBufferInheritanceFeaturesNV.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceCommandBufferInheritanceFeaturesNV.Buffer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV.Buffer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeShaderDerivativesFeaturesNV.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeShaderDerivativesFeaturesNV.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceComputeShaderDerivativesFeaturesNV.Buffer</a></dt>
@@ -14306,6 +14435,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL.Buffer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderLongVectorFeaturesEXT.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderLongVectorFeaturesEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceShaderLongVectorFeaturesEXT.Buffer</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderLongVectorPropertiesEXT.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderLongVectorPropertiesEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceShaderLongVectorPropertiesEXT.Buffer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT.Buffer</a></dt>
@@ -14393,6 +14526,8 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceTexelBufferAlignmentProperties.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceTexelBufferAlignmentProperties.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceTexelBufferAlignmentProperties.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT.Buffer</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.Buffer</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceTextureCompressionASTCHDRFeatures.Buffer.html#%3Cinit%3E(long,int)" class="member-name-link">Buffer(long, int)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceTextureCompressionASTCHDRFeatures.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceTextureCompressionASTCHDRFeatures.Buffer</a></dt>
 <dd>&nbsp;</dd>
@@ -15743,6 +15878,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dt><a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FFT.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.fmod.<a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FFT.Buffer.html" title="class in org.lwjgl.fmod">FMOD_DSP_PARAMETER_FFT.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>FMOD_DSP_PARAMETER_FFT.Buffer</code> instance backed by the specified container.</div>
+</dd>
+<dt><a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FINITE_LENGTH.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.fmod.<a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FINITE_LENGTH.Buffer.html" title="class in org.lwjgl.fmod">FMOD_DSP_PARAMETER_FINITE_LENGTH.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>FMOD_DSP_PARAMETER_FINITE_LENGTH.Buffer</code> instance backed by the specified container.</div>
 </dd>
 <dt><a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.fmod.<a href="../org/lwjgl/fmod/FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR.Buffer.html" title="class in org.lwjgl.fmod">FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR.Buffer</a></dt>
 <dd>
@@ -19248,6 +19387,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>
 <div class="block">Creates a new <code>SDL_CommonEvent.Buffer</code> instance backed by the specified container.</div>
 </dd>
+<dt><a href="../org/lwjgl/sdl/SDL_CursorFrameInfo.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_CursorFrameInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_CursorFrameInfo.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>SDL_CursorFrameInfo.Buffer</code> instance backed by the specified container.</div>
+</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_DateTime.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_DateTime.Buffer.html" title="class in org.lwjgl.sdl">SDL_DateTime.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>SDL_DateTime.Buffer</code> instance backed by the specified container.</div>
@@ -19388,6 +19531,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>
 <div class="block">Creates a new <code>SDL_GPURasterizerState.Buffer</code> instance backed by the specified container.</div>
 </dd>
+<dt><a href="../org/lwjgl/sdl/SDL_GPURenderStateCreateInfo.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPURenderStateCreateInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPURenderStateCreateInfo.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>SDL_GPURenderStateCreateInfo.Buffer</code> instance backed by the specified container.</div>
+</dd>
 <dt><a href="../org/lwjgl/sdl/SDL_GPUSamplerCreateInfo.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPUSamplerCreateInfo.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUSamplerCreateInfo.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>SDL_GPUSamplerCreateInfo.Buffer</code> instance backed by the specified container.</div>
@@ -19451,6 +19598,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dt><a href="../org/lwjgl/sdl/SDL_GPUViewport.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPUViewport.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUViewport.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>SDL_GPUViewport.Buffer</code> instance backed by the specified container.</div>
+</dd>
+<dt><a href="../org/lwjgl/sdl/SDL_GPUVulkanOptions.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GPUVulkanOptions.Buffer.html" title="class in org.lwjgl.sdl">SDL_GPUVulkanOptions.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>SDL_GPUVulkanOptions.Buffer</code> instance backed by the specified container.</div>
 </dd>
 <dt><a href="../org/lwjgl/sdl/SDL_GUID.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_GUID.Buffer.html" title="class in org.lwjgl.sdl">SDL_GUID.Buffer</a></dt>
 <dd>
@@ -19591,6 +19742,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dt><a href="../org/lwjgl/sdl/SDL_PenTouchEvent.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_PenTouchEvent.Buffer.html" title="class in org.lwjgl.sdl">SDL_PenTouchEvent.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>SDL_PenTouchEvent.Buffer</code> instance backed by the specified container.</div>
+</dd>
+<dt><a href="../org/lwjgl/sdl/SDL_PinchFingerEvent.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_PinchFingerEvent.Buffer.html" title="class in org.lwjgl.sdl">SDL_PinchFingerEvent.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>SDL_PinchFingerEvent.Buffer</code> instance backed by the specified container.</div>
 </dd>
 <dt><a href="../org/lwjgl/sdl/SDL_PixelFormatDetails.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.sdl.<a href="../org/lwjgl/sdl/SDL_PixelFormatDetails.Buffer.html" title="class in org.lwjgl.sdl">SDL_PixelFormatDetails.Buffer</a></dt>
 <dd>
@@ -19816,6 +19971,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>
 <div class="block">Creates a new <code>IOURing.Buffer</code> instance backed by the specified container.</div>
 </dd>
+<dt><a href="../org/lwjgl/system/linux/liburing/IOURingAttrPI.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingAttrPI.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingAttrPI.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>IOURingAttrPI.Buffer</code> instance backed by the specified container.</div>
+</dd>
 <dt><a href="../org/lwjgl/system/linux/liburing/IOURingBuf.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingBuf.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingBuf.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>IOURingBuf.Buffer</code> instance backed by the specified container.</div>
@@ -19875,6 +20034,14 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dt><a href="../org/lwjgl/system/linux/liburing/IOURingProbeOp.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingProbeOp.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingProbeOp.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>IOURingProbeOp.Buffer</code> instance backed by the specified container.</div>
+</dd>
+<dt><a href="../org/lwjgl/system/linux/liburing/IOURingQueryHdr.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingQueryHdr.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingQueryHdr.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>IOURingQueryHdr.Buffer</code> instance backed by the specified container.</div>
+</dd>
+<dt><a href="../org/lwjgl/system/linux/liburing/IOURingQueryOpcode.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingQueryOpcode.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingQueryOpcode.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>IOURingQueryOpcode.Buffer</code> instance backed by the specified container.</div>
 </dd>
 <dt><a href="../org/lwjgl/system/linux/liburing/IOURingRecvmsgOut.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.system.linux.liburing.<a href="../org/lwjgl/system/linux/liburing/IOURingRecvmsgOut.Buffer.html" title="class in org.lwjgl.system.linux.liburing">IOURingRecvmsgOut.Buffer</a></dt>
 <dd>
@@ -22412,6 +22579,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>
 <div class="block">Creates a new <code>VkComponentMapping.Buffer</code> instance backed by the specified container.</div>
 </dd>
+<dt><a href="../org/lwjgl/vulkan/VkComputeOccupancyPriorityParametersNV.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkComputeOccupancyPriorityParametersNV.Buffer.html" title="class in org.lwjgl.vulkan">VkComputeOccupancyPriorityParametersNV.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>VkComputeOccupancyPriorityParametersNV.Buffer</code> instance backed by the specified container.</div>
+</dd>
 <dt><a href="../org/lwjgl/vulkan/VkComputePipelineCreateInfo.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkComputePipelineCreateInfo.Buffer.html" title="class in org.lwjgl.vulkan">VkComputePipelineCreateInfo.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>VkComputePipelineCreateInfo.Buffer</code> instance backed by the specified container.</div>
@@ -24368,6 +24539,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>
 <div class="block">Creates a new <code>VkPhysicalDeviceCommandBufferInheritanceFeaturesNV.Buffer</code> instance backed by the specified container.</div>
 </dd>
+<dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV.Buffer</code> instance backed by the specified container.</div>
+</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR.Buffer</code> instance backed by the specified container.</div>
@@ -25784,6 +25959,14 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dd>
 <div class="block">Creates a new <code>VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL.Buffer</code> instance backed by the specified container.</div>
 </dd>
+<dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderLongVectorFeaturesEXT.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderLongVectorFeaturesEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceShaderLongVectorFeaturesEXT.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>VkPhysicalDeviceShaderLongVectorFeaturesEXT.Buffer</code> instance backed by the specified container.</div>
+</dd>
+<dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderLongVectorPropertiesEXT.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderLongVectorPropertiesEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceShaderLongVectorPropertiesEXT.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>VkPhysicalDeviceShaderLongVectorPropertiesEXT.Buffer</code> instance backed by the specified container.</div>
+</dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR.Buffer</code> instance backed by the specified container.</div>
@@ -25959,6 +26142,10 @@ same semantics as the corresponding methods in <a href="https://docs.oracle.com/
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT.Buffer</a></dt>
 <dd>
 <div class="block">Creates a new <code>VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT.Buffer</code> instance backed by the specified container.</div>
+</dd>
+<dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.Buffer</a></dt>
+<dd>
+<div class="block">Creates a new <code>VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.Buffer</code> instance backed by the specified container.</div>
 </dd>
 <dt><a href="../org/lwjgl/vulkan/VkPhysicalDeviceTextureCompressionASTCHDRFeatures.Buffer.html#%3Cinit%3E(java.nio.ByteBuffer)" class="member-name-link">Buffer(ByteBuffer)</a> - Constructor for class org.lwjgl.vulkan.<a href="../org/lwjgl/vulkan/VkPhysicalDeviceTextureCompressionASTCHDRFeatures.Buffer.html" title="class in org.lwjgl.vulkan">VkPhysicalDeviceTextureCompressionASTCHDRFeatures.Buffer</a></dt>
 <dd>

@@ -82,10 +82,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#sType(int)" tabindex="0">sType(int)</a></li>
 <li><a href="#sType$Default()" tabindex="0">sType$Default()</a></li>
 <li><a href="#pNext(long)" tabindex="0">pNext(long)</a></li>
-<li><a href="#timeDomainCount(int)" tabindex="0">timeDomainCount(int)</a></li>
-<li><a href="#pTimeDomains(java.nio.IntBuffer)" tabindex="0">pTimeDomains(IntBuffer)</a></li>
-<li><a href="#pTimeDomainIds(java.nio.LongBuffer)" tabindex="0">pTimeDomainIds(LongBuffer)</a></li>
-<li><a href="#set(int,long,int,java.nio.IntBuffer,java.nio.LongBuffer)" tabindex="0">set(int, long, int, IntBuffer, LongBuffer)</a></li>
+<li><a href="#set(int,long)" tabindex="0">set(int, long)</a></li>
 <li><a href="#set(org.lwjgl.vulkan.VkSwapchainTimeDomainPropertiesEXT)" tabindex="0">set(VkSwapchainTimeDomainPropertiesEXT)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
@@ -108,9 +105,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#npTimeDomainIds(long)" tabindex="0">npTimeDomainIds(long)</a></li>
 <li><a href="#nsType(long,int)" tabindex="0">nsType(long, int)</a></li>
 <li><a href="#npNext(long,long)" tabindex="0">npNext(long, long)</a></li>
-<li><a href="#ntimeDomainCount(long,int)" tabindex="0">ntimeDomainCount(long, int)</a></li>
-<li><a href="#npTimeDomains(long,java.nio.IntBuffer)" tabindex="0">npTimeDomains(long, IntBuffer)</a></li>
-<li><a href="#npTimeDomainIds(long,java.nio.LongBuffer)" tabindex="0">npTimeDomainIds(long, LongBuffer)</a></li>
 </ol>
 </li>
 </ol>
@@ -337,22 +331,10 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#pTimeDomainIds()"><code>pTimeDomainIds</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npTimeDomainIds(long,java.nio.LongBuffer)" class="member-name-link">npTimeDomainIds</a><wbr>(long&nbsp;struct,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link">LongBuffer</a>&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npTimeDomains(long)" class="member-name-link">npTimeDomains</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#pTimeDomainIds(java.nio.LongBuffer)"><code>pTimeDomainIds</code></a>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npTimeDomains(long)" class="member-name-link">npTimeDomains</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#pTimeDomains()"><code>pTimeDomains</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npTimeDomains(long,java.nio.IntBuffer)" class="member-name-link">npTimeDomains</a><wbr>(long&nbsp;struct,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unsafe version of <a href="#pTimeDomains(java.nio.IntBuffer)"><code>pTimeDomains</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nsType(long)" class="member-name-link">nsType</a><wbr>(long&nbsp;struct)</code></div>
@@ -370,76 +352,52 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#timeDomainCount()"><code>timeDomainCount()</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ntimeDomainCount(long,int)" class="member-name-link">ntimeDomainCount</a><wbr>(long&nbsp;struct,
- int&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>timeDomainCount</code> field of the specified <code>struct</code>.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext()" class="member-name-link">pNext</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext(long)" class="member-name-link">pNext</a><wbr>(long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext()" class="member-name-link">pNext</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pNext(long)" class="member-name-link">pNext</a><wbr>(long&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the specified value to the <code>pNext</code> field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link">LongBuffer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pTimeDomainIds()" class="member-name-link">pTimeDomainIds</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pTimeDomainIds(java.nio.LongBuffer)" class="member-name-link">pTimeDomainIds</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link">LongBuffer</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the address of the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link"><code>LongBuffer</code></a> to the <code>pTimeDomainIds</code> field.</div>
-</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link">LongBuffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pTimeDomainIds()" class="member-name-link">pTimeDomainIds</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pTimeDomains()" class="member-name-link">pTimeDomains</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pTimeDomains(java.nio.IntBuffer)" class="member-name-link">pTimeDomains</a><wbr>(@Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
+ long&nbsp;pNext)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the address of the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link"><code>IntBuffer</code></a> to the <code>pTimeDomains</code> field.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(int,long,int,java.nio.IntBuffer,java.nio.LongBuffer)" class="member-name-link">set</a><wbr>(int&nbsp;sType,
- long&nbsp;pNext,
- int&nbsp;timeDomainCount,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pTimeDomains,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link">LongBuffer</a>&nbsp;pTimeDomainIds)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(org.lwjgl.vulkan.VkSwapchainTimeDomainPropertiesEXT)" class="member-name-link">set</a><wbr>(<a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a>&nbsp;src)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(org.lwjgl.vulkan.VkSwapchainTimeDomainPropertiesEXT)" class="member-name-link">set</a><wbr>(<a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a>&nbsp;src)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies the specified struct data to this struct.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sizeof()" class="member-name-link">sizeof</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sizeof()" class="member-name-link">sizeof</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns <code>sizeof(struct)</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sType()" class="member-name-link">sType</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sType(int)" class="member-name-link">sType</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>sType</code> field.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sType$Default()" class="member-name-link">sType$Default</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the <a href="EXTPresentTiming.html#VK_STRUCTURE_TYPE_SWAPCHAIN_TIME_DOMAIN_PROPERTIES_EXT"><code>STRUCTURE_TYPE_SWAPCHAIN_TIME_DOMAIN_PROPERTIES_EXT</code></a> value to the <code>sType</code> field.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#timeDomainCount()" class="member-name-link">timeDomainCount</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sType()" class="member-name-link">sType</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#timeDomainCount(int)" class="member-name-link">timeDomainCount</a><wbr>(int&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sType(int)" class="member-name-link">sType</a><wbr>(int&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the specified value to the <code>timeDomainCount</code> field.</div>
+<div class="block">Sets the specified value to the <code>sType</code> field.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sType$Default()" class="member-name-link">sType$Default</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the <a href="EXTPresentTiming.html#VK_STRUCTURE_TYPE_SWAPCHAIN_TIME_DOMAIN_PROPERTIES_EXT"><code>STRUCTURE_TYPE_SWAPCHAIN_TIME_DOMAIN_PROPERTIES_EXT</code></a> value to the <code>sType</code> field.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#timeDomainCount()" class="member-name-link">timeDomainCount</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -666,44 +624,11 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="timeDomainCount(int)">
-<h3>timeDomainCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></span>&nbsp;<span class="element-name">timeDomainCount</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("uint32_t")
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>timeDomainCount</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pTimeDomains(java.nio.IntBuffer)">
-<h3>pTimeDomains</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></span>&nbsp;<span class="element-name">pTimeDomains</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("VkTimeDomainKHR *")
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;value)</span></div>
-<div class="block">Sets the address of the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link"><code>IntBuffer</code></a> to the <code>pTimeDomains</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="pTimeDomainIds(java.nio.LongBuffer)">
-<h3>pTimeDomainIds</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></span>&nbsp;<span class="element-name">pTimeDomainIds</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("uint64_t *")
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link">LongBuffer</a>&nbsp;value)</span></div>
-<div class="block">Sets the address of the specified <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link"><code>LongBuffer</code></a> to the <code>pTimeDomainIds</code> field.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="set(int,long,int,java.nio.IntBuffer,java.nio.LongBuffer)">
+<section class="detail" id="set(int,long)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="VkSwapchainTimeDomainPropertiesEXT.html" title="class in org.lwjgl.vulkan">VkSwapchainTimeDomainPropertiesEXT</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(int&nbsp;sType,
- long&nbsp;pNext,
- int&nbsp;timeDomainCount,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;pTimeDomains,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link">LongBuffer</a>&nbsp;pTimeDomainIds)</span></div>
+ long&nbsp;pNext)</span></div>
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
 </section>
@@ -950,36 +875,6 @@ visible to the struct instance and vice versa.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npNext</span><wbr><span class="parameters">(long&nbsp;struct,
  long&nbsp;value)</span></div>
 <div class="block">Unsafe version of <a href="#pNext(long)"><code>pNext</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="ntimeDomainCount(long,int)">
-<h3>ntimeDomainCount</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ntimeDomainCount</span><wbr><span class="parameters">(long&nbsp;struct,
- int&nbsp;value)</span></div>
-<div class="block">Sets the specified value to the <code>timeDomainCount</code> field of the specified <code>struct</code>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npTimeDomains(long,java.nio.IntBuffer)">
-<h3>npTimeDomains</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npTimeDomains</span><wbr><span class="parameters">(long&nbsp;struct,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/IntBuffer.html" title="class or interface in java.nio" class="external-link">IntBuffer</a>&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#pTimeDomains(java.nio.IntBuffer)"><code>pTimeDomains</code></a>.</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="npTimeDomainIds(long,java.nio.LongBuffer)">
-<h3>npTimeDomainIds</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npTimeDomainIds</span><wbr><span class="parameters">(long&nbsp;struct,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/LongBuffer.html" title="class or interface in java.nio" class="external-link">LongBuffer</a>&nbsp;value)</span></div>
-<div class="block">Unsafe version of <a href="#pTimeDomainIds(java.nio.LongBuffer)"><code>pTimeDomainIds</code></a>.</div>
 </div>
 </section>
 </li>

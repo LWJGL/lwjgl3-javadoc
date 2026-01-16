@@ -67,8 +67,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#STENCIL_STORE_OP" tabindex="0">STENCIL_STORE_OP</a></li>
 <li><a href="#CYCLE" tabindex="0">CYCLE</a></li>
 <li><a href="#CLEAR_STENCIL" tabindex="0">CLEAR_STENCIL</a></li>
-<li><a href="#PADDING1" tabindex="0">PADDING1</a></li>
-<li><a href="#PADDING2" tabindex="0">PADDING2</a></li>
+<li><a href="#MIP_LEVEL" tabindex="0">MIP_LEVEL</a></li>
+<li><a href="#LAYER" tabindex="0">LAYER</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -87,6 +87,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#stencil_store_op()" tabindex="0">stencil_store_op()</a></li>
 <li><a href="#cycle()" tabindex="0">cycle()</a></li>
 <li><a href="#clear_stencil()" tabindex="0">clear_stencil()</a></li>
+<li><a href="#mip_level()" tabindex="0">mip_level()</a></li>
+<li><a href="#layer()" tabindex="0">layer()</a></li>
 <li><a href="#texture(long)" tabindex="0">texture(long)</a></li>
 <li><a href="#clear_depth(float)" tabindex="0">clear_depth(float)</a></li>
 <li><a href="#load_op(int)" tabindex="0">load_op(int)</a></li>
@@ -95,7 +97,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#stencil_store_op(int)" tabindex="0">stencil_store_op(int)</a></li>
 <li><a href="#cycle(boolean)" tabindex="0">cycle(boolean)</a></li>
 <li><a href="#clear_stencil(byte)" tabindex="0">clear_stencil(byte)</a></li>
-<li><a href="#set(long,float,int,int,int,int,boolean,byte)" tabindex="0">set(long, float, int, int, int, int, boolean, byte)</a></li>
+<li><a href="#mip_level(byte)" tabindex="0">mip_level(byte)</a></li>
+<li><a href="#layer(byte)" tabindex="0">layer(byte)</a></li>
+<li><a href="#set(long,float,int,int,int,int,boolean,byte,byte,byte)" tabindex="0">set(long, float, int, int, int, int, boolean, byte, byte, byte)</a></li>
 <li><a href="#set(org.lwjgl.sdl.SDL_GPUDepthStencilTargetInfo)" tabindex="0">set(SDL_GPUDepthStencilTargetInfo)</a></li>
 <li><a href="#malloc()" tabindex="0">malloc()</a></li>
 <li><a href="#calloc()" tabindex="0">calloc()</a></li>
@@ -119,8 +123,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#nstencil_store_op(long)" tabindex="0">nstencil_store_op(long)</a></li>
 <li><a href="#ncycle(long)" tabindex="0">ncycle(long)</a></li>
 <li><a href="#nclear_stencil(long)" tabindex="0">nclear_stencil(long)</a></li>
-<li><a href="#npadding1(long)" tabindex="0">npadding1(long)</a></li>
-<li><a href="#npadding2(long)" tabindex="0">npadding2(long)</a></li>
+<li><a href="#nmip_level(long)" tabindex="0">nmip_level(long)</a></li>
+<li><a href="#nlayer(long)" tabindex="0">nlayer(long)</a></li>
 <li><a href="#ntexture(long,long)" tabindex="0">ntexture(long, long)</a></li>
 <li><a href="#nclear_depth(long,float)" tabindex="0">nclear_depth(long, float)</a></li>
 <li><a href="#nload_op(long,int)" tabindex="0">nload_op(long, int)</a></li>
@@ -129,8 +133,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#nstencil_store_op(long,int)" tabindex="0">nstencil_store_op(long, int)</a></li>
 <li><a href="#ncycle(long,boolean)" tabindex="0">ncycle(long, boolean)</a></li>
 <li><a href="#nclear_stencil(long,byte)" tabindex="0">nclear_stencil(long, byte)</a></li>
-<li><a href="#npadding1(long,byte)" tabindex="0">npadding1(long, byte)</a></li>
-<li><a href="#npadding2(long,byte)" tabindex="0">npadding2(long, byte)</a></li>
+<li><a href="#nmip_level(long,byte)" tabindex="0">nmip_level(long, byte)</a></li>
+<li><a href="#nlayer(long,byte)" tabindex="0">nlayer(long, byte)</a></li>
 <li><a href="#validate(long)" tabindex="0">validate(long)</a></li>
 </ol>
 </li>
@@ -167,8 +171,8 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
     SDL_GPUStoreOp stencil_store_op;
     bool cycle;
     Uint8 clear_stencil;
-    Uint8 padding1;
-    Uint8 padding2;
+    Uint8 mip_level;
+    Uint8 layer;
 }</code></pre></div>
 </div>
 </section>
@@ -227,17 +231,17 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#LOAD_OP" class="member-name-link">LOAD_OP</a></code></div>
+<div class="col-second even-row-color"><code><a href="#LAYER" class="member-name-link">LAYER</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#PADDING1" class="member-name-link">PADDING1</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#LOAD_OP" class="member-name-link">LOAD_OP</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#PADDING2" class="member-name-link">PADDING2</a></code></div>
+<div class="col-second even-row-color"><code><a href="#MIP_LEVEL" class="member-name-link">MIP_LEVEL</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The struct member offsets.</div>
 </div>
@@ -375,6 +379,14 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the specified value to the <code>cycle</code> field.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#layer()" class="member-name-link">layer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_GPUDepthStencilTargetInfo.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#layer(byte)" class="member-name-link">layer</a><wbr>(byte&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>layer</code> field.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load_op()" class="member-name-link">load_op</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -403,6 +415,14 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#malloc(org.lwjgl.system.MemoryStack)" class="member-name-link">malloc</a><wbr>(<a href="../system/MemoryStack.html" title="class in org.lwjgl.system">MemoryStack</a>&nbsp;stack)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a new <code>SDL_GPUDepthStencilTargetInfo</code> instance allocated on the specified <a href="../system/MemoryStack.html" title="class in org.lwjgl.system"><code>MemoryStack</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mip_level()" class="member-name-link">mip_level</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_GPUDepthStencilTargetInfo.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mip_level(byte)" class="member-name-link">mip_level</a><wbr>(byte&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the specified value to the <code>mip_level</code> field.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nclear_depth(long)" class="member-name-link">nclear_depth</a><wbr>(long&nbsp;struct)</code></div>
@@ -437,6 +457,17 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unsafe version of <a href="#cycle(boolean)"><code>cycle</code></a>.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nlayer(long)" class="member-name-link">nlayer</a><wbr>(long&nbsp;struct)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#layer()"><code>layer()</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nlayer(long,byte)" class="member-name-link">nlayer</a><wbr>(long&nbsp;struct,
+ byte&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#layer(byte)"><code>layer</code></a>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nload_op(long)" class="member-name-link">nload_op</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -449,19 +480,16 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">Unsafe version of <a href="#load_op(int)"><code>load_op</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npadding1(long)" class="member-name-link">npadding1</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmip_level(long)" class="member-name-link">nmip_level</a><wbr>(long&nbsp;struct)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#mip_level()"><code>mip_level()</code></a>.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npadding1(long,byte)" class="member-name-link">npadding1</a><wbr>(long&nbsp;struct,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nmip_level(long,byte)" class="member-name-link">nmip_level</a><wbr>(long&nbsp;struct,
  byte&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npadding2(long)" class="member-name-link">npadding2</a><wbr>(long&nbsp;struct)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#npadding2(long,byte)" class="member-name-link">npadding2</a><wbr>(long&nbsp;struct,
- byte&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Unsafe version of <a href="#mip_level(byte)"><code>mip_level</code></a>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nstencil_load_op(long)" class="member-name-link">nstencil_load_op</a><wbr>(long&nbsp;struct)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -507,14 +535,16 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 <div class="block">Unsafe version of <a href="#texture(long)"><code>texture</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SDL_GPUDepthStencilTargetInfo.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(long,float,int,int,int,int,boolean,byte)" class="member-name-link">set</a><wbr>(long&nbsp;texture,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(long,float,int,int,int,int,boolean,byte,byte,byte)" class="member-name-link">set</a><wbr>(long&nbsp;texture,
  float&nbsp;clear_depth,
  int&nbsp;load_op,
  int&nbsp;store_op,
  int&nbsp;stencil_load_op,
  int&nbsp;stencil_store_op,
  boolean&nbsp;cycle,
- byte&nbsp;clear_stencil)</code></div>
+ byte&nbsp;clear_stencil,
+ byte&nbsp;mip_level,
+ byte&nbsp;layer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
@@ -682,19 +712,19 @@ implements <a href="../system/NativeResource.html" title="interface in org.lwjgl
 </section>
 </li>
 <li>
-<section class="detail" id="PADDING1">
-<h3>PADDING1</h3>
+<section class="detail" id="MIP_LEVEL">
+<h3>MIP_LEVEL</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">PADDING1</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MIP_LEVEL</span></div>
 <div class="block">The struct member offsets.</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="PADDING2">
-<h3>PADDING2</h3>
+<section class="detail" id="LAYER">
+<h3>LAYER</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">PADDING2</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">LAYER</span></div>
 <div class="block">The struct member offsets.</div>
 </div>
 </section>
@@ -845,6 +875,32 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
+<section class="detail" id="mip_level()">
+<h3>mip_level</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint8")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">mip_level</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>mip_level</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="layer()">
+<h3>layer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint8")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">layer</span>()</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>layer</code> field.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="texture(long)">
 <h3>texture</h3>
 <div class="horizontal-scroll">
@@ -924,7 +980,27 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="set(long,float,int,int,int,int,boolean,byte)">
+<section class="detail" id="mip_level(byte)">
+<h3>mip_level</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUDepthStencilTargetInfo.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo</a></span>&nbsp;<span class="element-name">mip_level</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint8")
+ byte&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>mip_level</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="layer(byte)">
+<h3>layer</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUDepthStencilTargetInfo.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo</a></span>&nbsp;<span class="element-name">layer</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("Uint8")
+ byte&nbsp;value)</span></div>
+<div class="block">Sets the specified value to the <code>layer</code> field.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="set(long,float,int,int,int,int,boolean,byte,byte,byte)">
 <h3>set</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SDL_GPUDepthStencilTargetInfo.html" title="class in org.lwjgl.sdl">SDL_GPUDepthStencilTargetInfo</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(long&nbsp;texture,
@@ -934,7 +1010,9 @@ visible to the struct instance and vice versa.
  int&nbsp;stencil_load_op,
  int&nbsp;stencil_store_op,
  boolean&nbsp;cycle,
- byte&nbsp;clear_stencil)</span></div>
+ byte&nbsp;clear_stencil,
+ byte&nbsp;mip_level,
+ byte&nbsp;layer)</span></div>
 <div class="block">Initializes this struct with the specified values.</div>
 </div>
 </section>
@@ -1192,18 +1270,20 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="npadding1(long)">
-<h3>npadding1</h3>
+<section class="detail" id="nmip_level(long)">
+<h3>nmip_level</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">npadding1</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">nmip_level</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
+<div class="block">Unsafe version of <a href="#mip_level()"><code>mip_level()</code></a>.</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="npadding2(long)">
-<h3>npadding2</h3>
+<section class="detail" id="nlayer(long)">
+<h3>nlayer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">npadding2</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">nlayer</span><wbr><span class="parameters">(long&nbsp;struct)</span></div>
+<div class="block">Unsafe version of <a href="#layer()"><code>layer()</code></a>.</div>
 </div>
 </section>
 </li>
@@ -1288,20 +1368,22 @@ visible to the struct instance and vice versa.
 </section>
 </li>
 <li>
-<section class="detail" id="npadding1(long,byte)">
-<h3>npadding1</h3>
+<section class="detail" id="nmip_level(long,byte)">
+<h3>nmip_level</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npadding1</span><wbr><span class="parameters">(long&nbsp;struct,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nmip_level</span><wbr><span class="parameters">(long&nbsp;struct,
  byte&nbsp;value)</span></div>
+<div class="block">Unsafe version of <a href="#mip_level(byte)"><code>mip_level</code></a>.</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="npadding2(long,byte)">
-<h3>npadding2</h3>
+<section class="detail" id="nlayer(long,byte)">
+<h3>nlayer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">npadding2</span><wbr><span class="parameters">(long&nbsp;struct,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nlayer</span><wbr><span class="parameters">(long&nbsp;struct,
  byte&nbsp;value)</span></div>
+<div class="block">Unsafe version of <a href="#layer(byte)"><code>layer</code></a>.</div>
 </div>
 </section>
 </li>

@@ -86,6 +86,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_WINDOW_TOOLTIP" tabindex="0">SDL_WINDOW_TOOLTIP</a></li>
 <li><a href="#SDL_WINDOW_POPUP_MENU" tabindex="0">SDL_WINDOW_POPUP_MENU</a></li>
 <li><a href="#SDL_WINDOW_KEYBOARD_GRABBED" tabindex="0">SDL_WINDOW_KEYBOARD_GRABBED</a></li>
+<li><a href="#SDL_WINDOW_FILL_DOCUMENT" tabindex="0">SDL_WINDOW_FILL_DOCUMENT</a></li>
 <li><a href="#SDL_WINDOW_VULKAN" tabindex="0">SDL_WINDOW_VULKAN</a></li>
 <li><a href="#SDL_WINDOW_METAL" tabindex="0">SDL_WINDOW_METAL</a></li>
 <li><a href="#SDL_WINDOW_TRANSPARENT" tabindex="0">SDL_WINDOW_TRANSPARENT</a></li>
@@ -97,6 +98,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_FLASH_CANCEL" tabindex="0">SDL_FLASH_CANCEL</a></li>
 <li><a href="#SDL_FLASH_BRIEFLY" tabindex="0">SDL_FLASH_BRIEFLY</a></li>
 <li><a href="#SDL_FLASH_UNTIL_FOCUSED" tabindex="0">SDL_FLASH_UNTIL_FOCUSED</a></li>
+<li><a href="#SDL_PROGRESS_STATE_INVALID" tabindex="0">SDL_PROGRESS_STATE_INVALID</a></li>
+<li><a href="#SDL_PROGRESS_STATE_NONE" tabindex="0">SDL_PROGRESS_STATE_NONE</a></li>
+<li><a href="#SDL_PROGRESS_STATE_INDETERMINATE" tabindex="0">SDL_PROGRESS_STATE_INDETERMINATE</a></li>
+<li><a href="#SDL_PROGRESS_STATE_NORMAL" tabindex="0">SDL_PROGRESS_STATE_NORMAL</a></li>
+<li><a href="#SDL_PROGRESS_STATE_PAUSED" tabindex="0">SDL_PROGRESS_STATE_PAUSED</a></li>
+<li><a href="#SDL_PROGRESS_STATE_ERROR" tabindex="0">SDL_PROGRESS_STATE_ERROR</a></li>
 <li><a href="#SDL_GL_RED_SIZE" tabindex="0">SDL_GL_RED_SIZE</a></li>
 <li><a href="#SDL_GL_GREEN_SIZE" tabindex="0">SDL_GL_GREEN_SIZE</a></li>
 <li><a href="#SDL_GL_BLUE_SIZE" tabindex="0">SDL_GL_BLUE_SIZE</a></li>
@@ -138,6 +145,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_GL_CONTEXT_RESET_LOSE_CONTEXT" tabindex="0">SDL_GL_CONTEXT_RESET_LOSE_CONTEXT</a></li>
 <li><a href="#SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN" tabindex="0">SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN</a></li>
 <li><a href="#SDL_PROP_DISPLAY_KMSDRM_PANEL_ORIENTATION_NUMBER" tabindex="0">SDL_PROP_DISPLAY_KMSDRM_PANEL_ORIENTATION_NUMBER</a></li>
+<li><a href="#SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER" tabindex="0">SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER</a></li>
+<li><a href="#SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER" tabindex="0">SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN" tabindex="0">SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_BORDERLESS_BOOLEAN" tabindex="0">SDL_PROP_WINDOW_CREATE_BORDERLESS_BOOLEAN</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_CONSTRAIN_POPUP_BOOLEAN" tabindex="0">SDL_PROP_WINDOW_CREATE_CONSTRAIN_POPUP_BOOLEAN</a></li>
@@ -167,12 +176,15 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_PROP_WINDOW_CREATE_Y_NUMBER" tabindex="0">SDL_PROP_WINDOW_CREATE_Y_NUMBER</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_COCOA_WINDOW_POINTER" tabindex="0">SDL_PROP_WINDOW_CREATE_COCOA_WINDOW_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_COCOA_VIEW_POINTER" tabindex="0">SDL_PROP_WINDOW_CREATE_COCOA_VIEW_POINTER</a></li>
+<li><a href="#SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER" tabindex="0">SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN" tabindex="0">SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_WAYLAND_CREATE_EGL_WINDOW_BOOLEAN" tabindex="0">SDL_PROP_WINDOW_CREATE_WAYLAND_CREATE_EGL_WINDOW_BOOLEAN</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_WAYLAND_WL_SURFACE_POINTER" tabindex="0">SDL_PROP_WINDOW_CREATE_WAYLAND_WL_SURFACE_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_WIN32_HWND_POINTER" tabindex="0">SDL_PROP_WINDOW_CREATE_WIN32_HWND_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTER" tabindex="0">SDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER" tabindex="0">SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER</a></li>
+<li><a href="#SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING" tabindex="0">SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING</a></li>
+<li><a href="#SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING" tabindex="0">SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING</a></li>
 <li><a href="#SDL_PROP_WINDOW_SHAPE_POINTER" tabindex="0">SDL_PROP_WINDOW_SHAPE_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_HDR_ENABLED_BOOLEAN" tabindex="0">SDL_PROP_WINDOW_HDR_ENABLED_BOOLEAN</a></li>
 <li><a href="#SDL_PROP_WINDOW_SDR_WHITE_LEVEL_FLOAT" tabindex="0">SDL_PROP_WINDOW_SDR_WHITE_LEVEL_FLOAT</a></li>
@@ -189,7 +201,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_PROP_WINDOW_KMSDRM_GBM_DEVICE_POINTER" tabindex="0">SDL_PROP_WINDOW_KMSDRM_GBM_DEVICE_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_COCOA_WINDOW_POINTER" tabindex="0">SDL_PROP_WINDOW_COCOA_WINDOW_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_COCOA_METAL_VIEW_TAG_NUMBER" tabindex="0">SDL_PROP_WINDOW_COCOA_METAL_VIEW_TAG_NUMBER</a></li>
-<li><a href="#SDL_PROP_WINDOW_OPENVR_OVERLAY_ID" tabindex="0">SDL_PROP_WINDOW_OPENVR_OVERLAY_ID</a></li>
+<li><a href="#SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER" tabindex="0">SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER</a></li>
 <li><a href="#SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER" tabindex="0">SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_VIVANTE_WINDOW_POINTER" tabindex="0">SDL_PROP_WINDOW_VIVANTE_WINDOW_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_VIVANTE_SURFACE_POINTER" tabindex="0">SDL_PROP_WINDOW_VIVANTE_SURFACE_POINTER</a></li>
@@ -208,6 +220,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_PROP_WINDOW_X11_DISPLAY_POINTER" tabindex="0">SDL_PROP_WINDOW_X11_DISPLAY_POINTER</a></li>
 <li><a href="#SDL_PROP_WINDOW_X11_SCREEN_NUMBER" tabindex="0">SDL_PROP_WINDOW_X11_SCREEN_NUMBER</a></li>
 <li><a href="#SDL_PROP_WINDOW_X11_WINDOW_NUMBER" tabindex="0">SDL_PROP_WINDOW_X11_WINDOW_NUMBER</a></li>
+<li><a href="#SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID_STRING" tabindex="0">SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID_STRING</a></li>
+<li><a href="#SDL_PROP_WINDOW_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING" tabindex="0">SDL_PROP_WINDOW_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING</a></li>
 <li><a href="#SDL_WINDOW_SURFACE_VSYNC_DISABLED" tabindex="0">SDL_WINDOW_SURFACE_VSYNC_DISABLED</a></li>
 <li><a href="#SDL_WINDOW_SURFACE_VSYNC_ADAPTIVE" tabindex="0">SDL_WINDOW_SURFACE_VSYNC_ADAPTIVE</a></li>
 <li><a href="#SDL_HITTEST_NORMAL" tabindex="0">SDL_HITTEST_NORMAL</a></li>
@@ -308,6 +322,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#SDL_SetWindowBordered(long,boolean)" tabindex="0">SDL_SetWindowBordered(long, boolean)</a></li>
 <li><a href="#SDL_SetWindowResizable(long,boolean)" tabindex="0">SDL_SetWindowResizable(long, boolean)</a></li>
 <li><a href="#SDL_SetWindowAlwaysOnTop(long,boolean)" tabindex="0">SDL_SetWindowAlwaysOnTop(long, boolean)</a></li>
+<li><a href="#SDL_SetWindowFillDocument(long,boolean)" tabindex="0">SDL_SetWindowFillDocument(long, boolean)</a></li>
 <li><a href="#SDL_ShowWindow(long)" tabindex="0">SDL_ShowWindow(long)</a></li>
 <li><a href="#SDL_HideWindow(long)" tabindex="0">SDL_HideWindow(long)</a></li>
 <li><a href="#SDL_RaiseWindow(long)" tabindex="0">SDL_RaiseWindow(long)</a></li>
@@ -346,6 +361,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#nSDL_SetWindowShape(long,long)" tabindex="0">nSDL_SetWindowShape(long, long)</a></li>
 <li><a href="#SDL_SetWindowShape(long,org.lwjgl.sdl.SDL_Surface)" tabindex="0">SDL_SetWindowShape(long, SDL_Surface)</a></li>
 <li><a href="#SDL_FlashWindow(long,int)" tabindex="0">SDL_FlashWindow(long, int)</a></li>
+<li><a href="#SDL_SetWindowProgressState(long,int)" tabindex="0">SDL_SetWindowProgressState(long, int)</a></li>
+<li><a href="#SDL_GetWindowProgressState(long)" tabindex="0">SDL_GetWindowProgressState(long)</a></li>
+<li><a href="#SDL_SetWindowProgressValue(long,float)" tabindex="0">SDL_SetWindowProgressValue(long, float)</a></li>
+<li><a href="#SDL_GetWindowProgressValue(long)" tabindex="0">SDL_GetWindowProgressValue(long)</a></li>
 <li><a href="#SDL_DestroyWindow(long)" tabindex="0">SDL_DestroyWindow(long)</a></li>
 <li><a href="#SDL_ScreenSaverEnabled()" tabindex="0">SDL_ScreenSaverEnabled()</a></li>
 <li><a href="#SDL_EnableScreenSaver()" tabindex="0">SDL_EnableScreenSaver()</a></li>
@@ -603,11 +622,35 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_ORIENTATION_UNKNOWN" class="member-name-link">SDL_ORIENTATION_UNKNOWN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROGRESS_STATE_ERROR" class="member-name-link">SDL_PROGRESS_STATE_ERROR</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROGRESS_STATE_INDETERMINATE" class="member-name-link">SDL_PROGRESS_STATE_INDETERMINATE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROGRESS_STATE_INVALID" class="member-name-link">SDL_PROGRESS_STATE_INVALID</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROGRESS_STATE_NONE" class="member-name-link">SDL_PROGRESS_STATE_NONE</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROGRESS_STATE_NORMAL" class="member-name-link">SDL_PROGRESS_STATE_NORMAL</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final int</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROGRESS_STATE_PAUSED" class="member-name-link">SDL_PROGRESS_STATE_PAUSED</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN" class="member-name-link">SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_PROP_DISPLAY_KMSDRM_PANEL_ORIENTATION_NUMBER" class="member-name-link">SDL_PROP_DISPLAY_KMSDRM_PANEL_ORIENTATION_NUMBER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER" class="member-name-link">SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER" class="member-name-link">SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER" class="member-name-link">SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER</a></code></div>
@@ -638,6 +681,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_CONSTRAIN_POPUP_BOOLEAN" class="member-name-link">SDL_PROP_WINDOW_CREATE_CONSTRAIN_POPUP_BOOLEAN</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING" class="member-name-link">SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING" class="member-name-link">SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEAN" class="member-name-link">SDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEAN</a></code></div>
@@ -721,124 +770,136 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTER" class="member-name-link">SDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_X_NUMBER" class="member-name-link">SDL_PROP_WINDOW_CREATE_X_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER" class="member-name-link">SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER" class="member-name-link">SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_X_NUMBER" class="member-name-link">SDL_PROP_WINDOW_CREATE_X_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_Y_NUMBER" class="member-name-link">SDL_PROP_WINDOW_CREATE_Y_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER" class="member-name-link">SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_HDR_ENABLED_BOOLEAN" class="member-name-link">SDL_PROP_WINDOW_HDR_ENABLED_BOOLEAN</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_CREATE_Y_NUMBER" class="member-name-link">SDL_PROP_WINDOW_CREATE_Y_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_HDR_HEADROOM_FLOAT" class="member-name-link">SDL_PROP_WINDOW_HDR_HEADROOM_FLOAT</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID_STRING" class="member-name-link">SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID_STRING</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_KMSDRM_DEVICE_INDEX_NUMBER" class="member-name-link">SDL_PROP_WINDOW_KMSDRM_DEVICE_INDEX_NUMBER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING" class="member-name-link">SDL_PROP_WINDOW_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_KMSDRM_DRM_FD_NUMBER" class="member-name-link">SDL_PROP_WINDOW_KMSDRM_DRM_FD_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_HDR_ENABLED_BOOLEAN" class="member-name-link">SDL_PROP_WINDOW_HDR_ENABLED_BOOLEAN</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_KMSDRM_GBM_DEVICE_POINTER" class="member-name-link">SDL_PROP_WINDOW_KMSDRM_GBM_DEVICE_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_HDR_HEADROOM_FLOAT" class="member-name-link">SDL_PROP_WINDOW_HDR_HEADROOM_FLOAT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_OPENVR_OVERLAY_ID" class="member-name-link">SDL_PROP_WINDOW_OPENVR_OVERLAY_ID</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_KMSDRM_DEVICE_INDEX_NUMBER" class="member-name-link">SDL_PROP_WINDOW_KMSDRM_DEVICE_INDEX_NUMBER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_SDR_WHITE_LEVEL_FLOAT" class="member-name-link">SDL_PROP_WINDOW_SDR_WHITE_LEVEL_FLOAT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_KMSDRM_DRM_FD_NUMBER" class="member-name-link">SDL_PROP_WINDOW_KMSDRM_DRM_FD_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_SHAPE_POINTER" class="member-name-link">SDL_PROP_WINDOW_SHAPE_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_KMSDRM_GBM_DEVICE_POINTER" class="member-name-link">SDL_PROP_WINDOW_KMSDRM_GBM_DEVICE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_METAL_VIEW_TAG_NUMBER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_METAL_VIEW_TAG_NUMBER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER" class="member-name-link">SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_OPENGL_FRAMEBUFFER_NUMBER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_OPENGL_FRAMEBUFFER_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_SDR_WHITE_LEVEL_FLOAT" class="member-name-link">SDL_PROP_WINDOW_SDR_WHITE_LEVEL_FLOAT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_OPENGL_RENDERBUFFER_NUMBER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_OPENGL_RENDERBUFFER_NUMBER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_SHAPE_POINTER" class="member-name-link">SDL_PROP_WINDOW_SHAPE_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_OPENGL_RESOLVE_FRAMEBUFFER_NUMBER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_OPENGL_RESOLVE_FRAMEBUFFER_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_METAL_VIEW_TAG_NUMBER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_METAL_VIEW_TAG_NUMBER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_WINDOW_POINTER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_WINDOW_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_OPENGL_FRAMEBUFFER_NUMBER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_OPENGL_FRAMEBUFFER_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER" class="member-name-link">SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_OPENGL_RENDERBUFFER_NUMBER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_OPENGL_RENDERBUFFER_NUMBER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_VIVANTE_SURFACE_POINTER" class="member-name-link">SDL_PROP_WINDOW_VIVANTE_SURFACE_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_OPENGL_RESOLVE_FRAMEBUFFER_NUMBER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_OPENGL_RESOLVE_FRAMEBUFFER_NUMBER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_VIVANTE_WINDOW_POINTER" class="member-name-link">SDL_PROP_WINDOW_VIVANTE_WINDOW_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_UIKIT_WINDOW_POINTER" class="member-name-link">SDL_PROP_WINDOW_UIKIT_WINDOW_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_DISPLAY_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_DISPLAY_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER" class="member-name-link">SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_EGL_WINDOW_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_EGL_WINDOW_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_VIVANTE_SURFACE_POINTER" class="member-name-link">SDL_PROP_WINDOW_VIVANTE_SURFACE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_SURFACE_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_SURFACE_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_VIVANTE_WINDOW_POINTER" class="member-name-link">SDL_PROP_WINDOW_VIVANTE_WINDOW_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_VIEWPORT_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_VIEWPORT_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_DISPLAY_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_DISPLAY_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_POPUP_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_POPUP_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_EGL_WINDOW_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_EGL_WINDOW_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_POSITIONER_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_POSITIONER_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_SURFACE_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_SURFACE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_SURFACE_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_SURFACE_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_VIEWPORT_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_VIEWPORT_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_EXPORT_HANDLE_STRING" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_EXPORT_HANDLE_STRING</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_POPUP_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_POPUP_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_POSITIONER_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_POSITIONER_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WIN32_HDC_POINTER" class="member-name-link">SDL_PROP_WINDOW_WIN32_HDC_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_SURFACE_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_SURFACE_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WIN32_HWND_POINTER" class="member-name-link">SDL_PROP_WINDOW_WIN32_HWND_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_EXPORT_HANDLE_STRING" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_EXPORT_HANDLE_STRING</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WIN32_INSTANCE_POINTER" class="member-name-link">SDL_PROP_WINDOW_WIN32_INSTANCE_POINTER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_POINTER" class="member-name-link">SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_X11_DISPLAY_POINTER" class="member-name-link">SDL_PROP_WINDOW_X11_DISPLAY_POINTER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WIN32_HDC_POINTER" class="member-name-link">SDL_PROP_WINDOW_WIN32_HDC_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_X11_SCREEN_NUMBER" class="member-name-link">SDL_PROP_WINDOW_X11_SCREEN_NUMBER</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_WIN32_HWND_POINTER" class="member-name-link">SDL_PROP_WINDOW_WIN32_HWND_POINTER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_X11_WINDOW_NUMBER" class="member-name-link">SDL_PROP_WINDOW_X11_WINDOW_NUMBER</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_WIN32_INSTANCE_POINTER" class="member-name-link">SDL_PROP_WINDOW_WIN32_INSTANCE_POINTER</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_SYSTEM_THEME_DARK" class="member-name-link">SDL_SYSTEM_THEME_DARK</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_X11_DISPLAY_POINTER" class="member-name-link">SDL_PROP_WINDOW_X11_DISPLAY_POINTER</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_PROP_WINDOW_X11_SCREEN_NUMBER" class="member-name-link">SDL_PROP_WINDOW_X11_SCREEN_NUMBER</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_PROP_WINDOW_X11_WINDOW_NUMBER" class="member-name-link">SDL_PROP_WINDOW_X11_WINDOW_NUMBER</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_SYSTEM_THEME_LIGHT" class="member-name-link">SDL_SYSTEM_THEME_LIGHT</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_SYSTEM_THEME_DARK" class="member-name-link">SDL_SYSTEM_THEME_DARK</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_SYSTEM_THEME_UNKNOWN" class="member-name-link">SDL_SYSTEM_THEME_UNKNOWN</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_SYSTEM_THEME_LIGHT" class="member-name-link">SDL_SYSTEM_THEME_LIGHT</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_WINDOW_ALWAYS_ON_TOP" class="member-name-link">SDL_WINDOW_ALWAYS_ON_TOP</a></code></div>
+<div class="col-first odd-row-color"><code>static final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_SYSTEM_THEME_UNKNOWN" class="member-name-link">SDL_SYSTEM_THEME_UNKNOWN</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final long</code></div>
-<div class="col-second even-row-color"><code><a href="#SDL_WINDOW_BORDERLESS" class="member-name-link">SDL_WINDOW_BORDERLESS</a></code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_WINDOW_ALWAYS_ON_TOP" class="member-name-link">SDL_WINDOW_ALWAYS_ON_TOP</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final long</code></div>
-<div class="col-second odd-row-color"><code><a href="#SDL_WINDOW_EXTERNAL" class="member-name-link">SDL_WINDOW_EXTERNAL</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_WINDOW_BORDERLESS" class="member-name-link">SDL_WINDOW_BORDERLESS</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final long</code></div>
+<div class="col-second even-row-color"><code><a href="#SDL_WINDOW_EXTERNAL" class="member-name-link">SDL_WINDOW_EXTERNAL</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static final long</code></div>
+<div class="col-second odd-row-color"><code><a href="#SDL_WINDOW_FILL_DOCUMENT" class="member-name-link">SDL_WINDOW_FILL_DOCUMENT</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final long</code></div>
 <div class="col-second even-row-color"><code><a href="#SDL_WINDOW_FULLSCREEN" class="member-name-link">SDL_WINDOW_FULLSCREEN</a></code></div>
@@ -1496,6 +1557,16 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>bool SDL_GetWindowPosition(SDL_Window * window, int * x, int * y)</code></div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetWindowProgressState(long)" class="member-name-link">SDL_GetWindowProgressState</a><wbr>(long&nbsp;window)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>SDL_ProgressState SDL_GetWindowProgressState(SDL_Window * window)</code></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetWindowProgressValue(long)" class="member-name-link">SDL_GetWindowProgressValue</a><wbr>(long&nbsp;window)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>float SDL_GetWindowProgressValue(SDL_Window * window)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_GetWindowProperties(long)" class="member-name-link">SDL_GetWindowProperties</a><wbr>(long&nbsp;window)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>SDL_PropertiesID SDL_GetWindowProperties(SDL_Window * window)</code></div>
@@ -1684,181 +1755,199 @@ loadScripts(document, 'script');</script>
 <div class="block"><code>bool SDL_SetWindowBordered(SDL_Window * window, bool bordered)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowFocusable(long,boolean)" class="member-name-link">SDL_SetWindowFocusable</a><wbr>(long&nbsp;window,
- boolean&nbsp;focusable)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowFillDocument(long,boolean)" class="member-name-link">SDL_SetWindowFillDocument</a><wbr>(long&nbsp;window,
+ boolean&nbsp;fill)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetWindowFillDocument(SDL_Window * window, bool fill)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowFocusable(long,boolean)" class="member-name-link">SDL_SetWindowFocusable</a><wbr>(long&nbsp;window,
+ boolean&nbsp;focusable)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowFocusable(SDL_Window * window, bool focusable)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowFullscreen(long,boolean)" class="member-name-link">SDL_SetWindowFullscreen</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowFullscreen(long,boolean)" class="member-name-link">SDL_SetWindowFullscreen</a><wbr>(long&nbsp;window,
  boolean&nbsp;fullscreen)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowFullscreen(SDL_Window * window, bool fullscreen)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowFullscreenMode(long,org.lwjgl.sdl.SDL_DisplayMode)" class="member-name-link">SDL_SetWindowFullscreenMode</a><wbr>(long&nbsp;window,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowFullscreenMode(long,org.lwjgl.sdl.SDL_DisplayMode)" class="member-name-link">SDL_SetWindowFullscreenMode</a><wbr>(long&nbsp;window,
  @Nullable <a href="SDL_DisplayMode.html" title="class in org.lwjgl.sdl">SDL_DisplayMode</a>&nbsp;mode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowFullscreenMode(SDL_Window * window, SDL_DisplayMode const * mode)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowHitTest(long,org.lwjgl.sdl.SDL_HitTestI,long)" class="member-name-link">SDL_SetWindowHitTest</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowHitTest(long,org.lwjgl.sdl.SDL_HitTestI,long)" class="member-name-link">SDL_SetWindowHitTest</a><wbr>(long&nbsp;window,
  @Nullable <a href="SDL_HitTestI.html" title="interface in org.lwjgl.sdl">SDL_HitTestI</a>&nbsp;callback,
  long&nbsp;callback_data)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowHitTest(SDL_Window * window, SDL_HitTest callback, void * callback_data)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowIcon(long,org.lwjgl.sdl.SDL_Surface)" class="member-name-link">SDL_SetWindowIcon</a><wbr>(long&nbsp;window,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowIcon(long,org.lwjgl.sdl.SDL_Surface)" class="member-name-link">SDL_SetWindowIcon</a><wbr>(long&nbsp;window,
  <a href="SDL_Surface.html" title="class in org.lwjgl.sdl">SDL_Surface</a>&nbsp;icon)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowIcon(SDL_Window * window, SDL_Surface * icon)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowKeyboardGrab(long,boolean)" class="member-name-link">SDL_SetWindowKeyboardGrab</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowKeyboardGrab(long,boolean)" class="member-name-link">SDL_SetWindowKeyboardGrab</a><wbr>(long&nbsp;window,
  boolean&nbsp;grabbed)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowKeyboardGrab(SDL_Window * window, bool grabbed)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowMaximumSize(long,int,int)" class="member-name-link">SDL_SetWindowMaximumSize</a><wbr>(long&nbsp;window,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowMaximumSize(long,int,int)" class="member-name-link">SDL_SetWindowMaximumSize</a><wbr>(long&nbsp;window,
  int&nbsp;max_w,
  int&nbsp;max_h)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowMaximumSize(SDL_Window * window, int max_w, int max_h)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowMinimumSize(long,int,int)" class="member-name-link">SDL_SetWindowMinimumSize</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowMinimumSize(long,int,int)" class="member-name-link">SDL_SetWindowMinimumSize</a><wbr>(long&nbsp;window,
  int&nbsp;min_w,
  int&nbsp;min_h)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowMinimumSize(SDL_Window * window, int min_w, int min_h)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowModal(long,boolean)" class="member-name-link">SDL_SetWindowModal</a><wbr>(long&nbsp;window,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowModal(long,boolean)" class="member-name-link">SDL_SetWindowModal</a><wbr>(long&nbsp;window,
  boolean&nbsp;modal)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowModal(SDL_Window * window, bool modal)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowMouseGrab(long,boolean)" class="member-name-link">SDL_SetWindowMouseGrab</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowMouseGrab(long,boolean)" class="member-name-link">SDL_SetWindowMouseGrab</a><wbr>(long&nbsp;window,
  boolean&nbsp;grabbed)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowMouseGrab(SDL_Window * window, bool grabbed)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowMouseRect(long,org.lwjgl.sdl.SDL_Rect)" class="member-name-link">SDL_SetWindowMouseRect</a><wbr>(long&nbsp;window,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowMouseRect(long,org.lwjgl.sdl.SDL_Rect)" class="member-name-link">SDL_SetWindowMouseRect</a><wbr>(long&nbsp;window,
  <a href="SDL_Rect.html" title="class in org.lwjgl.sdl">SDL_Rect</a>&nbsp;rect)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowMouseRect(SDL_Window * window, SDL_Rect const * rect)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowOpacity(long,float)" class="member-name-link">SDL_SetWindowOpacity</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowOpacity(long,float)" class="member-name-link">SDL_SetWindowOpacity</a><wbr>(long&nbsp;window,
  float&nbsp;opacity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowOpacity(SDL_Window * window, float opacity)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowParent(long,long)" class="member-name-link">SDL_SetWindowParent</a><wbr>(long&nbsp;window,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowParent(long,long)" class="member-name-link">SDL_SetWindowParent</a><wbr>(long&nbsp;window,
  long&nbsp;parent)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowParent(SDL_Window * window, SDL_Window * parent)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowPosition(long,int,int)" class="member-name-link">SDL_SetWindowPosition</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowPosition(long,int,int)" class="member-name-link">SDL_SetWindowPosition</a><wbr>(long&nbsp;window,
  int&nbsp;x,
  int&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowPosition(SDL_Window * window, int x, int y)</code></div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowProgressState(long,int)" class="member-name-link">SDL_SetWindowProgressState</a><wbr>(long&nbsp;window,
+ int&nbsp;state)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetWindowProgressState(SDL_Window * window, SDL_ProgressState state)</code></div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowResizable(long,boolean)" class="member-name-link">SDL_SetWindowResizable</a><wbr>(long&nbsp;window,
- boolean&nbsp;resizable)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowProgressValue(long,float)" class="member-name-link">SDL_SetWindowProgressValue</a><wbr>(long&nbsp;window,
+ float&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetWindowProgressValue(SDL_Window * window, float value)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowResizable(long,boolean)" class="member-name-link">SDL_SetWindowResizable</a><wbr>(long&nbsp;window,
+ boolean&nbsp;resizable)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowResizable(SDL_Window * window, bool resizable)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowShape(long,org.lwjgl.sdl.SDL_Surface)" class="member-name-link">SDL_SetWindowShape</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowShape(long,org.lwjgl.sdl.SDL_Surface)" class="member-name-link">SDL_SetWindowShape</a><wbr>(long&nbsp;window,
  @Nullable <a href="SDL_Surface.html" title="class in org.lwjgl.sdl">SDL_Surface</a>&nbsp;shape)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowShape(SDL_Window * window, SDL_Surface * shape)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowSize(long,int,int)" class="member-name-link">SDL_SetWindowSize</a><wbr>(long&nbsp;window,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowSize(long,int,int)" class="member-name-link">SDL_SetWindowSize</a><wbr>(long&nbsp;window,
  int&nbsp;w,
  int&nbsp;h)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowSize(SDL_Window * window, int w, int h)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowSurfaceVSync(long,int)" class="member-name-link">SDL_SetWindowSurfaceVSync</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowSurfaceVSync(long,int)" class="member-name-link">SDL_SetWindowSurfaceVSync</a><wbr>(long&nbsp;window,
  int&nbsp;vsync)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowSurfaceVSync(SDL_Window * window, int vsync)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowTitle(long,java.lang.CharSequence)" class="member-name-link">SDL_SetWindowTitle</a><wbr>(long&nbsp;window,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;title)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block"><code>bool SDL_SetWindowTitle(SDL_Window * window, char const * title)</code></div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowTitle(long,java.nio.ByteBuffer)" class="member-name-link">SDL_SetWindowTitle</a><wbr>(long&nbsp;window,
- @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;title)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowTitle(long,java.lang.CharSequence)" class="member-name-link">SDL_SetWindowTitle</a><wbr>(long&nbsp;window,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;title)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SetWindowTitle(SDL_Window * window, char const * title)</code></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_ShowWindow(long)" class="member-name-link">SDL_ShowWindow</a><wbr>(long&nbsp;window)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SetWindowTitle(long,java.nio.ByteBuffer)" class="member-name-link">SDL_SetWindowTitle</a><wbr>(long&nbsp;window,
+ @Nullable <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html" title="class or interface in java.nio" class="external-link">ByteBuffer</a>&nbsp;title)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block"><code>bool SDL_SetWindowTitle(SDL_Window * window, char const * title)</code></div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_ShowWindow(long)" class="member-name-link">SDL_ShowWindow</a><wbr>(long&nbsp;window)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_ShowWindow(SDL_Window * window)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_ShowWindowSystemMenu(long,int,int)" class="member-name-link">SDL_ShowWindowSystemMenu</a><wbr>(long&nbsp;window,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_ShowWindowSystemMenu(long,int,int)" class="member-name-link">SDL_ShowWindowSystemMenu</a><wbr>(long&nbsp;window,
  int&nbsp;x,
  int&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_ShowWindowSystemMenu(SDL_Window * window, int x, int y)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SyncWindow(long)" class="member-name-link">SDL_SyncWindow</a><wbr>(long&nbsp;window)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_SyncWindow(long)" class="member-name-link">SDL_SyncWindow</a><wbr>(long&nbsp;window)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_SyncWindow(SDL_Window * window)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_UpdateWindowSurface(long)" class="member-name-link">SDL_UpdateWindowSurface</a><wbr>(long&nbsp;window)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_UpdateWindowSurface(long)" class="member-name-link">SDL_UpdateWindowSurface</a><wbr>(long&nbsp;window)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_UpdateWindowSurface(SDL_Window * window)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_UpdateWindowSurfaceRects(long,org.lwjgl.sdl.SDL_Rect.Buffer)" class="member-name-link">SDL_UpdateWindowSurfaceRects</a><wbr>(long&nbsp;window,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_UpdateWindowSurfaceRects(long,org.lwjgl.sdl.SDL_Rect.Buffer)" class="member-name-link">SDL_UpdateWindowSurfaceRects</a><wbr>(long&nbsp;window,
  <a href="SDL_Rect.Buffer.html" title="class in org.lwjgl.sdl">SDL_Rect.Buffer</a>&nbsp;rects)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_UpdateWindowSurfaceRects(SDL_Window * window, SDL_Rect const * rects, int numrects)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WindowHasSurface(long)" class="member-name-link">SDL_WindowHasSurface</a><wbr>(long&nbsp;window)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WindowHasSurface(long)" class="member-name-link">SDL_WindowHasSurface</a><wbr>(long&nbsp;window)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_WindowHasSurface(SDL_Window * window)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WINDOWPOS_CENTERED_DISPLAY(int)" class="member-name-link">SDL_WINDOWPOS_CENTERED_DISPLAY</a><wbr>(int&nbsp;X)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WINDOWPOS_CENTERED_DISPLAY(int)" class="member-name-link">SDL_WINDOWPOS_CENTERED_DISPLAY</a><wbr>(int&nbsp;X)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>uint32_t SDL_WINDOWPOS_CENTERED_DISPLAY(SDL_DisplayID X)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WINDOWPOS_ISCENTERED(int)" class="member-name-link">SDL_WINDOWPOS_ISCENTERED</a><wbr>(int&nbsp;X)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WINDOWPOS_ISCENTERED(int)" class="member-name-link">SDL_WINDOWPOS_ISCENTERED</a><wbr>(int&nbsp;X)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_WINDOWPOS_ISCENTERED(uint32_t X)</code></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WINDOWPOS_ISUNDEFINED(int)" class="member-name-link">SDL_WINDOWPOS_ISUNDEFINED</a><wbr>(int&nbsp;X)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WINDOWPOS_ISUNDEFINED(int)" class="member-name-link">SDL_WINDOWPOS_ISUNDEFINED</a><wbr>(int&nbsp;X)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>bool SDL_WINDOWPOS_ISUNDEFINED(uint32_t X)</code></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WINDOWPOS_UNDEFINED_DISPLAY(int)" class="member-name-link">SDL_WINDOWPOS_UNDEFINED_DISPLAY</a><wbr>(int&nbsp;X)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#SDL_WINDOWPOS_UNDEFINED_DISPLAY(int)" class="member-name-link">SDL_WINDOWPOS_UNDEFINED_DISPLAY</a><wbr>(int&nbsp;X)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block"><code>uint32_t SDL_WINDOWPOS_UNDEFINED_DISPLAY(SDL_DisplayID X)</code></div>
 </div>
 </div>
@@ -2359,6 +2448,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_WINDOW_FILL_DOCUMENT">
+<h3>SDL_WINDOW_FILL_DOCUMENT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">SDL_WINDOW_FILL_DOCUMENT</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_WINDOW_FILL_DOCUMENT">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_WINDOW_VULKAN">
 <h3>SDL_WINDOW_VULKAN</h3>
 <div class="horizontal-scroll">
@@ -2512,6 +2617,102 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_FLASH_UNTIL_FOCUSED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROGRESS_STATE_INVALID">
+<h3>SDL_PROGRESS_STATE_INVALID</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_PROGRESS_STATE_INVALID</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROGRESS_STATE_INVALID">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROGRESS_STATE_NONE">
+<h3>SDL_PROGRESS_STATE_NONE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_PROGRESS_STATE_NONE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROGRESS_STATE_NONE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROGRESS_STATE_INDETERMINATE">
+<h3>SDL_PROGRESS_STATE_INDETERMINATE</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_PROGRESS_STATE_INDETERMINATE</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROGRESS_STATE_INDETERMINATE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROGRESS_STATE_NORMAL">
+<h3>SDL_PROGRESS_STATE_NORMAL</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_PROGRESS_STATE_NORMAL</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROGRESS_STATE_NORMAL">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROGRESS_STATE_PAUSED">
+<h3>SDL_PROGRESS_STATE_PAUSED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_PROGRESS_STATE_PAUSED</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROGRESS_STATE_PAUSED">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROGRESS_STATE_ERROR">
+<h3>SDL_PROGRESS_STATE_ERROR</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_PROGRESS_STATE_ERROR</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROGRESS_STATE_ERROR">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -3175,6 +3376,38 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER">
+<h3>SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_DISPLAY_WAYLAND_WL_OUTPUT_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER">
+<h3>SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_DISPLAY_WINDOWS_HMONITOR_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN">
 <h3>SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN</h3>
 <div class="horizontal-scroll">
@@ -3639,6 +3872,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER">
+<h3>SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_CREATE_WINDOWSCENE_POINTER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN">
 <h3>SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN</h3>
 <div class="horizontal-scroll">
@@ -3728,6 +3977,38 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING">
+<h3>SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_CANVAS_ID_STRING">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING">
+<h3>SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_CREATE_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -3991,15 +4272,15 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="SDL_PROP_WINDOW_OPENVR_OVERLAY_ID">
-<h3>SDL_PROP_WINDOW_OPENVR_OVERLAY_ID</h3>
+<section class="detail" id="SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER">
+<h3>SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_WINDOW_OPENVR_OVERLAY_ID</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER</span></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_OPENVR_OVERLAY_ID">Constant Field Values</a></li>
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_OPENVR_OVERLAY_ID_NUMBER">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -4288,6 +4569,38 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_X11_WINDOW_NUMBER">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID_STRING">
+<h3>SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID_STRING</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID_STRING</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_EMSCRIPTEN_CANVAS_ID_STRING">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_PROP_WINDOW_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING">
+<h3>SDL_PROP_WINDOW_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">SDL_PROP_WINDOW_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING</span></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../constant-values.html#org.lwjgl.sdl.SDLVideo.SDL_PROP_WINDOW_EMSCRIPTEN_KEYBOARD_ELEMENT_STRING">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -5467,6 +5780,19 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="SDL_SetWindowFillDocument(long,boolean)">
+<h3>SDL_SetWindowFillDocument</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_SetWindowFillDocument</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Window *")
+ long&nbsp;window,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+ boolean&nbsp;fill)</span></div>
+<div class="block"><code>bool SDL_SetWindowFillDocument(SDL_Window * window, bool fill)</code></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="SDL_ShowWindow(long)">
 <h3>SDL_ShowWindow</h3>
 <div class="horizontal-scroll">
@@ -5902,6 +6228,52 @@ loadScripts(document, 'script');</script>
  <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_FlashOperation")
  int&nbsp;operation)</span></div>
 <div class="block"><code>bool SDL_FlashWindow(SDL_Window * window, SDL_FlashOperation operation)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_SetWindowProgressState(long,int)">
+<h3>SDL_SetWindowProgressState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_SetWindowProgressState</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Window *")
+ long&nbsp;window,
+ <a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_ProgressState")
+ int&nbsp;state)</span></div>
+<div class="block"><code>bool SDL_SetWindowProgressState(SDL_Window * window, SDL_ProgressState state)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_GetWindowProgressState(long)">
+<h3>SDL_GetWindowProgressState</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_ProgressState")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">SDL_GetWindowProgressState</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Window *")
+ long&nbsp;window)</span></div>
+<div class="block"><code>SDL_ProgressState SDL_GetWindowProgressState(SDL_Window * window)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_SetWindowProgressValue(long,float)">
+<h3>SDL_SetWindowProgressValue</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="annotations"><a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("bool")
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">SDL_SetWindowProgressValue</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Window *")
+ long&nbsp;window,
+ float&nbsp;value)</span></div>
+<div class="block"><code>bool SDL_SetWindowProgressValue(SDL_Window * window, float value)</code></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="SDL_GetWindowProgressValue(long)">
+<h3>SDL_GetWindowProgressValue</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">SDL_GetWindowProgressValue</span><wbr><span class="parameters">(<a href="../system/NativeType.html" title="annotation interface in org.lwjgl.system">@NativeType</a>("SDL_Window *")
+ long&nbsp;window)</span></div>
+<div class="block"><code>float SDL_GetWindowProgressValue(SDL_Window * window)</code></div>
 </div>
 </section>
 </li>
